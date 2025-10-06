@@ -1,5 +1,10 @@
 # 🎓 卒論研究プロジェクト: 不整地環境における3D経路計画
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/tako-1012/thesis_Bunker)
+[![ROS2](https://img.shields.io/badge/ROS2-Humble-green?logo=ros)](https://docs.ros.org/en/humble/)
+[![Unity](https://img.shields.io/badge/Unity-2021.3+-black?logo=unity)](https://unity.com/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org/)
+
 このディレクトリは、**Bunker移動ロボット**を基盤とした卒論研究プロジェクトです。不整地環境での自律移動ロボットの3次元ナビゲーション技術を開発しています。
 
 ## 🤖 研究概要
