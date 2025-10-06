@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+
+  <xacro:include filename="$(find bunker_unity)/urdf/velodyne_VLP16.xacro" />
+  <xacro:include filename="$(find bunker_unity)/urdf/emlid_gnss.xacro" />
+  <xacro:include filename="$(find bunker_unity)/urdf/realsense_D455.xacro" />
+  <xacro:include filename="$(find bunker_unity)/urdf/xsens_imu.xacro" />
+  <xacro:include filename="$(find bunker_unity)/urdf/laser_scan.xacro" />
+
+  <material name="blue">
+    <color rgba="0 0 0.75 1"/>
+  </material>
+  <material name="red">
+    <color rgba="0.75 0 0 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="alu">
+    <color rgba="0.80 0.80 0.80 1"/>
+  </material>
+
+  <physics_material name="wheel">
+    <friction static="0.01" dynamic="0.01"/>
+  </physics_material>
+
+
+  <xacro:macro name="wheel_macro" params="parent prefix xyz visible">
+    <joint name="${prefix}_joint" type="continuous">
+      <axis xyz="0 0 1" />
+      <!-- <limit effort="10000000000" velocity="10000000000.0" lower="-50000000000" upper="50000000000" /> -->
+      <parent link="${parent}"/>
+      <child  link="${prefix}_link"/>
+      <origin xyz="${xyz}" rpy="${radians(-90)} 0 0"/>
+      <unity_drive_api stiffness="0" damping="300000000000000000" force_limit="10000000000000000000000000"/>
+    </joint>
+    <link name="${prefix}_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.3"/>
+        <inertia
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <xacro:if value="${visible}">
+        <visual>
+          <geometry>
+            <sphere radius="0.16"/>
+          </geometry>
+          <material name="red"/>
+        </visual>
+      </xacro:if>
+      <collision>
+        <geometry>
+          <sphere radius="0.16"/>
+        </geometry>
+        <physics_material name="wheel"/>
+      </collision>
+    </link>
+  </xacro:macro> 
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+    </inertial>  
+  </link>
+
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="body_link"/>
+    <origin xyz="0 0 -0.06" rpy="0 0 0"/>
+  </joint>
+  <link name="body_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 ${radians(180)}"/>
+      <mass value="30"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 ${radians(180)}" />
+      <geometry>
+        <mesh filename="package://bunker_unity/meshes/chassis_blanc.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white" />
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0.115" rpy="0 0 ${radians(180)}" />
+      <geometry>
+        <mesh filename="package://bunker_unity/meshes/bunker_collision.stl" scale="0.4 0.4 0.4"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="chassis_black_joint" type="fixed">
+    <parent link="body_link"/>
+    <child  link="chassis_black_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="chassis_black_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 ${radians(180)}" />
+      <geometry>
+        <mesh filename="package://bunker_unity/meshes/chassis_black.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 ${radians(180)}"/>
+      <mass value="50"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+
+<joint name="chassis_red_joint" type="fixed">
+    <parent link="body_link"/>
+    <child  link="chassis_red_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="chassis_red_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 ${radians(180)}" />
+      <geometry>
+        <mesh filename="package://bunker_unity/meshes/chassis_red.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="red" />
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 ${radians(180)}"/>
+      <mass value="10"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <joint name="chassis_struct_joint" type="fixed">
+    <parent link="body_link"/>
+    <child  link="chassis_struct_link"/>
+    <origin xyz="0.18 0.19 0.52" rpy="0 0 0"/>
+  </joint>
+  <link name="chassis_struct_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bunker_unity/meshes/struct.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="alu" />
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="3"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+    <collision>
+      <origin xyz="0.05 -0.19 -0.08" rpy="0 0 ${radians(180)}" />
+      <geometry>
+        <mesh filename="package://bunker_unity/meshes/struct_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <xacro:VLP16_macro parent_link="body_link" xyz="0.18 0 1.57"/>
+  <xacro:emlid_GNSS_macro parent_link="body_link" xyz="0.30 0 1.22"/>
+  <xacro:camera_macro parent_link="body_link" xyz="0.39 -0.13 0.83" prefix="D455"/>
+  <xacro:xsens_imu_macro parent_link="body_link" xyz="0.335 0.13 0.845"/>
+  <xacro:laser_scan_macro parent_link="body_link" xyz="0.18 0 1.57"/>
+
+  <xacro:wheel_macro prefix="front_left_wheel"  parent="body_link" xyz="0.25 0.275 0.23" visible="false"/>
+  <xacro:wheel_macro prefix="front_right_wheel" parent="body_link" xyz="0.25 -0.275 0.23" visible="false"/>
+  <xacro:wheel_macro prefix="rear_left_wheel"  parent="body_link" xyz="-0.25 0.275 0.23" visible="false"/>
+  <xacro:wheel_macro prefix="rear_right_wheel" parent="body_link" xyz="-0.25 -0.275 0.23" visible="false"/>
+
+  <xacro:include filename="$(find bunker_unity)/urdf/bunker_wheels.xacro" />
+
+</robot>

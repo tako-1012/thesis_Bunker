@@ -1,0 +1,5 @@
+sim_launcher:
+  ros__parameters:
+    unity_path: /home/hayashi/Unity/Hub/Editor/6000.0.32f1/Editor/Unity
+    project_path: /home/hayashi/thesis_work/simulation/Bunker_Simulation
+

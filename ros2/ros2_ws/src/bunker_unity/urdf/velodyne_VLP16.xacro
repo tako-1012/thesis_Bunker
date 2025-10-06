@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">  
+
+    <material name="velodyne_outside">
+        <color rgba="0.95 0.95 0.95 1"/>
+    </material>
+    <material name="velodyne_glass">
+        <color rgba="0.0 0.15 0.0 1"/>
+    </material>
+
+    <xacro:macro name="VLP16_macro" params="parent_link xyz">
+
+        <joint name="velodyne_VLP16_joint" type="fixed">
+        <parent link="${parent_link}"/>
+        <child link="velodyne_VLP16_link"/>
+        <origin xyz="${xyz}" rpy="0 0 0"/>
+        </joint>
+        <link name="velodyne_VLP16_link">
+            <unity_sensor 
+                type="vlp16"
+                sensor_frequency="20" 
+                points_num_per_scan="57600" 
+                min_range="0.5" 
+                max_range="100.0" 
+                gaussian_noise_sigma="0.02" 
+                max_intensity="255" 
+                publishing_frequency="10" 
+                topic_name="/velodyne_points" />
+        </link>
+
+
+        <joint name="velodyne_outside_joint" type="fixed">
+        <parent link="velodyne_VLP16_link"/>
+        <child link="velodyne_outside_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        </joint>
+        <link name="velodyne_outside_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+            <mesh filename="package://bunker_unity/meshes/Sensors/Velodyne_VLP16/VLP16_outside.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="velodyne_outside"/>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="3"/>
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        </link>
+
+
+        <joint name="velodyne_glass_joint" type="fixed">
+        <parent link="velodyne_VLP16_link"/>
+        <child link="velodyne_glass_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        </joint>
+        <link name="velodyne_glass_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+            <mesh filename="package://bunker_unity/meshes/Sensors/Velodyne_VLP16/VLP16_glass.stl" scale="1.01 1.01 1.01"/>
+            </geometry>
+            <material name="velodyne_glass"/>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="3"/>
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        </link>
+
+
+        <joint name="velodyne_name_joint" type="fixed">
+            <parent link="velodyne_VLP16_link"/>
+            <child link="velodyne_name_link"/>
+            <origin xyz="0 0 0" rpy="0 0 ${radians(-90)}"/>
+        </joint>
+        <link name="velodyne_name_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://bunker_unity/meshes/Sensors/Velodyne_VLP16/VLP16_name.stl" scale="1 1 1"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="3"/>
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            </inertial>
+        </link>
+    </xacro:macro> 
+</robot>

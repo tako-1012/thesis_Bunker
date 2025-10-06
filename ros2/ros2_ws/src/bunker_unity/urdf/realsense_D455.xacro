@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">  
+
+    <material name="realsense_struct">
+         <color rgba="0.95 0.95 0.95 1"/>
+    </material>
+    <material name="realsense_screen">
+         <color rgba="0.10 0 0.10 1"/>
+    </material>
+
+    <xacro:macro name="camera_macro" params="parent_link xyz Realsense:='true' prefix RGB:='true' Depth:='true' sensor_frequency_RGB:=20 res_x_RGB:=640 res_y_RGB:=480 fov_RGB:=30 min_range_RGB:=0.05 max_range_RGB:=100 quality_RGB:=75 publishing_frequency_RGB:=10 sensor_frequency_Depth:=20 res_x_Depth:=640 res_y_Depth:=480 fov_Depth:=30 min_range_Depth:=0.05 max_range_Depth:=20 quality_Depth:=75 publishing_frequency_Depth:=10">
+
+        <joint name="${prefix}_Camera_joint" type="fixed">
+            <parent link="${parent_link}"/>
+            <child link="${prefix}_Camera_link"/>
+            <origin xyz="${xyz}" rpy="${radians(90)} 0 ${radians(90)}"/>
+        </joint>
+        <link name="${prefix}_Camera_link"/>
+
+        <xacro:if value="${RGB}">
+            <joint name="${prefix}_Cam_RGB_joint" type="fixed">
+                <parent link="${prefix}_Camera_link"/>
+                <child link="${prefix}_Cam_RGB_link"/>
+                <origin xyz="0 0 0.02" rpy="0 ${radians(-90)} ${radians(-90)}"/>
+            </joint>
+            <link name="${prefix}_Cam_RGB_link">
+                <unity_sensor 
+                    type="camera_RGB"
+                    sensor_frequency="${sensor_frequency_RGB}" 
+                    res_x="${res_x_RGB}" 
+                    res_y="${res_y_RGB}"  
+                    fov="${fov_RGB}" 
+                    min_range="${min_range_RGB}"
+                    max_range="${max_range_RGB}"
+                    quality="${quality_RGB}"
+                    publishing_frequency="${publishing_frequency_RGB}"
+                    image_topic_name="/${prefix}_camera/color/image/compressed"
+                    info_topic_name="/${prefix}_camera/color/info"/>
+                <inertial>
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <mass value="0.1"/>
+                    <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+                </inertial>
+            </link>
+        </xacro:if>
+
+        <xacro:if value="${Depth}">
+            <joint name="${prefix}_Cam_Depth_joint" type="fixed">
+                <parent link="${prefix}_Camera_link"/>
+                <child link="${prefix}_Cam_Depth_link"/>
+                <origin xyz="0 0 0.02" rpy="0 ${radians(-90)} ${radians(-90)}"/>
+            </joint>
+            <link name="${prefix}_Cam_Depth_link">
+                <unity_sensor 
+                    type="camera_Depth"
+                    sensor_frequency="${sensor_frequency_Depth}" 
+                    res_x="${res_x_Depth}" 
+                    res_y="${res_y_Depth}"  
+                    fov="${fov_Depth}" 
+                    min_range="${min_range_Depth}"
+                    max_range="${max_range_Depth}"
+                    quality="${quality_Depth}"
+                    publishing_frequency="${publishing_frequency_Depth}"
+                    image_topic_name="/${prefix}_camera/depth/image/compressed"
+                    info_topic_name="/${prefix}_camera/depth/info" 
+                    PC_topic_name="/${prefix}_camera/depth/points"/>
+                <inertial>
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <mass value="0.1"/>
+                    <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+                </inertial>
+            </link>
+        </xacro:if>
+        
+        <xacro:if value="${Realsense}">
+            <joint name="${prefix}_Camera_struct_joint" type="fixed">
+                <parent link="${prefix}_Camera_link"/>
+                <child link="${prefix}_Camera_struct_link"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </joint>
+            <link name="${prefix}_Camera_struct_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://bunker_unity/meshes/Sensors/Realsense_D455/Realsense_D455.stl" scale="1 1 1"/>
+                </geometry>
+                <material name="realsense_struct"/>
+            </visual>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.1"/>
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            </inertial>
+            </link>
+
+            <joint name="${prefix}_Camera_screen_joint" type="fixed">
+                <parent link="${prefix}_Camera_link"/>
+                <child link="${prefix}_Camera_screen_link"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </joint>
+            <link name="${prefix}_Camera_screen_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://bunker_unity/meshes/Sensors/Realsense_D455/Realsense_D455_Screen.stl" scale="1 1 1"/>
+                </geometry>
+                <material name="realsense_screen"/>
+            </visual>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.1"/>
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            </inertial>
+            </link>
+        </xacro:if>
+    </xacro:macro> 
+</robot>

@@ -1,0 +1,482 @@
+# 卒論研究プロジェクト: 不整地環境における3D経路計画
+
+## プロジェクト概要
+- **研究テーマ**: 不整地環境での自律移動ロボットの3次元ナビゲーション技術
+- **目的**: RTAB-Mapの3D点群データを活用し、地形の傾斜を考慮した安全な経路計画を実現
+- **期間**: 4ヶ月（2025年10月〜2026年1月）
+- **ロボット**: Bunker移動ロボット
+- **環境**: 不整地（傾斜地、障害物が複雑な環境）
+
+## 研究の新規性
+1. **応用的新規性**: RTAB-Mapを不整地ナビゲーションに適用
+2. **コスト関数設計**: 傾斜・転倒リスクの統合的考慮
+3. **統合システム**: 3D SLAM + 地形解析 + 3D経路計画
+4. **実用性**: 災害対応、農業、林業ロボットへの応用可能性
+
+## 技術スタック
+- **言語**: Python 3.10+ (メイン), C++ (高速化用)
+- **ROS**: ROS2 Humble/Jazzy
+- **シミュレーション**: Unity 2021.3+, Gazebo
+- **既存システム**: RTAB-Map (3D SLAM), Nav2 (2Dナビゲーション)
+
+## 主要ライブラリ
+- numpy, scipy: 数値計算
+- open3d: 点群処理（必須）
+- networkx: グラフ探索
+- matplotlib, pandas: 可視化・解析
+- rclpy: ROS2 Python API
+- sensor_msgs, nav_msgs, geometry_msgs: ROSメッセージ
+
+## プロジェクト構造
+```
+thesis_work/
+├── ros2/bunker_ros2/
+│   ├── bunker_base/         # 既存: ハードウェア制御
+│   ├── bunker_description/  # 既存: URDFモデル
+│   ├── bunker_nav/          # 既存: 2Dナビゲーション・SLAM
+│   ├── bunker_3d_nav/       # ★新規開発領域★
+│   │   ├── terrain_analyzer/      # 地形解析モジュール
+│   │   │   ├── terrain_analyzer_node.py
+│   │   │   ├── voxel_grid.py
+│   │   │   └── slope_calculator.py
+│   │   ├── path_planner_3d/       # 3D経路計画モジュール
+│   │   │   ├── path_planner_node.py
+│   │   │   ├── astar_3d.py
+│   │   │   └── cost_function.py
+│   │   ├── config/
+│   │   │   ├── terrain_params.yaml
+│   │   │   └── planner_params.yaml
+│   │   ├── launch/
+│   │   │   ├── terrain_analyzer.launch.py
+│   │   │   └── path_planner_3d.launch.py
+│   │   ├── msg/
+│   │   │   ├── VoxelGrid3D.msg
+│   │   │   └── TerrainInfo.msg
+│   │   └── scripts/
+│   │       └── evaluation/
+│   └── bunker_gazebo/       # 既存: Gazeboシミュレーション
+└── simulation/Bunker_Simulation/  # Unity環境
+└── Assets/Scenes/UnrealTerrain/  # 新規: 不整地ワールド
+```
+
+## 新規開発モジュール詳細
+
+### 1. terrain_analyzer (地形解析ノード)
+**役割**: RTAB-Mapの点群から地形情報を抽出・解析
+
+**入力**:
+- `/rtabmap/cloud_map` (sensor_msgs/PointCloud2): 3D点群データ
+- `/robot_pose` (geometry_msgs/PoseStamped): ロボット位置
+
+**出力**:
+- `/terrain/voxel_grid` (bunker_3d_nav/VoxelGrid3D): 3Dボクセルグリッド
+- `/terrain/slope_map` (nav_msgs/OccupancyGrid): 傾斜マップ（2D投影版）
+- `/terrain/terrain_info` (bunker_3d_nav/TerrainInfo): 統計情報
+- `/terrain/visualization` (visualization_msgs/MarkerArray): Rviz可視化用
+
+**処理フロー**:
+1. 点群データ受信
+2. Open3Dでボクセルグリッド変換（解像度0.1m推奨）
+3. 各ボクセルの分類:
+   - 空 (Empty): 0
+   - 地面 (Ground): 1（法線が上向き: 80-90度）
+   - 障害物 (Obstacle): 2
+   - 未知 (Unknown): 255
+4. 地面ボクセルの傾斜角度計算（法線ベクトルから）
+5. 転倒リスク評価（ロボット姿勢予測）
+6. Rvizでの可視化データ生成
+
+**実装ポイント**:
+- Open3D使用: `o3d.geometry.PointCloud`, `o3d.geometry.VoxelGrid`
+- 法線推定: `estimate_normals(search_param=KDTreeSearchParamHybrid(radius=0.1, max_nn=30))`
+- 効率化: ボクセル単位で処理、不要な計算をスキップ
+
+**パラメータ（config/terrain_params.yaml）**:
+```yaml
+voxel_size: 0.1              # ボクセルサイズ [m]
+ground_normal_threshold: 80  # 地面判定の法線角度 [度]
+max_slope_angle: 30          # 走行可能な最大傾斜 [度]
+robot_width: 0.6             # ロボット幅 [m]
+robot_length: 0.8            # ロボット長さ [m]
+stability_threshold: 20      # 転倒リスク閾値 [度]
+```
+
+### 2. path_planner_3d (3D経路計画ノード)
+**役割**: 傾斜を考慮した3次元経路を生成
+
+**入力**:
+- `/terrain/voxel_grid` (bunker_3d_nav/VoxelGrid3D): 地形情報
+- `/goal_pose` (geometry_msgs/PoseStamped): 目標位置
+- `/current_pose` (geometry_msgs/PoseStamped): 現在位置
+
+**出力**:
+- `/path_3d` (nav_msgs/Path): 計画された3D経路
+- `/path_visualization` (visualization_msgs/MarkerArray): 経路可視化
+- `/path_cost` (std_msgs/Float32): 総コスト値
+
+**アルゴリズム**:
+- **A* 3D実装**:
+  - 26近傍探索（3×3×3 - 自分自身）
+  - ヒューリスティック: ユークリッド距離
+  - 優先度キュー: heapq使用
+  
+**コスト関数**:
+```python
+total_cost = w1 * distance_cost +
+             w2 * slope_cost +
+             w3 * obstacle_proximity_cost +
+             w4 * stability_cost
+
+# 傾斜コスト（非線形）
+def slope_cost(angle_deg):
+    if angle < 10:
+        return 1.0
+    elif angle < 20:
+        return 2.0
+    elif angle < 30:
+        return 5.0
+    else:
+        return float('inf')  # 通行不可
+
+# 障害物近接コスト
+def obstacle_cost(distance_to_obstacle):
+    if distance < safety_margin:
+        return float('inf')
+    else:
+        return 1.0 / distance
+
+# 転倒リスクコスト
+def stability_cost(roll, pitch):
+    risk = max(abs(roll), abs(pitch))
+    if risk > threshold:
+        return 10.0 * risk
+    else:
+        return risk
+```
+
+**重みパラメータ（config/planner_params.yaml）**:
+```yaml
+weights:
+  distance: 1.0
+  slope: 3.0      # 傾斜を重視
+  obstacle: 5.0
+  stability: 4.0
+
+path_smoothing:
+  enabled: true
+  method: "cubic_spline"  # or "gradient_descent"
+  smoothness: 0.5
+
+safety:
+  min_obstacle_distance: 0.5  # [m]
+  max_roll_angle: 20          # [度]
+  max_pitch_angle: 25         # [度]
+```
+
+**経路平滑化**:
+- Cubic spline補間
+- または勾配降下法による最適化
+
+**実装ポイント**:
+- ゴールから逆探索も検討（bidirectional A*）
+- 計算時間制限: タイムアウト処理
+- 経路が見つからない場合の処理
+
+## コーディング規約
+
+### Python
+- **スタイル**: PEP 8準拠
+- **Type hints**: 必須（Python 3.10+の記法使用可）
+- **Docstring**: Google Style
+- **命名規則**:
+  - 関数・変数: `snake_case`
+  - クラス: `PascalCase`
+  - 定数: `UPPER_CASE`
+  - プライベート: `_leading_underscore`
+
+### ROS2ノードのテンプレート
+```python
+#!/usr/bin/env python3
+"""
+地形解析ノード
+RTAB-Mapの3D点群から地形情報を抽出し、
+ボクセルグリッドと傾斜マップを生成する。
+"""
+
+import rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import PointCloud2
+from typing import Optional
+import numpy as np
+import open3d as o3d
+
+class TerrainAnalyzer(Node):
+    """地形解析を行うROSノード"""
+    
+    def __init__(self) -> None:
+        super().__init__('terrain_analyzer')
+        
+        # パラメータ読み込み
+        self.declare_parameter('voxel_size', 0.1)
+        self.voxel_size = self.get_parameter('voxel_size').value
+        
+        # Subscriber
+        self.pointcloud_sub = self.create_subscription(
+            PointCloud2,
+            '/rtabmap/cloud_map',
+            self.pointcloud_callback,
+            10
+        )
+        
+        # Publisher
+        self.voxel_pub = self.create_publisher(
+            VoxelGrid3D,
+            '/terrain/voxel_grid',
+            10
+        )
+        
+        self.get_logger().info('Terrain Analyzer initialized')
+    
+    def pointcloud_callback(self, msg: PointCloud2) -> None:
+        """点群データを受信して処理"""
+        try:
+            # 点群処理
+            pcd = self.convert_ros_to_open3d(msg)
+            voxel_grid = self.create_voxel_grid(pcd)
+            
+            # 結果をパブリッシュ
+            self.publish_voxel_grid(voxel_grid)
+            
+        except Exception as e:
+            self.get_logger().error(f'Error processing point cloud: {e}')
+    
+    def convert_ros_to_open3d(self, msg: PointCloud2) -> o3d.geometry.PointCloud:
+        """ROSメッセージをOpen3D形式に変換"""
+        # 実装...
+        pass
+    
+    def create_voxel_grid(self, pcd: o3d.geometry.PointCloud) -> o3d.geometry.VoxelGrid:
+        """点群からボクセルグリッドを生成"""
+        # 実装...
+        pass
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = TerrainAnalyzer()
+    
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+### 変数命名ガイドライン
+```python
+# 点群関連
+point_cloud: o3d.geometry.PointCloud
+pcl_data: np.ndarray
+cloud_msg: PointCloud2
+
+# ボクセル関連
+voxel_grid: o3d.geometry.VoxelGrid
+voxels: np.ndarray
+voxel_size: float = 0.1
+
+# 経路関連
+path: nav_msgs.Path
+trajectory: List[Tuple[float, float, float]]
+waypoints: List[geometry_msgs.Pose]
+
+# コスト関連
+cost_map: np.ndarray
+total_cost: float
+slope_angle: float  # degree
+
+# 地形関連
+terrain_info: TerrainInfo
+slope_map: np.ndarray
+elevation: float
+```
+
+## 実装優先順位
+
+### Phase 1: 基盤構築 (Week 1-4)
+1. プロジェクト構造作成
+2. カスタムメッセージ定義
+3. Unity不整地ワールド作成
+4. ROSノードのスケルトン実装
+
+### Phase 2: 地形解析 (Week 5-8)
+1. 点群→ボクセル変換
+2. 地面/障害物分類
+3. 傾斜角度計算
+4. Rviz可視化
+5. パラメータチューニング
+
+### Phase 3: 経路計画 (Week 9-12)
+1. A* 3Dの基本実装
+2. コスト関数実装
+3. 経路平滑化
+4. Nav2との連携
+5. パフォーマンス最適化
+
+### Phase 4: 評価 (Week 13-16)
+1. シミュレーション実験
+2. データ収集・解析
+3. 実機検証（状況次第）
+4. 論文執筆
+
+## デバッグ・開発フロー
+
+### 可視化（常時使用）
+```bash
+# Rviz2起動
+ros2 launch bunker_description display.launch.py
+
+# 確認すべき要素:
+# - /rtabmap/cloud_map: 入力点群
+# - /terrain/voxel_grid: ボクセル化結果
+# - /terrain/visualization: 地形解析結果
+# - /path_3d: 計画経路
+```
+
+### ログレベル
+```python
+# 開発中は詳細ログ
+self.get_logger().debug('Detailed debug info')
+self.get_logger().info('Normal operation info')
+self.get_logger().warn('Warning message')
+self.get_logger().error('Error occurred')
+```
+
+### テスト方法
+```bash
+# rosbag記録
+ros2 bag record -a -o test_scenario_01
+
+# rosbag再生（デバッグ用）
+ros2 bag play test_scenario_01
+```
+
+## 評価指標（実装必須）
+
+各実験で以下を計測:
+```python
+metrics = {
+    'path_length_m': float,        # 経路長 [m]
+    'travel_time_s': float,        # 走行時間 [s]
+    'max_slope_deg': float,        # 最大傾斜角 [度]
+    'avg_slope_deg': float,        # 平均傾斜角 [度]
+    'energy_cost': float,          # エネルギー効率（傾斜コスト合計）
+    'tip_over_events': int,        # 転倒回数
+    'computation_time_ms': float,  # 計算時間 [ms]
+    'success': bool                # ゴール到達成功
+}
+```
+
+## AI支援ツール使用方針
+
+### Cursor/GitHub Copilot活用
+- ✅ ボイラープレートコード生成
+- ✅ 関数実装の支援
+- ✅ デバッグ支援
+- ✅ コメント・docstring生成
+
+### 注意事項
+- 生成されたコードは必ずレビュー
+- アルゴリズムの核心部分は理解してから使用
+- 複雑な処理は段階的に実装
+- テストを書いてから本実装
+
+### 効果的な質問例
+**良い質問:**
+"Open3Dで点群からボクセルグリッドを作成し、各ボクセルの法線ベクトルを計算するコードを書いて"
+"A*アルゴリズムの3D版を実装して。26近傍探索を使用し、ヒューリスティックはユークリッド距離で"
+
+**悪い質問:**
+"3D経路計画を実装して" （抽象的すぎる）
+"エラーを直して" （情報不足）
+
+## トラブルシューティング
+
+### よくあるエラーと対処法
+
+**1. 点群が空**
+```bash
+# 確認: RTAB-Mapが動いているか
+ros2 topic echo /rtabmap/cloud_map --once
+
+# 対処: RTAB-Map再起動
+ros2 launch bunker_nav kinect_rtabmap.launch.py
+```
+
+**2. ビルドエラー**
+```bash
+# クリーンビルド
+cd ~/thesis_work/ros2/ros2_ws
+rm -rf build/ install/ log/
+colcon build --packages-select bunker_3d_nav
+```
+
+**3. Open3D関連エラー**
+```bash
+# インストール確認
+pip3 install open3d
+python3 -c "import open3d as o3d; print(o3d.version)"
+```
+
+**4. Unity接続エラー**
+```bash
+# ROS-TCP-Endpoint起動確認
+ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=0.0.0.0
+```
+
+## 参考資料
+
+### 公式ドキュメント
+- ROS2: https://docs.ros.org/en/humble/
+- Open3D: http://www.open3d.org/docs/
+- RTAB-Map: http://introlab.github.io/rtabmap/
+- Nav2: https://navigation.ros.org/
+
+### 論文（要調査）
+- 不整地ナビゲーション
+- 3D経路計画
+- Cost-aware path planning
+- Terrain classification
+
+## 現在の開発状況
+
+**Current Phase**: Month 1, Week 1 - 調査・設計
+**Next Milestone**: Unity不整地ワールド作成
+**Last Updated**: 2025-10-06
+
+## 重要な制約・前提
+
+1. **既存システム活用**: Nav2, RTAB-Mapは可能な限り再利用
+2. **段階的実装**: まず動くものを作る → 最適化
+3. **早期可視化**: Rvizで常に確認しながら開発
+4. **定期コミット**: 機能単位でGitコミット
+5. **実機は後回し**: シミュレーション完成を優先
+
+## コードレビューチェックリスト
+
+プルリクエスト前に確認:
+- [ ] Type hintsが適切に付与されている
+- [ ] Docstringが書かれている
+- [ ] ログ出力が適切
+- [ ] エラーハンドリングがある
+- [ ] Rvizで可視化できる
+- [ ] パラメータがyamlファイルから読める
+- [ ] コミットメッセージが明確
+
+---
+
+このファイルは研究の進行に合わせて更新してください。
+

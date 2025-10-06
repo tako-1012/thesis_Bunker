@@ -1,0 +1,85 @@
+# ROS2 Build files
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Unity
+Library/
+Temp/
+obj/
+Build/
+Builds/
+UserSettings/
+
+# ROS2 specific
+*.bag
+*.db
+*.ini
+~/.ros/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Compiled binaries
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Colcon
+COLCON_IGNORE
+
+# Embedded git repositories
+documents/thesis/unity_git/bunker_unity/
+ros2/bunker_ros2/
+ros2/ros2_ws/src/ugv_sdk/
+
+# Large binary files
+*.stl
+*.STL
+*.dae
+*.obj
+*.ply

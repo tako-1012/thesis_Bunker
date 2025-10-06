@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">  
+
+    <material name="emlid_top">
+         <color rgba="0.95 0.95 0.95 1"/>
+    </material>
+    <material name="emlid_name">
+         <color rgba="0.38 0.69 0.89 1"/>
+    </material>
+    <material name="emlid_bottom">
+        <color rgba="0.4 0.4 0.4 1"/>
+    </material>
+
+    <xacro:macro name="emlid_GNSS_macro" params="parent_link xyz">
+
+        <joint name="emlid_GNSS_joint" type="fixed">
+        <parent link="${parent_link}"/>
+        <child link="emlid_GNSS_link"/>
+        <origin xyz="${xyz}" rpy="0 0 0"/>
+        </joint>
+        <link name="emlid_GNSS_link">
+            <unity_sensor 
+                type="gnss"
+                sensor_frequency="10" 
+                publishing_frequency="10" 
+                topic_name="/navsat" />
+        </link>
+
+
+        <joint name="emlid_GNSS_top_joint" type="fixed">
+        <parent link="emlid_GNSS_link"/>
+        <child link="emlid_GNSS_top_link"/>
+        <origin xyz="0 0 0" rpy="0 0 ${radians(90)}"/>
+        </joint>
+        <link name="emlid_GNSS_top_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+            <mesh filename="package://bunker_unity/meshes/Sensors/EMLID_GNSS/EMLID_top.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="emlid_top"/>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="3"/>
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        </link>
+
+
+        <joint name="emlid_GNSS_bottom_joint" type="fixed">
+        <parent link="emlid_GNSS_link"/>
+        <child link="emlid_GNSS_bottom_link"/>
+        <origin xyz="0 0 0" rpy="0 0 ${radians(90)}"/>
+        </joint>
+        <link name="emlid_GNSS_bottom_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://bunker_unity/meshes/Sensors/EMLID_GNSS/EMLID_bottom.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="emlid_bottom"/>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="3"/>
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        </link>
+
+
+        <joint name="emlid_GNSS_name_joint" type="fixed">
+            <parent link="emlid_GNSS_link"/>
+            <child link="emlid_GNSS_name_link"/>
+            <origin xyz="0 0 0" rpy="0 0 ${radians(90)}"/>
+        </joint>
+        <link name="emlid_GNSS_name_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://bunker_unity/meshes/Sensors/EMLID_GNSS/EMLID_Logo.stl" scale="1 1 1"/>
+                </geometry>
+                <material name="emlid_name"/>
+            </visual>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="3"/>
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            </inertial>
+        </link>
+    </xacro:macro> 
+</robot>

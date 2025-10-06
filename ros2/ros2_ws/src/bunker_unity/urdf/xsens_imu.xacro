@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">  
+
+    <xacro:macro name="xsens_imu_macro" params="parent_link xyz">
+
+        <joint name="xsens_imu_joint" type="fixed">
+        <parent link="${parent_link}"/>
+        <child link="xsens_imu_link"/>
+        <origin xyz="${xyz}" rpy="0 0 0"/>
+        </joint>
+        <link name="xsens_imu_link">
+            <unity_sensor 
+                type="imu"
+                sensor_frequency="20" 
+                publishing_frequency="20" 
+                topic_name="/imu" />
+        </link>
+
+
+        <joint name="xsens_imu_black_joint" type="fixed">
+            <parent link="xsens_imu_link"/>
+            <child link="xsens_imu_black_link"/>
+            <origin xyz="0 0 0" rpy="0 0 ${radians(90)}"/>
+        </joint>
+        <link name="xsens_imu_black_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+            <mesh filename="package://bunker_unity/meshes/Sensors/xsens_IMU/xsens_black.stl" scale="0.1 0.1 0.1"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="3"/>
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            </inertial>
+        </link>
+
+
+        <joint name="xsens_imu_red_joint" type="fixed">
+            <parent link="xsens_imu_link"/>
+            <child link="xsens_imu_red_link"/>
+            <origin xyz="0 0 0" rpy="0 0 ${radians(90)}"/>
+        </joint>
+        <link name="xsens_imu_red_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+            <mesh filename="package://bunker_unity/meshes/Sensors/xsens_IMU/xsens_red.stl" scale="0.1 0.1 0.1"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="3"/>
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            </inertial>
+        </link>
+    </xacro:macro> 
+</robot>

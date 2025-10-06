@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">  
+
+    <xacro:macro name="laser_scan_macro" params="parent_link xyz">
+
+        <joint name="laser_scan_joint" type="fixed">
+        <parent link="${parent_link}"/>
+        <child link="laser_scan_link"/>
+        <origin xyz="${xyz}" rpy="0 0 0"/>
+        </joint>
+        <link name="laser_scan_link">
+            <unity_sensor 
+                type="laser_scan"
+                number_ray="360" 
+                scan_range="10" 
+                min_range="0.2" 
+                scan_angle="360" 
+                publishing_frequency = "10"
+                topic_name="/scan" />
+        </link>
+    </xacro:macro> 
+</robot>

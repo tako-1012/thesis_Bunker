@@ -1,0 +1,673 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">  
+    
+    <link name="wheels_base_link"/>
+    <joint name="wheels_base_joint" type="fixed">
+        <parent link="body_link"/>
+        <child  link="wheels_base_link"/>
+        <origin xyz="0 0 0.44" rpy="0 0 0"/>
+    </joint>
+    
+    <link name="wheel1_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="0 -1.38777878078145E-17 -0.0719999999999999" rpy="0 0 0" />
+        <mass value="0.392034219968119" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel1_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel1_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel1_joint" type="revolute">
+      <origin xyz="0.44403 0.3495 -0.12853" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel1_Link" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+
+    <link name="wheel1.1_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="-1.74279013442913E-08 5.87093572021469E-08 -0.0720000000000001" rpy="0 0 0" />
+        <mass value="0.190328287901002" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel1.1_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel1.1_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel1.1_joint" type="revolute">
+      <origin xyz="0.37551 0.3495 -0.22305" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel1.1_Link" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel1.2_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="1.66533453693773E-16 4.16333634234434E-17 -0.0720000000000002" rpy="0 0 0" />
+        <mass value="0.271192811687251" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel1.2_Link.STL" />
+        </geometry>
+        <material name="black" />
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel1.2_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel1.2_joint" type="revolute">
+      <origin xyz="0.29039 0.3495 -0.28104" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel1.2_Link" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel1.3_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="3.44025652177504E-05 -2.66346274915008E-05 -0.0701504149473696" rpy="0 0 0" />
+        <mass value="0.245835028330933" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel1.3_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel1.3_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel1.3_joint" type="revolute">
+      <origin xyz="0.29603 0.3495 -0.087" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel1.3_Link" />
+      <axis xyz="0 0 -1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel2_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="-1.66533453693773E-16 0 0.072" rpy="0 0 0" />
+        <mass value="0.392034219968119" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel2_Link.STL" />
+        </geometry>
+        <material
+          name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel2_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel2_joint" type="revolute">
+      <origin xyz="0.44403 -0.3495 -0.12853" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel2_Link" />
+      <axis xyz="0 0 -1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link
+      name="wheel2.1_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="-1.74279017328693E-08 5.87093572160247E-08 0.0720000000000002" rpy="0 0 0" />
+        <mass value="0.190328287901002" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel2.1_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel2.1_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel2.1_joint" type="revolute">
+      <origin xyz="0.37551 -0.3495 -0.22305" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel2.1_Link" />
+      <axis xyz="0 0 -1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link
+      name="wheel2.2_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="-1.38777878078145E-16 -4.85722573273506E-17 0.0720000000000003" rpy="0 0 0" />
+        <mass value="0.27119281168725" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel2.2_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel2.2_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel2.2_joint" type="revolute">
+      <origin xyz="0.29039 -0.3495 -0.28104" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel2.2_Link" />
+      <axis xyz="0 0 -1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel2.3_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="3.51083051564616E-05 -2.7181014665284E-05 0.0709276770204769" rpy="0 0 0" />
+        <mass value="0.240893303086836" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel2.3_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel2.3_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel2.3_joint" type="revolute">
+      <origin xyz="0.29603 -0.3495 -0.087" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel2.3_Link" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel3_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="-1.5143569731535E-10 7.07767178198537E-16 -0.0246054820762604" rpy="0 0 0" />
+        <mass value="1.35828296445862" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel3_Link.STL" />
+        </geometry>
+        <material
+          name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel3_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel3_joint" type="revolute">
+      <origin xyz="-0.38871 0.295 -0.19381" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel3_Link" />
+      <axis xyz="0 0 -1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel3.1_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="5.55111512312578E-17 5.55111512312578E-17 -0.0720000000000002" rpy="0 0 0" />
+        <mass value="0.271192811687251" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel3.1_Link.STL" />
+        </geometry>
+        <material
+          name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel3.1_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel3.1_joint" type="revolute">
+      <origin xyz="-0.23111 0.3495 -0.27671" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel3.1_Link" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel3.2_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="7.58128369110489E-17 7.63278329429795E-17 -0.0720000000000003" rpy="0 0 0" />
+        <mass value="0.27119281168725" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel3.2_Link.STL" />
+        </geometry>
+        <material
+          name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel3.2_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel3.2_joint" type="revolute">
+      <origin xyz="0.043885 0.3495 -0.27671" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel3.2_Link" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel3.3_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="1.37732703020532E-08 -5.29206664124648E-05 -0.0701501700151683" rpy="0 0 0" />
+        <mass value="0.245836054976119" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel3.3_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel3.3_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel3.3_joint" type="revolute">
+      <origin xyz="-0.28597 0.3495 -0.087" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel3.3_Link" />
+      <axis xyz="0 0 -1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+
+    <link name="wheel4_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="5.55111512312578E-17 1.51436273243544E-10 0.0245928853369881" rpy="0 0 0" />
+        <mass value="1.35828296445862" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel4_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel4_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel4_joint" type="revolute">
+      <origin xyz="-0.38871 -0.295 -0.19381" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel4_Link" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link name="wheel4.1_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="-1.11022302462516E-16 -5.55111512312578E-17 0.0720000000000002" rpy="0 0 0" />
+        <mass value="0.271192811687251" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel4.1_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel4.1_Link.STL" />
+        </geometry>
+      </collision> -->
+    </link>
+    <joint name="wheel4.1_joint" type="revolute">
+      <origin xyz="-0.23111 -0.3495 -0.27671" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel4.1_Link" />
+      <axis xyz="0 0 -1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    <link
+      name="wheel4.2_Link">
+      <gravity>1</gravity>
+      <inertial>
+        <origin xyz="-7.64498056873841E-17 -4.85722573273506E-17 0.0720000000000004" rpy="0 0 0" />
+        <mass value="0.27119281168725" />
+        <inertia 
+          ixx="0.000179574259018481" 
+          ixy="0" 
+          ixz="0" 
+          iyy="0.000179574259018481" 
+          iyz="0" 
+          izz="0.000332594534732139" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel4.2_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <!-- <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://bunker_unity/meshes/Wheels/wheel4.2_Link.STL" /> 
+        </geometry>
+        <surface>
+          <contact>
+            <collide_bitmask>0x01</collide_bitmask>
+          </contact>
+        </surface>
+      </collision> -->
+    </link>
+    <joint name="wheel4.2_joint" type="revolute">
+      <origin xyz="0.043885 -0.3495 -0.27671" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel4.2_Link" />
+      <axis xyz="0 0 -1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+    
+  <link name="wheel4.3_Link">
+      <inertial>
+        <origin xyz="1.37732700244975E-08 -5.29206664124926E-05 0.0701152686893121" rpy="0 0 0" />
+        <mass value="0.245836054976119" />
+        <inertia
+          ixx="0.000105264944409738"
+          ixy="7.98231761858719E-12"
+          ixz="6.80400273764357E-11"
+          iyy="0.000105238344260685"
+          iyz="-2.72106317797361E-11"
+          izz="0.000173281039335396" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bunker_unity/meshes/Wheels/wheel4.3_Link.STL" />
+        </geometry>
+        <material name="black"/>
+      </visual>
+    </link>
+    <joint name="wheel4.3_joint" type="revolute">
+      <origin xyz="-0.28597 -0.3495 -0.087" rpy="1.5708 0 -3.1416" />
+      <parent link="wheels_base_link" />
+      <child link="wheel4.3_Link" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-180"
+        upper="180"
+        effort="0"
+        velocity="0" />
+    </joint>
+  
+</robot>
