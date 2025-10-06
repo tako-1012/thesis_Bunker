@@ -44,6 +44,7 @@
 - ✅ GitHubリポジトリ作成・接続
 - ✅ 研究計画ドキュメント整備
 - ✅ Cursor AI支援環境構築
+- ✅ **文献調査準備完了**（論文管理テンプレート、検索クエリ20個作成）
 - 🔄 Unity不整地ワールド作成（次回）
 - 🔄 ROS2パッケージ構造作成（次回）
 
@@ -72,10 +73,20 @@
 thesis_work/
 ├── ros2/bunker_ros2/           # ROS2パッケージ群（基盤システム）
 ├── simulation/Bunker_Simulation/ # Unityシミュレーション
-├── documents/thesis/           # 研究資料・メモ
-├── README.md                   # プロジェクト概要
-├── 卒論研究内容整理.md         # 基盤システムの詳細
-├── 卒論研究計画.md             # 研究計画・新機能候補
+├── documents/thesis/             # 研究資料・メモ
+│   ├── literature/              # 文献調査用ファイル群
+│   │   ├── papers.md            # 選定論文3本管理
+│   │   ├── candidates.md        # 論文候補20-30件管理
+│   │   ├── summary.md           # 関連研究まとめ雛形
+│   │   ├── search_keywords.md   # Google Scholar検索クエリ20個
+│   │   ├── papers/              # PDF保存用フォルダ
+│   │   └── notes/               # 論文メモ保存用フォルダ
+│   │       └── template_notes.md # 論文読解用テンプレート
+│   ├── research_plan.md         # 研究計画最終版
+│   ├── day1_summary.md          # Day 1成果サマリー
+│   └── progress_tracker.md      # 進捗管理
+├── README.md                     # プロジェクト概要
+├── .cursorrules                  # Cursor AI支援設定
 └── AI研究アシスタント用スクリプト.md # このファイル
 ```
 
