@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 
 /// <summary>
 /// Terrain World Manager for generating uneven terrain scenarios for 3D path planning research
@@ -58,80 +57,60 @@ public class TerrainWorldManager : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("TerrainWorldManager: Starting terrain generation...");
         InitializeTerrain();
         GenerateTerrainScenario();
-        Debug.Log("TerrainWorldManager: Terrain generation completed successfully!");
     }
     
     void InitializeTerrain()
     {
-        try
-        {
-            Debug.Log("TerrainWorldManager: Initializing terrain...");
-            
-            // Create terrain object
-            GameObject terrainObject = new GameObject("GeneratedTerrain");
-            terrainObject.transform.SetParent(transform);
-            
-            // Add terrain component
-            terrain = terrainObject.AddComponent<Terrain>();
-            TerrainCollider terrainCollider = terrainObject.AddComponent<TerrainCollider>();
-            
-            // Create terrain data
-            terrainData = ScriptableObject.CreateInstance<TerrainData>();
-            terrainData.heightmapResolution = Mathf.RoundToInt(terrainSize / terrainResolution) + 1;
-            terrainData.size = new Vector3(terrainSize * 100, 20, terrainSize * 100); // Scale up for realistic size
-            
-            terrainWidth = terrainData.heightmapResolution;
-            terrainLength = terrainData.heightmapResolution;
-            
-            terrain.terrainData = terrainData;
-            terrainCollider.terrainData = terrainData;
-            
-            Debug.Log($"TerrainWorldManager: Terrain initialized successfully - Resolution: {terrainWidth}x{terrainLength}, Size: {terrainData.size}");
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"TerrainWorldManager: Failed to initialize terrain: {e.Message}");
-            throw;
-        }
+        // Create terrain object
+        GameObject terrainObject = new GameObject("GeneratedTerrain");
+        terrainObject.transform.SetParent(transform);
+        
+        // Add terrain component
+        terrain = terrainObject.AddComponent<Terrain>();
+        TerrainCollider terrainCollider = terrainObject.AddComponent<TerrainCollider>();
+        
+        // Create terrain data
+        terrainData = new TerrainData();
+        terrainData.heightmapResolution = Mathf.RoundToInt(terrainSize / terrainResolution) + 1;
+        terrainData.size = new Vector3(terrainSize * 100, 20, terrainSize * 100); // Scale up for realistic size
+        
+        terrainWidth = terrainData.heightmapResolution;
+        terrainLength = terrainData.heightmapResolution;
+        
+        terrain.terrainData = terrainData;
+        terrainCollider.terrainData = terrainData;
+        
+        Debug.Log($"Terrain initialized: {terrainWidth}x{terrainLength}, Size: {terrainData.size}");
     }
     
     void GenerateTerrainScenario()
     {
-        try
+        Debug.Log($"Generating terrain scenario: {scenario}");
+        
+        // Clear previous generation
+        ClearGeneratedObjects();
+        
+        // Generate height map based on scenario
+        GenerateHeightMap();
+        
+        // Apply height map to terrain
+        terrainData.SetHeights(0, 0, heightMap);
+        
+        // Generate obstacles based on scenario
+        GenerateObstacles();
+        
+        // Set start and goal points
+        SetStartGoalPoints();
+        
+        // Debug information
+        if (showTerrainInfo)
         {
-            Debug.Log($"TerrainWorldManager: Generating terrain scenario: {scenario}");
-            
-            // Clear previous generation
-            ClearGeneratedObjects();
-            
-            // Generate height map based on scenario
-            GenerateHeightMap();
-            
-            // Apply height map to terrain
-            terrainData.SetHeights(0, 0, heightMap);
-            
-            // Generate obstacles based on scenario
-            GenerateObstacles();
-            
-            // Set start and goal points
-            SetStartGoalPoints();
-            
-            // Debug information
-            if (showTerrainInfo)
-            {
-                AnalyzeTerrain();
-            }
-            
-            Debug.Log($"TerrainWorldManager: Terrain scenario '{scenario}' generation completed successfully!");
+            AnalyzeTerrain();
         }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"TerrainWorldManager: Failed to generate terrain scenario: {e.Message}");
-            throw;
-        }
+        
+        Debug.Log($"Terrain scenario '{scenario}' generation completed!");
     }
     
     void GenerateHeightMap()
@@ -539,58 +518,32 @@ public class TerrainWorldManager : MonoBehaviour
     
     void ClearGeneratedObjects()
     {
-        try
+        // Clear obstacles
+        foreach (GameObject obj in generatedObstacles)
         {
-            Debug.Log("TerrainWorldManager: Clearing previously generated objects...");
-            
-            // Clear obstacles
-            foreach (GameObject obj in generatedObstacles.ToList())
-            {
-                if (obj != null)
-                {
-                    if (Application.isPlaying)
-                        Destroy(obj);
-                    else
-                        DestroyImmediate(obj);
-                }
-            }
-            generatedObstacles.Clear();
-            
-            // Clear other generated objects
-            foreach (GameObject obj in generatedObjects.ToList())
-            {
-                if (obj != null)
-                {
-                    if (Application.isPlaying)
-                        Destroy(obj);
-                    else
-                        DestroyImmediate(obj);
-                }
-            }
-            generatedObjects.Clear();
-            
-            // Clear tagged objects
-            string[] tagsToClean = { "Obstacle", "Start", "Goal" };
-            foreach (string tag in tagsToClean)
-            {
-                GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
-                foreach (GameObject obj in objects)
-                {
-                    if (obj != null && obj.transform.IsChildOf(transform))
-                    {
-                        if (Application.isPlaying)
-                            Destroy(obj);
-                        else
-                            DestroyImmediate(obj);
-                    }
-                }
-            }
-            
-            Debug.Log("TerrainWorldManager: Object cleanup completed");
+            if (obj != null)
+                DestroyImmediate(obj);
         }
-        catch (System.Exception e)
+        generatedObstacles.Clear();
+        
+        // Clear other generated objects
+        foreach (GameObject obj in generatedObjects)
         {
-            Debug.LogError($"TerrainWorldManager: Error during object cleanup: {e.Message}");
+            if (obj != null)
+                DestroyImmediate(obj);
+        }
+        generatedObjects.Clear();
+        
+        // Clear tagged objects
+        string[] tagsToClean = { "Obstacle", "Start", "Goal" };
+        foreach (string tag in tagsToClean)
+        {
+            GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject obj in objects)
+            {
+                if (obj.transform.IsChildOf(transform))
+                    DestroyImmediate(obj);
+            }
         }
     }
     
