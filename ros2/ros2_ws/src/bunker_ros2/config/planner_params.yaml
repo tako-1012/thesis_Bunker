@@ -1,0 +1,91 @@
+# Path Planner 3D Configuration
+path_planner_3d:
+  voxel_size: 0.1              # Voxel size in meters
+  max_iterations: 10000         # Maximum A* iterations
+  planning_timeout: 10.0       # Planning timeout in seconds
+  
+  # Cost function weights
+  weights:
+    distance: 1.0              # Distance weight
+    slope: 3.0                 # Slope weight (higher = avoid steep slopes)
+    obstacle: 5.0              # Obstacle proximity weight (higher = avoid obstacles)
+    stability: 4.0             # Stability weight (higher = prefer stable paths)
+  
+  # Safety parameters
+  safety:
+    min_obstacle_distance: 0.5  # Minimum distance to obstacles in meters
+    max_roll_angle: 20          # Maximum roll angle in degrees
+    max_pitch_angle: 25         # Maximum pitch angle in degrees
+  
+  # Path smoothing
+  path_smoothing:
+    enabled: true
+    method: "cubic_spline"      # Smoothing method: cubic_spline, gradient_descent, simple
+    smoothness: 0.5             # Smoothness factor (0.0-1.0)
+  
+  # A* algorithm parameters
+  astar:
+    heuristic_weight: 1.0       # Heuristic weight (1.0 = optimal, >1.0 = faster but suboptimal)
+    tie_breaking: true          # Enable tie-breaking for better paths
+    bidirectional: false        # Enable bidirectional search (experimental)
+  
+  # Path optimization
+  optimization:
+    enable_length_optimization: true
+    enable_smoothness_optimization: true
+    max_deviation: 0.1          # Maximum deviation from original path in meters
+    min_waypoint_distance: 0.2  # Minimum distance between waypoints in meters
+
+# Terrain Analyzer Configuration
+terrain_analyzer:
+  voxel_size: 0.1              # Voxel size in meters
+  ground_normal_threshold: 80  # Ground detection threshold in degrees
+  max_slope_angle: 30         # Maximum traversable slope in degrees
+  robot_dimensions:
+    width: 0.6                 # Robot width in meters
+    length: 0.8                # Robot length in meters
+  stability_threshold: 20      # Stability threshold in degrees
+
+# Visualization settings
+visualization:
+  enable_terrain_visualization: true
+  enable_path_visualization: true
+  enable_slope_visualization: true
+  enable_cost_visualization: false
+  marker_scale: 1.0
+  marker_lifetime: 0.0         # 0.0 = persistent
+  
+  # Color schemes
+  colors:
+    ground: [0.0, 1.0, 0.0]    # Green
+    obstacle: [1.0, 0.0, 0.0]  # Red
+    unknown: [0.5, 0.5, 0.5]   # Gray
+    path: [0.0, 0.0, 1.0]      # Blue
+    start: [0.0, 1.0, 1.0]     # Cyan
+    goal: [1.0, 0.0, 1.0]      # Magenta
+
+# Performance settings
+performance:
+  enable_multithreading: true
+  max_threads: 4
+  cache_size: 1000
+  enable_profiling: false
+  
+  # Memory management
+  memory:
+    max_voxel_cache_size: 1000000  # Maximum voxels to cache
+    enable_garbage_collection: true
+    gc_interval: 100              # Garbage collection interval in iterations
+
+# Debug settings
+debug:
+  enable_debug_logging: false
+  enable_performance_logging: true
+  enable_visualization_debug: false
+  log_level: "INFO"             # DEBUG, INFO, WARN, ERROR
+  
+  # Profiling
+  profiling:
+    enable_timing: true
+    enable_memory_profiling: false
+    enable_path_analysis: true

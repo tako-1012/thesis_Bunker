@@ -1,0 +1,312 @@
+# テストシナリオ定義
+
+## シナリオ概要
+このファイルは、bunker_3d_navパッケージのテストシナリオを定義します。各シナリオは、異なる地形条件での3D経路計画の性能を評価するために使用されます。
+
+## シナリオ一覧
+
+### 1. Flat Terrain (平坦地形)
+**目的**: 基本的な経路計画性能の評価
+
+**パラメータ**:
+```yaml
+scenario: "flat"
+width: 10.0
+height: 10.0
+resolution: 0.1
+point_density: 100.0
+noise_level: 0.01
+```
+
+**特徴**:
+- 平坦な地面（傾斜角度: 0-5度）
+- 障害物なし
+- 基本的な経路計画のテスト
+
+**期待される結果**:
+- 最短経路の生成
+- 高速な計算時間
+- 高い成功率
+
+### 2. Sloped Terrain (傾斜地形)
+**目的**: 傾斜を考慮した経路計画の評価
+
+**パラメータ**:
+```yaml
+scenario: "sloped"
+width: 10.0
+height: 10.0
+resolution: 0.1
+point_density: 100.0
+slope_angle: 15.0
+noise_level: 0.02
+```
+
+**特徴**:
+- 緩やかな傾斜（15度）
+- 障害物なし
+- 傾斜コストの評価
+
+**期待される結果**:
+- 傾斜を考慮した経路選択
+- 適切なコスト計算
+- 安定性の確保
+
+### 3. Hilly Terrain (丘陵地形)
+**目的**: 複雑な地形での経路計画の評価
+
+**パラメータ**:
+```yaml
+scenario: "hilly"
+width: 10.0
+height: 10.0
+resolution: 0.1
+point_density: 100.0
+num_hills: 3
+max_height: 2.0
+noise_level: 0.02
+```
+
+**特徴**:
+- 複数の丘
+- 起伏のある地形
+- 複雑な経路計画
+
+**期待される結果**:
+- 丘を回避した経路
+- 適切な高度選択
+- 複雑な地形での性能
+
+### 4. Obstacle Terrain (障害物地形)
+**目的**: 障害物回避能力の評価
+
+**パラメータ**:
+```yaml
+scenario: "obstacles"
+width: 10.0
+height: 10.0
+resolution: 0.1
+point_density: 100.0
+num_obstacles: 5
+obstacle_height: 1.0
+noise_level: 0.01
+```
+
+**特徴**:
+- 複数の障害物
+- 平坦な地面
+- 障害物回避のテスト
+
+**期待される結果**:
+- 障害物を回避した経路
+- 適切な安全距離
+- 障害物検出の精度
+
+### 5. Mixed Terrain (複合地形)
+**目的**: 現実的な複合環境での総合性能評価
+
+**パラメータ**:
+```yaml
+scenario: "mixed"
+width: 10.0
+height: 10.0
+resolution: 0.1
+point_density: 100.0
+noise_level: 0.02
+```
+
+**特徴**:
+- 傾斜 + 丘 + 障害物
+- 複雑な地形
+- 総合的な性能テスト
+
+**期待される結果**:
+- 複数要因の統合評価
+- 現実的な環境での性能
+- 総合的な最適化
+
+## パラメータセット
+
+### 基本パラメータ
+```yaml
+basic_params:
+  width: 10.0
+  height: 10.0
+  resolution: 0.1
+  point_density: 100.0
+  noise_level: 0.01
+```
+
+### 高解像度パラメータ
+```yaml
+high_res_params:
+  width: 10.0
+  height: 10.0
+  resolution: 0.05
+  point_density: 400.0
+  noise_level: 0.005
+```
+
+### 低解像度パラメータ
+```yaml
+low_res_params:
+  width: 10.0
+  height: 10.0
+  resolution: 0.2
+  point_density: 25.0
+  noise_level: 0.02
+```
+
+### 大規模パラメータ
+```yaml
+large_scale_params:
+  width: 50.0
+  height: 50.0
+  resolution: 0.1
+  point_density: 100.0
+  noise_level: 0.01
+```
+
+## テストケース
+
+### 1. 基本機能テスト
+```yaml
+test_cases:
+  - name: "basic_flat"
+    scenario: "flat"
+    params: "basic_params"
+    expected:
+      success_rate: 100
+      max_slope: 5.0
+      computation_time: 1.0
+      
+  - name: "basic_sloped"
+    scenario: "sloped"
+    params: "basic_params"
+    expected:
+      success_rate: 95
+      max_slope: 15.0
+      computation_time: 1.5
+```
+
+### 2. 性能テスト
+```yaml
+test_cases:
+  - name: "performance_high_res"
+    scenario: "mixed"
+    params: "high_res_params"
+    expected:
+      success_rate: 90
+      computation_time: 3.0
+      memory_usage: 500
+      
+  - name: "performance_large_scale"
+    scenario: "mixed"
+    params: "large_scale_params"
+    expected:
+      success_rate: 85
+      computation_time: 5.0
+      memory_usage: 1000
+```
+
+### 3. エッジケーステスト
+```yaml
+test_cases:
+  - name: "edge_case_steep_slope"
+    scenario: "sloped"
+    params:
+      slope_angle: 45.0
+    expected:
+      success_rate: 50
+      max_slope: 45.0
+      
+  - name: "edge_case_dense_obstacles"
+    scenario: "obstacles"
+    params:
+      num_obstacles: 20
+    expected:
+      success_rate: 70
+      path_length_ratio: 1.5
+```
+
+## 評価指標
+
+### 1. 成功率
+- **定義**: ゴール到達の成功率
+- **計算方法**: 成功回数 / 総試行回数 × 100
+- **目標値**: 90%以上
+
+### 2. 経路長
+- **定義**: 生成された経路の総距離
+- **計算方法**: Σ√((x_i+1 - x_i)² + (y_i+1 - y_i)² + (z_i+1 - z_i)²)
+- **目標値**: 最短経路の1.2倍以内
+
+### 3. 最大傾斜角
+- **定義**: 経路上の最大傾斜角度
+- **計算方法**: max(arctan(√((∂z/∂x)² + (∂z/∂y)²)))
+- **目標値**: 30度以内
+
+### 4. 計算時間
+- **定義**: 経路計画にかかった時間
+- **計算方法**: 経路計画開始から終了までの時間
+- **目標値**: 2秒以内
+
+### 5. メモリ使用量
+- **定義**: 経路計画中の最大メモリ使用量
+- **計算方法**: プロセス監視による測定
+- **目標値**: 1GB以内
+
+## テスト実行方法
+
+### 1. 単一シナリオのテスト
+```bash
+python3 generate_sample_pointcloud.py --scenario flat --output-dir ./test_data
+```
+
+### 2. 全シナリオのテスト
+```bash
+python3 generate_sample_pointcloud.py --scenario all --output-dir ./test_data
+```
+
+### 3. カスタムパラメータでのテスト
+```bash
+python3 generate_sample_pointcloud.py --scenario mixed --width 20.0 --height 20.0 --resolution 0.05
+```
+
+## データ形式
+
+### 1. 点群データ
+- **形式**: .pcd (Open3D形式)
+- **座標系**: 右手座標系
+- **単位**: メートル
+
+### 2. メタデータ
+- **形式**: .json
+- **内容**: シナリオ情報、統計情報、境界情報
+
+### 3. テスト結果
+- **形式**: .json
+- **内容**: 評価指標、実行時間、エラー情報
+
+## 注意事項
+
+### 1. メモリ使用量
+- 高解像度の点群データは大量のメモリを使用
+- 適切なバッチサイズで処理
+
+### 2. 計算時間
+- 複雑な地形では計算時間が長くなる
+- タイムアウト設定を適切に行う
+
+### 3. 再現性
+- 乱数シードを固定して再現可能な結果を確保
+- 環境依存の要因を最小化
+
+### 4. データ品質
+- ノイズレベルを適切に設定
+- 異常値の検出と除去
+
+## 更新履歴
+- 2025-10-06: 初版作成
+- 2025-10-06: シナリオ定義の追加
+- 2025-10-06: 評価指標の詳細化

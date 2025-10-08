@@ -1,0 +1,96 @@
+name: ROS2 Build and Test
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'ros2/bunker_ros2/bunker_3d_nav/**'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'ros2/bunker_ros2/bunker_3d_nav/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-22.04
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install ROS2 Humble
+      run: |
+        sudo apt update
+        sudo apt install -y software-properties-common
+        sudo add-apt-repository universe
+        sudo apt update && sudo apt install -y curl gnupg lsb-release
+        sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+        sudo apt update
+        sudo apt install -y ros-humble-desktop
+        sudo apt install -y ros-humble-navigation2
+        sudo apt install -y ros-humble-rtabmap-ros
+        
+    - name: Install dependencies
+      run: |
+        sudo apt install -y python3-pip python3-colcon-common-extensions
+        pip3 install open3d numpy scipy matplotlib seaborn pandas
+        pip3 install pytest pytest-cov
+        pip3 install flake8 black isort mypy
+        
+    - name: Source ROS2
+      run: |
+        echo "source /opt/ros/humble/setup.bash" >> $GITHUB_ENV
+        
+    - name: Build ROS2 workspace
+      run: |
+        cd ros2/ros2_ws
+        colcon build --packages-select bunker_3d_nav --cmake-args -DCMAKE_BUILD_TYPE=Release
+        
+    - name: Source workspace
+      run: |
+        echo "source ros2/ros2_ws/install/setup.bash" >> $GITHUB_ENV
+        
+    - name: Run tests
+      run: |
+        cd ros2/bunker_ros2/bunker_3d_nav
+        pytest test/ --cov=bunker_3d_nav --cov-report=xml --cov-report=html
+        
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ros2/bunker_ros2/bunker_3d_nav/coverage.xml
+        flags: ros2
+        name: ros2-coverage
+        
+    - name: Run linting
+      run: |
+        cd ros2/bunker_ros2/bunker_3d_nav
+        flake8 bunker_3d_nav/ --max-line-length=88 --extend-ignore=E203,W503
+        black --check bunker_3d_nav/
+        isort --check-only bunker_3d_nav/
+        mypy bunker_3d_nav/ --ignore-missing-imports
+        
+    - name: Test ROS2 nodes
+      run: |
+        cd ros2/bunker_ros2/bunker_3d_nav
+        timeout 30s python3 terrain_analyzer/terrain_analyzer_node.py --help || true
+        timeout 30s python3 path_planner_3d/path_planner_node.py --help || true
+        
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+        path: ros2/ros2_ws/build/
+        
+    - name: Archive test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: ros2/bunker_ros2/bunker_3d_nav/htmlcov/
+

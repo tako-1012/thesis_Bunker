@@ -1,0 +1,49 @@
+# Terrain Analyzer Configuration
+terrain_analyzer:
+  voxel_size: 0.1              # Voxel size in meters
+  ground_normal_threshold: 80  # Ground detection threshold in degrees
+  max_slope_angle: 30         # Maximum traversable slope in degrees
+  robot_dimensions:
+    width: 0.6                 # Robot width in meters
+    length: 0.8                # Robot length in meters
+  stability_threshold: 20      # Stability threshold in degrees
+  
+# Path Planner 3D Configuration
+path_planner_3d:
+  voxel_size: 0.1              # Voxel size in meters
+  max_iterations: 10000         # Maximum A* iterations
+  planning_timeout: 10.0       # Planning timeout in seconds
+  
+  # Cost function weights
+  weights:
+    distance: 1.0              # Distance weight
+    slope: 3.0                 # Slope weight
+    obstacle: 5.0              # Obstacle proximity weight
+    stability: 4.0             # Stability weight
+  
+  # Safety parameters
+  safety:
+    min_obstacle_distance: 0.5  # Minimum distance to obstacles in meters
+    max_roll_angle: 20          # Maximum roll angle in degrees
+    max_pitch_angle: 25         # Maximum pitch angle in degrees
+  
+  # Path smoothing
+  path_smoothing:
+    enabled: true
+    method: "cubic_spline"      # Smoothing method: cubic_spline, gradient_descent, simple
+    smoothness: 0.5             # Smoothness factor (0.0-1.0)
+
+# Visualization settings
+visualization:
+  enable_terrain_visualization: true
+  enable_path_visualization: true
+  enable_slope_visualization: true
+  marker_scale: 1.0
+  marker_lifetime: 0.0         # 0.0 = persistent
+
+# Performance settings
+performance:
+  enable_multithreading: true
+  max_threads: 4
+  cache_size: 1000
+  enable_profiling: false
