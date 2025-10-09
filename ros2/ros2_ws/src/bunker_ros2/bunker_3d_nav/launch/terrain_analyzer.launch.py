@@ -56,11 +56,11 @@ def generate_launch_description():
             }
         ],
         remappings=[
-            ('/rtabmap/cloud_map', '/rtabmap/cloud_map'),
+            ('/bunker/pointcloud', '/rtabmap/cloud_map'),
             ('/robot_pose', '/robot_pose'),
-            ('/terrain/voxel_grid', '/terrain/voxel_grid'),
+            ('/bunker/voxel_grid', '/terrain/voxel_grid'),
+            ('/bunker/terrain_info', '/terrain/terrain_info'),
             ('/terrain/slope_map', '/terrain/slope_map'),
-            ('/terrain/terrain_info', '/terrain/terrain_info'),
             ('/terrain/visualization', '/terrain/visualization')
         ]
     )
