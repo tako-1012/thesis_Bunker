@@ -45,3 +45,6 @@ cd ../unity_bridge
 python3 test_unity_bridge.py
 
 echo "✅ 完全リビルド成功！"
+
+
+

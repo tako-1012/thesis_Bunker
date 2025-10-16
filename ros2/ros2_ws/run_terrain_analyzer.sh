@@ -85,3 +85,4 @@ trap cleanup SIGINT SIGTERM
 
 # 待機
 wait
+

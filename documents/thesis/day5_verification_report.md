@@ -243,3 +243,6 @@ python3 -c "from bunker_3d_nav.msg import TerrainInfo, VoxelGrid3D"
 **検証完了日時**: 2025-10-19 23:59:59  
 **検証者**: Hayashi  
 **ステータス**: 修正が必要
+
+
+
