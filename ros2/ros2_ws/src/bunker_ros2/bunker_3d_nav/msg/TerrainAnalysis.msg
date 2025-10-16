@@ -1,0 +1,10 @@
+# 地形解析結果メッセージ
+std_msgs/Header header
+float32 voxel_size
+int32 total_voxels
+int32 ground_voxels
+int32 obstacle_voxels
+float32 average_slope
+float32 max_slope
+float32 traversability_score
+geometry_msgs/Point32[] high_risk_areas

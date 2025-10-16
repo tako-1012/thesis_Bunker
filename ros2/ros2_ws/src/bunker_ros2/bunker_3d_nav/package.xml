@@ -18,6 +18,10 @@
   <depend>geometry_msgs</depend>
   <depend>visualization_msgs</depend>
   <depend>nav_msgs</depend>
+  <depend>rosidl_default_generators</depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
   
   <exec_depend>rosidl_default_runtime</exec_depend>
   

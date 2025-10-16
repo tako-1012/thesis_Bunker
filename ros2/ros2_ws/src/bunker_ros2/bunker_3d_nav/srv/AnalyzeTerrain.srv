@@ -1,0 +1,17 @@
+# Request
+sensor_msgs/PointCloud2 pointcloud
+float32 voxel_size
+bool enable_visualization
+---
+# Response
+bool success
+string message
+sensor_msgs/PointCloud2 voxel_grid
+sensor_msgs/PointCloud2 ground_points
+sensor_msgs/PointCloud2 obstacles
+float32[] slope_values
+float32 average_slope
+float32 max_slope
+int32 traversable_voxels
+int32 total_voxels
+float32 processing_time

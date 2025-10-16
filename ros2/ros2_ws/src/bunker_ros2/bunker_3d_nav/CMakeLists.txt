@@ -17,12 +17,19 @@ find_package(visualization_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-# カスタムメッセージ生成
+# メッセージ/サービスファイル追加
 rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/TerrainAnalysis.msg"
+  "msg/VoxelGrid.msg"
+  "msg/SlopeMap.msg"
   "msg/TerrainInfo.msg"
   "msg/VoxelGrid3D.msg"
   "msg/PathCost.msg"
-  DEPENDENCIES std_msgs geometry_msgs
+  "srv/AnalyzeTerrain.srv"
+  DEPENDENCIES
+  std_msgs
+  geometry_msgs
+  sensor_msgs
 )
 
 # Python実行ファイルのインストール
