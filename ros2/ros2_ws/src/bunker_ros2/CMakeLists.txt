@@ -20,40 +20,35 @@ find_package(tf2_geometry_msgs REQUIRED)
 
 # Generate custom messages
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/VoxelGrid3D.msg"
-  "msg/TerrainInfo.msg"
-  "msg/PathCost.msg"
+  "bunker_3d_nav/msg/Path3D.msg"
   DEPENDENCIES std_msgs geometry_msgs
 )
 
 # Install Python executables
 install(PROGRAMS
-  terrain_analyzer/voxel_grid_processor.py
-  terrain_analyzer/slope_calculator.py
-  terrain_analyzer/terrain_analyzer_node.py
-  terrain_analyzer/terrain_visualizer.py
-  unity_bridge/ros_to_unity_converter.py
-  unity_bridge/tcp_server_node.py
+  bunker_3d_nav/terrain_analyzer/voxel_grid_processor.py
+  bunker_3d_nav/terrain_analyzer/slope_calculator.py
+  bunker_3d_nav/terrain_analyzer/terrain_analyzer_node.py
+  bunker_3d_nav/terrain_analyzer/terrain_visualizer.py
+  bunker_3d_nav/unity_bridge/ros_to_unity_converter.py
+  bunker_3d_nav/unity_bridge/tcp_server_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
 # Install configuration files
 install(DIRECTORY
-  config/
+  bunker_3d_nav/config/
   DESTINATION share/${PROJECT_NAME}/config
 )
 
 # Install launch files
 install(DIRECTORY
-  launch/
+  bunker_3d_nav/launch/
   DESTINATION share/${PROJECT_NAME}/launch
 )
 
 # Export dependencies for Python bindings
 ament_export_dependencies(rosidl_default_runtime)
-
-# Install Python modules
-ament_python_install_package(${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

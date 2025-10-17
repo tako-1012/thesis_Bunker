@@ -25,6 +25,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/TerrainInfo.msg"
   "msg/VoxelGrid3D.msg"
   "msg/PathCost.msg"
+  "msg/Path3D.msg"
   "srv/AnalyzeTerrain.srv"
   DEPENDENCIES
   std_msgs
