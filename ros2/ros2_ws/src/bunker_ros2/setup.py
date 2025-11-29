@@ -7,7 +7,7 @@ package_name = 'bunker_3d_nav'
 setup(
     name=package_name,
     version='0.1.0',
-    packages=find_packages(exclude=['test']),
+    packages=find_packages(),
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -28,6 +28,8 @@ setup(
             'terrain_analyzer_node = bunker_3d_nav.terrain_analyzer.terrain_analyzer_node:main',
             'path_planner_3d_node = bunker_3d_nav.path_planner_3d.path_planner_node:main',
             'tcp_server_node = bunker_3d_nav.unity_bridge.tcp_server_node:main',
+            'ta_star_planner_node = bunker_3d_nav.ta_star_planner.ta_star_planner_node:main',
+            'terrain_complexity_node = bunker_3d_nav.path_planner_3d.terrain_complexity_node:main',
         ],
     },
 )

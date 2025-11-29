@@ -1,0 +1,18 @@
+{
+  "scenario_id": 13,
+  "terrain_name": "Extreme Hazards",
+  "terrain_type": "Extreme Terrain",
+  "map_size": 50.0,
+  "start": [
+    -15.014031919950567,
+    21.46404594641689,
+    4.2
+  ],
+  "goal": [
+    21.02257961622871,
+    4.506789479130354,
+    4.2
+  ],
+  "distance": 39.826949643511746,
+  "max_slope": 35.0
+}

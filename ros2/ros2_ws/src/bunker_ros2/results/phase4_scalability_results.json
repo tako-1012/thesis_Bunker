@@ -1,0 +1,544 @@
+{
+  "small": {
+    "A*": [
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 0.08653521537780762,
+        "path_length": 9.150966799187803,
+        "nodes_explored": 180,
+        "distance": 9.37357021939737
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 1.7063102722167969,
+        "path_length": 9.121320343559619,
+        "nodes_explored": 6974,
+        "distance": 8.842878901862282
+      },
+      {
+        "scenario_id": 5,
+        "success": true,
+        "computation_time": 3.198809862136841,
+        "path_length": 9.891168824543119,
+        "nodes_explored": 14312,
+        "distance": 9.433546518439083
+      },
+      {
+        "scenario_id": 6,
+        "success": true,
+        "computation_time": 0.023026704788208008,
+        "path_length": 8.699999999999987,
+        "nodes_explored": 88,
+        "distance": 8.986010248525908
+      },
+      {
+        "scenario_id": 8,
+        "success": true,
+        "computation_time": 0.01994919776916504,
+        "path_length": 10.323759005323584,
+        "nodes_explored": 74,
+        "distance": 10.550427677014074
+      },
+      {
+        "scenario_id": 9,
+        "success": true,
+        "computation_time": 3.319685935974121,
+        "path_length": 10.7367532368147,
+        "nodes_explored": 14479,
+        "distance": 10.325000188217588
+      }
+    ],
+    "Weighted A*": [
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 0.028300046920776367,
+        "path_length": 9.192388155425112,
+        "nodes_explored": 66,
+        "distance": 9.37357021939737
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 0.024401187896728516,
+        "path_length": 9.121320343559622,
+        "nodes_explored": 86,
+        "distance": 8.842878901862282
+      },
+      {
+        "scenario_id": 5,
+        "success": true,
+        "computation_time": 0.02303481101989746,
+        "path_length": 9.89116882454312,
+        "nodes_explored": 85,
+        "distance": 9.433546518439083
+      },
+      {
+        "scenario_id": 6,
+        "success": true,
+        "computation_time": 0.022792339324951172,
+        "path_length": 8.699999999999987,
+        "nodes_explored": 88,
+        "distance": 8.986010248525908
+      },
+      {
+        "scenario_id": 8,
+        "success": true,
+        "computation_time": 0.01962900161743164,
+        "path_length": 10.323759005323584,
+        "nodes_explored": 74,
+        "distance": 10.550427677014074
+      },
+      {
+        "scenario_id": 9,
+        "success": true,
+        "computation_time": 0.022722959518432617,
+        "path_length": 10.7367532368147,
+        "nodes_explored": 86,
+        "distance": 10.325000188217588
+      }
+    ],
+    "RRT*": [
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 0.0032689571380615234,
+        "path_length": 10.074904745199618,
+        "nodes_explored": 49,
+        "distance": 9.37357021939737
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 0.0019130706787109375,
+        "path_length": 9.02524215236046,
+        "nodes_explored": 51,
+        "distance": 8.842878901862282
+      },
+      {
+        "scenario_id": 5,
+        "success": true,
+        "computation_time": 0.00174713134765625,
+        "path_length": 10.320850810040467,
+        "nodes_explored": 46,
+        "distance": 9.433546518439083
+      },
+      {
+        "scenario_id": 6,
+        "success": true,
+        "computation_time": 0.002545595169067383,
+        "path_length": 9.328512959260282,
+        "nodes_explored": 60,
+        "distance": 8.986010248525908
+      },
+      {
+        "scenario_id": 8,
+        "success": false,
+        "computation_time": 8.532079935073853,
+        "path_length": 0,
+        "nodes_explored": 2952,
+        "distance": 10.550427677014074
+      },
+      {
+        "scenario_id": 9,
+        "success": false,
+        "computation_time": 8.456625699996948,
+        "path_length": 0,
+        "nodes_explored": 2945,
+        "distance": 10.325000188217588
+      }
+    ],
+    "TA-A* (Proposed)": [
+      {
+        "scenario_id": 3,
+        "success": false,
+        "computation_time": 161.88745546340942,
+        "path_length": 0,
+        "nodes_explored": 600517,
+        "distance": 9.37357021939737
+      },
+      {
+        "scenario_id": 4,
+        "success": false,
+        "computation_time": 98.91458582878113,
+        "path_length": 0,
+        "nodes_explored": 400827,
+        "distance": 8.842878901862282
+      },
+      {
+        "scenario_id": 5,
+        "success": false,
+        "computation_time": 113.89492654800415,
+        "path_length": 0,
+        "nodes_explored": 470302,
+        "distance": 9.433546518439083
+      },
+      {
+        "scenario_id": 6,
+        "success": false,
+        "computation_time": 239.35176301002502,
+        "path_length": 0,
+        "nodes_explored": 939532,
+        "distance": 8.986010248525908
+      },
+      {
+        "scenario_id": 8,
+        "success": false,
+        "computation_time": 172.03627610206604,
+        "path_length": 0,
+        "nodes_explored": 686977,
+        "distance": 10.550427677014074
+      },
+      {
+        "scenario_id": 9,
+        "success": false,
+        "computation_time": 219.8405933380127,
+        "path_length": 0,
+        "nodes_explored": 867484,
+        "distance": 10.325000188217588
+      }
+    ]
+  },
+  "medium": {
+    "A*": [
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 2.667741060256958,
+        "path_length": 28.959797974644587,
+        "nodes_explored": 11580,
+        "distance": 28.516487702918404
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 1.1104841232299805,
+        "path_length": 23.73036072312176,
+        "nodes_explored": 4799,
+        "distance": 23.766576132386987
+      },
+      {
+        "scenario_id": 7,
+        "success": true,
+        "computation_time": 5.082017660140991,
+        "path_length": 28.153910524340006,
+        "nodes_explored": 22268,
+        "distance": 27.2959939335787
+      },
+      {
+        "scenario_id": 8,
+        "success": true,
+        "computation_time": 8.921178102493286,
+        "path_length": 33.45096679918771,
+        "nodes_explored": 37754,
+        "distance": 32.12535968232506
+      },
+      {
+        "scenario_id": 9,
+        "success": true,
+        "computation_time": 0.029111385345458984,
+        "path_length": 30.547012947258796,
+        "nodes_explored": 109,
+        "distance": 31.111237139309605
+      },
+      {
+        "scenario_id": 10,
+        "success": true,
+        "computation_time": 1.4671518802642822,
+        "path_length": 24.945584412271526,
+        "nodes_explored": 6454,
+        "distance": 25.018468416045177
+      },
+      {
+        "scenario_id": 11,
+        "success": true,
+        "computation_time": 5.781753063201904,
+        "path_length": 30.31025971044406,
+        "nodes_explored": 25937,
+        "distance": 29.30996406199186
+      },
+      {
+        "scenario_id": 12,
+        "success": true,
+        "computation_time": 3.9852163791656494,
+        "path_length": 22.41076477383242,
+        "nodes_explored": 16765,
+        "distance": 21.376035008437483
+      }
+    ],
+    "Weighted A*": [
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 0.037338972091674805,
+        "path_length": 28.842640687119214,
+        "nodes_explored": 139,
+        "distance": 28.516487702918404
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 0.02437138557434082,
+        "path_length": 23.813203435596378,
+        "nodes_explored": 89,
+        "distance": 23.766576132386987
+      },
+      {
+        "scenario_id": 7,
+        "success": true,
+        "computation_time": 0.035032033920288086,
+        "path_length": 28.153910524340006,
+        "nodes_explored": 131,
+        "distance": 27.2959939335787
+      },
+      {
+        "scenario_id": 8,
+        "success": true,
+        "computation_time": 0.04300832748413086,
+        "path_length": 33.450966799187725,
+        "nodes_explored": 155,
+        "distance": 32.12535968232506
+      },
+      {
+        "scenario_id": 9,
+        "success": true,
+        "computation_time": 0.030177831649780273,
+        "path_length": 30.547012947258796,
+        "nodes_explored": 109,
+        "distance": 31.111237139309605
+      },
+      {
+        "scenario_id": 10,
+        "success": true,
+        "computation_time": 0.03167390823364258,
+        "path_length": 24.945584412271522,
+        "nodes_explored": 122,
+        "distance": 25.018468416045177
+      },
+      {
+        "scenario_id": 11,
+        "success": true,
+        "computation_time": 0.031137704849243164,
+        "path_length": 30.31025971044406,
+        "nodes_explored": 119,
+        "distance": 29.30996406199186
+      },
+      {
+        "scenario_id": 12,
+        "success": true,
+        "computation_time": 0.025774717330932617,
+        "path_length": 22.41076477383242,
+        "nodes_explored": 94,
+        "distance": 21.376035008437483
+      }
+    ],
+    "RRT*": [
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 0.03130507469177246,
+        "path_length": 29.92409836803131,
+        "nodes_explored": 245,
+        "distance": 28.516487702918404
+      },
+      {
+        "scenario_id": 4,
+        "success": false,
+        "computation_time": 9.792036056518555,
+        "path_length": 0,
+        "nodes_explored": 2869,
+        "distance": 23.766576132386987
+      },
+      {
+        "scenario_id": 7,
+        "success": true,
+        "computation_time": 0.011434078216552734,
+        "path_length": 30.527436594955542,
+        "nodes_explored": 142,
+        "distance": 27.2959939335787
+      },
+      {
+        "scenario_id": 8,
+        "success": true,
+        "computation_time": 0.013843297958374023,
+        "path_length": 34.69321631124041,
+        "nodes_explored": 157,
+        "distance": 32.12535968232506
+      },
+      {
+        "scenario_id": 9,
+        "success": true,
+        "computation_time": 0.020917415618896484,
+        "path_length": 33.332004313385646,
+        "nodes_explored": 196,
+        "distance": 31.111237139309605
+      },
+      {
+        "scenario_id": 10,
+        "success": true,
+        "computation_time": 0.0176393985748291,
+        "path_length": 27.29557141659451,
+        "nodes_explored": 181,
+        "distance": 25.018468416045177
+      },
+      {
+        "scenario_id": 11,
+        "success": true,
+        "computation_time": 0.017331600189208984,
+        "path_length": 32.1362405991997,
+        "nodes_explored": 182,
+        "distance": 29.30996406199186
+      },
+      {
+        "scenario_id": 12,
+        "success": true,
+        "computation_time": 0.006259441375732422,
+        "path_length": 23.228039120519178,
+        "nodes_explored": 102,
+        "distance": 21.376035008437483
+      }
+    ],
+    "TA-A* (Proposed)": [
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 162.73478198051453,
+        "path_length": 29.042640687119214,
+        "nodes_explored": 631148,
+        "distance": 28.516487702918404
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 56.42381715774536,
+        "path_length": 24.013203435596377,
+        "nodes_explored": 224780,
+        "distance": 23.766576132386987
+      },
+      {
+        "scenario_id": 7,
+        "success": true,
+        "computation_time": 190.08454155921936,
+        "path_length": 28.436753236814628,
+        "nodes_explored": 728440,
+        "distance": 27.2959939335787
+      },
+      {
+        "scenario_id": 8,
+        "success": true,
+        "computation_time": 357.5801203250885,
+        "path_length": 33.650966799187714,
+        "nodes_explored": 1393785,
+        "distance": 32.12535968232506
+      },
+      {
+        "scenario_id": 9,
+        "success": true,
+        "computation_time": 65.24878096580505,
+        "path_length": 30.747012947258796,
+        "nodes_explored": 267192,
+        "distance": 31.111237139309605
+      },
+      {
+        "scenario_id": 10,
+        "success": true,
+        "computation_time": 237.12812876701355,
+        "path_length": 25.22842712474614,
+        "nodes_explored": 937130,
+        "distance": 25.018468416045177
+      },
+      {
+        "scenario_id": 11,
+        "success": true,
+        "computation_time": 96.41196060180664,
+        "path_length": 30.510259710444064,
+        "nodes_explored": 385284,
+        "distance": 29.30996406199186
+      },
+      {
+        "scenario_id": 12,
+        "success": true,
+        "computation_time": 49.28671050071716,
+        "path_length": 22.493607486307038,
+        "nodes_explored": 192572,
+        "distance": 21.376035008437483
+      }
+    ]
+  },
+  "large": {
+    "A*": [
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 1.8647167682647705,
+        "path_length": 47.248737341529115,
+        "nodes_explored": 8598,
+        "distance": 44.862085696424835
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 0.3136012554168701,
+        "path_length": 62.39696961966991,
+        "nodes_explored": 1434,
+        "distance": 62.48930544176818
+      }
+    ],
+    "Weighted A*": [
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 0.018023967742919922,
+        "path_length": 47.24873734152915,
+        "nodes_explored": 81,
+        "distance": 44.862085696424835
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 0.020213603973388672,
+        "path_length": 62.39696961966992,
+        "nodes_explored": 91,
+        "distance": 62.48930544176818
+      }
+    ],
+    "RRT*": [
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 0.018186330795288086,
+        "path_length": 47.36953650162813,
+        "nodes_explored": 189,
+        "distance": 44.862085696424835
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 0.09415292739868164,
+        "path_length": 65.32167729257496,
+        "nodes_explored": 444,
+        "distance": 62.48930544176818
+      }
+    ],
+    "TA-A* (Proposed)": [
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 12.508364915847778,
+        "path_length": 47.24873734152913,
+        "nodes_explored": 53825,
+        "distance": 44.862085696424835
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 13.671395540237427,
+        "path_length": 62.39696961966992,
+        "nodes_explored": 58216,
+        "distance": 62.48930544176818
+      }
+    ]
+  }
+}

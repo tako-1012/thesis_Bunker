@@ -1,0 +1,42 @@
+{
+  "A*": [
+    {
+      "scenario_id": "extreme_001",
+      "success": true,
+      "path_length": 106,
+      "computation_time": 0.25226688385009766,
+      "terrain_type": "Extreme Steep"
+    },
+    {
+      "scenario_id": "extreme_002",
+      "success": true,
+      "path_length": 116,
+      "computation_time": 0.2750272750854492,
+      "terrain_type": "Cliff"
+    },
+    {
+      "scenario_id": "extreme_003",
+      "success": true,
+      "path_length": 121,
+      "computation_time": 0.2912912368774414,
+      "terrain_type": "Mixed Extreme"
+    }
+  ],
+  "TA-A* (Proposed)": [
+    {
+      "scenario_id": "extreme_001",
+      "success": false,
+      "error": "'TerrainAwareAStarPlanner3D' object has no attribute 'logger'"
+    },
+    {
+      "scenario_id": "extreme_002",
+      "success": false,
+      "error": "'TerrainAwareAStarPlanner3D' object has no attribute 'logger'"
+    },
+    {
+      "scenario_id": "extreme_003",
+      "success": false,
+      "error": "'TerrainAwareAStarPlanner3D' object has no attribute 'logger'"
+    }
+  ]
+}

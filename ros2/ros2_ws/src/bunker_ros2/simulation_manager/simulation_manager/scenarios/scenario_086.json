@@ -1,0 +1,35 @@
+{
+  "scenario_id": 86,
+  "name": "narrow_passage_06",
+  "description": "\u72ed\u3044\u901a\u8def\u3067\u306e\u7cbe\u5bc6\u5236\u5fa1\u8a55\u4fa1 \uff08\u969c\u5bb3\u7269\u5bc6\u5ea6: 0.58, \u6700\u5927\u52fe\u914d: 12.3\u5ea6, \u7c97\u3055: 0.37\uff09",
+  "terrain_params": {
+    "terrain_type": "narrow_passage",
+    "size_x": 10.0,
+    "size_y": 10.0,
+    "size_z": 2.0,
+    "obstacle_density": 0.5813239096576769,
+    "max_slope": 12.293190113400755,
+    "roughness": 0.3690559954173826,
+    "narrow_passage_width": 1.1625089462584568,
+    "difficulty": "hard"
+  },
+  "robot_params": {
+    "max_slope_capability": 30.0,
+    "width": 0.8,
+    "height": 0.6,
+    "safety_margin": 0.2
+  },
+  "start_position": [
+    1.926994785917169,
+    1.5486561671382701,
+    0.0
+  ],
+  "goal_position": [
+    8.671861783563038,
+    8.507456384910807,
+    0.3417136294707661
+  ],
+  "expected_difficulty": "hard",
+  "created_at": "2025-10-17T15:10:08.061684",
+  "checksum": "846db38fa478c377"
+}

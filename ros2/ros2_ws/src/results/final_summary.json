@@ -1,0 +1,22 @@
+{
+  "generated_at": "2025-10-25T16:54:39.439864",
+  "research_title": "Terrain-Aware Path Planning for UGV",
+  "phases": {
+    "phase_q9": {
+      "name": "標準ベンチマーク",
+      "status": "completed",
+      "scenarios": 150,
+      "categories": 3
+    },
+    "phase_q11": {
+      "name": "理論的証明",
+      "status": "completed",
+      "proofs": [
+        "completeness",
+        "optimality",
+        "convergence",
+        "complexity"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Extreme Hazards",
+  "description": "\u6539\u826f\u7248\u6975\u7aef\u5730\u5f62\u3002\u5ce1\u8c37\u3042\u308a\u3001\u52fe\u914d25-35\u5ea6\u3001\u901a\u884c\u53ef\u80fd\u306a\u8fc2\u56de\u8def\u3042\u308a",
+  "size": 50.0,
+  "terrain_type": "Extreme Terrain",
+  "max_slope": 35.0,
+  "grid_size": 100,
+  "resolution": 0.5,
+  "version": "improved_v2"
+}

@@ -1,0 +1,18 @@
+{
+  "total_scenarios": 100,
+  "distribution": {
+    "flat_terrain": 10,
+    "gentle_slope": 15,
+    "steep_slope": 15,
+    "mixed_terrain": 20,
+    "obstacle_field": 20,
+    "narrow_passage": 10,
+    "complex_3d": 10
+  },
+  "difficulty_distribution": {
+    "easy": 43,
+    "medium": 44,
+    "hard": 13
+  },
+  "generated_at": "2025-10-17T15:19:42.216752"
+}

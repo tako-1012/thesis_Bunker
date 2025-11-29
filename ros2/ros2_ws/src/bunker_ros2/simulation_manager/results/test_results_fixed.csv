@@ -1,0 +1,4 @@
+scenario_id,scenario_name,success,path_found,path_length,num_waypoints,computation_time,memory_usage,cost_breakdown,error_message,executed_at
+0,flat_terrain_00,True,True,8.147483700823944,59,11.943252325057983,0.0,{},,2025-10-17T15:19:54.167345
+1,flat_terrain_01,True,True,10.181652484302912,71,40.7285521030426,0.0,{},,2025-10-17T15:20:34.902549
+2,flat_terrain_02,True,True,9.603871472890656,70,54.48131012916565,0.0,{},,2025-10-17T15:21:29.391522

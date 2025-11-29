@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "timestamp": "20251117_102444",
+    "voxel_size": 0.1,
+    "grid_size": [
+      200,
+      200,
+      50
+    ],
+    "total_scenarios": 2
+  },
+  "results": {
+    "quick_short": {
+      "scenario": {
+        "name": "quick_short",
+        "description": "短距離（5m, 平地）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          5.0,
+          0.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.07317709922790527,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": false,
+          "error": "HierarchicalAStar3D.plan_path() got an unexpected keyword argument 'terrain_data'",
+          "computation_time": 0.0,
+          "nodes_explored": 0
+        }
+      }
+    },
+    "quick_diag": {
+      "scenario": {
+        "name": "quick_diag",
+        "description": "斜め移動（約10m, 平地）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          7.0,
+          7.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 71,
+          "path_distance": 9.899494936611667,
+          "nodes_explored": 71,
+          "computation_time": 0.14625120162963867,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": false,
+          "error": "HierarchicalAStar3D.plan_path() got an unexpected keyword argument 'terrain_data'",
+          "computation_time": 0.0,
+          "nodes_explored": 0
+        }
+      }
+    }
+  }
+}

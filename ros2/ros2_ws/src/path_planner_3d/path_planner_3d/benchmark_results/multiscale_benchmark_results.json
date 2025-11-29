@@ -1,0 +1,4502 @@
+[
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_001",
+    "success": true,
+    "computation_time": 0.010593414306640625,
+    "path_length": 3.7242640687119293,
+    "num_waypoints": 37,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:21:31.645119"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_001",
+    "success": true,
+    "computation_time": 26.694688320159912,
+    "path_length": 3.3555162700099626,
+    "num_waypoints": 8,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:21:58.340187"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_001",
+    "success": true,
+    "computation_time": 0.22883152961730957,
+    "path_length": 3.693746680470121,
+    "num_waypoints": 37,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:21:58.569873"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_001",
+    "success": true,
+    "computation_time": 0.2183058261871338,
+    "path_length": 3.7650281539872887,
+    "num_waypoints": 6,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:21:58.788600"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_001",
+    "success": true,
+    "computation_time": 0.010731220245361328,
+    "path_length": 3.7242640687119293,
+    "num_waypoints": 37,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:21:58.799943"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_002",
+    "success": true,
+    "computation_time": 0.012969970703125,
+    "path_length": 3.3941125496954285,
+    "num_waypoints": 25,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:21:58.813629"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_002",
+    "success": true,
+    "computation_time": 24.06844401359558,
+    "path_length": 3.1951370554564233,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:22.882762"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_002",
+    "success": true,
+    "computation_time": 0.2116835117340088,
+    "path_length": 3.4045151632094264,
+    "num_waypoints": 25,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:23.095212"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_002",
+    "success": true,
+    "computation_time": 0.21942687034606934,
+    "path_length": 3.5192050788946534,
+    "num_waypoints": 5,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:23.315144"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_002",
+    "success": true,
+    "computation_time": 0.008246660232543945,
+    "path_length": 3.3941125496954285,
+    "num_waypoints": 25,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:23.325112"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_003",
+    "success": true,
+    "computation_time": 0.017413616180419922,
+    "path_length": 3.5071067811865473,
+    "num_waypoints": 34,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:23.343369"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_003",
+    "success": true,
+    "computation_time": 24.654240131378174,
+    "path_length": 3.6623521838342636,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:47.998568"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_003",
+    "success": true,
+    "computation_time": 0.2616591453552246,
+    "path_length": 3.5771741948407083,
+    "num_waypoints": 34,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:48.261408"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_003",
+    "success": true,
+    "computation_time": 0.21277070045471191,
+    "path_length": 3.3573625741735533,
+    "num_waypoints": 4,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:48.474768"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_003",
+    "success": true,
+    "computation_time": 0.010011911392211914,
+    "path_length": 3.5071067811865473,
+    "num_waypoints": 34,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:48.485455"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_004",
+    "success": true,
+    "computation_time": 0.01881861686706543,
+    "path_length": 3.407106781186547,
+    "num_waypoints": 33,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:22:48.505224"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_004",
+    "success": true,
+    "computation_time": 25.313030242919922,
+    "path_length": 3.2235957431853435,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:13.819436"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_004",
+    "success": true,
+    "computation_time": 0.21608543395996094,
+    "path_length": 3.515509900098386,
+    "num_waypoints": 33,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:14.037173"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_004",
+    "success": true,
+    "computation_time": 0.22013235092163086,
+    "path_length": 3.245243434040116,
+    "num_waypoints": 4,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:14.257998"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_004",
+    "success": true,
+    "computation_time": 0.0070171356201171875,
+    "path_length": 3.407106781186547,
+    "num_waypoints": 33,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:14.265784"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_005",
+    "success": true,
+    "computation_time": 0.07769584655761719,
+    "path_length": 7.074011537017762,
+    "num_waypoints": 56,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:14.344758"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_005",
+    "success": true,
+    "computation_time": 23.873777627944946,
+    "path_length": 7.413431169798409,
+    "num_waypoints": 14,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:38.220073"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_005",
+    "success": true,
+    "computation_time": 0.22288894653320312,
+    "path_length": 7.112047436012283,
+    "num_waypoints": 56,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:38.444286"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_005",
+    "success": true,
+    "computation_time": 0.23508238792419434,
+    "path_length": 7.038933237058964,
+    "num_waypoints": 9,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:38.680676"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_005",
+    "success": true,
+    "computation_time": 0.08224010467529297,
+    "path_length": 7.074011537017762,
+    "num_waypoints": 56,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:38.764345"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_006",
+    "success": true,
+    "computation_time": 0.04549670219421387,
+    "path_length": 4.735533905932738,
+    "num_waypoints": 38,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:23:38.812009"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_006",
+    "success": true,
+    "computation_time": 25.43271255493164,
+    "path_length": 4.287877114354816,
+    "num_waypoints": 9,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:04.246479"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_006",
+    "success": true,
+    "computation_time": 0.267852783203125,
+    "path_length": 4.653226662123072,
+    "num_waypoints": 38,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:04.515817"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_006",
+    "success": true,
+    "computation_time": 0.24347543716430664,
+    "path_length": 4.605109240778462,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:04.760787"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_006",
+    "success": true,
+    "computation_time": 0.028912782669067383,
+    "path_length": 4.735533905932738,
+    "num_waypoints": 38,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:04.790891"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_007",
+    "success": true,
+    "computation_time": 0.05721545219421387,
+    "path_length": 6.008326112068524,
+    "num_waypoints": 47,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:04.850582"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_007",
+    "success": true,
+    "computation_time": 25.81591510772705,
+    "path_length": 5.94421578489387,
+    "num_waypoints": 9,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:30.668805"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_007",
+    "success": true,
+    "computation_time": 0.2259986400604248,
+    "path_length": 6.034041629084259,
+    "num_waypoints": 47,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:30.896230"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_007",
+    "success": true,
+    "computation_time": 0.23478460311889648,
+    "path_length": 6.417510697766857,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:31.132051"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_007",
+    "success": true,
+    "computation_time": 0.05091118812561035,
+    "path_length": 6.008326112068524,
+    "num_waypoints": 47,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:31.184189"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_008",
+    "success": true,
+    "computation_time": 0.039719581604003906,
+    "path_length": 5.638477631085022,
+    "num_waypoints": 52,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:31.226986"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_008",
+    "success": true,
+    "computation_time": 24.85335636138916,
+    "path_length": 5.663291812584243,
+    "num_waypoints": 9,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:56.082693"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_008",
+    "success": true,
+    "computation_time": 0.27554965019226074,
+    "path_length": 5.670658175388647,
+    "num_waypoints": 52,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:56.359786"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_008",
+    "success": true,
+    "computation_time": 0.22577714920043945,
+    "path_length": 5.361455317103717,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:56.586541"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_008",
+    "success": true,
+    "computation_time": 0.04172348976135254,
+    "path_length": 5.638477631085022,
+    "num_waypoints": 52,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:56.630276"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_009",
+    "success": true,
+    "computation_time": 0.020284652709960938,
+    "path_length": 3.3384776310850253,
+    "num_waypoints": 29,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:24:56.653129"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_009",
+    "success": true,
+    "computation_time": 26.085562705993652,
+    "path_length": 2.978345106168614,
+    "num_waypoints": 6,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:22.741662"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_009",
+    "success": true,
+    "computation_time": 0.22081208229064941,
+    "path_length": 3.4307004702463972,
+    "num_waypoints": 29,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:22.964234"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_009",
+    "success": true,
+    "computation_time": 0.2176673412322998,
+    "path_length": 3.141968962724582,
+    "num_waypoints": 4,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:23.183309"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_009",
+    "success": true,
+    "computation_time": 0.010253190994262695,
+    "path_length": 3.3384776310850253,
+    "num_waypoints": 29,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:23.194977"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_simple_010",
+    "success": true,
+    "computation_time": 0.025892257690429688,
+    "path_length": 4.318376618407356,
+    "num_waypoints": 33,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:23.223031"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_simple_010",
+    "success": true,
+    "computation_time": 24.745662450790405,
+    "path_length": 4.5495787126343545,
+    "num_waypoints": 8,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:47.971974"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_simple_010",
+    "success": true,
+    "computation_time": 0.2538940906524658,
+    "path_length": 4.345096263586948,
+    "num_waypoints": 33,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:48.227811"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_simple_010",
+    "success": true,
+    "computation_time": 0.22837471961975098,
+    "path_length": 4.310560618708789,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:48.457331"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_simple_010",
+    "success": true,
+    "computation_time": 0.015247821807861328,
+    "path_length": 4.318376618407356,
+    "num_waypoints": 33,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:25:48.473973"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_001",
+    "success": true,
+    "computation_time": 0.08539533615112305,
+    "path_length": 4.962741699796951,
+    "num_waypoints": 44,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:25:48.562914"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_001",
+    "success": true,
+    "computation_time": 22.59087824821472,
+    "path_length": 4.874323528763383,
+    "num_waypoints": 9,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:11.156931"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_001",
+    "success": true,
+    "computation_time": 0.2668616771697998,
+    "path_length": 5.031628807247067,
+    "num_waypoints": 44,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:11.425431"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_001",
+    "success": true,
+    "computation_time": 0.28876328468322754,
+    "path_length": 4.670533538175086,
+    "num_waypoints": 5,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:11.716221"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_001",
+    "success": true,
+    "computation_time": 0.0937037467956543,
+    "path_length": 4.962741699796951,
+    "num_waypoints": 44,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:11.811540"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_002",
+    "success": true,
+    "computation_time": 0.14265108108520508,
+    "path_length": 7.156854249492382,
+    "num_waypoints": 56,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:11.957768"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_002",
+    "success": true,
+    "computation_time": 23.547134160995483,
+    "path_length": 7.499999999999998,
+    "num_waypoints": 16,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:35.507085"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_002",
+    "success": true,
+    "computation_time": 0.2378098964691162,
+    "path_length": 7.164545762759899,
+    "num_waypoints": 56,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:35.746674"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_002",
+    "success": true,
+    "computation_time": 0.35945963859558105,
+    "path_length": 7.028434371465297,
+    "num_waypoints": 8,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:36.107599"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_002",
+    "success": true,
+    "computation_time": 0.12414669990539551,
+    "path_length": 7.156854249492382,
+    "num_waypoints": 56,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:36.234379"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_003",
+    "success": true,
+    "computation_time": 0.12816762924194336,
+    "path_length": 7.763961030678928,
+    "num_waypoints": 60,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:36.364463"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_003",
+    "success": true,
+    "computation_time": 22.66057586669922,
+    "path_length": 7.545564538042494,
+    "num_waypoints": 13,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:59.026924"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_003",
+    "success": true,
+    "computation_time": 0.3025064468383789,
+    "path_length": 7.691215525715702,
+    "num_waypoints": 60,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:59.332029"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_003",
+    "success": true,
+    "computation_time": 0.31077146530151367,
+    "path_length": 7.61465163010315,
+    "num_waypoints": 10,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:59.644231"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_003",
+    "success": true,
+    "computation_time": 0.13003921508789062,
+    "path_length": 7.763961030678928,
+    "num_waypoints": 60,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:59.776483"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_004",
+    "success": true,
+    "computation_time": 0.05793285369873047,
+    "path_length": 4.318376618407357,
+    "num_waypoints": 33,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:26:59.836272"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_004",
+    "success": true,
+    "computation_time": 24.35868549346924,
+    "path_length": 4.562095332467772,
+    "num_waypoints": 9,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:24.196870"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_004",
+    "success": true,
+    "computation_time": 0.22459697723388672,
+    "path_length": 4.342667076982632,
+    "num_waypoints": 33,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:24.423666"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_004",
+    "success": true,
+    "computation_time": 0.2972736358642578,
+    "path_length": 4.276959084079024,
+    "num_waypoints": 5,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:24.722597"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_004",
+    "success": true,
+    "computation_time": 0.05736088752746582,
+    "path_length": 4.318376618407357,
+    "num_waypoints": 33,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:24.781773"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_005",
+    "success": true,
+    "computation_time": 0.08618402481079102,
+    "path_length": 5.948528137423858,
+    "num_waypoints": 58,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:24.870844"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_005",
+    "success": true,
+    "computation_time": 24.910930395126343,
+    "path_length": 6.21287161064829,
+    "num_waypoints": 11,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:49.783632"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_005",
+    "success": true,
+    "computation_time": 0.2739896774291992,
+    "path_length": 5.996057839829917,
+    "num_waypoints": 58,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:50.059926"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_005",
+    "success": true,
+    "computation_time": 0.2977869510650635,
+    "path_length": 5.974201628313792,
+    "num_waypoints": 8,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:50.360041"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_005",
+    "success": true,
+    "computation_time": 0.08342194557189941,
+    "path_length": 5.948528137423858,
+    "num_waypoints": 58,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:50.446389"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_006",
+    "success": true,
+    "computation_time": 0.06814789772033691,
+    "path_length": 4.735533905932738,
+    "num_waypoints": 38,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:27:50.516762"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_006",
+    "success": true,
+    "computation_time": 24.1611270904541,
+    "path_length": 4.6049185268584605,
+    "num_waypoints": 10,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:14.679932"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_006",
+    "success": true,
+    "computation_time": 0.2247314453125,
+    "path_length": 4.803226159522482,
+    "num_waypoints": 38,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:14.906873"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_006",
+    "success": true,
+    "computation_time": 0.30389857292175293,
+    "path_length": 4.534306749254935,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:15.212643"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_006",
+    "success": true,
+    "computation_time": 0.06805634498596191,
+    "path_length": 4.735533905932738,
+    "num_waypoints": 38,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:15.282597"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_007",
+    "success": true,
+    "computation_time": 0.06590104103088379,
+    "path_length": 4.842640687119285,
+    "num_waypoints": 37,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:15.351470"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_007",
+    "success": true,
+    "computation_time": 24.80683159828186,
+    "path_length": 4.721567504901788,
+    "num_waypoints": 8,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:40.160982"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_007",
+    "success": true,
+    "computation_time": 0.2719156742095947,
+    "path_length": 4.921169705087475,
+    "num_waypoints": 37,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:40.435450"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_007",
+    "success": true,
+    "computation_time": 0.296450138092041,
+    "path_length": 5.248787272859484,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:40.735051"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_007",
+    "success": true,
+    "computation_time": 0.07003092765808105,
+    "path_length": 4.842640687119285,
+    "num_waypoints": 37,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:40.807195"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_008",
+    "success": true,
+    "computation_time": 0.04573369026184082,
+    "path_length": 3.9769552621700472,
+    "num_waypoints": 30,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:28:40.856018"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_008",
+    "success": true,
+    "computation_time": 21.955774307250977,
+    "path_length": 4.191080233328029,
+    "num_waypoints": 8,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:02.816873"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_008",
+    "success": true,
+    "computation_time": 0.2196791172027588,
+    "path_length": 3.8893983669635195,
+    "num_waypoints": 30,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:03.038617"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_008",
+    "success": true,
+    "computation_time": 0.2880558967590332,
+    "path_length": 4.043633739250387,
+    "num_waypoints": 5,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:03.328890"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_008",
+    "success": true,
+    "computation_time": 0.045401573181152344,
+    "path_length": 3.9769552621700472,
+    "num_waypoints": 30,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:03.376390"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_009",
+    "success": true,
+    "computation_time": 0.0370180606842041,
+    "path_length": 3.4284271247461904,
+    "num_waypoints": 27,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:03.418496"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_009",
+    "success": true,
+    "computation_time": 23.595958948135376,
+    "path_length": 3.259768612026206,
+    "num_waypoints": 8,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:27.019718"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_009",
+    "success": true,
+    "computation_time": 0.21827006340026855,
+    "path_length": 3.353352006610474,
+    "num_waypoints": 27,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:27.240315"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_009",
+    "success": true,
+    "computation_time": 0.28969478607177734,
+    "path_length": 3.5258774205639547,
+    "num_waypoints": 4,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:27.532317"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_009",
+    "success": true,
+    "computation_time": 0.031615257263183594,
+    "path_length": 3.4284271247461904,
+    "num_waypoints": 27,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:27.566164"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_moderate_010",
+    "success": true,
+    "computation_time": 0.08521080017089844,
+    "path_length": 4.8355339059327385,
+    "num_waypoints": 39,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:27.656678"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_moderate_010",
+    "success": true,
+    "computation_time": 23.152024030685425,
+    "path_length": 5.4380542235766836,
+    "num_waypoints": 10,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:50.811765"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_moderate_010",
+    "success": true,
+    "computation_time": 0.22381901741027832,
+    "path_length": 4.998001577372646,
+    "num_waypoints": 39,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:51.037941"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_moderate_010",
+    "success": true,
+    "computation_time": 0.30167222023010254,
+    "path_length": 4.918466702764238,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:51.341839"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_moderate_010",
+    "success": true,
+    "computation_time": 0.07267570495605469,
+    "path_length": 4.8355339059327385,
+    "num_waypoints": 39,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:29:51.417038"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_001",
+    "success": true,
+    "computation_time": 0.07662701606750488,
+    "path_length": 5.965685424949239,
+    "num_waypoints": 59,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:29:51.498062"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_001",
+    "success": true,
+    "computation_time": 24.191227436065674,
+    "path_length": 5.971466068866981,
+    "num_waypoints": 12,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:15.692084"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_001",
+    "success": true,
+    "computation_time": 0.2329239845275879,
+    "path_length": 6.013566346072911,
+    "num_waypoints": 59,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:15.928038"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_001",
+    "success": true,
+    "computation_time": 0.29961323738098145,
+    "path_length": 5.822532478131555,
+    "num_waypoints": 6,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:16.230011"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_001",
+    "success": true,
+    "computation_time": 0.08060765266418457,
+    "path_length": 5.965685424949239,
+    "num_waypoints": 59,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:16.313216"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_002",
+    "success": true,
+    "computation_time": 0.04584527015686035,
+    "path_length": 3.5213203435596423,
+    "num_waypoints": 30,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:16.361960"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_002",
+    "success": true,
+    "computation_time": 23.474899530410767,
+    "path_length": 3.5375780875221174,
+    "num_waypoints": 8,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:39.842667"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_002",
+    "success": true,
+    "computation_time": 0.2907547950744629,
+    "path_length": 3.5703939243770315,
+    "num_waypoints": 30,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:40.152037"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_002",
+    "success": true,
+    "computation_time": 0.28337526321411133,
+    "path_length": 3.3309926740113402,
+    "num_waypoints": 4,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:40.438203"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_002",
+    "success": true,
+    "computation_time": 0.04511523246765137,
+    "path_length": 3.5213203435596423,
+    "num_waypoints": 30,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:40.485926"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_003",
+    "success": true,
+    "computation_time": 0.0581355094909668,
+    "path_length": 3.9455844122715713,
+    "num_waypoints": 33,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:30:40.550445"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_003",
+    "success": true,
+    "computation_time": 25.777072429656982,
+    "path_length": 3.760454079464283,
+    "num_waypoints": 7,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:06.333647"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_003",
+    "success": true,
+    "computation_time": 0.21839118003845215,
+    "path_length": 3.9773047597599804,
+    "num_waypoints": 33,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:06.554995"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_003",
+    "success": true,
+    "computation_time": 0.2964017391204834,
+    "path_length": 3.7643354997426086,
+    "num_waypoints": 6,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:06.854576"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_003",
+    "success": true,
+    "computation_time": 0.06167149543762207,
+    "path_length": 3.9455844122715713,
+    "num_waypoints": 33,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:06.919092"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_004",
+    "success": true,
+    "computation_time": 0.0553436279296875,
+    "path_length": 4.565685424949238,
+    "num_waypoints": 45,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:06.978142"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_004",
+    "success": true,
+    "computation_time": 23.837700605392456,
+    "path_length": 5.051663782060862,
+    "num_waypoints": 10,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:30.819424"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_004",
+    "success": true,
+    "computation_time": 0.22425007820129395,
+    "path_length": 4.6006382193192294,
+    "num_waypoints": 45,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:31.047234"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_004",
+    "success": true,
+    "computation_time": 0.2913994789123535,
+    "path_length": 4.407069992004953,
+    "num_waypoints": 6,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:31.342103"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_004",
+    "success": true,
+    "computation_time": 0.053200721740722656,
+    "path_length": 4.565685424949238,
+    "num_waypoints": 45,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:31.398162"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_005",
+    "success": true,
+    "computation_time": 0.17113113403320312,
+    "path_length": 7.265685424949239,
+    "num_waypoints": 72,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:31.574653"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_005",
+    "success": true,
+    "computation_time": 23.508359670639038,
+    "path_length": 6.757091150752862,
+    "num_waypoints": 11,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:55.085683"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_005",
+    "success": true,
+    "computation_time": 0.2733900547027588,
+    "path_length": 6.398379063755538,
+    "num_waypoints": 57,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:55.362186"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_005",
+    "success": true,
+    "computation_time": 0.30573153495788574,
+    "path_length": 5.991099092309346,
+    "num_waypoints": 6,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:55.670583"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_005",
+    "success": true,
+    "computation_time": 0.13275504112243652,
+    "path_length": 7.265685424949239,
+    "num_waypoints": 72,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:55.806107"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_006",
+    "success": true,
+    "computation_time": 0.0616302490234375,
+    "path_length": 5.365685424949238,
+    "num_waypoints": 53,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:31:55.870731"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_006",
+    "success": true,
+    "computation_time": 23.75073480606079,
+    "path_length": 5.9218511586667475,
+    "num_waypoints": 10,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:19.625311"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_006",
+    "success": true,
+    "computation_time": 0.2241830825805664,
+    "path_length": 5.51494372555448,
+    "num_waypoints": 53,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:19.852679"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_006",
+    "success": true,
+    "computation_time": 0.3000786304473877,
+    "path_length": 5.218055455989052,
+    "num_waypoints": 6,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:20.155726"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_006",
+    "success": true,
+    "computation_time": 0.06271100044250488,
+    "path_length": 5.365685424949238,
+    "num_waypoints": 53,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:20.221567"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_007",
+    "success": true,
+    "computation_time": 0.07176566123962402,
+    "path_length": 5.021320343559642,
+    "num_waypoints": 45,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:20.297135"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_007",
+    "success": true,
+    "computation_time": 25.235061168670654,
+    "path_length": 4.457519788165772,
+    "num_waypoints": 9,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:45.535902"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_007",
+    "success": true,
+    "computation_time": 0.27327728271484375,
+    "path_length": 5.06267534758757,
+    "num_waypoints": 45,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:45.812445"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_007",
+    "success": true,
+    "computation_time": 0.29245591163635254,
+    "path_length": 4.866098496091928,
+    "num_waypoints": 6,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:46.107565"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_007",
+    "success": true,
+    "computation_time": 0.07018613815307617,
+    "path_length": 5.021320343559642,
+    "num_waypoints": 45,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:46.181577"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_008",
+    "success": true,
+    "computation_time": 0.08833146095275879,
+    "path_length": 5.974011537017761,
+    "num_waypoints": 45,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:32:46.273510"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_008",
+    "success": true,
+    "computation_time": 23.150800228118896,
+    "path_length": 6.404996339791744,
+    "num_waypoints": 11,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:09.427750"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_008",
+    "success": true,
+    "computation_time": 0.2614142894744873,
+    "path_length": 5.96350707900903,
+    "num_waypoints": 43,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:09.692330"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_008",
+    "success": true,
+    "computation_time": 0.30927371978759766,
+    "path_length": 6.494502341198917,
+    "num_waypoints": 7,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:10.004374"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_008",
+    "success": true,
+    "computation_time": 0.08571791648864746,
+    "path_length": 5.974011537017761,
+    "num_waypoints": 45,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:10.093362"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_009",
+    "success": true,
+    "computation_time": 0.10466742515563965,
+    "path_length": 7.201219330881977,
+    "num_waypoints": 61,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:10.201037"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_009",
+    "success": true,
+    "computation_time": 22.86385464668274,
+    "path_length": 7.246149843972923,
+    "num_waypoints": 15,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:33.068310"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_009",
+    "success": true,
+    "computation_time": 0.2802157402038574,
+    "path_length": 7.2277494489616485,
+    "num_waypoints": 61,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:33.351918"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_009",
+    "success": true,
+    "computation_time": 0.3109738826751709,
+    "path_length": 6.933882185917458,
+    "num_waypoints": 9,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:33.665586"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_009",
+    "success": true,
+    "computation_time": 0.10231328010559082,
+    "path_length": 7.201219330881977,
+    "num_waypoints": 61,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:33.771116"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_small_complex_010",
+    "success": true,
+    "computation_time": 0.08718633651733398,
+    "path_length": 5.9870057685088796,
+    "num_waypoints": 53,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:33.862100"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_small_complex_010",
+    "success": true,
+    "computation_time": 22.49410891532898,
+    "path_length": 6.4166497273466785,
+    "num_waypoints": 11,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:56.359758"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_small_complex_010",
+    "success": true,
+    "computation_time": 0.23361992835998535,
+    "path_length": 6.112035256218203,
+    "num_waypoints": 53,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:56.596820"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_small_complex_010",
+    "success": true,
+    "computation_time": 0.33522868156433105,
+    "path_length": 5.995578573416001,
+    "num_waypoints": 8,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:56.935294"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_small_complex_010",
+    "success": true,
+    "computation_time": 0.0876929759979248,
+    "path_length": 5.9870057685088796,
+    "num_waypoints": 53,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:33:57.026979"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_001",
+    "success": true,
+    "computation_time": 0.25506138801574707,
+    "path_length": 18.380613254815973,
+    "num_waypoints": 138,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:33:57.285417"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_001",
+    "success": true,
+    "computation_time": 27.921464443206787,
+    "path_length": 19.558888288484248,
+    "num_waypoints": 40,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:34:25.210929"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_001",
+    "success": true,
+    "computation_time": 5.166398286819458,
+    "path_length": 18.423101944111504,
+    "num_waypoints": 138,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:34:30.382349"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_001",
+    "success": true,
+    "computation_time": 5.2852137088775635,
+    "path_length": 18.082879814693456,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:34:35.670682"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_001",
+    "success": true,
+    "computation_time": 0.3093125820159912,
+    "path_length": 18.380613254815973,
+    "num_waypoints": 138,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:34:35.984319"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_002",
+    "success": true,
+    "computation_time": 0.24230670928955078,
+    "path_length": 17.042135623730953,
+    "num_waypoints": 130,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:34:36.230895"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_002",
+    "success": true,
+    "computation_time": 27.71746563911438,
+    "path_length": 19.872375653596492,
+    "num_waypoints": 40,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:03.952159"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_002",
+    "success": true,
+    "computation_time": 5.537177562713623,
+    "path_length": 17.024768926134342,
+    "num_waypoints": 130,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:09.493408"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_002",
+    "success": true,
+    "computation_time": 5.367259979248047,
+    "path_length": 16.370104829214103,
+    "num_waypoints": 5,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:14.864459"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_002",
+    "success": true,
+    "computation_time": 0.26543140411376953,
+    "path_length": 17.042135623730953,
+    "num_waypoints": 130,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:15.133949"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_003",
+    "success": true,
+    "computation_time": 0.44823193550109863,
+    "path_length": 26.63553390593274,
+    "num_waypoints": 257,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:15.586114"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_003",
+    "success": true,
+    "computation_time": 27.73799157142639,
+    "path_length": 37.0,
+    "num_waypoints": 75,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:43.327636"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_003",
+    "success": true,
+    "computation_time": 5.289978265762329,
+    "path_length": 26.745599166085935,
+    "num_waypoints": 257,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:48.622006"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_003",
+    "success": true,
+    "computation_time": 5.39196515083313,
+    "path_length": 25.93392942359291,
+    "num_waypoints": 10,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:54.035528"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_003",
+    "success": true,
+    "computation_time": 0.473560094833374,
+    "path_length": 26.63553390593274,
+    "num_waypoints": 257,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:54.513537"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_004",
+    "success": true,
+    "computation_time": 1.233961582183838,
+    "path_length": 35.949242404917506,
+    "num_waypoints": 317,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:35:55.751905"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_004",
+    "success": true,
+    "computation_time": 28.137229681015015,
+    "path_length": 39.999999999999986,
+    "num_waypoints": 81,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:36:23.892567"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_004",
+    "success": true,
+    "computation_time": 5.862469434738159,
+    "path_length": 36.06421237514897,
+    "num_waypoints": 317,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:36:29.759542"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_004",
+    "success": true,
+    "computation_time": 5.612585783004761,
+    "path_length": 35.03000183974086,
+    "num_waypoints": 11,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:36:35.375368"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_004",
+    "success": true,
+    "computation_time": 1.1413953304290771,
+    "path_length": 35.949242404917506,
+    "num_waypoints": 317,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:36:36.521287"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_005",
+    "success": true,
+    "computation_time": 0.7059428691864014,
+    "path_length": 25.263455967290597,
+    "num_waypoints": 206,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:36:37.232538"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_005",
+    "success": true,
+    "computation_time": 27.680650234222412,
+    "path_length": 28.160610837672543,
+    "num_waypoints": 58,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:04.917218"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_005",
+    "success": true,
+    "computation_time": 5.90026330947876,
+    "path_length": 25.328453468199612,
+    "num_waypoints": 206,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:10.821877"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_005",
+    "success": true,
+    "computation_time": 5.515292406082153,
+    "path_length": 23.678915083530885,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:16.341393"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_005",
+    "success": true,
+    "computation_time": 0.5391566753387451,
+    "path_length": 25.263455967290597,
+    "num_waypoints": 206,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:16.885122"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_006",
+    "success": true,
+    "computation_time": 0.45157933235168457,
+    "path_length": 23.187005768508882,
+    "num_waypoints": 225,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:17.341743"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_006",
+    "success": true,
+    "computation_time": 28.00454044342041,
+    "path_length": 27.90877038162548,
+    "num_waypoints": 57,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:45.350012"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_006",
+    "success": true,
+    "computation_time": 5.415227174758911,
+    "path_length": 23.215920623632698,
+    "num_waypoints": 225,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:50.769804"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_006",
+    "success": true,
+    "computation_time": 5.298235893249512,
+    "path_length": 22.481399525952195,
+    "num_waypoints": 6,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:56.072434"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_006",
+    "success": true,
+    "computation_time": 0.3825347423553467,
+    "path_length": 23.187005768508882,
+    "num_waypoints": 225,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:56.478204"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_007",
+    "success": true,
+    "computation_time": 0.40664243698120117,
+    "path_length": 22.249242404917496,
+    "num_waypoints": 180,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:37:56.889046"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_007",
+    "success": true,
+    "computation_time": 27.627357482910156,
+    "path_length": 25.0,
+    "num_waypoints": 51,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:38:24.520659"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_007",
+    "success": true,
+    "computation_time": 5.542822599411011,
+    "path_length": 22.340781025218746,
+    "num_waypoints": 180,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:38:30.068167"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_007",
+    "success": true,
+    "computation_time": 5.389302492141724,
+    "path_length": 21.020428438996213,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:38:35.461419"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_007",
+    "success": true,
+    "computation_time": 0.4388914108276367,
+    "path_length": 22.249242404917496,
+    "num_waypoints": 180,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:38:35.905351"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_008",
+    "success": true,
+    "computation_time": 0.7810475826263428,
+    "path_length": 29.929646455628166,
+    "num_waypoints": 280,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:38:36.691839"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_008",
+    "success": true,
+    "computation_time": 28.38089346885681,
+    "path_length": 32.62648655982097,
+    "num_waypoints": 62,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:05.077305"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_008",
+    "success": true,
+    "computation_time": 5.4645490646362305,
+    "path_length": 29.912850237841482,
+    "num_waypoints": 280,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:10.546788"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_008",
+    "success": true,
+    "computation_time": 5.507263422012329,
+    "path_length": 28.689312957481285,
+    "num_waypoints": 9,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:16.059470"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_008",
+    "success": true,
+    "computation_time": 0.6797358989715576,
+    "path_length": 29.929646455628166,
+    "num_waypoints": 280,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:16.744912"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_009",
+    "success": true,
+    "computation_time": 0.8881361484527588,
+    "path_length": 29.511984104714458,
+    "num_waypoints": 246,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:17.638791"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_009",
+    "success": true,
+    "computation_time": 27.679595947265625,
+    "path_length": 31.231312990916916,
+    "num_waypoints": 63,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:45.323887"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_009",
+    "success": true,
+    "computation_time": 5.679931402206421,
+    "path_length": 29.484182968198773,
+    "num_waypoints": 246,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:51.008642"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_009",
+    "success": true,
+    "computation_time": 5.550677061080933,
+    "path_length": 28.968351187809542,
+    "num_waypoints": 9,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:56.563258"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_009",
+    "success": true,
+    "computation_time": 0.8783245086669922,
+    "path_length": 29.511984104714458,
+    "num_waypoints": 246,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:57.447901"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_simple_010",
+    "success": true,
+    "computation_time": 1.0525250434875488,
+    "path_length": 34.21787155501903,
+    "num_waypoints": 303,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:39:58.505881"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_simple_010",
+    "success": true,
+    "computation_time": 27.558268547058105,
+    "path_length": 36.75757109911193,
+    "num_waypoints": 73,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:40:26.068468"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_simple_010",
+    "success": true,
+    "computation_time": 5.6060709953308105,
+    "path_length": 34.24025960302437,
+    "num_waypoints": 303,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:40:31.681175"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_simple_010",
+    "success": true,
+    "computation_time": 5.506653070449829,
+    "path_length": 33.71311873624382,
+    "num_waypoints": 9,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:40:37.192207"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_simple_010",
+    "success": true,
+    "computation_time": 1.1384434700012207,
+    "path_length": 34.21787155501903,
+    "num_waypoints": 303,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:40:38.335836"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_001",
+    "success": true,
+    "computation_time": 0.3940579891204834,
+    "path_length": 15.7556349186104,
+    "num_waypoints": 154,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:40:38.735838"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_001",
+    "success": true,
+    "computation_time": 26.946898221969604,
+    "path_length": 21.699200134151354,
+    "num_waypoints": 43,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:41:05.686852"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_001",
+    "success": true,
+    "computation_time": 5.260304689407349,
+    "path_length": 15.869377448556666,
+    "num_waypoints": 154,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:41:10.951888"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_001",
+    "success": true,
+    "computation_time": 6.863475561141968,
+    "path_length": 15.353341224216173,
+    "num_waypoints": 4,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:41:17.820069"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_001",
+    "success": true,
+    "computation_time": 0.4220914840698242,
+    "path_length": 15.7556349186104,
+    "num_waypoints": 154,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:41:18.248364"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_002",
+    "success": true,
+    "computation_time": 1.366912603378296,
+    "path_length": 27.248737341529164,
+    "num_waypoints": 201,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:41:19.620568"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_002",
+    "success": true,
+    "computation_time": 27.10910987854004,
+    "path_length": 32.791554062496736,
+    "num_waypoints": 67,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:41:46.735054"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_002",
+    "success": true,
+    "computation_time": 5.884992361068726,
+    "path_length": 27.323819529583965,
+    "num_waypoints": 201,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:41:52.625208"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_002",
+    "success": true,
+    "computation_time": 7.216116666793823,
+    "path_length": 30.0487867367667,
+    "num_waypoints": 9,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:41:59.846711"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_002",
+    "success": true,
+    "computation_time": 1.443397045135498,
+    "path_length": 27.248737341529164,
+    "num_waypoints": 201,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:42:01.295817"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_003",
+    "success": true,
+    "computation_time": 0.4364168643951416,
+    "path_length": 17.114213562373095,
+    "num_waypoints": 168,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:42:01.738246"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_003",
+    "success": true,
+    "computation_time": 26.363447666168213,
+    "path_length": 19.49999999999999,
+    "num_waypoints": 40,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:42:28.107149"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_003",
+    "success": true,
+    "computation_time": 5.230499267578125,
+    "path_length": 16.829031322980306,
+    "num_waypoints": 168,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:42:33.342379"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_003",
+    "success": true,
+    "computation_time": 6.9539995193481445,
+    "path_length": 16.701207579703954,
+    "num_waypoints": 4,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:42:40.301415"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_003",
+    "success": true,
+    "computation_time": 0.42823004722595215,
+    "path_length": 17.114213562373095,
+    "num_waypoints": 168,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:42:40.734410"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_004",
+    "success": true,
+    "computation_time": 3.4603404998779297,
+    "path_length": 41.55706345359769,
+    "num_waypoints": 330,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:42:44.199844"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_004",
+    "success": true,
+    "computation_time": 27.136873245239258,
+    "path_length": 46.43739637272618,
+    "num_waypoints": 94,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:43:11.341173"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_004",
+    "success": true,
+    "computation_time": 5.88585090637207,
+    "path_length": 41.62572855420186,
+    "num_waypoints": 330,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:43:17.233087"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_004",
+    "success": true,
+    "computation_time": 7.663576364517212,
+    "path_length": 40.39251311839107,
+    "num_waypoints": 10,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:43:24.902504"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_004",
+    "success": true,
+    "computation_time": 3.380814790725708,
+    "path_length": 41.55706345359769,
+    "num_waypoints": 330,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:43:28.288446"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_005",
+    "success": true,
+    "computation_time": 2.004946231842041,
+    "path_length": 31.536248173426372,
+    "num_waypoints": 265,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:43:30.300108"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_005",
+    "success": true,
+    "computation_time": 26.869781732559204,
+    "path_length": 34.999999999999986,
+    "num_waypoints": 71,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:43:57.174423"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_005",
+    "success": true,
+    "computation_time": 5.801375150680542,
+    "path_length": 31.612862423143916,
+    "num_waypoints": 265,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:02.981800"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_005",
+    "success": true,
+    "computation_time": 7.301977872848511,
+    "path_length": 30.432156582394256,
+    "num_waypoints": 9,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:10.289619"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_005",
+    "success": true,
+    "computation_time": 2.183222770690918,
+    "path_length": 31.536248173426372,
+    "num_waypoints": 265,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:12.478787"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_006",
+    "success": true,
+    "computation_time": 1.19834303855896,
+    "path_length": 24.11492782986674,
+    "num_waypoints": 197,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:13.683229"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_006",
+    "success": true,
+    "computation_time": 26.859659671783447,
+    "path_length": 28.000000000000007,
+    "num_waypoints": 57,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:40.548855"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_006",
+    "success": true,
+    "computation_time": 5.792461633682251,
+    "path_length": 24.12513492097017,
+    "num_waypoints": 197,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:46.347952"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_006",
+    "success": true,
+    "computation_time": 7.042720079421997,
+    "path_length": 23.663531997370853,
+    "num_waypoints": 8,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:53.396719"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_006",
+    "success": true,
+    "computation_time": 1.2653214931488037,
+    "path_length": 24.11492782986674,
+    "num_waypoints": 197,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:54.668437"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_007",
+    "success": true,
+    "computation_time": 1.112452507019043,
+    "path_length": 23.327922061357853,
+    "num_waypoints": 197,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:44:55.787665"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_007",
+    "success": true,
+    "computation_time": 27.474608182907104,
+    "path_length": 28.528852022095652,
+    "num_waypoints": 52,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:45:23.267083"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_007",
+    "success": true,
+    "computation_time": 5.417308807373047,
+    "path_length": 23.37513874141142,
+    "num_waypoints": 197,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:45:28.690875"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_007",
+    "success": true,
+    "computation_time": 6.981050968170166,
+    "path_length": 22.390017496772845,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:45:35.676877"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_007",
+    "success": true,
+    "computation_time": 1.0713622570037842,
+    "path_length": 23.327922061357853,
+    "num_waypoints": 197,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:45:36.753557"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_008",
+    "success": true,
+    "computation_time": 0.7912662029266357,
+    "path_length": 18.378174593052027,
+    "num_waypoints": 162,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:45:37.550521"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_008",
+    "success": true,
+    "computation_time": 27.268728733062744,
+    "path_length": 25.951544853904572,
+    "num_waypoints": 51,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:46:04.825479"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_008",
+    "success": true,
+    "computation_time": 5.449214458465576,
+    "path_length": 18.385404711339554,
+    "num_waypoints": 162,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:46:10.281661"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_008",
+    "success": true,
+    "computation_time": 7.073629856109619,
+    "path_length": 18.40490491433394,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:46:17.359807"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_008",
+    "success": true,
+    "computation_time": 0.6377882957458496,
+    "path_length": 18.378174593052027,
+    "num_waypoints": 162,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:46:18.003741"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_009",
+    "success": true,
+    "computation_time": 1.4565987586975098,
+    "path_length": 25.867619023324863,
+    "num_waypoints": 205,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:46:19.466641"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_009",
+    "success": true,
+    "computation_time": 26.986661672592163,
+    "path_length": 29.040684777969055,
+    "num_waypoints": 57,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:46:46.461466"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_009",
+    "success": true,
+    "computation_time": 5.570977449417114,
+    "path_length": 25.97440175331932,
+    "num_waypoints": 205,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:46:52.039121"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_009",
+    "success": true,
+    "computation_time": 7.311597585678101,
+    "path_length": 25.980964464373844,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:46:59.356969"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_009",
+    "success": true,
+    "computation_time": 1.4642865657806396,
+    "path_length": 25.867619023324863,
+    "num_waypoints": 205,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:47:00.827017"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_moderate_010",
+    "success": true,
+    "computation_time": 1.4990739822387695,
+    "path_length": 27.184776310850232,
+    "num_waypoints": 219,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:47:02.331625"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_moderate_010",
+    "success": true,
+    "computation_time": 27.12075138092041,
+    "path_length": 29.49999999999997,
+    "num_waypoints": 60,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:47:29.457326"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_moderate_010",
+    "success": true,
+    "computation_time": 5.729329824447632,
+    "path_length": 27.193495777021248,
+    "num_waypoints": 219,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:47:35.193211"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_moderate_010",
+    "success": true,
+    "computation_time": 7.586474418640137,
+    "path_length": 27.2885608241089,
+    "num_waypoints": 9,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:47:42.786677"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_moderate_010",
+    "success": true,
+    "computation_time": 1.6526596546173096,
+    "path_length": 27.184776310850232,
+    "num_waypoints": 219,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T15:47:44.445800"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_001",
+    "success": true,
+    "computation_time": 1.6669607162475586,
+    "path_length": 31.582337649086288,
+    "num_waypoints": 287,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:47:46.118433"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_001",
+    "success": true,
+    "computation_time": 26.882997751235962,
+    "path_length": 36.0,
+    "num_waypoints": 73,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:48:13.006553"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_001",
+    "success": true,
+    "computation_time": 5.491370677947998,
+    "path_length": 30.87565426970982,
+    "num_waypoints": 275,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:48:18.503682"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_001",
+    "success": true,
+    "computation_time": 7.281446695327759,
+    "path_length": 29.97319391791853,
+    "num_waypoints": 9,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:48:25.808814"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_001",
+    "success": true,
+    "computation_time": 1.945286750793457,
+    "path_length": 31.582337649086288,
+    "num_waypoints": 287,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:48:27.760932"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_002",
+    "success": true,
+    "computation_time": 3.367438554763794,
+    "path_length": 41.92985565973348,
+    "num_waypoints": 330,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:48:31.134535"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_002",
+    "success": true,
+    "computation_time": 26.864809274673462,
+    "path_length": 46.03004542856521,
+    "num_waypoints": 90,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:48:58.004282"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_002",
+    "success": true,
+    "computation_time": 5.984784126281738,
+    "path_length": 41.00822028248645,
+    "num_waypoints": 314,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:49:03.996013"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_002",
+    "success": true,
+    "computation_time": 7.675262212753296,
+    "path_length": 40.1799043780041,
+    "num_waypoints": 12,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:49:11.678712"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_002",
+    "success": true,
+    "computation_time": 3.6034960746765137,
+    "path_length": 41.92985565973348,
+    "num_waypoints": 330,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:49:15.288903"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_003",
+    "success": true,
+    "computation_time": 1.9699211120605469,
+    "path_length": 33.40437226013957,
+    "num_waypoints": 258,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:49:17.265136"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_003",
+    "success": true,
+    "computation_time": 27.099935293197632,
+    "path_length": 37.999999999999986,
+    "num_waypoints": 77,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:49:44.370429"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_003",
+    "success": true,
+    "computation_time": 5.980249404907227,
+    "path_length": 32.73240100996239,
+    "num_waypoints": 246,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:49:50.358156"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_003",
+    "success": true,
+    "computation_time": 7.688980579376221,
+    "path_length": 32.118679951806264,
+    "num_waypoints": 10,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:49:58.052751"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_003",
+    "success": true,
+    "computation_time": 2.098278284072876,
+    "path_length": 33.40437226013957,
+    "num_waypoints": 258,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:50:00.157293"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_004",
+    "success": true,
+    "computation_time": 1.356691598892212,
+    "path_length": 29.1539105243401,
+    "num_waypoints": 271,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:50:01.520915"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_004",
+    "success": true,
+    "computation_time": 27.166521072387695,
+    "path_length": 33.339529443458424,
+    "num_waypoints": 63,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:50:28.692324"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_004",
+    "success": true,
+    "computation_time": 5.617050647735596,
+    "path_length": 29.248779434780932,
+    "num_waypoints": 271,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:50:34.315529"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_004",
+    "success": true,
+    "computation_time": 7.139923572540283,
+    "path_length": 28.14199998268898,
+    "num_waypoints": 8,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:50:41.462484"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_004",
+    "success": true,
+    "computation_time": 1.5375258922576904,
+    "path_length": 29.1539105243401,
+    "num_waypoints": 271,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:50:43.006757"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_005",
+    "success": true,
+    "computation_time": 0.4167976379394531,
+    "path_length": 16.115432893255072,
+    "num_waypoints": 146,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:50:43.429376"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_005",
+    "success": true,
+    "computation_time": 26.753908395767212,
+    "path_length": 17.198316020173475,
+    "num_waypoints": 35,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:51:10.189768"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_005",
+    "success": true,
+    "computation_time": 5.3510658740997314,
+    "path_length": 16.15052928225181,
+    "num_waypoints": 146,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:51:15.547208"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_005",
+    "success": true,
+    "computation_time": 6.832483768463135,
+    "path_length": 15.198973286712073,
+    "num_waypoints": 6,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:51:22.385050"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_005",
+    "success": true,
+    "computation_time": 0.5306017398834229,
+    "path_length": 16.115432893255072,
+    "num_waypoints": 146,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:51:22.922862"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_006",
+    "success": true,
+    "computation_time": 1.3291144371032715,
+    "path_length": 26.723253941935262,
+    "num_waypoints": 209,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:51:24.260599"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_006",
+    "success": true,
+    "computation_time": 26.741896152496338,
+    "path_length": 28.0,
+    "num_waypoints": 57,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:51:51.009371"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_006",
+    "success": true,
+    "computation_time": 5.6530773639678955,
+    "path_length": 26.75659745366544,
+    "num_waypoints": 209,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:51:56.668598"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_006",
+    "success": true,
+    "computation_time": 7.308490514755249,
+    "path_length": 25.839527880530984,
+    "num_waypoints": 8,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:52:03.986178"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_006",
+    "success": true,
+    "computation_time": 1.421302318572998,
+    "path_length": 26.723253941935262,
+    "num_waypoints": 209,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:52:05.415812"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_007",
+    "success": true,
+    "computation_time": 1.6917297840118408,
+    "path_length": 33.01248916810279,
+    "num_waypoints": 310,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:52:07.116140"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_007",
+    "success": true,
+    "computation_time": 26.87717342376709,
+    "path_length": 38.15456457884281,
+    "num_waypoints": 79,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:52:33.999426"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_007",
+    "success": true,
+    "computation_time": 5.725253582000732,
+    "path_length": 33.067386064064436,
+    "num_waypoints": 310,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:52:39.731421"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_007",
+    "success": true,
+    "computation_time": 7.321368455886841,
+    "path_length": 32.79199252112813,
+    "num_waypoints": 10,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:52:47.058331"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_007",
+    "success": true,
+    "computation_time": 1.786041021347046,
+    "path_length": 33.01248916810279,
+    "num_waypoints": 310,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:52:48.851860"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_008",
+    "success": true,
+    "computation_time": 1.7469291687011719,
+    "path_length": 31.229141392239832,
+    "num_waypoints": 264,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:52:50.606503"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_008",
+    "success": true,
+    "computation_time": 27.200609922409058,
+    "path_length": 33.5637109831763,
+    "num_waypoints": 69,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:53:17.813136"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_008",
+    "success": true,
+    "computation_time": 5.396103143692017,
+    "path_length": 30.958829633778794,
+    "num_waypoints": 258,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:53:23.216813"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_008",
+    "success": true,
+    "computation_time": 7.29302978515625,
+    "path_length": 29.94544347219618,
+    "num_waypoints": 9,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:53:30.515620"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_008",
+    "success": true,
+    "computation_time": 1.855269193649292,
+    "path_length": 31.229141392239832,
+    "num_waypoints": 264,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:53:32.378061"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_009",
+    "success": true,
+    "computation_time": 1.544133186340332,
+    "path_length": 31.953910524340092,
+    "num_waypoints": 299,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:53:33.929114"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_009",
+    "success": true,
+    "computation_time": 26.696690320968628,
+    "path_length": 35.53776840108057,
+    "num_waypoints": 69,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:00.631557"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_009",
+    "success": true,
+    "computation_time": 5.594241380691528,
+    "path_length": 31.928098629199063,
+    "num_waypoints": 299,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:06.234076"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_009",
+    "success": true,
+    "computation_time": 7.458671808242798,
+    "path_length": 30.54513439083106,
+    "num_waypoints": 8,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:13.698744"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_009",
+    "success": true,
+    "computation_time": 1.614929437637329,
+    "path_length": 31.953910524340092,
+    "num_waypoints": 299,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:15.320716"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_medium_complex_010",
+    "success": true,
+    "computation_time": 1.4422216415405273,
+    "path_length": 29.826702730475883,
+    "num_waypoints": 274,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:16.770456"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_medium_complex_010",
+    "success": true,
+    "computation_time": 27.211999654769897,
+    "path_length": 32.28749091694023,
+    "num_waypoints": 65,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:43.989012"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_medium_complex_010",
+    "success": true,
+    "computation_time": 5.59208869934082,
+    "path_length": 29.857843889238037,
+    "num_waypoints": 274,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:49.587996"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_medium_complex_010",
+    "success": true,
+    "computation_time": 7.171299934387207,
+    "path_length": 29.22746386054971,
+    "num_waypoints": 8,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:56.765739"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_medium_complex_010",
+    "success": true,
+    "computation_time": 1.5950698852539062,
+    "path_length": 29.826702730475883,
+    "num_waypoints": 274,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T15:54:58.368338"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_001",
+    "success": true,
+    "computation_time": 3.0852527618408203,
+    "path_length": 64.43086578651013,
+    "num_waypoints": 613,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:55:01.462346"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_001",
+    "success": true,
+    "computation_time": 43.33772134780884,
+    "path_length": 72.0,
+    "num_waypoints": 145,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:55:44.806332"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_001",
+    "success": true,
+    "computation_time": 23.513091564178467,
+    "path_length": 64.46339317133966,
+    "num_waypoints": 613,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:56:08.327786"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_001",
+    "success": true,
+    "computation_time": 21.469701051712036,
+    "path_length": 62.126560825625766,
+    "num_waypoints": 8,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:56:29.803440"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_001",
+    "success": true,
+    "computation_time": 3.289767265319824,
+    "path_length": 64.43086578651013,
+    "num_waypoints": 613,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:56:33.101559"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_002",
+    "success": true,
+    "computation_time": 1.1425819396972656,
+    "path_length": 32.7320851173921,
+    "num_waypoints": 284,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:56:34.251713"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_002",
+    "success": true,
+    "computation_time": 43.22078466415405,
+    "path_length": 36.00000000000002,
+    "num_waypoints": 73,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:57:17.479542"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_002",
+    "success": true,
+    "computation_time": 21.333287954330444,
+    "path_length": 32.81036111973853,
+    "num_waypoints": 284,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:57:38.821771"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_002",
+    "success": true,
+    "computation_time": 20.116201162338257,
+    "path_length": 30.368553291901936,
+    "num_waypoints": 4,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:57:58.944815"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_002",
+    "success": true,
+    "computation_time": 0.9451737403869629,
+    "path_length": 32.7320851173921,
+    "num_waypoints": 284,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:57:59.911848"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_003",
+    "success": true,
+    "computation_time": 1.8581736087799072,
+    "path_length": 48.11543289325507,
+    "num_waypoints": 466,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:58:01.782021"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_003",
+    "success": true,
+    "computation_time": 43.45389914512634,
+    "path_length": 54.85146964338687,
+    "num_waypoints": 111,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:58:45.243182"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_003",
+    "success": true,
+    "computation_time": 22.11544418334961,
+    "path_length": 48.070645275647436,
+    "num_waypoints": 466,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:59:07.366986"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_003",
+    "success": true,
+    "computation_time": 20.703940391540527,
+    "path_length": 46.76697414656614,
+    "num_waypoints": 6,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:59:28.077288"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_003",
+    "success": true,
+    "computation_time": 1.9574012756347656,
+    "path_length": 48.11543289325507,
+    "num_waypoints": 466,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:59:30.042053"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_004",
+    "success": true,
+    "computation_time": 4.8592164516448975,
+    "path_length": 73.79137802864844,
+    "num_waypoints": 654,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T15:59:34.909793"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_004",
+    "success": true,
+    "computation_time": 42.90220308303833,
+    "path_length": 86.50000000000004,
+    "num_waypoints": 174,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:00:17.818623"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_004",
+    "success": true,
+    "computation_time": 23.5209903717041,
+    "path_length": 73.73417433317053,
+    "num_waypoints": 654,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:00:41.350132"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_004",
+    "success": true,
+    "computation_time": 21.774392127990723,
+    "path_length": 72.42912900518951,
+    "num_waypoints": 9,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:01:03.131659"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_004",
+    "success": true,
+    "computation_time": 5.03244161605835,
+    "path_length": 73.79137802864844,
+    "num_waypoints": 654,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:01:08.172990"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_005",
+    "success": true,
+    "computation_time": 5.075884580612183,
+    "path_length": 72.39919907732866,
+    "num_waypoints": 597,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:01:13.257889"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_005",
+    "success": true,
+    "computation_time": 43.375667095184326,
+    "path_length": 80.49999999999994,
+    "num_waypoints": 162,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:01:56.640213"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_005",
+    "success": true,
+    "computation_time": 23.128832578659058,
+    "path_length": 72.36559291692332,
+    "num_waypoints": 597,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:02:19.778451"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_005",
+    "success": true,
+    "computation_time": 21.663622856140137,
+    "path_length": 70.26570439467399,
+    "num_waypoints": 8,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:02:41.450266"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_005",
+    "success": true,
+    "computation_time": 5.192084550857544,
+    "path_length": 72.39919907732866,
+    "num_waypoints": 597,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:02:46.650976"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_006",
+    "success": true,
+    "computation_time": 1.0321855545043945,
+    "path_length": 34.216652224137036,
+    "num_waypoints": 315,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:02:47.692068"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_006",
+    "success": true,
+    "computation_time": 42.968828439712524,
+    "path_length": 38.99999999999998,
+    "num_waypoints": 79,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:03:30.669367"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_006",
+    "success": true,
+    "computation_time": 21.060942888259888,
+    "path_length": 34.27478746506816,
+    "num_waypoints": 315,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:03:51.738979"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_006",
+    "success": true,
+    "computation_time": 20.193896532058716,
+    "path_length": 32.578525059024614,
+    "num_waypoints": 6,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:04:11.939494"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_006",
+    "success": true,
+    "computation_time": 1.0797114372253418,
+    "path_length": 34.216652224137036,
+    "num_waypoints": 315,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:04:13.028828"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_007",
+    "success": true,
+    "computation_time": 0.947965145111084,
+    "path_length": 33.57716446627535,
+    "num_waypoints": 256,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:04:13.984531"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_007",
+    "success": true,
+    "computation_time": 42.04531788825989,
+    "path_length": 40.86403152210916,
+    "num_waypoints": 83,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:04:56.038958"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_007",
+    "success": true,
+    "computation_time": 22.058130979537964,
+    "path_length": 33.66969302367254,
+    "num_waypoints": 256,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:05:18.106081"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_007",
+    "success": true,
+    "computation_time": 20.927425384521484,
+    "path_length": 33.163542311316775,
+    "num_waypoints": 7,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:05:39.040447"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_007",
+    "success": true,
+    "computation_time": 0.937936544418335,
+    "path_length": 33.57716446627535,
+    "num_waypoints": 256,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:05:39.985728"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_008",
+    "success": true,
+    "computation_time": 1.834435224533081,
+    "path_length": 46.600714267493636,
+    "num_waypoints": 426,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:05:41.831009"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_008",
+    "success": true,
+    "computation_time": 42.99076962471008,
+    "path_length": 51.867806348820324,
+    "num_waypoints": 104,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:06:24.828828"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_008",
+    "success": true,
+    "computation_time": 22.946752071380615,
+    "path_length": 46.71287519523703,
+    "num_waypoints": 426,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:06:47.786493"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_008",
+    "success": true,
+    "computation_time": 20.86205220222473,
+    "path_length": 44.30513545292222,
+    "num_waypoints": 8,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:07:08.656814"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_008",
+    "success": true,
+    "computation_time": 1.8595895767211914,
+    "path_length": 46.600714267493636,
+    "num_waypoints": 426,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:07:10.544345"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_009",
+    "success": true,
+    "computation_time": 2.89103102684021,
+    "path_length": 60.619595949289334,
+    "num_waypoints": 584,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:07:13.444704"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_009",
+    "success": true,
+    "computation_time": 43.174659729003906,
+    "path_length": 67.99293451315414,
+    "num_waypoints": 137,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:07:56.627204"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_009",
+    "success": true,
+    "computation_time": 23.272210359573364,
+    "path_length": 60.58789636538779,
+    "num_waypoints": 584,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:08:19.908634"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_009",
+    "success": true,
+    "computation_time": 21.076416492462158,
+    "path_length": 58.76893885295406,
+    "num_waypoints": 8,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:08:40.993576"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_009",
+    "success": true,
+    "computation_time": 2.9701919555664062,
+    "path_length": 60.619595949289334,
+    "num_waypoints": 584,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:08:43.972498"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_simple_010",
+    "success": true,
+    "computation_time": 2.681947708129883,
+    "path_length": 60.5509667991878,
+    "num_waypoints": 580,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:08:46.663624"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_simple_010",
+    "success": true,
+    "computation_time": 42.985724210739136,
+    "path_length": 67.50000000000001,
+    "num_waypoints": 136,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:09:29.659046"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_simple_010",
+    "success": true,
+    "computation_time": 23.892426252365112,
+    "path_length": 60.52719642889937,
+    "num_waypoints": 580,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:09:53.562710"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_simple_010",
+    "success": true,
+    "computation_time": 21.694713592529297,
+    "path_length": 58.59296985622521,
+    "num_waypoints": 8,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:10:15.265164"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_simple_010",
+    "success": true,
+    "computation_time": 2.9042789936065674,
+    "path_length": 60.5509667991878,
+    "num_waypoints": 580,
+    "complexity": "SIMPLE",
+    "timestamp": "2025-11-21T16:10:18.179565"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_001",
+    "success": true,
+    "computation_time": 13.39869999885559,
+    "path_length": 89.98834764831844,
+    "num_waypoints": 642,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:10:31.587533"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_001",
+    "success": true,
+    "computation_time": 39.260621070861816,
+    "path_length": 102.29686533094633,
+    "num_waypoints": 205,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:11:10.855899"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_001",
+    "success": true,
+    "computation_time": 24.323605060577393,
+    "path_length": 90.01172227696833,
+    "num_waypoints": 642,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:11:35.189227"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_001",
+    "success": true,
+    "computation_time": 30.783969402313232,
+    "path_length": 89.72803896133387,
+    "num_waypoints": 11,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:12:05.980957"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_001",
+    "success": true,
+    "computation_time": 13.67514157295227,
+    "path_length": 89.98834764831844,
+    "num_waypoints": 642,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:12:19.666983"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_002",
+    "success": true,
+    "computation_time": 3.246769666671753,
+    "path_length": 40.03574311003803,
+    "num_waypoints": 321,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:12:22.921817"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_002",
+    "success": true,
+    "computation_time": 38.777509927749634,
+    "path_length": 41.24395697444411,
+    "num_waypoints": 85,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:13:01.706438"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_002",
+    "success": true,
+    "computation_time": 21.606770753860474,
+    "path_length": 40.10374912998373,
+    "num_waypoints": 321,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:13:23.321497"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_002",
+    "success": true,
+    "computation_time": 27.50260901451111,
+    "path_length": 40.19137130122132,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:13:50.832376"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_002",
+    "success": true,
+    "computation_time": 3.493821382522583,
+    "path_length": 40.03574311003803,
+    "num_waypoints": 321,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:13:54.335121"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_003",
+    "success": true,
+    "computation_time": 7.715507507324219,
+    "path_length": 62.4494516090228,
+    "num_waypoints": 512,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:14:02.059491"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_003",
+    "success": true,
+    "computation_time": 38.75251531600952,
+    "path_length": 69.49999999999997,
+    "num_waypoints": 140,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:14:40.821667"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_003",
+    "success": true,
+    "computation_time": 22.67678451538086,
+    "path_length": 62.48232485701398,
+    "num_waypoints": 512,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:15:03.507778"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_003",
+    "success": true,
+    "computation_time": 28.08827495574951,
+    "path_length": 61.003671519257765,
+    "num_waypoints": 9,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:15:31.604843"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_003",
+    "success": true,
+    "computation_time": 8.004375457763672,
+    "path_length": 62.4494516090228,
+    "num_waypoints": 512,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:15:39.617980"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_004",
+    "success": true,
+    "computation_time": 15.852683782577515,
+    "path_length": 87.67514421272205,
+    "num_waypoints": 681,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:15:55.479989"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_004",
+    "success": true,
+    "computation_time": 39.1034517288208,
+    "path_length": 97.00000000000001,
+    "num_waypoints": 195,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:16:34.591484"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_004",
+    "success": true,
+    "computation_time": 23.616063356399536,
+    "path_length": 87.67552388238516,
+    "num_waypoints": 681,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:16:58.219772"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_004",
+    "success": true,
+    "computation_time": 29.788670539855957,
+    "path_length": 93.3408957178975,
+    "num_waypoints": 13,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:17:28.016996"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_004",
+    "success": true,
+    "computation_time": 16.07113242149353,
+    "path_length": 87.67514421272205,
+    "num_waypoints": 681,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:17:44.097934"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_005",
+    "success": true,
+    "computation_time": 10.983373880386353,
+    "path_length": 74.56833329081852,
+    "num_waypoints": 651,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:17:55.091437"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_005",
+    "success": true,
+    "computation_time": 38.11762237548828,
+    "path_length": 79.99999999999997,
+    "num_waypoints": 161,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:18:33.216823"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_005",
+    "success": true,
+    "computation_time": 23.158956289291382,
+    "path_length": 74.62729437767777,
+    "num_waypoints": 651,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:18:56.387102"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_005",
+    "success": true,
+    "computation_time": 28.630504608154297,
+    "path_length": 75.31673003197528,
+    "num_waypoints": 12,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:19:25.025915"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_005",
+    "success": true,
+    "computation_time": 11.288842916488647,
+    "path_length": 74.56833329081852,
+    "num_waypoints": 651,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:19:36.323888"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_006",
+    "success": true,
+    "computation_time": 3.333294153213501,
+    "path_length": 45.45685424949238,
+    "num_waypoints": 439,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:19:39.666205"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_006",
+    "success": true,
+    "computation_time": 39.472145795822144,
+    "path_length": 52.19265383707653,
+    "num_waypoints": 106,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:20:19.165406"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_006",
+    "success": true,
+    "computation_time": 21.765869855880737,
+    "path_length": 45.51603964539885,
+    "num_waypoints": 439,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:20:40.941992"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_006",
+    "success": true,
+    "computation_time": 27.83538818359375,
+    "path_length": 44.85096136347706,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:21:08.787224"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_006",
+    "success": true,
+    "computation_time": 3.752586841583252,
+    "path_length": 45.45685424949238,
+    "num_waypoints": 439,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:21:12.549841"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_007",
+    "success": true,
+    "computation_time": 2.8328328132629395,
+    "path_length": 42.125483399593904,
+    "num_waypoints": 409,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:21:15.395328"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_007",
+    "success": true,
+    "computation_time": 38.743736028671265,
+    "path_length": 62.893462263739245,
+    "num_waypoints": 126,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:21:54.148342"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_007",
+    "success": true,
+    "computation_time": 21.730819702148438,
+    "path_length": 42.22438419740628,
+    "num_waypoints": 409,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:22:15.889980"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_007",
+    "success": true,
+    "computation_time": 27.70443058013916,
+    "path_length": 40.981298243012986,
+    "num_waypoints": 6,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:22:43.603614"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_007",
+    "success": true,
+    "computation_time": 2.73331356048584,
+    "path_length": 42.125483399593904,
+    "num_waypoints": 409,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:22:46.347973"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_008",
+    "success": true,
+    "computation_time": 3.1715097427368164,
+    "path_length": 44.58204178980326,
+    "num_waypoints": 318,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:22:49.529507"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_008",
+    "success": true,
+    "computation_time": 39.37711501121521,
+    "path_length": 52.99999999999998,
+    "num_waypoints": 107,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:23:28.914731"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_008",
+    "success": true,
+    "computation_time": 22.346314430236816,
+    "path_length": 44.487947241182,
+    "num_waypoints": 318,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:23:51.270493"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_008",
+    "success": true,
+    "computation_time": 28.516652584075928,
+    "path_length": 45.79968103191194,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:24:19.795984"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_008",
+    "success": true,
+    "computation_time": 3.31257700920105,
+    "path_length": 44.58204178980326,
+    "num_waypoints": 318,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:24:23.119002"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_009",
+    "success": true,
+    "computation_time": 5.554039001464844,
+    "path_length": 52.55117600329313,
+    "num_waypoints": 430,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:24:28.682057"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_009",
+    "success": true,
+    "computation_time": 38.715532302856445,
+    "path_length": 59.71812303884301,
+    "num_waypoints": 121,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:25:07.407585"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_009",
+    "success": true,
+    "computation_time": 23.39441442489624,
+    "path_length": 52.57919817951942,
+    "num_waypoints": 430,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:25:30.811769"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_009",
+    "success": true,
+    "computation_time": 27.827394008636475,
+    "path_length": 51.223371527760975,
+    "num_waypoints": 7,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:25:58.648965"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_009",
+    "success": true,
+    "computation_time": 5.626828670501709,
+    "path_length": 52.55117600329313,
+    "num_waypoints": 430,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:26:04.286192"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_moderate_010",
+    "success": true,
+    "computation_time": 10.277216672897339,
+    "path_length": 74.87098115668778,
+    "num_waypoints": 560,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:26:14.574805"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_moderate_010",
+    "success": true,
+    "computation_time": 38.912620544433594,
+    "path_length": 92.48351031062884,
+    "num_waypoints": 188,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:26:53.495574"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_moderate_010",
+    "success": true,
+    "computation_time": 24.621403694152832,
+    "path_length": 74.86407522724971,
+    "num_waypoints": 560,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:27:18.127104"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_moderate_010",
+    "success": true,
+    "computation_time": 29.82214045524597,
+    "path_length": 77.46688106985222,
+    "num_waypoints": 10,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:27:47.958800"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_moderate_010",
+    "success": true,
+    "computation_time": 10.53874397277832,
+    "path_length": 74.87098115668778,
+    "num_waypoints": 560,
+    "complexity": "MODERATE",
+    "timestamp": "2025-11-21T16:27:58.507781"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_001",
+    "success": true,
+    "computation_time": 17.001487255096436,
+    "path_length": 101.27068529740474,
+    "num_waypoints": 725,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:28:15.520250"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_001",
+    "success": true,
+    "computation_time": 38.61940407752991,
+    "path_length": 121.00000000000003,
+    "num_waypoints": 243,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:28:54.148594"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_001",
+    "success": true,
+    "computation_time": 24.314635753631592,
+    "path_length": 101.31741338055278,
+    "num_waypoints": 725,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:29:18.474807"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_001",
+    "success": true,
+    "computation_time": 30.315354824066162,
+    "path_length": 101.01247652585347,
+    "num_waypoints": 14,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:29:48.799129"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_001",
+    "success": true,
+    "computation_time": 17.112584590911865,
+    "path_length": 101.27068529740474,
+    "num_waypoints": 725,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:30:05.924160"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_002",
+    "success": true,
+    "computation_time": 7.00311803817749,
+    "path_length": 63.99158723275375,
+    "num_waypoints": 486,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:30:12.936742"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_002",
+    "success": true,
+    "computation_time": 38.944329261779785,
+    "path_length": 72.49999999999997,
+    "num_waypoints": 146,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:30:51.890650"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_002",
+    "success": true,
+    "computation_time": 23.94268488883972,
+    "path_length": 61.43803118319158,
+    "num_waypoints": 442,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:31:15.843291"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_002",
+    "success": true,
+    "computation_time": 29.209739685058594,
+    "path_length": 64.84890557668072,
+    "num_waypoints": 8,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:31:45.063059"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_002",
+    "success": true,
+    "computation_time": 7.1693501472473145,
+    "path_length": 63.99158723275375,
+    "num_waypoints": 486,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:31:52.242372"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_003",
+    "success": true,
+    "computation_time": 13.911613464355469,
+    "path_length": 90.53443712397835,
+    "num_waypoints": 669,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:32:06.164327"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_003",
+    "success": true,
+    "computation_time": 39.267428398132324,
+    "path_length": 100.5,
+    "num_waypoints": 202,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:32:45.442752"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_003",
+    "success": true,
+    "computation_time": 23.572067737579346,
+    "path_length": 90.58232774747675,
+    "num_waypoints": 669,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:33:09.025612"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_003",
+    "success": true,
+    "computation_time": 29.90982484817505,
+    "path_length": 91.68944131676841,
+    "num_waypoints": 11,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:33:38.945932"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_003",
+    "success": true,
+    "computation_time": 14.069497346878052,
+    "path_length": 90.53443712397835,
+    "num_waypoints": 669,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:33:53.025955"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_004",
+    "success": true,
+    "computation_time": 5.6115031242370605,
+    "path_length": 58.30904037956218,
+    "num_waypoints": 529,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:33:58.647101"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_004",
+    "success": true,
+    "computation_time": 39.077635765075684,
+    "path_length": 67.34647043014499,
+    "num_waypoints": 135,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:34:37.734862"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_004",
+    "success": true,
+    "computation_time": 22.67781972885132,
+    "path_length": 58.32111496326341,
+    "num_waypoints": 529,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:35:00.424466"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_004",
+    "success": true,
+    "computation_time": 28.53537106513977,
+    "path_length": 57.28605507176725,
+    "num_waypoints": 10,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:35:28.969736"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_004",
+    "success": true,
+    "computation_time": 5.882178783416748,
+    "path_length": 58.30904037956218,
+    "num_waypoints": 529,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:35:34.862894"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_005",
+    "success": true,
+    "computation_time": 5.552178382873535,
+    "path_length": 56.162445840513925,
+    "num_waypoints": 457,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:35:40.425245"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_005",
+    "success": true,
+    "computation_time": 39.151490449905396,
+    "path_length": 63.41788524834356,
+    "num_waypoints": 129,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:36:19.585402"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_005",
+    "success": true,
+    "computation_time": 23.098779439926147,
+    "path_length": 56.18134523242816,
+    "num_waypoints": 457,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:36:42.694695"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_005",
+    "success": true,
+    "computation_time": 28.24371910095215,
+    "path_length": 52.691664720083935,
+    "num_waypoints": 7,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:37:10.949788"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_005",
+    "success": true,
+    "computation_time": 5.838933229446411,
+    "path_length": 56.162445840513925,
+    "num_waypoints": 457,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:37:16.799291"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_006",
+    "success": true,
+    "computation_time": 7.367142677307129,
+    "path_length": 62.70214280248093,
+    "num_waypoints": 505,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:37:24.178041"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_006",
+    "success": true,
+    "computation_time": 40.260828733444214,
+    "path_length": 66.9796134924335,
+    "num_waypoints": 136,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:38:04.451495"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_006",
+    "success": true,
+    "computation_time": 24.486651182174683,
+    "path_length": 62.72753853479304,
+    "num_waypoints": 505,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:38:28.950533"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_006",
+    "success": true,
+    "computation_time": 29.80960464477539,
+    "path_length": 61.43326931841977,
+    "num_waypoints": 10,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:38:58.769584"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_006",
+    "success": true,
+    "computation_time": 7.550123691558838,
+    "path_length": 62.70214280248093,
+    "num_waypoints": 505,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:39:06.350421"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_007",
+    "success": true,
+    "computation_time": 8.919713258743286,
+    "path_length": 69.01513703397204,
+    "num_waypoints": 576,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:39:15.280821"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_007",
+    "success": true,
+    "computation_time": 38.678555727005005,
+    "path_length": 73.49999999999997,
+    "num_waypoints": 148,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:39:53.969960"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_007",
+    "success": true,
+    "computation_time": 24.293079614639282,
+    "path_length": 69.06030840770035,
+    "num_waypoints": 576,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:40:18.275949"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_007",
+    "success": true,
+    "computation_time": 28.554040670394897,
+    "path_length": 66.90044350774826,
+    "num_waypoints": 9,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:40:46.840355"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_007",
+    "success": true,
+    "computation_time": 9.052741289138794,
+    "path_length": 69.01513703397204,
+    "num_waypoints": 576,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:40:55.905333"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_008",
+    "success": true,
+    "computation_time": 2.031834363937378,
+    "path_length": 39.75563491861041,
+    "num_waypoints": 394,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:40:57.947209"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_008",
+    "success": true,
+    "computation_time": 39.199533224105835,
+    "path_length": 52.76312694017579,
+    "num_waypoints": 107,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:41:37.159971"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_008",
+    "success": true,
+    "computation_time": 22.755933046340942,
+    "path_length": 39.73908416064131,
+    "num_waypoints": 394,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:41:59.926076"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_008",
+    "success": true,
+    "computation_time": 27.130008220672607,
+    "path_length": 39.32022963690109,
+    "num_waypoints": 6,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:42:27.066594"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_008",
+    "success": true,
+    "computation_time": 1.953585147857666,
+    "path_length": 39.75563491861041,
+    "num_waypoints": 394,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:42:29.030835"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_009",
+    "success": true,
+    "computation_time": 3.4973108768463135,
+    "path_length": 48.556854249492375,
+    "num_waypoints": 470,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:42:32.538187"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_009",
+    "success": true,
+    "computation_time": 39.72425842285156,
+    "path_length": 60.499999999999986,
+    "num_waypoints": 122,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:43:12.273288"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_009",
+    "success": true,
+    "computation_time": 22.409919500350952,
+    "path_length": 48.61166034841881,
+    "num_waypoints": 470,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:43:34.695222"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_009",
+    "success": true,
+    "computation_time": 27.991681814193726,
+    "path_length": 48.11352836405696,
+    "num_waypoints": 9,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:44:02.697008"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_009",
+    "success": true,
+    "computation_time": 3.61540150642395,
+    "path_length": 48.556854249492375,
+    "num_waypoints": 470,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:44:06.323338"
+  },
+  {
+    "planner_name": "ADAPTIVE",
+    "scenario_name": "scenario_large_complex_010",
+    "success": true,
+    "computation_time": 6.05634331703186,
+    "path_length": 59.61736649163069,
+    "num_waypoints": 528,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:44:12.392375"
+  },
+  {
+    "planner_name": "RRT_STAR",
+    "scenario_name": "scenario_large_complex_010",
+    "success": true,
+    "computation_time": 38.92662477493286,
+    "path_length": 74.78057737745905,
+    "num_waypoints": 151,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:44:51.329429"
+  },
+  {
+    "planner_name": "SAFETY_FIRST",
+    "scenario_name": "scenario_large_complex_010",
+    "success": true,
+    "computation_time": 22.705191373825073,
+    "path_length": 59.65748277866497,
+    "num_waypoints": 528,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:45:14.045883"
+  },
+  {
+    "planner_name": "HPA_STAR",
+    "scenario_name": "scenario_large_complex_010",
+    "success": true,
+    "computation_time": 27.58200716972351,
+    "path_length": 58.70324525415431,
+    "num_waypoints": 7,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:45:41.638108"
+  },
+  {
+    "planner_name": "DSTAR_LITE",
+    "scenario_name": "scenario_large_complex_010",
+    "success": true,
+    "computation_time": 6.345034837722778,
+    "path_length": 59.61736649163069,
+    "num_waypoints": 528,
+    "complexity": "COMPLEX",
+    "timestamp": "2025-11-21T16:45:47.994893"
+  }
+]

@@ -1,0 +1,18 @@
+
+\begin{table}[h]
+\centering
+\caption{Algorithm Performance Comparison}
+\label{tab:algorithm_comparison}
+\begin{tabular}{lccccc}
+\hline
+Algorithm & Time (s) & Path Length (m) & Success Rate & Nodes & Memory (MB) \\
+\hline
+Dijkstra & 1.2 ± 1.2 & 0.2 ± 0.1 & 100\% & 7583 & 1.9 \\
+\textbf{A*} & \textbf{0.2 ± 0.2} & \textbf{18.0 ± 3.2} & \textbf{100\%} & \textbf{18} & \textbf{0.0} \\
+Weighted A* & 13.6 ± 8.1 & 2.6 ± 0.6 & 100\% & 13713 & 1.4 \\
+RRT* & 0.0 ± 0.0 & 0.9 ± 0.4 & 100\% & 25 & 0.0 \\
+TA-A* (Proposed) & 0.6 ± 0.3 & 2.2 ± 0.4 & 100\% & 5237 & 0.1 \\
+
+\hline
+\end{tabular}
+\end{table}

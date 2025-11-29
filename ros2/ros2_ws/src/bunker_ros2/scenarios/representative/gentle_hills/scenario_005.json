@@ -1,0 +1,18 @@
+{
+  "scenario_id": 5,
+  "terrain_name": "Gentle Hills",
+  "terrain_type": "Gentle Slope",
+  "map_size": 50.0,
+  "start": [
+    13.60047538977122,
+    -22.298271322668406,
+    0.2
+  ],
+  "goal": [
+    4.546795338710673,
+    4.775008795971264,
+    2.924299582188765
+  ],
+  "distance": 28.547007178499495,
+  "max_slope": 15.0
+}

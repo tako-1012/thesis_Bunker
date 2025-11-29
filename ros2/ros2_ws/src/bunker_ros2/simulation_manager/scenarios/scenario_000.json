@@ -1,0 +1,35 @@
+{
+  "scenario_id": 0,
+  "name": "flat_terrain_00",
+  "description": "\u5e73\u5766\u306a\u5730\u5f62\u3067\u306e\u30d9\u30fc\u30b9\u30e9\u30a4\u30f3\u8a55\u4fa1 \uff08\u969c\u5bb3\u7269\u5bc6\u5ea6: 0.08, \u6700\u5927\u52fe\u914d: 1.2\u5ea6, \u7c97\u3055: 0.02\uff09",
+  "terrain_params": {
+    "terrain_type": "flat_terrain",
+    "size_x": 10.0,
+    "size_y": 10.0,
+    "size_z": 0.5,
+    "obstacle_density": 0.08114366560796603,
+    "max_slope": 1.235323561917789,
+    "roughness": 0.02153446343467094,
+    "narrow_passage_width": 5.0,
+    "difficulty": "easy"
+  },
+  "robot_params": {
+    "max_slope_capability": 30.0,
+    "width": 0.8,
+    "height": 0.6,
+    "safety_margin": 0.2
+  },
+  "start_position": [
+    -2.621175858528886,
+    -3.9210976167097287,
+    0.0
+  ],
+  "goal_position": [
+    3.250753533101703,
+    4.3246051687508,
+    0.49616299941389913
+  ],
+  "expected_difficulty": "easy",
+  "created_at": "2025-10-17T19:37:20.316503",
+  "checksum": "03d14935e817fdc5"
+}

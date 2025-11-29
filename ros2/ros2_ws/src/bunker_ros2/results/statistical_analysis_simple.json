@@ -1,0 +1,13 @@
+{
+  "a_star": {
+    "success_rate": 100.0,
+    "successes": 49,
+    "total": 49
+  },
+  "ta_a_star": {
+    "success_rate": 57.14285714285714,
+    "successes": 28,
+    "total": 49
+  },
+  "improvement": -42.85714285714286
+}

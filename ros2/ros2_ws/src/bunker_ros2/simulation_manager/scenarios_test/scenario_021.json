@@ -1,0 +1,35 @@
+{
+  "scenario_id": 21,
+  "name": "gentle_slope_11",
+  "description": "\u7de9\u3084\u304b\u306a\u659c\u9762\u3067\u306e\u79fb\u52d5\u6027\u80fd\u8a55\u4fa1 \uff08\u969c\u5bb3\u7269\u5bc6\u5ea6: 0.10, \u6700\u5927\u52fe\u914d: 14.4\u5ea6, \u7c97\u3055: 0.26\uff09",
+  "terrain_params": {
+    "terrain_type": "gentle_slope",
+    "size_x": 10.0,
+    "size_y": 10.0,
+    "size_z": 3.0,
+    "obstacle_density": 0.09618920956919477,
+    "max_slope": 14.369145962827634,
+    "roughness": 0.2588701618313196,
+    "narrow_passage_width": 4.0,
+    "difficulty": "easy"
+  },
+  "robot_params": {
+    "max_slope_capability": 30.0,
+    "width": 0.8,
+    "height": 0.6,
+    "safety_margin": 0.2
+  },
+  "start_position": [
+    1.7537677243860055,
+    1.9814241347625876,
+    0.0
+  ],
+  "goal_position": [
+    9.178715962593609,
+    8.929991607697131,
+    0.23495824831422216
+  ],
+  "expected_difficulty": "easy",
+  "created_at": "2025-10-17T15:18:33.181302",
+  "checksum": "a1fa304081073c23"
+}

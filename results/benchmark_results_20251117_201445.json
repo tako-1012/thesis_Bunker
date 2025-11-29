@@ -1,0 +1,476 @@
+{
+  "metadata": {
+    "timestamp": "20251117_201445",
+    "voxel_size": 0.1,
+    "grid_size": [
+      200,
+      200,
+      50
+    ],
+    "total_scenarios": 8
+  },
+  "results": {
+    "flat_short": {
+      "scenario": {
+        "name": "flat_short",
+        "description": "平地・短距離（5m）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          5.0,
+          0.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.1845858097076416,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "ARA* (Anytime Repairing A*)": {
+          "success": true,
+          "path_length": 49,
+          "path_distance": 4.799999999999999,
+          "nodes_explored": 49,
+          "computation_time": 0.004556894302368164
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.002576112747192383
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.001634836196899414
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 11,
+          "path_distance": 5.965860300115023,
+          "nodes_explored": 61,
+          "computation_time": 0.0014433860778808594
+        }
+      }
+    },
+    "flat_medium": {
+      "scenario": {
+        "name": "flat_medium",
+        "description": "平地・中距離（10m）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          7.0,
+          7.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 71,
+          "path_distance": 9.899494936611667,
+          "nodes_explored": 71,
+          "computation_time": 0.46273303031921387,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "ARA* (Anytime Repairing A*)": {
+          "success": true,
+          "path_length": 69,
+          "path_distance": 9.616652224137036,
+          "nodes_explored": 69,
+          "computation_time": 0.013494491577148438
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 71,
+          "path_distance": 9.89949493661167,
+          "nodes_explored": 71,
+          "computation_time": 0.0046846866607666016
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 71,
+          "path_distance": 9.89949493661167,
+          "nodes_explored": 71,
+          "computation_time": 0.003464937210083008
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 19,
+          "path_distance": 12.395462106557638,
+          "nodes_explored": 70,
+          "computation_time": 0.0016906261444091797
+        }
+      }
+    },
+    "flat_long": {
+      "scenario": {
+        "name": "flat_long",
+        "description": "平地・長距離（20m）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          15.0,
+          15.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "medium"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 100,
+          "path_distance": 14.000714267493628,
+          "nodes_explored": 100,
+          "computation_time": 0.7216188907623291,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "ARA* (Anytime Repairing A*)": {
+          "success": true,
+          "path_length": 99,
+          "path_distance": 13.859292911256313,
+          "nodes_explored": 99,
+          "computation_time": 0.014302253723144531
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 151,
+          "path_distance": 21.21320343559645,
+          "nodes_explored": 151,
+          "computation_time": 0.014770746231079102
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 151,
+          "path_distance": 21.21320343559645,
+          "nodes_explored": 151,
+          "computation_time": 0.011068344116210938
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 31,
+          "path_distance": 23.920312514404394,
+          "nodes_explored": 118,
+          "computation_time": 0.006368875503540039
+        }
+      }
+    },
+    "slope_gentle": {
+      "scenario": {
+        "name": "slope_gentle",
+        "description": "緩やかな傾斜（10度）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          0.0,
+          2.0
+        ],
+        "terrain_type": "slope",
+        "difficulty": "medium"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 10.828427124746192,
+          "nodes_explored": 22759,
+          "computation_time": 59.62334394454956,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "ARA* (Anytime Repairing A*)": {
+          "success": true,
+          "path_length": 117,
+          "path_distance": 11.599999999999975,
+          "nodes_explored": 117,
+          "computation_time": 0.01119685173034668
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 10.828427124746188,
+          "nodes_explored": 101,
+          "computation_time": 0.00493621826171875
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 10.828427124746188,
+          "nodes_explored": 101,
+          "computation_time": 0.004854679107666016
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 21,
+          "path_distance": 13.747030939887928,
+          "nodes_explored": 96,
+          "computation_time": 0.003343820571899414
+        }
+      }
+    },
+    "slope_moderate": {
+      "scenario": {
+        "name": "slope_moderate",
+        "description": "中程度の傾斜（20度）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          0.0,
+          3.5
+        ],
+        "terrain_type": "slope",
+        "difficulty": "medium"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.449747468305835,
+          "nodes_explored": 42124,
+          "computation_time": 154.77121329307556,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "ARA* (Anytime Repairing A*)": {
+          "success": true,
+          "path_length": 132,
+          "path_distance": 13.09999999999997,
+          "nodes_explored": 132,
+          "computation_time": 0.015281915664672852
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.44974746830583,
+          "nodes_explored": 101,
+          "computation_time": 0.005531787872314453
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.44974746830583,
+          "nodes_explored": 101,
+          "computation_time": 0.0039975643157958984
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 19,
+          "path_distance": 12.995431595052539,
+          "nodes_explored": 119,
+          "computation_time": 0.0037088394165039062
+        }
+      }
+    },
+    "slope_steep": {
+      "scenario": {
+        "name": "slope_steep",
+        "description": "急傾斜（25度）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          0.0,
+          4.5
+        ],
+        "terrain_type": "slope",
+        "difficulty": "hard"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.863961030678933,
+          "nodes_explored": 49427,
+          "computation_time": 213.42419028282166,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "ARA* (Anytime Repairing A*)": {
+          "success": true,
+          "path_length": 142,
+          "path_distance": 14.099999999999966,
+          "nodes_explored": 142,
+          "computation_time": 0.016422748565673828
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.863961030678926,
+          "nodes_explored": 101,
+          "computation_time": 0.005023479461669922
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.863961030678926,
+          "nodes_explored": 101,
+          "computation_time": 0.00422358512878418
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 26,
+          "path_distance": 18.583417922011368,
+          "nodes_explored": 171,
+          "computation_time": 0.0073282718658447266
+        }
+      }
+    },
+    "diagonal_climb": {
+      "scenario": {
+        "name": "diagonal_climb",
+        "description": "斜め上昇",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "terrain_type": "slope",
+        "difficulty": "medium"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 81,
+          "path_distance": 12.267220234572104,
+          "nodes_explored": 23501,
+          "computation_time": 103.92146849632263,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "ARA* (Anytime Repairing A*)": {
+          "success": true,
+          "path_length": 108,
+          "path_distance": 13.972287142747428,
+          "nodes_explored": 108,
+          "computation_time": 0.011963844299316406
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 81,
+          "path_distance": 12.267220234572118,
+          "nodes_explored": 81,
+          "computation_time": 0.006322622299194336
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 81,
+          "path_distance": 12.267220234572118,
+          "nodes_explored": 81,
+          "computation_time": 0.0058214664459228516
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 17,
+          "path_distance": 12.400529745287855,
+          "nodes_explored": 43,
+          "computation_time": 0.0006632804870605469
+        }
+      }
+    },
+    "complex_3d": {
+      "scenario": {
+        "name": "complex_3d",
+        "description": "複雑な3D経路",
+        "start": [
+          -5.0,
+          -5.0,
+          0.0
+        ],
+        "goal": [
+          5.0,
+          5.0,
+          3.0
+        ],
+        "terrain_type": "complex",
+        "difficulty": "hard"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 15.095647359318297,
+          "nodes_explored": 39162,
+          "computation_time": 226.21161651611328,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "ARA* (Anytime Repairing A*)": {
+          "success": true,
+          "path_length": 128,
+          "path_distance": 16.80071426749361,
+          "nodes_explored": 260822,
+          "computation_time": 24.19457507133484
+        },
+        "階層型A* (HPA*)": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 8.535385131835938e-05,
+          "error_message": "coarse grid search failed (all retries)"
+        },
+        "D* Lite": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 3.337860107421875e-05,
+          "error_message": "dstar_lite grid search failed (all retries)"
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 19,
+          "path_distance": 14.969186368398306,
+          "nodes_explored": 37,
+          "computation_time": 0.0005044937133789062
+        }
+      }
+    }
+  }
+}

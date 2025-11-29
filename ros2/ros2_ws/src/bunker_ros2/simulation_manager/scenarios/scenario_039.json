@@ -1,0 +1,35 @@
+{
+  "scenario_id": 39,
+  "name": "steep_slope_14",
+  "description": "\u6025\u659c\u9762\u3067\u306e\u767b\u5742\u80fd\u529b\u8a55\u4fa1 \uff08\u969c\u5bb3\u7269\u5bc6\u5ea6: 0.17, \u6700\u5927\u52fe\u914d: 33.5\u5ea6, \u7c97\u3055: 0.50\uff09",
+  "terrain_params": {
+    "terrain_type": "steep_slope",
+    "size_x": 10.0,
+    "size_y": 10.0,
+    "size_z": 5.0,
+    "obstacle_density": 0.17110610543079935,
+    "max_slope": 33.492520757295935,
+    "roughness": 0.4988220425913872,
+    "narrow_passage_width": 3.0,
+    "difficulty": "medium"
+  },
+  "robot_params": {
+    "max_slope_capability": 30.0,
+    "width": 0.8,
+    "height": 0.6,
+    "safety_margin": 0.2
+  },
+  "start_position": [
+    -4.359232162128318,
+    -4.492391201310214,
+    0.0
+  ],
+  "goal_position": [
+    2.786851255624084,
+    2.131819902321518,
+    0.6937621331731508
+  ],
+  "expected_difficulty": "medium",
+  "created_at": "2025-10-17T19:37:20.318083",
+  "checksum": "814c115d2126a4ca"
+}

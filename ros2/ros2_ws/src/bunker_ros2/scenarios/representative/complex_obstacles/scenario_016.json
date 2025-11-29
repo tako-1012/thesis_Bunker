@@ -1,0 +1,18 @@
+{
+  "scenario_id": 16,
+  "terrain_name": "Complex Obstacles",
+  "terrain_type": "Obstacle Field",
+  "map_size": 50.0,
+  "start": [
+    -4.828347139121437,
+    -7.562563680945859,
+    0.7843712434240264
+  ],
+  "goal": [
+    14.05072471714687,
+    11.700053750788264,
+    0.2
+  ],
+  "distance": 26.97161071340548,
+  "max_slope": 20.0
+}

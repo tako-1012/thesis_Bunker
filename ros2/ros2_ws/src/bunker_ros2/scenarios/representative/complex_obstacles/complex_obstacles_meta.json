@@ -1,0 +1,9 @@
+{
+  "name": "Complex Obstacles",
+  "description": "\u8907\u96d1\u306a\u969c\u5bb3\u7269\u5730\u5f62\u3002\u74e6\u792b\u3001\u5efa\u7269\u591a\u6570",
+  "size": 50.0,
+  "terrain_type": "Obstacle Field",
+  "max_slope": 20.0,
+  "grid_size": 100,
+  "resolution": 0.5
+}

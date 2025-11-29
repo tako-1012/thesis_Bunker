@@ -1,0 +1,35 @@
+{
+  "scenario_id": 92,
+  "name": "complex_3d_02",
+  "description": "\u8907\u96d1\u306a3D\u5730\u5f62\u3067\u306e\u7dcf\u5408\u6027\u80fd\u8a55\u4fa1 \uff08\u969c\u5bb3\u7269\u5bc6\u5ea6: 0.33, \u6700\u5927\u52fe\u914d: 30.7\u5ea6, \u7c97\u3055: 0.52\uff09",
+  "terrain_params": {
+    "terrain_type": "complex_3d",
+    "size_x": 15.0,
+    "size_y": 15.0,
+    "size_z": 6.0,
+    "obstacle_density": 0.3263817464212013,
+    "max_slope": 30.683961922268594,
+    "roughness": 0.5179878947238667,
+    "narrow_passage_width": 2.088791829631369,
+    "difficulty": "hard"
+  },
+  "robot_params": {
+    "max_slope_capability": 30.0,
+    "width": 0.8,
+    "height": 0.6,
+    "safety_margin": 0.2
+  },
+  "start_position": [
+    1.6731143092953271,
+    1.9942331511960827,
+    0.0
+  ],
+  "goal_position": [
+    14.11226410693784,
+    13.68975402147759,
+    1.2983734660411665
+  ],
+  "expected_difficulty": "hard",
+  "created_at": "2025-10-17T15:10:08.061948",
+  "checksum": "1fc795a4b291a7b3"
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "scenario_id": 0,
+    "scenario_name": "flat_terrain_00",
+    "success": true,
+    "path_found": true,
+    "path_length": 8.147483700823944,
+    "num_waypoints": 59,
+    "computation_time": 11.943252325057983,
+    "memory_usage": 0.0,
+    "cost_breakdown": {},
+    "error_message": "",
+    "executed_at": "2025-10-17T15:19:54.167345"
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "flat_terrain_01",
+    "success": true,
+    "path_found": true,
+    "path_length": 10.181652484302912,
+    "num_waypoints": 71,
+    "computation_time": 40.7285521030426,
+    "memory_usage": 0.0,
+    "cost_breakdown": {},
+    "error_message": "",
+    "executed_at": "2025-10-17T15:20:34.902549"
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "flat_terrain_02",
+    "success": true,
+    "path_found": true,
+    "path_length": 9.603871472890656,
+    "num_waypoints": 70,
+    "computation_time": 54.48131012916565,
+    "memory_usage": 0.0,
+    "cost_breakdown": {},
+    "error_message": "",
+    "executed_at": "2025-10-17T15:21:29.391522"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "small": {
+    "A*": {
+      "success_rate": 100.0,
+      "avg_time": 0.20917797088623047,
+      "avg_length": 106.0,
+      "success_count": 20,
+      "total_count": 20
+    }
+  },
+  "medium": {
+    "A*": {
+      "success_rate": 100.0,
+      "avg_time": 0.22400806744893392,
+      "avg_length": 113.0,
+      "success_count": 15,
+      "total_count": 15
+    }
+  },
+  "large": {
+    "A*": {
+      "success_rate": 100.0,
+      "avg_time": 0.057900071144104004,
+      "avg_length": 86.0,
+      "success_count": 10,
+      "total_count": 10
+    }
+  }
+}

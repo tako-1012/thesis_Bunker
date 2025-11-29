@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""
+Wrapper executable to launch Unity visualization bridge via ros2 run.
+Resolves module name collision by loading the node module by file path.
+"""
+
+import os
+import importlib.util
+
+
+def run():
+    here = os.path.dirname(os.path.abspath(__file__))
+    pkg_root = os.path.dirname(here)
+    target = os.path.join(pkg_root, 'bunker_3d_nav', 'bunker_3d_nav', 'unity_visualization', 'unity_visualization_node.py')
+    if not os.path.exists(target):
+        raise FileNotFoundError(f'Cannot locate Unity visualization node file: {target}')
+    spec = importlib.util.spec_from_file_location('bunker_3d_nav_internal.unity_visualization_node', target)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)  # type: ignore
+    mod.main()
+
+
+if __name__ == "__main__":
+    run()

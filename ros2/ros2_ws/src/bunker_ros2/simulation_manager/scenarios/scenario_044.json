@@ -1,0 +1,35 @@
+{
+  "scenario_id": 44,
+  "name": "mixed_terrain_04",
+  "description": "\u591a\u69d8\u306a\u5730\u5f62\u8981\u7d20\u304c\u6df7\u5728\u3059\u308b\u74b0\u5883\u3067\u306e\u9069\u5fdc\u6027\u8a55\u4fa1 \uff08\u969c\u5bb3\u7269\u5bc6\u5ea6: 0.25, \u6700\u5927\u52fe\u914d: 16.4\u5ea6, \u7c97\u3055: 0.36\uff09",
+  "terrain_params": {
+    "terrain_type": "mixed_terrain",
+    "size_x": 12.0,
+    "size_y": 12.0,
+    "size_z": 4.0,
+    "obstacle_density": 0.2542945376246652,
+    "max_slope": 16.400503624266687,
+    "roughness": 0.3643301299391385,
+    "narrow_passage_width": 3.5,
+    "difficulty": "medium"
+  },
+  "robot_params": {
+    "max_slope_capability": 30.0,
+    "width": 0.8,
+    "height": 0.6,
+    "safety_margin": 0.2
+  },
+  "start_position": [
+    -3.889027807683025,
+    -2.972958514056378,
+    0.0
+  ],
+  "goal_position": [
+    2.1660682491857517,
+    3.840371648236389,
+    1.349701658776021
+  ],
+  "expected_difficulty": "easy",
+  "created_at": "2025-10-17T19:37:20.318272",
+  "checksum": "e0f07465323c6ed1"
+}

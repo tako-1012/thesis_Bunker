@@ -1,0 +1,15 @@
+[
+  {
+    "scenario_id": 0,
+    "scenario_name": "flat_terrain_00",
+    "success": true,
+    "path_found": true,
+    "path_length": 8.147483700823944,
+    "num_waypoints": 59,
+    "computation_time": 11.943252325057983,
+    "memory_usage": 0.0,
+    "cost_breakdown": {},
+    "error_message": "",
+    "executed_at": "2025-10-17T15:19:54.167345"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "results": {
+    "extreme_hazards": {}
+  },
+  "statistics": {
+    "total_experiments": 385,
+    "completed_experiments": 0,
+    "failed_experiments": 0,
+    "start_time": 1761303541.7708936,
+    "end_time": null
+  },
+  "metadata": {
+    "terrain_types": [
+      "flat_agricultural_field",
+      "gentle_hills",
+      "steep_terrain",
+      "complex_obstacles",
+      "extreme_hazards"
+    ],
+    "terrain_names": {
+      "flat_agricultural_field": "Flat Agricultural Field",
+      "gentle_hills": "Gentle Hills",
+      "steep_terrain": "Steep Terrain",
+      "complex_obstacles": "Complex Obstacles",
+      "extreme_hazards": "Extreme Hazards"
+    },
+    "algorithms": [
+      "Dijkstra",
+      "A*",
+      "Weighted A*",
+      "RRT*",
+      "TA-A* (Proposed)"
+    ]
+  }
+}

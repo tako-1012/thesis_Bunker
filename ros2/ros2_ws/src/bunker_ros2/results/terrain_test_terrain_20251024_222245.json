@@ -1,0 +1,66 @@
+{
+  "experiment_info": {
+    "experiment_name": "Terrain_test_terrain",
+    "start_time": 1761312165.0023856,
+    "end_time": null,
+    "total_experiments": 2,
+    "completed_experiments": 2,
+    "failed_experiments": 0,
+    "success_rate": 0.0
+  },
+  "results": [
+    {
+      "experiment_id": "test_terrain_000",
+      "algorithm_name": "A*",
+      "success": true,
+      "computation_time": 0.32573533058166504,
+      "path_length": 17.77056274847713,
+      "nodes_explored": 785,
+      "error_message": "",
+      "additional_metrics": {
+        "terrain_type": "test_terrain",
+        "scenario_id": 0,
+        "start": [
+          -5.726034227077903,
+          -8.519675803082757,
+          0.2
+        ],
+        "goal": [
+          7.760033998294112,
+          3.6967934085888743,
+          0.2
+        ],
+        "distance": 18.19659737915607
+      }
+    },
+    {
+      "experiment_id": "test_terrain_001",
+      "algorithm_name": "A*",
+      "success": true,
+      "computation_time": 0.426868200302124,
+      "path_length": 9.091168824543132,
+      "nodes_explored": 1222,
+      "error_message": "",
+      "additional_metrics": {
+        "terrain_type": "test_terrain",
+        "scenario_id": 1,
+        "start": [
+          -4.048850356648813,
+          -18.304687398445008,
+          0.2
+        ],
+        "goal": [
+          4.1160876163588505,
+          -14.380746945412506,
+          0.2
+        ],
+        "distance": 9.058891807611317
+      }
+    }
+  ],
+  "metadata": {
+    "experiment_name": "Terrain_test_terrain",
+    "total_results": 2,
+    "generated_at": "2025-10-24 22:22:45"
+  }
+}

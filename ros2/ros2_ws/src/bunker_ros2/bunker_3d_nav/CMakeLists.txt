@@ -17,6 +17,9 @@ find_package(visualization_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
+# Pythonパッケージのインストール（console_scripts 生成に必要）
+ament_python_install_package(${PROJECT_NAME})
+
 # メッセージ/サービスファイル追加
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/TerrainAnalysis.msg"
@@ -35,18 +38,38 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 # Python実行ファイルのインストール
 install(PROGRAMS
-  terrain_analyzer/voxel_grid_processor.py
-  terrain_analyzer/slope_calculator.py
-  terrain_analyzer/terrain_analyzer_node.py
-  terrain_analyzer/terrain_visualizer.py
-  unity_bridge/ros_to_unity_converter.py
-  unity_bridge/tcp_server_node.py
+  ${CMAKE_CURRENT_SOURCE_DIR}/terrain_analyzer/voxel_grid_processor.py
+  ${CMAKE_CURRENT_SOURCE_DIR}/terrain_analyzer/slope_calculator.py
+  ${CMAKE_CURRENT_SOURCE_DIR}/terrain_analyzer/terrain_analyzer_node.py
+  ${CMAKE_CURRENT_SOURCE_DIR}/terrain_analyzer/terrain_visualizer.py
+  ${CMAKE_CURRENT_SOURCE_DIR}/unity_bridge/ros_to_unity_converter.py
+  ${CMAKE_CURRENT_SOURCE_DIR}/unity_bridge/tcp_server_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
-# スクリプトディレクトリのインストール
+# TA*, Unity visualization, scenario manager wrapper scripts
+install(PROGRAMS
+  ${CMAKE_CURRENT_SOURCE_DIR}/scripts/ta_star_planner_node
+  ${CMAKE_CURRENT_SOURCE_DIR}/scripts/unity_visualization_node
+  ${CMAKE_CURRENT_SOURCE_DIR}/scripts/scenario_publisher
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+# Fallback: install entire directories to ensure files are deployed
 install(DIRECTORY
-  scripts/
+  ${CMAKE_CURRENT_SOURCE_DIR}/bunker_3d_nav/ta_star_planner/
+  ${CMAKE_CURRENT_SOURCE_DIR}/bunker_3d_nav/unity_visualization/
+  ${CMAKE_CURRENT_SOURCE_DIR}/bunker_3d_nav/scenario_management/
+  DESTINATION lib/${PROJECT_NAME}
+  FILES_MATCHING PATTERN "*.py"
+  USE_SOURCE_PERMISSIONS
+)
+
+# スクリプトディレクトリのインストール - サブディレクトリのみ（wrapperは後で個別指定）
+install(DIRECTORY
+  scripts/debug
+  scripts/evaluation
+  scripts/tuning
   DESTINATION lib/${PROJECT_NAME}
   USE_SOURCE_PERMISSIONS
 )

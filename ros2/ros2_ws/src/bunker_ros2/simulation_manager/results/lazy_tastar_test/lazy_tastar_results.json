@@ -1,0 +1,73 @@
+{
+  "algorithm": "Lazy TA-A*",
+  "total_tests": 5,
+  "successful_tests": 5,
+  "success_rate": 100.0,
+  "total_time": 0.3197042942047119,
+  "avg_computation_time": 0.06286683082580566,
+  "avg_path_length": 14.045211481821028,
+  "avg_nodes_explored": 708.4,
+  "avg_phase_used": 2.0,
+  "results": [
+    {
+      "scenario_id": 0,
+      "scenario_name": "Short",
+      "success": true,
+      "computation_time": 0.005513906478881836,
+      "path_length": 6.929646455628162,
+      "nodes_explored": 50,
+      "phase_used": 2,
+      "terrain_adaptations": 1,
+      "error_message": "",
+      "test_time": 0.005667448043823242
+    },
+    {
+      "scenario_id": 1,
+      "scenario_name": "Medium",
+      "success": true,
+      "computation_time": 0.010977983474731445,
+      "path_length": 14.000714267493622,
+      "nodes_explored": 100,
+      "phase_used": 2,
+      "terrain_adaptations": 1,
+      "error_message": "",
+      "test_time": 0.011292219161987305
+    },
+    {
+      "scenario_id": 2,
+      "scenario_name": "Long",
+      "success": true,
+      "computation_time": 0.019968509674072266,
+      "path_length": 28.142849891224532,
+      "nodes_explored": 200,
+      "phase_used": 2,
+      "terrain_adaptations": 1,
+      "error_message": "",
+      "test_time": 0.0205385684967041
+    },
+    {
+      "scenario_id": 3,
+      "scenario_name": "Diagonal",
+      "success": true,
+      "computation_time": 0.009563207626342773,
+      "path_length": 14.00071426749362,
+      "nodes_explored": 100,
+      "phase_used": 2,
+      "terrain_adaptations": 1,
+      "error_message": "",
+      "test_time": 0.009984970092773438
+    },
+    {
+      "scenario_id": 4,
+      "scenario_name": "Height",
+      "success": true,
+      "computation_time": 0.268310546875,
+      "path_length": 7.152132527265207,
+      "nodes_explored": 3092,
+      "phase_used": 2,
+      "terrain_adaptations": 1,
+      "error_message": "",
+      "test_time": 0.27222108840942383
+    }
+  ]
+}

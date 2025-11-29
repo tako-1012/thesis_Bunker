@@ -1,0 +1,739 @@
+{
+  "test_info": {
+    "total_scenarios": 16,
+    "total_test_time": 49.83014512062073,
+    "timestamp": "2025-10-26 02:58:40"
+  },
+  "lazy_tastar": {
+    "results": {
+      "algorithm": "Lazy TA-A*",
+      "total_test_time": 0.28232526779174805,
+      "results": [
+        {
+          "scenario_id": 0,
+          "scenario_name": "Very Short",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.0008482933044433594,
+          "path_length": 2.121320343559643,
+          "nodes_explored": 4,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0008950233459472656,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 1,
+          "scenario_name": "Short",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.0012404918670654297,
+          "path_length": 6.363961030678929,
+          "nodes_explored": 10,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0012803077697753906,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 2,
+          "scenario_name": "Medium",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.0029442310333251953,
+          "path_length": 13.435028842544408,
+          "nodes_explored": 20,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0030074119567871094,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 3,
+          "scenario_name": "Long",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.004053831100463867,
+          "path_length": 27.577164466275338,
+          "nodes_explored": 40,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.004152536392211914,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 4,
+          "scenario_name": "Very Long",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.005795478820800781,
+          "path_length": 55.86143571373719,
+          "nodes_explored": 80,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.005979299545288086,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 5,
+          "scenario_name": "L-Shape",
+          "category": "complex",
+          "success": true,
+          "computation_time": 0.0023102760314941406,
+          "path_length": 19.0,
+          "nodes_explored": 39,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.002398252487182617,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 6,
+          "scenario_name": "U-Shape",
+          "category": "complex",
+          "success": true,
+          "computation_time": 0.0013489723205566406,
+          "path_length": 9.0,
+          "nodes_explored": 19,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0013930797576904297,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 7,
+          "scenario_name": "Diagonal",
+          "category": "complex",
+          "success": true,
+          "computation_time": 0.006059169769287109,
+          "path_length": 41.719300090006264,
+          "nodes_explored": 60,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.00625300407409668,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 8,
+          "scenario_name": "Zigzag",
+          "category": "complex",
+          "success": true,
+          "computation_time": 0.2343888282775879,
+          "path_length": 23.142135623730937,
+          "nodes_explored": 3422,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.23652362823486328,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 9,
+          "scenario_name": "Low Height",
+          "category": "height",
+          "success": true,
+          "computation_time": 0.0008363723754882812,
+          "path_length": 6.363961030678929,
+          "nodes_explored": 10,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0008721351623535156,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 10,
+          "scenario_name": "Medium Height",
+          "category": "height",
+          "success": true,
+          "computation_time": 0.0014407634735107422,
+          "path_length": 6.52287965327682,
+          "nodes_explored": 24,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.001486063003540039,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 11,
+          "scenario_name": "High Height",
+          "category": "height",
+          "success": true,
+          "computation_time": 0.0021278858184814453,
+          "path_length": 6.68179827587471,
+          "nodes_explored": 38,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.002177000045776367,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 12,
+          "scenario_name": "Downward",
+          "category": "height",
+          "success": true,
+          "computation_time": 0.0013613700866699219,
+          "path_length": 6.52287965327682,
+          "nodes_explored": 24,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0014052391052246094,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 13,
+          "scenario_name": "Near Boundary",
+          "category": "boundary",
+          "success": true,
+          "computation_time": 0.0006768703460693359,
+          "path_length": 6.363961030678929,
+          "nodes_explored": 10,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0007109642028808594,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 14,
+          "scenario_name": "Corner to Corner",
+          "category": "boundary",
+          "success": true,
+          "computation_time": 0.007750272750854492,
+          "path_length": 55.86143571373719,
+          "nodes_explored": 80,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.007983684539794922,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 15,
+          "scenario_name": "Edge Case",
+          "category": "boundary",
+          "success": true,
+          "computation_time": 0.0056912899017333984,
+          "path_length": 39.0,
+          "nodes_explored": 79,
+          "phase_used": 2,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.005807638168334961,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        }
+      ]
+    },
+    "analysis": {
+      "success_rate": 100.0,
+      "total_tests": 16,
+      "successful_tests": 16,
+      "failed_tests": 0,
+      "avg_computation_time": 0.017429649829864502,
+      "min_computation_time": 0.0006768703460693359,
+      "max_computation_time": 0.2343888282775879,
+      "std_computation_time": 0.05606041975861486,
+      "avg_path_length": 20.346078841753506,
+      "avg_nodes_explored": 247.4375,
+      "category_stats": {
+        "basic": {
+          "times": [
+            0.0008482933044433594,
+            0.0012404918670654297,
+            0.0029442310333251953,
+            0.004053831100463867,
+            0.005795478820800781
+          ],
+          "nodes": [
+            4,
+            10,
+            20,
+            40,
+            80
+          ],
+          "count": 5,
+          "avg_time": 0.0029764652252197267,
+          "avg_nodes": 30.8,
+          "success_rate": 100.0
+        },
+        "complex": {
+          "times": [
+            0.0023102760314941406,
+            0.0013489723205566406,
+            0.006059169769287109,
+            0.2343888282775879
+          ],
+          "nodes": [
+            39,
+            19,
+            60,
+            3422
+          ],
+          "count": 4,
+          "avg_time": 0.061026811599731445,
+          "avg_nodes": 885.0,
+          "success_rate": 100.0
+        },
+        "height": {
+          "times": [
+            0.0008363723754882812,
+            0.0014407634735107422,
+            0.0021278858184814453,
+            0.0013613700866699219
+          ],
+          "nodes": [
+            10,
+            24,
+            38,
+            24
+          ],
+          "count": 4,
+          "avg_time": 0.0014415979385375977,
+          "avg_nodes": 24.0,
+          "success_rate": 100.0
+        },
+        "boundary": {
+          "times": [
+            0.0006768703460693359,
+            0.007750272750854492,
+            0.0056912899017333984
+          ],
+          "nodes": [
+            10,
+            80,
+            79
+          ],
+          "count": 3,
+          "avg_time": 0.004706144332885742,
+          "avg_nodes": 56.333333333333336,
+          "success_rate": 100.0
+        }
+      },
+      "performance_grade": "A"
+    }
+  },
+  "bidirectional_lazy_tastar": {
+    "results": {
+      "algorithm": "Bidirectional Lazy TA-A*",
+      "total_test_time": 49.54733109474182,
+      "results": [
+        {
+          "scenario_id": 0,
+          "scenario_name": "Very Short",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.00041031837463378906,
+          "path_length": 2.8284271247461903,
+          "nodes_explored": 6,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0004394054412841797,
+          "forward_nodes": 3,
+          "backward_nodes": 3,
+          "meeting_point": [
+            1.0,
+            1.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "scenario_name": "Short",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.0007476806640625,
+          "path_length": 7.071067811865477,
+          "nodes_explored": 12,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0007786750793457031,
+          "forward_nodes": 6,
+          "backward_nodes": 6,
+          "meeting_point": [
+            2.5,
+            2.5,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "scenario_name": "Medium",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.0013418197631835938,
+          "path_length": 14.142135623730956,
+          "nodes_explored": 22,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0013921260833740234,
+          "forward_nodes": 11,
+          "backward_nodes": 11,
+          "meeting_point": [
+            5.0,
+            5.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "scenario_name": "Long",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.004418373107910156,
+          "path_length": 28.284271247461884,
+          "nodes_explored": 42,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.004601001739501953,
+          "forward_nodes": 21,
+          "backward_nodes": 21,
+          "meeting_point": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "scenario_name": "Very Long",
+          "category": "basic",
+          "success": true,
+          "computation_time": 0.007189273834228516,
+          "path_length": 56.56854249492373,
+          "nodes_explored": 82,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.007430315017700195,
+          "forward_nodes": 41,
+          "backward_nodes": 41,
+          "meeting_point": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "scenario_name": "L-Shape",
+          "category": "complex",
+          "success": true,
+          "computation_time": 0.0034046173095703125,
+          "path_length": 20.0,
+          "nodes_explored": 42,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0035085678100585938,
+          "forward_nodes": 21,
+          "backward_nodes": 21,
+          "meeting_point": [
+            0.0,
+            10.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "scenario_name": "U-Shape",
+          "category": "complex",
+          "success": true,
+          "computation_time": 0.0027532577514648438,
+          "path_length": 10.0,
+          "nodes_explored": 22,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0028295516967773438,
+          "forward_nodes": 11,
+          "backward_nodes": 11,
+          "meeting_point": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 7,
+          "scenario_name": "Diagonal",
+          "category": "complex",
+          "success": true,
+          "computation_time": 0.005610466003417969,
+          "path_length": 42.42640687119281,
+          "nodes_explored": 62,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.005821704864501953,
+          "forward_nodes": 31,
+          "backward_nodes": 31,
+          "meeting_point": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 8,
+          "scenario_name": "Zigzag",
+          "category": "complex",
+          "success": true,
+          "computation_time": 0.10615086555480957,
+          "path_length": 24.142135623730944,
+          "nodes_explored": 1319,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.10731315612792969,
+          "forward_nodes": 659,
+          "backward_nodes": 660,
+          "meeting_point": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 9,
+          "scenario_name": "Low Height",
+          "category": "height",
+          "success": false,
+          "computation_time": 12.157257795333862,
+          "path_length": 0,
+          "nodes_explored": 156662,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "No path found",
+          "test_time": 12.280571699142456,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 10,
+          "scenario_name": "Medium Height",
+          "category": "height",
+          "success": false,
+          "computation_time": 12.392985582351685,
+          "path_length": 0,
+          "nodes_explored": 156448,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "No path found",
+          "test_time": 12.518948316574097,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 11,
+          "scenario_name": "High Height",
+          "category": "height",
+          "success": false,
+          "computation_time": 12.299112319946289,
+          "path_length": 0,
+          "nodes_explored": 156249,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "No path found",
+          "test_time": 12.423557758331299,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 12,
+          "scenario_name": "Downward",
+          "category": "height",
+          "success": false,
+          "computation_time": 12.049720048904419,
+          "path_length": 0,
+          "nodes_explored": 153350,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "No path found",
+          "test_time": 12.17371129989624,
+          "forward_nodes": 0,
+          "backward_nodes": 0,
+          "meeting_point": null
+        },
+        {
+          "scenario_id": 13,
+          "scenario_name": "Near Boundary",
+          "category": "boundary",
+          "success": true,
+          "computation_time": 0.0011582374572753906,
+          "path_length": 7.071067811865477,
+          "nodes_explored": 12,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.0012276172637939453,
+          "forward_nodes": 6,
+          "backward_nodes": 6,
+          "meeting_point": [
+            -17.5,
+            -17.5,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 14,
+          "scenario_name": "Corner to Corner",
+          "category": "boundary",
+          "success": true,
+          "computation_time": 0.006951570510864258,
+          "path_length": 56.56854249492373,
+          "nodes_explored": 82,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.007212400436401367,
+          "forward_nodes": 41,
+          "backward_nodes": 41,
+          "meeting_point": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "scenario_id": 15,
+          "scenario_name": "Edge Case",
+          "category": "boundary",
+          "success": true,
+          "computation_time": 0.007691383361816406,
+          "path_length": 40.0,
+          "nodes_explored": 82,
+          "phase_used": 0,
+          "terrain_adaptations": 0,
+          "error_message": "",
+          "test_time": 0.007987499237060547,
+          "forward_nodes": 41,
+          "backward_nodes": 41,
+          "meeting_point": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        }
+      ]
+    },
+    "analysis": {
+      "success_rate": 75.0,
+      "total_tests": 16,
+      "successful_tests": 12,
+      "failed_tests": 4,
+      "avg_computation_time": 0.01231898864110311,
+      "min_computation_time": 0.00041031837463378906,
+      "max_computation_time": 0.10615086555480957,
+      "std_computation_time": 0.028402060418222474,
+      "avg_path_length": 25.758549758703435,
+      "avg_nodes_explored": 148.75,
+      "category_stats": {
+        "basic": {
+          "times": [
+            0.00041031837463378906,
+            0.0007476806640625,
+            0.0013418197631835938,
+            0.004418373107910156,
+            0.007189273834228516
+          ],
+          "nodes": [
+            6,
+            12,
+            22,
+            42,
+            82
+          ],
+          "count": 5,
+          "avg_time": 0.002821493148803711,
+          "avg_nodes": 32.8,
+          "success_rate": 100.0
+        },
+        "complex": {
+          "times": [
+            0.0034046173095703125,
+            0.0027532577514648438,
+            0.005610466003417969,
+            0.10615086555480957
+          ],
+          "nodes": [
+            42,
+            22,
+            62,
+            1319
+          ],
+          "count": 4,
+          "avg_time": 0.029479801654815674,
+          "avg_nodes": 361.25,
+          "success_rate": 100.0
+        },
+        "boundary": {
+          "times": [
+            0.0011582374572753906,
+            0.006951570510864258,
+            0.007691383361816406
+          ],
+          "nodes": [
+            12,
+            82,
+            82
+          ],
+          "count": 3,
+          "avg_time": 0.0052670637766520185,
+          "avg_nodes": 58.666666666666664,
+          "success_rate": 100.0
+        }
+      },
+      "performance_grade": "C"
+    }
+  }
+}

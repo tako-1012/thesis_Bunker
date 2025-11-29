@@ -1,0 +1,260 @@
+{
+  "small": {
+    "A*": [
+      {
+        "scenario_id": 0,
+        "success": true,
+        "computation_time": 1059.3243725299835,
+        "path_length": 9.8,
+        "nodes_explored": 980,
+        "error": ""
+      },
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 394.15153312683105,
+        "path_length": 8.4,
+        "nodes_explored": 840,
+        "error": ""
+      },
+      {
+        "scenario_id": 2,
+        "success": true,
+        "computation_time": 8.79841661453247,
+        "path_length": 7.9,
+        "nodes_explored": 790,
+        "error": ""
+      },
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 1113.3840160369873,
+        "path_length": 10.600000000000001,
+        "nodes_explored": 1060,
+        "error": ""
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 228.98556995391846,
+        "path_length": 8.9,
+        "nodes_explored": 890,
+        "error": ""
+      }
+    ],
+    "TA-A* (Proposed)": [
+      {
+        "scenario_id": 0,
+        "success": true,
+        "computation_time": 46.228341817855835,
+        "path_length": 14.283983940457716,
+        "nodes_explored": 293251,
+        "error": ""
+      },
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 241.68969321250916,
+        "path_length": 18.992018469382632,
+        "nodes_explored": 1439099,
+        "error": ""
+      },
+      {
+        "scenario_id": 2,
+        "success": true,
+        "computation_time": 32.32838177680969,
+        "path_length": 11.356241980494907,
+        "nodes_explored": 206907,
+        "error": ""
+      },
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 66.32580137252808,
+        "path_length": 15.345001245984362,
+        "nodes_explored": 404285,
+        "error": ""
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 45.864908933639526,
+        "path_length": 15.660798618168958,
+        "nodes_explored": 282332,
+        "error": ""
+      }
+    ]
+  },
+  "medium": {
+    "A*": [
+      {
+        "scenario_id": 0,
+        "success": true,
+        "computation_time": 776.7534286975861,
+        "path_length": 11.700000000000001,
+        "nodes_explored": 1170,
+        "error": ""
+      },
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 566.0131528377533,
+        "path_length": 9.700000000000001,
+        "nodes_explored": 970,
+        "error": ""
+      },
+      {
+        "scenario_id": 2,
+        "success": true,
+        "computation_time": 9.895977973937988,
+        "path_length": 8.9,
+        "nodes_explored": 890,
+        "error": ""
+      },
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 73.2838487625122,
+        "path_length": 12.8,
+        "nodes_explored": 1280,
+        "error": ""
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 1066.9891965389252,
+        "path_length": 12.600000000000001,
+        "nodes_explored": 1260,
+        "error": ""
+      }
+    ],
+    "TA-A* (Proposed)": [
+      {
+        "scenario_id": 0,
+        "success": true,
+        "computation_time": 33.42541289329529,
+        "path_length": 40.775614035313595,
+        "nodes_explored": 320792,
+        "error": ""
+      },
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 165.22505140304565,
+        "path_length": 52.584144144374356,
+        "nodes_explored": 1527245,
+        "error": ""
+      },
+      {
+        "scenario_id": 2,
+        "success": true,
+        "computation_time": 19.419848442077637,
+        "path_length": 31.41104594275013,
+        "nodes_explored": 191440,
+        "error": ""
+      },
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 48.13639044761658,
+        "path_length": 43.583755769847635,
+        "nodes_explored": 460325,
+        "error": ""
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 41.09491991996765,
+        "path_length": 45.38677759789876,
+        "nodes_explored": 394443,
+        "error": ""
+      }
+    ]
+  },
+  "large": {
+    "A*": [
+      {
+        "scenario_id": 0,
+        "success": true,
+        "computation_time": 68.42855072021484,
+        "path_length": 9.200000000000001,
+        "nodes_explored": 920,
+        "error": ""
+      },
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 66.45051622390747,
+        "path_length": 7.6000000000000005,
+        "nodes_explored": 760,
+        "error": ""
+      },
+      {
+        "scenario_id": 2,
+        "success": true,
+        "computation_time": 1.5953905582427979,
+        "path_length": 6.9,
+        "nodes_explored": 690,
+        "error": ""
+      },
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 7.3577446937561035,
+        "path_length": 10.200000000000001,
+        "nodes_explored": 1020,
+        "error": ""
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 177.9101791381836,
+        "path_length": 10.200000000000001,
+        "nodes_explored": 1020,
+        "error": ""
+      }
+    ],
+    "TA-A* (Proposed)": [
+      {
+        "scenario_id": 0,
+        "success": true,
+        "computation_time": 10.419538259506226,
+        "path_length": 85.98758772580214,
+        "nodes_explored": 99756,
+        "error": ""
+      },
+      {
+        "scenario_id": 1,
+        "success": true,
+        "computation_time": 55.01130437850952,
+        "path_length": 109.76663679026451,
+        "nodes_explored": 492242,
+        "error": ""
+      },
+      {
+        "scenario_id": 2,
+        "success": true,
+        "computation_time": 10.898963451385498,
+        "path_length": 66.56351324173757,
+        "nodes_explored": 118627,
+        "error": ""
+      },
+      {
+        "scenario_id": 3,
+        "success": true,
+        "computation_time": 12.629308938980103,
+        "path_length": 91.81555390671215,
+        "nodes_explored": 124812,
+        "error": ""
+      },
+      {
+        "scenario_id": 4,
+        "success": true,
+        "computation_time": 9.481950759887695,
+        "path_length": 96.03191515220267,
+        "nodes_explored": 93306,
+        "error": ""
+      }
+    ]
+  }
+}

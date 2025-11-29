@@ -1,0 +1,9 @@
+{
+  "name": "Gentle Hills",
+  "description": "\u7de9\u3084\u304b\u306a\u4e18\u9675\u5730\u3002\u52fe\u914d5-15\u5ea6\u3001\u5c11\u306a\u3044\u969c\u5bb3\u7269",
+  "size": 50.0,
+  "terrain_type": "Gentle Slope",
+  "max_slope": 15.0,
+  "grid_size": 100,
+  "resolution": 0.5
+}

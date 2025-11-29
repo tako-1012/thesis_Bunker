@@ -1,0 +1,492 @@
+{
+  "metadata": {
+    "timestamp": "20251114_155341",
+    "voxel_size": 0.1,
+    "grid_size": [
+      200,
+      200,
+      50
+    ],
+    "total_scenarios": 8
+  },
+  "results": {
+    "flat_short": {
+      "scenario": {
+        "name": "flat_short",
+        "description": "平地・短距離（5m）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          5.0,
+          0.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "A*": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.009297370910644531
+        },
+        "Dijkstra": {
+          "success": true,
+          "path_length": 49,
+          "path_distance": 4.799999999999999,
+          "nodes_explored": 325189,
+          "computation_time": 24.92349672317505
+        },
+        "Weighted A* (ε=1.5)": {
+          "success": true,
+          "path_length": 49,
+          "path_distance": 4.799999999999999,
+          "nodes_explored": 49,
+          "computation_time": 0.004193782806396484
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 1175,
+          "computation_time": 1.523852825164795,
+          "error_message": "No path found"
+        },
+        "AHA*": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.00994420051574707,
+          "phase_transitions": 0,
+          "terrain_complexity": 0.0
+        },
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.04880404472351074,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        }
+      }
+    },
+    "slope_gentle": {
+      "scenario": {
+        "name": "slope_gentle",
+        "description": "緩やかな傾斜（10度）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          0.0,
+          2.0
+        ],
+        "terrain_type": "slope",
+        "difficulty": "medium"
+      },
+      "results": {
+        "A*": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 10.828427124746192,
+          "nodes_explored": 21582,
+          "computation_time": 25.140870809555054
+        },
+        "Dijkstra": {
+          "success": false,
+          "nodes_explored": 3500275,
+          "computation_time": 300.00013160705566,
+          "error_message": "Timeout"
+        },
+        "Weighted A* (ε=1.5)": {
+          "success": true,
+          "path_length": 117,
+          "path_distance": 11.599999999999975,
+          "nodes_explored": 117,
+          "computation_time": 0.011080503463745117
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 20,
+          "path_distance": 12.905635737973878,
+          "nodes_explored": 96,
+          "computation_time": 0.0056378841400146484
+        },
+        "AHA*": {
+          "success": false,
+          "nodes_explored": 51,
+          "computation_time": 0.00994420051574707
+        },
+        "TA* (提案手法)": {
+          "success": false,
+          "nodes_explored": 51,
+          "computation_time": 0.04880404472351074
+        }
+      }
+    },
+    "slope_steep": {
+      "scenario": {
+        "name": "slope_steep",
+        "description": "急傾斜（25度）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          0.0,
+          4.5
+        ],
+        "terrain_type": "slope",
+        "difficulty": "hard"
+      },
+      "results": {
+        "A*": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.863961030678931,
+          "nodes_explored": 48552,
+          "computation_time": 134.87787532806396
+        },
+        "Dijkstra": {
+          "success": false,
+          "nodes_explored": 3566173,
+          "computation_time": 300.0001096725464,
+          "error_message": "Timeout"
+        },
+        "Weighted A* (ε=1.5)": {
+          "success": true,
+          "path_length": 142,
+          "path_distance": 14.099999999999966,
+          "nodes_explored": 142,
+          "computation_time": 0.01564931869506836
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 32,
+          "path_distance": 23.175192259739923,
+          "nodes_explored": 869,
+          "computation_time": 0.8273763656616211
+        },
+        "AHA*": {
+          "success": false,
+          "nodes_explored": 51,
+          "computation_time": 0.00994420051574707
+        },
+        "TA* (提案手法)": {
+          "success": false,
+          "nodes_explored": 51,
+          "computation_time": 0.04880404472351074
+        }
+      }
+    },
+    "diagonal_climb": {
+      "scenario": {
+        "name": "diagonal_climb",
+        "description": "斜め上昇",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "terrain_type": "slope",
+        "difficulty": "medium"
+      },
+      "results": {
+        "A*": {
+          "success": true,
+          "path_length": 81,
+          "path_distance": 12.267220234572106,
+          "nodes_explored": 24350,
+          "computation_time": 73.73381233215332
+        },
+        "Dijkstra": {
+          "success": false,
+          "nodes_explored": 3567904,
+          "computation_time": 300.00008821487427,
+          "error_message": "Timeout"
+        },
+        "Weighted A* (ε=1.5)": {
+          "success": true,
+          "path_length": 108,
+          "path_distance": 13.972287142747428,
+          "nodes_explored": 108,
+          "computation_time": 0.01127314567565918
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 1214,
+          "computation_time": 1.5651793479919434,
+          "error_message": "No path found"
+        },
+        "AHA*": {
+          "success": false,
+          "nodes_explored": 10000,
+          "computation_time": 16.777726411819458
+        },
+        "TA* (提案手法)": {
+          "success": false,
+          "nodes_explored": 10000,
+          "computation_time": 23.626972198486328
+        }
+      }
+    },
+    "complex_3d": {
+      "scenario": {
+        "name": "complex_3d",
+        "description": "複雑な3D経路",
+        "start": [
+          -5.0,
+          -5.0,
+          0.0
+        ],
+        "goal": [
+          5.0,
+          5.0,
+          3.0
+        ],
+        "terrain_type": "complex",
+        "difficulty": "hard"
+      },
+      "results": {
+        "A*": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 15.0956473593183,
+          "nodes_explored": 36322,
+          "computation_time": 137.1839418411255
+        },
+        "Dijkstra": {
+          "success": false,
+          "nodes_explored": 3538531,
+          "computation_time": 300.0001516342163,
+          "error_message": "Timeout"
+        },
+        "Weighted A* (ε=1.5)": {
+          "success": true,
+          "path_length": 128,
+          "path_distance": 16.800714267493618,
+          "nodes_explored": 128,
+          "computation_time": 0.01319122314453125
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 21,
+          "path_distance": 15.775753089327614,
+          "nodes_explored": 80,
+          "computation_time": 0.0037801265716552734
+        },
+        "AHA*": {
+          "success": false,
+          "nodes_explored": 10000,
+          "computation_time": 18.2177791595459
+        },
+        "TA* (提案手法)": {
+          "success": false,
+          "nodes_explored": 10000,
+          "computation_time": 24.40955686569214
+        }
+      }
+    },
+    "boundary_start": {
+      "scenario": {
+        "name": "boundary_start",
+        "description": "マップ端スタート",
+        "start": [
+          -10.0,
+          -10.0,
+          0.0
+        ],
+        "goal": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "medium"
+      },
+      "results": {
+        "A*": {
+          "success": false,
+          "nodes_explored": 36322,
+          "computation_time": 137.1839418411255
+        },
+        "Dijkstra": {
+          "success": true,
+          "path_length": 99,
+          "path_distance": 13.8592929112563,
+          "nodes_explored": 904268,
+          "computation_time": 69.82135510444641
+        },
+        "Weighted A* (ε=1.5)": {
+          "success": true,
+          "path_length": 99,
+          "path_distance": 13.8592929112563,
+          "nodes_explored": 99,
+          "computation_time": 0.008702754974365234
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 21,
+          "path_distance": 15.093598687778123,
+          "nodes_explored": 466,
+          "computation_time": 0.21399903297424316
+        },
+        "AHA*": {
+          "success": false,
+          "nodes_explored": 10000,
+          "computation_time": 18.823763608932495
+        },
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 14.142135623730965,
+          "nodes_explored": 101,
+          "computation_time": 0.1721186637878418,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        }
+      }
+    },
+    "boundary_goal": {
+      "scenario": {
+        "name": "boundary_goal",
+        "description": "マップ端ゴール",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          10.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "medium"
+      },
+      "results": {
+        "A*": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 14.142135623730962,
+          "nodes_explored": 101,
+          "computation_time": 0.07796359062194824
+        },
+        "Dijkstra": {
+          "success": false,
+          "nodes_explored": 3580848,
+          "computation_time": 300.00018310546875,
+          "error_message": "Timeout"
+        },
+        "Weighted A* (ε=1.5)": {
+          "success": true,
+          "path_length": 99,
+          "path_distance": 13.859292911256313,
+          "nodes_explored": 99,
+          "computation_time": 0.008786678314208984
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 22,
+          "path_distance": 14.908797792624268,
+          "nodes_explored": 105,
+          "computation_time": 0.00709223747253418
+        },
+        "AHA*": {
+          "success": false,
+          "nodes_explored": 10000,
+          "computation_time": 18.823763608932495
+        },
+        "TA* (提案手法)": {
+          "success": false,
+          "nodes_explored": 101,
+          "computation_time": 0.1721186637878418
+        }
+      }
+    },
+    "obstacle_goal": {
+      "scenario": {
+        "name": "obstacle_goal",
+        "description": "障害物内ゴール（失敗期待）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "terrain_type": "obstacle",
+        "difficulty": "hard"
+      },
+      "results": {
+        "A*": {
+          "success": true,
+          "path_length": 21,
+          "path_distance": 2.8284271247461907,
+          "nodes_explored": 21,
+          "computation_time": 0.0045506954193115234
+        },
+        "Dijkstra": {
+          "success": true,
+          "path_length": 19,
+          "path_distance": 2.545584412271572,
+          "nodes_explored": 38529,
+          "computation_time": 2.6672260761260986
+        },
+        "Weighted A* (ε=1.5)": {
+          "success": true,
+          "path_length": 19,
+          "path_distance": 2.545584412271572,
+          "nodes_explored": 19,
+          "computation_time": 0.0016574859619140625
+        },
+        "RRT*": {
+          "success": true,
+          "path_length": 6,
+          "path_distance": 3.1210400581021918,
+          "nodes_explored": 24,
+          "computation_time": 0.0005133152008056641
+        },
+        "AHA*": {
+          "success": true,
+          "path_length": 23,
+          "path_distance": 3.0727193103498838,
+          "nodes_explored": 539,
+          "computation_time": 0.10358357429504395,
+          "phase_transitions": 6,
+          "terrain_complexity": 0.0
+        },
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 21,
+          "path_distance": 2.8284271247461907,
+          "nodes_explored": 21,
+          "computation_time": 0.022266626358032227,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        }
+      }
+    }
+  }
+}

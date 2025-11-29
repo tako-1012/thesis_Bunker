@@ -1,0 +1,18 @@
+{
+  "scenario_id": 19,
+  "scale": "Small Scale",
+  "map_size": 20.0,
+  "distance": 22.627416997969522,
+  "start": [
+    -8.0,
+    -8.0,
+    0.2
+  ],
+  "goal": [
+    8.0,
+    8.0,
+    0.2
+  ],
+  "terrain_type": "Flat Terrain",
+  "voxel_size": 0.1
+}

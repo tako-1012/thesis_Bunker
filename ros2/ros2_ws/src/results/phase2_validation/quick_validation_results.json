@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-10-28 15:45:59",
+  "results": [
+    {
+      "name": "Flat-Short",
+      "success": true,
+      "time": 0.005345582962036133,
+      "path_length": 5.6568542494923815,
+      "nodes": 21
+    },
+    {
+      "name": "Flat-Medium",
+      "success": true,
+      "time": 0.011511087417602539,
+      "path_length": 12.72792206135785,
+      "nodes": 46
+    },
+    {
+      "name": "Flat-Long",
+      "success": true,
+      "time": 0.021807193756103516,
+      "path_length": 26.870057685088767,
+      "nodes": 96
+    },
+    {
+      "name": "Hill-Short",
+      "success": true,
+      "time": 0.003893136978149414,
+      "path_length": 5.6568542494923815,
+      "nodes": 21
+    },
+    {
+      "name": "Hill-Medium",
+      "success": true,
+      "time": 0.01087331771850586,
+      "path_length": 12.72792206135785,
+      "nodes": 46
+    },
+    {
+      "name": "Complex-Long",
+      "success": true,
+      "time": 0.021506309509277344,
+      "path_length": 26.870057685088767,
+      "nodes": 96
+    }
+  ],
+  "success_rate": 100.0
+}

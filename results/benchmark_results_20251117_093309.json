@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "timestamp": "20251117_093309",
+    "voxel_size": 0.1,
+    "grid_size": [
+      200,
+      200,
+      50
+    ],
+    "total_scenarios": 2
+  },
+  "results": {
+    "quick_short": {
+      "scenario": {
+        "name": "quick_short",
+        "description": "短距離（5m, 平地）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          5.0,
+          0.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": false,
+          "error": "'CostStrategy' object has no attribute 'obstacle_weight'",
+          "computation_time": 0.0,
+          "nodes_explored": 0
+        }
+      }
+    },
+    "quick_diag": {
+      "scenario": {
+        "name": "quick_diag",
+        "description": "斜め移動（約10m, 平地）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          7.0,
+          7.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": false,
+          "error": "'CostStrategy' object has no attribute 'obstacle_weight'",
+          "computation_time": 0.0,
+          "nodes_explored": 0
+        }
+      }
+    }
+  }
+}

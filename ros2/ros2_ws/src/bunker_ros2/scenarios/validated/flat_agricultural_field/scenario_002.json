@@ -1,0 +1,22 @@
+{
+  "scenario_id": 2,
+  "terrain_name": "Flat Agricultural Field",
+  "terrain_type": "Flat Terrain",
+  "map_size": 50.0,
+  "start": [
+    -16.711496874492163,
+    3.4542931536534986,
+    0.2775235179578541
+  ],
+  "goal": [
+    18.000809898364146,
+    -13.37670238260928,
+    0.1510688823588986
+  ],
+  "distance": 38.57754077484182,
+  "max_slope": 5.0,
+  "validation": {
+    "reachable": true,
+    "validated_at": "Reachable"
+  }
+}

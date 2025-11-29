@@ -1,0 +1,348 @@
+{
+  "total": 20,
+  "reachable": 20,
+  "unreachable": 0,
+  "error": 0,
+  "scenarios": [
+    {
+      "scenario_id": 0,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_000.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        1.996627322384409,
+        -10.195008285685377,
+        0.28080968686154617
+      ],
+      "goal": [
+        -3.4721908255398795,
+        15.859702086715572,
+        0.22231268577472044
+      ],
+      "distance": 26.622469917811223
+    },
+    {
+      "scenario_id": 1,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_001.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -22.782932615215262,
+        -17.407820443976746,
+        0.20275463638129898
+      ],
+      "goal": [
+        7.854457897431818,
+        14.989226734832194,
+        0.19901040232804088
+      ],
+      "distance": 44.58944228548289
+    },
+    {
+      "scenario_id": 2,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_002.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -16.711496874492163,
+        3.4542931536534986,
+        0.2775235179578541
+      ],
+      "goal": [
+        18.000809898364146,
+        -13.37670238260928,
+        0.1510688823588986
+      ],
+      "distance": 38.57754077484182
+    },
+    {
+      "scenario_id": 3,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_003.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -14.474901900696548,
+        -18.014663038644265,
+        0.22309074944363458
+      ],
+      "goal": [
+        -12.893915339250361,
+        22.016694096539005,
+        0.13247441582520442
+      ],
+      "distance": 40.06256447847618
+    },
+    {
+      "scenario_id": 4,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_004.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -3.141607551496403,
+        20.24137170262923,
+        0.28347465098803515
+      ],
+      "goal": [
+        14.611871423729461,
+        -7.53885029443866,
+        0.10342253162164067
+      ],
+      "distance": 32.96857215485926
+    },
+    {
+      "scenario_id": 5,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_005.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        13.60047538977122,
+        -22.298271322668406,
+        0.2867199210264463
+      ],
+      "goal": [
+        4.546795338710673,
+        4.775008795971264,
+        0.1653237457611439
+      ],
+      "distance": 28.547007178499495
+    },
+    {
+      "scenario_id": 6,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_006.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -18.16320647104541,
+        -5.430601532616937,
+        0.13005219862291914
+      ],
+      "goal": [
+        -21.32210139674183,
+        17.95893191833548,
+        0.16121732843628211
+      ],
+      "distance": 23.601883234284774
+    },
+    {
+      "scenario_id": 7,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_007.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        22.122359422566326,
+        -20.242668514370287,
+        0.2015400651429954
+      ],
+      "goal": [
+        17.965113457511187,
+        3.5374689724015127,
+        0.26665074014361334
+      ],
+      "distance": 24.14078774405957
+    },
+    {
+      "scenario_id": 8,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_008.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        11.154065698506955,
+        5.988461077867299,
+        0.2780388561129019
+      ],
+      "goal": [
+        3.764740850343781,
+        -22.059799926761535,
+        0.15167279707311754
+      ],
+      "distance": 29.005293777092902
+    },
+    {
+      "scenario_id": 9,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_009.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -13.338777427048413,
+        2.055504396217785,
+        0.2473293785721855
+      ],
+      "goal": [
+        12.379297870859972,
+        -11.468019459633787,
+        0.11875030467715085
+      ],
+      "distance": 29.056928511263404
+    },
+    {
+      "scenario_id": 10,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_010.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -9.848798241284225,
+        16.21017404070009,
+        0.1952138463284418
+      ],
+      "goal": [
+        21.85029870590303,
+        17.703251500590852,
+        0.1925076955706971
+      ],
+      "distance": 31.734240617484613
+    },
+    {
+      "scenario_id": 11,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_011.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -5.692387102321302,
+        4.269048444890785,
+        0.1458187895975669
+      ],
+      "goal": [
+        5.977326277024879,
+        -16.44038553547096,
+        0.20234706357425447
+      ],
+      "distance": 23.771051010484435
+    },
+    {
+      "scenario_id": 12,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_012.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        19.956699775455277,
+        20.533474517218657,
+        0.1525171711216632
+      ],
+      "goal": [
+        4.705646255619818,
+        -5.162751104974987,
+        0.22714091487868768
+      ],
+      "distance": 29.88127582101485
+    },
+    {
+      "scenario_id": 13,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_013.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -15.014031919950567,
+        21.46404594641689,
+        0.1077505395583723
+      ],
+      "goal": [
+        21.02257961622871,
+        4.506789479130354,
+        0.2206725587758369
+      ],
+      "distance": 39.826949643511746
+    },
+    {
+      "scenario_id": 14,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_014.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        10.63983464075644,
+        -7.342279749477939,
+        0.131735206754617
+      ],
+      "goal": [
+        -18.765442244647023,
+        -1.679091128891205,
+        0.18954694613065376
+      ],
+      "distance": 29.945651004103855
+    },
+    {
+      "scenario_id": 15,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_015.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        0.4001490889569226,
+        -18.930832041867024,
+        0.16525263531198925
+      ],
+      "goal": [
+        1.2896202726301809,
+        22.6392696794843,
+        0.28809563839461944
+      ],
+      "distance": 41.57961659407265
+    },
+    {
+      "scenario_id": 16,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_016.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -4.828347139121437,
+        -7.562563680945859,
+        0.27316752846033315
+      ],
+      "goal": [
+        14.05072471714687,
+        11.700053750788264,
+        0.2525311204132095
+      ],
+      "distance": 26.97161071340548
+    },
+    {
+      "scenario_id": 17,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_017.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -8.598943686928553,
+        6.165687416264657,
+        0.19418277086967453
+      ],
+      "goal": [
+        1.858610463832953,
+        -9.347487459519325,
+        0.28315476559539354
+      ],
+      "distance": 18.708795619781746
+    },
+    {
+      "scenario_id": 18,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_018.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        -17.903756545607497,
+        -8.618546297715817,
+        0.10162306827441703
+      ],
+      "goal": [
+        -1.9789600177337725,
+        7.311243230405058,
+        0.10130810812855509
+      ],
+      "distance": 22.524594088782344
+    },
+    {
+      "scenario_id": 19,
+      "file": "../scenarios/representative/flat_agricultural_field/scenario_019.json",
+      "reachable": true,
+      "reason": "Reachable",
+      "start": [
+        12.80130391069303,
+        12.861526336094485,
+        0.23251439200785587
+      ],
+      "goal": [
+        5.075095047632114,
+        -8.7859839678775,
+        0.2278939032128076
+      ],
+      "distance": 22.984973477387662
+    }
+  ]
+}

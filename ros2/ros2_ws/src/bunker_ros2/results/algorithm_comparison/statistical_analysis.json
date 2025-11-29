@@ -1,0 +1,71 @@
+{
+  "Dijkstra": {
+    "total_tests": 10,
+    "successful_tests": 10,
+    "success_rate": 100.0,
+    "avg_computation_time": 1.2111678838729858,
+    "std_computation_time": 1.2083276759484807,
+    "avg_path_length": 0.15736753236814716,
+    "std_path_length": 0.060574910436264194,
+    "avg_nodes_explored": 7583.1,
+    "avg_memory_usage": 1.897265625,
+    "avg_path_smoothness": 0.9354130244755243,
+    "avg_safety_score": 0.9294645564151576
+  },
+  "A*": {
+    "total_tests": 10,
+    "successful_tests": 10,
+    "success_rate": 100.0,
+    "avg_computation_time": 0.2443223237991333,
+    "std_computation_time": 0.16629578963557237,
+    "avg_path_length": 18.0,
+    "std_path_length": 3.1622776601683795,
+    "avg_nodes_explored": 18.0,
+    "avg_memory_usage": 0.0,
+    "avg_path_smoothness": 0.8657426936008055,
+    "avg_safety_score": 0.6341890651213559
+  },
+  "Weighted A*": {
+    "total_tests": 10,
+    "successful_tests": 10,
+    "success_rate": 100.0,
+    "avg_computation_time": 13.606856203079223,
+    "std_computation_time": 8.09048408659045,
+    "avg_path_length": 2.6420815280171324,
+    "std_path_length": 0.5502531237418751,
+    "avg_nodes_explored": 13712.8,
+    "avg_memory_usage": 1.350390625,
+    "avg_path_smoothness": 0.8747615349818734,
+    "avg_safety_score": 0.801072908027136
+  },
+  "RRT*": {
+    "total_tests": 10,
+    "successful_tests": 10,
+    "success_rate": 100.0,
+    "avg_computation_time": 0.036076807975769044,
+    "std_computation_time": 0.029142807895675586,
+    "avg_path_length": 0.8534406475673217,
+    "std_path_length": 0.39225356667884753,
+    "avg_nodes_explored": 24.6,
+    "avg_memory_usage": 0.0,
+    "avg_path_smoothness": 0.2702220200471849,
+    "avg_safety_score": 0.2669558373614733
+  },
+  "TA-A* (Proposed)": {
+    "total_tests": 10,
+    "successful_tests": 10,
+    "success_rate": 100.0,
+    "avg_computation_time": 0.6227040529251099,
+    "std_computation_time": 0.3109333399033074,
+    "avg_path_length": 2.1789293431588055,
+    "std_path_length": 0.39946347828488576,
+    "avg_nodes_explored": 5237.2,
+    "avg_memory_usage": 0.1,
+    "avg_path_smoothness": 0.9478591827995693,
+    "avg_safety_score": 0.9149364769295898,
+    "avg_risk_score": 0.0833589942951785,
+    "avg_terrain_adaptations": 129933.3,
+    "std_risk_score": 0.0059230882269096854,
+    "std_terrain_adaptations": 64784.61735481657
+  }
+}

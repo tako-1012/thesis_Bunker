@@ -1,0 +1,22 @@
+{
+  "scenario_id": 7,
+  "terrain_name": "Steep Terrain",
+  "terrain_type": "Steep Slope",
+  "map_size": 50.0,
+  "start": [
+    22.122359422566326,
+    -20.242668514370287,
+    0.2
+  ],
+  "goal": [
+    17.965113457511187,
+    3.5374689724015127,
+    1.4407681766497047
+  ],
+  "distance": 24.14078774405957,
+  "max_slope": 30.0,
+  "validation": {
+    "reachable": true,
+    "validated_at": "Reachable"
+  }
+}

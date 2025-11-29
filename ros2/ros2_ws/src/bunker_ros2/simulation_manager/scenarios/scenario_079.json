@@ -1,0 +1,35 @@
+{
+  "scenario_id": 79,
+  "name": "obstacle_field_19",
+  "description": "\u9ad8\u5bc6\u5ea6\u969c\u5bb3\u7269\u74b0\u5883\u3067\u306e\u56de\u907f\u80fd\u529b\u8a55\u4fa1 \uff08\u969c\u5bb3\u7269\u5bc6\u5ea6: 0.45, \u6700\u5927\u52fe\u914d: 10.5\u5ea6, \u7c97\u3055: 0.27\uff09",
+  "terrain_params": {
+    "terrain_type": "obstacle_field",
+    "size_x": 10.0,
+    "size_y": 10.0,
+    "size_z": 2.0,
+    "obstacle_density": 0.4528823373444682,
+    "max_slope": 10.466815404840887,
+    "roughness": 0.26594027803444753,
+    "narrow_passage_width": 2.5,
+    "difficulty": "medium"
+  },
+  "robot_params": {
+    "max_slope_capability": 30.0,
+    "width": 0.8,
+    "height": 0.6,
+    "safety_margin": 0.2
+  },
+  "start_position": [
+    -4.101887374307063,
+    -3.9855688105981857,
+    0.0
+  ],
+  "goal_position": [
+    3.273887777657664,
+    2.7061447135240546,
+    0.8051105323974639
+  ],
+  "expected_difficulty": "medium",
+  "created_at": "2025-10-17T19:37:20.319492",
+  "checksum": "9525299438b1e0d3"
+}

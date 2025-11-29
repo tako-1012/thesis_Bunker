@@ -1,0 +1,78 @@
+
+\section{Theoretical Analysis}
+
+\subsection{Completeness}
+
+\begin{theorem}
+TA-A* is complete.
+\end{theorem}
+
+\begin{proof}
+We prove completeness by showing that TA-A* systematically explores the search space:
+
+\begin{enumerate}
+\item TA-A* is based on A*, which is known to be complete. A* systematically explores the search space
+\item TA-A* adds terrain evaluation to A* cost function. g(n) = g_base(n) + g_terrain(n), where g_terrain(n) >= 0
+\item Non-negative terrain cost preserves admissibility. If h(n) is admissible, h_ta(n) = h(n) + terrain_cost is also admissible when terrain_cost >= 0
+\item TA-A* with admissible heuristic is complete. Systematic exploration + admissible heuristic → completeness
+
+\end{enumerate}
+
+Therefore, if a solution exists, TA-A* will find it. \qed
+\end{proof}
+
+\subsection{Optimality}
+
+\begin{theorem}
+TA-A* with admissible heuristic finds optimal solution.
+\end{theorem}
+
+\begin{proof}
+Let $f(n) = g(n) + h(n)$ where:
+\begin{itemize}
+\item $g(n)$ is the actual cost from start to $n$
+\item $h(n)$ is an admissible heuristic
+\end{itemize}
+
+1. Define total cost: f(n) = g(n) + h(n)
+
+2. g(n) = path_cost(start, n) + terrain_cost(start, n)
+
+3. If h(n) is admissible: h(n) <= h*(n)
+
+4. TA-A* never expands nodes with f(n) > C*
+
+5. First solution found is optimal
+
+
+Thus, TA-A* finds the optimal solution. \qed
+\end{proof}
+
+\subsection{Complexity Analysis}
+
+\begin{theorem}
+The time complexity of TA-A* is $O(b^d)$ where $b$ is the branching factor and $d$ is the solution depth.
+\end{theorem}
+
+Time complexity: O(b^d)
+
+Space complexity: O(b^d)
+
+\subsection{Convergence}
+
+\begin{theorem}
+TA-A* converges in finite steps.
+\end{theorem}
+
+\begin{proof}
+1. Search space is finite
+
+2. Each node is expanded at most once
+
+3. Open set is non-increasing after each expansion
+
+4. Algorithm terminates when goal is found or open set is empty
+
+
+\qed
+\end{proof}

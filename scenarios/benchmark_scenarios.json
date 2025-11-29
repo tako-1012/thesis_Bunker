@@ -1,0 +1,166 @@
+[
+  {
+    "name": "flat_short",
+    "description": "平地・短距離（5m）- 基本性能テスト",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [5.0, 0.0, 0.0],
+    "terrain_type": "flat",
+    "difficulty": "easy",
+    "expected_time": "<1s",
+    "purpose": "基本的な経路計画能力の確認"
+  },
+  {
+    "name": "flat_medium",
+    "description": "平地・中距離（10m）",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [7.0, 7.0, 0.0],
+    "terrain_type": "flat",
+    "difficulty": "easy",
+    "expected_time": "<2s",
+    "purpose": "斜め移動の効率性確認"
+  },
+  {
+    "name": "flat_long",
+    "description": "平地・長距離（20m）",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [15.0, 15.0, 0.0],
+    "terrain_type": "flat",
+    "difficulty": "medium",
+    "expected_time": "<5s",
+    "purpose": "大規模探索の計算効率確認"
+  },
+  {
+    "name": "slope_gentle_10deg",
+    "description": "緩やかな傾斜（10度）",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [10.0, 0.0, 1.8],
+    "terrain_type": "slope",
+    "difficulty": "easy",
+    "slope_angle": 10,
+    "expected_time": "<3s",
+    "purpose": "緩傾斜での経路計画確認"
+  },
+  {
+    "name": "slope_moderate_20deg",
+    "description": "中程度の傾斜（20度）",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [10.0, 0.0, 3.6],
+    "terrain_type": "slope",
+    "difficulty": "medium",
+    "slope_angle": 20,
+    "expected_time": "<5s",
+    "purpose": "中傾斜での走行可能性判定"
+  },
+  {
+    "name": "slope_steep_25deg",
+    "description": "急傾斜（25度）- 限界付近",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [10.0, 0.0, 4.7],
+    "terrain_type": "slope",
+    "difficulty": "hard",
+    "slope_angle": 25,
+    "expected_time": "<10s",
+    "purpose": "最大許容傾斜での動作確認"
+  },
+  {
+    "name": "diagonal_climb",
+    "description": "斜め上昇経路",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [8.0, 8.0, 3.0],
+    "terrain_type": "slope",
+    "difficulty": "medium",
+    "expected_time": "<5s",
+    "purpose": "3次元空間での最適経路探索"
+  },
+  {
+    "name": "zigzag_climb",
+    "description": "ジグザグ登坂",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [10.0, 10.0, 4.0],
+    "terrain_type": "slope",
+    "difficulty": "hard",
+    "expected_time": "<10s",
+    "purpose": "急傾斜回避経路の生成確認"
+  },
+  {
+    "name": "up_and_down",
+    "description": "昇降を含む経路",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [10.0, 0.0, 0.0],
+    "waypoints": [[5.0, 0.0, 2.0]],
+    "terrain_type": "complex",
+    "difficulty": "medium",
+    "expected_time": "<8s",
+    "purpose": "高度変化を含む経路計画"
+  },
+  {
+    "name": "negative_coordinates",
+    "description": "負の座標を含む経路",
+    "start": [-5.0, -5.0, 0.0],
+    "goal": [5.0, 5.0, 0.0],
+    "terrain_type": "flat",
+    "difficulty": "medium",
+    "expected_time": "<5s",
+    "purpose": "負の座標系での動作確認"
+  },
+  {
+    "name": "complex_3d_path",
+    "description": "複雑な3D経路",
+    "start": [-5.0, -5.0, 0.0],
+    "goal": [5.0, 5.0, 3.0],
+    "terrain_type": "complex",
+    "difficulty": "hard",
+    "expected_time": "<15s",
+    "purpose": "総合的な3D経路計画能力"
+  },
+  {
+    "name": "long_distance_3d",
+    "description": "長距離3D経路",
+    "start": [-8.0, -8.0, 0.0],
+    "goal": [8.0, 8.0, 4.0],
+    "terrain_type": "complex",
+    "difficulty": "very_hard",
+    "expected_time": "<30s",
+    "purpose": "大規模3D探索の性能評価"
+  },
+  {
+    "name": "high_altitude_traverse",
+    "description": "高高度横断",
+    "start": [0.0, -5.0, 3.0],
+    "goal": [0.0, 5.0, 3.0],
+    "terrain_type": "flat",
+    "difficulty": "easy",
+    "expected_time": "<3s",
+    "purpose": "一定高度での経路計画"
+  },
+  {
+    "name": "steep_descent",
+    "description": "急降下",
+    "start": [0.0, 0.0, 4.0],
+    "goal": [5.0, 5.0, 0.0],
+    "terrain_type": "slope",
+    "difficulty": "medium",
+    "expected_time": "<5s",
+    "purpose": "下り傾斜での制御確認"
+  },
+  {
+    "name": "minimal_distance",
+    "description": "極短距離（1m）",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [1.0, 0.0, 0.0],
+    "terrain_type": "flat",
+    "difficulty": "easy",
+    "expected_time": "<0.5s",
+    "purpose": "最小距離での動作確認"
+  },
+  {
+    "name": "spiral_ascent",
+    "description": "螺旋状上昇",
+    "start": [0.0, 0.0, 0.0],
+    "goal": [0.0, 0.0, 4.0],
+    "terrain_type": "complex",
+    "difficulty": "hard",
+    "expected_time": "<20s",
+    "purpose": "垂直方向の経路探索"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "scenario_id": 3,
+  "terrain_name": "Complex Obstacles",
+  "terrain_type": "Obstacle Field",
+  "map_size": 50.0,
+  "start": [
+    -14.474901900696548,
+    -18.014663038644265,
+    0.8682974260750067
+  ],
+  "goal": [
+    -12.893915339250361,
+    22.016694096539005,
+    0.2
+  ],
+  "distance": 40.06256447847618,
+  "max_slope": 20.0,
+  "validation": {
+    "reachable": true,
+    "validated_at": "Reachable"
+  }
+}

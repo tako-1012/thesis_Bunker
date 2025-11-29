@@ -1,0 +1,906 @@
+{
+  "timestamp": "2025-10-28T23:54:26.551395",
+  "total_time": 1062.7695565223694,
+  "results": [
+    {
+      "terrain": "flat",
+      "trial": 1,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.04198193550109863,
+      "path_length": 38.74945160902278,
+      "nodes_explored": 138
+    },
+    {
+      "terrain": "flat",
+      "trial": 1,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.04166078567504883,
+      "path_length": 38.74945160902278,
+      "nodes_explored": 138
+    },
+    {
+      "terrain": "flat",
+      "trial": 2,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 31.914833545684814,
+      "path_length": 58.465180361560996,
+      "nodes_explored": 109240
+    },
+    {
+      "terrain": "flat",
+      "trial": 2,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 3.932326555252075,
+      "path_length": 58.465180361560996,
+      "nodes_explored": 15148
+    },
+    {
+      "terrain": "flat",
+      "trial": 3,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 49.92605471611023,
+      "path_length": 53.649956672411086,
+      "nodes_explored": 165345
+    },
+    {
+      "terrain": "flat",
+      "trial": 3,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 5.227537393569946,
+      "path_length": 53.64995667241109,
+      "nodes_explored": 19105
+    },
+    {
+      "terrain": "flat",
+      "trial": 4,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 4.205746173858643,
+      "path_length": 51.545584412271694,
+      "nodes_explored": 14786
+    },
+    {
+      "terrain": "flat",
+      "trial": 4,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 1.1103320121765137,
+      "path_length": 51.545584412271694,
+      "nodes_explored": 4206
+    },
+    {
+      "terrain": "flat",
+      "trial": 5,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 4.462449073791504,
+      "path_length": 21.376450198781658,
+      "nodes_explored": 15418
+    },
+    {
+      "terrain": "flat",
+      "trial": 5,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.9041199684143066,
+      "path_length": 21.376450198781658,
+      "nodes_explored": 3258
+    },
+    {
+      "terrain": "flat",
+      "trial": 6,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 6.846534252166748,
+      "path_length": 31.4901586977664,
+      "nodes_explored": 22956
+    },
+    {
+      "terrain": "flat",
+      "trial": 6,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 1.245377540588379,
+      "path_length": 31.4901586977664,
+      "nodes_explored": 4480
+    },
+    {
+      "terrain": "flat",
+      "trial": 7,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.27393269538879395,
+      "path_length": 28.684271247461844,
+      "nodes_explored": 954
+    },
+    {
+      "terrain": "flat",
+      "trial": 7,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.19944024085998535,
+      "path_length": 28.684271247461844,
+      "nodes_explored": 636
+    },
+    {
+      "terrain": "flat",
+      "trial": 8,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.11716198921203613,
+      "path_length": 8.848528137423898,
+      "nodes_explored": 423
+    },
+    {
+      "terrain": "flat",
+      "trial": 8,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.06915807723999023,
+      "path_length": 8.848528137423902,
+      "nodes_explored": 258
+    },
+    {
+      "terrain": "flat",
+      "trial": 9,
+      "algorithm": "TA-A* Optimized",
+      "success": false,
+      "computation_time": 60.000094413757324,
+      "path_length": 0,
+      "nodes_explored": 197691
+    },
+    {
+      "terrain": "flat",
+      "trial": 9,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 6.412806510925293,
+      "path_length": 75.19066376115511,
+      "nodes_explored": 23720
+    },
+    {
+      "terrain": "flat",
+      "trial": 10,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 2.652409076690674,
+      "path_length": 40.10092347159886,
+      "nodes_explored": 9393
+    },
+    {
+      "terrain": "flat",
+      "trial": 10,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.7755513191223145,
+      "path_length": 40.10092347159886,
+      "nodes_explored": 2760
+    },
+    {
+      "terrain": "gentle",
+      "trial": 1,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 11.746281623840332,
+      "path_length": 34.45096679918775,
+      "nodes_explored": 40929
+    },
+    {
+      "terrain": "gentle",
+      "trial": 1,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 1.754795789718628,
+      "path_length": 34.45096679918775,
+      "nodes_explored": 6452
+    },
+    {
+      "terrain": "gentle",
+      "trial": 2,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.7243549823760986,
+      "path_length": 11.574011537017725,
+      "nodes_explored": 2494
+    },
+    {
+      "terrain": "gentle",
+      "trial": 2,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.24843764305114746,
+      "path_length": 11.574011537017725,
+      "nodes_explored": 831
+    },
+    {
+      "terrain": "gentle",
+      "trial": 3,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 40.92082357406616,
+      "path_length": 59.634732983261244,
+      "nodes_explored": 134305
+    },
+    {
+      "terrain": "gentle",
+      "trial": 3,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 4.549232482910156,
+      "path_length": 59.63473298326126,
+      "nodes_explored": 16042
+    },
+    {
+      "terrain": "gentle",
+      "trial": 4,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 1.6906483173370361,
+      "path_length": 26.662741699796918,
+      "nodes_explored": 6054
+    },
+    {
+      "terrain": "gentle",
+      "trial": 4,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.5964043140411377,
+      "path_length": 26.662741699796925,
+      "nodes_explored": 2146
+    },
+    {
+      "terrain": "gentle",
+      "trial": 5,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.4752802848815918,
+      "path_length": 10.242640687119282,
+      "nodes_explored": 1711
+    },
+    {
+      "terrain": "gentle",
+      "trial": 5,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.17322254180908203,
+      "path_length": 10.242640687119282,
+      "nodes_explored": 638
+    },
+    {
+      "terrain": "gentle",
+      "trial": 6,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 12.442111253738403,
+      "path_length": 36.450966799187725,
+      "nodes_explored": 43412
+    },
+    {
+      "terrain": "gentle",
+      "trial": 6,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 1.7246112823486328,
+      "path_length": 36.45096679918771,
+      "nodes_explored": 6404
+    },
+    {
+      "terrain": "gentle",
+      "trial": 7,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 4.9981560707092285,
+      "path_length": 23.790663761154747,
+      "nodes_explored": 17193
+    },
+    {
+      "terrain": "gentle",
+      "trial": 7,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.8942694664001465,
+      "path_length": 23.790663761154747,
+      "nodes_explored": 3303
+    },
+    {
+      "terrain": "gentle",
+      "trial": 8,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 29.963525533676147,
+      "path_length": 84.6645886429948,
+      "nodes_explored": 99431
+    },
+    {
+      "terrain": "gentle",
+      "trial": 8,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 4.615262031555176,
+      "path_length": 84.66458864299476,
+      "nodes_explored": 15821
+    },
+    {
+      "terrain": "gentle",
+      "trial": 9,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 24.74068832397461,
+      "path_length": 57.45096679918804,
+      "nodes_explored": 84510
+    },
+    {
+      "terrain": "gentle",
+      "trial": 9,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 3.214905261993408,
+      "path_length": 57.45096679918804,
+      "nodes_explored": 11837
+    },
+    {
+      "terrain": "gentle",
+      "trial": 10,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 4.045044183731079,
+      "path_length": 32.95979797464459,
+      "nodes_explored": 14281
+    },
+    {
+      "terrain": "gentle",
+      "trial": 10,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.9460368156433105,
+      "path_length": 32.95979797464457,
+      "nodes_explored": 3346
+    },
+    {
+      "terrain": "steep",
+      "trial": 1,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 2.60336971282959,
+      "path_length": 60.796969619669866,
+      "nodes_explored": 8982
+    },
+    {
+      "terrain": "steep",
+      "trial": 1,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.9872608184814453,
+      "path_length": 60.796969619669866,
+      "nodes_explored": 3196
+    },
+    {
+      "terrain": "steep",
+      "trial": 2,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 15.724343061447144,
+      "path_length": 42.30681092190342,
+      "nodes_explored": 51819
+    },
+    {
+      "terrain": "steep",
+      "trial": 2,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 2.3163087368011475,
+      "path_length": 42.30681092190342,
+      "nodes_explored": 7830
+    },
+    {
+      "terrain": "steep",
+      "trial": 3,
+      "algorithm": "TA-A* Optimized",
+      "success": false,
+      "computation_time": 60.000054597854614,
+      "path_length": 0,
+      "nodes_explored": 199326
+    },
+    {
+      "terrain": "steep",
+      "trial": 3,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 11.561208724975586,
+      "path_length": 67.78721497261415,
+      "nodes_explored": 39489
+    },
+    {
+      "terrain": "steep",
+      "trial": 4,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.02352309226989746,
+      "path_length": 4.16568542494924,
+      "nodes_explored": 79
+    },
+    {
+      "terrain": "steep",
+      "trial": 4,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.017122745513916016,
+      "path_length": 4.16568542494924,
+      "nodes_explored": 69
+    },
+    {
+      "terrain": "steep",
+      "trial": 5,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 33.67415499687195,
+      "path_length": 48.75533905932727,
+      "nodes_explored": 111885
+    },
+    {
+      "terrain": "steep",
+      "trial": 5,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 4.002272605895996,
+      "path_length": 48.75533905932727,
+      "nodes_explored": 13586
+    },
+    {
+      "terrain": "steep",
+      "trial": 6,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 6.4395763874053955,
+      "path_length": 25.259292911256328,
+      "nodes_explored": 21996
+    },
+    {
+      "terrain": "steep",
+      "trial": 6,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 1.1788311004638672,
+      "path_length": 25.259292911256328,
+      "nodes_explored": 3782
+    },
+    {
+      "terrain": "steep",
+      "trial": 7,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.17114901542663574,
+      "path_length": 55.43717164502522,
+      "nodes_explored": 571
+    },
+    {
+      "terrain": "steep",
+      "trial": 7,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.16215276718139648,
+      "path_length": 55.43717164502522,
+      "nodes_explored": 571
+    },
+    {
+      "terrain": "steep",
+      "trial": 8,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.10773205757141113,
+      "path_length": 7.222539674441618,
+      "nodes_explored": 380
+    },
+    {
+      "terrain": "steep",
+      "trial": 8,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.05822396278381348,
+      "path_length": 7.222539674441618,
+      "nodes_explored": 222
+    },
+    {
+      "terrain": "steep",
+      "trial": 9,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 4.2746803760528564,
+      "path_length": 24.222539674441567,
+      "nodes_explored": 14271
+    },
+    {
+      "terrain": "steep",
+      "trial": 9,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.8827075958251953,
+      "path_length": 24.222539674441563,
+      "nodes_explored": 2861
+    },
+    {
+      "terrain": "steep",
+      "trial": 10,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 8.715582370758057,
+      "path_length": 29.73380951166233,
+      "nodes_explored": 30103
+    },
+    {
+      "terrain": "steep",
+      "trial": 10,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 1.340498447418213,
+      "path_length": 29.73380951166233,
+      "nodes_explored": 4659
+    },
+    {
+      "terrain": "complex",
+      "trial": 1,
+      "algorithm": "TA-A* Optimized",
+      "success": false,
+      "computation_time": 60.324217796325684,
+      "path_length": 0,
+      "nodes_explored": 196925
+    },
+    {
+      "terrain": "complex",
+      "trial": 1,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 10.389925241470337,
+      "path_length": 77.58864350760128,
+      "nodes_explored": 35422
+    },
+    {
+      "terrain": "complex",
+      "trial": 2,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 42.12396812438965,
+      "path_length": 59.96610383315972,
+      "nodes_explored": 138034
+    },
+    {
+      "terrain": "complex",
+      "trial": 2,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 5.197899341583252,
+      "path_length": 59.96610383315972,
+      "nodes_explored": 17241
+    },
+    {
+      "terrain": "complex",
+      "trial": 3,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 15.257916927337646,
+      "path_length": 40.961226509631956,
+      "nodes_explored": 51619
+    },
+    {
+      "terrain": "complex",
+      "trial": 3,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 2.460510015487671,
+      "path_length": 40.961226509631956,
+      "nodes_explored": 8012
+    },
+    {
+      "terrain": "complex",
+      "trial": 4,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 1.4749703407287598,
+      "path_length": 64.8485281374242,
+      "nodes_explored": 4827
+    },
+    {
+      "terrain": "complex",
+      "trial": 4,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.7318012714385986,
+      "path_length": 64.8485281374242,
+      "nodes_explored": 2529
+    },
+    {
+      "terrain": "complex",
+      "trial": 5,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 6.7961745262146,
+      "path_length": 25.08772003600254,
+      "nodes_explored": 22826
+    },
+    {
+      "terrain": "complex",
+      "trial": 5,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 1.345794439315796,
+      "path_length": 25.08772003600254,
+      "nodes_explored": 4432
+    },
+    {
+      "terrain": "complex",
+      "trial": 6,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 6.315516948699951,
+      "path_length": 37.408326112068494,
+      "nodes_explored": 21917
+    },
+    {
+      "terrain": "complex",
+      "trial": 6,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 1.3705286979675293,
+      "path_length": 37.408326112068494,
+      "nodes_explored": 4425
+    },
+    {
+      "terrain": "complex",
+      "trial": 7,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 23.29138970375061,
+      "path_length": 46.52102448427655,
+      "nodes_explored": 77160
+    },
+    {
+      "terrain": "complex",
+      "trial": 7,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 3.016791343688965,
+      "path_length": 46.52102448427655,
+      "nodes_explored": 10321
+    },
+    {
+      "terrain": "complex",
+      "trial": 8,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 10.275493860244751,
+      "path_length": 68.27695526217045,
+      "nodes_explored": 35265
+    },
+    {
+      "terrain": "complex",
+      "trial": 8,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 2.1594114303588867,
+      "path_length": 68.27695526217045,
+      "nodes_explored": 7671
+    },
+    {
+      "terrain": "complex",
+      "trial": 9,
+      "algorithm": "TA-A* Optimized",
+      "success": false,
+      "computation_time": 60.00000190734863,
+      "path_length": 0,
+      "nodes_explored": 196098
+    },
+    {
+      "terrain": "complex",
+      "trial": 9,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 13.28463101387024,
+      "path_length": 73.95290039756347,
+      "nodes_explored": 45079
+    },
+    {
+      "terrain": "complex",
+      "trial": 10,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 3.150770425796509,
+      "path_length": 34.3112698372207,
+      "nodes_explored": 10930
+    },
+    {
+      "terrain": "complex",
+      "trial": 10,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.8181993961334229,
+      "path_length": 34.3112698372207,
+      "nodes_explored": 2845
+    },
+    {
+      "terrain": "extreme",
+      "trial": 1,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 5.074300289154053,
+      "path_length": 22.982337649086226,
+      "nodes_explored": 16966
+    },
+    {
+      "terrain": "extreme",
+      "trial": 1,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.9302477836608887,
+      "path_length": 22.982337649086226,
+      "nodes_explored": 3202
+    },
+    {
+      "terrain": "extreme",
+      "trial": 2,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 54.99462556838989,
+      "path_length": 57.97300141024094,
+      "nodes_explored": 181526
+    },
+    {
+      "terrain": "extreme",
+      "trial": 2,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 5.722496747970581,
+      "path_length": 57.97300141024094,
+      "nodes_explored": 20122
+    },
+    {
+      "terrain": "extreme",
+      "trial": 3,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 11.864738702774048,
+      "path_length": 68.40529573173845,
+      "nodes_explored": 39306
+    },
+    {
+      "terrain": "extreme",
+      "trial": 3,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 2.755474090576172,
+      "path_length": 68.40529573173846,
+      "nodes_explored": 8695
+    },
+    {
+      "terrain": "extreme",
+      "trial": 4,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.7336928844451904,
+      "path_length": 10.891168824543122,
+      "nodes_explored": 2126
+    },
+    {
+      "terrain": "extreme",
+      "trial": 4,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.30315160751342773,
+      "path_length": 10.891168824543122,
+      "nodes_explored": 759
+    },
+    {
+      "terrain": "extreme",
+      "trial": 5,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.02770853042602539,
+      "path_length": 26.587214972614163,
+      "nodes_explored": 95
+    },
+    {
+      "terrain": "extreme",
+      "trial": 5,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.02894878387451172,
+      "path_length": 26.587214972614163,
+      "nodes_explored": 95
+    },
+    {
+      "terrain": "extreme",
+      "trial": 6,
+      "algorithm": "TA-A* Optimized",
+      "success": false,
+      "computation_time": 60.0001540184021,
+      "path_length": 0,
+      "nodes_explored": 194106
+    },
+    {
+      "terrain": "extreme",
+      "trial": 6,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 10.55427074432373,
+      "path_length": 78.85382386916221,
+      "nodes_explored": 33134
+    },
+    {
+      "terrain": "extreme",
+      "trial": 7,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 22.304784774780273,
+      "path_length": 46.63086578651006,
+      "nodes_explored": 74566
+    },
+    {
+      "terrain": "extreme",
+      "trial": 7,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 3.097095012664795,
+      "path_length": 46.63086578651006,
+      "nodes_explored": 10222
+    },
+    {
+      "terrain": "extreme",
+      "trial": 8,
+      "algorithm": "TA-A* Optimized",
+      "success": false,
+      "computation_time": 60.00025820732117,
+      "path_length": 0,
+      "nodes_explored": 192651
+    },
+    {
+      "terrain": "extreme",
+      "trial": 8,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 8.223536014556885,
+      "path_length": 65.44894654563433,
+      "nodes_explored": 25751
+    },
+    {
+      "terrain": "extreme",
+      "trial": 9,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 49.81536793708801,
+      "path_length": 52.79554108468257,
+      "nodes_explored": 164284
+    },
+    {
+      "terrain": "extreme",
+      "trial": 9,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 5.872111082077026,
+      "path_length": 52.79554108468258,
+      "nodes_explored": 18606
+    },
+    {
+      "terrain": "extreme",
+      "trial": 10,
+      "algorithm": "TA-A* Optimized",
+      "success": true,
+      "computation_time": 0.7180614471435547,
+      "path_length": 15.245079348883195,
+      "nodes_explored": 2493
+    },
+    {
+      "terrain": "extreme",
+      "trial": 10,
+      "algorithm": "TA-A* Phase 1",
+      "success": true,
+      "computation_time": 0.41613197326660156,
+      "path_length": 15.245079348883195,
+      "nodes_explored": 964
+    }
+  ]
+}

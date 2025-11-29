@@ -1,0 +1,38 @@
+{
+  "verification_date": "2025-10-17T16:33:51",
+  "summary": {
+    "path_validity": {
+      "passed": 20,
+      "failed": 0,
+      "total": 20,
+      "pass_rate": 100.0
+    },
+    "obstacle_avoidance": {
+      "passed": 0,
+      "failed": 20,
+      "total": 20,
+      "pass_rate": 0.0
+    },
+    "slope_constraints": {
+      "passed": 1,
+      "failed": 19,
+      "total": 20,
+      "pass_rate": 5.0
+    },
+    "start_goal_correctness": {
+      "passed": 20,
+      "failed": 0,
+      "total": 20,
+      "pass_rate": 100.0
+    },
+    "computation_time_sanity": {
+      "status": "PASS"
+    },
+    "statistics_accuracy": {
+      "status": "PASS"
+    }
+  },
+  "details": {
+    "path_validity": [
+      {
+        "scenario_id": 

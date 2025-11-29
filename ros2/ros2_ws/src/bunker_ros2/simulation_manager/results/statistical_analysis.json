@@ -1,0 +1,141 @@
+{
+  "basic_stats": {
+    "total_scenarios": 100,
+    "successful_scenarios": 100,
+    "success_rate": 100.0
+  },
+  "descriptive_statistics": {
+    "computation_time": {
+      "metric_name": "computation_time",
+      "count": 100,
+      "mean": 26.43832402229309,
+      "std": 24.754163866137787,
+      "min": 0.033251047134399414,
+      "max": 105.49933624267578,
+      "q25": 6.87269127368927,
+      "median": 17.035823583602905,
+      "q75": 41.343792140483856
+    },
+    "path_length": {
+      "metric_name": "path_length",
+      "count": 100,
+      "mean": 9.940314548217831,
+      "std": 0.9541050810651165,
+      "min": 7.383916251784791,
+      "max": 12.0208152801713,
+      "q25": 9.479722721756897,
+      "median": 9.886167769219519,
+      "q75": 10.664819555222735
+    },
+    "num_waypoints": {
+      "metric_name": "num_waypoints",
+      "count": 100,
+      "mean": 72.08,
+      "std": 7.733925264702265,
+      "min": 52,
+      "max": 89,
+      "q25": 67.0,
+      "median": 71.5,
+      "q75": 78.0
+    }
+  },
+  "terrain_type_analysis": {
+    "flat_terrain": {
+      "count": 10,
+      "success_rate": 100.0,
+      "avg_computation_time": 29.875351977348327,
+      "std_computation_time": 26.18452457920246,
+      "avg_path_length": 10.075086912528707,
+      "avg_waypoints": 73.4
+    },
+    "gentle_slope": {
+      "count": 15,
+      "success_rate": 100.0,
+      "avg_computation_time": 35.66855312983195,
+      "std_computation_time": 24.050597799265024,
+      "avg_path_length": 10.269857447305387,
+      "avg_waypoints": 74.8
+    },
+    "steep_slope": {
+      "count": 15,
+      "success_rate": 100.0,
+      "avg_computation_time": 19.837311538060508,
+      "std_computation_time": 20.966384193739355,
+      "avg_path_length": 9.739686814788408,
+      "avg_waypoints": 69.8
+    },
+    "mixed_terrain": {
+      "count": 20,
+      "success_rate": 100.0,
+      "avg_computation_time": 31.756016194820404,
+      "std_computation_time": 27.751394124263168,
+      "avg_path_length": 10.010445636021682,
+      "avg_waypoints": 72.6
+    },
+    "obstacle_field": {
+      "count": 20,
+      "success_rate": 100.0,
+      "avg_computation_time": 17.62362132072449,
+      "std_computation_time": 17.32274392235496,
+      "avg_path_length": 9.608102585141657,
+      "avg_waypoints": 70.2
+    },
+    "narrow_passage": {
+      "count": 10,
+      "success_rate": 100.0,
+      "avg_computation_time": 21.371184873580933,
+      "std_computation_time": 25.641343011132747,
+      "avg_path_length": 9.602551222428366,
+      "avg_waypoints": 68.9
+    },
+    "complex_3d": {
+      "count": 10,
+      "success_rate": 100.0,
+      "avg_computation_time": 31.118631339073183,
+      "std_computation_time": 25.546218788417168,
+      "avg_path_length": 10.474094511753872,
+      "avg_waypoints": 76.0
+    }
+  },
+  "difficulty_analysis": {
+    "easy": {
+      "count": 45,
+      "success_rate": 100.0,
+      "avg_computation_time": 30.871387312147352,
+      "avg_path_length": 9.97512727432402
+    },
+    "medium": {
+      "count": 42,
+      "success_rate": 100.0,
+      "avg_computation_time": 22.954957729294186,
+      "avg_path_length": 9.949386758359877
+    },
+    "hard": {
+      "count": 13,
+      "success_rate": 100.0,
+      "avg_computation_time": 22.347057580947876,
+      "avg_path_length": 9.790498740468262
+    }
+  },
+  "correlations": {
+    "max_slope_vs_time": 0.010407700102484834,
+    "obstacle_density_vs_time": -0.1839036151442707,
+    "roughness_vs_time": -0.008057062632877109
+  },
+  "outliers": {
+    "computation_time": [
+      13
+    ],
+    "path_length": [
+      26,
+      77,
+      87
+    ]
+  },
+  "anova": {
+    "f_statistic": 1.271336043106967,
+    "p_value": 0.2781595463559341,
+    "significant": false,
+    "interpretation": "No significant difference"
+  }
+}

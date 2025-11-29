@@ -1,0 +1,426 @@
+{
+  "A* (Baseline)": [
+    {
+      "scenario": "Short-0",
+      "success": true,
+      "time": 0.009969949722290039,
+      "length": 4.242640687119287,
+      "nodes": 16
+    },
+    {
+      "scenario": "Short-1",
+      "success": true,
+      "time": 0.12365913391113281,
+      "length": 6.648528137423862,
+      "nodes": 235
+    },
+    {
+      "scenario": "Short-2",
+      "success": true,
+      "time": 0.2135024070739746,
+      "length": 6.194112549695433,
+      "nodes": 434
+    },
+    {
+      "scenario": "Short-3",
+      "success": true,
+      "time": 0.015128374099731445,
+      "length": 5.800000000000004,
+      "nodes": 30
+    },
+    {
+      "scenario": "Short-4",
+      "success": true,
+      "time": 0.018061399459838867,
+      "length": 2.0142135623730946,
+      "nodes": 28
+    },
+    {
+      "scenario": "Short-5",
+      "success": true,
+      "time": 0.02758049964904785,
+      "length": 3.4284271247461913,
+      "nodes": 51
+    },
+    {
+      "scenario": "Short-6",
+      "success": true,
+      "time": 0.005050182342529297,
+      "length": 3.11126983722081,
+      "nodes": 12
+    },
+    {
+      "scenario": "Short-7",
+      "success": true,
+      "time": 0.0012619495391845703,
+      "length": 0.6000000000000005,
+      "nodes": 4
+    },
+    {
+      "scenario": "Short-8",
+      "success": true,
+      "time": 0.31218957901000977,
+      "length": 8.89705627484772,
+      "nodes": 599
+    },
+    {
+      "scenario": "Short-9",
+      "success": true,
+      "time": 0.007634639739990234,
+      "length": 4.525483399593906,
+      "nodes": 17
+    },
+    {
+      "scenario": "Medium-0",
+      "success": true,
+      "time": 0.327028751373291,
+      "length": 8.179898987322336,
+      "nodes": 660
+    },
+    {
+      "scenario": "Medium-1",
+      "success": true,
+      "time": 0.019925832748413086,
+      "length": 2.5313708498984777,
+      "nodes": 43
+    },
+    {
+      "scenario": "Medium-2",
+      "success": true,
+      "time": 1.2863035202026367,
+      "length": 14.59655121145937,
+      "nodes": 2509
+    },
+    {
+      "scenario": "Medium-3",
+      "success": true,
+      "time": 0.05059027671813965,
+      "length": 6.282842712474621,
+      "nodes": 97
+    },
+    {
+      "scenario": "Medium-4",
+      "success": true,
+      "time": 0.01870441436767578,
+      "length": 2.248528137423857,
+      "nodes": 33
+    },
+    {
+      "scenario": "Medium-5",
+      "success": true,
+      "time": 0.35282254219055176,
+      "length": 8.779898987322337,
+      "nodes": 718
+    },
+    {
+      "scenario": "Medium-6",
+      "success": true,
+      "time": 0.15842175483703613,
+      "length": 5.676955262170051,
+      "nodes": 318
+    },
+    {
+      "scenario": "Medium-7",
+      "success": true,
+      "time": 0.9231274127960205,
+      "length": 20.716147160748687,
+      "nodes": 1833
+    },
+    {
+      "scenario": "Medium-8",
+      "success": true,
+      "time": 0.7562282085418701,
+      "length": 13.979898987322311,
+      "nodes": 1548
+    },
+    {
+      "scenario": "Medium-9",
+      "success": true,
+      "time": 0.11446261405944824,
+      "length": 7.8485281374238625,
+      "nodes": 225
+    },
+    {
+      "scenario": "Long-0",
+      "success": true,
+      "time": 0.5472631454467773,
+      "length": 30.498484809834938,
+      "nodes": 1091
+    },
+    {
+      "scenario": "Long-1",
+      "success": true,
+      "time": 3.433518171310425,
+      "length": 21.253405460951736,
+      "nodes": 6707
+    },
+    {
+      "scenario": "Long-2",
+      "success": true,
+      "time": 37.10543656349182,
+      "length": 33.89360748630699,
+      "nodes": 73537
+    },
+    {
+      "scenario": "Long-3",
+      "success": true,
+      "time": 0.011030197143554688,
+      "length": 2.0828427124746187,
+      "nodes": 21
+    },
+    {
+      "scenario": "Long-4",
+      "success": true,
+      "time": 7.964045763015747,
+      "length": 24.33624817342634,
+      "nodes": 15921
+    },
+    {
+      "scenario": "Long-5",
+      "success": true,
+      "time": 1.524303674697876,
+      "length": 12.588225099390822,
+      "nodes": 3079
+    },
+    {
+      "scenario": "Long-6",
+      "success": true,
+      "time": 0.05437874794006348,
+      "length": 27.718585822512605,
+      "nodes": 99
+    },
+    {
+      "scenario": "Long-7",
+      "success": true,
+      "time": 0.028291702270507812,
+      "length": 3.711269837220796,
+      "nodes": 56
+    },
+    {
+      "scenario": "Long-8",
+      "success": true,
+      "time": 0.9326272010803223,
+      "length": 12.111269837220771,
+      "nodes": 1921
+    },
+    {
+      "scenario": "Long-9",
+      "success": true,
+      "time": 1.9156174659729004,
+      "length": 14.725483399593863,
+      "nodes": 3927
+    }
+  ],
+  "Adaptive TA-A* (Proposed)": [
+    {
+      "scenario": "Short-0",
+      "success": true,
+      "time": 0.2730143070220947,
+      "length": 4.242640687119287,
+      "nodes": 543
+    },
+    {
+      "scenario": "Short-1",
+      "success": true,
+      "time": 1.9198987483978271,
+      "length": 6.448528137423862,
+      "nodes": 3763
+    },
+    {
+      "scenario": "Short-2",
+      "success": true,
+      "time": 1.5551860332489014,
+      "length": 5.9112698372208135,
+      "nodes": 3045
+    },
+    {
+      "scenario": "Short-3",
+      "success": true,
+      "time": 1.4734680652618408,
+      "length": 5.600000000000004,
+      "nodes": 2923
+    },
+    {
+      "scenario": "Short-4",
+      "success": true,
+      "time": 0.08517026901245117,
+      "length": 1.8142135623730948,
+      "nodes": 181
+    },
+    {
+      "scenario": "Short-5",
+      "success": true,
+      "time": 0.17850971221923828,
+      "length": 3.1112698372208096,
+      "nodes": 357
+    },
+    {
+      "scenario": "Short-6",
+      "success": true,
+      "time": 0.12559890747070312,
+      "length": 2.8284271247461907,
+      "nodes": 249
+    },
+    {
+      "scenario": "Short-7",
+      "success": true,
+      "time": 0.0031049251556396484,
+      "length": 0.40000000000000036,
+      "nodes": 6
+    },
+    {
+      "scenario": "Short-8",
+      "success": true,
+      "time": 3.9989678859710693,
+      "length": 8.614213562373102,
+      "nodes": 7693
+    },
+    {
+      "scenario": "Short-9",
+      "success": true,
+      "time": 0.3999669551849365,
+      "length": 4.2426406871192865,
+      "nodes": 814
+    },
+    {
+      "scenario": "Medium-0",
+      "success": true,
+      "time": 4.075772285461426,
+      "length": 7.9798989873223345,
+      "nodes": 7998
+    },
+    {
+      "scenario": "Medium-1",
+      "success": true,
+      "time": 0.13496613502502441,
+      "length": 2.2485281374238584,
+      "nodes": 265
+    },
+    {
+      "scenario": "Medium-2",
+      "success": true,
+      "time": 13.380693912506104,
+      "length": 14.313708498984752,
+      "nodes": 24948
+    },
+    {
+      "scenario": "Medium-3",
+      "success": true,
+      "time": 2.252556800842285,
+      "length": 6.082842712474621,
+      "nodes": 4346
+    },
+    {
+      "scenario": "Medium-4",
+      "success": true,
+      "time": 0.09071874618530273,
+      "length": 1.9313708498984754,
+      "nodes": 184
+    },
+    {
+      "scenario": "Medium-5",
+      "success": true,
+      "time": 4.438920497894287,
+      "length": 8.579898987322338,
+      "nodes": 8235
+    },
+    {
+      "scenario": "Medium-6",
+      "success": true,
+      "time": 1.0442357063293457,
+      "length": 5.35979797464467,
+      "nodes": 1992
+    },
+    {
+      "scenario": "Medium-7",
+      "success": true,
+      "time": 19.243725776672363,
+      "length": 20.516147160748687,
+      "nodes": 35876
+    },
+    {
+      "scenario": "Medium-8",
+      "success": true,
+      "time": 15.930643320083618,
+      "length": 13.779898987322316,
+      "nodes": 30181
+    },
+    {
+      "scenario": "Medium-9",
+      "success": true,
+      "time": 2.7695040702819824,
+      "length": 7.565685424949243,
+      "nodes": 5449
+    },
+    {
+      "scenario": "Long-0",
+      "success": true,
+      "time": 53.786516427993774,
+      "length": 30.18132752230956,
+      "nodes": 96623
+    },
+    {
+      "scenario": "Long-1",
+      "success": true,
+      "time": 47.29837417602539,
+      "length": 20.85340546095174,
+      "nodes": 85229
+    },
+    {
+      "scenario": "Long-2",
+      "success": false,
+      "time": 120.00058484077454,
+      "length": null,
+      "nodes": 216728
+    },
+    {
+      "scenario": "Long-3",
+      "success": true,
+      "time": 0.0892636775970459,
+      "length": 1.8,
+      "nodes": 173
+    },
+    {
+      "scenario": "Long-4",
+      "success": true,
+      "time": 53.30185413360596,
+      "length": 24.13624817342635,
+      "nodes": 96541
+    },
+    {
+      "scenario": "Long-5",
+      "success": true,
+      "time": 9.38765835762024,
+      "length": 12.388225099390825,
+      "nodes": 17626
+    },
+    {
+      "scenario": "Long-6",
+      "success": true,
+      "time": 33.241000175476074,
+      "length": 27.435743110037986,
+      "nodes": 61190
+    },
+    {
+      "scenario": "Long-7",
+      "success": true,
+      "time": 0.2088611125946045,
+      "length": 3.3112698372207974,
+      "nodes": 400
+    },
+    {
+      "scenario": "Long-8",
+      "success": true,
+      "time": 8.584246158599854,
+      "length": 11.911269837220772,
+      "nodes": 15958
+    },
+    {
+      "scenario": "Long-9",
+      "success": true,
+      "time": 13.753225564956665,
+      "length": 14.525483399593874,
+      "nodes": 25301
+    }
+  ]
+}

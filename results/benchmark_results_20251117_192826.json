@@ -1,0 +1,412 @@
+{
+  "metadata": {
+    "timestamp": "20251117_192826",
+    "voxel_size": 0.1,
+    "grid_size": [
+      200,
+      200,
+      50
+    ],
+    "total_scenarios": 8
+  },
+  "results": {
+    "flat_short": {
+      "scenario": {
+        "name": "flat_short",
+        "description": "平地・短距離（5m）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          5.0,
+          0.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.17704463005065918,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.0018038749694824219
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 51,
+          "path_distance": 5.0,
+          "nodes_explored": 51,
+          "computation_time": 0.0014295578002929688
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 4.291534423828125e-05,
+          "error_message": "Exception: 'RRTStarPlanner3D' object has no attribute '_steer'"
+        }
+      }
+    },
+    "flat_medium": {
+      "scenario": {
+        "name": "flat_medium",
+        "description": "平地・中距離（10m）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          7.0,
+          7.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "easy"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 71,
+          "path_distance": 9.899494936611667,
+          "nodes_explored": 71,
+          "computation_time": 0.38052845001220703,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 71,
+          "path_distance": 9.89949493661167,
+          "nodes_explored": 71,
+          "computation_time": 0.004001140594482422
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 71,
+          "path_distance": 9.89949493661167,
+          "nodes_explored": 71,
+          "computation_time": 0.0036110877990722656
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 4.4345855712890625e-05,
+          "error_message": "Exception: 'RRTStarPlanner3D' object has no attribute '_steer'"
+        }
+      }
+    },
+    "flat_long": {
+      "scenario": {
+        "name": "flat_long",
+        "description": "平地・長距離（20m）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          15.0,
+          15.0,
+          0.0
+        ],
+        "terrain_type": "flat",
+        "difficulty": "medium"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 100,
+          "path_distance": 14.000714267493628,
+          "nodes_explored": 100,
+          "computation_time": 0.6417489051818848,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 151,
+          "path_distance": 21.21320343559645,
+          "nodes_explored": 151,
+          "computation_time": 0.009985685348510742
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 151,
+          "path_distance": 21.21320343559645,
+          "nodes_explored": 151,
+          "computation_time": 0.009423017501831055
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 5.6743621826171875e-05,
+          "error_message": "Exception: 'RRTStarPlanner3D' object has no attribute '_steer'"
+        }
+      }
+    },
+    "slope_gentle": {
+      "scenario": {
+        "name": "slope_gentle",
+        "description": "緩やかな傾斜（10度）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          0.0,
+          2.0
+        ],
+        "terrain_type": "slope",
+        "difficulty": "medium"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 10.828427124746192,
+          "nodes_explored": 22759,
+          "computation_time": 54.32708287239075,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 10.828427124746188,
+          "nodes_explored": 101,
+          "computation_time": 0.004976034164428711
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 10.828427124746188,
+          "nodes_explored": 101,
+          "computation_time": 0.004078388214111328
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 5.1021575927734375e-05,
+          "error_message": "Exception: 'RRTStarPlanner3D' object has no attribute '_steer'"
+        }
+      }
+    },
+    "slope_moderate": {
+      "scenario": {
+        "name": "slope_moderate",
+        "description": "中程度の傾斜（20度）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          0.0,
+          3.5
+        ],
+        "terrain_type": "slope",
+        "difficulty": "medium"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.449747468305835,
+          "nodes_explored": 42124,
+          "computation_time": 140.34488606452942,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.44974746830583,
+          "nodes_explored": 101,
+          "computation_time": 0.005391359329223633
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.44974746830583,
+          "nodes_explored": 101,
+          "computation_time": 0.004285335540771484
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 5.459785461425781e-05,
+          "error_message": "Exception: 'RRTStarPlanner3D' object has no attribute '_steer'"
+        }
+      }
+    },
+    "slope_steep": {
+      "scenario": {
+        "name": "slope_steep",
+        "description": "急傾斜（25度）",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          10.0,
+          0.0,
+          4.5
+        ],
+        "terrain_type": "slope",
+        "difficulty": "hard"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.863961030678933,
+          "nodes_explored": 49427,
+          "computation_time": 195.48442244529724,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.863961030678926,
+          "nodes_explored": 101,
+          "computation_time": 0.0048065185546875
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 11.863961030678926,
+          "nodes_explored": 101,
+          "computation_time": 0.004097461700439453
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 4.2438507080078125e-05,
+          "error_message": "Exception: 'RRTStarPlanner3D' object has no attribute '_steer'"
+        }
+      }
+    },
+    "diagonal_climb": {
+      "scenario": {
+        "name": "diagonal_climb",
+        "description": "斜め上昇",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "terrain_type": "slope",
+        "difficulty": "medium"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 81,
+          "path_distance": 12.267220234572104,
+          "nodes_explored": 23501,
+          "computation_time": 98.69381093978882,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": true,
+          "path_length": 81,
+          "path_distance": 12.267220234572118,
+          "nodes_explored": 81,
+          "computation_time": 0.0072133541107177734
+        },
+        "D* Lite": {
+          "success": true,
+          "path_length": 81,
+          "path_distance": 12.267220234572118,
+          "nodes_explored": 81,
+          "computation_time": 0.00558924674987793
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 4.124641418457031e-05,
+          "error_message": "Exception: 'RRTStarPlanner3D' object has no attribute '_steer'"
+        }
+      }
+    },
+    "complex_3d": {
+      "scenario": {
+        "name": "complex_3d",
+        "description": "複雑な3D経路",
+        "start": [
+          -5.0,
+          -5.0,
+          0.0
+        ],
+        "goal": [
+          5.0,
+          5.0,
+          3.0
+        ],
+        "terrain_type": "complex",
+        "difficulty": "hard"
+      },
+      "results": {
+        "TA* (提案手法)": {
+          "success": true,
+          "path_length": 101,
+          "path_distance": 15.095647359318297,
+          "nodes_explored": 39162,
+          "computation_time": 213.58286428451538,
+          "strategy_switches": 0,
+          "terrain_types_encountered": 1,
+          "average_complexity": 0.0
+        },
+        "階層型A* (HPA*)": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 6.341934204101562e-05,
+          "error_message": "coarse grid search failed (all retries)"
+        },
+        "D* Lite": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 3.075599670410156e-05,
+          "error_message": "dstar_lite grid search failed (all retries)"
+        },
+        "RRT*": {
+          "success": false,
+          "nodes_explored": 0,
+          "computation_time": 4.363059997558594e-05,
+          "error_message": "Exception: 'RRTStarPlanner3D' object has no attribute '_steer'"
+        }
+      }
+    }
+  }
+}

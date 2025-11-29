@@ -1,0 +1,18 @@
+{
+  "scenario_id": 4,
+  "scale": "Large Scale",
+  "map_size": 100.0,
+  "distance": 113.13708498984761,
+  "start": [
+    -40.0,
+    -40.0,
+    0.2
+  ],
+  "goal": [
+    40.0,
+    40.0,
+    0.2
+  ],
+  "terrain_type": "Obstacle Field",
+  "voxel_size": 0.5
+}
