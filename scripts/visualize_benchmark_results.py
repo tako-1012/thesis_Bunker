@@ -16,8 +16,8 @@ from pathlib import Path
 from typing import Dict, List
 import seaborn as sns
 
-# 日本語フォント設定
-matplotlib.rcParams['font.sans-serif'] = ['DejaVu Sans', 'IPAexGothic', 'Noto Sans CJK JP']
+# Font setting (using English only to avoid character encoding issues)
+matplotlib.rcParams['font.sans-serif'] = ['DejaVu Sans', 'Bitstream Vera Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
 
 # Seabornスタイル設定
@@ -71,7 +71,7 @@ class BenchmarkVisualizer:
             return json.load(f)
     
     def plot_computation_time(self):
-        """計算時間の比較グラフ"""
+        """Plot computation time comparison"""
         print("\n計算時間比較グラフを作成中...")
         
         scenarios = list(self.results.keys())
@@ -84,13 +84,13 @@ class BenchmarkVisualizer:
                 data[planner].append(time)
         
         # グラフ描画
-        fig, ax = plt.subplots(figsize=(14, 6))
+        fig, ax = plt.subplots(figsize=(16, 8))
         
         x = np.arange(len(scenarios))
-        width = 0.2
+        width = 0.13
         
         for i, planner in enumerate(self.planner_names):
-            offset = width * (i - 1.5)
+            offset = width * (i - 2.5)
             bars = ax.bar(
                 x + offset,
                 data[planner],
@@ -110,15 +110,15 @@ class BenchmarkVisualizer:
                         f'{height:.2f}s',
                         ha='center',
                         va='bottom',
-                        fontsize=8,
+                        fontsize=7,
                         rotation=45
                     )
         
-        ax.set_xlabel('シナリオ', fontsize=12)
-        ax.set_ylabel('計算時間 (秒)', fontsize=12)
-        ax.set_title('アルゴリズム別計算時間比較', fontsize=14, fontweight='bold')
+        ax.set_xlabel('Scenario', fontsize=12)
+        ax.set_ylabel('Computation Time (seconds)', fontsize=12)
+        ax.set_title('Computation Time Comparison by Algorithm', fontsize=14, fontweight='bold')
         ax.set_xticks(x)
-        ax.set_xticklabels(scenarios, rotation=45, ha='right')
+        ax.set_xticklabels(scenarios, rotation=45, ha='right', fontsize=11)
         ax.legend(loc='upper left', fontsize=10)
         ax.grid(True, alpha=0.3)
         
@@ -129,7 +129,7 @@ class BenchmarkVisualizer:
         plt.close()
     
     def plot_nodes_explored(self):
-        """探索ノード数の比較グラフ"""
+        """Plot nodes explored comparison"""
         print("\n探索ノード数比較グラフを作成中...")
         
         scenarios = list(self.results.keys())
@@ -142,13 +142,13 @@ class BenchmarkVisualizer:
                 data[planner].append(nodes)
         
         # グラフ描画
-        fig, ax = plt.subplots(figsize=(14, 6))
+        fig, ax = plt.subplots(figsize=(16, 8))
         
         x = np.arange(len(scenarios))
-        width = 0.2
+        width = 0.13
         
         for i, planner in enumerate(self.planner_names):
-            offset = width * (i - 1.5)
+            offset = width * (i - 2.5)
             ax.bar(
                 x + offset,
                 data[planner],
@@ -158,11 +158,11 @@ class BenchmarkVisualizer:
                 alpha=0.8
             )
         
-        ax.set_xlabel('シナリオ', fontsize=12)
-        ax.set_ylabel('探索ノード数', fontsize=12)
-        ax.set_title('アルゴリズム別探索ノード数比較', fontsize=14, fontweight='bold')
+        ax.set_xlabel('Scenario', fontsize=12)
+        ax.set_ylabel('Nodes Explored', fontsize=12)
+        ax.set_title('Nodes Explored Comparison by Algorithm', fontsize=14, fontweight='bold')
         ax.set_xticks(x)
-        ax.set_xticklabels(scenarios, rotation=45, ha='right')
+        ax.set_xticklabels(scenarios, rotation=45, ha='right', fontsize=11)
         ax.legend(loc='upper left', fontsize=10)
         ax.grid(True, alpha=0.3)
         ax.set_yscale('log')  # 対数スケール
@@ -174,7 +174,7 @@ class BenchmarkVisualizer:
         plt.close()
     
     def plot_path_length(self):
-        """経路長の比較グラフ"""
+        """Plot path length comparison"""
         print("\n経路長比較グラフを作成中...")
         
         scenarios = list(self.results.keys())
@@ -187,13 +187,13 @@ class BenchmarkVisualizer:
                 data[planner].append(distance)
         
         # グラフ描画
-        fig, ax = plt.subplots(figsize=(14, 6))
+        fig, ax = plt.subplots(figsize=(16, 8))
         
         x = np.arange(len(scenarios))
-        width = 0.2
+        width = 0.13
         
         for i, planner in enumerate(self.planner_names):
-            offset = width * (i - 1.5)
+            offset = width * (i - 2.5)
             ax.bar(
                 x + offset,
                 data[planner],
@@ -203,11 +203,11 @@ class BenchmarkVisualizer:
                 alpha=0.8
             )
         
-        ax.set_xlabel('シナリオ', fontsize=12)
+        ax.set_xlabel('Scenario', fontsize=12)
         ax.set_ylabel('経路長 (m)', fontsize=12)
-        ax.set_title('アルゴリズム別経路長比較', fontsize=14, fontweight='bold')
+        ax.set_title('Path Length Comparison by Algorithm', fontsize=14, fontweight='bold')
         ax.set_xticks(x)
-        ax.set_xticklabels(scenarios, rotation=45, ha='right')
+        ax.set_xticklabels(scenarios, rotation=45, ha='right', fontsize=11)
         ax.legend(loc='upper left', fontsize=10)
         ax.grid(True, alpha=0.3)
         
@@ -218,7 +218,7 @@ class BenchmarkVisualizer:
         plt.close()
     
     def plot_success_rate(self):
-        """成功率の比較グラフ"""
+        """Plot success rate comparison"""
         print("\n成功率比較グラフを作成中...")
         
         success_counts = {planner: 0 for planner in self.planner_names}
@@ -236,7 +236,7 @@ class BenchmarkVisualizer:
         }
         
         # グラフ描画
-        fig, ax = plt.subplots(figsize=(10, 6))
+        fig, ax = plt.subplots(figsize=(16, 8))
         
         planners = list(success_rates.keys())
         rates = list(success_rates.values())
@@ -257,7 +257,7 @@ class BenchmarkVisualizer:
                 fontweight='bold'
             )
         
-        ax.set_ylabel('成功率 (%)', fontsize=12)
+        ax.set_ylabel('Success Rate (%)', fontsize=12)
         ax.set_title('アルゴリズム別成功率', fontsize=14, fontweight='bold')
         ax.set_ylim(0, 105)
         ax.grid(True, alpha=0.3, axis='y')
@@ -383,7 +383,7 @@ class BenchmarkVisualizer:
                 linewidths=1
             )
         
-        ax.set_xlabel('計算時間 (秒)', fontsize=12)
+        ax.set_xlabel('Computation Time (seconds)', fontsize=12)
         ax.set_ylabel('経路長 (m)', fontsize=12)
         ax.set_title('計算時間 vs 経路長', fontsize=14, fontweight='bold')
         ax.legend(fontsize=10)

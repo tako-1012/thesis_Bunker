@@ -1,0 +1,166 @@
+{
+  "files_analyzed": [
+    "benchmark_results_20251109_155653.json",
+    "benchmark_results_20251114_132704.json",
+    "benchmark_results_20251114_143341.json",
+    "benchmark_results_20251114_155341.json",
+    "benchmark_results_20251114_202358.json",
+    "benchmark_results_20251114_202803.json",
+    "benchmark_results_20251114_203127.json",
+    "benchmark_results_20251117_093031.json",
+    "benchmark_results_20251117_093309.json",
+    "benchmark_results_20251117_093333.json",
+    "benchmark_results_20251117_101335.json",
+    "benchmark_results_20251117_101808.json",
+    "benchmark_results_20251117_102444.json",
+    "benchmark_results_20251117_103603.json",
+    "benchmark_results_20251117_103727.json",
+    "benchmark_results_20251117_103842.json",
+    "benchmark_results_20251117_104800.json",
+    "benchmark_results_20251117_105319.json",
+    "benchmark_results_20251117_112340.json",
+    "benchmark_results_20251117_120210.json",
+    "benchmark_results_20251117_145711.json",
+    "benchmark_results_20251117_180500.json",
+    "benchmark_results_20251117_181743.json",
+    "benchmark_results_20251117_182935.json",
+    "benchmark_results_20251117_184342.json",
+    "benchmark_results_20251117_191213.json",
+    "benchmark_results_20251117_192826.json",
+    "benchmark_results_20251117_194758.json",
+    "benchmark_results_20251117_201445.json"
+  ],
+  "summary": {
+    "A*": {
+      "attempts": 26,
+      "successes": 23,
+      "failures": 3,
+      "count_with_time": 23,
+      "mean_time_s": 54.08038343553958,
+      "std_time_s": 64.0925183172788,
+      "min_time_s": 0.0045506954193115234,
+      "max_time_s": 168.70326924324036,
+      "terrain_means_s": {
+        "flat": 0.052427053451538086,
+        "slope": 87.57254950205485,
+        "complex": 75.87940951188405
+      }
+    },
+    "Weighted A* (\u03b5=1.5)": {
+      "attempts": 26,
+      "successes": 26,
+      "failures": 0,
+      "count_with_time": 26,
+      "mean_time_s": 0.01142258827502911,
+      "std_time_s": 0.005577117168921145,
+      "min_time_s": 0.0016574859619140625,
+      "max_time_s": 0.023734569549560547,
+      "terrain_means_s": {
+        "flat": 0.008993820710615679,
+        "slope": 0.015814198387993708,
+        "complex": 0.00928791364034017
+      }
+    },
+    "Dijkstra": {
+      "attempts": 24,
+      "successes": 9,
+      "failures": 15,
+      "count_with_time": 9,
+      "mean_time_s": 37.10779722531637,
+      "std_time_s": 32.04244630704054,
+      "min_time_s": 2.6672260761260986,
+      "max_time_s": 89.09100151062012,
+      "terrain_means_s": {
+        "flat": 54.13007501761118,
+        "complex": 3.063241640726725
+      }
+    },
+    "RRT*": {
+      "attempts": 122,
+      "successes": 62,
+      "failures": 60,
+      "count_with_time": 62,
+      "mean_time_s": 0.09407639503479004,
+      "std_time_s": 0.4961483774650935,
+      "min_time_s": 0.0005044937133789062,
+      "max_time_s": 3.8448469638824463,
+      "terrain_means_s": {
+        "flat": 0.03861477971076965,
+        "slope": 0.16289966106414794,
+        "complex": 0.002373993396759033
+      }
+    },
+    "AHA*": {
+      "attempts": 24,
+      "successes": 7,
+      "failures": 17,
+      "count_with_time": 7,
+      "mean_time_s": 1.9544910022190638,
+      "std_time_s": 4.6050339867765135,
+      "min_time_s": 0.00994420051574707,
+      "max_time_s": 13.23347783088684,
+      "terrain_means_s": {
+        "flat": 3.3170119524002075,
+        "complex": 0.13779640197753906
+      }
+    },
+    "TA* (\u63d0\u6848\u624b\u6cd5)": {
+      "attempts": 170,
+      "successes": 120,
+      "failures": 50,
+      "count_with_time": 120,
+      "mean_time_s": 63.25572691361109,
+      "std_time_s": 82.57277575212802,
+      "min_time_s": 0.022173643112182617,
+      "max_time_s": 241.7276964187622,
+      "terrain_means_s": {
+        "flat": 0.27125878487863847,
+        "complex": 142.0137013126822,
+        "slope": 125.84478689403069
+      }
+    },
+    "\u968e\u5c64\u578bA* (HPA*)": {
+      "attempts": 106,
+      "successes": 88,
+      "failures": 18,
+      "count_with_time": 88,
+      "mean_time_s": 0.005794798785989935,
+      "std_time_s": 0.002628320505518093,
+      "min_time_s": 0.0016984939575195312,
+      "max_time_s": 0.014770746231079102,
+      "terrain_means_s": {
+        "flat": 0.005587369203567505,
+        "slope": 0.00596765677134196
+      }
+    },
+    "D* Lite": {
+      "attempts": 104,
+      "successes": 88,
+      "failures": 16,
+      "count_with_time": 88,
+      "mean_time_s": 0.005201775919307362,
+      "std_time_s": 0.002838243353488853,
+      "min_time_s": 0.0013349056243896484,
+      "max_time_s": 0.016100168228149414,
+      "terrain_means_s": {
+        "flat": 0.0052490770816802975,
+        "slope": 0.005162358283996582
+      }
+    },
+    "ARA* (Anytime Repairing A*)": {
+      "attempts": 8,
+      "successes": 8,
+      "failures": 0,
+      "count_with_time": 8,
+      "mean_time_s": 3.0352242588996887,
+      "std_time_s": 7.99748360138736,
+      "min_time_s": 0.004556894302368164,
+      "max_time_s": 24.19457507133484,
+      "terrain_means_s": {
+        "flat": 0.010784546534220377,
+        "slope": 0.013716340065002441,
+        "complex": 24.19457507133484
+      }
+    }
+  }
+}
