@@ -1,0 +1,1292 @@
+{
+  "planner": "DIJKSTRA_DWA",
+  "total_runs": 146,
+  "successful_runs": 37,
+  "failed_runs": 109,
+  "runs": [
+    {
+      "scenario": "flat_short",
+      "run_index": 1,
+      "success": true,
+      "computation_time": 34.19,
+      "path_length": 4.8,
+      "error": null
+    },
+    {
+      "scenario": "flat_medium",
+      "run_index": 2,
+      "success": false,
+      "computation_time": 60.272,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_gentle_10deg",
+      "run_index": 3,
+      "success": false,
+      "computation_time": 60.261,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "high_altitude_traverse",
+      "run_index": 4,
+      "success": false,
+      "computation_time": 60.273,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "minimal_distance",
+      "run_index": 5,
+      "success": true,
+      "computation_time": 0.127,
+      "path_length": 0.8,
+      "error": null
+    },
+    {
+      "scenario": "high_altitude_traverse_var6",
+      "run_index": 6,
+      "success": false,
+      "computation_time": 60.264,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_gentle_10deg_var7",
+      "run_index": 7,
+      "success": false,
+      "computation_time": 60.261,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_gentle_10deg_var8",
+      "run_index": 8,
+      "success": false,
+      "computation_time": 60.271,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_short_var9",
+      "run_index": 9,
+      "success": true,
+      "computation_time": 35.375,
+      "path_length": 4.841,
+      "error": null
+    },
+    {
+      "scenario": "flat_medium_var10",
+      "run_index": 10,
+      "success": false,
+      "computation_time": 60.264,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_short_var11",
+      "run_index": 11,
+      "success": true,
+      "computation_time": 35.45,
+      "path_length": 4.841,
+      "error": null
+    },
+    {
+      "scenario": "minimal_distance_var12",
+      "run_index": 12,
+      "success": true,
+      "computation_time": 0.182,
+      "path_length": 0.883,
+      "error": null
+    },
+    {
+      "scenario": "flat_short_var13",
+      "run_index": 13,
+      "success": true,
+      "computation_time": 25.292,
+      "path_length": 4.441,
+      "error": null
+    },
+    {
+      "scenario": "flat_short_var14",
+      "run_index": 14,
+      "success": true,
+      "computation_time": 35.967,
+      "path_length": 4.866,
+      "error": null
+    },
+    {
+      "scenario": "minimal_distance_var15",
+      "run_index": 15,
+      "success": true,
+      "computation_time": 0.585,
+      "path_length": 1.283,
+      "error": null
+    },
+    {
+      "scenario": "flat_short_var16",
+      "run_index": 16,
+      "success": true,
+      "computation_time": 22.893,
+      "path_length": 4.3,
+      "error": null
+    },
+    {
+      "scenario": "flat_medium_var17",
+      "run_index": 17,
+      "success": false,
+      "computation_time": 60.268,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_short_var18",
+      "run_index": 18,
+      "success": true,
+      "computation_time": 36.413,
+      "path_length": 4.883,
+      "error": null
+    },
+    {
+      "scenario": "minimal_distance_var19",
+      "run_index": 19,
+      "success": true,
+      "computation_time": 0.013,
+      "path_length": 0.441,
+      "error": null
+    },
+    {
+      "scenario": "minimal_distance_var20",
+      "run_index": 20,
+      "success": true,
+      "computation_time": 0.258,
+      "path_length": 0.966,
+      "error": null
+    },
+    {
+      "scenario": "slope_gentle_10deg_var21",
+      "run_index": 21,
+      "success": false,
+      "computation_time": 60.267,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "high_altitude_traverse_var22",
+      "run_index": 22,
+      "success": false,
+      "computation_time": 60.271,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "minimal_distance_var23",
+      "run_index": 23,
+      "success": true,
+      "computation_time": 0.258,
+      "path_length": 0.983,
+      "error": null
+    },
+    {
+      "scenario": "high_altitude_traverse_var24",
+      "run_index": 24,
+      "success": false,
+      "computation_time": 60.264,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_short_var25",
+      "run_index": 25,
+      "success": true,
+      "computation_time": 33.989,
+      "path_length": 4.8,
+      "error": null
+    },
+    {
+      "scenario": "flat_short_var26",
+      "run_index": 26,
+      "success": true,
+      "computation_time": 26.696,
+      "path_length": 4.483,
+      "error": null
+    },
+    {
+      "scenario": "minimal_distance_var27",
+      "run_index": 27,
+      "success": true,
+      "computation_time": 0.051,
+      "path_length": 0.6,
+      "error": null
+    },
+    {
+      "scenario": "flat_short_var28",
+      "run_index": 28,
+      "success": true,
+      "computation_time": 23.249,
+      "path_length": 4.341,
+      "error": null
+    },
+    {
+      "scenario": "flat_short_var29",
+      "run_index": 29,
+      "success": true,
+      "computation_time": 32.161,
+      "path_length": 4.724,
+      "error": null
+    },
+    {
+      "scenario": "flat_medium_var30",
+      "run_index": 30,
+      "success": false,
+      "computation_time": 60.272,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long",
+      "run_index": 1,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.534,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg",
+      "run_index": 2,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.564,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb",
+      "run_index": 3,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.545,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down",
+      "run_index": 4,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 34.021,
+      "path_length": 4.8,
+      "error": null
+    },
+    {
+      "scenario": "negative_coordinates",
+      "run_index": 5,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.521,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent",
+      "run_index": 6,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.548,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var7",
+      "run_index": 7,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.526,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var8",
+      "run_index": 8,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.562,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var9",
+      "run_index": 9,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.542,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var10",
+      "run_index": 10,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.527,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var11",
+      "run_index": 11,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.56,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var12",
+      "run_index": 12,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.525,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var13",
+      "run_index": 13,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.553,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb_var14",
+      "run_index": 14,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.543,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var15",
+      "run_index": 15,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.542,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb_var16",
+      "run_index": 16,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.526,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var17",
+      "run_index": 17,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.548,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var18",
+      "run_index": 18,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.552,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var19",
+      "run_index": 19,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 121.071,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var20",
+      "run_index": 20,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.535,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var21",
+      "run_index": 21,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.557,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb_var22",
+      "run_index": 22,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.528,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var23",
+      "run_index": 23,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.552,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var24",
+      "run_index": 24,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.5,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var25",
+      "run_index": 25,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.546,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var26",
+      "run_index": 26,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.511,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var27",
+      "run_index": 27,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.554,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var28",
+      "run_index": 28,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 43.768,
+      "path_length": 5.131,
+      "error": null
+    },
+    {
+      "scenario": "flat_long_var29",
+      "run_index": 29,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.558,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var30",
+      "run_index": 30,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 40.083,
+      "path_length": 5.007,
+      "error": null
+    },
+    {
+      "scenario": "steep_descent_var31",
+      "run_index": 31,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.517,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb_var32",
+      "run_index": 32,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.522,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var33",
+      "run_index": 33,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.535,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var34",
+      "run_index": 34,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.547,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var35",
+      "run_index": 35,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.551,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var36",
+      "run_index": 36,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.514,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var37",
+      "run_index": 37,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.829,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var38",
+      "run_index": 38,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 34.269,
+      "path_length": 4.8,
+      "error": null
+    },
+    {
+      "scenario": "negative_coordinates_var39",
+      "run_index": 39,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.539,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var40",
+      "run_index": 40,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.536,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var41",
+      "run_index": 41,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.529,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var42",
+      "run_index": 42,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.544,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var43",
+      "run_index": 43,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.528,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var44",
+      "run_index": 44,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.538,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var45",
+      "run_index": 45,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 37.446,
+      "path_length": 4.924,
+      "error": null
+    },
+    {
+      "scenario": "slope_moderate_20deg_var46",
+      "run_index": 46,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.538,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var47",
+      "run_index": 47,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 37.656,
+      "path_length": 4.924,
+      "error": null
+    },
+    {
+      "scenario": "negative_coordinates_var48",
+      "run_index": 48,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.534,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_steep_25deg",
+      "run_index": 1,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.801,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "zigzag_climb",
+      "run_index": 2,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.855,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "complex_3d_path",
+      "run_index": 3,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.793,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "long_distance_3d",
+      "run_index": 4,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 181.236,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "spiral_ascent",
+      "run_index": 5,
+      "size_label": "large",
+      "success": true,
+      "computation_time": 4.755,
+      "path_length": 0.0,
+      "error": null
+    },
+    {
+      "scenario": "long_distance_3d_var6",
+      "run_index": 6,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 181.189,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "complex_3d_path_var7",
+      "run_index": 7,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.81,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "complex_3d_path_var8",
+      "run_index": 8,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.774,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "long_distance_3d_var9",
+      "run_index": 9,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.82,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "complex_3d_path_var10",
+      "run_index": 10,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.812,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long",
+      "run_index": 1,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.491,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg",
+      "run_index": 2,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.523,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb",
+      "run_index": 3,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.54,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down",
+      "run_index": 4,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 31.25,
+      "path_length": 4.8,
+      "error": null
+    },
+    {
+      "scenario": "negative_coordinates",
+      "run_index": 5,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.53,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent",
+      "run_index": 6,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.515,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var7",
+      "run_index": 7,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.522,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var8",
+      "run_index": 8,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.492,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var9",
+      "run_index": 9,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.517,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var10",
+      "run_index": 10,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 119.386,
+      "path_length": 6.788,
+      "error": null
+    },
+    {
+      "scenario": "slope_moderate_20deg_var11",
+      "run_index": 11,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.561,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var12",
+      "run_index": 12,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.534,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var13",
+      "run_index": 13,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.54,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb_var14",
+      "run_index": 14,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.547,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var15",
+      "run_index": 15,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.53,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb_var16",
+      "run_index": 16,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.551,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var17",
+      "run_index": 17,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.554,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var18",
+      "run_index": 18,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.538,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var19",
+      "run_index": 19,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.539,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var20",
+      "run_index": 20,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.576,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "steep_descent_var21",
+      "run_index": 21,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.553,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb_var22",
+      "run_index": 22,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.583,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var23",
+      "run_index": 23,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.599,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var24",
+      "run_index": 24,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 117.158,
+      "path_length": 13.611,
+      "error": null
+    },
+    {
+      "scenario": "slope_moderate_20deg_var25",
+      "run_index": 25,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.603,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var26",
+      "run_index": 26,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 104.985,
+      "path_length": 6.788,
+      "error": null
+    },
+    {
+      "scenario": "slope_moderate_20deg_var27",
+      "run_index": 27,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.576,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var28",
+      "run_index": 28,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 34.519,
+      "path_length": 5.131,
+      "error": null
+    },
+    {
+      "scenario": "flat_long_var29",
+      "run_index": 29,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 104.847,
+      "path_length": 6.788,
+      "error": null
+    },
+    {
+      "scenario": "up_and_down_var30",
+      "run_index": 30,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 30.909,
+      "path_length": 5.007,
+      "error": null
+    },
+    {
+      "scenario": "steep_descent_var31",
+      "run_index": 31,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.597,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "diagonal_climb_var32",
+      "run_index": 32,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.565,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var33",
+      "run_index": 33,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.537,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var34",
+      "run_index": 34,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 120.142,
+      "path_length": 6.788,
+      "error": null
+    },
+    {
+      "scenario": "flat_long_var35",
+      "run_index": 35,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 121.016,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var36",
+      "run_index": 36,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.533,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var37",
+      "run_index": 37,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.533,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var38",
+      "run_index": 38,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 31.758,
+      "path_length": 4.8,
+      "error": null
+    },
+    {
+      "scenario": "negative_coordinates_var39",
+      "run_index": 39,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.52,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var40",
+      "run_index": 40,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.533,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "flat_long_var41",
+      "run_index": 41,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.535,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var42",
+      "run_index": 42,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.518,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_moderate_20deg_var43",
+      "run_index": 43,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.526,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "negative_coordinates_var44",
+      "run_index": 44,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.523,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var45",
+      "run_index": 45,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 35.12,
+      "path_length": 4.924,
+      "error": null
+    },
+    {
+      "scenario": "slope_moderate_20deg_var46",
+      "run_index": 46,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.525,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "up_and_down_var47",
+      "run_index": 47,
+      "size_label": "medium",
+      "success": true,
+      "computation_time": 34.896,
+      "path_length": 4.924,
+      "error": null
+    },
+    {
+      "scenario": "negative_coordinates_var48",
+      "run_index": 48,
+      "size_label": "medium",
+      "success": false,
+      "computation_time": 120.522,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "slope_steep_25deg",
+      "run_index": 1,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.875,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "zigzag_climb",
+      "run_index": 2,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.815,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "complex_3d_path",
+      "run_index": 3,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.792,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "long_distance_3d",
+      "run_index": 4,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.771,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "spiral_ascent",
+      "run_index": 5,
+      "size_label": "large",
+      "success": true,
+      "computation_time": 4.239,
+      "path_length": 0.0,
+      "error": null
+    },
+    {
+      "scenario": "long_distance_3d_var6",
+      "run_index": 6,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.76,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "complex_3d_path_var7",
+      "run_index": 7,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.777,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "complex_3d_path_var8",
+      "run_index": 8,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.773,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "long_distance_3d_var9",
+      "run_index": 9,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.81,
+      "path_length": 0.0,
+      "error": "No path"
+    },
+    {
+      "scenario": "complex_3d_path_var10",
+      "run_index": 10,
+      "size_label": "large",
+      "success": false,
+      "computation_time": 180.772,
+      "path_length": 0.0,
+      "error": "No path"
+    }
+  ]
+}

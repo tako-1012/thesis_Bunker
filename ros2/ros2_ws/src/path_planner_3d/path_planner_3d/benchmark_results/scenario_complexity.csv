@@ -1,0 +1,17 @@
+scenario_name,complexity,map_size,terrain_type
+flat_short,easy,small,flat
+flat_medium,easy,small,flat
+flat_long,easy,medium,flat
+slope_gentle_10deg,medium,small,slope
+slope_moderate_20deg,medium,medium,slope
+slope_steep_25deg,hard,large,slope
+diagonal_climb,medium,medium,slope
+zigzag_climb,medium,large,slope
+up_and_down,medium,medium,complex
+negative_coordinates,medium,medium,flat
+complex_3d_path,hard,large,complex
+long_distance_3d,medium,large,complex
+high_altitude_traverse,medium,small,flat
+steep_descent,hard,medium,slope
+minimal_distance,easy,small,flat
+spiral_ascent,medium,large,complex
