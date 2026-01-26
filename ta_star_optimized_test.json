@@ -1,0 +1,23 @@
+{
+  "scenario_small_simple_001": {
+    "env": "SMALL",
+    "computation_time": 0.034894704818725586,
+    "path_length_meters": 3.9000000000000004,
+    "success": true,
+    "nodes_explored": 40
+  },
+  "scenario_medium_simple_001": {
+    "env": "MEDIUM",
+    "computation_time": 0.035158634185791016,
+    "path_length_meters": 5.515432893255073,
+    "success": true,
+    "nodes_explored": 40
+  },
+  "scenario_large_simple_001": {
+    "env": "LARGE",
+    "computation_time": 0.04990506172180176,
+    "path_length_meters": 5.515432893255073,
+    "success": true,
+    "nodes_explored": 40
+  }
+}

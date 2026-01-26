@@ -54,11 +54,16 @@ class AdaptiveHybridAStar3D:
         min_bound: Tuple[float, float, float] = (-10.0, -10.0, 0.0),
         use_cost_calculator: bool = True,
         map_bounds: dict = None,
+        # backward-compatible additions for point-cloud based init
+        point_cloud: Optional[np.ndarray] = None,
+        resolution: Optional[float] = None,
         # AHA*特有のパラメータ
         initial_epsilon: float = 3.0,      # 初期重み（高速探索）
         refinement_epsilon: float = 1.5,   # 洗練重み（バランス）
         exploration_ratio: float = 0.3,    # 初期探索の割合
         adaptive_threshold: float = 0.2,   # 適応的戦略切替の閾値
+        max_iterations: int = 50000,      # 探索ノード上限（デフォルト大きめ）
+        timeout: Optional[float] = 180.0,  # タイムアウト（秒）
     ):
         """
         Args:
@@ -73,8 +78,30 @@ class AdaptiveHybridAStar3D:
             adaptive_threshold: 戦略切替の閾値
         """
         self.voxel_size = voxel_size
+        # allow overriding voxel_size by resolution param
+        if resolution is not None:
+            self.voxel_size = resolution
+
         self.grid_size = grid_size
-        self.min_bound = np.array(min_bound)
+        # point-cloud driven bounds: if provided, compute min/max bounds
+        if point_cloud is not None:
+            pc = np.array(point_cloud)
+            if pc.size == 0:
+                self.min_bound = np.array([0.0, 0.0, 0.0])
+                self.max_bound = self.min_bound + np.array([grid_size[0]*self.voxel_size, grid_size[1]*self.voxel_size, grid_size[2]*self.voxel_size])
+            else:
+                pc_min = np.min(pc, axis=0)
+                pc_max = np.max(pc, axis=0)
+                margin = self.voxel_size * 2
+                self.min_bound = np.array(pc_min) - margin
+                self.max_bound = np.array(pc_max) + margin
+                # compute grid size from bounds
+                computed = np.ceil((self.max_bound - self.min_bound) / self.voxel_size).astype(int)
+                # ensure at least 1 in each dim
+                computed[computed <= 0] = 1
+                self.grid_size = tuple(computed)
+        else:
+            self.min_bound = np.array(min_bound) if min_bound is not None else None
         
         # 地形データ
         self.voxel_grid = None
@@ -102,7 +129,8 @@ class AdaptiveHybridAStar3D:
             }
             
             # min_boundを調整（負座標対応）
-            self.min_bound = np.array([-half_x, -half_y, 0.0])
+            if self.min_bound is None:
+                self.min_bound = np.array([-half_x, -half_y, 0.0])
         else:
             self.map_bounds = map_bounds
         
@@ -111,6 +139,9 @@ class AdaptiveHybridAStar3D:
         self.refinement_epsilon = refinement_epsilon
         self.exploration_ratio = exploration_ratio
         self.adaptive_threshold = adaptive_threshold
+        # 実行制御パラメータ
+        self.max_iterations = max_iterations
+        self.timeout = timeout
         
         # 統計情報
         self.last_search_stats = {
@@ -148,13 +179,26 @@ class AdaptiveHybridAStar3D:
         start_time = time.time()
         
         # ワールド座標 → ボクセルインデックス変換
+        # Ensure inputs are 3-tuples
+        start = tuple(start)
+        goal = tuple(goal)
+
         start_idx = self._world_to_voxel(start)
         goal_idx = self._world_to_voxel(goal)
-        
-        # 境界チェック
-        if not self._is_in_grid(start_idx) or not self._is_in_grid(goal_idx):
-            logger.error("Start or goal is outside grid bounds")
-            return None
+
+        # 境界チェック（公開的な検証）
+        if not self._is_in_grid(start_idx):
+            return {
+                'success': False,
+                'reason': 'start_outside_grid',
+                'message': f'Start {start} (grid: {start_idx}) is outside grid bounds'
+            }
+        if not self._is_in_grid(goal_idx):
+            return {
+                'success': False,
+                'reason': 'goal_outside_grid',
+                'message': f'Goal {goal} (grid: {goal_idx}) is outside grid bounds'
+            }
         
         # 地形複雑度を分析
         terrain_complexity = self._analyze_terrain_complexity(start_idx, goal_idx)
@@ -164,22 +208,35 @@ class AdaptiveHybridAStar3D:
         
         # AHA*アルゴリズム実行
         path_indices = self._adaptive_hybrid_search(start_idx, goal_idx, terrain_complexity)
-        
+
         # 統計情報更新
         self.last_search_stats['computation_time'] = time.time() - start_time
-        
+
         if path_indices is None:
-            return None
-        
+            return {
+                'success': False,
+                'reason': 'no_path_found',
+                'nodes_explored': self.last_search_stats.get('nodes_explored', 0),
+                'path_length_meters': 0,
+                'computation_time': self.last_search_stats.get('computation_time', 0.0),
+                'message': 'AHA* failed to find a path within resource limits'
+            }
+
         # ボクセルインデックス → ワールド座標変換
         path_world = [self._voxel_to_world(idx) for idx in path_indices]
         self.last_search_stats['path_length'] = len(path_world)
-        
+
         logger.info(f"AHA* success: {self.last_search_stats['nodes_explored']} nodes, "
                    f"{self.last_search_stats['computation_time']:.3f}s, "
                    f"phases={len(self.last_search_stats['phase_transitions'])}")
-        
-        return path_world
+
+        return {
+            'success': True,
+            'path': path_world,
+            'nodes_explored': self.last_search_stats.get('nodes_explored', 0),
+            'path_length_meters': float(self.last_search_stats.get('path_length', 0)),
+            'computation_time': float(self.last_search_stats.get('computation_time', 0.0))
+        }
     
     def _adaptive_hybrid_search(
         self,
@@ -208,17 +265,31 @@ class AdaptiveHybridAStar3D:
         nodes_explored = 0
         phase = SearchPhase.INITIAL_EXPLORATION
         current_epsilon = self._calculate_initial_epsilon(terrain_complexity)
-        
+
         # 目標までの直線距離
         goal_distance = self._heuristic(start, goal)
-        max_iterations = max(10000, int(goal_distance * 200))  # 適応的な最大反復回数
-        
-        logger.info(f"Starting AHA* search: max_iterations={max_iterations}, "
-                   f"initial_epsilon={current_epsilon:.2f}")
+        # 適応的な最大反復回数: ユーザ指定の上限と距離由来の推定値のうち大きい方を採用
+        max_iterations = max(self.max_iterations if hasattr(self, 'max_iterations') else 10000,
+                     int(goal_distance * 200))
+
+        logger.info(
+            f"Starting AHA* search: max_iterations={max_iterations}, "
+            f"initial_epsilon={current_epsilon:.2f}"
+        )
+        # Debug: print high-level start info
+        print(
+            f"[AHA* DEBUG] start search: max_iterations={max_iterations}, "
+            f"initial_epsilon={current_epsilon:.2f}, terrain_complexity={terrain_complexity:.3f}"
+        )
         
         while open_list and nodes_explored < max_iterations:
             current = heapq.heappop(open_list)
             nodes_explored += 1
+
+            # Periodic debug output to trace progress (lightweight)
+            if nodes_explored % 500 == 0:
+                print(f"[AHA* DEBUG] nodes_explored={nodes_explored}, open={len(open_list)}, "
+                      f"closed={len(closed_set)}, phase={phase.name}, epsilon={current_epsilon:.2f}")
             
             # フェーズ遷移の判定
             progress = nodes_explored / max_iterations
@@ -281,6 +352,12 @@ class AdaptiveHybridAStar3D:
                     
                     if neighbor not in open_list:
                         heapq.heappush(open_list, neighbor)
+            # Debug: occasional neighbor count logging
+            if nodes_explored % 1000 == 0:
+                try:
+                    print(f"[AHA* DEBUG] iteration {nodes_explored}: neighbors_considered={len(neighbors)}")
+                except Exception:
+                    pass
         
         # 経路が見つからなかった
         self.last_search_stats['nodes_explored'] = nodes_explored
@@ -597,6 +674,13 @@ class AdaptiveHybridAStar3D:
         world_pos = np.array(pos)
         voxel_pos = (world_pos - self.min_bound) / self.voxel_size
         return tuple(voxel_pos.astype(int))
+
+    # Backwards-compatible public wrapper
+    def world_to_voxel(self, pos: Tuple[float, float, float]) -> Tuple[int, int, int]:
+        return self._world_to_voxel(pos)
+
+    def _is_valid_position(self, pos: Tuple[int, int, int]) -> bool:
+        return self._is_in_grid(pos)
     
     def _voxel_to_world(self, idx: Tuple[int, int, int]) -> Tuple[float, float, float]:
         """ボクセルインデックス → ワールド座標"""

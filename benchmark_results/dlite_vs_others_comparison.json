@@ -1,0 +1,64 @@
+{
+  "comparisons": {
+    "HPA*": {
+      "count": 144,
+      "mean_ratio_other_over_dlite": 43.45132108952708,
+      "median_ratio": 41.62005106879892,
+      "d_mean_time": 0.017135029037793476,
+      "o_mean_time": 0.8488703469435374,
+      "stat_test": {
+        "method": "mannwhitneyu",
+        "stat": 46.0,
+        "pvalue": 2.5835994531231373e-48
+      }
+    },
+    "RRT*": {
+      "count": 144,
+      "mean_ratio_other_over_dlite": 33.82360931008692,
+      "median_ratio": 25.20488703672963,
+      "d_mean_time": 0.017135029037793476,
+      "o_mean_time": 0.6085946328110166,
+      "stat_test": {
+        "method": "mannwhitneyu",
+        "stat": 174.0,
+        "pvalue": 3.6258130936190654e-47
+      }
+    },
+    "SAFETY": {
+      "count": 140,
+      "mean_ratio_other_over_dlite": 50.2817632193901,
+      "median_ratio": 50.39366527557614,
+      "d_mean_time": 0.01672938210623605,
+      "o_mean_time": 0.8543325764792306,
+      "stat_test": {
+        "method": "mannwhitneyu",
+        "stat": 0.0,
+        "pvalue": 2.0210265536441421e-47
+      }
+    },
+    "TA*": {
+      "count": 112,
+      "mean_ratio_other_over_dlite": 10945.95490113522,
+      "median_ratio": 1840.1787521689453,
+      "d_mean_time": 0.01628034668309348,
+      "o_mean_time": 156.90670996265752,
+      "stat_test": {
+        "method": "mannwhitneyu",
+        "stat": 2.0,
+        "pvalue": 3.149286786976764e-38
+      }
+    },
+    "Theta*": {
+      "count": 144,
+      "mean_ratio_other_over_dlite": 189.8405490393448,
+      "median_ratio": 120.91578547362676,
+      "d_mean_time": 0.017135029037793476,
+      "o_mean_time": 4.0096924470530615,
+      "stat_test": {
+        "method": "mannwhitneyu",
+        "stat": 9.0,
+        "pvalue": 1.1966743437851385e-48
+      }
+    }
+  }
+}

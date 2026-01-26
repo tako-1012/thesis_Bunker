@@ -1,0 +1,131 @@
+{
+  "size_bins": {
+    "t1": 106.66361599999982,
+    "t2": 138.66361599999982
+  },
+  "size_performance": {
+    "Small": {
+      "count_scenarios": 48,
+      "stats": {
+        "D*Lite": {
+          "count": 48,
+          "mean_time": 0.00786141554514567,
+          "std_time": 0.002561735880435759,
+          "success_rate": 1.0
+        },
+        "HPA*": {
+          "count": 48,
+          "mean_time": 0.11103902757167816,
+          "std_time": 0.018295813360764145,
+          "success_rate": 1.0
+        },
+        "RRT*": {
+          "count": 48,
+          "mean_time": 0.3233331988255183,
+          "std_time": 0.8538617565409486,
+          "success_rate": 1.0
+        },
+        "SAFETY": {
+          "count": 48,
+          "mean_time": 0.22522752483685812,
+          "std_time": 0.05370442448565282,
+          "success_rate": 1.0
+        },
+        "TA*": {
+          "count": 48,
+          "mean_time": 139.97960463662943,
+          "std_time": 247.98331398466757,
+          "success_rate": 0.8333333333333334
+        },
+        "Theta*": {
+          "count": 48,
+          "mean_time": 0.586267332235972,
+          "std_time": 0.5285233754716385,
+          "success_rate": 1.0
+        }
+      }
+    },
+    "Medium": {
+      "count_scenarios": 72,
+      "stats": {
+        "D*Lite": {
+          "count": 72,
+          "mean_time": 0.01911006040043301,
+          "std_time": 0.01657042264729214,
+          "success_rate": 1.0
+        },
+        "HPA*": {
+          "count": 72,
+          "mean_time": 0.7858105864789751,
+          "std_time": 0.07195229129616233,
+          "success_rate": 1.0
+        },
+        "RRT*": {
+          "count": 72,
+          "mean_time": 0.5556713971826766,
+          "std_time": 0.5460612700874016,
+          "success_rate": 1.0
+        },
+        "SAFETY": {
+          "count": 72,
+          "mean_time": 0.921689983871248,
+          "std_time": 0.08833540015187112,
+          "success_rate": 1.0
+        },
+        "TA*": {
+          "count": 69,
+          "mean_time": 305.92280444200486,
+          "std_time": 510.67714517905864,
+          "success_rate": 0.8695652173913043
+        },
+        "Theta*": {
+          "count": 72,
+          "mean_time": 3.70504331919882,
+          "std_time": 3.74389997397322,
+          "success_rate": 1.0
+        }
+      }
+    },
+    "Large": {
+      "count_scenarios": 24,
+      "stats": {
+        "D*Lite": {
+          "count": 24,
+          "mean_time": 0.02975716193517049,
+          "std_time": 0.005535842785495448,
+          "success_rate": 1.0
+        },
+        "HPA*": {
+          "count": 24,
+          "mean_time": 2.5137122670809426,
+          "std_time": 1.1369283520936213,
+          "success_rate": 1.0
+        },
+        "RRT*": {
+          "count": 24,
+          "mean_time": 1.337887207667033,
+          "std_time": 1.1137324298132725,
+          "success_rate": 1.0
+        },
+        "SAFETY": {
+          "count": 20,
+          "mean_time": 2.121698033809662,
+          "std_time": 0.13284868059767793,
+          "success_rate": 1.0
+        },
+        "TA*": {
+          "count": 17,
+          "mean_time": 835.7845982383279,
+          "std_time": 1153.4435113780717,
+          "success_rate": 0.7058823529411765
+        },
+        "Theta*": {
+          "count": 24,
+          "mean_time": 11.770490060249964,
+          "std_time": 10.218674958719976,
+          "success_rate": 1.0
+        }
+      }
+    }
+  }
+}

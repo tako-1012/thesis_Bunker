@@ -1,0 +1,794 @@
+[
+  {
+    "scenario_name": "scenario_small_simple_001",
+    "map_size": "SMALL",
+    "before_len": 6.414213562373095,
+    "after_len": 6.082762530298219,
+    "improvement_pct": 5.1674461545718655,
+    "time_diff_s": -0.00689244270324707,
+    "overhead_pct": -4.786329597626455
+  },
+  {
+    "scenario_name": "scenario_small_simple_002",
+    "map_size": "SMALL",
+    "before_len": 3.5355339059327378,
+    "after_len": 3.5355339059327378,
+    "improvement_pct": 0.0,
+    "time_diff_s": -0.0018887519836425781,
+    "overhead_pct": -3.432141340796645
+  },
+  {
+    "scenario_name": "scenario_small_simple_003",
+    "map_size": "SMALL",
+    "before_len": 3.5,
+    "after_len": 3.5,
+    "improvement_pct": 0.0,
+    "time_diff_s": 0.0075397491455078125,
+    "overhead_pct": 16.6650857389783
+  },
+  {
+    "scenario_name": "scenario_small_simple_004",
+    "map_size": "SMALL",
+    "before_len": 6.121320343559643,
+    "after_len": 5.70087712549569,
+    "improvement_pct": 6.868505395348399,
+    "time_diff_s": 0.0004711151123046875,
+    "overhead_pct": 0.30419796267417104
+  },
+  {
+    "scenario_name": "scenario_small_simple_005",
+    "map_size": "SMALL",
+    "before_len": 6.82842712474619,
+    "after_len": 6.324555320336759,
+    "improvement_pct": 7.3790317331410265,
+    "time_diff_s": -0.0005555152893066406,
+    "overhead_pct": -0.3137890771772989
+  },
+  {
+    "scenario_name": "scenario_small_simple_006",
+    "map_size": "SMALL",
+    "before_len": 4.621320343559642,
+    "after_len": 4.272001872658765,
+    "improvement_pct": 7.558845631372287,
+    "time_diff_s": -0.00817728042602539,
+    "overhead_pct": -7.996530748803366
+  },
+  {
+    "scenario_name": "scenario_small_simple_007",
+    "map_size": "SMALL",
+    "before_len": 7.949747468305834,
+    "after_len": 7.3824115301167,
+    "improvement_pct": 7.136527801052756,
+    "time_diff_s": -0.016481637954711914,
+    "overhead_pct": -6.390058983879958
+  },
+  {
+    "scenario_name": "scenario_small_simple_008",
+    "map_size": "SMALL",
+    "before_len": 4.914213562373095,
+    "after_len": 4.6097722286464435,
+    "improvement_pct": 6.195118096976546,
+    "time_diff_s": -0.003029346466064453,
+    "overhead_pct": -3.3284783200955634
+  },
+  {
+    "scenario_name": "scenario_small_simple_009",
+    "map_size": "SMALL",
+    "before_len": 4.121320343559642,
+    "after_len": 3.8078865529319543,
+    "improvement_pct": 7.605179032430429,
+    "time_diff_s": -0.03258919715881348,
+    "overhead_pct": -26.89653543957828
+  },
+  {
+    "scenario_name": "scenario_small_simple_010",
+    "map_size": "SMALL",
+    "before_len": 3.5,
+    "after_len": 3.5,
+    "improvement_pct": 0.0,
+    "time_diff_s": -0.006138801574707031,
+    "overhead_pct": -11.535532198955226
+  },
+  {
+    "scenario_name": "scenario_small_moderate_001",
+    "map_size": "SMALL",
+    "before_len": 5.207106781186548,
+    "after_len": 5.024937810560445,
+    "improvement_pct": 3.4984681183087227,
+    "time_diff_s": -0.03464865684509277,
+    "overhead_pct": -30.636242708642957
+  },
+  {
+    "scenario_name": "scenario_small_moderate_002",
+    "map_size": "SMALL",
+    "before_len": 4.621320343559642,
+    "after_len": 4.272001872658765,
+    "improvement_pct": 7.558845631372287,
+    "time_diff_s": -0.013312339782714844,
+    "overhead_pct": -11.48794337914575
+  },
+  {
+    "scenario_name": "scenario_small_moderate_003",
+    "map_size": "SMALL",
+    "before_len": 6.035533905932738,
+    "after_len": 5.5901699437494745,
+    "improvement_pct": 7.3790317331410336,
+    "time_diff_s": -0.00279998779296875,
+    "overhead_pct": -1.6705310024039486
+  },
+  {
+    "scenario_name": "scenario_small_moderate_004",
+    "map_size": "SMALL",
+    "before_len": 6.1568542494923815,
+    "after_len": 6.020797289396148,
+    "improvement_pct": 2.2098453947882746,
+    "time_diff_s": -0.009139776229858398,
+    "overhead_pct": -8.10555939671887
+  },
+  {
+    "scenario_name": "scenario_small_moderate_005",
+    "map_size": "SMALL",
+    "before_len": 6.32842712474619,
+    "after_len": 5.852349955359813,
+    "improvement_pct": 7.522835611470689,
+    "time_diff_s": -0.023688793182373047,
+    "overhead_pct": -11.801470937580175
+  },
+  {
+    "scenario_name": "scenario_small_moderate_006",
+    "map_size": "SMALL",
+    "before_len": 3.914213562373095,
+    "after_len": 3.640054944640259,
+    "improvement_pct": 7.004181385714172,
+    "time_diff_s": -0.016794919967651367,
+    "overhead_pct": -16.967429895511675
+  },
+  {
+    "scenario_name": "scenario_small_moderate_007",
+    "map_size": "SMALL",
+    "before_len": 5.949747468305834,
+    "after_len": 5.70087712549569,
+    "improvement_pct": 4.18287236787562,
+    "time_diff_s": -0.015251398086547852,
+    "overhead_pct": -8.093305364160152
+  },
+  {
+    "scenario_name": "scenario_small_moderate_008",
+    "map_size": "SMALL",
+    "before_len": 3.5355339059327378,
+    "after_len": 3.5355339059327378,
+    "improvement_pct": 0.0,
+    "time_diff_s": -0.004523277282714844,
+    "overhead_pct": -8.223310649733431
+  },
+  {
+    "scenario_name": "scenario_small_moderate_009",
+    "map_size": "SMALL",
+    "before_len": 3.32842712474619,
+    "after_len": 3.2015621187164243,
+    "improvement_pct": 3.8115602738167116,
+    "time_diff_s": -0.0023500919342041016,
+    "overhead_pct": -4.202622962002865
+  },
+  {
+    "scenario_name": "scenario_small_moderate_010",
+    "map_size": "SMALL",
+    "before_len": 3.6213203435596424,
+    "after_len": 3.3541019662496847,
+    "improvement_pct": 7.3790317331410265,
+    "time_diff_s": -0.0073566436767578125,
+    "overhead_pct": -8.99922420480993
+  },
+  {
+    "scenario_name": "scenario_small_complex_001",
+    "map_size": "SMALL",
+    "before_len": 3.7071067811865475,
+    "after_len": 3.5355339059327378,
+    "improvement_pct": 4.628215084726902,
+    "time_diff_s": -0.00610661506652832,
+    "overhead_pct": -8.427324892737753
+  },
+  {
+    "scenario_name": "scenario_small_complex_002",
+    "map_size": "SMALL",
+    "before_len": 5.656854249492381,
+    "after_len": 5.656854249492381,
+    "improvement_pct": 0.0,
+    "time_diff_s": -0.004317283630371094,
+    "overhead_pct": -4.78919653743312
+  },
+  {
+    "scenario_name": "scenario_small_complex_003",
+    "map_size": "SMALL",
+    "before_len": 5.621320343559643,
+    "after_len": 5.220153254455275,
+    "improvement_pct": 7.136527801052743,
+    "time_diff_s": -0.007614850997924805,
+    "overhead_pct": -4.710947617460256
+  },
+  {
+    "scenario_name": "scenario_small_complex_004",
+    "map_size": "SMALL",
+    "before_len": 8.242640687119286,
+    "after_len": 7.615773105863909,
+    "improvement_pct": 7.605179032430449,
+    "time_diff_s": -0.006691694259643555,
+    "overhead_pct": -2.2657389625245306
+  },
+  {
+    "scenario_name": "scenario_small_complex_005",
+    "map_size": "SMALL",
+    "before_len": 4.207106781186548,
+    "after_len": 4.031128874149275,
+    "improvement_pct": 4.182872367875615,
+    "time_diff_s": 0.008675336837768555,
+    "overhead_pct": 11.857000410581266
+  },
+  {
+    "scenario_name": "scenario_small_complex_006",
+    "map_size": "SMALL",
+    "before_len": 6.82842712474619,
+    "after_len": 6.324555320336759,
+    "improvement_pct": 7.3790317331410265,
+    "time_diff_s": -0.0033779144287109375,
+    "overhead_pct": -1.5441086717701014
+  },
+  {
+    "scenario_name": "scenario_small_complex_007",
+    "map_size": "SMALL",
+    "before_len": 9.778174593052023,
+    "after_len": 9.300537618869138,
+    "improvement_pct": 4.884725360930612,
+    "time_diff_s": -0.019644975662231445,
+    "overhead_pct": -6.074714334267428
+  },
+  {
+    "scenario_name": "scenario_small_complex_008",
+    "map_size": "SMALL",
+    "before_len": 3.6213203435596424,
+    "after_len": 3.3541019662496847,
+    "improvement_pct": 7.3790317331410265,
+    "time_diff_s": -0.003163576126098633,
+    "overhead_pct": -4.255134927124922
+  },
+  {
+    "scenario_name": "scenario_small_complex_009",
+    "map_size": "SMALL",
+    "before_len": 6.1568542494923815,
+    "after_len": 6.020797289396148,
+    "improvement_pct": 2.2098453947882746,
+    "time_diff_s": -0.015973567962646484,
+    "overhead_pct": -12.993627114436546
+  },
+  {
+    "scenario_name": "scenario_small_complex_010",
+    "map_size": "SMALL",
+    "before_len": 4.0,
+    "after_len": 4.0,
+    "improvement_pct": 0.0,
+    "time_diff_s": 0.0033326148986816406,
+    "overhead_pct": 5.9231072371404
+  },
+  {
+    "scenario_name": "scenario_medium_simple_001",
+    "map_size": "MEDIUM",
+    "before_len": 40.026911934581186,
+    "after_len": 38.20013088982812,
+    "improvement_pct": 4.563882039510584,
+    "time_diff_s": 0.16128993034362793,
+    "overhead_pct": 1.173180190633305
+  },
+  {
+    "scenario_name": "scenario_medium_simple_002",
+    "map_size": "MEDIUM",
+    "before_len": 20.72792206135785,
+    "after_len": 19.235384061671343,
+    "improvement_pct": 7.200615649115069,
+    "time_diff_s": 0.123565673828125,
+    "overhead_pct": 4.563040002845561
+  },
+  {
+    "scenario_name": "scenario_medium_simple_003",
+    "map_size": "MEDIUM",
+    "before_len": 34.31370849898475,
+    "after_len": 32.01562118716424,
+    "improvement_pct": 6.697286339331418,
+    "time_diff_s": 1.0606060028076172,
+    "overhead_pct": 11.289947336890735
+  },
+  {
+    "scenario_name": "scenario_medium_simple_004",
+    "map_size": "MEDIUM",
+    "before_len": 32.61269837220809,
+    "after_len": 32.190837205639745,
+    "improvement_pct": 1.2935487942569117,
+    "time_diff_s": 0.06895685195922852,
+    "overhead_pct": 5.025572163474186
+  },
+  {
+    "scenario_name": "scenario_medium_simple_005",
+    "map_size": "MEDIUM",
+    "before_len": 36.14213562373095,
+    "after_len": 33.52610922848042,
+    "improvement_pct": 7.238162189654461,
+    "time_diff_s": 1.5516955852508545,
+    "overhead_pct": 11.83074531581572
+  },
+  {
+    "scenario_name": "scenario_medium_simple_006",
+    "map_size": "MEDIUM",
+    "before_len": 24.5,
+    "after_len": 24.5,
+    "improvement_pct": 0.0,
+    "time_diff_s": 1.2482662200927734,
+    "overhead_pct": 448.5559631738481
+  },
+  {
+    "scenario_name": "scenario_medium_simple_007",
+    "map_size": "MEDIUM",
+    "before_len": 30.870057685088803,
+    "after_len": 29.832867780352597,
+    "improvement_pct": 3.3598573585989784,
+    "time_diff_s": 0.8866150379180908,
+    "overhead_pct": 22.11086323047863
+  },
+  {
+    "scenario_name": "scenario_medium_simple_008",
+    "map_size": "MEDIUM",
+    "before_len": 24.435028842544405,
+    "after_len": 22.594247055390007,
+    "improvement_pct": 7.533372679918306,
+    "time_diff_s": 1.108405590057373,
+    "overhead_pct": 24.352365288150807
+  },
+  {
+    "scenario_name": "scenario_medium_simple_009",
+    "map_size": "MEDIUM",
+    "before_len": 38.091883092036774,
+    "after_len": 35.19232870953555,
+    "improvement_pct": 7.612000634086223,
+    "time_diff_s": 4.101683139801025,
+    "overhead_pct": 22.17262809818765
+  },
+  {
+    "scenario_name": "scenario_medium_simple_010",
+    "map_size": "MEDIUM",
+    "before_len": 25.420310216782973,
+    "after_len": 24.520399670478458,
+    "improvement_pct": 3.5401241709095146,
+    "time_diff_s": 0.4280226230621338,
+    "overhead_pct": 19.58079537475113
+  },
+  {
+    "scenario_name": "scenario_medium_simple_011",
+    "map_size": "MEDIUM",
+    "before_len": 15.8492424049175,
+    "after_len": 15.572411502397436,
+    "improvement_pct": 1.7466506943838074,
+    "time_diff_s": 0.016063451766967773,
+    "overhead_pct": 3.6908424378678513
+  },
+  {
+    "scenario_name": "scenario_medium_simple_012",
+    "map_size": "MEDIUM",
+    "before_len": 17.207106781186546,
+    "after_len": 17.00735135169495,
+    "improvement_pct": 1.160889114200181,
+    "time_diff_s": 0.0064220428466796875,
+    "overhead_pct": 2.2671511380785607
+  },
+  {
+    "scenario_name": "scenario_medium_simple_013",
+    "map_size": "MEDIUM",
+    "before_len": 22.692388155425117,
+    "after_len": 21.02974084481309,
+    "improvement_pct": 7.326894371910934,
+    "time_diff_s": 0.4679293632507324,
+    "overhead_pct": 15.290993439553791
+  },
+  {
+    "scenario_name": "scenario_medium_simple_014",
+    "map_size": "MEDIUM",
+    "before_len": 26.29898987322333,
+    "after_len": 24.82438317461282,
+    "improvement_pct": 5.60708493261143,
+    "time_diff_s": 0.01352691650390625,
+    "overhead_pct": 0.2979725044527026
+  },
+  {
+    "scenario_name": "scenario_medium_simple_015",
+    "map_size": "MEDIUM",
+    "before_len": 20.556349186104047,
+    "after_len": 19.4164878389476,
+    "improvement_pct": 5.545057329182684,
+    "time_diff_s": -0.15735292434692383,
+    "overhead_pct": -8.367926780608972
+  },
+  {
+    "scenario_name": "scenario_medium_simple_016",
+    "map_size": "MEDIUM",
+    "before_len": 41.941125496954285,
+    "after_len": 40.0,
+    "improvement_pct": 4.628215084726916,
+    "time_diff_s": -0.051256656646728516,
+    "overhead_pct": -0.3561112209422273
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_001",
+    "map_size": "MEDIUM",
+    "before_len": 24.14213562373095,
+    "after_len": 22.360679774997898,
+    "improvement_pct": 7.3790317331410336,
+    "time_diff_s": 0.9868860244750977,
+    "overhead_pct": 23.771780341697305
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_002",
+    "map_size": "MEDIUM",
+    "before_len": 22.213203435596427,
+    "after_len": 21.93171219946131,
+    "improvement_pct": 1.2672248599858895,
+    "time_diff_s": 0.02738809585571289,
+    "overhead_pct": 4.611061827903037
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_003",
+    "map_size": "MEDIUM",
+    "before_len": 25.17766952966369,
+    "after_len": 23.58495283014151,
+    "improvement_pct": 6.325909940336932,
+    "time_diff_s": -0.11755800247192383,
+    "overhead_pct": -2.910711990847214
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_004",
+    "map_size": "MEDIUM",
+    "before_len": 19.884776310850235,
+    "after_len": 19.474342094150447,
+    "improvement_pct": 2.0640625284571685,
+    "time_diff_s": 0.025145292282104492,
+    "overhead_pct": 3.2705572323482723
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_005",
+    "map_size": "MEDIUM",
+    "before_len": 19.884776310850235,
+    "after_len": 19.474342094150447,
+    "improvement_pct": 2.0640625284571685,
+    "time_diff_s": 0.019418954849243164,
+    "overhead_pct": 2.5745221903146835
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_006",
+    "map_size": "MEDIUM",
+    "before_len": 42.01219330881976,
+    "after_len": 41.72529209005013,
+    "improvement_pct": 0.6828998825667079,
+    "time_diff_s": 0.07961058616638184,
+    "overhead_pct": 6.847624758423593
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_007",
+    "map_size": "MEDIUM",
+    "before_len": 33.106601717798206,
+    "after_len": 30.923292192132454,
+    "improvement_pct": 6.594785971318822,
+    "time_diff_s": 0.658200740814209,
+    "overhead_pct": 7.38471828376709
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_008",
+    "map_size": "MEDIUM",
+    "before_len": 17.571067811865476,
+    "after_len": 16.28649747490233,
+    "improvement_pct": 7.310712989768868,
+    "time_diff_s": 0.06492018699645996,
+    "overhead_pct": 4.349592236210677
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_009",
+    "map_size": "MEDIUM",
+    "before_len": 38.7634559672906,
+    "after_len": 35.892199709686224,
+    "improvement_pct": 7.407121439396935,
+    "time_diff_s": 1.2844860553741455,
+    "overhead_pct": 7.329654052273803
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_010",
+    "map_size": "MEDIUM",
+    "before_len": 37.72792206135785,
+    "after_len": 35.17101079013795,
+    "improvement_pct": 6.7772385318797435,
+    "time_diff_s": 1.1643462181091309,
+    "overhead_pct": 8.788547801415275
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_011",
+    "map_size": "MEDIUM",
+    "before_len": 28.77817459305202,
+    "after_len": 27.064737205448715,
+    "improvement_pct": 5.953947433542173,
+    "time_diff_s": 0.1450033187866211,
+    "overhead_pct": 3.025984224270753
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_012",
+    "map_size": "MEDIUM",
+    "before_len": 26.035533905932738,
+    "after_len": 25.124689052802225,
+    "improvement_pct": 3.498468118308716,
+    "time_diff_s": 0.11348509788513184,
+    "overhead_pct": 6.388897389683399
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_013",
+    "map_size": "MEDIUM",
+    "before_len": 20.414213562373096,
+    "after_len": 20.024984394500787,
+    "improvement_pct": 1.9066576661553332,
+    "time_diff_s": 0.0967719554901123,
+    "overhead_pct": 19.24870071945926
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_014",
+    "map_size": "MEDIUM",
+    "before_len": 30.74873734152916,
+    "after_len": 29.300170647967224,
+    "improvement_pct": 4.710979437862985,
+    "time_diff_s": 0.3949718475341797,
+    "overhead_pct": 6.800182910960618
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_015",
+    "map_size": "MEDIUM",
+    "before_len": 16.621320343559645,
+    "after_len": 16.070158679988197,
+    "improvement_pct": 3.3159920642827307,
+    "time_diff_s": 0.22937560081481934,
+    "overhead_pct": 39.69488357508154
+  },
+  {
+    "scenario_name": "scenario_medium_moderate_016",
+    "map_size": "MEDIUM",
+    "before_len": 21.763455967290593,
+    "after_len": 20.524375751773793,
+    "improvement_pct": 5.693398223972687,
+    "time_diff_s": -0.002941608428955078,
+    "overhead_pct": -0.1267742538732011
+  },
+  {
+    "scenario_name": "scenario_medium_complex_001",
+    "map_size": "MEDIUM",
+    "before_len": 21.763455967290593,
+    "after_len": 20.524375751773793,
+    "improvement_pct": 5.693398223972687,
+    "time_diff_s": -0.17556524276733398,
+    "overhead_pct": -7.0998827957325155
+  },
+  {
+    "scenario_name": "scenario_medium_complex_002",
+    "map_size": "MEDIUM",
+    "before_len": 16.77817459305202,
+    "after_len": 15.508062419270823,
+    "improvement_pct": 7.570025968779477,
+    "time_diff_s": 0.08504939079284668,
+    "overhead_pct": 5.529445537930604
+  },
+  {
+    "scenario_name": "scenario_medium_complex_003",
+    "map_size": "MEDIUM",
+    "before_len": 16.65685424949238,
+    "after_len": 15.524174696260024,
+    "improvement_pct": 6.800080833191381,
+    "time_diff_s": 0.02031254768371582,
+    "overhead_pct": 1.6960773247379795
+  },
+  {
+    "scenario_name": "scenario_medium_complex_004",
+    "map_size": "MEDIUM",
+    "before_len": 18.914213562373092,
+    "after_len": 18.527007313648905,
+    "improvement_pct": 2.0471707557245415,
+    "time_diff_s": -0.013833761215209961,
+    "overhead_pct": -2.6393718237744066
+  },
+  {
+    "scenario_name": "scenario_medium_complex_005",
+    "map_size": "MEDIUM",
+    "before_len": 24.384776310850235,
+    "after_len": 23.021728866442675,
+    "improvement_pct": 5.589747582802549,
+    "time_diff_s": 0.055402278900146484,
+    "overhead_pct": 1.6427203721955577
+  },
+  {
+    "scenario_name": "scenario_medium_complex_006",
+    "map_size": "MEDIUM",
+    "before_len": 30.884776310850235,
+    "after_len": 28.622543562723422,
+    "improvement_pct": 7.324750308559174,
+    "time_diff_s": -0.33758068084716797,
+    "overhead_pct": -3.7143518135834617
+  },
+  {
+    "scenario_name": "scenario_medium_complex_007",
+    "map_size": "MEDIUM",
+    "before_len": 20.056349186104043,
+    "after_len": 19.00657780874821,
+    "improvement_pct": 5.234109994869661,
+    "time_diff_s": 0.09418225288391113,
+    "overhead_pct": 5.7795313100313885
+  },
+  {
+    "scenario_name": "scenario_medium_complex_008",
+    "map_size": "MEDIUM",
+    "before_len": 19.970562748477136,
+    "after_len": 19.209372712298546,
+    "improvement_pct": 3.811560273816695,
+    "time_diff_s": 0.07387375831604004,
+    "overhead_pct": 5.059647203386717
+  },
+  {
+    "scenario_name": "scenario_medium_complex_009",
+    "map_size": "MEDIUM",
+    "before_len": 21.44974746830583,
+    "after_len": 20.303940504246953,
+    "improvement_pct": 5.341820297660488,
+    "time_diff_s": -0.09388160705566406,
+    "overhead_pct": -5.01625255228002
+  },
+  {
+    "scenario_name": "scenario_medium_complex_010",
+    "map_size": "MEDIUM",
+    "before_len": 27.727922061357855,
+    "after_len": 25.632011235952593,
+    "improvement_pct": 7.558845631372292,
+    "time_diff_s": 0.40871667861938477,
+    "overhead_pct": 7.016393968661934
+  },
+  {
+    "scenario_name": "scenario_medium_complex_011",
+    "map_size": "MEDIUM",
+    "before_len": 24.81370849898476,
+    "after_len": 22.940139493908923,
+    "improvement_pct": 7.550540078088258,
+    "time_diff_s": -0.26411890983581543,
+    "overhead_pct": -5.777606016915142
+  },
+  {
+    "scenario_name": "scenario_medium_complex_012",
+    "map_size": "MEDIUM",
+    "before_len": 37.67766952966369,
+    "after_len": 34.8209706929603,
+    "improvement_pct": 7.581941432057797,
+    "time_diff_s": 0.21536564826965332,
+    "overhead_pct": 1.2712804176986423
+  },
+  {
+    "scenario_name": "scenario_medium_complex_013",
+    "map_size": "MEDIUM",
+    "before_len": 23.035533905932738,
+    "after_len": 22.14158982548453,
+    "improvement_pct": 3.8807178687444037,
+    "time_diff_s": 0.12001252174377441,
+    "overhead_pct": 8.507221866089704
+  },
+  {
+    "scenario_name": "scenario_medium_complex_014",
+    "map_size": "MEDIUM",
+    "before_len": 17.849242404917497,
+    "after_len": 17.10263137648707,
+    "improvement_pct": 4.182872367875587,
+    "time_diff_s": -0.018022775650024414,
+    "overhead_pct": -1.8874793350563586
+  },
+  {
+    "scenario_name": "scenario_medium_complex_015",
+    "map_size": "MEDIUM",
+    "before_len": 18.414213562373092,
+    "after_len": 18.027756377319946,
+    "improvement_pct": 2.0986896005312885,
+    "time_diff_s": 0.002405405044555664,
+    "overhead_pct": 0.4798029997079997
+  },
+  {
+    "scenario_name": "scenario_medium_complex_016",
+    "map_size": "MEDIUM",
+    "before_len": 49.18376618407357,
+    "after_len": 46.61544808322666,
+    "improvement_pct": 5.221881730721485,
+    "time_diff_s": 0.6677675247192383,
+    "overhead_pct": 2.1454788836609513
+  },
+  {
+    "scenario_name": "scenario_large_simple_003",
+    "map_size": "LARGE",
+    "before_len": 57.520815280171306,
+    "after_len": 54.66488818245218,
+    "improvement_pct": 4.965032369253684,
+    "time_diff_s": 0.2224135398864746,
+    "overhead_pct": 0.498996513502101
+  },
+  {
+    "scenario_name": "scenario_large_simple_004",
+    "map_size": "LARGE",
+    "before_len": 54.72792206135786,
+    "after_len": 51.78802950489621,
+    "improvement_pct": 5.371832961546775,
+    "time_diff_s": 0.32938361167907715,
+    "overhead_pct": 0.772493443897093
+  },
+  {
+    "scenario_name": "scenario_large_simple_005",
+    "map_size": "LARGE",
+    "before_len": 37.59188309203678,
+    "after_len": 34.73110997362451,
+    "improvement_pct": 7.610081972771074,
+    "time_diff_s": 0.2623136043548584,
+    "overhead_pct": 1.1766339876830108
+  },
+  {
+    "scenario_name": "scenario_large_moderate_001",
+    "map_size": "LARGE",
+    "before_len": 47.00609665440988,
+    "after_len": 43.48850422812907,
+    "improvement_pct": 7.483268504811727,
+    "time_diff_s": 0.4810364246368408,
+    "overhead_pct": 1.0224571723393265
+  },
+  {
+    "scenario_name": "scenario_large_moderate_002",
+    "map_size": "LARGE",
+    "before_len": 31.94974746830583,
+    "after_len": 30.700162866017504,
+    "improvement_pct": 3.9110938311106063,
+    "time_diff_s": 0.26839661598205566,
+    "overhead_pct": 5.348541246031843
+  },
+  {
+    "scenario_name": "scenario_large_moderate_004",
+    "map_size": "LARGE",
+    "before_len": 43.09797974644666,
+    "after_len": 42.14558102577303,
+    "improvement_pct": 2.2098453947882586,
+    "time_diff_s": -0.1426374912261963,
+    "overhead_pct": -1.8265476309546096
+  },
+  {
+    "scenario_name": "scenario_large_moderate_006",
+    "map_size": "LARGE",
+    "before_len": 85.90306627407992,
+    "after_len": 84.25259639916149,
+    "improvement_pct": 1.9213166031262325,
+    "time_diff_s": 0.38780784606933594,
+    "overhead_pct": 0.6192692262666589
+  },
+  {
+    "scenario_name": "scenario_large_complex_001",
+    "map_size": "LARGE",
+    "before_len": 54.7634559672906,
+    "after_len": 51.30545779934139,
+    "improvement_pct": 6.314426485455224,
+    "time_diff_s": 1.1392369270324707,
+    "overhead_pct": 1.9850582625895234
+  },
+  {
+    "scenario_name": "scenario_large_complex_002",
+    "map_size": "LARGE",
+    "before_len": 32.66295090390226,
+    "after_len": 31.100643080167973,
+    "improvement_pct": 4.783119040073117,
+    "time_diff_s": -0.13794302940368652,
+    "overhead_pct": -1.4101849242767928
+  },
+  {
+    "scenario_name": "scenario_large_complex_005",
+    "map_size": "LARGE",
+    "before_len": 62.935028842544405,
+    "after_len": 59.7599364122821,
+    "improvement_pct": 5.045032136564184,
+    "time_diff_s": 0.20815777778625488,
+    "overhead_pct": 0.32824980881322935
+  }
+]

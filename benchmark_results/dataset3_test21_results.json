@@ -1,0 +1,212 @@
+[
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_1",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 48.159470081329346,
+    "path_length_meters": 121.0,
+    "nodes_explored": 8866
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_2",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 26.12400794029236,
+    "path_length_meters": 118.0,
+    "nodes_explored": 5098
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_3",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 22.189287424087524,
+    "path_length_meters": 123.0,
+    "nodes_explored": 4311
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_1",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 1.7701830863952637,
+    "path_length_meters": 2.0,
+    "nodes_explored": 256
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_2",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 1.71980881690979,
+    "path_length_meters": 2.0,
+    "nodes_explored": 238
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_3",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 2.710251569747925,
+    "path_length_meters": 2.0,
+    "nodes_explored": 382
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_1",
+    "environment_type": null,
+    "map_size": 300,
+    "success": false,
+    "computation_time": 13405.01136136055,
+    "path_length_meters": 0.0,
+    "nodes_explored": 64913
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_2",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 525.4383368492126,
+    "path_length_meters": 868.0,
+    "nodes_explored": 13010
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_3",
+    "environment_type": null,
+    "map_size": 300,
+    "success": false,
+    "computation_time": 16068.13288640976,
+    "path_length_meters": 0.0,
+    "nodes_explored": 69444
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_1",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 1.6409671306610107,
+    "path_length_meters": 351.1814207266048,
+    "nodes_explored": 2325
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_2",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 1.9015309810638428,
+    "path_length_meters": 356.6570391857369,
+    "nodes_explored": 2511
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_3",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 2.0959205627441406,
+    "path_length_meters": 377.53301661053615,
+    "nodes_explored": 2599
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_1",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 0.02182912826538086,
+    "path_length_meters": 325.4406922210671,
+    "nodes_explored": 232
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_2",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 0.017832517623901367,
+    "path_length_meters": 334.3401871576788,
+    "nodes_explored": 238
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_3",
+    "environment_type": null,
+    "map_size": 300,
+    "success": true,
+    "computation_time": 0.0260927677154541,
+    "path_length_meters": 349.2396820942906,
+    "nodes_explored": 250
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_1",
+    "environment_type": null,
+    "map_size": 300,
+    "success": false,
+    "computation_time": 0.0020291805267333984,
+    "path_length_meters": 0.0,
+    "nodes_explored": 0
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_2",
+    "environment_type": null,
+    "map_size": 300,
+    "success": false,
+    "computation_time": 0.0004367828369140625,
+    "path_length_meters": 0.0,
+    "nodes_explored": 0
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_3",
+    "environment_type": null,
+    "map_size": 300,
+    "success": false,
+    "computation_time": 0.0004050731658935547,
+    "path_length_meters": 0.0,
+    "nodes_explored": 0
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_3_1",
+    "environment_type": null,
+    "map_size": 300,
+    "success": false,
+    "computation_time": 0.1830894947052002,
+    "path_length_meters": 0.0,
+    "nodes_explored": 0
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_3_2",
+    "environment_type": null,
+    "map_size": 300,
+    "success": false,
+    "computation_time": 0.18635058403015137,
+    "path_length_meters": 0.0,
+    "nodes_explored": 0
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_3_3",
+    "environment_type": null,
+    "map_size": 300,
+    "success": false,
+    "computation_time": 0.2251451015472412,
+    "path_length_meters": 0.0,
+    "nodes_explored": 0
+  }
+]

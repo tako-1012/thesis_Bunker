@@ -1,0 +1,2222 @@
+[
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_1",
+    "success": false,
+    "computation_time": 0.008629083633422852,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_2",
+    "success": false,
+    "computation_time": 0.008517265319824219,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_3",
+    "success": false,
+    "computation_time": 0.008580207824707031,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_5",
+    "success": false,
+    "computation_time": 0.008427619934082031,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_9",
+    "success": false,
+    "computation_time": 0.000499725341796875,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_6",
+    "success": false,
+    "computation_time": 0.009008646011352539,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_7",
+    "success": false,
+    "computation_time": 0.008800029754638672,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_10",
+    "success": false,
+    "computation_time": 0.00048089027404785156,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_1",
+    "success": false,
+    "computation_time": 0.00045228004455566406,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_2",
+    "success": false,
+    "computation_time": 0.0004551410675048828,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_4",
+    "success": false,
+    "computation_time": 0.012447834014892578,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_1_8",
+    "success": false,
+    "computation_time": 0.012019872665405273,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_3",
+    "success": false,
+    "computation_time": 0.0003521442413330078,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_4",
+    "success": false,
+    "computation_time": 0.0003447532653808594,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_5",
+    "success": false,
+    "computation_time": 0.0003097057342529297,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_6",
+    "success": false,
+    "computation_time": 0.0004563331604003906,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_7",
+    "success": false,
+    "computation_time": 0.0003902912139892578,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_8",
+    "success": false,
+    "computation_time": 0.0005617141723632812,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_9",
+    "success": false,
+    "computation_time": 0.0005931854248046875,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_2_10",
+    "success": false,
+    "computation_time": 0.00032711029052734375,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_1",
+    "success": false,
+    "computation_time": 0.0001392364501953125,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_2",
+    "success": false,
+    "computation_time": 0.00040411949157714844,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_3",
+    "success": false,
+    "computation_time": 0.00037550926208496094,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_4",
+    "success": false,
+    "computation_time": 0.00019502639770507812,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_5",
+    "success": false,
+    "computation_time": 9.1552734375e-05,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_6",
+    "success": false,
+    "computation_time": 0.0001919269561767578,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_7",
+    "success": false,
+    "computation_time": 0.0005104541778564453,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_8",
+    "success": false,
+    "computation_time": 0.0003390312194824219,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_9",
+    "success": false,
+    "computation_time": 0.00013256072998046875,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_1_3_10",
+    "success": false,
+    "computation_time": 0.00012540817260742188,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_1",
+    "success": false,
+    "computation_time": 0.0002624988555908203,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_2",
+    "success": false,
+    "computation_time": 0.00046181678771972656,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_3",
+    "success": false,
+    "computation_time": 0.0003304481506347656,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_4",
+    "success": false,
+    "computation_time": 0.0002722740173339844,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_5",
+    "success": false,
+    "computation_time": 0.0003960132598876953,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_6",
+    "success": false,
+    "computation_time": 0.0006396770477294922,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_7",
+    "success": false,
+    "computation_time": 0.0006413459777832031,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_8",
+    "success": false,
+    "computation_time": 0.0003571510314941406,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_9",
+    "success": false,
+    "computation_time": 0.0007903575897216797,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_1_10",
+    "success": false,
+    "computation_time": 0.0007724761962890625,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_1",
+    "success": false,
+    "computation_time": 0.0005908012390136719,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_2",
+    "success": false,
+    "computation_time": 0.0006473064422607422,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_3",
+    "success": false,
+    "computation_time": 0.000934600830078125,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_4",
+    "success": false,
+    "computation_time": 0.0009000301361083984,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_5",
+    "success": false,
+    "computation_time": 0.0006525516510009766,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_6",
+    "success": false,
+    "computation_time": 0.0007796287536621094,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_7",
+    "success": false,
+    "computation_time": 0.0025703907012939453,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_8",
+    "success": false,
+    "computation_time": 0.0018279552459716797,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_9",
+    "success": false,
+    "computation_time": 0.0015597343444824219,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_2_10",
+    "success": false,
+    "computation_time": 0.001508474349975586,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_1",
+    "success": false,
+    "computation_time": 0.001966238021850586,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_3",
+    "success": false,
+    "computation_time": 0.0014505386352539062,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_2",
+    "success": false,
+    "computation_time": 0.002057313919067383,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_5",
+    "success": false,
+    "computation_time": 0.0003104209899902344,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_4",
+    "success": false,
+    "computation_time": 0.0016376972198486328,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_6",
+    "success": false,
+    "computation_time": 0.00026345252990722656,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_7",
+    "success": false,
+    "computation_time": 0.0005812644958496094,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_8",
+    "success": false,
+    "computation_time": 0.0006806850433349609,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_9",
+    "success": false,
+    "computation_time": 0.0004382133483886719,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_2_3_10",
+    "success": false,
+    "computation_time": 0.0002567768096923828,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_1",
+    "success": false,
+    "computation_time": 0.00025582313537597656,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_2",
+    "success": false,
+    "computation_time": 0.0002758502960205078,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_3",
+    "success": false,
+    "computation_time": 0.00026345252990722656,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_4",
+    "success": false,
+    "computation_time": 0.0003001689910888672,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_5",
+    "success": false,
+    "computation_time": 0.0017085075378417969,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_6",
+    "success": false,
+    "computation_time": 0.00031828880310058594,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_7",
+    "success": false,
+    "computation_time": 0.00039505958557128906,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_8",
+    "success": false,
+    "computation_time": 0.000331878662109375,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_9",
+    "success": false,
+    "computation_time": 0.0014126300811767578,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_1_10",
+    "success": false,
+    "computation_time": 0.0003216266632080078,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_1",
+    "success": false,
+    "computation_time": 0.0017712116241455078,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_2",
+    "success": false,
+    "computation_time": 0.0021321773529052734,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_4",
+    "success": false,
+    "computation_time": 0.0020041465759277344,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_3",
+    "success": false,
+    "computation_time": 0.007282733917236328,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_5",
+    "success": false,
+    "computation_time": 0.0014164447784423828,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_6",
+    "success": false,
+    "computation_time": 0.001911163330078125,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_8",
+    "success": false,
+    "computation_time": 0.0015673637390136719,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_7",
+    "success": false,
+    "computation_time": 0.008218526840209961,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_9",
+    "success": false,
+    "computation_time": 0.011153459548950195,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_2_10",
+    "success": false,
+    "computation_time": 0.010106563568115234,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_2",
+    "success": false,
+    "computation_time": 0.0020987987518310547,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_1",
+    "success": false,
+    "computation_time": 0.010080337524414062,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_3",
+    "success": false,
+    "computation_time": 0.008417367935180664,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_4",
+    "success": false,
+    "computation_time": 0.010995149612426758,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_6",
+    "success": false,
+    "computation_time": 0.0017001628875732422,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_5",
+    "success": false,
+    "computation_time": 0.010113000869750977,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_7",
+    "success": false,
+    "computation_time": 0.002707958221435547,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_8",
+    "success": false,
+    "computation_time": 0.001973390579223633,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_9",
+    "success": false,
+    "computation_time": 0.0020456314086914062,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "A*",
+    "scenario_id": "dataset3_3_3_10",
+    "success": false,
+    "computation_time": 0.002363443374633789,
+    "error": "cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)",
+    "error_detail": "Traceback (most recent call last):\n  File \"/home/hayashi/thesis_work/run_benchmark_with_regular_astar.py\", line 74, in run_planner_on_scenario\n    from ta_star import TerrainAwareAStar\nImportError: cannot import name 'TerrainAwareAStar' from 'ta_star' (/home/hayashi/thesis_work/ta_star.py)\n"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.236066818237305,
+    "path_length_meters": 108.23759005323582,
+    "nodes_explored": 79
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.2332117557525635,
+    "path_length_meters": 111.40916292848964,
+    "nodes_explored": 83
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.23536491394043,
+    "path_length_meters": 116.99494936611654,
+    "nodes_explored": 89
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.2363739013671875,
+    "path_length_meters": 117.99494936611654,
+    "nodes_explored": 90
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.233963489532471,
+    "path_length_meters": 111.45584412271572,
+    "nodes_explored": 105
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.235556602478027,
+    "path_length_meters": 120.63961030678922,
+    "nodes_explored": 103
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.232278347015381,
+    "path_length_meters": 128.2670273047587,
+    "nodes_explored": 104
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.238603830337524,
+    "path_length_meters": 124.98275605729685,
+    "nodes_explored": 109
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.00487208366394043,
+    "path_length_meters": 53.55634918610405,
+    "nodes_explored": 50
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.007961034774780273,
+    "path_length_meters": 94.87005768508882,
+    "nodes_explored": 88
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.005529165267944336,
+    "path_length_meters": 55.65685424949238,
+    "nodes_explored": 55
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.007771730422973633,
+    "path_length_meters": 96.97056274847715,
+    "nodes_explored": 93
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.010145902633666992,
+    "path_length_meters": 127.95331880577397,
+    "nodes_explored": 107
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.004123210906982422,
+    "path_length_meters": 53.740115370177584,
+    "nodes_explored": 39
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_1_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.012343168258666992,
+    "path_length_meters": 114.16652224137036,
+    "nodes_explored": 87
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.011075973510742188,
+    "path_length_meters": 119.48528137423857,
+    "nodes_explored": 118
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.01076507568359375,
+    "path_length_meters": 116.84062043356593,
+    "nodes_explored": 105
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.004964351654052734,
+    "path_length_meters": 58.071067811865476,
+    "nodes_explored": 57
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.0051043033599853516,
+    "path_length_meters": 73.88225099390851,
+    "nodes_explored": 55
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.007968664169311523,
+    "path_length_meters": 96.42640687119285,
+    "nodes_explored": 85
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.008907556533813477,
+    "path_length_meters": 120.7106781186547,
+    "nodes_explored": 101
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_2_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.010116100311279297,
+    "path_length_meters": 118.62741699796953,
+    "nodes_explored": 113
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.004288434982299805,
+    "path_length_meters": 51.72792206135786,
+    "nodes_explored": 49
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.00857686996459961,
+    "path_length_meters": 117.0954544295049,
+    "nodes_explored": 92
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.008641242980957031,
+    "path_length_meters": 96.7106781186547,
+    "nodes_explored": 77
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.006860017776489258,
+    "path_length_meters": 92.4974746830583,
+    "nodes_explored": 79
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.008053779602050781,
+    "path_length_meters": 96.45584412271572,
+    "nodes_explored": 90
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.012356996536254883,
+    "path_length_meters": 115.25483399593904,
+    "nodes_explored": 103
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.006483316421508789,
+    "path_length_meters": 79.65685424949238,
+    "nodes_explored": 79
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_1_3_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.008795022964477539,
+    "path_length_meters": 109.81118318204304,
+    "nodes_explored": 93
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01750779151916504,
+    "path_length_meters": 210.35028842544392,
+    "nodes_explored": 172
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.016840696334838867,
+    "path_length_meters": 193.7401153701776,
+    "nodes_explored": 179
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01859140396118164,
+    "path_length_meters": 185.72792206135784,
+    "nodes_explored": 183
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.017836332321166992,
+    "path_length_meters": 197.79898987322332,
+    "nodes_explored": 193
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01689434051513672,
+    "path_length_meters": 205.6934341759515,
+    "nodes_explored": 169
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.013079404830932617,
+    "path_length_meters": 177.9482681718909,
+    "nodes_explored": 128
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01611161231994629,
+    "path_length_meters": 192.4974746830583,
+    "nodes_explored": 179
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.02123427391052246,
+    "path_length_meters": 197.13708498984747,
+    "nodes_explored": 165
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.015764236450195312,
+    "path_length_meters": 197.39191898578673,
+    "nodes_explored": 152
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_1_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.014889955520629883,
+    "path_length_meters": 192.7350647362943,
+    "nodes_explored": 149
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.014684438705444336,
+    "path_length_meters": 191.26197667087575,
+    "nodes_explored": 138
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01657891273498535,
+    "path_length_meters": 207.76450198781703,
+    "nodes_explored": 169
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01754307746887207,
+    "path_length_meters": 214.86500705120528,
+    "nodes_explored": 179
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.016396760940551758,
+    "path_length_meters": 200.6934341759515,
+    "nodes_explored": 164
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.016697406768798828,
+    "path_length_meters": 187.31370849898477,
+    "nodes_explored": 185
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.014385461807250977,
+    "path_length_meters": 196.1198410471447,
+    "nodes_explored": 147
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.0142669677734375,
+    "path_length_meters": 197.1198410471447,
+    "nodes_explored": 148
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.014852285385131836,
+    "path_length_meters": 184.60512242138333,
+    "nodes_explored": 133
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.025389909744262695,
+    "path_length_meters": 199.19595949289325,
+    "nodes_explored": 177
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.008173942565917969,
+    "path_length_meters": 85.72792206135786,
+    "nodes_explored": 83
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_2_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01621413230895996,
+    "path_length_meters": 184.79898987322332,
+    "nodes_explored": 180
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.011580705642700195,
+    "path_length_meters": 118.42640687119285,
+    "nodes_explored": 107
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.008331060409545898,
+    "path_length_meters": 91.98275605729685,
+    "nodes_explored": 76
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.016633987426757812,
+    "path_length_meters": 155.5269119345812,
+    "nodes_explored": 147
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.012987375259399414,
+    "path_length_meters": 151.63961030678922,
+    "nodes_explored": 134
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.010989665985107422,
+    "path_length_meters": 105.85281374238562,
+    "nodes_explored": 82
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01063990592956543,
+    "path_length_meters": 143.16652224137036,
+    "nodes_explored": 116
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.01568293571472168,
+    "path_length_meters": 119.87005768508882,
+    "nodes_explored": 113
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.011976480484008789,
+    "path_length_meters": 180.59292911256324,
+    "nodes_explored": 141
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_2_3_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.013973474502563477,
+    "path_length_meters": 167.87005768508882,
+    "nodes_explored": 161
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_1",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.02068185806274414,
+    "path_length_meters": 297.35743110038146,
+    "nodes_explored": 218
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_3",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.02662515640258789,
+    "path_length_meters": 316.2670273047587,
+    "nodes_explored": 292
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_5",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.02875065803527832,
+    "path_length_meters": 331.2253967444161,
+    "nodes_explored": 314
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_2",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.04009580612182617,
+    "path_length_meters": 311.11479041326214,
+    "nodes_explored": 233
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_8",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.023340463638305664,
+    "path_length_meters": 281.1858582251277,
+    "nodes_explored": 201
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_7",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.0273284912109375,
+    "path_length_meters": 298.9411254969543,
+    "nodes_explored": 290
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_4",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.03802084922790527,
+    "path_length_meters": 297.4995667241125,
+    "nodes_explored": 214
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_6",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.03395652770996094,
+    "path_length_meters": 319.28636328851593,
+    "nodes_explored": 242
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_9",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.03289914131164551,
+    "path_length_meters": 312.4558441227157,
+    "nodes_explored": 306
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_1_10",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.030364513397216797,
+    "path_length_meters": 323.9066376115481,
+    "nodes_explored": 281
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_1",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.03132963180541992,
+    "path_length_meters": 312.42135623730945,
+    "nodes_explored": 272
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_3",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.03056645393371582,
+    "path_length_meters": 305.51681066681516,
+    "nodes_explored": 239
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_4",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.028458595275878906,
+    "path_length_meters": 299.47518010647235,
+    "nodes_explored": 240
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_7",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.025372743606567383,
+    "path_length_meters": 303.91378028648563,
+    "nodes_explored": 220
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_6",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.029987573623657227,
+    "path_length_meters": 320.28636328851593,
+    "nodes_explored": 243
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_8",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.02314019203186035,
+    "path_length_meters": 304.32799384885874,
+    "nodes_explored": 220
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_2",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.04478192329406738,
+    "path_length_meters": 289.94321753800835,
+    "nodes_explored": 211
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_9",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.022640705108642578,
+    "path_length_meters": 287.94321753800835,
+    "nodes_explored": 209
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_1",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.01630854606628418,
+    "path_length_meters": 177.93607486307081,
+    "nodes_explored": 140
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_3",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.012911796569824219,
+    "path_length_meters": 131.65685424949237,
+    "nodes_explored": 131
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_2",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.01806473731994629,
+    "path_length_meters": 211.50461735799507,
+    "nodes_explored": 157
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_4",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.013171195983886719,
+    "path_length_meters": 157.59292911256324,
+    "nodes_explored": 118
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_5",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.05417203903198242,
+    "path_length_meters": 328.7766952966371,
+    "nodes_explored": 278
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_2_10",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.026620864868164062,
+    "path_length_meters": 305.24978336205567,
+    "nodes_explored": 264
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_6",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.013862133026123047,
+    "path_length_meters": 151.19595949289325,
+    "nodes_explored": 129
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_8",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.012115478515625,
+    "path_length_meters": 147.5218613006977,
+    "nodes_explored": 110
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_5",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.021896839141845703,
+    "path_length_meters": 165.13708498984747,
+    "nodes_explored": 133
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_7",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.023931264877319336,
+    "path_length_meters": 273.6639969244288,
+    "nodes_explored": 232
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_10",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.02262091636657715,
+    "path_length_meters": 235.82842712474618,
+    "nodes_explored": 236
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_3_3_9",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.028095722198486328,
+    "path_length_meters": 334.87720036002537,
+    "nodes_explored": 287
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.4257371425628662,
+    "path_length_meters": 113.89064665551936,
+    "nodes_explored": 762
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.43887901306152344,
+    "path_length_meters": 121.85678942278774,
+    "nodes_explored": 750
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.57806396484375,
+    "path_length_meters": 117.99950169548895,
+    "nodes_explored": 905
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.6649119853973389,
+    "path_length_meters": 127.8813795371259,
+    "nodes_explored": 984
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.7339248657226562,
+    "path_length_meters": 124.77686590333616,
+    "nodes_explored": 1013
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.10294342041015625,
+    "path_length_meters": 57.767158490946564,
+    "nodes_explored": 329
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.9150397777557373,
+    "path_length_meters": 124.4248035600833,
+    "nodes_explored": 1177
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.5140953063964844,
+    "path_length_meters": 128.88729553972627,
+    "nodes_explored": 865
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.985182523727417,
+    "path_length_meters": 121.38725163744186,
+    "nodes_explored": 1232
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 1.0523021221160889,
+    "path_length_meters": 128.13312340790162,
+    "nodes_explored": 1267
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.47998547554016113,
+    "path_length_meters": 96.71373747963489,
+    "nodes_explored": 823
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.18579578399658203,
+    "path_length_meters": 62.59961540526826,
+    "nodes_explored": 475
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.2620723247528076,
+    "path_length_meters": 57.43598680136601,
+    "nodes_explored": 579
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.41672396659851074,
+    "path_length_meters": 127.567054229733,
+    "nodes_explored": 765
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.5113070011138916,
+    "path_length_meters": 104.43321493540594,
+    "nodes_explored": 851
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.3231797218322754,
+    "path_length_meters": 122.31121523788829,
+    "nodes_explored": 660
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_1_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.9009675979614258,
+    "path_length_meters": 121.476025421038,
+    "nodes_explored": 1173
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.3109464645385742,
+    "path_length_meters": 76.74373744210807,
+    "nodes_explored": 647
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.4973485469818115,
+    "path_length_meters": 95.157485459527,
+    "nodes_explored": 839
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.5110843181610107,
+    "path_length_meters": 131.62764038294196,
+    "nodes_explored": 856
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.44015073776245117,
+    "path_length_meters": 60.515666429987405,
+    "nodes_explored": 783
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.07379388809204102,
+    "path_length_meters": 56.429794916074584,
+    "nodes_explored": 260
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.1913139820098877,
+    "path_length_meters": 102.51889584069868,
+    "nodes_explored": 480
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.13712739944458008,
+    "path_length_meters": 103.52276434175644,
+    "nodes_explored": 387
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_2_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.5688278675079346,
+    "path_length_meters": 128.24689928173964,
+    "nodes_explored": 912
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.5720260143280029,
+    "path_length_meters": 120.0648149232196,
+    "nodes_explored": 925
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.29367494583129883,
+    "path_length_meters": 89.00211257378011,
+    "nodes_explored": 626
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.29656076431274414,
+    "path_length_meters": 112.7669048226174,
+    "nodes_explored": 622
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.6830646991729736,
+    "path_length_meters": 118.36994477952925,
+    "nodes_explored": 1008
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_1_3_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.826347827911377,
+    "path_length_meters": 115.85287600778389,
+    "nodes_explored": 1126
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.5583112239837646,
+    "path_length_meters": 214.76020117726824,
+    "nodes_explored": 1558
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.5458765029907227,
+    "path_length_meters": 212.29460775657986,
+    "nodes_explored": 1562
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.8327126502990723,
+    "path_length_meters": 205.69913652855243,
+    "nodes_explored": 1706
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.6850078105926514,
+    "path_length_meters": 201.29806437414803,
+    "nodes_explored": 1617
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.027660369873047,
+    "path_length_meters": 192.74618341670097,
+    "nodes_explored": 1821
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.0279428958892822,
+    "path_length_meters": 188.42835324161317,
+    "nodes_explored": 1806
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.4942073822021484,
+    "path_length_meters": 212.5939745762186,
+    "nodes_explored": 2035
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.0689899921417236,
+    "path_length_meters": 211.6041168810756,
+    "nodes_explored": 1297
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.6640961170196533,
+    "path_length_meters": 199.83547818418998,
+    "nodes_explored": 2113
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.7685880661010742,
+    "path_length_meters": 216.3655675977285,
+    "nodes_explored": 1632
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.6503758430480957,
+    "path_length_meters": 216.78784067267117,
+    "nodes_explored": 1594
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.978318452835083,
+    "path_length_meters": 200.41971672052844,
+    "nodes_explored": 1734
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.18424654006958,
+    "path_length_meters": 205.07792164681368,
+    "nodes_explored": 1327
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_1_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.3749310970306396,
+    "path_length_meters": 191.70457328643784,
+    "nodes_explored": 1953
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.6083402633666992,
+    "path_length_meters": 210.61373708693037,
+    "nodes_explored": 946
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.5826361179351807,
+    "path_length_meters": 194.25587692122178,
+    "nodes_explored": 921
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.023589849472046,
+    "path_length_meters": 217.86127092155772,
+    "nodes_explored": 1773
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.059067726135254,
+    "path_length_meters": 202.41345758988544,
+    "nodes_explored": 1809
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.8654153347015381,
+    "path_length_meters": 200.67338414009004,
+    "nodes_explored": 1154
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.22296428680419922,
+    "path_length_meters": 96.12208101187971,
+    "nodes_explored": 524
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.47165799140930176,
+    "path_length_meters": 95.26490868005055,
+    "nodes_explored": 819
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_2_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.8421239852905273,
+    "path_length_meters": 210.08595374554986,
+    "nodes_explored": 1725
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.2824375629425049,
+    "path_length_meters": 147.2469303062075,
+    "nodes_explored": 600
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.6163997650146484,
+    "path_length_meters": 115.29482485105447,
+    "nodes_explored": 960
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.0957646369934082,
+    "path_length_meters": 118.09966175684971,
+    "nodes_explored": 1317
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.7092158794403076,
+    "path_length_meters": 187.28139169576792,
+    "nodes_explored": 1027
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.579169750213623,
+    "path_length_meters": 191.42601443380534,
+    "nodes_explored": 1597
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.010514736175537,
+    "path_length_meters": 124.3150428702183,
+    "nodes_explored": 1255
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.53298020362854,
+    "path_length_meters": 149.76982462945918,
+    "nodes_explored": 1559
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_2_3_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.659024715423584,
+    "path_length_meters": 183.5013556442789,
+    "nodes_explored": 1640
+  }
+]

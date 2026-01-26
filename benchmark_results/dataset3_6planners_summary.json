@@ -1,0 +1,75 @@
+{
+  "WARNING": "⚠️ このファイルのFieldD*Hybridデータは不正確です。TA*と完全に同一になっており、実験していない可能性があります。",
+  "CAUTION": "Use dataset3_8planners_summary.json instead for accurate FieldD*Hybrid data.",
+  "STATUS": "DEPRECATED - DO NOT USE FOR PAPER",
+  "original_data": {
+    "summary": {
+      "D*Lite": {
+        "total": 90,
+        "success": 90,
+        "success_rate": 1.0,
+        "avg_time_all_s": 0.03692857954237196,
+        "avg_time_success_s": 0.03692857954237196,
+        "avg_path_success_m": 181.8841557072251,
+        "median_path_m": 177.94217151748086,
+        "min_path_m": 51.72792206135786,
+        "max_path_m": 334.87720036002537
+      },
+      "RRT*": {
+        "total": 90,
+        "success": 90,
+        "success_rate": 1.0,
+        "avg_time_all_s": 4.483229329850938,
+        "avg_time_success_s": 4.483229329850938,
+        "avg_path_success_m": 191.5935479802031,
+        "median_path_m": 189.48277443449985,
+        "min_path_m": 54.65676087668827,
+        "max_path_m": 353.75354348673346
+      },
+      "HPA*": {
+        "total": 90,
+        "success": 90,
+        "success_rate": 1.0,
+        "avg_time_all_s": 6.679982733726502,
+        "avg_time_success_s": 6.679982733726502,
+        "avg_path_success_m": 180.83053971507962,
+        "median_path_m": 174.63586848115227,
+        "min_path_m": 48.86322392060775,
+        "max_path_m": 339.54409807320155
+      },
+      "SAFETY": {
+        "total": 90,
+        "success": 90,
+        "success_rate": 1.0,
+        "avg_time_all_s": 5.4322118785646225,
+        "avg_time_success_s": 5.4322118785646225,
+        "avg_path_success_m": 181.88415570722512,
+        "median_path_m": 177.94217151748097,
+        "min_path_m": 51.72792206135783,
+        "max_path_m": 334.8772003600256
+      },
+      "FieldD*Hybrid": {
+        "total": 90,
+        "success": 90,
+        "success_rate": 1.0,
+        "avg_time_all_s": 1.2118304782443576,
+        "avg_time_success_s": 1.2118304782443576,
+        "avg_path_success_m": 173.52156579765492,
+        "median_path_m": 169.3461276868812,
+        "min_path_m": 48.83646178829912,
+        "max_path_m": 316.07752213657966
+      },
+      "TA*": {
+        "total": 90,
+        "success": 90,
+        "success_rate": 1.0,
+        "avg_time_all_s": 1.2118304782443576,
+        "avg_time_success_s": 1.2118304782443576,
+        "avg_path_success_m": 173.52156579765492,
+        "median_path_m": 169.3461276868812,
+        "min_path_m": 48.83646178829912,
+        "max_path_m": 316.07752213657966
+      }
+    }
+  }
+}

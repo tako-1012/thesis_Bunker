@@ -1,0 +1,51 @@
+{
+  "TA*": {
+    "total": 90,
+    "success": 57,
+    "success_rate": 0.6333333333333333,
+    "avg_time_success_s": 12.649221575051023,
+    "avg_path_success_m": 61.578947368421055
+  },
+  "RRT*": {
+    "total": 90,
+    "success": 90,
+    "success_rate": 1.0,
+    "avg_time_success_s": 4.483229329850938,
+    "avg_path_success_m": 191.5935479802031
+  },
+  "D*Lite": {
+    "total": 90,
+    "success": 90,
+    "success_rate": 1.0,
+    "avg_time_success_s": 0.03692857954237196,
+    "avg_path_success_m": 181.8841557072251
+  },
+  "HPA*": {
+    "total": 90,
+    "success": 90,
+    "success_rate": 1.0,
+    "avg_time_success_s": 6.679982733726502,
+    "avg_path_success_m": 180.83053971507962
+  },
+  "SAFETY": {
+    "total": 90,
+    "success": 90,
+    "success_rate": 1.0,
+    "avg_time_success_s": 5.4322118785646225,
+    "avg_path_success_m": 181.88415570722512
+  },
+  "FieldD*Hybrid": {
+    "total": 90,
+    "success": 90,
+    "success_rate": 1.0,
+    "avg_time_success_s": 1.2118304782443576,
+    "avg_path_success_m": 173.52156579765492
+  },
+  "MPAA*": {
+    "total": 90,
+    "success": 59,
+    "success_rate": 0.6555555555555556,
+    "avg_time_success_s": 10.517728946976742,
+    "avg_path_success_m": 145.88409630285102
+  }
+}

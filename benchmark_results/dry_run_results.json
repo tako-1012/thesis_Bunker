@@ -1,0 +1,212 @@
+[
+  {
+    "planner": "Theta*",
+    "scenario_id": "steep_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.1649179458618164,
+    "path_length_meters": 2.0,
+    "nodes_explored": 96
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dense_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.6807186603546143,
+    "path_length_meters": 11.0,
+    "nodes_explored": 2651
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "complex_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.62648606300354,
+    "path_length_meters": 6.0,
+    "nodes_explored": 1609
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "steep_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 1.5207548141479492,
+    "path_length_meters": 23.0,
+    "nodes_explored": 384
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dense_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": false,
+    "computation_time": 3.696106433868408,
+    "path_length_meters": 0.0,
+    "nodes_explored": 688
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "complex_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": false,
+    "computation_time": 0.155564546585083,
+    "path_length_meters": 0.0,
+    "nodes_explored": 88
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "steep_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.0421297550201416,
+    "path_length_meters": 43.30735036351621,
+    "nodes_explored": 247
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dense_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.13841915130615234,
+    "path_length_meters": 46.14633088627816,
+    "nodes_explored": 531
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "complex_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.0461883544921875,
+    "path_length_meters": 53.140919441837525,
+    "nodes_explored": 281
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "steep_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.005370378494262695,
+    "path_length_meters": 41.041630560342625,
+    "nodes_explored": 35
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dense_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.004000186920166016,
+    "path_length_meters": 44.76955262170048,
+    "nodes_explored": 35
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "complex_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.00519108772277832,
+    "path_length_meters": 46.242640687119284,
+    "nodes_explored": 46
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "steep_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.06465268135070801,
+    "path_length_meters": 38.01315561749642,
+    "nodes_explored": 2
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dense_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.06719136238098145,
+    "path_length_meters": 43.95887469655429,
+    "nodes_explored": 4
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "complex_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.06722044944763184,
+    "path_length_meters": 45.93571564264875,
+    "nodes_explored": 6
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "steep_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.11696648597717285,
+    "path_length_meters": 41.041630560342604,
+    "nodes_explored": 35
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dense_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.14201641082763672,
+    "path_length_meters": 44.769552621700456,
+    "nodes_explored": 35
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "complex_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 0.11336541175842285,
+    "path_length_meters": 46.24264068711928,
+    "nodes_explored": 46
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dense_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 29.06743288040161,
+    "path_length_meters": 42.0,
+    "nodes_explored": 11429
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 142.93035078048706,
+    "path_length_meters": 19.0,
+    "nodes_explored": 22484
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "steep_SMALL_000",
+    "environment_type": "SMALL",
+    "map_size": 64,
+    "success": true,
+    "computation_time": 167.05976390838623,
+    "path_length_meters": 222.0,
+    "nodes_explored": 24015
+  }
+]

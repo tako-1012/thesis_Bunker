@@ -1,0 +1,16 @@
+{
+  "best_by_environment": {
+    "SMALL": {
+      "best_planner": "D*Lite",
+      "mean_time": 0.00786141554514567
+    },
+    "MEDIUM": {
+      "best_planner": "D*Lite",
+      "mean_time": 0.01911006040043301
+    },
+    "LARGE": {
+      "best_planner": "D*Lite",
+      "mean_time": 0.02975716193517049
+    }
+  }
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "requirement": "speed_critical",
+    "selected_planner": "dstar",
+    "computation_time_s": 0.014594316482543945,
+    "path_length_m": 69.2964645562816,
+    "success": true,
+    "nodes_explored": 50
+  },
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "requirement": "quality_critical",
+    "selected_planner": "field_d",
+    "computation_time_s": 0.0387570858001709,
+    "path_length_m": 69.29646455628166,
+    "success": true,
+    "nodes_explored": 144
+  },
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "requirement": "terrain_aware",
+    "selected_planner": "field_d",
+    "computation_time_s": 0.02350759506225586,
+    "path_length_m": 69.29646455628166,
+    "success": true,
+    "nodes_explored": 144
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "requirement": "speed_critical",
+    "selected_planner": "dstar",
+    "computation_time_s": 0.007474422454833984,
+    "path_length_m": 82.02438661763944,
+    "success": true,
+    "nodes_explored": 59
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "requirement": "quality_critical",
+    "selected_planner": "field_d",
+    "computation_time_s": 0.03167128562927246,
+    "path_length_m": 82.02438661763951,
+    "success": true,
+    "nodes_explored": 171
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "requirement": "terrain_aware",
+    "selected_planner": "field_d",
+    "computation_time_s": 0.02414536476135254,
+    "path_length_m": 82.02438661763951,
+    "success": true,
+    "nodes_explored": 171
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "requirement": "speed_critical",
+    "selected_planner": "dstar",
+    "computation_time_s": 0.006148815155029297,
+    "path_length_m": 94.75230867899727,
+    "success": true,
+    "nodes_explored": 68
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "requirement": "quality_critical",
+    "selected_planner": "field_d",
+    "computation_time_s": 0.026386260986328125,
+    "path_length_m": 94.75230867899737,
+    "success": true,
+    "nodes_explored": 198
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "requirement": "terrain_aware",
+    "selected_planner": "field_d",
+    "computation_time_s": 0.0255434513092041,
+    "path_length_m": 94.75230867899737,
+    "success": true,
+    "nodes_explored": 198
+  }
+]

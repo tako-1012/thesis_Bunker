@@ -1,0 +1,149 @@
+DELETE_CANDIDATES (top 50 by size)
+venv/lib/python3.10/site-packages/pip/_vendor/rich/__pycache__/_emoji_codes.cpython-310.pyc | 0.343 MB | 2025-12-16 12:03:07 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_multiarray.cpython-310.pyc | 0.324 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/ma/__pycache__/core.cpython-310.pyc | 0.223 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/pip/_vendor/idna/__pycache__/idnadata.cpython-310.pyc | 0.185 MB | 2025-12-16 12:03:07 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/__pycache__/_add_newdocs.cpython-310.pyc | 0.184 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/ma/tests/__pycache__/test_core.cpython-310.pyc | 0.165 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/lib/__pycache__/_function_base_impl.cpython-310.pyc | 0.160 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_umath.cpython-310.pyc | 0.154 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/pip/_vendor/idna/__pycache__/uts46data.cpython-310.pyc | 0.145 MB | 2025-12-16 12:03:07 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/lib/tests/__pycache__/test_function_base.cpython-310.pyc | 0.144 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/__pycache__/fromnumeric.cpython-310.pyc | 0.133 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_numeric.cpython-310.pyc | 0.125 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/pip/_vendor/pkg_resources/__pycache__/__init__.cpython-310.pyc | 0.109 MB | 2025-12-16 12:03:07 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/linalg/__pycache__/_linalg.cpython-310.pyc | 0.102 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_ufunc.cpython-310.pyc | 0.101 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_regression.cpython-310.pyc | 0.096 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/lib/tests/__pycache__/test_io.cpython-310.pyc | 0.093 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/random/tests/__pycache__/test_generator_mt19937.cpython-310.pyc | 0.086 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/distutils/__pycache__/system_info.cpython-310.pyc | 0.086 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/f2py/__pycache__/crackfortran.cpython-310.pyc | 0.083 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/pip/_vendor/rich/__pycache__/console.cpython-310.pyc | 0.080 MB | 2025-12-16 12:03:07 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_nditer.cpython-310.pyc | 0.078 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/testing/_private/__pycache__/utils.cpython-310.pyc | 0.075 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/__pycache__/numeric.cpython-310.pyc | 0.074 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/lib/__pycache__/_npyio_impl.cpython-310.pyc | 0.073 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/distutils/__pycache__/misc_util.cpython-310.pyc | 0.071 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/distutils/__pycache__/ccompiler_opt.cpython-310.pyc | 0.070 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/linalg/tests/__pycache__/test_linalg.cpython-310.pyc | 0.067 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_datetime.cpython-310.pyc | 0.067 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/pip/_vendor/pygments/lexers/__pycache__/_mapping.cpython-310.pyc | 0.063 MB | 2025-12-16 12:03:07 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_dtype.cpython-310.pyc | 0.063 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/random/tests/__pycache__/test_randomstate.cpython-310.pyc | 0.063 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/testing/tests/__pycache__/test_utils.cpython-310.pyc | 0.061 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/ma/__pycache__/extras.cpython-310.pyc | 0.061 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/lib/__pycache__/_nanfunctions_impl.cpython-310.pyc | 0.060 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/polynomial/__pycache__/chebyshev.cpython-310.pyc | 0.059 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/fft/__pycache__/_pocketfft.cpython-310.pyc | 0.058 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/ma/tests/__pycache__/test_extras.cpython-310.pyc | 0.056 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/__pycache__/multiarray.cpython-310.pyc | 0.054 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/pip/_vendor/rich/__pycache__/progress.cpython-310.pyc | 0.053 MB | 2025-12-16 12:03:07 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/polynomial/__pycache__/hermite.cpython-310.pyc | 0.052 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/__pycache__/arrayprint.cpython-310.pyc | 0.051 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/_core/tests/__pycache__/test_stringdtype.cpython-310.pyc | 0.051 MB | 2025-12-16 16:31:20 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/random/tests/__pycache__/test_random.cpython-310.pyc | 0.050 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/pip/_vendor/distlib/__pycache__/util.cpython-310.pyc | 0.050 MB | 2025-12-16 12:03:07 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/polynomial/__pycache__/laguerre.cpython-310.pyc | 0.050 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/polynomial/__pycache__/polynomial.cpython-310.pyc | 0.049 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/polynomial/__pycache__/hermite_e.cpython-310.pyc | 0.049 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/polynomial/__pycache__/legendre.cpython-310.pyc | 0.048 MB | 2025-12-16 16:31:21 | cache/checkpoint
+venv/lib/python3.10/site-packages/numpy/lib/__pycache__/recfunctions.cpython-310.pyc | 0.046 MB | 2025-12-16 16:31:21 | cache/checkpoint
+
+REVIEW_FILES (all)
+ros2/bunker_ros2/bunker_gazebo/config/nav2_purepursuit_w_shim copy.yaml | 0.011 MB | 2025-09-05 17:44:56 | possible duplicate
+ros2/ros2_ws/build/bunker_3d_nav/.cmake/api/v1/reply/target-ament_cmake_python_copy_bunker_3d_nav-e16d8ba6310e2141247f.json | 0.002 MB | 2025-11-17 20:54:51 | possible duplicate
+ros2/ros2_ws/src/build/bunker_msgs/.cmake/api/v1/reply/target-ament_cmake_python_copy_bunker_msgs-7169acd4d029f0382163.json | 0.002 MB | 2025-09-05 17:50:10 | possible duplicate
+ros2/ros2_ws/src/build/map_service/.cmake/api/v1/reply/target-ament_cmake_python_copy_map_service-b29333e72ac2cd94b09d.json | 0.002 MB | 2025-09-05 17:50:10 | possible duplicate
+archive/unity_git/bunker_unity/ROS2_pkg/unity_toolbox/unity_ros2_scripts/test/test_copyright.py | 0.001 MB | 2025-09-04 03:46:39 | possible duplicate
+ros2/ros2_ws/src/unity_toolbox/unity_ros2_scripts/test/test_copyright.py | 0.001 MB | 2025-09-04 03:46:39 | possible duplicate
+archive/unity_git/bunker_unity/ROS2_pkg/unity_toolbox/ROS-TCP-Endpoint-main-ros2/test/test_copyright.py | 0.001 MB | 2025-09-04 03:46:39 | possible duplicate
+ros2/ros2_ws/src/unity_toolbox/ROS-TCP-Endpoint-main-ros2/test/test_copyright.py | 0.001 MB | 2025-09-04 03:46:39 | possible duplicate
+ros2/bunker_ros2/bunker_vis/test/test_copyright.py | 0.001 MB | 2025-09-05 17:44:56 | possible duplicate
+ros2/bunker_ros2/map_point/test/test_copyright.py | 0.001 MB | 2025-09-05 17:44:56 | possible duplicate
+ros2/bunker_ros2/bunker_gps/test/test_copyright.py | 0.001 MB | 2025-09-05 17:44:56 | possible duplicate
+venv/lib/python3.10/site-packages/numpy/_core/tests/data/astype_copy.pkl | 0.001 MB | 2025-12-16 16:31:20 | possible duplicate
+venv/lib/python3.10/site-packages/pip/_vendor/msgpack/COPYING | 0.001 MB | 2025-12-16 12:03:07 | possible duplicate
+venv/lib/python3.10/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/msgpack/COPYING | 0.001 MB | 2025-12-16 12:03:07 | possible duplicate
+
+KEEP_MATCHED (first 80)
+PROJECT_HANDOVER_TA_STAR_UNITY.md | 0.013 MB | 2025-11-10 19:21:05 | likely important by keyword
+README.md | 0.003 MB | 2025-11-09 16:50:59 | explicitly listed important
+TA_STAR_REPORT.md | 0.009 MB | 2025-11-09 16:35:46 | likely important by keyword
+TA_STAR_UNITY_SETUP.md | 0.006 MB | 2025-11-09 18:03:51 | likely important by keyword
+archive/BENCHMARK_README.md | 0.006 MB | 2025-11-07 12:17:52 | likely important by keyword
+archive/UNITY_VISUALIZATION_README.md | 0.002 MB | 2025-10-18 08:20:12 | likely important by keyword
+archive/old_implementations/astar_planner_3d_enhanced.py | 0.014 MB | 2025-10-31 10:42:30 | likely important by keyword
+archive/old_implementations/astar_planner_3d_fixed.py | 0.011 MB | 2025-10-31 10:42:32 | likely important by keyword
+archive/old_implementations/dijkstra_planner_3d_improved.py | 0.014 MB | 2025-10-31 10:42:31 | likely important by keyword
+archive/old_implementations/terrain_aware_astar_planner_3d.py | 0.014 MB | 2025-10-31 10:42:32 | likely important by keyword
+archive/old_results/benchmark_results_20251107_143241.json | 0.002 MB | 2025-11-07 14:32:41 | likely important by keyword
+archive/old_tests/test_ta_star.py | 0.003 MB | 2025-11-09 16:13:23 | likely important by keyword
+archive/old_tests/visualize_ta_star.py | 0.009 MB | 2025-11-09 16:32:15 | likely important by keyword
+archive/path_planner_interface.md | 0.011 MB | 2025-10-17 11:13:52 | likely important by keyword
+archive/presentation/final_presentation.md | 0.010 MB | 2025-10-08 15:17:08 | likely important by keyword
+archive/presentation/midterm_presentation.md | 0.008 MB | 2025-10-08 15:17:08 | likely important by keyword
+archive/ros_launcher/ros2_launcher.sh | 0.005 MB | 2025-09-05 22:28:12 | likely important by keyword
+archive/unity_git/bunker_unity/README.md | 0.004 MB | 2025-09-04 03:46:39 | explicitly listed important
+archive/unity_git/bunker_unity/ROS2_pkg/unity_toolbox/ROS-TCP-Endpoint-main-ros2/.gitignore | 0.000 MB | 2025-09-04 03:46:39 | explicitly listed important
+archive/unity_git/bunker_unity/ROS2_pkg/unity_toolbox/ROS-TCP-Endpoint-main-ros2/README.md | 0.001 MB | 2025-09-04 03:46:39 | explicitly listed important
+archive/unity_git/bunker_unity/ROS2_pkg/unity_toolbox/ROS-TCP-Endpoint-main-ros2/requirements.txt | 0.000 MB | 2025-09-04 03:46:39 | explicitly listed important
+archive/unity_git/bunker_unity/ROS2_pkg/unity_toolbox/ROS-TCP-Endpoint-main-ros2/ros_tcp_endpoint/unity_service.py | 0.002 MB | 2025-09-04 03:46:39 | likely important by keyword
+archive/unity_git/bunker_unity/ROS2_pkg/unity_toolbox/topic_based_ros2_control-main/README.md | 0.001 MB | 2025-09-04 03:46:39 | explicitly listed important
+archive/unity_integration_guide.md | 0.009 MB | 2025-10-12 18:10:46 | likely important by keyword
+documents/thesis/literature/README.md | 0.001 MB | 2025-10-06 14:22:24 | explicitly listed important
+documents/thesis/paper/figures/README.md | 0.005 MB | 2025-10-08 15:17:07 | explicitly listed important
+documents/thesis/paper/tables/README.md | 0.006 MB | 2025-10-08 15:17:07 | explicitly listed important
+presentation/all_planners_by_size_linear_300dpi.png | 0.089 MB | 2025-12-23 02:55:09 | likely important by keyword
+presentation/legend_all_planners_300dpi.png | 0.018 MB | 2025-12-23 02:30:28 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251109_155653.json | 0.002 MB | 2025-11-09 15:56:53 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251114_132704.json | 0.012 MB | 2025-11-14 13:27:04 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251114_143341.json | 0.013 MB | 2025-11-14 14:33:41 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251114_155341.json | 0.012 MB | 2025-11-14 15:53:41 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251114_202358.json | 0.005 MB | 2025-11-14 20:23:58 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251114_202803.json | 0.005 MB | 2025-11-14 20:28:03 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251114_203127.json | 0.005 MB | 2025-11-14 20:31:27 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_093031.json | 0.001 MB | 2025-11-17 09:30:31 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_093309.json | 0.001 MB | 2025-11-17 09:33:09 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_093333.json | 0.002 MB | 2025-11-17 09:33:33 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_101335.json | 0.002 MB | 2025-11-17 10:13:35 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_101808.json | 0.005 MB | 2025-11-17 10:18:08 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_102444.json | 0.002 MB | 2025-11-17 10:24:44 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_103603.json | 0.002 MB | 2025-11-17 10:36:03 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_103727.json | 0.002 MB | 2025-11-17 10:37:27 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_103842.json | 0.002 MB | 2025-11-17 10:38:42 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_104800.json | 0.003 MB | 2025-11-17 10:48:00 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_105319.json | 0.009 MB | 2025-11-17 10:53:19 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_112340.json | 0.010 MB | 2025-11-17 11:23:40 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_120210.json | 0.011 MB | 2025-11-17 12:02:10 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_145711.json | 0.011 MB | 2025-11-17 14:57:11 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_180500.json | 0.011 MB | 2025-11-17 18:05:00 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_181743.json | 0.011 MB | 2025-11-17 18:17:43 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_182935.json | 0.011 MB | 2025-11-17 18:29:35 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_184342.json | 0.011 MB | 2025-11-17 18:43:42 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_191213.json | 0.011 MB | 2025-11-17 19:12:13 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_192826.json | 0.011 MB | 2025-11-17 19:28:26 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_194758.json | 0.011 MB | 2025-11-17 19:47:58 | likely important by keyword
+results/archive_20251117_old/benchmark_results_20251117_201445.json | 0.012 MB | 2025-11-17 20:14:45 | likely important by keyword
+results/complexity_comparison.csv | 0.000 MB | 2025-12-19 12:00:35 | explicitly listed important
+ros2/bunker_ros2/README.md | 0.004 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/build/bunker_3d_nav/build/lib/path_planner_3d/path_planner_node.py | 0.011 MB | 2025-10-06 19:59:45 | likely important by keyword
+ros2/bunker_ros2/bunker_3d_nav/examples/README.md | 0.004 MB | 2025-10-08 17:05:10 | explicitly listed important
+ros2/bunker_ros2/bunker_3d_nav/path_planner_3d/path_planner_node.py | 0.011 MB | 2025-10-31 10:42:26 | likely important by keyword
+ros2/bunker_ros2/bunker_vis/bunker_vis/README.md | 0.000 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/.gitignore | 0.000 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/ann/README.md | 0.013 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/apcnet/README.md | 0.011 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/bisenetv1/README.md | 0.011 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/bisenetv2/README.md | 0.006 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/ccnet/README.md | 0.014 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/cgnet/README.md | 0.004 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/danet/README.md | 0.014 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/deeplabv3/README.md | 0.035 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/deeplabv3plus/README.md | 0.037 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/dmnet/README.md | 0.011 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/dnlnet/README.md | 0.010 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/dpt/README.md | 0.005 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/emanet/README.md | 0.005 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/encnet/README.md | 0.011 MB | 2025-09-05 17:44:56 | explicitly listed important
+ros2/bunker_ros2/bunker_vis/bunker_vis/mmseg/configs/erfnet/README.md | 0.004 MB | 2025-09-05 17:44:56 | explicitly listed important

@@ -1,0 +1,4322 @@
+[
+  {
+    "scenario_id": "dataset3_1_1_2",
+    "planner": "TA*",
+    "success": true,
+    "time": 1.2735254764556885,
+    "path_length": 40.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_7",
+    "planner": "TA*",
+    "success": true,
+    "time": 1.2943565845489502,
+    "path_length": 48.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_7",
+    "planner": "TA*",
+    "success": true,
+    "time": 0.2551453113555908,
+    "path_length": 1.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_2",
+    "planner": "TA*",
+    "success": true,
+    "time": 1.6588573455810547,
+    "path_length": 15.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_6",
+    "planner": "TA*",
+    "success": true,
+    "time": 1.6680538654327393,
+    "path_length": 66.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_5",
+    "planner": "TA*",
+    "success": true,
+    "time": 1.7266836166381836,
+    "path_length": 16.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_9",
+    "planner": "TA*",
+    "success": true,
+    "time": 0.5329020023345947,
+    "path_length": 19.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_10",
+    "planner": "TA*",
+    "success": true,
+    "time": 1.3410460948944092,
+    "path_length": 54.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_3",
+    "planner": "TA*",
+    "success": true,
+    "time": 2.434201240539551,
+    "path_length": 33.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_4",
+    "planner": "TA*",
+    "success": true,
+    "time": 7.208465814590454,
+    "path_length": 54.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_3",
+    "planner": "TA*",
+    "success": true,
+    "time": 8.983072280883789,
+    "path_length": 29.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_1",
+    "planner": "TA*",
+    "success": true,
+    "time": 9.104272365570068,
+    "path_length": 30.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_8",
+    "planner": "TA*",
+    "success": true,
+    "time": 0.40854620933532715,
+    "path_length": 5.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_9",
+    "planner": "TA*",
+    "success": true,
+    "time": 0.8026301860809326,
+    "path_length": 35.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_10",
+    "planner": "TA*",
+    "success": true,
+    "time": 0.6814460754394531,
+    "path_length": 30.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_6",
+    "planner": "TA*",
+    "success": true,
+    "time": 4.065608263015747,
+    "path_length": 30.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_10",
+    "planner": "TA*",
+    "success": true,
+    "time": 12.647250413894653,
+    "path_length": 54.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_4",
+    "planner": "TA*",
+    "success": true,
+    "time": 10.239453792572021,
+    "path_length": 53.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_1",
+    "planner": "TA*",
+    "success": true,
+    "time": 13.258580684661865,
+    "path_length": 57.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_3",
+    "planner": "TA*",
+    "success": true,
+    "time": 2.6289737224578857,
+    "path_length": 59.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_7",
+    "planner": "TA*",
+    "success": true,
+    "time": 6.830254793167114,
+    "path_length": 36.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "planner": "TA*",
+    "success": true,
+    "time": 5.093873977661133,
+    "path_length": 50.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_2",
+    "planner": "TA*",
+    "success": true,
+    "time": 21.867106676101685,
+    "path_length": 55.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_5",
+    "planner": "TA*",
+    "success": true,
+    "time": 27.488462209701538,
+    "path_length": 49.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_6",
+    "planner": "TA*",
+    "success": true,
+    "time": 28.38618302345276,
+    "path_length": 72.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_8",
+    "planner": "TA*",
+    "success": true,
+    "time": 27.98992395401001,
+    "path_length": 51.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_8",
+    "planner": "TA*",
+    "success": true,
+    "time": 18.531551599502563,
+    "path_length": 104.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_9",
+    "planner": "TA*",
+    "success": true,
+    "time": 15.23647403717041,
+    "path_length": 83.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_10",
+    "planner": "TA*",
+    "success": true,
+    "time": 12.123618841171265,
+    "path_length": 109.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_4",
+    "planner": "TA*",
+    "success": true,
+    "time": 41.55585241317749,
+    "path_length": 75.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_5",
+    "planner": "TA*",
+    "success": true,
+    "time": 39.464035987854004,
+    "path_length": 51.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_8",
+    "planner": "TA*",
+    "success": true,
+    "time": 45.17465686798096,
+    "path_length": 71.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_1",
+    "planner": "TA*",
+    "success": true,
+    "time": 30.010553121566772,
+    "path_length": 55.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "planner": "TA*",
+    "success": true,
+    "time": 60.237417221069336,
+    "path_length": 59.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_3",
+    "planner": "TA*",
+    "success": false,
+    "time": 60.26528453826904,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_9",
+    "planner": "TA*",
+    "success": false,
+    "time": 60.32231307029724,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_2",
+    "planner": "TA*",
+    "success": true,
+    "time": 1.193488359451294,
+    "path_length": 1.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_7",
+    "planner": "TA*",
+    "success": true,
+    "time": 19.183691024780273,
+    "path_length": 65.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_5",
+    "planner": "TA*",
+    "success": true,
+    "time": 25.324649572372437,
+    "path_length": 62.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_8",
+    "planner": "TA*",
+    "success": true,
+    "time": 24.527255296707153,
+    "path_length": 50.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_6",
+    "planner": "TA*",
+    "success": true,
+    "time": 2.0628600120544434,
+    "path_length": 54.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_2",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.273722648620605,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_7",
+    "planner": "TA*",
+    "success": true,
+    "time": 1.3402044773101807,
+    "path_length": 1.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_3",
+    "planner": "TA*",
+    "success": true,
+    "time": 12.212437629699707,
+    "path_length": 36.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_4",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.133185625076294,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_8",
+    "planner": "TA*",
+    "success": true,
+    "time": 3.661705493927002,
+    "path_length": 116.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_5",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.385093450546265,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_6",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.17018723487854,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_10",
+    "planner": "TA*",
+    "success": true,
+    "time": 3.3252553939819336,
+    "path_length": 93.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_7",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.60685420036316,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_9",
+    "planner": "TA*",
+    "success": true,
+    "time": 22.419920921325684,
+    "path_length": 53.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_3",
+    "planner": "TA*",
+    "success": true,
+    "time": 46.634907245635986,
+    "path_length": 88.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_2",
+    "planner": "TA*",
+    "success": true,
+    "time": 7.919459581375122,
+    "path_length": 67.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_3",
+    "planner": "TA*",
+    "success": true,
+    "time": 9.345909833908081,
+    "path_length": 170.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_5",
+    "planner": "TA*",
+    "success": true,
+    "time": 9.49541425704956,
+    "path_length": 153.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_8",
+    "planner": "TA*",
+    "success": true,
+    "time": 6.877786636352539,
+    "path_length": 46.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_4",
+    "planner": "TA*",
+    "success": true,
+    "time": 26.570591688156128,
+    "path_length": 42.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_2",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.13560914993286,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_1",
+    "planner": "TA*",
+    "success": true,
+    "time": 8.430217981338501,
+    "path_length": 121.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_4",
+    "planner": "TA*",
+    "success": true,
+    "time": 18.888431787490845,
+    "path_length": 192.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_4",
+    "planner": "TA*",
+    "success": true,
+    "time": 8.134453773498535,
+    "path_length": 81.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_4",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.16082167625427,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_6",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.1117057800293,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_1",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.10566520690918,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_10",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.21382427215576,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_5",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.12305521965027,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_1",
+    "planner": "TA*",
+    "success": true,
+    "time": 7.319981336593628,
+    "path_length": 129.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_9",
+    "planner": "TA*",
+    "success": false,
+    "time": 61.27508354187012,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_3",
+    "planner": "TA*",
+    "success": true,
+    "time": 6.468668460845947,
+    "path_length": 88.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "planner": "TA*",
+    "success": false,
+    "time": 65.07879662513733,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_6",
+    "planner": "TA*",
+    "success": false,
+    "time": 65.46283388137817,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_7",
+    "planner": "TA*",
+    "success": false,
+    "time": 65.2141215801239,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_9",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.69839000701904,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_10",
+    "planner": "TA*",
+    "success": false,
+    "time": 65.23903918266296,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_2",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.77747511863708,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_6",
+    "planner": "TA*",
+    "success": true,
+    "time": 15.286457300186157,
+    "path_length": 40.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_3",
+    "planner": "TA*",
+    "success": false,
+    "time": 65.07615113258362,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 0.7750124931335449,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.7268400192260742,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.5116302967071533,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.1166484355926514,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 5.220329523086548,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_5",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.99928855895996,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_6",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.97034454345703,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.8677167892456055,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.5594754219055176,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 0.47536754608154297,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 5.684263706207275,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 4.09298849105835,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 0.36481714248657227,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.2173945903778076,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_7",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.74739217758179,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 0.16193771362304688,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.7417750358581543,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.8023035526275635,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 0.40505337715148926,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 0.40934014320373535,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_8",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.89244842529297,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.422384023666382,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 3.3289973735809326,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 5.950529098510742,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.8801839351654053,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 3.214554786682129,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 0.34761571884155273,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.415937900543213,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 0.7018616199493408,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_10",
+    "planner": "TA*",
+    "success": true,
+    "time": 16.992076873779297,
+    "path_length": 114.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_9",
+    "planner": "TA*",
+    "success": false,
+    "time": 65.3815369606018,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.1414072513580322,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 4.7753541469573975,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 3.5340919494628906,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.802433490753174,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.9106061458587646,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 4.476020812988281,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 5.602675437927246,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.486640453338623,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 9.006545066833496,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 12.29517912864685,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 9.875224113464355,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 13.812002182006836,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 10.064602851867676,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 4.876353740692139,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_10",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.54625296592712,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 18.838932275772095,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 18.50916028022766,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 19.604227542877197,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.3187854290008545,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 7.165815591812134,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.044372320175171,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_2",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.87503743171692,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.119159698486328,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 3.293497085571289,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 16.058561086654663,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.9179136753082275,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 7.211095333099365,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 8.378222465515137,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 7.947733640670776,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 3.8493101596832275,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 5.324571371078491,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 15.608747482299805,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 16.587310075759888,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 8.150155782699585,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 6.862197160720825,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_4",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.53812170028687,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_5",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.57870841026306,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 7.585150241851807,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 7.304505825042725,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 4.9544126987457275,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 25.555413484573364,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 12.877926111221313,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_7",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.50349283218384,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 9.375107765197754,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_8",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.90901136398315,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_9",
+    "planner": "TA*",
+    "success": false,
+    "time": 64.79685616493225,
+    "path_length": null,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 9.175823211669922,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 23.575371980667114,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 8.293867111206055,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 8.479583740234375,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 1.9058058261871338,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 3.4269866943359375,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 6.813016891479492,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 26.76349425315857,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_2",
+    "planner": "Theta*",
+    "success": true,
+    "time": 6.142674446105957,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 26.446110010147095,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_8",
+    "planner": "Theta*",
+    "success": true,
+    "time": 2.2350971698760986,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 7.326963424682617,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 30.299879789352417,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 26.469608306884766,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 5.9441750049591064,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 5.573892116546631,
+    "path_length": 114.65199401442648,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 7.409614086151123,
+    "path_length": 123.35514436732821,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 11.295100212097168,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 6.624626398086548,
+    "path_length": 129.2950406076504,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_6",
+    "planner": "Theta*",
+    "success": true,
+    "time": 28.337563276290894,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.6459693908691406,
+    "path_length": 136.83102168794682,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.0746796131134033,
+    "path_length": 120.22338845056352,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.18037915229797363,
+    "path_length": 56.183406986879156,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 6.885394334793091,
+    "path_length": 122.71795539286512,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.735934495925903,
+    "path_length": 124.08199013489866,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.4798576831817627,
+    "path_length": 99.64016417892611,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.7815079689025879,
+    "path_length": 129.36577306046806,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.1584219932556152,
+    "path_length": 117.82264403295075,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.4224357604980469,
+    "path_length": 57.73933280443041,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.6807408332824707,
+    "path_length": 105.34824112343482,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.4928853511810303,
+    "path_length": 117.58954953765641,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.3941531181335449,
+    "path_length": 69.86632901226758,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.8502366542816162,
+    "path_length": 60.30214564743771,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.187159776687622,
+    "path_length": 126.8465067526202,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.8819499015808105,
+    "path_length": 76.76276652581346,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.2476027011871338,
+    "path_length": 94.59499543584414,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.3064684867858887,
+    "path_length": 121.96050609583698,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.3047165870666504,
+    "path_length": 97.02052097768906,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.44989490509033203,
+    "path_length": 98.70633531566678,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.10883259773254395,
+    "path_length": 55.47434578228701,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.5030398368835449,
+    "path_length": 116.25886282488986,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.6745929718017578,
+    "path_length": 88.375234837924,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.3451504707336426,
+    "path_length": 104.54852224463818,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.6001932621002197,
+    "path_length": 120.03480475930458,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.8132264614105225,
+    "path_length": 114.06624561113668,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 6.090311527252197,
+    "path_length": 126.47080761049173,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 6.398162841796875,
+    "path_length": 132.43369329103385,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.9677670001983643,
+    "path_length": 211.78877703759545,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_4",
+    "planner": "Theta*",
+    "success": true,
+    "time": 40.15094256401062,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 3.900681972503662,
+    "path_length": 215.82016334278975,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.6420958042144775,
+    "path_length": 197.90825815302034,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.081123352050781,
+    "path_length": 216.52865960673643,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.244698524475098,
+    "path_length": 200.91613297508158,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.005948305130005,
+    "path_length": 211.74183240770046,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 47.08534097671509,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.672252893447876,
+    "path_length": 200.76856222980697,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 3.5301613807678223,
+    "path_length": 214.70974469899292,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 3.56274151802063,
+    "path_length": 218.48437684182974,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.849349021911621,
+    "path_length": 187.60859206416578,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.1623613834381104,
+    "path_length": 198.45633582737182,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.729201078414917,
+    "path_length": 203.858077942502,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 5.172677993774414,
+    "path_length": 203.30098236742802,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.462310552597046,
+    "path_length": 217.18461334306278,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.8425276279449463,
+    "path_length": 197.96118492191925,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.5879173278808594,
+    "path_length": 197.31977283314257,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.5944483280181885,
+    "path_length": 95.04767793701772,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.2344579696655273,
+    "path_length": 104.3044171173732,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 6.953123092651367,
+    "path_length": 208.04972642274316,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 7.012230634689331,
+    "path_length": 193.46604652625246,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.6077027320861816,
+    "path_length": 148.91466843012648,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.184546947479248,
+    "path_length": 116.74148720844843,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.4320671558380127,
+    "path_length": 166.64065307682006,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.327514886856079,
+    "path_length": 118.07897930795326,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_3",
+    "planner": "Theta*",
+    "success": true,
+    "time": 56.35352540016174,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.7712955474853516,
+    "path_length": 188.12662420227946,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.950727701187134,
+    "path_length": 205.9438418009375,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 8.038746118545532,
+    "path_length": 197.65859978671742,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.761735200881958,
+    "path_length": 126.67097742342742,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 3.5264453887939453,
+    "path_length": 163.4176543013396,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 3.7823991775512695,
+    "path_length": 179.01889218374762,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 6.64702033996582,
+    "path_length": 317.1518596504896,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.91808295249939,
+    "path_length": 330.98490379788774,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 7.553569793701172,
+    "path_length": 341.77384810737976,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 9.365444660186768,
+    "path_length": 323.6344591156333,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 8.911582231521606,
+    "path_length": 342.6826387648125,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 10.086687088012695,
+    "path_length": 339.4053097234287,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 11.565891981124878,
+    "path_length": 322.77972929937124,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 3.4205760955810547,
+    "path_length": 315.6055883604328,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 13.019957542419434,
+    "path_length": 308.83748541328,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_1",
+    "planner": "Theta*",
+    "success": true,
+    "time": 63.84546136856079,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 12.346869468688965,
+    "path_length": 300.31171589566316,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.9782655239105225,
+    "path_length": 309.0290811828936,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.205272912979126,
+    "path_length": 193.4352696358902,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_3",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.5680413246154785,
+    "path_length": 143.97641629792,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_1",
+    "planner": "RRT*",
+    "success": true,
+    "time": 9.327325582504272,
+    "path_length": 312.57292718431455,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 7.214862585067749,
+    "path_length": 330.4329703595902,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_5",
+    "planner": "RRT*",
+    "success": true,
+    "time": 0.8922383785247803,
+    "path_length": 171.49071113875314,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.8609826564788818,
+    "path_length": 171.83358045582264,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_2",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.309149742126465,
+    "path_length": 238.71177740241706,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 1.9478907585144043,
+    "path_length": 163.76179366051753,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 9.799309015274048,
+    "path_length": 297.9389551947139,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.024278640747070312,
+    "path_length": 124.98275605729685,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.016710996627807617,
+    "path_length": 108.23759005323582,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.01810622215270996,
+    "path_length": 117.99494936611654,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.0221860408782959,
+    "path_length": 116.99494936611654,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.019547224044799805,
+    "path_length": 120.63961030678922,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.016522884368896484,
+    "path_length": 111.40916292848964,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.018582820892333984,
+    "path_length": 111.45584412271572,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.019274234771728516,
+    "path_length": 128.2670273047587,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.016912460327148438,
+    "path_length": 114.16652224137036,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.021087646484375,
+    "path_length": 127.95331880577397,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.01780986785888672,
+    "path_length": 94.87005768508882,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.009470224380493164,
+    "path_length": 53.55634918610405,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.016591548919677734,
+    "path_length": 96.97056274847715,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.02024364471435547,
+    "path_length": 119.48528137423857,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.010082006454467773,
+    "path_length": 55.65685424949238,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.019374608993530273,
+    "path_length": 116.84062043356593,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.014176368713378906,
+    "path_length": 53.740115370177584,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.019023895263671875,
+    "path_length": 120.7106781186547,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.015009880065917969,
+    "path_length": 96.42640687119285,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.019269466400146484,
+    "path_length": 118.62741699796953,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.009589910507202148,
+    "path_length": 58.071067811865476,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.012549638748168945,
+    "path_length": 73.88225099390851,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.021851539611816406,
+    "path_length": 115.25483399593904,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.01745295524597168,
+    "path_length": 117.0954544295049,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.015609502792358398,
+    "path_length": 96.7106781186547,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.01595902442932129,
+    "path_length": 96.45584412271572,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.01596832275390625,
+    "path_length": 92.4974746830583,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.008589982986450195,
+    "path_length": 51.72792206135786,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 8.197273015975952,
+    "path_length": 331.086561794045,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.013400077819824219,
+    "path_length": 79.65685424949238,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.01985907554626465,
+    "path_length": 109.81118318204304,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.03249096870422363,
+    "path_length": 210.35028842544392,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.032640695571899414,
+    "path_length": 193.7401153701776,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.03235816955566406,
+    "path_length": 185.72792206135784,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.03449440002441406,
+    "path_length": 197.79898987322332,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.032975196838378906,
+    "path_length": 205.6934341759515,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.032507896423339844,
+    "path_length": 197.13708498984747,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.031656742095947266,
+    "path_length": 192.4974746830583,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.02525496482849121,
+    "path_length": 177.9482681718909,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.02932596206665039,
+    "path_length": 197.39191898578673,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.029029369354248047,
+    "path_length": 192.7350647362943,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.027489185333251953,
+    "path_length": 191.26197667087575,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.032476186752319336,
+    "path_length": 207.76450198781703,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.036005258560180664,
+    "path_length": 214.86500705120528,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.030849933624267578,
+    "path_length": 200.6934341759515,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.032894134521484375,
+    "path_length": 187.31370849898477,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.03244352340698242,
+    "path_length": 199.19595949289325,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.027437210083007812,
+    "path_length": 196.1198410471447,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.4383697509765625,
+    "path_length": 276.12099244101273,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.026278018951416016,
+    "path_length": 197.1198410471447,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.027261018753051758,
+    "path_length": 184.60512242138333,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.023637056350708008,
+    "path_length": 155.5269119345812,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.03416013717651367,
+    "path_length": 184.79898987322332,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.019331693649291992,
+    "path_length": 118.42640687119285,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.01721787452697754,
+    "path_length": 85.72792206135786,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.015021800994873047,
+    "path_length": 91.98275605729685,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.01760721206665039,
+    "path_length": 105.85281374238562,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.026144981384277344,
+    "path_length": 151.63961030678922,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.020606040954589844,
+    "path_length": 119.87005768508882,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.02157306671142578,
+    "path_length": 143.16652224137036,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.03214383125305176,
+    "path_length": 180.59292911256324,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.029101133346557617,
+    "path_length": 167.87005768508882,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.04601120948791504,
+    "path_length": 297.35743110038146,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.04947042465209961,
+    "path_length": 311.11479041326214,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.05524730682373047,
+    "path_length": 316.2670273047587,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.04342174530029297,
+    "path_length": 297.4995667241125,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.05868673324584961,
+    "path_length": 331.2253967444161,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.04959273338317871,
+    "path_length": 319.28636328851593,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.053868770599365234,
+    "path_length": 298.9411254969543,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.0432894229888916,
+    "path_length": 281.1858582251277,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.0542149543762207,
+    "path_length": 312.4558441227157,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.05421257019042969,
+    "path_length": 323.9066376115481,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.052463531494140625,
+    "path_length": 312.42135623730945,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.04474329948425293,
+    "path_length": 289.94321753800835,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_4",
+    "planner": "RRT*",
+    "success": true,
+    "time": 20.252228021621704,
+    "path_length": 311.151148046564,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.05138683319091797,
+    "path_length": 305.51681066681516,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.05149340629577637,
+    "path_length": 299.47518010647235,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.05419301986694336,
+    "path_length": 328.7766952966371,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.05573129653930664,
+    "path_length": 320.28636328851593,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.04491114616394043,
+    "path_length": 303.91378028648563,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.046718597412109375,
+    "path_length": 304.32799384885874,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.045304059982299805,
+    "path_length": 287.94321753800835,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_1",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.02913641929626465,
+    "path_length": 177.93607486307081,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.05212759971618652,
+    "path_length": 305.24978336205567,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_2",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.03424525260925293,
+    "path_length": 211.50461735799507,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_3",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.025455713272094727,
+    "path_length": 131.65685424949237,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_4",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.026825666427612305,
+    "path_length": 157.59292911256324,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_5",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.028229475021362305,
+    "path_length": 165.13708498984747,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_6",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.02633047103881836,
+    "path_length": 151.19595949289325,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_8",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.025103092193603516,
+    "path_length": 147.5218613006977,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_7",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.04577183723449707,
+    "path_length": 273.6639969244288,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_10",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.043675899505615234,
+    "path_length": 235.82842712474618,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_9",
+    "planner": "D*Lite",
+    "success": true,
+    "time": 0.055466651916503906,
+    "path_length": 334.87720036002537,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_8",
+    "planner": "RRT*",
+    "success": true,
+    "time": 2.881110906600952,
+    "path_length": 163.86580952937072,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1596531867980957,
+    "path_length": 108.0917829401395,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.191502332687378,
+    "path_length": 120.78551349472181,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1731455326080322,
+    "path_length": 112.98377455700775,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.193554401397705,
+    "path_length": 119.46260893921152,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.147092580795288,
+    "path_length": 113.94784379747337,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 3.87988018989563,
+    "path_length": 263.6076019505422,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.074066162109375,
+    "path_length": 110.69005152311938,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.0638654232025146,
+    "path_length": 106.33165246508588,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1818664073944092,
+    "path_length": 116.02446814450799,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.2176361083984375,
+    "path_length": 129.51865415587028,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 75.37801456451416,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 4.9780261516571045,
+    "path_length": 340.66354117879865,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1550970077514648,
+    "path_length": 120.10140534917277,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1016192436218262,
+    "path_length": 90.00252394486725,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.0222523212432861,
+    "path_length": 50.75446945488472,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.0569984912872314,
+    "path_length": 93.03454766937386,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.0097029209136963,
+    "path_length": 54.19950248448356,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_7",
+    "planner": "RRT*",
+    "success": true,
+    "time": 12.898702621459961,
+    "path_length": 322.0600468499807,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.144568681716919,
+    "path_length": 117.25074569004252,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_6",
+    "planner": "RRT*",
+    "success": true,
+    "time": 13.770129680633545,
+    "path_length": 328.89375461066277,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_9",
+    "planner": "RRT*",
+    "success": true,
+    "time": 12.086901664733887,
+    "path_length": 308.8548964427629,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.0904510021209717,
+    "path_length": 60.62210090775958,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.2062313556671143,
+    "path_length": 122.80939236369271,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1392693519592285,
+    "path_length": 90.15352462277215,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1014530658721924,
+    "path_length": 58.60147561704226,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.2047991752624512,
+    "path_length": 115.83052326239554,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.166412353515625,
+    "path_length": 75.12829337526932,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1714906692504883,
+    "path_length": 123.36035127689097,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.201310634613037,
+    "path_length": 116.72088223765351,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.0817594528198242,
+    "path_length": 95.38302481786853,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.0344486236572266,
+    "path_length": 91.42149294342983,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 0.9996483325958252,
+    "path_length": 87.20633071115428,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 0.9796655178070068,
+    "path_length": 48.86322392060775,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.1036670207977295,
+    "path_length": 78.14713597267172,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 1.0295698642730713,
+    "path_length": 104.85656376733012,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_10",
+    "planner": "Theta*",
+    "success": true,
+    "time": 65.48196411132812,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 5.309475660324097,
+    "path_length": 110.0783298317208,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.335968494415283,
+    "path_length": 182.37409045268055,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.487020015716553,
+    "path_length": 186.4748975128441,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.894679307937622,
+    "path_length": 202.51756136998404,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.3572375774383545,
+    "path_length": 190.44100929965037,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.7411110401153564,
+    "path_length": 192.99210873895564,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_10",
+    "planner": "RRT*",
+    "success": true,
+    "time": 17.3252170085907,
+    "path_length": 307.79860549666955,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.619940519332886,
+    "path_length": 205.3783547052379,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.626766204833984,
+    "path_length": 192.1612909522981,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.687061309814453,
+    "path_length": 178.06739050212408,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.6710145473480225,
+    "path_length": 187.96309958333444,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.727860689163208,
+    "path_length": 198.15199728855447,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.453747510910034,
+    "path_length": 205.5695374565491,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_7",
+    "planner": "Theta*",
+    "success": true,
+    "time": 60.82968235015869,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.5216615200042725,
+    "path_length": 210.46531062581897,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.876413106918335,
+    "path_length": 199.24383823195862,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.943599224090576,
+    "path_length": 184.32349440645535,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.679565668106079,
+    "path_length": 186.67311119737502,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.457720518112183,
+    "path_length": 148.93522170448753,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.777453660964966,
+    "path_length": 196.26304126458228,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 5.048904895782471,
+    "path_length": 192.89188913523543,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.853661775588989,
+    "path_length": 179.9416490113424,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.478226900100708,
+    "path_length": 82.7185439746382,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 5.179680824279785,
+    "path_length": 209.61693440131518,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.96267294883728,
+    "path_length": 112.55169958004234,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 8.465221405029297,
+    "path_length": 192.5358104276562,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.469277620315552,
+    "path_length": 85.66684365768549,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.563952684402466,
+    "path_length": 103.38680820700466,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.395495176315308,
+    "path_length": 124.48356451848534,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.327483415603638,
+    "path_length": 161.82336622193168,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.51028299331665,
+    "path_length": 139.68722173309575,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 4.492585897445679,
+    "path_length": 177.93637261356724,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 8.364079475402832,
+    "path_length": 150.85763941923997,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.680987119674683,
+    "path_length": 313.09542781001505,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.16727590560913,
+    "path_length": 295.2434222025629,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.97398328781128,
+    "path_length": 325.16376343794406,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.414586782455444,
+    "path_length": 309.01560738393283,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 15.07268738746643,
+    "path_length": 298.5073869040504,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.658381223678589,
+    "path_length": 330.3349775134611,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_5",
+    "planner": "Theta*",
+    "success": true,
+    "time": 99.03830051422119,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.252297163009644,
+    "path_length": 298.23147635342013,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.956801176071167,
+    "path_length": 303.3215064262532,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.690372228622437,
+    "path_length": 310.6817230482049,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.619187593460083,
+    "path_length": 324.6842746298526,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.409424543380737,
+    "path_length": 293.41266716350896,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.54559326171875,
+    "path_length": 312.39521207296133,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.791654348373413,
+    "path_length": 305.75834469956135,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.794426679611206,
+    "path_length": 301.24678904839493,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.36180567741394,
+    "path_length": 327.5413218264184,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.779433727264404,
+    "path_length": 303.44734902807505,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.42102313041687,
+    "path_length": 319.80127782139516,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_3",
+    "planner": "HPA*",
+    "success": true,
+    "time": 12.153209924697876,
+    "path_length": 130.11720956222598,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_2",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.085065603256226,
+    "path_length": 224.25957870328952,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.018268823623657,
+    "path_length": 300.5263077094822,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 15.169404029846191,
+    "path_length": 311.7056525941082,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_9",
+    "planner": "Theta*",
+    "success": true,
+    "time": 91.0716655254364,
+    "path_length": 2.0,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.552328109741211,
+    "path_length": 303.9039343994463,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.5729358196258545,
+    "path_length": 124.98275605729678,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_4",
+    "planner": "HPA*",
+    "success": true,
+    "time": 12.842576503753662,
+    "path_length": 154.8514475316247,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_6",
+    "planner": "HPA*",
+    "success": true,
+    "time": 12.507687091827393,
+    "path_length": 152.83845433016756,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.7811295986175537,
+    "path_length": 108.2375900532358,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.7096996307373047,
+    "path_length": 117.99494936611651,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_5",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.182407855987549,
+    "path_length": 159.33308242002227,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.6794891357421875,
+    "path_length": 120.63961030678915,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.8525581359863281,
+    "path_length": 116.99494936611651,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.6050596237182617,
+    "path_length": 111.40916292848962,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.306562900543213,
+    "path_length": 128.26702730475864,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.5768167972564697,
+    "path_length": 114.16652224137033,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.4008405208587646,
+    "path_length": 94.87005768508875,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.2086637020111084,
+    "path_length": 96.97056274847711,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.426408290863037,
+    "path_length": 53.556349186104015,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_7",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.972232818603516,
+    "path_length": 268.34185323832907,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_8",
+    "planner": "HPA*",
+    "success": true,
+    "time": 12.723521947860718,
+    "path_length": 146.61917658316915,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.6707961559295654,
+    "path_length": 127.95331880577389,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.2200238704681396,
+    "path_length": 55.65685424949237,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.2136361598968506,
+    "path_length": 53.740115370177584,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_1",
+    "planner": "HPA*",
+    "success": true,
+    "time": 16.573657751083374,
+    "path_length": 171.33536434873733,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.5013487339019775,
+    "path_length": 116.84062043356586,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.7714338302612305,
+    "path_length": 119.48528137423855,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.442537784576416,
+    "path_length": 120.71067811865461,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.328662633895874,
+    "path_length": 96.42640687119277,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.3753952980041504,
+    "path_length": 73.8822509939085,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.381812334060669,
+    "path_length": 58.07106781186546,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.3167431354522705,
+    "path_length": 96.71067811865463,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_2_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.6281955242156982,
+    "path_length": 118.62741699796948,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.3786823749542236,
+    "path_length": 96.45584412271566,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.3255422115325928,
+    "path_length": 92.49747468305823,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.7882990837097168,
+    "path_length": 115.25483399593895,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.677257776260376,
+    "path_length": 117.09545442950485,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.2653443813323975,
+    "path_length": 79.65685424949237,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.409106969833374,
+    "path_length": 51.72792206135783,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_3_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 1.4560487270355225,
+    "path_length": 109.81118318204297,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_9",
+    "planner": "HPA*",
+    "success": true,
+    "time": 14.036713600158691,
+    "path_length": 339.54409807320155,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_1_1_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 5.3636391162872314,
+    "path_length": 111.45584412271566,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.012037515640259,
+    "path_length": 210.35028842544415,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.8857357501983643,
+    "path_length": 193.7401153701775,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.9442033767700195,
+    "path_length": 197.7989898732233,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.000421047210693,
+    "path_length": 205.69343417595172,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.343090534210205,
+    "path_length": 185.72792206135784,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.9827721118927,
+    "path_length": 192.49747468305824,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.106548070907593,
+    "path_length": 177.94826817189093,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.139447450637817,
+    "path_length": 197.39191898578696,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.136812210083008,
+    "path_length": 192.73506473629453,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_1_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.470932722091675,
+    "path_length": 197.13708498984755,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.9940109252929688,
+    "path_length": 207.76450198781725,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.226115942001343,
+    "path_length": 191.26197667087578,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.1297287940979,
+    "path_length": 214.8650070512055,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.121286869049072,
+    "path_length": 200.69343417595172,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.066691875457764,
+    "path_length": 187.31370849898474,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.010662794113159,
+    "path_length": 199.1959594928932,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.9819130897521973,
+    "path_length": 196.11984104714492,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.6562447547912598,
+    "path_length": 197.11984104714492,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.8926162719726562,
+    "path_length": 184.60512242138336,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.732126235961914,
+    "path_length": 155.5269119345811,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.6317760944366455,
+    "path_length": 118.42640687119277,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.503460168838501,
+    "path_length": 105.85281374238556,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.606010675430298,
+    "path_length": 85.72792206135783,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_10",
+    "planner": "HPA*",
+    "success": true,
+    "time": 13.240485668182373,
+    "path_length": 235.03399906100003,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.705698013305664,
+    "path_length": 91.98275605729678,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_2_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.163113355636597,
+    "path_length": 184.7989898732233,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.7495038509368896,
+    "path_length": 143.16652224137033,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 3.8601832389831543,
+    "path_length": 119.87005768508875,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.3133933544158936,
+    "path_length": 151.63961030678917,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.030848979949951,
+    "path_length": 180.59292911256347,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_2_3_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 4.013266563415527,
+    "path_length": 167.87005768508874,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 57.96400833129883,
+    "path_length": 331.22539674441606,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 58.98183488845825,
+    "path_length": 323.9066376115483,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 60.26876616477966,
+    "path_length": 297.4995667241125,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 61.035622358322144,
+    "path_length": 311.11479041326214,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 59.761759757995605,
+    "path_length": 299.4751801064724,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 61.35692858695984,
+    "path_length": 297.35743110038146,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 60.810113191604614,
+    "path_length": 298.9411254969542,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 60.40083956718445,
+    "path_length": 289.94321753800835,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 61.50525403022766,
+    "path_length": 316.2670273047587,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 60.94561219215393,
+    "path_length": 312.4558441227157,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 60.73251795768738,
+    "path_length": 312.4213562373097,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 61.600306034088135,
+    "path_length": 281.1858582251277,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_1_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 61.72744703292847,
+    "path_length": 319.28636328851593,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 61.35362982749939,
+    "path_length": 305.51681066681516,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 61.12577486038208,
+    "path_length": 320.28636328851593,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 61.45687127113342,
+    "path_length": 328.77669529663734,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 8.76414966583252,
+    "path_length": 304.32799384885874,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 10.821568727493286,
+    "path_length": 303.91378028648563,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_1",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.326616764068604,
+    "path_length": 177.93607486307104,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_7",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 8.987102508544922,
+    "path_length": 273.663996924429,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_2",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.413897514343262,
+    "path_length": 211.50461735799527,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.766769647598267,
+    "path_length": 305.2497833620559,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_3",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.337084531784058,
+    "path_length": 131.65685424949237,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_2_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 10.089770317077637,
+    "path_length": 287.94321753800835,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_5",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.239298343658447,
+    "path_length": 165.13708498984755,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_6",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.423668622970581,
+    "path_length": 151.1959594928932,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_4",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.549226999282837,
+    "path_length": 157.5929291125634,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_10",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 8.76501989364624,
+    "path_length": 235.8284271247462,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_8",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.118305683135986,
+    "path_length": 147.52186130069785,
+    "error_message": null
+  },
+  {
+    "scenario_id": "dataset3_3_3_9",
+    "planner": "SAFETY",
+    "success": true,
+    "time": 9.362313985824585,
+    "path_length": 334.8772003600256,
+    "error_message": null
+  }
+]

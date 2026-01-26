@@ -1,0 +1,20 @@
+{
+  "name": "roughness_avoidance",
+  "grid_size": [
+    100,
+    100,
+    20
+  ],
+  "voxel_size": 0.2,
+  "start": [
+    0.0,
+    -8.0,
+    0.5
+  ],
+  "goal": [
+    0.0,
+    8.0,
+    0.5
+  ],
+  "description": "Rough terrain in center, smooth on sides"
+}

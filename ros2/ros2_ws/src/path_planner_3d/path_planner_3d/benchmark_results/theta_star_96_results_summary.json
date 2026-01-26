@@ -1,0 +1,22 @@
+{
+  "total": 96,
+  "success_count": 96,
+  "timeout_count": 0,
+  "by_size": {
+    "SMALL": {
+      "count_success": 30,
+      "mean_time": 0.009459336598714193,
+      "median_time": 0.007871389389038086
+    },
+    "MEDIUM": {
+      "count_success": 48,
+      "mean_time": 0.15855353573958078,
+      "median_time": 0.10785925388336182
+    },
+    "LARGE": {
+      "count_success": 18,
+      "mean_time": 0.8084107769860162,
+      "median_time": 0.5310050249099731
+    }
+  }
+}

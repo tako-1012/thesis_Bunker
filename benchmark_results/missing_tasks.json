@@ -1,0 +1,72 @@
+[
+  {
+    "planner": "TA*",
+    "scenario_id": "steep_MEDIUM_019",
+    "environment": "MEDIUM"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_MEDIUM_008",
+    "environment": "MEDIUM"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_MEDIUM_016",
+    "environment": "MEDIUM"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_LARGE_000",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_LARGE_001",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_LARGE_003",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_LARGE_004",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_LARGE_005",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_LARGE_006",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "complex_LARGE_007",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "complex_LARGE_004",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "complex_LARGE_005",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "complex_LARGE_006",
+    "environment": "LARGE"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "complex_LARGE_007",
+    "environment": "LARGE"
+  }
+]

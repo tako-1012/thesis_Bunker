@@ -1,0 +1,44 @@
+[
+  {
+    "param_set": "V1_suppress",
+    "scenario": "dense_SMALL_000",
+    "success": false,
+    "time": 1.1851370334625244,
+    "nodes": 688
+  },
+  {
+    "param_set": "V1_suppress",
+    "scenario": "complex_SMALL_000",
+    "success": false,
+    "time": 0.1208946704864502,
+    "nodes": 88
+  },
+  {
+    "param_set": "V2_careful",
+    "scenario": "dense_SMALL_000",
+    "success": false,
+    "time": 1.1578702926635742,
+    "nodes": 688
+  },
+  {
+    "param_set": "V2_careful",
+    "scenario": "complex_SMALL_000",
+    "success": false,
+    "time": 0.10933947563171387,
+    "nodes": 88
+  },
+  {
+    "param_set": "V3_greedy",
+    "scenario": "dense_SMALL_000",
+    "success": false,
+    "time": 1.14853835105896,
+    "nodes": 688
+  },
+  {
+    "param_set": "V3_greedy",
+    "scenario": "complex_SMALL_000",
+    "success": false,
+    "time": 0.1126563549041748,
+    "nodes": 88
+  }
+]

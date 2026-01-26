@@ -1,0 +1,163 @@
+{
+  "scenario": "hill_detour",
+  "results": [
+    {
+      "alpha": 0.3,
+      "beta": 0.3,
+      "gamma": 0.4,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 24.1,
+        "terrain_cost_avg": 2.31,
+        "total_cost": 55.7,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    },
+    {
+      "alpha": 0.3,
+      "beta": 0.4,
+      "gamma": 0.30000000000000004,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 27.1,
+        "terrain_cost_avg": 1.95,
+        "total_cost": 52.8,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    },
+    {
+      "alpha": 0.3,
+      "beta": 0.5,
+      "gamma": 0.19999999999999996,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 27.1,
+        "terrain_cost_avg": 1.95,
+        "total_cost": 52.8,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.3,
+      "gamma": 0.30000000000000004,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 27.1,
+        "terrain_cost_avg": 1.95,
+        "total_cost": 52.8,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.4,
+      "gamma": 0.19999999999999996,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 27.1,
+        "terrain_cost_avg": 1.95,
+        "total_cost": 52.8,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.5,
+      "gamma": 0.09999999999999998,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 27.1,
+        "terrain_cost_avg": 1.95,
+        "total_cost": 52.8,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.3,
+      "gamma": 0.19999999999999996,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 27.1,
+        "terrain_cost_avg": 1.95,
+        "total_cost": 52.8,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.4,
+      "gamma": 0.09999999999999998,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 27.1,
+        "terrain_cost_avg": 1.95,
+        "total_cost": 52.8,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.5,
+      "gamma": 0.0,
+      "regular": {
+        "path_length": 22.6,
+        "terrain_cost_avg": 3.26,
+        "total_cost": 73.8
+      },
+      "ta_star": {
+        "path_length": 29.8,
+        "terrain_cost_avg": 1.82,
+        "total_cost": 54.2,
+        "computation_time": 9.1,
+        "nodes_explored": 57840
+      }
+    }
+  ],
+  "best_configuration": {
+    "alpha": 0.3,
+    "beta": 0.4,
+    "gamma": 0.30000000000000004
+  }
+}

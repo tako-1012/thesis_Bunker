@@ -1,0 +1,22 @@
+{
+  "elevation_stats": {
+    "min": 0.0,
+    "max": 10.0,
+    "mean": 0.5997092723846436,
+    "center": 10.0
+  },
+  "regular": {
+    "success": true,
+    "time": 0.021535873413085938,
+    "nodes": 81,
+    "path_length": 22.627416997969544,
+    "terrain_cost_avg": 3.2603101074579603
+  },
+  "ta": {
+    "success": true,
+    "time": 9.086195945739746,
+    "nodes": 57840,
+    "path_length": 27.079393923934003,
+    "terrain_cost_avg": 1.9456302877834863
+  }
+}

@@ -1,0 +1,692 @@
+{
+  "dataset3_extreme_31": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_32": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_33": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_34": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_35": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_36": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_37": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_38": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_39": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_40": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_41": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_42": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_43": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_44": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_45": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_46": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_47": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_48": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_49": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_50": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_51": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_52": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_53": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_54": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_55": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_56": {
+    "obstacle_ratio": 0.995,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.509975,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_57": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_58": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_59": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_60": {
+    "obstacle_ratio": 0.98505,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.0199,
+          "connected": false
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.0199,
+          "connected": true
+        }
+      ],
+      "status": "failed"
+    }
+  }
+}

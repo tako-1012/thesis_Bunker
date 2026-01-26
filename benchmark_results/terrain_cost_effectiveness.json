@@ -1,0 +1,140 @@
+[
+  {
+    "scenario": "hill_detour",
+    "without_terrain": {
+      "path": [
+        [
+          -7.9,
+          -7.9,
+          0.5
+        ],
+        [
+          8.100000000000001,
+          8.100000000000001,
+          0.5
+        ]
+      ],
+      "success": true,
+      "computation_time": 0.046221017837524414,
+      "path_length": 22.627416997969522,
+      "terrain_cost": 31.733400697205404,
+      "nodes_explored": 237
+    },
+    "with_terrain": {
+      "path": [
+        [
+          -7.9,
+          -7.9,
+          0.5
+        ],
+        [
+          8.100000000000001,
+          8.100000000000001,
+          0.5
+        ]
+      ],
+      "success": true,
+      "computation_time": 0.10808563232421875,
+      "path_length": 22.627416997969522,
+      "terrain_cost": 31.733400697205404,
+      "nodes_explored": 237
+    },
+    "improvement": {
+      "length_diff_m": 0.0,
+      "length_diff_pct": 0.0,
+      "terrain_cost_reduction_pct": 0.0
+    }
+  },
+  {
+    "scenario": "roughness_avoidance",
+    "without_terrain": {
+      "path": [
+        [
+          0.10000000000000142,
+          -7.9,
+          0.5
+        ],
+        [
+          0.10000000000000142,
+          8.100000000000001,
+          0.5
+        ]
+      ],
+      "success": true,
+      "computation_time": 0.04563021659851074,
+      "path_length": 16.0,
+      "terrain_cost": 34.222222884496055,
+      "nodes_explored": 237
+    },
+    "with_terrain": {
+      "path": [
+        [
+          0.10000000000000142,
+          -7.9,
+          0.5
+        ],
+        [
+          0.10000000000000142,
+          8.100000000000001,
+          0.5
+        ]
+      ],
+      "success": true,
+      "computation_time": 0.08062577247619629,
+      "path_length": 16.0,
+      "terrain_cost": 34.222222884496055,
+      "nodes_explored": 237
+    },
+    "improvement": {
+      "length_diff_m": 0.0,
+      "length_diff_pct": 0.0,
+      "terrain_cost_reduction_pct": 0.0
+    }
+  },
+  {
+    "scenario": "combined_terrain",
+    "without_terrain": {
+      "path": [
+        [
+          -9.9,
+          0.10000000000000142,
+          0.5
+        ],
+        [
+          10.100000000000001,
+          0.10000000000000142,
+          0.5
+        ]
+      ],
+      "success": true,
+      "computation_time": 0.05006599426269531,
+      "path_length": 20.0,
+      "terrain_cost": 25.750000510944258,
+      "nodes_explored": 297
+    },
+    "with_terrain": {
+      "path": [
+        [
+          -9.9,
+          0.10000000000000142,
+          0.5
+        ],
+        [
+          10.100000000000001,
+          0.10000000000000142,
+          0.5
+        ]
+      ],
+      "success": true,
+      "computation_time": 0.10261750221252441,
+      "path_length": 20.0,
+      "terrain_cost": 25.750000510944258,
+      "nodes_explored": 297
+    },
+    "improvement": {
+      "length_diff_m": 0.0,
+      "length_diff_pct": 0.0,
+      "terrain_cost_reduction_pct": 0.0
+    }
+  }
+]

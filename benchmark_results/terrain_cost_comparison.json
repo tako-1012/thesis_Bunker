@@ -1,0 +1,62 @@
+[
+  {
+    "scenario": "dataset3_1_1_1",
+    "without_terrain": {
+      "success": true,
+      "time": 0.0674736499786377,
+      "path_length": 38.18376618407357,
+      "path_points": 2
+    },
+    "with_terrain": {
+      "success": true,
+      "time": 0.09531855583190918,
+      "path_length": 38.18376618407357,
+      "path_points": 2
+    },
+    "difference": {
+      "time_diff": 0.027844905853271484,
+      "length_diff": 0.0,
+      "length_diff_pct": 0.0
+    }
+  },
+  {
+    "scenario": "dataset3_2_1_1",
+    "without_terrain": {
+      "success": true,
+      "time": 0.09275150299072266,
+      "path_length": 66.46803743153546,
+      "path_points": 2
+    },
+    "with_terrain": {
+      "success": true,
+      "time": 0.1786966323852539,
+      "path_length": 66.46803743153546,
+      "path_points": 2
+    },
+    "difference": {
+      "time_diff": 0.08594512939453125,
+      "length_diff": 0.0,
+      "length_diff_pct": 0.0
+    }
+  },
+  {
+    "scenario": "dataset3_3_1_1",
+    "without_terrain": {
+      "success": true,
+      "time": 0.1555182933807373,
+      "path_length": 108.89444430272833,
+      "path_points": 2
+    },
+    "with_terrain": {
+      "success": true,
+      "time": 0.2768728733062744,
+      "path_length": 108.89444430272833,
+      "path_points": 2
+    },
+    "difference": {
+      "time_diff": 0.12135457992553711,
+      "length_diff": 0.0,
+      "length_diff_pct": 0.0
+    }
+  }
+]

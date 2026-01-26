@@ -1,0 +1,37 @@
+{
+  "summary": {
+    "A*": {
+      "total": 90,
+      "success": 0,
+      "success_rate": 0.0,
+      "avg_time_all_s": 0.0024037679036458333,
+      "avg_time_success_s": null,
+      "avg_path_success_m": null,
+      "median_path_m": null,
+      "min_path_m": null,
+      "max_path_m": null
+    },
+    "D*Lite": {
+      "total": 90,
+      "success": 90,
+      "success_rate": 1.0,
+      "avg_time_all_s": 0.392399615711636,
+      "avg_time_success_s": 0.392399615711636,
+      "avg_path_success_m": 181.8841557072251,
+      "median_path_m": 177.9482681718909,
+      "min_path_m": 51.72792206135786,
+      "max_path_m": 334.87720036002537
+    },
+    "RRT*": {
+      "total": 60,
+      "success": 60,
+      "success_rate": 1.0,
+      "avg_time_all_s": 0.9652657866477966,
+      "avg_time_success_s": 0.9652657866477966,
+      "avg_path_success_m": 144.73671091512978,
+      "median_path_m": 127.8813795371259,
+      "min_path_m": 56.429794916074584,
+      "max_path_m": 217.86127092155772
+    }
+  }
+}

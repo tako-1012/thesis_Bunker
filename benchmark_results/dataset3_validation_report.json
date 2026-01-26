@@ -1,0 +1,246 @@
+{
+  "D_LITE_KILLER": {
+    "scenario_count": 30,
+    "map_size_stats": {
+      "count": 30,
+      "min": 150.0,
+      "max": 150.0,
+      "mean": 150.0,
+      "median": 150.0
+    },
+    "obstacle_ratio_stats": {
+      "count": 30,
+      "min": 0.9041777777777777,
+      "max": 0.9312444444444444,
+      "mean": 0.9149925925925927,
+      "median": 0.9138666666666667
+    },
+    "slope_mean_stats": {
+      "count": 0,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "median": null
+    },
+    "start_goal_distance_stats": {
+      "count": 0,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "median": null
+    },
+    "complexity_method_stats": {
+      "Method1_Slope": {
+        "count": 30,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0
+      },
+      "Method2_Obstacle": {
+        "count": 30,
+        "min": 0.6358056564209145,
+        "max": 0.6504201790410746,
+        "mean": 0.6432937869661364,
+        "median": 0.6433286634358797
+      },
+      "Method3_Balanced": {
+        "count": 30,
+        "min": 0.2712533333333333,
+        "max": 0.2793733333333333,
+        "mean": 0.27449777777777773,
+        "median": 0.27416
+      },
+      "Method4_Statistical": {
+        "count": 30,
+        "min": 0.22604444444444444,
+        "max": 0.2328111111111111,
+        "mean": 0.22874814814814817,
+        "median": 0.22846666666666668
+      }
+    }
+  },
+  "SAMPLING_FAVOR": {
+    "scenario_count": 30,
+    "map_size_stats": {
+      "count": 30,
+      "min": 100.0,
+      "max": 100.0,
+      "mean": 100.0,
+      "median": 100.0
+    },
+    "obstacle_ratio_stats": {
+      "count": 30,
+      "min": 0.2217,
+      "max": 0.5594,
+      "mean": 0.3924933333333333,
+      "median": 0.3879
+    },
+    "slope_mean_stats": {
+      "count": 0,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "median": null
+    },
+    "start_goal_distance_stats": {
+      "count": 0,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "median": null
+    },
+    "complexity_method_stats": {
+      "Method1_Slope": {
+        "count": 30,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0
+      },
+      "Method2_Obstacle": {
+        "count": 30,
+        "min": 0.29122023511399553,
+        "max": 0.5231850383570456,
+        "mean": 0.41528225954997816,
+        "median": 0.4125372055048274
+      },
+      "Method3_Balanced": {
+        "count": 30,
+        "min": 0.06651,
+        "max": 0.16782,
+        "mean": 0.11774799999999999,
+        "median": 0.11637
+      },
+      "Method4_Statistical": {
+        "count": 30,
+        "min": 0.055425,
+        "max": 0.13985,
+        "mean": 0.09812333333333333,
+        "median": 0.096975
+      }
+    }
+  },
+  "THETA_FAVOR": {
+    "scenario_count": 30,
+    "map_size_stats": {
+      "count": 30,
+      "min": 120.0,
+      "max": 120.0,
+      "mean": 120.0,
+      "median": 120.0
+    },
+    "obstacle_ratio_stats": {
+      "count": 30,
+      "min": 0.07375,
+      "max": 0.24986111111111112,
+      "mean": 0.1472152777777778,
+      "median": 0.14694444444444443
+    },
+    "slope_mean_stats": {
+      "count": 0,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "median": null
+    },
+    "start_goal_distance_stats": {
+      "count": 0,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "median": null
+    },
+    "complexity_method_stats": {
+      "Method1_Slope": {
+        "count": 30,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0
+      },
+      "Method2_Obstacle": {
+        "count": 30,
+        "min": 0.08453001696628046,
+        "max": 0.22071747256057114,
+        "mean": 0.14583593280945756,
+        "median": 0.14577774590533332
+      },
+      "Method3_Balanced": {
+        "count": 30,
+        "min": 0.022125,
+        "max": 0.07495833333333334,
+        "mean": 0.04416458333333333,
+        "median": 0.044083333333333335
+      },
+      "Method4_Statistical": {
+        "count": 30,
+        "min": 0.0184375,
+        "max": 0.06246527777777778,
+        "mean": 0.03680381944444445,
+        "median": 0.03673611111111111
+      }
+    }
+  },
+  "SLOPE_FOCUS": {
+    "scenario_count": 30,
+    "map_size_stats": {
+      "count": 30,
+      "min": 120.0,
+      "max": 120.0,
+      "mean": 120.0,
+      "median": 120.0
+    },
+    "obstacle_ratio_stats": {
+      "count": 30,
+      "min": 0.10909722222222222,
+      "max": 0.19479166666666667,
+      "mean": 0.14929861111111106,
+      "median": 0.1496875
+    },
+    "slope_mean_stats": {
+      "count": 30,
+      "min": 1.4033702657748335,
+      "max": 2.997091462924595,
+      "mean": 2.124930149608628,
+      "median": 2.137769585559092
+    },
+    "start_goal_distance_stats": {
+      "count": 0,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "median": null
+    },
+    "complexity_method_stats": {
+      "Method1_Slope": {
+        "count": 30,
+        "min": 0.039751075091358154,
+        "max": 0.07759886422170983,
+        "mean": 0.05659446365163312,
+        "median": 0.05669890816550545
+      },
+      "Method2_Obstacle": {
+        "count": 30,
+        "min": 0.10763873720993716,
+        "max": 0.17080346882359135,
+        "mean": 0.13735457220766661,
+        "median": 0.13752402591056367
+      },
+      "Method3_Balanced": {
+        "count": 30,
+        "min": 0.07016049198013495,
+        "max": 0.09850023104158397,
+        "mean": 0.08387679206089788,
+        "median": 0.0839676341490303
+      },
+      "Method4_Statistical": {
+        "count": 30,
+        "min": 0.4753778675961993,
+        "max": 0.5384024392681065,
+        "mean": 0.507536479453232,
+        "median": 0.5088691136005354
+      }
+    }
+  }
+}

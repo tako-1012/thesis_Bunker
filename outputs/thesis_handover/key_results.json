@@ -1,0 +1,32 @@
+{
+  "title": "不整地環境における自律移動ロボットのための地形考慮型適応的経路計画",
+  "author": "杉原虎太朗",
+  "affiliation": "九州工業大学 知的システム工学科",
+  "year": 2025,
+  "summary_metrics": {
+    "field_d_hybrid": {
+      "path_length_change_pct": -4.6,
+      "representative_time_s": 1.21
+    },
+    "terrain_aware_astar": {
+      "point_average_mult_reduction_pct": 40.3,
+      "path_length_increase_pct": 19.7
+    },
+    "overall": {
+      "methods_compared": 6,
+      "scenarios": ["hill_detour","roughness_avoidance","combined_terrain"]
+    }
+  },
+  "hill_detour_detail": {
+    "regular_astar": {
+      "path_length_m": 22.627416997969544,
+      "segment_weighted_total_terrain_cost": 32.668334077559685,
+      "point_average_total_cost": 73.772396
+    },
+    "terrain_aware_astar": {
+      "path_length_m": 27.079393923934003,
+      "segment_weighted_total_terrain_cost": 38.03614436675104,
+      "point_average_total_cost": 52.686489
+    }
+  }
+}

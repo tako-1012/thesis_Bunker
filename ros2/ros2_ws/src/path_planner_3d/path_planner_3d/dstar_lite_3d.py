@@ -14,10 +14,12 @@ class DStarLite3D:
         self.grid_size = grid_size
         self.voxel_grid = None
         self.terrain_data = None
+        self.min_bound = (0.0, 0.0, 0.0)
 
-    def set_terrain_data(self, voxel_grid, terrain_data):
+    def set_terrain_data(self, voxel_grid, terrain_data, min_bound=(0.0, 0.0, 0.0)):
         self.voxel_grid = voxel_grid
         self.terrain_data = terrain_data
+        self.min_bound = tuple(min_bound)
 
     def plan_path(self, start: Tuple[float, float, float], goal: Tuple[float, float, float], **kwargs):
         import time
@@ -105,7 +107,14 @@ class DStarLite3D:
         return path[::-1]
 
     def _world_to_voxel(self, pos):
-        return tuple(int(round(x/self.voxel_size)) for x in pos)
+        # consider min_bound offset so that world coordinates can be centered
+        mx, my, mz = self.min_bound
+        wx, wy, wz = pos
+        vx = int(round((wx - mx) / self.voxel_size))
+        vy = int(round((wy - my) / self.voxel_size))
+        vz = int(round((wz - mz) / self.voxel_size))
+        return (vx, vy, vz)
 
     def _voxel_to_world(self, idx):
-        return tuple((i+0.5)*self.voxel_size for i in idx)
+        mx, my, mz = self.min_bound
+        return tuple((i+0.5)*self.voxel_size + off for i, off in zip(idx, (mx, my, mz)))

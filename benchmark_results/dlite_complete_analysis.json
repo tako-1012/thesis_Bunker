@@ -1,0 +1,12 @@
+{
+  "dlite_stats": {
+    "total_runs": 144,
+    "success_count": 144,
+    "min_time": 0.005040884017944336,
+    "max_time": 0.15263724327087402,
+    "mean_time": 0.017135029037793476,
+    "std_time": 0.014204034385043203,
+    "time_histogram": null
+  },
+  "total_scenarios": 144
+}

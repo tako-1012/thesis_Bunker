@@ -1,0 +1,94 @@
+{
+  "Config1_TerrainFocus": {
+    "hill_detour": {
+      "success": false,
+      "time": 18.637075901031494,
+      "path_length": 0.0,
+      "nodes": 100000,
+      "terrain_cost": 0.0
+    },
+    "roughness_avoidance": {
+      "success": false,
+      "time": 23.88834047317505,
+      "path_length": 0.0,
+      "nodes": 100000,
+      "terrain_cost": 0.0
+    },
+    "combined_terrain": {
+      "success": false,
+      "time": 16.2983455657959,
+      "path_length": 0.0,
+      "nodes": 100000,
+      "terrain_cost": 0.0
+    }
+  },
+  "Config2_Balanced": {
+    "hill_detour": {
+      "success": true,
+      "time": 10.200047731399536,
+      "path_length": 27.079393923934003,
+      "nodes": 57840,
+      "terrain_cost": 229.84000421524019
+    },
+    "roughness_avoidance": {
+      "success": true,
+      "time": 0.5394787788391113,
+      "path_length": 16.0,
+      "nodes": 1387,
+      "terrain_cost": 187.20000295639016
+    },
+    "combined_terrain": {
+      "success": false,
+      "time": 15.466675758361816,
+      "path_length": 0.0,
+      "nodes": 100000,
+      "terrain_cost": 0.0
+    }
+  },
+  "Config3_SearchControl": {
+    "hill_detour": {
+      "success": true,
+      "time": 0.06778454780578613,
+      "path_length": 22.627416997969544,
+      "nodes": 81,
+      "terrain_cost": 262.3951186731002
+    },
+    "roughness_avoidance": {
+      "success": true,
+      "time": 0.06481194496154785,
+      "path_length": 16.0,
+      "nodes": 81,
+      "terrain_cost": 187.20000295639016
+    },
+    "combined_terrain": {
+      "success": true,
+      "time": 0.07640409469604492,
+      "path_length": 20.0,
+      "nodes": 101,
+      "terrain_cost": 249.6141190272827
+    }
+  },
+  "Config4_StrongControl": {
+    "hill_detour": {
+      "success": true,
+      "time": 0.06624627113342285,
+      "path_length": 22.627416997969544,
+      "nodes": 81,
+      "terrain_cost": 262.3951186731002
+    },
+    "roughness_avoidance": {
+      "success": true,
+      "time": 0.06513738632202148,
+      "path_length": 16.0,
+      "nodes": 81,
+      "terrain_cost": 187.20000295639016
+    },
+    "combined_terrain": {
+      "success": true,
+      "time": 0.07906627655029297,
+      "path_length": 20.0,
+      "nodes": 101,
+      "terrain_cost": 249.6141190272827
+    }
+  }
+}

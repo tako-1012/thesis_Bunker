@@ -1,0 +1,8 @@
+[2025-12-26 15:35] Phase 1-1完了: TA*プロファイリング（Small/Medium/Large）
+- ta_SMALL.prof, ta_MEDIUM.prof, ta_LARGE.prof 生成
+- Small: 約0.2秒, Medium: 約0.5秒, Large: 約1.8秒
+
+[2025-12-26 17:40] Phase 2-1完了: Theta* デバッグと比較テスト
+- `theta_star.py` を修正（ボクセル変換、Bresenham LOS、占有判定の整合）
+- `scripts/test_theta_star_five.py` を追加して5シナリオで実行
+- 出力: `theta_star_test_results.json`, `theta_vs_ta_summary.json`, `theta_vs_ta_report.md`

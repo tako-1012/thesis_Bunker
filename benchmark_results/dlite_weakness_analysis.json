@@ -1,0 +1,26 @@
+{
+  "dlite_weakness": {
+    "count_slow_cases": 0,
+    "avg_ratio_over_others": 0.0069759360336802785,
+    "env_distribution": {},
+    "map_size_summary": {
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    },
+    "obstacle_ratio_summary": {
+      "mean": null,
+      "median": null
+    },
+    "examples": []
+  },
+  "dlite_status": {
+    "total_runs": 144,
+    "success_count": 144,
+    "failure_count": 0,
+    "failures_sample": [],
+    "errors": [],
+    "timeouts": []
+  }
+}

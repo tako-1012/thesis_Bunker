@@ -1,0 +1,69 @@
+{
+  "1": {
+    "count": 30,
+    "map_size_values": [
+      500,
+      600,
+      700
+    ],
+    "obstacle_ratio_mean": 0.4676587021919879,
+    "obstacle_ratio_median": 0.46134,
+    "Method1_mean": 0.0,
+    "Method1_median": 0.0,
+    "Method2_mean": 0.4676587021919879,
+    "Method2_median": 0.46134,
+    "Method3_mean": 0.30464567762660616,
+    "Method3_median": 0.3069185918367347,
+    "Method4_mean": 0.13764211451247166,
+    "Method4_median": 0.13805542857142855
+  },
+  "2": {
+    "count": 30,
+    "map_size_values": [
+      200
+    ],
+    "obstacle_ratio_mean": 0.9903566666666668,
+    "obstacle_ratio_median": 0.995,
+    "Method1_mean": 0.0,
+    "Method1_median": 0.0,
+    "Method2_mean": 0.9903566666666668,
+    "Method2_median": 0.995,
+    "Method3_mean": 0.5033415986394557,
+    "Method3_median": 0.5056632653061225,
+    "Method4_mean": 0.9903566666666668,
+    "Method4_median": 0.995
+  },
+  "3": {
+    "count": 30,
+    "map_size_values": [
+      200,
+      300
+    ],
+    "obstacle_ratio_mean": 0.021575,
+    "obstacle_ratio_median": 0.01456388888888889,
+    "Method1_mean": 0.0,
+    "Method1_median": 0.0,
+    "Method2_mean": 0.021575,
+    "Method2_median": 0.01456388888888889,
+    "Method3_mean": 0.024733078231292515,
+    "Method3_median": 0.023928500566893423,
+    "Method4_mean": 0.0,
+    "Method4_median": 0.0
+  },
+  "4": {
+    "count": 30,
+    "map_size_values": [
+      300
+    ],
+    "obstacle_ratio_mean": 0.8388888888888888,
+    "obstacle_ratio_median": 0.8388888888888889,
+    "Method1_mean": 0.0,
+    "Method1_median": 0.0,
+    "Method2_mean": 0.8388888888888888,
+    "Method2_median": 0.8388888888888889,
+    "Method3_mean": 0.43781179138322,
+    "Method3_median": 0.43781179138321996,
+    "Method4_mean": 0.8324999999999999,
+    "Method4_median": 0.8325
+  }
+}

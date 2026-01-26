@@ -1,0 +1,1052 @@
+{
+  "dataset3_extreme_91": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.5434666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.4648,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7874666666666666,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_92": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.528,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.46216666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.8015111111111111,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_93": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.4278666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.4852666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.5153666666666666,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_94": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.6048,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7998222222222222,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.47126666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_95": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7556888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5026666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.46986666666666665,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_96": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.5997666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7983555555555556,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.4750666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_97": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7882222222222223,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5488,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7650666666666667,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_98": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.4554666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5122,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.5690666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_99": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7773777777777777,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5377,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.8076888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_100": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.8158222222222222,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5242666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.45066666666666666,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_101": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7724888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.40826666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.8056888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_102": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.592,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5804,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.49766666666666665,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_103": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7944888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7884,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.5050666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_104": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7856444444444445,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5536,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.44476666666666664,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_105": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7496,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5068,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.49646666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_106": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.5731,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7875111111111112,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.8214222222222223,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_107": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7250222222222222,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5636666666666666,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.5280666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_108": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.5388666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.8308888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7478666666666667,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_109": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.48186666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5689666666666666,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7505777777777778,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_110": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7411555555555556,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7849777777777778,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.49746666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_111": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.4126666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.4272,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.49746666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_112": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7644444444444445,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7822222222222223,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7686666666666667,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_113": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.46066666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.42406666666666665,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7759555555555555,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_114": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7644888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7440888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.5106666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_115": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.4120666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7851111111111111,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7707111111111111,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_116": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.5156666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7765333333333333,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7607111111111111,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_117": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.5410666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5847666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.5461666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_118": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.5464,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.5594666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.3872,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_119": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.4730666666666667,
+          "layout": [
+            3,
+            3
+          ],
+          "room_count": 9
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7983555555555556,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7544888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  },
+  "dataset3_extreme_120": {
+    "obstacle_ratio": 0.8388888888888889,
+    "verification": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "obstacle_ratio": 0.7516888888888889,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 2,
+          "obstacle_ratio": 0.7774666666666666,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        },
+        {
+          "attempt": 3,
+          "obstacle_ratio": 0.7839555555555555,
+          "layout": [
+            2,
+            2
+          ],
+          "room_count": 4
+        }
+      ],
+      "status": "failed"
+    }
+  }
+}

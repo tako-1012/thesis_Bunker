@@ -1,0 +1,12 @@
+{
+  "name": "Dataset3 Extreme Redesign",
+  "num_scenarios": 120,
+  "per_type": 30,
+  "size_distribution_per_type": {
+    "Small": 10,
+    "Medium": 12,
+    "Large": 8
+  },
+  "seed": 12345,
+  "rationale": "Four environment types designed to stress different planner classes: huge sampling-favourable maps, narrow mazes, open spaces for any-angle planners, and multi-room hierarchical maps."
+}

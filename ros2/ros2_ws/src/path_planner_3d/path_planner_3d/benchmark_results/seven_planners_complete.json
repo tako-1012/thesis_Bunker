@@ -1,0 +1,135 @@
+{
+  "RRT*": {
+    "by_size": {
+      "SMALL": {
+        "mean_time": 23.870733857154846,
+        "mean_path": 5.356467577772074,
+        "count": 30
+      },
+      "MEDIUM": {
+        "mean_time": 27.385805810491245,
+        "mean_path": 32.11243389822975,
+        "count": 48
+      },
+      "LARGE": {
+        "mean_time": 40.93225657939911,
+        "mean_path": 64.23290851696787,
+        "count": 18
+      }
+    }
+  },
+  "D*Lite": {
+    "by_size": {
+      "SMALL": {
+        "mean_time": 0.06355912685394287,
+        "mean_path": 5.414464402019666,
+        "count": 30
+      },
+      "MEDIUM": {
+        "mean_time": 1.2405917346477509,
+        "mean_path": 28.037050848270393,
+        "count": 48
+      },
+      "LARGE": {
+        "mean_time": 4.598485642009312,
+        "mean_path": 54.349021920494906,
+        "count": 18
+      }
+    }
+  },
+  "HPA*": {
+    "by_size": {
+      "SMALL": {
+        "mean_time": 0.27515301704406736,
+        "mean_path": 5.354371691442442,
+        "count": 30
+      },
+      "MEDIUM": {
+        "mean_time": 6.516089464227359,
+        "mean_path": 27.566839928191396,
+        "count": 48
+      },
+      "LARGE": {
+        "mean_time": 25.456489072905647,
+        "mean_path": 53.9022486994521,
+        "count": 18
+      }
+    }
+  },
+  "SAFETY": {
+    "by_size": {
+      "SMALL": {
+        "mean_time": 0.2308574676513672,
+        "mean_path": 5.355481089317838,
+        "count": 30
+      },
+      "MEDIUM": {
+        "mean_time": 5.390443652868271,
+        "mean_path": 27.840703680842882,
+        "count": 48
+      },
+      "LARGE": {
+        "mean_time": 22.02573271592458,
+        "mean_path": 54.37600717626705,
+        "count": 18
+      }
+    }
+  },
+  "TA*": {
+    "by_size": {
+      "SMALL": {
+        "mean_time": 0.209,
+        "mean_path": 5.23,
+        "count": null
+      },
+      "MEDIUM": {
+        "mean_time": 5.28,
+        "mean_path": 24.837,
+        "count": null
+      },
+      "LARGE": {
+        "mean_time": 40.277,
+        "mean_path": 51.137,
+        "count": null
+      }
+    }
+  },
+  "Theta*": {
+    "by_size": {
+      "SMALL": {
+        "mean_time": 0.009,
+        "mean_path": 5.23,
+        "count": null
+      },
+      "MEDIUM": {
+        "mean_time": 0.159,
+        "mean_path": 24.837,
+        "count": null
+      },
+      "LARGE": {
+        "mean_time": 0.808,
+        "mean_path": 51.137,
+        "count": null
+      }
+    }
+  },
+  "AHA*": {
+    "by_size": {
+      "SMALL": {
+        "mean_time": 0.007,
+        "mean_path": 5.638,
+        "count": null
+      },
+      "MEDIUM": {
+        "mean_time": 0.02,
+        "mean_path": 25.154,
+        "count": null
+      },
+      "LARGE": {
+        "mean_time": 0.023,
+        "mean_path": 52.066,
+        "count": null
+      }
+    }
+  }
+}

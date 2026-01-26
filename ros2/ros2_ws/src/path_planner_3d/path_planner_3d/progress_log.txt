@@ -1,0 +1,16 @@
+
+Starting run aha_star_96_baseline_results.json at Fri Dec 26 09:56:05 2025 with params {'coarse_factor': 3, 'initial_epsilon': 2.0, 'epsilon_decay': 0.5, 'min_epsilon': 1.0, 'timeout': 180.0, 'per_scenario_timeout': 180}
+Finished run aha_star_96_baseline_results.json at Fri Dec 26 09:56:09 2025 (entries=96)
+
+Starting run aha_star_96_optimized_results.json at Fri Dec 26 09:56:10 2025 with params {'coarse_factor': 3, 'initial_epsilon': 2.0, 'epsilon_decay': 0.5, 'min_epsilon': 1.0, 'good_solution_threshold': 1.05, 'no_improvement_limit': 3, 'min_iterations': 2, 'timeout': 180.0, 'per_scenario_timeout': 180}
+Finished run aha_star_96_optimized_results.json at Fri Dec 26 09:56:13 2025 (entries=96)
+AHA* runs complete. Chosen=baseline saved to /home/hayashi/thesis_work/ros2/ros2_ws/src/path_planner_3d/path_planner_3d/benchmark_results/aha_star_96_selected_baseline.json
+[Fri Dec 26 09:58:10 2025] Starting analysis_and_report
+[Fri Dec 26 09:58:34 2025] Starting analysis_and_report
+[Fri Dec 26 09:58:36 2025] Wrote FINAL_REPORT.md
+[Fri Dec 26 09:58:36 2025] Wrote PAPER_DATA.md
+[Fri Dec 26 09:58:36 2025] analysis_and_report complete
+[Fri Dec 26 18:00:46 2025] Starting analysis_and_report
+[Fri Dec 26 18:00:48 2025] Wrote FINAL_REPORT.md
+[Fri Dec 26 18:00:48 2025] Wrote PAPER_DATA.md
+[Fri Dec 26 18:00:48 2025] analysis_and_report complete

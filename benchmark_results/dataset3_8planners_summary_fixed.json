@@ -1,0 +1,166 @@
+{
+  "summary": {
+    "TA*": {
+      "total": 90,
+      "success": 57,
+      "success_rate": 0.6333333333333333,
+      "avg_time_all_s": 31.24711423450046,
+      "avg_time_success_s": 12.649221575051023,
+      "avg_path_success_m": 61.578947368421055,
+      "median_path_m": 54.0,
+      "min_path_m": 1.0,
+      "max_path_m": 192.0
+    },
+    "Theta*": {
+      "total": 90,
+      "success": 90,
+      "success_rate": 1.0,
+      "avg_time_all_s": 14.135192118750679,
+      "avg_time_success_s": 14.135192118750679,
+      "avg_path_success_m": 2.0,
+      "median_path_m": 2.0,
+      "min_path_m": 2.0,
+      "max_path_m": 2.0
+    },
+    "RRT*": {
+      "total": 90,
+      "success": 90,
+      "success_rate": 1.0,
+      "avg_time_all_s": 4.483229329850938,
+      "avg_time_success_s": 4.483229329850938,
+      "avg_path_success_m": 191.5935479802031,
+      "median_path_m": 189.48277443449985,
+      "min_path_m": 54.65676087668827,
+      "max_path_m": 353.75354348673346
+    },
+    "D*Lite": {
+      "total": 90,
+      "success": 90,
+      "success_rate": 1.0,
+      "avg_time_all_s": 0.03692857954237196,
+      "avg_time_success_s": 0.03692857954237196,
+      "avg_path_success_m": 181.8841557072251,
+      "median_path_m": 177.94217151748086,
+      "min_path_m": 51.72792206135786,
+      "max_path_m": 334.87720036002537
+    },
+    "HPA*": {
+      "total": 90,
+      "success": 90,
+      "success_rate": 1.0,
+      "avg_time_all_s": 6.679982733726502,
+      "avg_time_success_s": 6.679982733726502,
+      "avg_path_success_m": 180.83053971507962,
+      "median_path_m": 174.63586848115227,
+      "min_path_m": 48.86322392060775,
+      "max_path_m": 339.54409807320155
+    },
+    "SAFETY": {
+      "total": 90,
+      "success": 90,
+      "success_rate": 1.0,
+      "avg_time_all_s": 5.4322118785646225,
+      "avg_time_success_s": 5.4322118785646225,
+      "avg_path_success_m": 181.88415570722512,
+      "median_path_m": 177.94217151748097,
+      "min_path_m": 51.72792206135783,
+      "max_path_m": 334.8772003600256
+    },
+    "FieldD*Hybrid": {
+      "total": 90,
+      "success": 90,
+      "success_rate": 1.0,
+      "avg_time_all_s": 1.2118304782443576,
+      "avg_time_success_s": 1.2118304782443576,
+      "avg_path_success_m": 173.52156579765492,
+      "median_path_m": 169.34612768881993,
+      "min_path_m": 48.83646178829912,
+      "max_path_m": 316.07752213657966
+    },
+    "MPAA*": {
+      "total": 90,
+      "success": 59,
+      "success_rate": 0.6555555555555556,
+      "avg_time_all_s": 17.73755187458462,
+      "avg_time_success_s": 10.517728946976742,
+      "avg_path_success_m": 145.88409630285102,
+      "median_path_m": 119.87005768508875,
+      "min_path_m": 51.72792206135783,
+      "max_path_m": 312.4558441227157
+    }
+  },
+  "details_sample": {
+    "TA*": {
+      "sample_success_paths": [
+        40.0,
+        48.0,
+        1.0,
+        66.0,
+        16.0
+      ]
+    },
+    "Theta*": {
+      "sample_success_paths": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "RRT*": {
+      "sample_success_paths": [
+        116.78546984841705,
+        123.76601983222902,
+        130.59321747587916,
+        125.6164472137698,
+        112.56218073646912
+      ]
+    },
+    "D*Lite": {
+      "sample_success_paths": [
+        124.98275605729685,
+        108.23759005323582,
+        117.99494936611654,
+        116.99494936611654,
+        120.63961030678922
+      ]
+    },
+    "HPA*": {
+      "sample_success_paths": [
+        119.46260893921152,
+        112.98377455700775,
+        108.0917829401395,
+        120.78551349472181,
+        113.94784379747337
+      ]
+    },
+    "SAFETY": {
+      "sample_success_paths": [
+        108.2375900532358,
+        124.98275605729678,
+        117.99494936611651,
+        111.40916292848962,
+        120.63961030678915
+      ]
+    },
+    "FieldD*Hybrid": {
+      "sample_success_paths": [
+        115.52056094046635,
+        106.83164325236227,
+        113.22985472038724,
+        112.44554237496477,
+        111.48542505637228
+      ]
+    },
+    "MPAA*": {
+      "sample_success_paths": [
+        108.2375900532358,
+        55.65685424949237,
+        53.740115370177584,
+        53.556349186104015,
+        119.48528137423855
+      ]
+    }
+  }
+}

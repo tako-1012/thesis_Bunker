@@ -1,0 +1,4202 @@
+[
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_1",
+    "success": false,
+    "computation_time": 2.384185791015625e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_5",
+    "success": false,
+    "computation_time": 6.9141387939453125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_3",
+    "success": false,
+    "computation_time": 4.744529724121094e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_2",
+    "success": false,
+    "computation_time": 4.100799560546875e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_4",
+    "success": false,
+    "computation_time": 1.1444091796875e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_7",
+    "success": false,
+    "computation_time": 1.4543533325195312e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_8",
+    "success": false,
+    "computation_time": 2.5510787963867188e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_9",
+    "success": false,
+    "computation_time": 1.1682510375976562e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_6",
+    "success": false,
+    "computation_time": 1.7642974853515625e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_12",
+    "success": false,
+    "computation_time": 1.2636184692382812e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_13",
+    "success": false,
+    "computation_time": 1.0967254638671875e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_10",
+    "success": false,
+    "computation_time": 3.3855438232421875e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_14",
+    "success": false,
+    "computation_time": 1.1205673217773438e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_11",
+    "success": false,
+    "computation_time": 1.621246337890625e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_18",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_19",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_15",
+    "success": false,
+    "computation_time": 1.4543533325195312e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_22",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_21",
+    "success": false,
+    "computation_time": 3.814697265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_20",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_16",
+    "success": false,
+    "computation_time": 1.5020370483398438e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_17",
+    "success": false,
+    "computation_time": 9.059906005859375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_25",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_24",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_26",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_27",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_23",
+    "success": false,
+    "computation_time": 5.9604644775390625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_29",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_1",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_30",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_2",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_1_28",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_4",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_3",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_7",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_8",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_5",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_11",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_6",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_10",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_9",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_12",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_14",
+    "success": false,
+    "computation_time": 7.152557373046875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_15",
+    "success": false,
+    "computation_time": 6.4373016357421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_17",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_13",
+    "success": false,
+    "computation_time": 5.9604644775390625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_18",
+    "success": false,
+    "computation_time": 4.76837158203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_20",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_16",
+    "success": false,
+    "computation_time": 7.152557373046875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_19",
+    "success": false,
+    "computation_time": 6.198883056640625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_22",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_21",
+    "success": false,
+    "computation_time": 6.198883056640625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_25",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_24",
+    "success": false,
+    "computation_time": 5.245208740234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_23",
+    "success": false,
+    "computation_time": 6.67572021484375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_26",
+    "success": false,
+    "computation_time": 4.5299530029296875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_28",
+    "success": false,
+    "computation_time": 4.291534423828125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_29",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_30",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_1",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_2",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_2_27",
+    "success": false,
+    "computation_time": 1.1205673217773438e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_3",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_5",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_7",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_6",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_4",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_8",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_9",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_10",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_12",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_11",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_14",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_13",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_15",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_17",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_16",
+    "success": false,
+    "computation_time": 1.0251998901367188e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_19",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_18",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_21",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_20",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_22",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_24",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_23",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_26",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_25",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_27",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_29",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_28",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_robot_3_30",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_1",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_2",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_4",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_5",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_3",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_6",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_8",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_7",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_10",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_11",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_9",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_13",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_12",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_14",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_16",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_15",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_17",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_19",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_18",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_20",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_21",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_22",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_23",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_24",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_25",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_27",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_26",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_28",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_30",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_1_29",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_2",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_4",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_1",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_5",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_3",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_7",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_6",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_10",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_8",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_9",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_11",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_12",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_14",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_15",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_13",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_17",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_16",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_19",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_18",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_20",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_21",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_22",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_23",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_25",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_26",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_27",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_24",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_28",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_30",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_1",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_2_29",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_2",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_5",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_4",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_3",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_9",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_6",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_7",
+    "success": false,
+    "computation_time": 4.76837158203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_10",
+    "success": false,
+    "computation_time": 6.198883056640625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_11",
+    "success": false,
+    "computation_time": 5.9604644775390625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_8",
+    "success": false,
+    "computation_time": 5.4836273193359375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_12",
+    "success": false,
+    "computation_time": 5.9604644775390625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_14",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_13",
+    "success": false,
+    "computation_time": 7.3909759521484375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_15",
+    "success": false,
+    "computation_time": 7.152557373046875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_16",
+    "success": false,
+    "computation_time": 1.0251998901367188e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_17",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_18",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_19",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_21",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_20",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_23",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_24",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_22",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_25",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_26",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_27",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_29",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_28",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "Theta*",
+    "scenario_id": "dataset3_robot_3_30",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_2",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_1",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_3",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_4",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_5",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_7",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_6",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_9",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_8",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_10",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_11",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_12",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_13",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_14",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_15",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_16",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_18",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_17",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_19",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_20",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_21",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_23",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_22",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_24",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_26",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_25",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_28",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_27",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_30",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_1_29",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_1",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_2",
+    "success": false,
+    "computation_time": 7.3909759521484375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_3",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_4",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_5",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_7",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_6",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_9",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_10",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_8",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_12",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_13",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_11",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_14",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_15",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_16",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_17",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_18",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_19",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_20",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_21",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_22",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_23",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_24",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_25",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_27",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_26",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_28",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_30",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_2_29",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_2",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_3",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_1",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_4",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_5",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_6",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_9",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_7",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_10",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_8",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_12",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_13",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_14",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_11",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_15",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_16",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_18",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_19",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_17",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_20",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_21",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_23",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_22",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_24",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_25",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_26",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_27",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_28",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_29",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "AHA*",
+    "scenario_id": "dataset3_robot_3_30",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_1",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_3",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_2",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_5",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_6",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_4",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_9",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_11",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_8",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_13",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_10",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_12",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_14",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_7",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_15",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_16",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_17",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_19",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_21",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_20",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_18",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_22",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_23",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_25",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_24",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_26",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_28",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_27",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_29",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_1_30",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_2",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_3",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_1",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_4",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_5",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_6",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_7",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_8",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_9",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_10",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_12",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_13",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_26",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_11",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_28",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_15",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_29",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_30",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_19",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_1",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_20",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_2",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_23",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_4",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_5",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_25",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_17",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_27",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_7",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_18",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_15",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_3",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_22",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_17",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_14",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_18",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_8",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_19",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_9",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_10",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_12",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_11",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_13",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_26",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_21",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_16",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_24",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_6",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_2_16",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_20",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_21",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_22",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_23",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_6",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_24",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_14",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_27",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_10",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_30",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_11",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_1",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_14",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_13",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_15",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_4",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_16",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_17",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_7",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_9",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_29",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_24",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_28",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_2",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_25",
+    "success": false,
+    "computation_time": 4.76837158203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_27",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_5",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "RRT*",
+    "scenario_id": "dataset3_robot_3_25",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_28",
+    "success": false,
+    "computation_time": 5.0067901611328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_19",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_20",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_4",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_22",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_23",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_12",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_26",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_8",
+    "success": false,
+    "computation_time": 4.291534423828125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_9",
+    "success": false,
+    "computation_time": 4.5299530029296875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_18",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_12",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_29",
+    "success": false,
+    "computation_time": 4.5299530029296875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_13",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_2",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_3",
+    "success": false,
+    "computation_time": 1.049041748046875e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_16",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_7",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_18",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_5",
+    "success": false,
+    "computation_time": 6.67572021484375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_21",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_3",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_8",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_23",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_11",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_22",
+    "success": false,
+    "computation_time": 4.291534423828125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_15",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_14",
+    "success": false,
+    "computation_time": 4.0531158447265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_26",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_6",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_27",
+    "success": false,
+    "computation_time": 5.0067901611328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_17",
+    "success": false,
+    "computation_time": 5.245208740234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_30",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_19",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_30",
+    "success": false,
+    "computation_time": 4.291534423828125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_2",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_1",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_4",
+    "success": false,
+    "computation_time": 5.245208740234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_1_21",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_20",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_6",
+    "success": false,
+    "computation_time": 5.245208740234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_28",
+    "success": false,
+    "computation_time": 5.0067901611328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_10",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_9",
+    "success": false,
+    "computation_time": 5.0067901611328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_3",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_24",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_5",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_25",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_8",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_1",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_7",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_10",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_2_29",
+    "success": false,
+    "computation_time": 5.0067901611328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_11",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_13",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_12",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_27",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_14",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_15",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_17",
+    "success": false,
+    "computation_time": 4.0531158447265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_18",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_19",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_3",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_20",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_21",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_23",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_24",
+    "success": false,
+    "computation_time": 4.0531158447265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_25",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_26",
+    "success": false,
+    "computation_time": 4.0531158447265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_28",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_10",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_16",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_1",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_30",
+    "success": false,
+    "computation_time": 5.245208740234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_2",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_22",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_4",
+    "success": false,
+    "computation_time": 4.5299530029296875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_6",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_18",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_5",
+    "success": false,
+    "computation_time": 4.291534423828125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_8",
+    "success": false,
+    "computation_time": 4.291534423828125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_11",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_9",
+    "success": false,
+    "computation_time": 4.5299530029296875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "D*Lite",
+    "scenario_id": "dataset3_robot_3_29",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_12",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_13",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_27",
+    "success": false,
+    "computation_time": 4.0531158447265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_15",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_16",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_19",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_29",
+    "success": false,
+    "computation_time": 4.0531158447265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_7",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_1",
+    "success": false,
+    "computation_time": 4.0531158447265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_20",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_22",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_23",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_6",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_7",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_26",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_8",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_28",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_10",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_17",
+    "success": false,
+    "computation_time": 5.0067901611328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_21",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_2",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_3",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_5",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_17",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_4",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_20",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_9",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_14",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_21",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_22",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_11",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_23",
+    "success": false,
+    "computation_time": 5.9604644775390625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_26",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_14",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_16",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_18",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_25",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_19",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_24",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_1_30",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_12",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_6",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_24",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_7",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_15",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_27",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_29",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_11",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_10",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_30",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_3",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_14",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_1",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_4",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_18",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_17",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_25",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_8",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_23",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_12",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_2",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_26",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_15",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_27",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_5",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_13",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_9",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_20",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_19",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_22",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_21",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_3",
+    "success": false,
+    "computation_time": 4.291534423828125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_25",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_7",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_24",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_16",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_28",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_30",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_13",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_14",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_1",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_5",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_4",
+    "success": false,
+    "computation_time": 3.814697265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_2_28",
+    "success": false,
+    "computation_time": 4.76837158203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_13",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_8",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_21",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_10",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_23",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_11",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_20",
+    "success": false,
+    "computation_time": 4.5299530029296875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_22",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_26",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_16",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_17",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_15",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_19",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_18",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_3",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_6",
+    "success": false,
+    "computation_time": 4.5299530029296875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_5",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_12",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_25",
+    "success": false,
+    "computation_time": 9.5367431640625e-07,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "HPA*",
+    "scenario_id": "dataset3_robot_3_29",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_2",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_28",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_9",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_10",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_29",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_11",
+    "success": false,
+    "computation_time": 2.6226043701171875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_13",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_14",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_9",
+    "success": false,
+    "computation_time": 2.0503997802734375e-05,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_19",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_8",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_6",
+    "success": false,
+    "computation_time": 3.814697265625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_20",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_7",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_22",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_27",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_23",
+    "success": false,
+    "computation_time": 2.86102294921875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_1",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_4",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_15",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_16",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_30",
+    "success": false,
+    "computation_time": 3.5762786865234375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_18",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_1_24",
+    "success": false,
+    "computation_time": 1.6689300537109375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_3_2",
+    "success": false,
+    "computation_time": 3.0994415283203125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_3_3",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_2",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_24",
+    "success": false,
+    "computation_time": 1.1920928955078125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_12",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_26",
+    "success": false,
+    "computation_time": 1.430511474609375e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_25",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_28",
+    "success": false,
+    "computation_time": 2.1457672119140625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_27",
+    "success": false,
+    "computation_time": 2.384185791015625e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_2_29",
+    "success": false,
+    "computation_time": 1.9073486328125e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  },
+  {
+    "planner": "SAFETY",
+    "scenario_id": "dataset3_robot_3_11",
+    "success": false,
+    "computation_time": 3.337860107421875e-06,
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'list'"
+  }
+]

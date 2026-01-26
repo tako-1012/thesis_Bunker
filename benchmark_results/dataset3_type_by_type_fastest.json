@@ -1,0 +1,143 @@
+{
+  "dataset3_1": {
+    "per_planner": {
+      "TA*": {
+        "success_count": 28,
+        "avg_time_success_s": 12.400233779634748,
+        "avg_path_success_m": 42.42857142857143
+      },
+      "RRT*": {
+        "success_count": 30,
+        "avg_time_success_s": 2.218854022026062,
+        "avg_path_success_m": 105.05631422168075
+      },
+      "D*Lite": {
+        "success_count": 30,
+        "avg_time_success_s": 0.017614531517028808,
+        "avg_path_success_m": 100.00498790787218
+      },
+      "HPA*": {
+        "success_count": 30,
+        "avg_time_success_s": 1.3135514736175538,
+        "avg_path_success_m": 98.07873967460735
+      },
+      "SAFETY": {
+        "success_count": 30,
+        "avg_time_success_s": 1.5710184494654338,
+        "avg_path_success_m": 100.00498790787212
+      },
+      "FieldD*Hybrid": {
+        "success_count": 30,
+        "avg_time_success_s": 0.5924293677012126,
+        "avg_path_success_m": 94.7648030245855
+      },
+      "MPAA*": {
+        "success_count": 30,
+        "avg_time_success_s": 7.189763029416402,
+        "avg_path_success_m": 100.00498790787212
+      }
+    },
+    "fastest_by_time": {
+      "planner": "D*Lite",
+      "avg_time_s": 0.017614531517028808
+    },
+    "best_by_path": {
+      "planner": "TA*",
+      "avg_path_m": 42.42857142857143
+    }
+  },
+  "dataset3_2": {
+    "per_planner": {
+      "TA*": {
+        "success_count": 18,
+        "avg_time_success_s": 14.439460290802849,
+        "avg_path_success_m": 62.27777777777778
+      },
+      "RRT*": {
+        "success_count": 30,
+        "avg_time_success_s": 3.4530996719996137,
+        "avg_path_success_m": 183.5840481054223
+      },
+      "D*Lite": {
+        "success_count": 30,
+        "avg_time_success_s": 0.03516655762990316,
+        "avg_path_success_m": 174.51383104791233
+      },
+      "HPA*": {
+        "success_count": 30,
+        "avg_time_success_s": 4.814641984303792,
+        "avg_path_success_m": 172.06978993980434
+      },
+      "SAFETY": {
+        "success_count": 30,
+        "avg_time_success_s": 3.9582730213801067,
+        "avg_path_success_m": 174.5138310479124
+      },
+      "FieldD*Hybrid": {
+        "success_count": 30,
+        "avg_time_success_s": 1.1937018076578776,
+        "avg_path_success_m": 166.06740918470402
+      },
+      "MPAA*": {
+        "success_count": 17,
+        "avg_time_success_s": 13.35090287993936,
+        "avg_path_success_m": 155.62575748254324
+      }
+    },
+    "fastest_by_time": {
+      "planner": "D*Lite",
+      "avg_time_s": 0.03516655762990316
+    },
+    "best_by_path": {
+      "planner": "TA*",
+      "avg_path_m": 62.27777777777778
+    }
+  },
+  "dataset3_3": {
+    "per_planner": {
+      "TA*": {
+        "success_count": 11,
+        "avg_time_success_s": 10.353527155789463,
+        "avg_path_success_m": 109.18181818181819
+      },
+      "RRT*": {
+        "success_count": 30,
+        "avg_time_success_s": 7.77773429552714,
+        "avg_path_success_m": 286.1402816135063
+      },
+      "D*Lite": {
+        "success_count": 30,
+        "avg_time_success_s": 0.05800464948018392,
+        "avg_path_success_m": 271.1336481658906
+      },
+      "HPA*": {
+        "success_count": 30,
+        "avg_time_success_s": 13.91175474325816,
+        "avg_path_success_m": 272.3430895308272
+      },
+      "SAFETY": {
+        "success_count": 30,
+        "avg_time_success_s": 10.767344164848328,
+        "avg_path_success_m": 271.1336481658906
+      },
+      "FieldD*Hybrid": {
+        "success_count": 30,
+        "avg_time_success_s": 1.8493602593739829,
+        "avg_path_success_m": 259.7324851836754
+      },
+      "MPAA*": {
+        "success_count": 12,
+        "avg_time_success_s": 14.823980669180552,
+        "avg_path_success_m": 246.7811806190676
+      }
+    },
+    "fastest_by_time": {
+      "planner": "D*Lite",
+      "avg_time_s": 0.05800464948018392
+    },
+    "best_by_path": {
+      "planner": "TA*",
+      "avg_path_m": 109.18181818181819
+    }
+  }
+}

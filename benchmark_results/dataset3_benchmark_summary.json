@@ -1,0 +1,52 @@
+{
+  "unknown": {
+    "TA*": {
+      "total_tasks": 90,
+      "success_count": 57,
+      "success_rate": 0.6333333333333333,
+      "avg_time_success_s": 13.435418614170008,
+      "avg_time_all_s": 31.715406285391914,
+      "avg_path_length_m": 61.578947368421055
+    },
+    "Theta*": {
+      "total_tasks": 90,
+      "success_count": 90,
+      "success_rate": 1.0,
+      "avg_time_success_s": 13.44069332016839,
+      "avg_time_all_s": 13.44069332016839,
+      "avg_path_length_m": 2.0
+    },
+    "RRT*": {
+      "total_tasks": 90,
+      "success_count": 90,
+      "success_rate": 1.0,
+      "avg_time_success_s": 4.428223861588372,
+      "avg_time_all_s": 4.428223861588372,
+      "avg_path_length_m": 191.06065067116958
+    },
+    "D*Lite": {
+      "total_tasks": 90,
+      "success_count": 90,
+      "success_rate": 1.0,
+      "avg_time_success_s": 0.029942594634162056,
+      "avg_time_all_s": 0.029942594634162056,
+      "avg_path_length_m": 181.8841557072251
+    },
+    "HPA*": {
+      "total_tasks": 90,
+      "success_count": 90,
+      "success_rate": 1.0,
+      "avg_time_success_s": 6.692556675275167,
+      "avg_time_all_s": 6.692556675275167,
+      "avg_path_length_m": 180.83053971507962
+    },
+    "SAFETY": {
+      "total_tasks": 90,
+      "success_count": 90,
+      "success_rate": 1.0,
+      "avg_time_success_s": 14.122637801700169,
+      "avg_time_all_s": 14.122637801700169,
+      "avg_path_length_m": 181.88415570722512
+    }
+  }
+}

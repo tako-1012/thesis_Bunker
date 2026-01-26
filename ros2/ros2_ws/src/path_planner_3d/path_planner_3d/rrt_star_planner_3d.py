@@ -105,11 +105,25 @@ class RRTStarPlanner3D:
         self.step_size = step_size
         self.rewire_radius = rewire_radius
         self.goal_threshold = goal_threshold
+        # Voxel grid / bounds (セットされるまでNone)
+        self.voxel_grid = None
+        # ワールド座標での最小境界 (デフォルトは原点)
+        if map_bounds is not None:
+            # map_bounds may be tuple((xmin,ymin,zmin),(xmax,ymax,zmax)) or dict
+            try:
+                self.min_bound = np.array(map_bounds[0])
+            except Exception:
+                self.min_bound = np.array((0.0, 0.0, 0.0))
+        else:
+            self.min_bound = np.array((0.0, 0.0, 0.0))
 
-    def plan_path(self, start, goal, terrain_data=None, timeout=None):
+    def plan_path(self, start, goal, terrain_data=None, voxel_grid=None, timeout=None):
         """
         失敗時にパラメータを段階的に緩和して最大3回リトライ
         """
+        # store voxel grid for collision checks
+        if voxel_grid is not None:
+            self.voxel_grid = voxel_grid
         param_sets = [
             dict(max_iterations=self.max_iterations, step_size=self.step_size, rewire_radius=self.rewire_radius, goal_threshold=self.goal_threshold),
             dict(max_iterations=int(self.max_iterations*2), step_size=self.step_size*1.5, rewire_radius=self.rewire_radius*1.5, goal_threshold=self.goal_threshold*2),
@@ -139,6 +153,12 @@ class RRTStarPlanner3D:
                 timeout = 1200
         logger.info(f"RRT* planning: {start} -> {goal}, timeout={timeout}s")
         try:
+            # if terrain_data includes min_bound, use it
+            if isinstance(terrain_data, dict) and 'min_bound' in terrain_data:
+                try:
+                    self.min_bound = np.array(terrain_data['min_bound'])
+                except Exception:
+                    pass
             # 位置の妥当性チェック
             if hasattr(self, '_is_valid_position') and not self._is_valid_position(start):
                 start = self._clamp_position(start)
@@ -247,6 +267,119 @@ class RRTStarPlanner3D:
         dy = node2.y - node1.y
         dz = node2.z - node1.z
         return math.sqrt(dx*dx + dy*dy + dz*dz)
+
+    # --- Voxel / collision helpers ---
+    def _world_to_voxel(self, pos: Tuple[float, float, float]) -> Tuple[int, int, int]:
+        wp = np.array(pos)
+        vp = (wp - self.min_bound) / self.voxel_size
+        return tuple(vp.astype(int))
+
+    def _clamp_voxel(self, idx):
+        x, y, z = idx
+        x = min(max(int(x), 0), self.grid_size[0] - 1)
+        y = min(max(int(y), 0), self.grid_size[1] - 1)
+        z = min(max(int(z), 0), self.grid_size[2] - 1)
+        return (x, y, z)
+
+    def _is_free_voxel(self, idx):
+        if self.voxel_grid is None:
+            return True
+        cx, cy, cz = self._clamp_voxel(idx)
+        try:
+            return self.voxel_grid[cx, cy, cz] <= 0.5
+        except Exception:
+            return True
+
+    def _bresenham3d(self, a, b):
+        # copy of theta_star._bresenham3d
+        x1, y1, z1 = a
+        x2, y2, z2 = b
+        dx = abs(x2 - x1)
+        dy = abs(y2 - y1)
+        dz = abs(z2 - z1)
+        xs = 1 if x2 > x1 else -1
+        ys = 1 if y2 > y1 else -1
+        zs = 1 if z2 > z1 else -1
+
+        if dx >= dy and dx >= dz:
+            py = 2 * dy - dx
+            pz = 2 * dz - dx
+            y = y1
+            z = z1
+            for x in range(x1, x2 + xs, xs):
+                yield (x, y, z)
+                if py >= 0:
+                    y += ys
+                    py -= 2 * dx
+                if pz >= 0:
+                    z += zs
+                    pz -= 2 * dx
+                py += 2 * dy
+                pz += 2 * dz
+        elif dy >= dx and dy >= dz:
+            px = 2 * dx - dy
+            pz = 2 * dz - dy
+            x = x1
+            z = z1
+            for y in range(y1, y2 + ys, ys):
+                yield (x, y, z)
+                if px >= 0:
+                    x += xs
+                    px -= 2 * dy
+                if pz >= 0:
+                    z += zs
+                    pz -= 2 * dy
+                px += 2 * dx
+                pz += 2 * dz
+        else:
+            px = 2 * dx - dz
+            py = 2 * dy - dz
+            x = x1
+            y = y1
+            for z in range(z1, z2 + zs, zs):
+                yield (x, y, z)
+                if px >= 0:
+                    x += xs
+                    px -= 2 * dz
+                if py >= 0:
+                    y += ys
+                    py -= 2 * dz
+                px += 2 * dx
+                py += 2 * dy
+
+    def _is_in_bounds(self, voxel_idx):
+        x, y, z = voxel_idx
+        return (0 <= x < self.grid_size[0] and
+                0 <= y < self.grid_size[1] and
+                0 <= z < self.grid_size[2])
+
+    def _is_collision_free(self, node1, node2):
+        """node1,node2 are RRTNode or tuples in world coords. Check voxel occupancy along segment."""
+        try:
+            if isinstance(node1, RRTNode):
+                p1 = (node1.x, node1.y, node1.z)
+            else:
+                p1 = tuple(node1)
+            if isinstance(node2, RRTNode):
+                p2 = (node2.x, node2.y, node2.z)
+            else:
+                p2 = tuple(node2)
+
+            v1 = self._world_to_voxel(p1)
+            v2 = self._world_to_voxel(p2)
+
+            for v in self._bresenham3d(v1, v2):
+                if not self._is_in_bounds(v):
+                    # out-of-bounds treated as collision
+                    return False
+                if not self._is_free_voxel(v):
+                    return False
+
+            # optional: slope check could be added here in future
+            return True
+        except Exception:
+            # On error be conservative and assume collision
+            return False
     
     def _reconstruct_path(self, goal_node):
         """経路を再構築"""

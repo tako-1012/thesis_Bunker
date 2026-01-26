@@ -1,0 +1,40 @@
+{
+  "types": {
+    "D_LITE_KILLER": {
+      "count": 30,
+      "map_size": 150,
+      "obstacle_density_range": [
+        0.75,
+        0.9
+      ],
+      "notes": "maze structure with narrow passages"
+    },
+    "SAMPLING_FAVOR": {
+      "count": 30,
+      "map_size": 100,
+      "obstacle_density_range": [
+        0.4,
+        0.6
+      ],
+      "notes": "clustered/concave obstacles to favor sampling planners"
+    },
+    "THETA_FAVOR": {
+      "count": 30,
+      "map_size": 120,
+      "obstacle_density_range": [
+        0.1,
+        0.3
+      ],
+      "notes": "large open areas, long start-goal distances"
+    },
+    "SLOPE_FOCUS": {
+      "count": 30,
+      "map_size": 120,
+      "slope_deg_range": [
+        30,
+        60
+      ],
+      "notes": "steep slopes where TA* should be advantageous"
+    }
+  }
+}

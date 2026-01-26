@@ -1,0 +1,4204 @@
+{
+  "per_scenario": [
+    {
+      "scenario_id": "D3_Type1_000",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6400187633809176,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9129333333333334,
+          "obstacle_clustering": 0.23064690845229394
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27388,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9129333333333334,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22823333333333334,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9129333333333334,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_001",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6500720143575689,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9312444444444444,
+          "obstacle_clustering": 0.2283133692272558
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2793733333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9312444444444444,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2328111111111111,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9312444444444444,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_002",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6414643497057552,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9110666666666667,
+          "obstacle_clustering": 0.23706087426438782
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27332,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9110666666666667,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22776666666666667,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9110666666666667,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_003",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6488261521576466,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9236,
+          "obstacle_clustering": 0.2366653803941166
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27708,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9236,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2309,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9236,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_004",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6463660611811363,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9272444444444444,
+          "obstacle_clustering": 0.22504848628617394
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27817333333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9272444444444444,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2318111111111111,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9272444444444444,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_005",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.646801127074639,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9199555555555555,
+          "obstacle_clustering": 0.23706948435326433
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27598666666666666,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9199555555555555,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22998888888888888,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9199555555555555,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_006",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6449679731907296,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9167555555555555,
+          "obstacle_clustering": 0.237286599643491
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27502666666666664,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9167555555555555,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2291888888888889,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9167555555555555,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_007",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6358056564209145,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9041777777777777,
+          "obstacle_clustering": 0.23324747438561955
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2712533333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9041777777777777,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22604444444444444,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9041777777777777,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_008",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6392461727067489,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9088888888888889,
+          "obstacle_clustering": 0.23478209843353898
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27266666666666667,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9088888888888889,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22722222222222221,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9088888888888889,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_009",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6446966300277645,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9144,
+          "obstacle_clustering": 0.24014157506941103
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27432,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9144,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2286,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9144,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_010",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6483840602677652,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9209333333333334,
+          "obstacle_clustering": 0.23956015066941272
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27628,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9209333333333334,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.23023333333333335,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9209333333333334,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_011",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6469748410666177,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9169333333333334,
+          "obstacle_clustering": 0.24203710266654446
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27508,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9169333333333334,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22923333333333334,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9169333333333334,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_012",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6387326169083699,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9148888888888889,
+          "obstacle_clustering": 0.22449820893759168
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27446666666666664,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9148888888888889,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22872222222222222,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9148888888888889,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_013",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6448615026167834,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9141777777777778,
+          "obstacle_clustering": 0.24088708987529223
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2742533333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9141777777777778,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22854444444444444,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9141777777777778,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_014",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6401135358191843,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9113333333333333,
+          "obstacle_clustering": 0.23328383954796075
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2734,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9113333333333333,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22783333333333333,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9113333333333333,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_015",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6410899985504503,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9094222222222222,
+          "obstacle_clustering": 0.2385916630427924
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27282666666666666,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9094222222222222,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22735555555555556,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9094222222222222,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_016",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6379368392990825,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9077777777777778,
+          "obstacle_clustering": 0.2331754315810397
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2723333333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9077777777777778,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22694444444444445,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9077777777777778,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_017",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6366991873975547,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9059111111111111,
+          "obstacle_clustering": 0.23288130182722006
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2717733333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9059111111111111,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22647777777777778,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9059111111111111,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_018",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6419606968439949,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9088444444444445,
+          "obstacle_clustering": 0.24163507544332075
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2726533333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9088444444444445,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2272111111111111,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9088444444444445,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_019",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6503775227853994,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9223111111111111,
+          "obstacle_clustering": 0.2424771402968319
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2766933333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9223111111111111,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.23057777777777777,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9223111111111111,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_020",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6462318451302423,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9120888888888888,
+          "obstacle_clustering": 0.24744627949227266
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27362666666666663,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9120888888888888,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2280222222222222,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9120888888888888,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_021",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.647322312041059,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9171111111111111,
+          "obstacle_clustering": 0.24263911343598055
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27513333333333334,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9171111111111111,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22927777777777777,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9171111111111111,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_022",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.640690579359491,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9116888888888889,
+          "obstacle_clustering": 0.23419311506539411
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2735066666666667,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9116888888888889,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22792222222222222,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9116888888888889,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_023",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6373617278153574,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9065333333333333,
+          "obstacle_clustering": 0.23360431953839358
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27196,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9065333333333333,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22663333333333333,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9065333333333333,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_024",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6450626023126524,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.91,
+          "obstacle_clustering": 0.24765650578163112
+        },
+        "Method3_Balanced": {
+          "complexity": 0.273,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.91,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2275,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.91,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_025",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6418202010168438,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9191555555555555,
+          "obstacle_clustering": 0.22581716920877615
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27574666666666664,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9191555555555555,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22978888888888888,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9191555555555555,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_026",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6504201790410746,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9138666666666667,
+          "obstacle_clustering": 0.2552504476026864
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27416,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9138666666666667,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22846666666666668,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9138666666666667,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_027",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6415300121670178,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9138666666666667,
+          "obstacle_clustering": 0.23302503041754424
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27416,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9138666666666667,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22846666666666668,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9138666666666667,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_028",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.645981388760601,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9295555555555556,
+          "obstacle_clustering": 0.22062013856816912
+        },
+        "Method3_Balanced": {
+          "complexity": 0.27886666666666665,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9295555555555556,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.2323888888888889,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9295555555555556,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type1_029",
+      "env": "D_LITE_KILLER",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.6369970595807287,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.9131111111111111,
+          "obstacle_clustering": 0.22282598228515527
+        },
+        "Method3_Balanced": {
+          "complexity": 0.2739333333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.9131111111111111,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.22827777777777777,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.9131111111111111,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_000",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4015481304774112,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3636,
+          "obstacle_clustering": 0.4584703261935281
+        },
+        "Method3_Balanced": {
+          "complexity": 0.10908,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3636,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0909,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3636,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_001",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.39641242510058555,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3572,
+          "obstacle_clustering": 0.45523106275146386
+        },
+        "Method3_Balanced": {
+          "complexity": 0.10716,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3572,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0893,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3572,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_002",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.5231850383570456,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.5594,
+          "obstacle_clustering": 0.46886259589261386
+        },
+        "Method3_Balanced": {
+          "complexity": 0.16782,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.5594,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.13985,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.5594,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_003",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.3941246325637858,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3509,
+          "obstacle_clustering": 0.4589615814094646
+        },
+        "Method3_Balanced": {
+          "complexity": 0.10526999999999999,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3509,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.087725,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3509,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_004",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4281030047559423,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4041,
+          "obstacle_clustering": 0.4641075118898558
+        },
+        "Method3_Balanced": {
+          "complexity": 0.12123,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4041,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.101025,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4041,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_005",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.3636603151671899,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3097,
+          "obstacle_clustering": 0.44460078791797475
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09290999999999999,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3097,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.077425,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3097,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_006",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4891169314350824,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.5197,
+          "obstacle_clustering": 0.4432423285877059
+        },
+        "Method3_Balanced": {
+          "complexity": 0.15591000000000002,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.5197,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.129925,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.5197,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_007",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.39696062732929993,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3593,
+          "obstacle_clustering": 0.4534515683232498
+        },
+        "Method3_Balanced": {
+          "complexity": 0.10779,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3593,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.089825,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3593,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_008",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.45235232410351783,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4543,
+          "obstacle_clustering": 0.44943081025879456
+        },
+        "Method3_Balanced": {
+          "complexity": 0.13629,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4543,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.113575,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4543,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_009",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4265973395451559,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4031,
+          "obstacle_clustering": 0.4618433488628898
+        },
+        "Method3_Balanced": {
+          "complexity": 0.12093,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4031,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.100775,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4031,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_010",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4616062063454072,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4598,
+          "obstacle_clustering": 0.4643155158635181
+        },
+        "Method3_Balanced": {
+          "complexity": 0.13793999999999998,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4598,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.11495,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4598,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_011",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.42249527404994547,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3967,
+          "obstacle_clustering": 0.4611881851248636
+        },
+        "Method3_Balanced": {
+          "complexity": 0.11900999999999999,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3967,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.099175,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3967,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_012",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4759339559414729,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.5006,
+          "obstacle_clustering": 0.4389348898536823
+        },
+        "Method3_Balanced": {
+          "complexity": 0.15018,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.5006,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.12515,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.5006,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_013",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.3714249761449919,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3224,
+          "obstacle_clustering": 0.4449624403624798
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09672,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3224,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0806,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3224,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_014",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4037586202116868,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4036,
+          "obstacle_clustering": 0.403996550529217
+        },
+        "Method3_Balanced": {
+          "complexity": 0.12108,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4036,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.1009,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4036,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_015",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.47894059484815926,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.482,
+          "obstacle_clustering": 0.4743514871203982
+        },
+        "Method3_Balanced": {
+          "complexity": 0.14459999999999998,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.482,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.1205,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.482,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_016",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4544030169749096,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4409,
+          "obstacle_clustering": 0.47465754243727404
+        },
+        "Method3_Balanced": {
+          "complexity": 0.13227,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4409,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.110225,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4409,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_017",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.47235026283129533,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4913,
+          "obstacle_clustering": 0.44392565707823833
+        },
+        "Method3_Balanced": {
+          "complexity": 0.14739,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4913,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.122825,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4913,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_018",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4091477540902666,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3768,
+          "obstacle_clustering": 0.45766938522566647
+        },
+        "Method3_Balanced": {
+          "complexity": 0.11304,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3768,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0942,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3768,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_019",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4159266569193882,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3791,
+          "obstacle_clustering": 0.47116664229847044
+        },
+        "Method3_Balanced": {
+          "complexity": 0.11373,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3791,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.094775,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3791,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_020",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.36103676850642985,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3074,
+          "obstacle_clustering": 0.44149192126607467
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09222,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3074,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.07685,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3074,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_021",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.29122023511399553,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.2217,
+          "obstacle_clustering": 0.39550058778498876
+        },
+        "Method3_Balanced": {
+          "complexity": 0.06651,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.2217,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.055425,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.2217,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_022",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.4718984145619943,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4709,
+          "obstacle_clustering": 0.4733960364049858
+        },
+        "Method3_Balanced": {
+          "complexity": 0.14126999999999998,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4709,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.117725,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4709,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_023",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.3397654137654169,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.2848,
+          "obstacle_clustering": 0.42221353441354215
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08544,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.2848,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0712,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.2848,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_024",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.3832518426015339,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3396,
+          "obstacle_clustering": 0.44872960650383475
+        },
+        "Method3_Balanced": {
+          "complexity": 0.10188,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3396,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0849,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3396,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_025",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.37543601050804587,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.3256,
+          "obstacle_clustering": 0.4501900262701146
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09768,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.3256,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0814,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.3256,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_026",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.32331677813002024,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.2585,
+          "obstacle_clustering": 0.4205419453250505
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07755,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.2585,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.064625,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.2585,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_027",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.3790786286764005,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.334,
+          "obstacle_clustering": 0.4466965716910013
+        },
+        "Method3_Balanced": {
+          "complexity": 0.1002,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.334,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0835,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.334,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_028",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.43701174302766266,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4527,
+          "obstacle_clustering": 0.4134793575691566
+        },
+        "Method3_Balanced": {
+          "complexity": 0.13581,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4527,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.113175,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4527,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type2_029",
+      "env": "SAMPLING_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.45840386441530523,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.4451,
+          "obstacle_clustering": 0.4783596610382631
+        },
+        "Method3_Balanced": {
+          "complexity": 0.13352999999999998,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.4451,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.111275,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.4451,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_000",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.11854833854112179,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.11263888888888889,
+          "obstacle_clustering": 0.12741251301947112
+        },
+        "Method3_Balanced": {
+          "complexity": 0.033791666666666664,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.11263888888888889,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.02815972222222222,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.11263888888888889,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_001",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.17395828567920396,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.18048611111111112,
+          "obstacle_clustering": 0.16416654753134322
+        },
+        "Method3_Balanced": {
+          "complexity": 0.05414583333333334,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.18048611111111112,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.04512152777777778,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.18048611111111112,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_002",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1697927313189281,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1738888888888889,
+          "obstacle_clustering": 0.16364849496398692
+        },
+        "Method3_Balanced": {
+          "complexity": 0.05216666666666667,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.1738888888888889,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.043472222222222225,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.1738888888888889,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_003",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.19064629827922203,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.2038888888888889,
+          "obstacle_clustering": 0.17078241236472172
+        },
+        "Method3_Balanced": {
+          "complexity": 0.06116666666666667,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.2038888888888889,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.050972222222222224,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.2038888888888889,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_004",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13399343031633582,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.12868055555555555,
+          "obstacle_clustering": 0.14196274245750623
+        },
+        "Method3_Balanced": {
+          "complexity": 0.03860416666666666,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.12868055555555555,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.03217013888888889,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.12868055555555555,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_005",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.17493784687811081,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.18097222222222223,
+          "obstacle_clustering": 0.16588628386194373
+        },
+        "Method3_Balanced": {
+          "complexity": 0.05429166666666667,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.18097222222222223,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.04524305555555556,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.18097222222222223,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_006",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.11068664252683938,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.10236111111111111,
+          "obstacle_clustering": 0.1231749396504318
+        },
+        "Method3_Balanced": {
+          "complexity": 0.03070833333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.10236111111111111,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.025590277777777778,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.10236111111111111,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_007",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.09395115487895334,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.08451388888888889,
+          "obstacle_clustering": 0.10810705386405
+        },
+        "Method3_Balanced": {
+          "complexity": 0.025354166666666667,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.08451388888888889,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.021128472222222222,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.08451388888888889,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_008",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.19428994575757064,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.20208333333333334,
+          "obstacle_clustering": 0.1825998643939266
+        },
+        "Method3_Balanced": {
+          "complexity": 0.060625,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.20208333333333334,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.050520833333333334,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.20208333333333334,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_009",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1316069938386983,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1309722222222222,
+          "obstacle_clustering": 0.13255915126341244
+        },
+        "Method3_Balanced": {
+          "complexity": 0.03929166666666666,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.1309722222222222,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.03274305555555555,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.1309722222222222,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_010",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1670288885965762,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.17465277777777777,
+          "obstacle_clustering": 0.1555930548247738
+        },
+        "Method3_Balanced": {
+          "complexity": 0.05239583333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.17465277777777777,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.04366319444444444,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.17465277777777777,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_011",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1460488790431038,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.14756944444444445,
+          "obstacle_clustering": 0.14376803094109278
+        },
+        "Method3_Balanced": {
+          "complexity": 0.044270833333333336,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.14756944444444445,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.03689236111111111,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.14756944444444445,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_012",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1704882158478425,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1679861111111111,
+          "obstacle_clustering": 0.17424137295293954
+        },
+        "Method3_Balanced": {
+          "complexity": 0.050395833333333334,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.1679861111111111,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.04199652777777778,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.1679861111111111,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_013",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.16542181168350165,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.17104166666666668,
+          "obstacle_clustering": 0.1569920292087541
+        },
+        "Method3_Balanced": {
+          "complexity": 0.051312500000000004,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.17104166666666668,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.04276041666666667,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.17104166666666668,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_014",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.11190079400272399,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.10881944444444444,
+          "obstacle_clustering": 0.1165228183401433
+        },
+        "Method3_Balanced": {
+          "complexity": 0.03264583333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.10881944444444444,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.02720486111111111,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.10881944444444444,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_015",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.11850645412752642,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.10847222222222222,
+          "obstacle_clustering": 0.13355780198548273
+        },
+        "Method3_Balanced": {
+          "complexity": 0.03254166666666666,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.10847222222222222,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.027118055555555555,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.10847222222222222,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_016",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.14550661276756288,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.14631944444444445,
+          "obstacle_clustering": 0.14428736525224053
+        },
+        "Method3_Balanced": {
+          "complexity": 0.043895833333333335,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.14631944444444445,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.03657986111111111,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.14631944444444445,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_017",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.18309536027567355,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.19694444444444445,
+          "obstacle_clustering": 0.1623217340225172
+        },
+        "Method3_Balanced": {
+          "complexity": 0.059083333333333335,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.19694444444444445,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.04923611111111111,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.19694444444444445,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_018",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.11922435924967259,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.11770833333333333,
+          "obstacle_clustering": 0.12149839812418149
+        },
+        "Method3_Balanced": {
+          "complexity": 0.0353125,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.11770833333333333,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.029427083333333333,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.11770833333333333,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_019",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1003081705121528,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.09590277777777778,
+          "obstacle_clustering": 0.10691625961371534
+        },
+        "Method3_Balanced": {
+          "complexity": 0.028770833333333332,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.09590277777777778,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.023975694444444445,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.09590277777777778,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_020",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.17639593084549082,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.179375,
+          "obstacle_clustering": 0.17192732711372705
+        },
+        "Method3_Balanced": {
+          "complexity": 0.0538125,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.179375,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.04484375,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.179375,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_021",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.11998204580788369,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.10770833333333334,
+          "obstacle_clustering": 0.1383926145197092
+        },
+        "Method3_Balanced": {
+          "complexity": 0.0323125,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.10770833333333334,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.026927083333333334,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.10770833333333334,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_022",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.09698806180947031,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.08972222222222222,
+          "obstacle_clustering": 0.10788682119034246
+        },
+        "Method3_Balanced": {
+          "complexity": 0.026916666666666665,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.08972222222222222,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.022430555555555554,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.08972222222222222,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_023",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.16727177068606658,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1795138888888889,
+          "obstacle_clustering": 0.1489085933818331
+        },
+        "Method3_Balanced": {
+          "complexity": 0.05385416666666667,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.1795138888888889,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.04487847222222222,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.1795138888888889,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_024",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.22071747256057114,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.24986111111111112,
+          "obstacle_clustering": 0.17700201473476118
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07495833333333334,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.24986111111111112,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.06246527777777778,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.24986111111111112,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_025",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.16953127220169123,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.18083333333333335,
+          "obstacle_clustering": 0.15257818050422803
+        },
+        "Method3_Balanced": {
+          "complexity": 0.05425,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.18083333333333335,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.045208333333333336,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.18083333333333335,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_026",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1300874546962343,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.12597222222222224,
+          "obstacle_clustering": 0.13626030340725243
+        },
+        "Method3_Balanced": {
+          "complexity": 0.03779166666666667,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.12597222222222224,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.03149305555555556,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.12597222222222224,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_027",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.14631120424538713,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.14520833333333333,
+          "obstacle_clustering": 0.1479655106134678
+        },
+        "Method3_Balanced": {
+          "complexity": 0.0435625,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.14520833333333333,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.03630208333333333,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.14520833333333333,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_028",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.08453001696628046,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.07375,
+          "obstacle_clustering": 0.10070004241570113
+        },
+        "Method3_Balanced": {
+          "complexity": 0.022125,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.07375,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.0184375,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.07375,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type3_029",
+      "env": "THETA_FAVOR",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0,
+          "method": "Method1_Slope",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "height_range": 0.0
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1433215403433315,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1486111111111111,
+          "obstacle_clustering": 0.13538718419166212
+        },
+        "Method3_Balanced": {
+          "complexity": 0.04458333333333333,
+          "method": "Method3_Balanced",
+          "slope_mean": 0.0,
+          "slope_var": 0.0,
+          "obstacle_density": 0.1486111111111111,
+          "height_std": 0.0
+        },
+        "Method4_Statistical": {
+          "complexity": 0.03715277777777778,
+          "method": "Method4_Statistical",
+          "slope_entropy": 0.0,
+          "height_entropy": 0.0,
+          "obstacle_density": 0.1486111111111111,
+          "surface_roughness": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_000",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.04197266380686725,
+          "method": "Method1_Slope",
+          "slope_mean": 1.5030074526572144,
+          "slope_var": 0.6375049197741434,
+          "height_range": 0.9999999994400528
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.14761779165766245,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1622222222222222,
+          "obstacle_clustering": 0.12571114581082282
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08151543283403734,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.5030074526572144,
+          "slope_var": 0.6375049197741434,
+          "obstacle_density": 0.1622222222222222,
+          "height_std": 0.24815522701875353
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5092901683457323,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.180378183838949,
+          "height_entropy": 4.189198996964079,
+          "obstacle_density": 0.1622222222222222,
+          "surface_roughness": 0.7984390520096968
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_001",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0645659067900528,
+          "method": "Method1_Slope",
+          "slope_mean": 2.4657022595071347,
+          "slope_var": 1.7506205364702185,
+          "height_range": 0.999999999049944
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.16209368825470458,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1827777777777778,
+          "obstacle_clustering": 0.13106755397009476
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09764151760725723,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.4657022595071347,
+          "slope_var": 1.7506205364702185,
+          "obstacle_density": 0.1827777777777778,
+          "height_std": 0.21974880908868166
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5182557419678727,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.0317366901811136,
+          "height_entropy": 4.0651577385353646,
+          "obstacle_density": 0.1827777777777778,
+          "surface_roughness": 1.3231101754843466
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_002",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.05308050379692322,
+          "method": "Method1_Slope",
+          "slope_mean": 1.9842074383293624,
+          "slope_var": 1.1321183459728288,
+          "height_range": 0.9999999992417494
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.10916223510102549,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.11159722222222222,
+          "obstacle_clustering": 0.10550975441923041
+        },
+        "Method3_Balanced": {
+          "complexity": 0.070363695052654,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.9842074383293624,
+          "slope_var": 1.1321183459728288,
+          "obstacle_density": 0.11159722222222222,
+          "height_std": 0.2216732596612208
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5001853237961338,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.1309720914991455,
+          "height_entropy": 4.058701498341668,
+          "obstacle_density": 0.11159722222222222,
+          "surface_roughness": 1.0640105008752634
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_003",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.06988028573480791,
+          "method": "Method1_Slope",
+          "slope_mean": 2.688594548591126,
+          "slope_var": 2.0361315911311144,
+          "height_range": 0.9999999989592048
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1156603029641784,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.11951388888888889,
+          "obstacle_clustering": 0.10987992407711265
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08049544345127477,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.688594548591126,
+          "slope_var": 2.0361315911311144,
+          "obstacle_density": 0.11951388888888889,
+          "height_std": 0.20524602174651935
+        },
+        "Method4_Statistical": {
+          "complexity": 0.518486420470991,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.2571058866778926,
+          "height_entropy": 3.9898489536490787,
+          "obstacle_density": 0.11951388888888889,
+          "surface_roughness": 1.4269308291333236
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_004",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.04611251743849664,
+          "method": "Method1_Slope",
+          "slope_mean": 1.6846884833169673,
+          "slope_var": 0.8062492595347586,
+          "height_range": 0.999999999355302
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.11474836003637176,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.11756944444444445,
+          "obstacle_clustering": 0.1105167334242627
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07043273365356273,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.6846884833169673,
+          "slope_var": 0.8062492595347586,
+          "obstacle_density": 0.11756944444444445,
+          "height_std": 0.25053775451985294
+        },
+        "Method4_Statistical": {
+          "complexity": 0.4958499811326834,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.104156385353892,
+          "height_entropy": 4.20893229427941,
+          "obstacle_density": 0.11756944444444445,
+          "surface_roughness": 0.8979138374781617
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_005",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.059083157595963436,
+          "method": "Method1_Slope",
+          "slope_mean": 2.2424537666882056,
+          "slope_var": 1.4113607569283961,
+          "height_range": 0.9999999991414142
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1517781820920353,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.16902777777777778,
+          "obstacle_clustering": 0.1259037885634216
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09115599959474796,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.2424537666882056,
+          "slope_var": 1.4113607569283961,
+          "obstacle_density": 0.16902777777777778,
+          "height_std": 0.22800610621013664
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5159136032452233,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.1033037197891185,
+          "height_entropy": 4.098264986038938,
+          "obstacle_density": 0.16902777777777778,
+          "surface_roughness": 1.1880070525583575
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_006",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.06661038042226505,
+          "method": "Method1_Slope",
+          "slope_mean": 2.547885764651159,
+          "slope_var": 1.8842217130253098,
+          "height_range": 0.9999999990165944
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1629960640996725,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.18618055555555554,
+          "obstacle_clustering": 0.12821932691584792
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09807228001621061,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.547885764651159,
+          "slope_var": 1.8842217130253098,
+          "obstacle_density": 0.18618055555555554,
+          "height_std": 0.19456218415472606
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5022944129456592,
+          "method": "Method4_Statistical",
+          "slope_entropy": 2.8310996496688565,
+          "height_entropy": 3.911820912394195,
+          "obstacle_density": 0.18618055555555554,
+          "surface_roughness": 1.372669557113186
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_007",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0413209522119555,
+          "method": "Method1_Slope",
+          "slope_mean": 1.4733999433328613,
+          "slope_var": 0.6176511169595036,
+          "height_range": 0.9999999994419767
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.15180289277533218,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.17055555555555554,
+          "obstacle_clustering": 0.12367389860499715
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08335842865517851,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.4733999433328613,
+          "slope_var": 0.6176511169595036,
+          "obstacle_density": 0.17055555555555554,
+          "height_std": 0.2433369048189634
+        },
+        "Method4_Statistical": {
+          "complexity": 0.504481047690711,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.0751114089044314,
+          "height_entropy": 4.162571433696314,
+          "obstacle_density": 0.17055555555555554,
+          "surface_roughness": 0.7859078298118066
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_008",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.05237770475927525,
+          "method": "Method1_Slope",
+          "slope_mean": 1.9507419435380042,
+          "slope_var": 1.1209552986724625,
+          "height_range": 0.9999999992497786
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13085033288655923,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.13958333333333334,
+          "obstacle_clustering": 0.11775083221639802
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07943273918395813,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.9507419435380042,
+          "slope_var": 1.1209552986724625,
+          "obstacle_density": 0.13958333333333334,
+          "height_std": 0.2371261372684973
+        },
+        "Method4_Statistical": {
+          "complexity": 0.4753778675961993,
+          "method": "Method4_Statistical",
+          "slope_entropy": 2.624211842435967,
+          "height_entropy": 4.145683943196727,
+          "obstacle_density": 0.13958333333333334,
+          "surface_roughness": 1.0587517644247222
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_009",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.05950095392400975,
+          "method": "Method1_Slope",
+          "slope_mean": 2.2562061686312767,
+          "slope_var": 1.4589435200277887,
+          "height_range": 0.9999999991300852
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.17080346882359135,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.19479166666666667,
+          "obstacle_clustering": 0.1348211720589784
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09850023104158397,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.2562061686312767,
+          "slope_var": 1.4589435200277887,
+          "obstacle_density": 0.19479166666666667,
+          "height_std": 0.21874173472823433
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5384024392681065,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.35212542413461,
+          "height_entropy": 4.050627053917441,
+          "obstacle_density": 0.19479166666666667,
+          "surface_roughness": 1.207867343721068
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_010",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.05223153395662844,
+          "method": "Method1_Slope",
+          "slope_mean": 1.9480877859355734,
+          "slope_var": 1.0899260817810759,
+          "height_range": 0.999999999257374
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.10971986747503516,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.11208333333333333,
+          "obstacle_clustering": 0.10617466868758793
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07060010884168212,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.9480877859355734,
+          "slope_var": 1.0899260817810759,
+          "obstacle_density": 0.11208333333333333,
+          "height_std": 0.22971568228146363
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5047220165570678,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.2096208316260135,
+          "height_entropy": 4.107535076301049,
+          "obstacle_density": 0.11208333333333333,
+          "surface_roughness": 1.043995249884345
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_011",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.07139939154014809,
+          "method": "Method1_Slope",
+          "slope_mean": 2.7389185989698595,
+          "slope_var": 2.2070065237555703,
+          "height_range": 0.9999999989484186
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13818891167693736,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.15055555555555555,
+          "obstacle_clustering": 0.11963894585901007
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08987807859756378,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.7389185989698595,
+          "slope_var": 2.2070065237555703,
+          "obstacle_density": 0.15055555555555555,
+          "height_std": 0.19362319340531053
+        },
+        "Method4_Statistical": {
+          "complexity": 0.496324456430646,
+          "method": "Method4_Statistical",
+          "slope_entropy": 2.830359642330514,
+          "height_entropy": 3.9143695509176357,
+          "obstacle_density": 0.15055555555555555,
+          "surface_roughness": 1.4855997185499095
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_012",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.039815772701391694,
+          "method": "Method1_Slope",
+          "slope_mean": 1.4057896075953946,
+          "slope_var": 0.5666601848860954,
+          "height_range": 0.9999999994825517
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.15407467960214677,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.17340277777777777,
+          "obstacle_clustering": 0.12508253233870026
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08388879448005025,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.4057896075953946,
+          "slope_var": 0.5666601848860954,
+          "obstacle_density": 0.17340277777777777,
+          "height_std": 0.25015117051486174
+        },
+        "Method4_Statistical": {
+          "complexity": 0.4781699520500102,
+          "method": "Method4_Statistical",
+          "slope_entropy": 2.656000782718752,
+          "height_entropy": 4.201035409539023,
+          "obstacle_density": 0.17340277777777777,
+          "surface_roughness": 0.7527683474257505
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_013",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.06228538998739679,
+          "method": "Method1_Slope",
+          "slope_mean": 2.369487168660859,
+          "slope_var": 1.6318822077572135,
+          "height_range": 0.9999999990907973
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13909795944858758,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.15180555555555555,
+          "obstacle_clustering": 0.12003656528813558
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08731715524326823,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.369487168660859,
+          "slope_var": 1.6318822077572135,
+          "obstacle_density": 0.15180555555555555,
+          "height_std": 0.2222527871171782
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5098500638094843,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.0393982186277437,
+          "height_entropy": 4.079736898522223,
+          "obstacle_density": 0.15180555555555555,
+          "surface_roughness": 1.2774514502544563
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_014",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.04647122581585129,
+          "method": "Method1_Slope",
+          "slope_mean": 1.6967713142884122,
+          "slope_var": 0.8452665121509514,
+          "height_range": 0.9999999993630196
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.12250867542532082,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.12840277777777778,
+          "obstacle_clustering": 0.11366752189663537
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07349301570472978,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.6967713142884122,
+          "slope_var": 0.8452665121509514,
+          "obstacle_density": 0.12840277777777778,
+          "height_std": 0.24470904306315638
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5093922039488767,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.268910645025569,
+          "height_entropy": 4.176849745813679,
+          "obstacle_density": 0.12840277777777778,
+          "surface_roughness": 0.9193837676133679
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_015",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.058799221614712384,
+          "method": "Method1_Slope",
+          "slope_mean": 2.2241519092286812,
+          "slope_var": 1.4387278128924608,
+          "height_range": 0.9999999991461375
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.16672543247744942,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1892361111111111,
+          "obstacle_clustering": 0.13295941452695692
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09730569810826617,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.2241519092286812,
+          "slope_var": 1.4387278128924608,
+          "obstacle_density": 0.1892361111111111,
+          "height_std": 0.2312383508529167
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5057464649956266,
+          "method": "Method4_Statistical",
+          "slope_entropy": 2.8552110735213083,
+          "height_entropy": 4.124725036118602,
+          "obstacle_density": 0.1892361111111111,
+          "surface_roughness": 1.1994698049106784
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_016",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.04388085091119725,
+          "method": "Method1_Slope",
+          "slope_mean": 1.5854963301760365,
+          "slope_var": 0.7236414378780746,
+          "height_range": 0.9999999994042297
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13646222474805045,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.14756944444444445,
+          "obstacle_clustering": 0.11980139520345942
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07741687853974247,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.5854963301760365,
+          "slope_var": 0.7236414378780746,
+          "obstacle_density": 0.14756944444444445,
+          "height_std": 0.23765698543338917
+        },
+        "Method4_Statistical": {
+          "complexity": 0.49629579395998186,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.0101864579560123,
+          "height_entropy": 4.135746819590265,
+          "obstacle_density": 0.14756944444444445,
+          "surface_roughness": 0.8506711690648006
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_017",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.050626564647388475,
+          "method": "Method1_Slope",
+          "slope_mean": 1.8794183065283212,
+          "slope_var": 1.0127328413176515,
+          "height_range": 0.9999999992869097
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13697537059669895,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.14798611111111112,
+          "obstacle_clustering": 0.12045925982508073
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08092829291339299,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.8794183065283212,
+          "slope_var": 1.0127328413176515,
+          "obstacle_density": 0.14798611111111112,
+          "height_std": 0.23569216248211677
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5090528031410444,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.150361892610331,
+          "height_entropy": 4.135347782682344,
+          "obstacle_density": 0.14798611111111112,
+          "surface_roughness": 1.006346283004837
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_018",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.07370822653221379,
+          "method": "Method1_Slope",
+          "slope_mean": 2.842850998927584,
+          "slope_var": 2.2837355215139503,
+          "height_range": 0.9999999989120257
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.14645359263379698,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.16111111111111112,
+          "obstacle_clustering": 0.1244673149178258
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09489132935093532,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.842850998927584,
+          "slope_var": 2.2837355215139503,
+          "obstacle_density": 0.16111111111111112,
+          "height_std": 0.20343022477947378
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5299326097535676,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.24827297742171,
+          "height_entropy": 3.9817229999528605,
+          "obstacle_density": 0.16111111111111112,
+          "surface_roughness": 1.5112033355951642
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_019",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.07759886422170983,
+          "method": "Method1_Slope",
+          "slope_mean": 2.997091462924595,
+          "slope_var": 2.5523449915432117,
+          "height_range": 0.9999999988588307
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1143023189662915,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.11861111111111111,
+          "obstacle_clustering": 0.10783913074906207
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08440654320619823,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.997091462924595,
+          "slope_var": 2.5523449915432117,
+          "obstacle_density": 0.11861111111111111,
+          "height_std": 0.20621407890798762
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5335148928787046,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.4227514340651313,
+          "height_entropy": 4.001095917079262,
+          "obstacle_density": 0.11861111111111111,
+          "surface_roughness": 1.597606018874244
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_020",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.04538450981805524,
+          "method": "Method1_Slope",
+          "slope_mean": 1.6517307988181795,
+          "slope_var": 0.7832979493156685,
+          "height_range": 0.9999999993744647
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1251339705252045,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.13277777777777777,
+          "obstacle_clustering": 0.11366825964634457
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07441210418687938,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.6517307988181795,
+          "slope_var": 0.7832979493156685,
+          "obstacle_density": 0.13277777777777777,
+          "height_std": 0.24742300450099358
+        },
+        "Method4_Statistical": {
+          "complexity": 0.49007459661501357,
+          "method": "Method4_Statistical",
+          "slope_entropy": 2.9560659493919026,
+          "height_entropy": 4.193981238587243,
+          "obstacle_density": 0.13277777777777777,
+          "surface_roughness": 0.8850412133430107
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_021",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.04128317085394741,
+          "method": "Method1_Slope",
+          "slope_mean": 1.4714869155133143,
+          "slope_var": 0.6178108497216344,
+          "height_range": 0.999999999451622
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13427011532075697,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.14472222222222222,
+          "obstacle_clustering": 0.11859195496855908
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07618392476773299,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.4714869155133143,
+          "slope_var": 0.6178108497216344,
+          "obstacle_density": 0.14472222222222222,
+          "height_std": 0.2522515086973485
+        },
+        "Method4_Statistical": {
+          "complexity": 0.4921491274727974,
+          "method": "Method4_Statistical",
+          "slope_entropy": 2.981093372143452,
+          "height_entropy": 4.209391323481847,
+          "obstacle_density": 0.14472222222222222,
+          "surface_roughness": 0.786009446331044
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_022",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.056721895004383384,
+          "method": "Method1_Slope",
+          "slope_mean": 2.139158787208902,
+          "slope_var": 1.3129064227981075,
+          "height_range": 0.9999999991811024
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.14384947011861896,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.15854166666666666,
+          "obstacle_clustering": 0.12181117529654739
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08662602098831855,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.139158787208902,
+          "slope_var": 1.3129064227981075,
+          "obstacle_density": 0.15854166666666666,
+          "height_std": 0.2256918040594998
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5101533396443163,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.069958252658112,
+          "height_entropy": 4.089828025146797,
+          "obstacle_density": 0.15854166666666666,
+          "surface_roughness": 1.145821287460705
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_023",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.07412555232796587,
+          "method": "Method1_Slope",
+          "slope_mean": 2.860266259852351,
+          "slope_var": 2.3067423807147853,
+          "height_range": 0.9999999988774496
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13179673134171563,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.14083333333333334,
+          "obstacle_clustering": 0.11824182835428905
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08902578947141854,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.860266259852351,
+          "slope_var": 2.3067423807147853,
+          "obstacle_density": 0.14083333333333334,
+          "height_std": 0.2033946316719819
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5210111018878175,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.186095185827866,
+          "height_entropy": 3.97923056736446,
+          "obstacle_density": 0.14083333333333334,
+          "surface_roughness": 1.5187963591985547
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_024",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.0762986661534318,
+          "method": "Method1_Slope",
+          "slope_mean": 2.939900097230567,
+          "slope_var": 2.500221406702346,
+          "height_range": 0.9999999988713428
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.14065151503460532,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.15361111111111111,
+          "obstacle_clustering": 0.12121212091984661
+        },
+        "Method3_Balanced": {
+          "complexity": 0.09412033433829031,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.939900097230567,
+          "slope_var": 2.500221406702346,
+          "obstacle_density": 0.15361111111111111,
+          "height_std": 0.20456335828869918
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5231452952476081,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.1314186498285452,
+          "height_entropy": 3.9919780922963626,
+          "obstacle_density": 0.15361111111111111,
+          "surface_roughness": 1.5812088434809444
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_025",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.039751075091358154,
+          "method": "Method1_Slope",
+          "slope_mean": 1.4033702657748335,
+          "slope_var": 0.5612232603699988,
+          "height_range": 0.9999999994751492
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.12120310074036153,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.12652777777777777,
+          "obstacle_clustering": 0.11321608518423716
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07016049198013495,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.4033702657748335,
+          "slope_var": 0.5612232603699988,
+          "obstacle_density": 0.12652777777777777,
+          "height_std": 0.2556901420246993
+        },
+        "Method4_Statistical": {
+          "complexity": 0.4963328560749899,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.135555243402403,
+          "height_entropy": 4.220879730048347,
+          "obstacle_density": 0.12652777777777777,
+          "surface_roughness": 0.7491483567158101
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_026",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.06605179585936448,
+          "method": "Method1_Slope",
+          "slope_mean": 2.526931944676189,
+          "slope_var": 1.8377189918763295,
+          "height_range": 0.9999999990211708
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13663140463566828,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.1490277777777778,
+          "obstacle_clustering": 0.11803684492250399
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08743109021818225,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.526931944676189,
+          "slope_var": 1.8377189918763295,
+          "obstacle_density": 0.1490277777777778,
+          "height_std": 0.20666999181501533
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5086854240600264,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.0164350001533538,
+          "height_entropy": 3.9841706956413585,
+          "obstacle_density": 0.1490277777777778,
+          "surface_roughness": 1.3556249451364966
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_027",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.056675921326627514,
+          "method": "Method1_Slope",
+          "slope_mean": 2.1363803839092816,
+          "slope_var": 1.3161045521772048,
+          "height_range": 0.9999999991910266
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.13807268122442842,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.15034722222222222,
+          "obstacle_clustering": 0.11966086972773775
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08404647381801034,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.1363803839092816,
+          "slope_var": 1.3161045521772048,
+          "obstacle_density": 0.15034722222222222,
+          "height_std": 0.22419441311844665
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5229642658882883,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.307152965058525,
+          "height_entropy": 4.0805985202161414,
+          "obstacle_density": 0.15034722222222222,
+          "surface_roughness": 1.1472160006629983
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_028",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.04959588792003346,
+          "method": "Method1_Slope",
+          "slope_mean": 1.8343784496433237,
+          "slope_var": 0.9694396447331926,
+          "height_range": 0.9999999992967408
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.1593670883372532,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.17888888888888888,
+          "obstacle_clustering": 0.13008438750979967
+        },
+        "Method3_Balanced": {
+          "complexity": 0.08964814127771788,
+          "method": "Method3_Balanced",
+          "slope_mean": 1.8343784496433237,
+          "slope_var": 0.9694396447331926,
+          "obstacle_density": 0.17888888888888888,
+          "height_std": 0.2354821623772739
+        },
+        "Method4_Statistical": {
+          "complexity": 0.5155674405496088,
+          "method": "Method4_Statistical",
+          "slope_entropy": 3.1396829885191933,
+          "height_entropy": 4.129395585697638,
+          "obstacle_density": 0.17888888888888888,
+          "surface_roughness": 0.9846012617974814
+        }
+      }
+    },
+    {
+      "scenario_id": "D3_Type4_029",
+      "env": "SLOPE_FOCUS",
+      "methods": {
+        "Method1_Slope": {
+          "complexity": 0.06062336678457144,
+          "method": "Method1_Slope",
+          "slope_mean": 2.2993493331532693,
+          "slope_var": 1.5454600434576844,
+          "height_range": 0.9999999991132995
+        },
+        "Method2_Obstacle": {
+          "complexity": 0.10763873720993716,
+          "method": "Method2_Obstacle",
+          "obstacle_density": 0.10909722222222222,
+          "obstacle_clustering": 0.10545100969150958
+        },
+        "Method3_Balanced": {
+          "complexity": 0.07355499470395688,
+          "method": "Method3_Balanced",
+          "slope_mean": 2.2993493331532693,
+          "slope_var": 1.5454600434576844,
+          "obstacle_density": 0.10909722222222222,
+          "height_std": 0.22112121928263234
+        },
+        "Method4_Statistical": {
+          "complexity": 0.4944726721721709,
+          "method": "Method4_Statistical",
+          "slope_entropy": 2.977907732941805,
+          "height_entropy": 4.069176848581059,
+          "obstacle_density": 0.10909722222222222,
+          "surface_roughness": 1.2431653323101013
+        }
+      }
+    }
+  ]
+}

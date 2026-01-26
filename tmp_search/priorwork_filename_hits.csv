@@ -1,0 +1,18 @@
+path,size_bytes,mtime,ctime,suffix_or_type
+documents/thesis/literature/README.md,1360,2025-10-06 14:22:24,2025-10-06 14:22:24,.md
+documents/thesis/literature/candidates.md,4276,2025-10-06 14:30:29,2025-10-06 14:30:29,.md
+documents/thesis/literature/notes/01_notes.md,14877,2025-10-08 16:25:01,2025-10-08 16:25:01,.md
+documents/thesis/literature/notes/02_notes.md,16337,2025-10-08 16:24:11,2025-10-08 16:24:11,.md
+documents/thesis/literature/notes/03_notes.md,17891,2025-10-08 16:25:05,2025-10-08 16:25:05,.md
+documents/thesis/literature/notes/summary.md,0,2025-10-08 16:31:49,2025-10-08 16:31:49,.md
+documents/thesis/literature/notes/template_notes.md,3899,2025-10-06 14:30:29,2025-10-06 14:30:29,.md
+documents/thesis/literature/papers.md,3325,2025-11-09 17:01:58,2025-11-09 17:01:58,.md
+documents/thesis/literature/search_keywords.md,4113,2025-10-06 14:30:29,2025-10-06 14:30:29,.md
+documents/thesis/literature/summary.md,4606,2025-10-06 14:30:29,2025-10-06 14:30:29,.md
+documents/thesis/paper/figures/README.md,5352,2025-10-08 15:17:07,2025-10-08 15:17:07,.md
+documents/thesis/paper/tables/README.md,5786,2025-10-08 15:17:07,2025-10-08 15:17:07,.md
+documents/thesis/paper/thesis_template.md,5922,2025-10-08 15:17:07,2025-10-08 15:17:07,.md
+ros2/ros2_ws/reports/paper_data/abstract_data.txt,448,2025-10-28 15:47:43,2025-10-28 15:47:43,.txt
+ros2/ros2_ws/reports/paper_data/results_table.txt,758,2025-10-28 15:47:43,2025-10-28 15:47:43,.txt
+ros2/ros2_ws/src/reports/paper_data/abstract_data.txt,448,2025-10-28 15:46:52,2025-10-28 15:46:52,.txt
+ros2/ros2_ws/src/reports/paper_data/results_table.txt,758,2025-10-28 15:46:52,2025-10-28 15:46:52,.txt

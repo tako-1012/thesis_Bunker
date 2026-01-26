@@ -1,0 +1,52 @@
+nohup: 入力を無視します
+[2025-12-29T16:20:23.834862Z] Monitor started (interval 1800s)
+[2025-12-29T16:20:26.012410Z] PID 125710 running=True | completed tasks=650 | expected=720
+[2025-12-29T16:20:26.012529Z] --- log tail ---
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* failed for all slope/iteration relaxations
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* failed for all slope/iteration relaxations
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* failed for all slope/iteration relaxations
+[2025-12-29T16:50:26.114818Z] PID 125710 running=False | completed tasks=720 | expected=720
+[2025-12-29T16:50:26.114886Z] --- log tail ---
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* timeout during search
+TA* failed for all slope/iteration relaxations
+Completed 50/720 tasks | Elapsed: 75.3s | ETA: 1008.9s
+Completed 100/720 tasks | Elapsed: 164.3s | ETA: 1018.4s
+Completed 150/720 tasks | Elapsed: 204.2s | ETA: 775.9s
+Completed 200/720 tasks | Elapsed: 239.8s | ETA: 623.5s
+Completed 250/720 tasks | Elapsed: 269.1s | ETA: 505.8s
+Completed 300/720 tasks | Elapsed: 272.1s | ETA: 380.9s
+Completed 350/720 tasks | Elapsed: 274.0s | ETA: 289.6s
+Completed 400/720 tasks | Elapsed: 286.7s | ETA: 229.4s
+Completed 450/720 tasks | Elapsed: 318.3s | ETA: 191.0s
+Completed 500/720 tasks | Elapsed: 328.5s | ETA: 144.5s
+Completed 550/720 tasks | Elapsed: 349.2s | ETA: 107.9s
+Completed 600/720 tasks | Elapsed: 353.3s | ETA: 70.7s
+Completed 650/720 tasks | Elapsed: 368.9s | ETA: 39.7s
+Completed 700/720 tasks | Elapsed: 443.4s | ETA: 12.7s
+Benchmark finished. Results saved to benchmark_results/dataset3_8planners_results.json
+[2025-12-29T16:50:26.114917Z] Completion detected (process stopped or expected tasks reached). Running postprocessing.
+[2025-12-29T16:50:26.114930Z] Postprocessing results...
+[2025-12-29T16:50:26.118795Z] Wrote summary to dataset3_8planners_summary_auto.json
+[2025-12-29T16:50:26.122799Z] Wrote FieldD*Hybrid vs D*Lite summary
+[2025-12-29T16:50:26.122831Z] Postprocessing complete
+[2025-12-29T16:50:26.122918Z] Monitor exiting

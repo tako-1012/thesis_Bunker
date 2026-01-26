@@ -1,0 +1,27 @@
+Scenario: SMALL_1
+Start: [1.7534187831011963, 8.804978813094047, 0.0]
+Goal: [7.089117615922824, 7.2885144422156305, 0.0]
+
+TA* path segments breakdown:
+seg0: from=(1.75, 8.75, 0.25) to=(7.25, 7.25, 0.25) -> total=7.0196 dist=5.7009 slope=1.0000 obstacle=0.3187 stability=0.0000
+TA* total segment cost (sum): 7.0196
+
+AHA* path segments breakdown:
+seg0: from=(2.0, 9.0, 0.0) to=(2.5, 9.0, 0.0) -> total=2.1740 dist=0.5000 slope=1.0000 obstacle=0.6740 stability=0.0000
+seg1: from=(2.5, 9.0, 0.0) to=(3.0, 9.0, 0.0) -> total=2.1406 dist=0.5000 slope=1.0000 obstacle=0.6406 stability=0.0000
+seg2: from=(3.0, 9.0, 0.0) to=(3.5, 9.0, 0.0) -> total=2.4980 dist=0.5000 slope=1.0000 obstacle=0.9980 stability=0.0000
+seg3: from=(3.5, 9.0, 0.0) to=(4.0, 9.0, 0.0) -> total=2.0835 dist=0.5000 slope=1.0000 obstacle=0.5835 stability=0.0000
+seg4: from=(4.0, 9.0, 0.0) to=(4.5, 9.0, 0.0) -> total=1.7488 dist=0.5000 slope=1.0000 obstacle=0.2488 stability=0.0000
+seg5: from=(4.5, 9.0, 0.0) to=(5.0, 8.5, 0.0) -> total=2.9252 dist=0.7071 slope=1.0000 obstacle=1.2181 stability=0.0000
+seg6: from=(5.0, 8.5, 0.0) to=(5.5, 8.0, 0.0) -> total=1.9291 dist=0.7071 slope=1.0000 obstacle=0.2220 stability=0.0000
+seg7: from=(5.5, 8.0, 0.0) to=(6.0, 7.5, 0.0) -> total=2.0646 dist=0.7071 slope=1.0000 obstacle=0.3575 stability=0.0000
+seg8: from=(6.0, 7.5, 0.0) to=(6.5, 7.5, 0.0) -> total=1.7130 dist=0.5000 slope=1.0000 obstacle=0.2130 stability=0.0000
+seg9: from=(6.5, 7.5, 0.0) to=(7.0, 7.5, 0.0) -> total=1.7104 dist=0.5000 slope=1.0000 obstacle=0.2104 stability=0.0000
+AHA* total segment cost (sum): 20.9872
+
+Analysis:
+TA* path_length reported: 12.00
+AHA* path_length reported: 5.62
+Compare dominant cost components per path:
+TA* sums: {'distance': 5.70087712549569, 'slope': 1.0, 'obstacle': 0.31872580533578326, 'stability': 0.0}
+AHA* sums: {'distance': 5.621320343559643, 'slope': 10.0, 'obstacle': 5.3658493307521455, 'stability': 0.0}

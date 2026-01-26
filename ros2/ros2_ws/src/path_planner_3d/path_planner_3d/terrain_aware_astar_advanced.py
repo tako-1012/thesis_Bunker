@@ -1,203 +1,11 @@
 """
-TA* (Terrain-Aware A*) - 地形適応型A*アルゴリズム
+Deprecated: terrain_aware_astar_advanced
 
-概要:
-    地形の局所的特性を分析し、最適なコスト関数を動的に選択する
-    適応型経路計画アルゴリズム。
-    
-    主要機能:
-    1. 地形複雑度マップの事前計算（前処理）
-    2. 8種類のコスト戦略を地形に応じて自動選択
-       - FLAT: 平地（距離最優先）
-       - GENTLE_SLOPE: 緩傾斜（バランス型）
-       - STEEP_SLOPE: 急傾斜（安全性最優先）
-       - OBSTACLE_DENSE: 障害物密集（クリアランス優先）
-       - NARROW_PATH: 狭路（精密探索）
-       - MIXED: 複合地形（動的重み調整）
-       - ROUGH: 粗い地形（安定性優先）
-       - UNKNOWN: 未知領域（保守的探索）
-    3. オンライン学習による重み最適化
-    4. 局所最適解回避のためのエスケープ戦略
-
-利点:
-    - 地形特性に最適化された経路生成
-    - 従来のA*より安全で効率的
-    - 実世界の多様な地形に対応
-    
-著者: 卒論研究用オリジナル実装
-日付: 2025年11月9日
+This module was replaced by `ta_star.py` and is intentionally disabled.
+Keeping a lightweight stub to avoid import errors elsewhere.
 """
 
-import heapq
-import numpy as np
-import time
-import logging
-from typing import List, Tuple, Optional, Set, Dict
-from enum import Enum
-from collections import defaultdict
-
-from node_3d import Node3D
-from cost_calculator import CostCalculator
-
-logger = logging.getLogger(__name__)
-
-
-class TerrainType(Enum):
-    """地形タイプ分類"""
-    FLAT = "flat"                    # 平地
-    GENTLE_SLOPE = "gentle_slope"    # 緩傾斜
-    STEEP_SLOPE = "steep_slope"      # 急傾斜
-    OBSTACLE_DENSE = "obstacle_dense" # 障害物密集
-    NARROW_PATH = "narrow_path"      # 狭路
-    MIXED = "mixed"                  # 複合地形
-    ROUGH = "rough"                  # 粗い地形
-    UNKNOWN = "unknown"              # 未知
-
-
-class CostStrategy:
-    """コスト戦略クラス"""
-    def __init__(
-        self,
-        distance_weight: float = 1.0,
-        slope_weight: float = 1.0,
-        obstacle_weight: float = 1.0,
-        roughness_weight: float = 1.0,
-        safety_weight: float = 1.0
-    ):
-        self.distance_weight = distance_weight
-        self.slope_weight = slope_weight
-        self.obstacle_weight = obstacle_weight
-        self.roughness_weight = roughness_weight
-        self.safety_weight = safety_weight
-    
-    def calculate_cost(
-        self,
-        base_distance: float,
-        slope_penalty: float,
-        obstacle_penalty: float,
-        roughness_penalty: float,
-        safety_penalty: float
-    ) -> float:
-        """総合コスト計算"""
-        return (
-            self.distance_weight * base_distance +
-            self.slope_weight * slope_penalty +
-            self.obstacle_weight * obstacle_penalty +
-            self.roughness_weight * roughness_penalty +
-            self.safety_weight * safety_penalty
-        )
-
-
-# 地形タイプ別のコスト戦略定義
-TERRAIN_STRATEGIES = {
-    TerrainType.FLAT: CostStrategy(
-        distance_weight=1.0,
-        slope_weight=0.1,
-        obstacle_weight=0.5,
-        roughness_weight=0.1,
-        safety_weight=0.2
-    ),
-    TerrainType.GENTLE_SLOPE: CostStrategy(
-        distance_weight=0.8,
-        slope_weight=0.6,
-        obstacle_weight=0.5,
-        roughness_weight=0.3,
-        safety_weight=0.5
-    ),
-    TerrainType.STEEP_SLOPE: CostStrategy(
-        distance_weight=0.3,
-        slope_weight=2.0,
-        obstacle_weight=0.7,
-        roughness_weight=0.5,
-        safety_weight=1.5
-    ),
-    TerrainType.OBSTACLE_DENSE: CostStrategy(
-        distance_weight=0.5,
-        slope_weight=0.4,
-        obstacle_weight=2.5,
-        roughness_weight=0.3,
-        safety_weight=1.0
-    ),
-    TerrainType.NARROW_PATH: CostStrategy(
-        distance_weight=0.6,
-        slope_weight=0.5,
-        obstacle_weight=1.8,
-        roughness_weight=0.4,
-        safety_weight=1.2
-    ),
-    TerrainType.MIXED: CostStrategy(
-        distance_weight=0.7,
-        slope_weight=0.8,
-        obstacle_weight=1.0,
-        roughness_weight=0.6,
-        safety_weight=0.8
-    ),
-    TerrainType.ROUGH: CostStrategy(
-        distance_weight=0.6,
-        slope_weight=0.7,
-        obstacle_weight=0.8,
-        roughness_weight=1.5,
-        safety_weight=1.0
-    ),
-    TerrainType.UNKNOWN: CostStrategy(
-        distance_weight=0.5,
-        slope_weight=1.0,
-        obstacle_weight=1.5,
-        roughness_weight=1.0,
-        safety_weight=1.5
-    ),
-}
-
-
-class TerrainAwareAStar:
-    """
-    TA* (Terrain-Aware A*) - 地形適応型A*
-    
-    地形の局所特性を分析し、最適なコスト関数を動的に選択
-    """
-    
-    def __init__(
-        self,
-        voxel_size: float = 0.1,
-        grid_size: Tuple[int, int, int] = (200, 200, 50),
-        min_bound: Tuple[float, float, float] = (-10.0, -10.0, 0.0),
-        use_cost_calculator: bool = True,
-        map_bounds: dict = None,
-        # TA*特有のパラメータ
-        terrain_analysis_radius: int = 5,      # 地形分析の半径（ボクセル単位）
-        strategy_update_interval: int = 50,    # 戦略更新の間隔（ノード数）
-        enable_online_learning: bool = True,   # オンライン学習の有効化
-        learning_rate: float = 0.1,            # 学習率
-        heuristic_weight: float = 1.0,         # Weighted A*用ヒューリスティック重み
-    ):
-        """
-        Args:
-            voxel_size: ボクセルサイズ（メートル）
-            grid_size: グリッドサイズ（x, y, z）
-            min_bound: グリッドの最小境界（ワールド座標）
-            use_cost_calculator: コスト計算器を使用するか
-            map_bounds: マップ境界（辞書）
-            terrain_analysis_radius: 地形分析の半径
-            strategy_update_interval: 戦略更新の間隔
-            enable_online_learning: オンライン学習の有効化
-            learning_rate: 学習率
-        """
-        self.voxel_size = voxel_size
-        self.grid_size = grid_size
-        self.min_bound = np.array(min_bound)
-        
-        # 地形データ
-        self.voxel_grid = None
-        self.terrain_data = None
-        
-        # コスト計算器
-        self.use_cost_calculator = use_cost_calculator
-        if use_cost_calculator:
-            self.cost_calculator = CostCalculator()
-        else:
-            self.cost_calculator = None
-        
-        # map_boundsのデフォルト設定
+raise ImportError("terrain_aware_astar_advanced is deprecated; use ta_star instead")
         if map_bounds is None:
             half_x = (grid_size[0] * voxel_size) / 2.0
             half_y = (grid_size[1] * voxel_size) / 2.0
@@ -435,7 +243,8 @@ class TerrainAwareAStar:
     def plan_path(
         self,
         start: Tuple[float, float, float],
-        goal: Tuple[float, float, float]
+        goal: Tuple[float, float, float],
+        timeout: Optional[float] = None
     ) -> Optional[List[Tuple[float, float, float]]]:
         """
         TA*経路計画のメイン関数
@@ -478,7 +287,7 @@ class TerrainAwareAStar:
             self._is_traversable = is_traversable_with_limit
 
             # ノード上限を大幅緩和
-            path_indices = self._terrain_aware_search(start_idx, goal_idx, max_iterations=100000)
+            path_indices = self._terrain_aware_search(start_idx, goal_idx, max_iterations=100000, start_time=start_time, timeout=timeout)
             self.last_search_stats['computation_time'] = time.time() - start_time
             if path_indices is not None:
                 logger.info(f"TA* success (max_slope={max_slope}): {self.last_search_stats['nodes_explored']} nodes, "
@@ -494,7 +303,7 @@ class TerrainAwareAStar:
 
         # すべて失敗した場合も最後に傾斜・ノード制約なしでリトライ
         self._is_traversable = lambda pos: not self._is_obstacle_at(pos)
-        path_indices = self._terrain_aware_search(start_idx, goal_idx, max_iterations=200000)
+        path_indices = self._terrain_aware_search(start_idx, goal_idx, max_iterations=200000, start_time=start_time, timeout=timeout)
         self.last_search_stats['computation_time'] = time.time() - start_time
         if path_indices is not None:
             logger.info(f"TA* fallback success (no slope/iteration limit): {self.last_search_stats['nodes_explored']} nodes")
@@ -510,7 +319,9 @@ class TerrainAwareAStar:
         self,
         start: Tuple[int, int, int],
         goal: Tuple[int, int, int],
-        max_iterations: int = 10000
+        max_iterations: int = 10000,
+        start_time: Optional[float] = None,
+        timeout: Optional[float] = None
     ) -> Optional[List[Tuple[int, int, int]]]:
         """
         地形適応型A*探索のコアアルゴリズム
@@ -539,7 +350,13 @@ class TerrainAwareAStar:
         # max_iterationsは引数で制御
         logger.info(f"Starting TA* search: max_iterations={max_iterations}")
 
+        import time as _time
         while open_list and nodes_explored < max_iterations:
+            # timeout check
+            if timeout is not None and start_time is not None and (_time.time() - start_time) > timeout:
+                logger.warning("TA* timeout during search")
+                self.last_search_stats['nodes_explored'] = nodes_explored
+                return None
             current = heapq.heappop(open_list)
             nodes_explored += 1
 

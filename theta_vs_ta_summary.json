@@ -1,0 +1,47 @@
+[
+  {
+    "scenario": "SMALL_EMPTY",
+    "ta_success": true,
+    "th_success": true,
+    "ta_time": 0.1739487648010254,
+    "th_time": 0.03209710121154785,
+    "ta_path_m": 11.030865786510136,
+    "th_path_m": 11.030865786510141
+  },
+  {
+    "scenario": "MEDIUM_EMPTY",
+    "ta_success": true,
+    "th_success": true,
+    "ta_time": 0.5343635082244873,
+    "th_time": 0.12295055389404297,
+    "ta_path_m": 22.34457428549492,
+    "th_path_m": 22.344574285494904
+  },
+  {
+    "scenario": "LARGE_EMPTY",
+    "ta_success": true,
+    "th_success": true,
+    "ta_time": 1.8625390529632568,
+    "th_time": 0.5763216018676758,
+    "ta_path_m": 50.62884553295689,
+    "th_path_m": 50.6288455329568
+  },
+  {
+    "scenario": "MEDIUM_WALL",
+    "ta_success": true,
+    "th_success": true,
+    "ta_time": 1.19840407371521,
+    "th_time": 0.1923673152923584,
+    "ta_path_m": 24.158787847867988,
+    "th_path_m": 24.041630560342615
+  },
+  {
+    "scenario": "LARGE_WALL",
+    "ta_success": true,
+    "th_success": true,
+    "ta_time": 4.298840284347534,
+    "th_time": 0.5822770595550537,
+    "ta_path_m": 52.443059095329936,
+    "th_path_m": 52.32590180780452
+  }
+]

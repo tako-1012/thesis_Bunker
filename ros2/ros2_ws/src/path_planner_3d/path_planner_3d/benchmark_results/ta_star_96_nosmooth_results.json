@@ -1,0 +1,758 @@
+[
+  {
+    "scenario_id": "SMALL_1",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.31197428703308105,
+    "path_length_meters": 5.535533905932738,
+    "nodes_explored": 40
+  },
+  {
+    "scenario_id": "SMALL_2",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.23862886428833008,
+    "path_length_meters": 3.5,
+    "nodes_explored": 8
+  },
+  {
+    "scenario_id": "SMALL_3",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.3973677158355713,
+    "path_length_meters": 7.121320343559643,
+    "nodes_explored": 73
+  },
+  {
+    "scenario_id": "SMALL_4",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.25621819496154785,
+    "path_length_meters": 3.32842712474619,
+    "nodes_explored": 9
+  },
+  {
+    "scenario_id": "SMALL_5",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.2769143581390381,
+    "path_length_meters": 5.707106781186548,
+    "nodes_explored": 16
+  },
+  {
+    "scenario_id": "SMALL_6",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.2624177932739258,
+    "path_length_meters": 6.0,
+    "nodes_explored": 13
+  },
+  {
+    "scenario_id": "SMALL_7",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.2765946388244629,
+    "path_length_meters": 5.707106781186548,
+    "nodes_explored": 16
+  },
+  {
+    "scenario_id": "SMALL_8",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.3068714141845703,
+    "path_length_meters": 5.328427124746191,
+    "nodes_explored": 42
+  },
+  {
+    "scenario_id": "SMALL_9",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.2294473648071289,
+    "path_length_meters": 3.5355339059327378,
+    "nodes_explored": 6
+  },
+  {
+    "scenario_id": "SMALL_10",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.23064756393432617,
+    "path_length_meters": 3.32842712474619,
+    "nodes_explored": 9
+  },
+  {
+    "scenario_id": "SMALL_11",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.2963063716888428,
+    "path_length_meters": 5.121320343559642,
+    "nodes_explored": 40
+  },
+  {
+    "scenario_id": "SMALL_12",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.25920844078063965,
+    "path_length_meters": 4.742640687119286,
+    "nodes_explored": 13
+  },
+  {
+    "scenario_id": "SMALL_13",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.26477503776550293,
+    "path_length_meters": 5.449747468305834,
+    "nodes_explored": 16
+  },
+  {
+    "scenario_id": "SMALL_14",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.22290778160095215,
+    "path_length_meters": 3.5355339059327378,
+    "nodes_explored": 6
+  },
+  {
+    "scenario_id": "SMALL_15",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.3103790283203125,
+    "path_length_meters": 5.742640687119286,
+    "nodes_explored": 41
+  },
+  {
+    "scenario_id": "SMALL_16",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.3072481155395508,
+    "path_length_meters": 5.32842712474619,
+    "nodes_explored": 44
+  },
+  {
+    "scenario_id": "SMALL_17",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.23515772819519043,
+    "path_length_meters": 5.0,
+    "nodes_explored": 11
+  },
+  {
+    "scenario_id": "SMALL_18",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.29459452629089355,
+    "path_length_meters": 7.207106781186548,
+    "nodes_explored": 28
+  },
+  {
+    "scenario_id": "SMALL_19",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.41559863090515137,
+    "path_length_meters": 8.36396103067893,
+    "nodes_explored": 90
+  },
+  {
+    "scenario_id": "SMALL_20",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.5031149387359619,
+    "path_length_meters": 8.035533905932738,
+    "nodes_explored": 165
+  },
+  {
+    "scenario_id": "SMALL_21",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.31032848358154297,
+    "path_length_meters": 5.035533905932738,
+    "nodes_explored": 31
+  },
+  {
+    "scenario_id": "SMALL_22",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.4130287170410156,
+    "path_length_meters": 7.535533905932738,
+    "nodes_explored": 98
+  },
+  {
+    "scenario_id": "SMALL_23",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.2329237461090088,
+    "path_length_meters": 3.5,
+    "nodes_explored": 8
+  },
+  {
+    "scenario_id": "SMALL_24",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.3324141502380371,
+    "path_length_meters": 5.914213562373096,
+    "nodes_explored": 39
+  },
+  {
+    "scenario_id": "SMALL_25",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.37189364433288574,
+    "path_length_meters": 6.914213562373096,
+    "nodes_explored": 54
+  },
+  {
+    "scenario_id": "SMALL_26",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.4795236587524414,
+    "path_length_meters": 7.242640687119286,
+    "nodes_explored": 95
+  },
+  {
+    "scenario_id": "SMALL_27",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.2644510269165039,
+    "path_length_meters": 3.82842712474619,
+    "nodes_explored": 12
+  },
+  {
+    "scenario_id": "SMALL_28",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.3701505661010742,
+    "path_length_meters": 6.32842712474619,
+    "nodes_explored": 65
+  },
+  {
+    "scenario_id": "SMALL_29",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.2734670639038086,
+    "path_length_meters": 6.0,
+    "nodes_explored": 13
+  },
+  {
+    "scenario_id": "SMALL_30",
+    "map_size": "SMALL",
+    "success": true,
+    "computation_time": 0.31429290771484375,
+    "path_length_meters": 4.621320343559642,
+    "nodes_explored": 31
+  },
+  {
+    "scenario_id": "MEDIUM_1",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.032707691192627,
+    "path_length_meters": 19.64213562373095,
+    "nodes_explored": 1185
+  },
+  {
+    "scenario_id": "MEDIUM_2",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.438332557678223,
+    "path_length_meters": 22.556349186104043,
+    "nodes_explored": 1622
+  },
+  {
+    "scenario_id": "MEDIUM_3",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 4.948460817337036,
+    "path_length_meters": 25.0,
+    "nodes_explored": 51
+  },
+  {
+    "scenario_id": "MEDIUM_4",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 6.894888401031494,
+    "path_length_meters": 18.692388155425117,
+    "nodes_explored": 1206
+  },
+  {
+    "scenario_id": "MEDIUM_5",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 5.136152267456055,
+    "path_length_meters": 30.707106781186546,
+    "nodes_explored": 120
+  },
+  {
+    "scenario_id": "MEDIUM_6",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 12.767301321029663,
+    "path_length_meters": 29.97056274847713,
+    "nodes_explored": 4255
+  },
+  {
+    "scenario_id": "MEDIUM_7",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 6.7691991329193115,
+    "path_length_meters": 25.213203435596423,
+    "nodes_explored": 1148
+  },
+  {
+    "scenario_id": "MEDIUM_8",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.014030694961548,
+    "path_length_meters": 19.52081528017131,
+    "nodes_explored": 1264
+  },
+  {
+    "scenario_id": "MEDIUM_9",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 14.212149143218994,
+    "path_length_meters": 33.520815280171284,
+    "nodes_explored": 5392
+  },
+  {
+    "scenario_id": "MEDIUM_10",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 13.331130743026733,
+    "path_length_meters": 31.006096654409866,
+    "nodes_explored": 4200
+  },
+  {
+    "scenario_id": "MEDIUM_11",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 15.033766984939575,
+    "path_length_meters": 34.455844122715696,
+    "nodes_explored": 4623
+  },
+  {
+    "scenario_id": "MEDIUM_12",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 8.108542919158936,
+    "path_length_meters": 24.470562748477136,
+    "nodes_explored": 2070
+  },
+  {
+    "scenario_id": "MEDIUM_13",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 9.259138584136963,
+    "path_length_meters": 30.363961030678915,
+    "nodes_explored": 2637
+  },
+  {
+    "scenario_id": "MEDIUM_14",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 6.550618886947632,
+    "path_length_meters": 19.227922061357855,
+    "nodes_explored": 1227
+  },
+  {
+    "scenario_id": "MEDIUM_15",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 6.256057500839233,
+    "path_length_meters": 17.22792206135786,
+    "nodes_explored": 886
+  },
+  {
+    "scenario_id": "MEDIUM_16",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.573724985122681,
+    "path_length_meters": 28.742640687119277,
+    "nodes_explored": 1567
+  },
+  {
+    "scenario_id": "MEDIUM_17",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 19.164459943771362,
+    "path_length_meters": 34.92031021678295,
+    "nodes_explored": 6226
+  },
+  {
+    "scenario_id": "MEDIUM_18",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 20.491689682006836,
+    "path_length_meters": 35.627416997969505,
+    "nodes_explored": 6526
+  },
+  {
+    "scenario_id": "MEDIUM_19",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 8.99154543876648,
+    "path_length_meters": 28.449747468305823,
+    "nodes_explored": 1824
+  },
+  {
+    "scenario_id": "MEDIUM_20",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 6.0938215255737305,
+    "path_length_meters": 23.207106781186546,
+    "nodes_explored": 52
+  },
+  {
+    "scenario_id": "MEDIUM_21",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 17.452041149139404,
+    "path_length_meters": 33.31370849898474,
+    "nodes_explored": 5181
+  },
+  {
+    "scenario_id": "MEDIUM_22",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 14.7855703830719,
+    "path_length_meters": 29.79898987322332,
+    "nodes_explored": 3766
+  },
+  {
+    "scenario_id": "MEDIUM_23",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 9.471941947937012,
+    "path_length_meters": 24.59188309203678,
+    "nodes_explored": 1678
+  },
+  {
+    "scenario_id": "MEDIUM_24",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 5.354049921035767,
+    "path_length_meters": 15.621320343559644,
+    "nodes_explored": 295
+  },
+  {
+    "scenario_id": "MEDIUM_25",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 5.513594388961792,
+    "path_length_meters": 21.914213562373092,
+    "nodes_explored": 264
+  },
+  {
+    "scenario_id": "MEDIUM_26",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 8.003849029541016,
+    "path_length_meters": 24.278174593052015,
+    "nodes_explored": 2050
+  },
+  {
+    "scenario_id": "MEDIUM_27",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 6.617631912231445,
+    "path_length_meters": 23.242640687119277,
+    "nodes_explored": 1117
+  },
+  {
+    "scenario_id": "MEDIUM_28",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 13.053532123565674,
+    "path_length_meters": 29.97056274847713,
+    "nodes_explored": 4323
+  },
+  {
+    "scenario_id": "MEDIUM_29",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 5.137645721435547,
+    "path_length_meters": 19.707106781186546,
+    "nodes_explored": 56
+  },
+  {
+    "scenario_id": "MEDIUM_30",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 5.1193742752075195,
+    "path_length_meters": 27.707106781186546,
+    "nodes_explored": 60
+  },
+  {
+    "scenario_id": "MEDIUM_31",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 33.0474956035614,
+    "path_length_meters": 43.81980515339461,
+    "nodes_explored": 9452
+  },
+  {
+    "scenario_id": "MEDIUM_32",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 5.779590845108032,
+    "path_length_meters": 15.935028842544408,
+    "nodes_explored": 334
+  },
+  {
+    "scenario_id": "MEDIUM_33",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.844857454299927,
+    "path_length_meters": 24.742640687119277,
+    "nodes_explored": 1241
+  },
+  {
+    "scenario_id": "MEDIUM_34",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 14.377721786499023,
+    "path_length_meters": 28.056349186104036,
+    "nodes_explored": 3628
+  },
+  {
+    "scenario_id": "MEDIUM_35",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 11.146856784820557,
+    "path_length_meters": 28.863961030678915,
+    "nodes_explored": 2413
+  },
+  {
+    "scenario_id": "MEDIUM_36",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 23.71346879005432,
+    "path_length_meters": 38.72792206135783,
+    "nodes_explored": 7648
+  },
+  {
+    "scenario_id": "MEDIUM_37",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 18.298495769500732,
+    "path_length_meters": 35.81370849898474,
+    "nodes_explored": 6014
+  },
+  {
+    "scenario_id": "MEDIUM_38",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 6.848782300949097,
+    "path_length_meters": 24.420310216782966,
+    "nodes_explored": 655
+  },
+  {
+    "scenario_id": "MEDIUM_39",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 6.751068592071533,
+    "path_length_meters": 15.949747468305834,
+    "nodes_explored": 648
+  },
+  {
+    "scenario_id": "MEDIUM_40",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 12.462883710861206,
+    "path_length_meters": 31.985281374238554,
+    "nodes_explored": 3781
+  },
+  {
+    "scenario_id": "MEDIUM_41",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 8.47239637374878,
+    "path_length_meters": 20.22792206135786,
+    "nodes_explored": 1324
+  },
+  {
+    "scenario_id": "MEDIUM_42",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.242532968521118,
+    "path_length_meters": 18.242640687119284,
+    "nodes_explored": 733
+  },
+  {
+    "scenario_id": "MEDIUM_43",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.3453052043914795,
+    "path_length_meters": 18.556349186104047,
+    "nodes_explored": 512
+  },
+  {
+    "scenario_id": "MEDIUM_44",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.387487411499023,
+    "path_length_meters": 17.52081528017131,
+    "nodes_explored": 816
+  },
+  {
+    "scenario_id": "MEDIUM_45",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 7.730972528457642,
+    "path_length_meters": 23.798989873223327,
+    "nodes_explored": 1047
+  },
+  {
+    "scenario_id": "MEDIUM_46",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 32.16926884651184,
+    "path_length_meters": 41.870057685088774,
+    "nodes_explored": 10244
+  },
+  {
+    "scenario_id": "MEDIUM_47",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 12.553191184997559,
+    "path_length_meters": 32.455844122715696,
+    "nodes_explored": 3323
+  },
+  {
+    "scenario_id": "MEDIUM_48",
+    "map_size": "MEDIUM",
+    "success": true,
+    "computation_time": 5.013624906539917,
+    "path_length_meters": 15.142135623730956,
+    "nodes_explored": 103
+  },
+  {
+    "scenario_id": "LARGE_1",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 93.75052213668823,
+    "path_length_meters": 44.66295090390223,
+    "nodes_explored": 13224
+  },
+  {
+    "scenario_id": "LARGE_2",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 116.42006301879883,
+    "path_length_meters": 76.89949493661166,
+    "nodes_explored": 19548
+  },
+  {
+    "scenario_id": "LARGE_3",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 64.63522481918335,
+    "path_length_meters": 43.81980515339461,
+    "nodes_explored": 9492
+  },
+  {
+    "scenario_id": "LARGE_4",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 47.96251392364502,
+    "path_length_meters": 32.78427124746188,
+    "nodes_explored": 2004
+  },
+  {
+    "scenario_id": "LARGE_5",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 68.44066905975342,
+    "path_length_meters": 47.26345596729056,
+    "nodes_explored": 13843
+  },
+  {
+    "scenario_id": "LARGE_6",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 58.25552177429199,
+    "path_length_meters": 49.9264068711928,
+    "nodes_explored": 7261
+  },
+  {
+    "scenario_id": "LARGE_7",
+    "error": "timeout"
+  },
+  {
+    "scenario_id": "LARGE_8",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 54.204344749450684,
+    "path_length_meters": 70.74264068711929,
+    "nodes_explored": 5595
+  },
+  {
+    "scenario_id": "LARGE_9",
+    "error": "timeout"
+  },
+  {
+    "scenario_id": "LARGE_10",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 107.44871950149536,
+    "path_length_meters": 77.00357133746817,
+    "nodes_explored": 12934
+  },
+  {
+    "scenario_id": "LARGE_11",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 43.34604048728943,
+    "path_length_meters": 39.562445840513895,
+    "nodes_explored": 2125
+  },
+  {
+    "scenario_id": "LARGE_12",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 48.8103129863739,
+    "path_length_meters": 35.78427124746188,
+    "nodes_explored": 4139
+  },
+  {
+    "scenario_id": "LARGE_13",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 41.30067825317383,
+    "path_length_meters": 40.03553390593273,
+    "nodes_explored": 2025
+  },
+  {
+    "scenario_id": "LARGE_14",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 47.96555733680725,
+    "path_length_meters": 42.47665940288698,
+    "nodes_explored": 3423
+  },
+  {
+    "scenario_id": "LARGE_15",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 94.61890149116516,
+    "path_length_meters": 49.62741699796948,
+    "nodes_explored": 18239
+  },
+  {
+    "scenario_id": "LARGE_16",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 46.44782376289368,
+    "path_length_meters": 37.31980515339461,
+    "nodes_explored": 3257
+  },
+  {
+    "scenario_id": "LARGE_17",
+    "map_size": "LARGE",
+    "success": true,
+    "computation_time": 55.008280992507935,
+    "path_length_meters": 35.42031021678296,
+    "nodes_explored": 6609
+  },
+  {
+    "scenario_id": "LARGE_18",
+    "error": "timeout"
+  }
+]

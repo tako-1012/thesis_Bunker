@@ -1,0 +1,202 @@
+[
+  {
+    "scenario": "SMALL_EMPTY",
+    "grid_size": [
+      50,
+      50,
+      10
+    ],
+    "start_idx": [
+      1,
+      1,
+      1
+    ],
+    "goal_idx": [
+      40,
+      40,
+      1
+    ],
+    "TA_STAR": {
+      "success": true,
+      "time": 0.1739487648010254,
+      "nodes": 40,
+      "path_length_m": 11.030865786510136
+    },
+    "THETA_STAR": {
+      "success": true,
+      "time": 0.03209710121154785,
+      "nodes": 40,
+      "path_length_m": 11.030865786510141
+    },
+    "start_world": [
+      -4.7,
+      -4.7,
+      0.30000000000000004
+    ],
+    "goal_world": [
+      3.0999999999999996,
+      3.0999999999999996,
+      0.30000000000000004
+    ]
+  },
+  {
+    "scenario": "MEDIUM_EMPTY",
+    "grid_size": [
+      100,
+      100,
+      20
+    ],
+    "start_idx": [
+      1,
+      1,
+      1
+    ],
+    "goal_idx": [
+      80,
+      80,
+      1
+    ],
+    "TA_STAR": {
+      "success": true,
+      "time": 0.5343635082244873,
+      "nodes": 80,
+      "path_length_m": 22.34457428549492
+    },
+    "THETA_STAR": {
+      "success": true,
+      "time": 0.12295055389404297,
+      "nodes": 80,
+      "path_length_m": 22.344574285494904
+    },
+    "start_world": [
+      -9.7,
+      -9.7,
+      0.30000000000000004
+    ],
+    "goal_world": [
+      6.100000000000001,
+      6.100000000000001,
+      0.30000000000000004
+    ]
+  },
+  {
+    "scenario": "LARGE_EMPTY",
+    "grid_size": [
+      200,
+      200,
+      50
+    ],
+    "start_idx": [
+      1,
+      1,
+      1
+    ],
+    "goal_idx": [
+      180,
+      180,
+      1
+    ],
+    "TA_STAR": {
+      "success": true,
+      "time": 1.8625390529632568,
+      "nodes": 180,
+      "path_length_m": 50.62884553295689
+    },
+    "THETA_STAR": {
+      "success": true,
+      "time": 0.5763216018676758,
+      "nodes": 180,
+      "path_length_m": 50.6288455329568
+    },
+    "start_world": [
+      -19.7,
+      -19.7,
+      0.30000000000000004
+    ],
+    "goal_world": [
+      16.1,
+      16.1,
+      0.30000000000000004
+    ]
+  },
+  {
+    "scenario": "MEDIUM_WALL",
+    "grid_size": [
+      100,
+      100,
+      20
+    ],
+    "start_idx": [
+      5,
+      5,
+      1
+    ],
+    "goal_idx": [
+      90,
+      90,
+      1
+    ],
+    "TA_STAR": {
+      "success": true,
+      "time": 1.19840407371521,
+      "nodes": 268,
+      "path_length_m": 24.158787847867988
+    },
+    "THETA_STAR": {
+      "success": true,
+      "time": 0.1923673152923584,
+      "nodes": 86,
+      "path_length_m": 24.041630560342615
+    },
+    "start_world": [
+      -8.9,
+      -8.9,
+      0.30000000000000004
+    ],
+    "goal_world": [
+      8.100000000000001,
+      8.100000000000001,
+      0.30000000000000004
+    ]
+  },
+  {
+    "scenario": "LARGE_WALL",
+    "grid_size": [
+      200,
+      200,
+      50
+    ],
+    "start_idx": [
+      5,
+      5,
+      1
+    ],
+    "goal_idx": [
+      190,
+      190,
+      1
+    ],
+    "TA_STAR": {
+      "success": true,
+      "time": 4.298840284347534,
+      "nodes": 571,
+      "path_length_m": 52.443059095329936
+    },
+    "THETA_STAR": {
+      "success": true,
+      "time": 0.5822770595550537,
+      "nodes": 186,
+      "path_length_m": 52.32590180780452
+    },
+    "start_world": [
+      -18.9,
+      -18.9,
+      0.30000000000000004
+    ],
+    "goal_world": [
+      18.1,
+      18.1,
+      0.30000000000000004
+    ]
+  }
+]

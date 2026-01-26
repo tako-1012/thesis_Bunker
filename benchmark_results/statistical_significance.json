@@ -1,0 +1,40 @@
+{
+  "statistical_tests": {
+    "SMALL": {
+      "D*Lite_vs_RRT*": {
+        "method": "mannwhitneyu",
+        "stat": 0.0,
+        "pvalue": 3.234612555475504e-17
+      },
+      "D*Lite_vs_Theta*": {
+        "method": "mannwhitneyu",
+        "stat": 0.0,
+        "pvalue": 3.234612555475504e-17
+      }
+    },
+    "MEDIUM": {
+      "D*Lite_vs_RRT*": {
+        "method": "mannwhitneyu",
+        "stat": 9.0,
+        "pvalue": 5.815448794648676e-25
+      },
+      "D*Lite_vs_Theta*": {
+        "method": "mannwhitneyu",
+        "stat": 0.0,
+        "pvalue": 3.9964477045671473e-25
+      }
+    },
+    "LARGE": {
+      "D*Lite_vs_RRT*": {
+        "method": "mannwhitneyu",
+        "stat": 0.0,
+        "pvalue": 3.06366423367317e-09
+      },
+      "D*Lite_vs_Theta*": {
+        "method": "mannwhitneyu",
+        "stat": 0.0,
+        "pvalue": 3.06366423367317e-09
+      }
+    }
+  }
+}
