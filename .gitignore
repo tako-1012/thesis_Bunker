@@ -83,3 +83,18 @@ ros2/ros2_ws/src/ugv_sdk/
 *.dae
 *.obj
 *.ply
+
+# Large dataset files
+dataset*.json
+
+# Backup folders
+backup_*/
+
+# Profiling data
+*.prof
+
+# Temporary folders
+tmp_*/
+
+# Python virtual environment
+.venv/
