@@ -14,3 +14,10 @@ AHA* runs complete. Chosen=baseline saved to /home/hayashi/thesis_work/ros2/ros2
 [Fri Dec 26 18:00:48 2025] Wrote FINAL_REPORT.md
 [Fri Dec 26 18:00:48 2025] Wrote PAPER_DATA.md
 [Fri Dec 26 18:00:48 2025] analysis_and_report complete
+
+Starting run aha_star_96_baseline_results.json at Thu Jan 29 19:49:10 2026 with params {'coarse_factor': 3, 'initial_epsilon': 2.0, 'epsilon_decay': 0.5, 'min_epsilon': 1.0, 'timeout': 180.0, 'per_scenario_timeout': 180}
+Finished run aha_star_96_baseline_results.json at Thu Jan 29 19:49:12 2026 (entries=96)
+
+Starting run aha_star_96_optimized_results.json at Thu Jan 29 19:49:13 2026 with params {'coarse_factor': 3, 'initial_epsilon': 2.0, 'epsilon_decay': 0.5, 'min_epsilon': 1.0, 'good_solution_threshold': 1.05, 'no_improvement_limit': 3, 'min_iterations': 2, 'timeout': 180.0, 'per_scenario_timeout': 180}
+Finished run aha_star_96_optimized_results.json at Thu Jan 29 19:49:15 2026 (entries=96)
+AHA* runs complete. Chosen=optimized saved to /home/hayashi/thesis_work/ros2/ros2_ws/src/path_planner_3d/path_planner_3d/benchmark_results/aha_star_96_selected_optimized.json

@@ -70,22 +70,23 @@ def run_planner_on_scenario(args):
 
         # ===== Regular A* (NEW) =====
         if planner_name == 'A*':
-            # Import ta_star but disable terrain consideration
-            from ta_star import TAStarPlanner
-            planner = TAStarPlanner(voxel_size=1.0, grid_size=(size, size, z_layers))
-            # Set terrain data but with w_t=0 (no terrain consideration)
+            # Use TerrainAwareAStar with terrain_weight=0 to emulate plain A*
+            try:
+                from path_planner_3d.terrain_aware_astar import TerrainAwareAStar
+            except ImportError:
+                from terrain_aware_astar import TerrainAwareAStar
+
+            planner = TerrainAwareAStar(voxel_size=1.0, grid_size=(size, size, z_layers))
             planner.set_terrain_data(voxel_grid, None, min_bound=(0.0, 0.0, 0.0))
-            
-            # Ensure terrain weight is 0
-            if hasattr(planner, 'w_t'):
-                planner.w_t = 0.0
-            if hasattr(planner, 'use_terrain_cost'):
-                planner.use_terrain_cost = False
-                
+
+            if hasattr(planner, 'terrain_weight'):
+                planner.terrain_weight = 0.0
+
             result = planner.plan_path(start, goal, timeout=timeout)
+            stats = getattr(planner, 'last_search_stats', {})
             success = bool(getattr(result, 'success', False))
-            nodes = int(getattr(result, 'nodes_explored', planner.last_stats.get('nodes_explored', 0)))
-            plen = float(getattr(result, 'path_length', planner.last_stats.get('path_length', 0.0)))
+            nodes = int(getattr(result, 'nodes_explored', stats.get('nodes_explored', 0)))
+            plen = float(getattr(result, 'path_length', stats.get('path_length', 0.0)))
 
         # ===== FieldD*Hybrid =====
         elif planner_name == 'FieldD*Hybrid':
@@ -109,13 +110,23 @@ def run_planner_on_scenario(args):
 
         # ===== TA* =====
         elif planner_name == 'TA*':
-            from ta_star import TAStarPlanner
-            planner = TAStarPlanner(voxel_size=1.0, grid_size=(size, size, voxel_grid.shape[2]))
+            try:
+                from path_planner_3d.terrain_aware_astar import TerrainAwareAStar
+            except ImportError:
+                from terrain_aware_astar import TerrainAwareAStar
+
+            planner = TerrainAwareAStar(voxel_size=1.0, grid_size=(size, size, voxel_grid.shape[2]))
             planner.set_terrain_data(voxel_grid, terrain_data)
+
+            # Use terrain-aware cost as described in the thesis
+            if hasattr(planner, 'terrain_weight'):
+                planner.terrain_weight = 1.0
+
             result = planner.plan_path(start, goal, timeout=timeout)
+            stats = getattr(planner, 'last_search_stats', {})
             success = bool(getattr(result, 'success', False))
-            nodes = int(getattr(result, 'nodes_explored', planner.last_stats.get('nodes_explored', 0)))
-            plen = float(getattr(result, 'path_length', planner.last_stats.get('path_length', 0.0)))
+            nodes = int(getattr(result, 'nodes_explored', stats.get('nodes_explored', 0)))
+            plen = float(getattr(result, 'path_length', stats.get('path_length', 0.0)))
 
         # ===== Theta* =====
         elif planner_name == 'Theta*':

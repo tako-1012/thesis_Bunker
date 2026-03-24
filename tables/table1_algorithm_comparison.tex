@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Performance Comparison of Four Path Planning Algorithms (n=96)}
+\label{tab:algorithm_comparison}
+\begin{tabular}{lcccccc}
+\hline
+Algorithm & Mean $\pm$ SD (s) & Median (s) & 95\% CI (s) & Success Rate (\%) & $n$ \\
+\hline
+TA* & 15.4625 $\pm$ 23.2781 & 6.8312 & [10.75, 20.18] & 96.9 & 96 \\
+AHA* & 0.0156 $\pm$ 0.0092 & 0.0144 & [0.01, 0.02] & 94.8 & 96 \\
+Theta* & 0.2338 $\pm$ 0.4367 & 0.0901 & [0.15, 0.32] & 100.0 & 96 \\
+FieldD*Hybrid & 0.4947 $\pm$ 0.2765 & 0.3867 & [0.44, 0.55] & 100.0 & 96 \\
+\hline
+\end{tabular}
+\end{table}

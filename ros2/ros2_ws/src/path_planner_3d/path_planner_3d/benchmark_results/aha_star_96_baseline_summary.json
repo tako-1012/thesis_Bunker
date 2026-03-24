@@ -2,6 +2,6 @@
   "total": 96,
   "success": 91,
   "failed": 5,
-  "mean_path_length": 22.562436020441872,
-  "mean_time": 0.015589708810324197
+  "mean_path_length": 22.559463440968027,
+  "mean_time": 0.011066659466250912
 }

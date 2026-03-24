@@ -1,0 +1,802 @@
+[
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.3708775043487549,
+    "path_length_meters": 108.2375900532358,
+    "nodes_explored": 2578
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 1.1126325130462646,
+    "path_length_meters": 111.40916292848961,
+    "nodes_explored": 11275
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 2.188999891281128,
+    "path_length_meters": 116.9949493661165,
+    "nodes_explored": 25607
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 2.1232645511627197,
+    "path_length_meters": 114.16652224137032,
+    "nodes_explored": 24519
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 2.4972047805786133,
+    "path_length_meters": 117.99494936611649,
+    "nodes_explored": 27912
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.4448122978210449,
+    "path_length_meters": 53.556349186104015,
+    "nodes_explored": 2832
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 3.0575335025787354,
+    "path_length_meters": 111.45584412271566,
+    "nodes_explored": 17321
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.15915274620056152,
+    "path_length_meters": 55.65685424949237,
+    "nodes_explored": 903
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.7833611965179443,
+    "path_length_meters": 119.48528137423855,
+    "nodes_explored": 4481
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.010872125625610352,
+    "path_length_meters": 53.740115370177584,
+    "nodes_explored": 39
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 1.4876983165740967,
+    "path_length_meters": 96.97056274847711,
+    "nodes_explored": 8443
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 2.3443868160247803,
+    "path_length_meters": 94.87005768508875,
+    "nodes_explored": 13955
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.9946489334106445,
+    "path_length_meters": 120.63961030678915,
+    "nodes_explored": 46040
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 5.141063690185547,
+    "path_length_meters": 128.26702730475864,
+    "nodes_explored": 58583
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.23521041870117188,
+    "path_length_meters": 58.07106781186546,
+    "nodes_explored": 1255
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_2",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.2807798385620117,
+    "path_length_meters": 73.88225099390849,
+    "nodes_explored": 2036
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_1",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 5.869452238082886,
+    "path_length_meters": 124.98275605729678,
+    "nodes_explored": 45600
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_1_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 5.681623220443726,
+    "path_length_meters": 127.95331880577389,
+    "nodes_explored": 57583
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 3.252715826034546,
+    "path_length_meters": 96.42640687119277,
+    "nodes_explored": 22208
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 2.845579147338867,
+    "path_length_meters": 118.62741699796948,
+    "nodes_explored": 16945
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.424731731414795,
+    "path_length_meters": 116.84062043356586,
+    "nodes_explored": 31820
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.3502159118652344,
+    "path_length_meters": 51.72792206135783,
+    "nodes_explored": 2119
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_9",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 0.26552844047546387,
+    "path_length_meters": 79.65685424949237,
+    "nodes_explored": 1422
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_5",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 2.3364477157592773,
+    "path_length_meters": 96.71067811865463,
+    "nodes_explored": 25516
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_2_8",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.954605579376221,
+    "path_length_meters": 120.71067811865461,
+    "nodes_explored": 49702
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_4",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 3.390287160873413,
+    "path_length_meters": 117.09545442950483,
+    "nodes_explored": 40040
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_6",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 2.15905499458313,
+    "path_length_meters": 96.45584412271566,
+    "nodes_explored": 13587
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_3",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 4.345663547515869,
+    "path_length_meters": 115.25483399593895,
+    "nodes_explored": 32023
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_7",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 3.0291588306427,
+    "path_length_meters": 92.49747468305823,
+    "nodes_explored": 23314
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.577893018722534,
+    "path_length_meters": 185.72792206135784,
+    "nodes_explored": 15202
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_1_3_10",
+    "environment_type": null,
+    "map_size": 150,
+    "success": true,
+    "computation_time": 2.5250613689422607,
+    "path_length_meters": 109.81118318204297,
+    "nodes_explored": 37502
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 15.697438955307007,
+    "path_length_meters": 210.35028842544392,
+    "nodes_explored": 268606
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 10.315258026123047,
+    "path_length_meters": 193.7401153701775,
+    "nodes_explored": 112218
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 3.37264084815979,
+    "path_length_meters": 197.7989898732233,
+    "nodes_explored": 32445
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 14.678834438323975,
+    "path_length_meters": 205.6934341759515,
+    "nodes_explored": 255199
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 13.9032883644104,
+    "path_length_meters": 197.13708498984744,
+    "nodes_explored": 223765
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 8.929621934890747,
+    "path_length_meters": 192.49747468305821,
+    "nodes_explored": 102417
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.30103611946105957,
+    "path_length_meters": 177.9482681718909,
+    "nodes_explored": 3191
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 8.358492136001587,
+    "path_length_meters": 197.39191898578673,
+    "nodes_explored": 167779
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_1_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 9.007614374160767,
+    "path_length_meters": 192.7350647362943,
+    "nodes_explored": 164732
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.6186399459838867,
+    "path_length_meters": 191.26197667087575,
+    "nodes_explored": 7544
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 14.924831628799438,
+    "path_length_meters": 207.76450198781703,
+    "nodes_explored": 260148
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 14.954752206802368,
+    "path_length_meters": 214.86500705120528,
+    "nodes_explored": 276629
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 11.936715602874756,
+    "path_length_meters": 200.6934341759515,
+    "nodes_explored": 240902
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.3432369232177734,
+    "path_length_meters": 187.31370849898474,
+    "nodes_explored": 12891
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 13.980861186981201,
+    "path_length_meters": 199.19595949289317,
+    "nodes_explored": 170411
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 5.434305429458618,
+    "path_length_meters": 196.1198410471447,
+    "nodes_explored": 99285
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 5.57078218460083,
+    "path_length_meters": 197.1198410471447,
+    "nodes_explored": 105520
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.5614719390869141,
+    "path_length_meters": 184.60512242138333,
+    "nodes_explored": 5160
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_2_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 3.90535569190979,
+    "path_length_meters": 184.7989898732233,
+    "nodes_explored": 29505
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_1",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 5.782363653182983,
+    "path_length_meters": 155.5269119345811,
+    "nodes_explored": 44993
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_2",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 4.418368339538574,
+    "path_length_meters": 118.42640687119277,
+    "nodes_explored": 36981
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_3",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 0.5220873355865479,
+    "path_length_meters": 85.72792206135783,
+    "nodes_explored": 4319
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_4",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.0986545085906982,
+    "path_length_meters": 91.98275605729678,
+    "nodes_explored": 26694
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_5",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 8.986754655838013,
+    "path_length_meters": 151.63961030678917,
+    "nodes_explored": 89277
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_6",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 1.7889199256896973,
+    "path_length_meters": 105.85281374238556,
+    "nodes_explored": 26315
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_7",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 2.686159372329712,
+    "path_length_meters": 119.87005768508875,
+    "nodes_explored": 22159
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_8",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 6.60831093788147,
+    "path_length_meters": 143.16652224137027,
+    "nodes_explored": 98434
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_9",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 9.042147636413574,
+    "path_length_meters": 180.59292911256324,
+    "nodes_explored": 152670
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_2_3_10",
+    "environment_type": null,
+    "map_size": 250,
+    "success": true,
+    "computation_time": 4.274622440338135,
+    "path_length_meters": 167.87005768508874,
+    "nodes_explored": 39707
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_1",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 8.699182271957397,
+    "path_length_meters": 297.35743110038146,
+    "nodes_explored": 160168
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_2",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 20.264636278152466,
+    "path_length_meters": 311.11479041326214,
+    "nodes_explored": 415211
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_3",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 43.442209243774414,
+    "path_length_meters": 316.26702730475864,
+    "nodes_explored": 478227
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_4",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 2.0799453258514404,
+    "path_length_meters": 297.4995667241125,
+    "nodes_explored": 28098
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_5",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 43.95623564720154,
+    "path_length_meters": 331.22539674441606,
+    "nodes_explored": 352604
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_6",
+    "environment_type": null,
+    "map_size": 400,
+    "success": false,
+    "computation_time": 27.78961157798767,
+    "path_length_meters": 0.0,
+    "nodes_explored": 500000
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_7",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 13.788366794586182,
+    "path_length_meters": 298.9411254969542,
+    "nodes_explored": 128911
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_8",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 0.6028459072113037,
+    "path_length_meters": 281.1858582251277,
+    "nodes_explored": 4912
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_9",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 10.347184658050537,
+    "path_length_meters": 312.4558441227157,
+    "nodes_explored": 88670
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_1_10",
+    "environment_type": null,
+    "map_size": 400,
+    "success": false,
+    "computation_time": 41.21336364746094,
+    "path_length_meters": 0.0,
+    "nodes_explored": 500000
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_1",
+    "environment_type": null,
+    "map_size": 400,
+    "success": false,
+    "computation_time": 43.984493255615234,
+    "path_length_meters": 0.0,
+    "nodes_explored": 500000
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_2",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 5.744006872177124,
+    "path_length_meters": 289.94321753800835,
+    "nodes_explored": 91523
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_3",
+    "environment_type": null,
+    "map_size": 400,
+    "success": false,
+    "computation_time": 27.573144912719727,
+    "path_length_meters": 0.0,
+    "nodes_explored": 500000
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_4",
+    "environment_type": null,
+    "map_size": 400,
+    "success": false,
+    "computation_time": 30.72734832763672,
+    "path_length_meters": 0.0,
+    "nodes_explored": 500000
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_5",
+    "environment_type": null,
+    "map_size": 400,
+    "success": false,
+    "computation_time": 39.4679069519043,
+    "path_length_meters": 0.0,
+    "nodes_explored": 500000
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_6",
+    "environment_type": null,
+    "map_size": 400,
+    "success": false,
+    "computation_time": 29.848767280578613,
+    "path_length_meters": 0.0,
+    "nodes_explored": 500000
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_7",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 4.0024073123931885,
+    "path_length_meters": 303.91378028648563,
+    "nodes_explored": 68249
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_8",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 3.6593286991119385,
+    "path_length_meters": 304.32799384885874,
+    "nodes_explored": 59327
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_9",
+    "environment_type": null,
+    "map_size": 400,
+    "success": true,
+    "computation_time": 4.560049057006836,
+    "path_length_meters": 287.94321753800835,
+    "nodes_explored": 72468
+  },
+  {
+    "planner": "TA*",
+    "scenario_id": "dataset3_3_2_10",
+    "environment_type": null,
+    "map_size": 400,
+    "success": false,
+    "computation_time": 38.41166043281555,
+    "path_length_meters": 0.0,
+    "nodes_explored": 500000
+  }
+]

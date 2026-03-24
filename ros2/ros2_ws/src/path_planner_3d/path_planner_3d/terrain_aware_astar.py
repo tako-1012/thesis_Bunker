@@ -95,10 +95,17 @@ class TerrainAwareAStar:
         return float(min(total, 10.0))
 
     def _compute_slope_cost(self, idx):
-        if self.terrain_data is None or 'elevation' not in self.terrain_data:
+        if self.terrain_data is None:
+            return 1.0
+        # Support both 'elevation' and 'height_map' keys
+        elevation = None
+        if 'elevation' in self.terrain_data:
+            elevation = self.terrain_data['elevation']
+        elif 'height_map' in self.terrain_data:
+            elevation = self.terrain_data['height_map']
+        else:
             return 1.0
         try:
-            elevation = self.terrain_data['elevation']
             x, y, z = idx
             current_elev = elevation[x, y, z]
             max_slope = 0.0
@@ -155,7 +162,8 @@ class TerrainAwareAStar:
 
     def plan_path(self, start: Tuple[float, float, float],
                   goal: Tuple[float, float, float],
-                  max_iters=100000,
+                  voxel_grid=None,
+                  max_iters=500000,
                   timeout=None):
         t0 = time.time()
         s = self._world_to_voxel(start)

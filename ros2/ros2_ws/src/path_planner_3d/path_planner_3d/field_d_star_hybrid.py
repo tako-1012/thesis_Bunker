@@ -352,8 +352,10 @@ class FieldDStarHybrid:
 
         comp_time = time.time()-t0
         path_len = self._path_length(path)
-        self.last_search_stats.update({'nodes_explored':nodes_processed,'computation_time':comp_time,'path_length':path_len})
-        return PlanningResult(success=True, path=path, computation_time=comp_time, path_length=path_len, nodes_explored=nodes_processed, algorithm_name='FieldD*Hybrid')
+        # D*Liteの探索ノード数 + ウィンドウ処理ノード数
+        total_nodes = base.nodes_explored + nodes_processed
+        self.last_search_stats.update({'nodes_explored':total_nodes,'computation_time':comp_time,'path_length':path_len})
+        return PlanningResult(success=True, path=path, computation_time=comp_time, path_length=path_len, nodes_explored=total_nodes, algorithm_name='FieldD*Hybrid')
 
 
 def generate_test_terrain_data(grid_size):

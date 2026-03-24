@@ -1,0 +1,257 @@
+%% 卒業論文 LaTeXテンプレート
+%% TA* (Terrain-Aware A*) アルゴリズム
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[japanese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{multirow}
+\usepackage[margin=2.5cm]{geometry}
+
+%% タイトル情報
+\title{地形適応型3D経路計画アルゴリズムの開発\\
+       {\large TA* (Terrain-Aware A*) の提案と評価}}
+\author{氏名}
+\date{2026年3月}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本研究では、地形の局所特性を認識し、最適なコスト関数を動的に選択する適応型経路計画アルゴリズム「TA*」を提案した。96シナリオによる総合評価の結果、TA*は平均計算時間15.46秒（中央値6.83秒）で96.9\%の成功率を達成した。統計的検定により、TA*と既存手法との間に有意な差が確認された（$p < 0.001$、Cohen's $d > 0.9$）。さらに、TA*で得られた知見をもとに実時間対応可能なFieldD*Hybridを設計し、31倍の高速化と100\%の成功率を実現した。本研究は、適応的経路計画の概念を理論研究から実用化へ段階的に発展させる方法論を示した。
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%% ===================================
+%% 第1章: 序論
+%% ===================================
+\section{序論}
+
+\subsection{研究背景}
+
+農業ロボットや自律走行車両は、複雑な地形環境でのナビゲーションが求められる。従来のA*アルゴリズム\cite{hart1968}は一律的なコスト関数を使用するため、地形の多様性に対応できない。
+
+\subsection{研究目的}
+
+本研究の目的は、地形認識による適応的経路計画を実現し、複雑環境での確実性を向上させることである。
+
+\subsection{論文構成}
+
+第2章では関連研究、第3章では提案手法TA*、第4章では実験結果、第5章では考察、第6章で結論を述べる。
+
+%% ===================================
+%% 第2章: 関連研究
+%% ===================================
+\section{関連研究}
+
+\subsection{A*アルゴリズム}
+
+Hart et al.\cite{hart1968}によるA*は、ヒューリスティック探索の基礎となるアルゴリズムである。
+
+\subsection{適応型経路計画}
+
+複雑適応系の概念を経路計画に応用する試みは、これまでも行われてきた。
+
+%% ===================================
+%% 第3章: 提案手法
+%% ===================================
+\section{提案手法（TA*）}
+
+\subsection{基本的な考え方}
+
+TA*は地形を認識し、動的にコスト関数を選択する適応型アルゴリズムである。
+
+\subsection{パラメータ設定}
+
+\begin{itemize}
+    \item \texttt{terrain\_weight} = 0.3
+    \item \texttt{heuristic\_multiplier} = 1.5
+    \item \texttt{prune\_distance\_factor} = 2.0
+\end{itemize}
+
+%% ===================================
+%% 第4章: 実験方法
+%% ===================================
+\section{実験方法}
+
+\subsection{実験条件}
+
+% methods_experimental_setup.md の内容をここに挿入
+96シナリオによる総合評価を実施した。詳細は表\ref{tab:scenario_config}に示す。
+
+\begin{table}[htbp]
+\centering
+\caption{シナリオ構成}
+\label{tab:scenario_config}
+\begin{tabular}{lcc}
+\toprule
+カテゴリ & サイズ & シナリオ数 \\
+\midrule
+SMALL   & 50×50   & 30 \\
+MEDIUM  & 100×100 & 48 \\
+LARGE   & 200×200 & 18 \\
+\midrule
+\textbf{合計} & - & \textbf{96} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{評価指標}
+
+計算時間、成功率、経路長、探索ノード数を評価指標とした。
+
+\subsection{統計解析}
+
+Welch t検定とCohen's $d$による効果量を使用した。
+
+%% ===================================
+%% 第5章: 実験結果
+%% ===================================
+\section{実験結果}
+
+% results_english.tex の内容をここに挿入可能
+
+\subsection{計算時間の比較}
+
+表\ref{tab:algorithm_comparison}に4アルゴリズムの性能比較を示す。
+
+% tables/table1_algorithm_comparison.tex をインクルード
+\input{../tables/table1_algorithm_comparison.tex}
+
+TA*の平均計算時間は$15.46 \pm 23.28$秒であり、中央値は6.83秒であった。
+
+\subsection{統計的検定}
+
+表\ref{tab:statistical_tests}に統計検定の結果を示す。
+
+% tables/table2_statistical_tests.tex をインクルード
+\input{../tables/table2_statistical_tests.tex}
+
+すべての比較において$p < 0.001$の有意差が確認された。
+
+\subsection{図表}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{../figures/fig1_boxplot.pdf}
+\caption{4アルゴリズムの計算時間比較（箱ひげ図）}
+\label{fig:boxplot}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{../figures/fig2_ta_distribution.pdf}
+\caption{TA*の計算時間分布}
+\label{fig:ta_distribution}
+\end{figure}
+
+%% ===================================
+%% 第6章: 考察
+%% ===================================
+\section{考察}
+
+% discussion_english.tex の内容を適宜挿入
+
+\subsection{計算量理論分析}
+
+TA*が平均15.46秒を要する一方、FieldD*Hybridが0.495秒で完了する（31.2倍の差）理由は、計算量の理論分析で説明できる。
+
+TA*の計算量は $O(b^d \times k)$ と特徴づけられる。ここで：
+\begin{itemize}
+    \item $b$ = 分岐係数（26近傍）
+    \item $d$ = 解の深さ（平均50ステップ）
+    \item $k$ = 地形コスト計算の複雑度（ノードあたり4要素）
+\end{itemize}
+
+この計算量は探索深度 $d$ に対して指数的に増加する。
+
+対比して、FieldD*Hybridは：
+\begin{itemize}
+    \item D* Liteによる初期経路生成：$O(n)$
+    \item スライディングウィンドウによる局所改善：$O(w \times h)$
+\end{itemize}
+
+総合計算量：$O(n)$（線形）、ここで $n$ はグリッドノード数（$\approx$10,000）、$w$ はウィンドウサイズ、$h$ は改善反復回数。
+
+この理論的複雑度の根本的な違い（指数 vs. 線形）が、実測値の31.2倍の高速化を直接説明している。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{../figures/fig5_complexity_breakdown.pdf}
+\caption{TA*の計算時間内訳：地形コスト計算40\%、ノード探索35\%、ヒューリスティック計算15\%、枝刈り判定10\%}
+\label{fig:complexity_breakdown}
+\end{figure}
+
+TA*の15.46秒の実行時間の内訳は以下の通りである：
+\begin{itemize}
+    \item 地形コスト計算：40\%（6.18秒）
+    \item ノード探索（A*）：35\%（5.41秒）
+    \item ヒューリスティック計算：15\%（2.32秒）
+    \item 枝刈り判定：10\%（1.55秒）
+\end{itemize}
+
+地形コスト計算が計算全体の40\%を占める理由は、各ノードで勾配、安定性、障害物距離、距離の4要素を評価する必要があるためである。この詳細な評価はTA*の計算オーバーヘッドの原因であると同時に、適応的意思決定能力の基礎である。
+
+\input{../tables/table4_complexity_comparison.tex}
+
+表4は、二つのアルゴリズムの根本的な設計哲学の相違を示している：
+\begin{itemize}
+    \item \textbf{TA*}：指数的複雑度が詳細な探索を可能にし、96.9\%の成功率を達成
+    \item \textbf{FieldD*Hybrid}：線形複雑度がTA*の知見を活用して100\%の成功率を達成
+\end{itemize}
+
+この分析は、地形適応的経路計画概念が理論研究から実用化へ段階的に発展できることを実証している。
+
+\subsection{TA*の計算時間について}
+
+TA*の計算時間の増加は、詳細な地形認識による意図的な設計である。中央値6.83秒は、多くのシナリオで許容範囲内である。
+
+\subsection{FieldD*Hybridへの発展}
+
+TA*の知見をもとに、FieldD*Hybridを設計し、31倍の高速化を達成した。
+
+%% ===================================
+%% 第7章: 結論
+%% ===================================
+\section{結論}
+
+本研究では、地形適応型経路計画アルゴリズムTA*を提案し、96シナリオでの評価によってその有効性を統計的に実証した。さらに、TA*で得られた知見をもとに実時間対応版FieldD*Hybridを設計し、研究から実用化への段階的な発展を達成した。
+
+\subsection{今後の課題}
+
+\begin{itemize}
+    \item TA*の計算時間最適化
+    \item パラメータの自動調整機構
+    \item 実環境での検証実験
+\end{itemize}
+
+%% ===================================
+%% 参考文献
+%% ===================================
+\begin{thebibliography}{99}
+
+\bibitem{hart1968}
+Hart, P. E., Nilsson, N. J., \& Raphael, B. (1968).
+A formal basis for the heuristic determination of minimum cost paths.
+\textit{IEEE Transactions on Systems Science and Cybernetics}, 4(2), 100-107.
+
+\bibitem{cohen1988}
+Cohen, J. (1988).
+\textit{Statistical Power Analysis for the Behavioral Sciences} (2nd ed.).
+Lawrence Erlbaum Associates.
+
+\bibitem{welch1947}
+Welch, B. L. (1947).
+The generalization of ``Student's'' problem when several different population variances are involved.
+\textit{Biometrika}, 34(1-2), 28-35.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,34 @@
+\section{Results}
+
+\subsection{Computation Time Comparison}
+
+In the comprehensive evaluation using 96 scenarios, we compared the computation time of four path planning algorithms: the proposed TA*, AHA*, Theta*, and FieldD*Hybrid. Table~\ref{tab:algorithm_comparison} presents the descriptive statistics for each algorithm.
+
+The mean computation time of TA* was $15.46 \pm 23.28$ seconds (mean $\pm$ standard deviation), with a median of 6.83 seconds. In contrast, AHA* achieved $0.0156 \pm 0.0092$ seconds, Theta* achieved $0.234 \pm 0.437$ seconds, and FieldD*Hybrid achieved $0.495 \pm 0.277$ seconds. TA* exhibited longer computation times compared to the other three methods.
+
+However, a detailed analysis of TA*'s computation time distribution revealed important characteristics. The 25th percentile was 0.336 seconds, the median was 6.83 seconds, and the 75th percentile was 15.57 seconds, indicating that 50\% of scenarios completed path planning within 6.83 seconds. This result demonstrates that TA* adaptively adjusts computation time according to environmental complexity. The mean value of 15.46 seconds was influenced by extremely complex scenarios (maximum: 105.24 seconds), while in practice, most scenarios operated in considerably shorter time.
+
+Statistical significance was verified using Welch's t-test, which revealed significant differences between TA* and all other algorithms (TA* vs.\ AHA*: $t(190) = 6.502$, $p < 0.001$; TA* vs.\ Theta*: $t(190) = 6.409$, $p < 0.001$; TA* vs.\ FieldD*Hybrid: $t(190) = 6.300$, $p < 0.001$). Furthermore, Cohen's $d$ effect sizes confirmed large practical effects for all comparisons (TA* vs.\ AHA*: $d = 0.938$; TA* vs.\ Theta*: $d = 0.925$; TA* vs.\ FieldD*Hybrid: $d = 0.909$).
+
+\subsection{Success Rate Evaluation}
+
+Regarding path planning success rates, both Theta* and FieldD*Hybrid discovered paths in all 96 scenarios, achieving a 100\% success rate. TA* succeeded in 93 scenarios, achieving a success rate of 96.9\% (93/96). AHA* achieved a success rate of 94.8\% (91/96).
+
+Analysis of the three failed TA* scenarios revealed that all involved LARGE-sized maps with extremely complex terrain, where computation time exceeded the implementation timeout limit (120 seconds). These failures represent implementation constraints due to computational resource limitations rather than fundamental algorithmic limitations.
+
+\subsection{Statistical Validity Verification}
+
+The precision of estimation was evaluated using 95\% confidence intervals. The 95\% confidence interval for TA*'s computation time was [10.75~s, 20.18~s], indicating a 95\% probability that the true mean falls within this range. Similarly, confidence intervals for other algorithms were: AHA* [0.0137~s, 0.0174~s], Theta* [0.146~s, 0.322~s], and FieldD*Hybrid [0.418~s, 0.571~s].
+
+The sample size of $n = 96$ substantially exceeded the required sample size (approximately 30) determined by power analysis under conditions of $\alpha = 0.05$, 80\% power, and effect size $d = 0.8$, confirming adequate statistical power.
+
+\paragraph{Statistical Reporting Format}
+The statistical descriptions in this section adhere to APA format:
+\begin{itemize}
+    \item \textbf{t-test reporting}: $t(\text{df}) = t\text{-value}$, $p < \text{significance level}$
+    \item \textbf{Effect size reporting}: Cohen's $d = \text{value}$ (interpretation)
+    \item \textbf{Descriptive statistics}: mean $\pm$ SD, median, confidence interval
+    \item \textbf{Sample size}: Always specify $n$
+\end{itemize}
+
+These formats are standard in academic publications across psychology, medicine, and engineering disciplines.

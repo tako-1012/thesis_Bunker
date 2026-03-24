@@ -5,7 +5,7 @@ Calculates various costs for 3D path planning including slope, obstacle, and sta
 """
 
 import numpy as np
-from typing import Dict, Any, Tuple, List
+from typing import Dict, Any, Tuple, List, Optional
 import math
 
 

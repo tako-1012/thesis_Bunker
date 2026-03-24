@@ -28,14 +28,13 @@ class AStar3D:
         """
         self.voxel_size = voxel_size
         self.max_iterations = max_iterations
+        self.nodes_explored = 0
         
         # 26-neighbor offsets (3x3x3 - center)
         self.neighbor_offsets = self._generate_26_neighbors()
-        
-        self.get_logger().info(f'AStar3D initialized with voxel_size={voxel_size}m, max_iterations={max_iterations}')
     
     def plan_path(self, start: Tuple[int, int, int], goal: Tuple[int, int, int], 
-                  voxel_grid: np.ndarray, cost_function) -> Optional[List[Tuple[int, int, int]]]:
+                  voxel_grid: np.ndarray, cost_function) -> Optional['PlanningResult']:
         """
         Plan path using A* algorithm.
         
@@ -46,22 +45,19 @@ class AStar3D:
             cost_function: Cost function for evaluating path costs
             
         Returns:
-            List of voxel coordinates representing the path, or None if no path found
+            PlanningResult object with path and metadata
         """
         try:
-            self.get_logger().info(f'Planning path from {start} to {goal}')
-            
             # Validate inputs
             if not self._is_valid_position(start, voxel_grid):
-                self.get_logger().error(f'Invalid start position: {start}')
-                return None
+                return PlanningResult(success=False, path=[], nodes_explored=0)
             
             if not self._is_valid_position(goal, voxel_grid):
-                self.get_logger().error(f'Invalid goal position: {goal}')
-                return None
+                return PlanningResult(success=False, path=[], nodes_explored=0)
             
             # Initialize A* data structures
             open_set = []  # Priority queue: (f_cost, position)
+            open_set_nodes = set()  # O(1) membership check
             closed_set: Set[Tuple[int, int, int]] = set()
             came_from: Dict[Tuple[int, int, int], Tuple[int, int, int]] = {}
             
@@ -71,19 +67,23 @@ class AStar3D:
             
             # Add start to open set
             heapq.heappush(open_set, (f_cost[start], start))
+            open_set_nodes.add(start)
             
             iterations = 0
+            self.nodes_explored = 0  # Reset counter
             
             while open_set and iterations < self.max_iterations:
                 iterations += 1
+                self.nodes_explored += 1  # Count explored nodes
                 
                 # Get node with lowest f_cost
                 current_f, current = heapq.heappop(open_set)
+                open_set_nodes.discard(current)  # Remove from set
                 
                 # Check if we reached the goal
                 if current == goal:
-                    self.get_logger().info(f'Path found in {iterations} iterations')
-                    return self._reconstruct_path(came_from, current)
+                    path = self._reconstruct_path(came_from, current)
+                    return PlanningResult(success=True, path=path, nodes_explored=self.nodes_explored)
                 
                 # Add current to closed set
                 closed_set.add(current)
@@ -102,16 +102,15 @@ class AStar3D:
                         g_cost[neighbor] = tentative_g
                         f_cost[neighbor] = tentative_g + self._heuristic(neighbor, goal)
                         
-                        # Add to open set if not already there
-                        if neighbor not in [pos for _, pos in open_set]:
+                        # Add to open set if not already there (O(1) check)
+                        if neighbor not in open_set_nodes:
                             heapq.heappush(open_set, (f_cost[neighbor], neighbor))
+                            open_set_nodes.add(neighbor)
             
-            self.get_logger().warn(f'Path planning failed after {iterations} iterations')
-            return None
+            return PlanningResult(success=False, path=[], nodes_explored=self.nodes_explored)
             
         except Exception as e:
-            self.get_logger().error(f'Error in A* path planning: {e}')
-            return None
+            return PlanningResult(success=False, path=[], nodes_explored=0)
     
     def _generate_26_neighbors(self) -> List[Tuple[int, int, int]]:
         """Generate 26-neighbor offsets for 3D grid."""
@@ -203,28 +202,9 @@ class AStar3D:
         Returns:
             Edge cost
         """
-        # TODO: Implement proper edge cost calculation
-        # This is a placeholder implementation
-        
-        # Basic distance cost
+        # Euclidean distance
         distance = self._heuristic(from_pos, to_pos)
-        
-        # Get voxel values
-        from_voxel = voxel_grid[from_pos]
-        to_voxel = voxel_grid[to_pos]
-        
-        # Calculate additional costs based on voxel types
-        base_cost = distance * self.voxel_size
-        
-        # Add cost for different voxel types
-        if to_voxel == 1:  # Ground
-            base_cost *= 1.0
-        elif to_voxel == 0:  # Empty
-            base_cost *= 1.2
-        elif to_voxel == 255:  # Unknown
-            base_cost *= 2.0
-        
-        return base_cost
+        return distance * self.voxel_size
     
     def _reconstruct_path(self, came_from: Dict[Tuple[int, int, int], Tuple[int, int, int]],
                          current: Tuple[int, int, int]) -> List[Tuple[int, int, int]]:
@@ -249,6 +229,13 @@ class AStar3D:
     
     def get_logger(self):
         """Get logger instance."""
-        # TODO: Implement proper logging
         import logging
         return logging.getLogger(__name__)
+
+
+class PlanningResult:
+    """Container for path planning results."""
+    def __init__(self, success: bool, path: List[Tuple[int, int, int]], nodes_explored: int):
+        self.success = success
+        self.path = path
+        self.nodes_explored = nodes_explored

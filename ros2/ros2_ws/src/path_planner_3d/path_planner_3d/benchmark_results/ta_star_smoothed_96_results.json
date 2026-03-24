@@ -1,962 +1,386 @@
 [
   {
     "scenario_id": "SMALL_1",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20629358291625977,
-    "path_length_meters": 5.1478150704935,
-    "path_total_cost": 5.1478150704935,
-    "path_smoothness": 0.0,
-    "nodes_explored": 40
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_2",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20444273948669434,
-    "path_length_meters": 3.5,
-    "path_total_cost": 3.5,
-    "path_smoothness": 0.0,
-    "nodes_explored": 8
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_3",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.21774721145629883,
-    "path_length_meters": 6.670832032063167,
-    "path_total_cost": 6.670832032063167,
-    "path_smoothness": 0.0,
-    "nodes_explored": 73
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_4",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.19115638732910156,
-    "path_length_meters": 3.2015621187164243,
-    "path_total_cost": 3.2015621187164243,
-    "path_smoothness": 0.0,
-    "nodes_explored": 9
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_5",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.24032998085021973,
-    "path_length_meters": 5.522680508593631,
-    "path_total_cost": 5.522680508593631,
-    "path_smoothness": 0.0,
-    "nodes_explored": 16
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_6",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.2176809310913086,
-    "path_length_meters": 6.0,
-    "path_total_cost": 6.0,
-    "path_smoothness": 0.0,
-    "nodes_explored": 13
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_7",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20422792434692383,
-    "path_length_meters": 5.522680508593631,
-    "path_total_cost": 5.522680508593631,
-    "path_smoothness": 0.0,
-    "nodes_explored": 16
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_8",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20337343215942383,
-    "path_length_meters": 4.924428900898052,
-    "path_total_cost": 4.924428900898052,
-    "path_smoothness": 0.0,
-    "nodes_explored": 42
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_9",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.1966240406036377,
-    "path_length_meters": 3.5355339059327378,
-    "path_total_cost": 3.5355339059327378,
-    "path_smoothness": 1.2074182697257333e-06,
-    "nodes_explored": 6
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_10",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.197113037109375,
-    "path_length_meters": 3.2015621187164243,
-    "path_total_cost": 3.2015621187164243,
-    "path_smoothness": 0.0,
-    "nodes_explored": 9
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_11",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20862841606140137,
-    "path_length_meters": 4.743416490252569,
-    "path_total_cost": 4.743416490252569,
-    "path_smoothness": 0.0,
-    "nodes_explored": 40
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_12",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.19799327850341797,
-    "path_length_meters": 4.6097722286464435,
-    "path_total_cost": 4.6097722286464435,
-    "path_smoothness": 0.0,
-    "nodes_explored": 13
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_13",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20079421997070312,
-    "path_length_meters": 5.315072906367325,
-    "path_total_cost": 5.315072906367325,
-    "path_smoothness": 0.0,
-    "nodes_explored": 16
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_14",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20134449005126953,
-    "path_length_meters": 3.5355339059327378,
-    "path_total_cost": 3.5355339059327378,
-    "path_smoothness": 1.2074182697257333e-06,
-    "nodes_explored": 6
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_15",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.19874215126037598,
-    "path_length_meters": 5.408326913195984,
-    "path_total_cost": 5.408326913195984,
-    "path_smoothness": 0.0,
-    "nodes_explored": 41
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_16",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.21492481231689453,
-    "path_length_meters": 4.924428900898052,
-    "path_total_cost": 4.924428900898052,
-    "path_smoothness": 0.0,
-    "nodes_explored": 44
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_17",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.19893479347229004,
-    "path_length_meters": 5.0,
-    "path_total_cost": 5.0,
-    "path_smoothness": 0.0,
-    "nodes_explored": 11
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_18",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20349478721618652,
-    "path_length_meters": 7.0178344238090995,
-    "path_total_cost": 7.0178344238090995,
-    "path_smoothness": 0.0,
-    "nodes_explored": 28
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_19",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.2180182933807373,
-    "path_length_meters": 7.905694150420948,
-    "path_total_cost": 7.905694150420948,
-    "path_smoothness": 0.0,
-    "nodes_explored": 90
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_20",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.23982882499694824,
-    "path_length_meters": 7.433034373659253,
-    "path_total_cost": 7.433034373659253,
-    "path_smoothness": 0.0,
-    "nodes_explored": 165
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_21",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.19971513748168945,
-    "path_length_meters": 4.716990566028302,
-    "path_total_cost": 4.716990566028302,
-    "path_smoothness": 0.0,
-    "nodes_explored": 31
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_22",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.21985125541687012,
-    "path_length_meters": 6.96419413859206,
-    "path_total_cost": 6.96419413859206,
-    "path_smoothness": 0.0,
-    "nodes_explored": 98
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_23",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.1894376277923584,
-    "path_length_meters": 3.5,
-    "path_total_cost": 3.5,
-    "path_smoothness": 0.0,
-    "nodes_explored": 8
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_24",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.20654726028442383,
-    "path_length_meters": 5.5901699437494745,
-    "path_total_cost": 5.5901699437494745,
-    "path_smoothness": 0.0,
-    "nodes_explored": 39
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_25",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.21366381645202637,
-    "path_length_meters": 6.576473218982953,
-    "path_total_cost": 6.576473218982953,
-    "path_smoothness": 0.0,
-    "nodes_explored": 54
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_26",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.22558236122131348,
-    "path_length_meters": 6.708203932499369,
-    "path_total_cost": 6.708203932499369,
-    "path_smoothness": 0.0,
-    "nodes_explored": 95
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_27",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.199615478515625,
-    "path_length_meters": 3.605551275463989,
-    "path_total_cost": 3.605551275463989,
-    "path_smoothness": 0.0,
-    "nodes_explored": 12
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_28",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.22033333778381348,
-    "path_length_meters": 5.852349955359813,
-    "path_total_cost": 5.852349955359813,
-    "path_smoothness": 0.0,
-    "nodes_explored": 65
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_29",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.2190687656402588,
-    "path_length_meters": 6.0,
-    "path_total_cost": 6.0,
-    "path_smoothness": 0.0,
-    "nodes_explored": 13
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "SMALL_30",
-    "map_size": "SMALL",
-    "success": true,
-    "computation_time": 0.21886968612670898,
-    "path_length_meters": 4.272001872658765,
-    "path_total_cost": 4.272001872658765,
-    "path_smoothness": 0.0,
-    "nodes_explored": 31
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_1",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.118318319320679,
-    "path_length_meters": 18.445866745696716,
-    "path_total_cost": 18.445866745696716,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1185
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_2",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.256521940231323,
-    "path_length_meters": 21.095023109728988,
-    "path_total_cost": 21.095023109728988,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1622
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_3",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.845095872879028,
-    "path_length_meters": 25.0,
-    "path_total_cost": 25.0,
-    "path_smoothness": 0.0,
-    "nodes_explored": 51
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_4",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.819997310638428,
-    "path_length_meters": 17.269916039170543,
-    "path_total_cost": 17.269916039170543,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1206
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_5",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.721704721450806,
-    "path_length_meters": 30.504098085339287,
-    "path_total_cost": 30.504098085339287,
-    "path_smoothness": 0.0,
-    "nodes_explored": 120
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_6",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.748445749282837,
-    "path_length_meters": 27.730849247724095,
-    "path_total_cost": 27.730849247724095,
-    "path_smoothness": 0.0,
-    "nodes_explored": 4255
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_7",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.764939785003662,
-    "path_length_meters": 24.20743687382041,
-    "path_total_cost": 24.20743687382041,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1148
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_8",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.9689435958862305,
-    "path_length_meters": 18.117670931993437,
-    "path_total_cost": 18.117670931993437,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1264
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_9",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 6.069231748580933,
-    "path_length_meters": 31.18092365533773,
-    "path_total_cost": 31.18092365533773,
-    "path_smoothness": 0.0,
-    "nodes_explored": 5392
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_10",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.7470924854278564,
-    "path_length_meters": 28.90069203323685,
-    "path_total_cost": 28.90069203323685,
-    "path_smoothness": 0.0,
-    "nodes_explored": 4200
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_11",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.768508195877075,
-    "path_length_meters": 32.449961479175904,
-    "path_total_cost": 32.449961479175904,
-    "path_smoothness": 0.0,
-    "nodes_explored": 4623
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_12",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.310647010803223,
-    "path_length_meters": 22.89650628371062,
-    "path_total_cost": 22.89650628371062,
-    "path_smoothness": 0.0,
-    "nodes_explored": 2070
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_13",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.357894659042358,
-    "path_length_meters": 28.853076092507017,
-    "path_total_cost": 28.853076092507017,
-    "path_smoothness": 0.0,
-    "nodes_explored": 2637
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_14",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.762274980545044,
-    "path_length_meters": 17.92344832893492,
-    "path_total_cost": 17.92344832893492,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1227
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_15",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.959864377975464,
-    "path_length_meters": 16.224980739587952,
-    "path_total_cost": 16.224980739587952,
-    "path_smoothness": 0.0,
-    "nodes_explored": 886
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_16",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.192325830459595,
-    "path_length_meters": 27.663152387246107,
-    "path_total_cost": 27.663152387246107,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1567
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_17",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 6.022287845611572,
-    "path_length_meters": 32.44225639501667,
-    "path_total_cost": 32.44225639501667,
-    "path_smoothness": 0.0,
-    "nodes_explored": 6226
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_18",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 6.38715934753418,
-    "path_length_meters": 33.12099032335839,
-    "path_total_cost": 33.12099032335839,
-    "path_smoothness": 0.0,
-    "nodes_explored": 6526
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_19",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.221216917037964,
-    "path_length_meters": 27.225906780123964,
-    "path_total_cost": 27.225906780123964,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1824
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_20",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.51264762878418,
-    "path_length_meters": 23.005434140654682,
-    "path_total_cost": 23.005434140654682,
-    "path_smoothness": 0.0,
-    "nodes_explored": 52
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_21",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.777118682861328,
-    "path_length_meters": 31.04834939252005,
-    "path_total_cost": 31.04834939252005,
-    "path_smoothness": 0.0,
-    "nodes_explored": 5181
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_22",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.842322587966919,
-    "path_length_meters": 27.784887978899608,
-    "path_total_cost": 27.784887978899608,
-    "path_smoothness": 0.0,
-    "nodes_explored": 3766
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_23",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.919404983520508,
-    "path_length_meters": 23.30772404161333,
-    "path_total_cost": 23.30772404161333,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1678
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_24",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.3593080043792725,
-    "path_length_meters": 15.074813431681335,
-    "path_total_cost": 15.074813431681335,
-    "path_smoothness": 0.0,
-    "nodes_explored": 295
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_25",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.555957555770874,
-    "path_length_meters": 21.523243250030884,
-    "path_total_cost": 21.523243250030884,
-    "path_smoothness": 0.0,
-    "nodes_explored": 264
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_26",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.278610706329346,
-    "path_length_meters": 22.677080940897135,
-    "path_total_cost": 22.677080940897135,
-    "path_smoothness": 0.0,
-    "nodes_explored": 2050
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_27",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.943096399307251,
-    "path_length_meters": 22.20360331117452,
-    "path_total_cost": 22.20360331117452,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1117
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_28",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.817594766616821,
-    "path_length_meters": 27.730849247724095,
-    "path_total_cost": 27.730849247724095,
-    "path_smoothness": 0.0,
-    "nodes_explored": 4323
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_29",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.6175453662872314,
-    "path_length_meters": 19.50640920313116,
-    "path_total_cost": 19.50640920313116,
-    "path_smoothness": 0.0,
-    "nodes_explored": 56
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_30",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.860645294189453,
-    "path_length_meters": 27.504545078950134,
-    "path_total_cost": 27.504545078950134,
-    "path_smoothness": 0.0,
-    "nodes_explored": 60
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_31",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 6.837600231170654,
-    "path_length_meters": 41.188590653237945,
-    "path_total_cost": 41.188590653237945,
-    "path_smoothness": 0.0,
-    "nodes_explored": 9452
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_32",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.604527473449707,
-    "path_length_meters": 15.305227865013967,
-    "path_total_cost": 15.305227865013967,
-    "path_smoothness": 0.0,
-    "nodes_explored": 334
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_33",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.070237398147583,
-    "path_length_meters": 23.69071548096427,
-    "path_total_cost": 23.69071548096427,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1241
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_34",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.528218746185303,
-    "path_length_meters": 25.947061490658243,
-    "path_total_cost": 25.947061490658243,
-    "path_smoothness": 0.0,
-    "nodes_explored": 3628
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_35",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.943618059158325,
-    "path_length_meters": 27.37243138634199,
-    "path_total_cost": 27.37243138634199,
-    "path_smoothness": 0.0,
-    "nodes_explored": 2413
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_36",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 6.747848749160767,
-    "path_length_meters": 36.138621999185304,
-    "path_total_cost": 36.138621999185304,
-    "path_smoothness": 0.0,
-    "nodes_explored": 7648
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_37",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 6.304011821746826,
-    "path_length_meters": 33.47013594235912,
-    "path_total_cost": 33.47013594235912,
-    "path_smoothness": 0.0,
-    "nodes_explored": 6014
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_38",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.61158299446106,
-    "path_length_meters": 23.753947040439407,
-    "path_total_cost": 23.753947040439407,
-    "path_smoothness": 0.0,
-    "nodes_explored": 655
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_39",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.812023401260376,
-    "path_length_meters": 14.916433890176299,
-    "path_total_cost": 14.916433890176299,
-    "path_smoothness": 0.0,
-    "nodes_explored": 648
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_40",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.800984859466553,
-    "path_length_meters": 30.103986446980738,
-    "path_total_cost": 30.103986446980738,
-    "path_smoothness": 0.0,
-    "nodes_explored": 3781
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_41",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.964401006698608,
-    "path_length_meters": 18.7949461292125,
-    "path_total_cost": 18.7949461292125,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1324
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_42",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.640061855316162,
-    "path_length_meters": 17.26267650163207,
-    "path_total_cost": 17.26267650163207,
-    "path_smoothness": 0.0,
-    "nodes_explored": 733
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_43",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.866453170776367,
-    "path_length_meters": 17.804493814764857,
-    "path_total_cost": 17.804493814764857,
-    "path_smoothness": 0.0,
-    "nodes_explored": 512
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_44",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.960025072097778,
-    "path_length_meters": 16.3783393541592,
-    "path_total_cost": 16.3783393541592,
-    "path_smoothness": 0.0,
-    "nodes_explored": 816
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_45",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.700410842895508,
-    "path_length_meters": 22.80350850198276,
-    "path_total_cost": 22.80350850198276,
-    "path_smoothness": 0.0,
-    "nodes_explored": 1047
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_46",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 7.345474720001221,
-    "path_length_meters": 38.948684188300895,
-    "path_total_cost": 38.948684188300895,
-    "path_smoothness": 0.0,
-    "nodes_explored": 10244
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_47",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 5.666164875030518,
-    "path_length_meters": 30.805843601498726,
-    "path_total_cost": 30.805843601498726,
-    "path_smoothness": 0.0,
-    "nodes_explored": 3323
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "MEDIUM_48",
-    "map_size": "MEDIUM",
-    "success": true,
-    "computation_time": 4.498507499694824,
-    "path_length_meters": 14.866068747318506,
-    "path_total_cost": 14.866068747318506,
-    "path_smoothness": 0.0,
-    "nodes_explored": 103
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_1",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 39.18745017051697,
-    "path_length_meters": 41.36725758374611,
-    "path_total_cost": 41.36725758374611,
-    "path_smoothness": 0.0,
-    "nodes_explored": 13224
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_2",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 40.55702781677246,
-    "path_length_meters": 74.33034373659252,
-    "path_total_cost": 74.33034373659252,
-    "path_smoothness": 0.0,
-    "nodes_explored": 19548
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_3",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 38.2842116355896,
-    "path_length_meters": 41.188590653237945,
-    "path_total_cost": 41.188590653237945,
-    "path_smoothness": 0.0,
-    "nodes_explored": 9492
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_4",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 36.03630042076111,
-    "path_length_meters": 31.62672920173694,
-    "path_total_cost": 31.62672920173694,
-    "path_smoothness": 0.0,
-    "nodes_explored": 2004
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_5",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 39.20840525627136,
-    "path_length_meters": 44.02839992550263,
-    "path_total_cost": 44.02839992550263,
-    "path_smoothness": 0.0,
-    "nodes_explored": 13843
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_6",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 37.50036263465881,
-    "path_length_meters": 48.023431780746364,
-    "path_total_cost": 48.023431780746364,
-    "path_smoothness": 0.0,
-    "nodes_explored": 7261
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_7",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 56.523603200912476,
-    "path_length_meters": 84.17986695166488,
-    "path_total_cost": 84.17986695166488,
-    "path_smoothness": 0.0,
-    "nodes_explored": 73370
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_8",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 36.939553022384644,
-    "path_length_meters": 69.56471806886016,
-    "path_total_cost": 69.56471806886016,
-    "path_smoothness": 0.0,
-    "nodes_explored": 5595
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_9",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 53.81531810760498,
-    "path_length_meters": 78.65271768985481,
-    "path_total_cost": 78.65271768985481,
-    "path_smoothness": 0.0,
-    "nodes_explored": 64350
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_10",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 39.46849822998047,
-    "path_length_meters": 75.11657606680433,
-    "path_total_cost": 75.11657606680433,
-    "path_smoothness": 0.0,
-    "nodes_explored": 12934
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_11",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 36.50356578826904,
-    "path_length_meters": 38.616706229299254,
-    "path_total_cost": 38.616706229299254,
-    "path_smoothness": 0.0,
-    "nodes_explored": 2125
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_12",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 36.78214502334595,
-    "path_length_meters": 34.00367627183861,
-    "path_total_cost": 34.00367627183861,
-    "path_smoothness": 0.0,
-    "nodes_explored": 4139
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_13",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 36.117703914642334,
-    "path_length_meters": 39.080046059338265,
-    "path_total_cost": 39.080046059338265,
-    "path_smoothness": 0.0,
-    "nodes_explored": 2025
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_14",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 36.25831627845764,
-    "path_length_meters": 41.16430492550555,
-    "path_total_cost": 41.16430492550555,
-    "path_smoothness": 0.0,
-    "nodes_explored": 3423
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_15",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 40.470088958740234,
-    "path_length_meters": 45.880278987817846,
-    "path_total_cost": 45.880278987817846,
-    "path_smoothness": 0.0,
-    "nodes_explored": 18239
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_16",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 36.27022886276245,
-    "path_length_meters": 35.92005011132362,
-    "path_total_cost": 35.92005011132362,
-    "path_smoothness": 0.0,
-    "nodes_explored": 3257
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_17",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 37.0053071975708,
-    "path_length_meters": 32.882366094914765,
-    "path_total_cost": 32.882366094914765,
-    "path_smoothness": 0.0,
-    "nodes_explored": 6609
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   },
   {
     "scenario_id": "LARGE_18",
-    "map_size": "LARGE",
-    "success": true,
-    "computation_time": 48.05830454826355,
-    "path_length_meters": 64.8459713474939,
-    "path_total_cost": 64.8459713474939,
-    "path_smoothness": 0.0,
-    "nodes_explored": 45677
+    "error": "TerrainAwareAStar.__init__() got an unexpected keyword argument 'min_bound'"
   }
 ]

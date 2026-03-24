@@ -1,0 +1,4 @@
+Comparison,t_statistic,p_value,Significance,Cohens_d,Effect_Size
+TA* vs AHA*,6.501754,0.000000,***,0.938447,Large
+TA* vs Theta*,6.408760,0.000000,***,0.925025,Large
+TA* vs FieldD*Hybrid,6.299645,0.000000,***,0.909275,Large

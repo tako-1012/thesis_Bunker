@@ -1,0 +1,3470 @@
+{
+  "metadata": {
+    "total_scenarios": 96,
+    "methods": [
+      "TA*",
+      "AHA*",
+      "Theta*",
+      "FieldD*Hybrid"
+    ],
+    "timestamp": "2026-01-29"
+  },
+  "results": {
+    "SMALL_1": {
+      "scenario": {
+        "scenario_id": "SMALL_1",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.40981578826904297,
+          "path_length": 5.1478150704935,
+          "nodes_explored": 40,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.006593227386474609,
+          "path_length": 6.035533905932739,
+          "nodes_explored": 13,
+          "path_smoothness": 15.000000402472757
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0055849552154541016,
+          "path_length": 5.1478150704935,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.010255098342895508,
+          "path_length": 4.47213595499958,
+          "nodes_explored": 84,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_2": {
+      "scenario": {
+        "scenario_id": "SMALL_2",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.24082374572753906,
+          "path_length": 3.5,
+          "nodes_explored": 8,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.008226156234741211,
+          "path_length": 3.914213562373095,
+          "nodes_explored": 9,
+          "path_smoothness": 30.000000000000004
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.005744457244873047,
+          "path_length": 3.5,
+          "nodes_explored": 8,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0013165473937988281,
+          "path_length": 3.0,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_3": {
+      "scenario": {
+        "scenario_id": "SMALL_3",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.3851172924041748,
+          "path_length": 6.670832032063167,
+          "nodes_explored": 73,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0074312686920166016,
+          "path_length": 6.828427124746191,
+          "nodes_explored": 16,
+          "path_smoothness": 12.27272749225787
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.010946512222290039,
+          "path_length": 6.670832032063167,
+          "nodes_explored": 16,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.017490863800048828,
+          "path_length": 6.082762530298219,
+          "nodes_explored": 129,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_4": {
+      "scenario": {
+        "scenario_id": "SMALL_4",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.23917198181152344,
+          "path_length": 3.2015621187164243,
+          "nodes_explored": 9,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.002778291702270508,
+          "path_length": 2.8284271247461903,
+          "nodes_explored": 5,
+          "path_smoothness": 1.2074182697257333e-06
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.003657817840576172,
+          "path_length": 3.2015621187164243,
+          "nodes_explored": 6,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.006666421890258789,
+          "path_length": 3.605551275463989,
+          "nodes_explored": 58,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_5": {
+      "scenario": {
+        "scenario_id": "SMALL_5",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.27729153633117676,
+          "path_length": 5.522680508593631,
+          "nodes_explored": 16,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.008140802383422852,
+          "path_length": 5.707106781186548,
+          "nodes_explored": 15,
+          "path_smoothness": 9.000000000000002
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.014695405960083008,
+          "path_length": 5.522680508593631,
+          "nodes_explored": 12,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0028328895568847656,
+          "path_length": 6.0,
+          "nodes_explored": 22,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_6": {
+      "scenario": {
+        "scenario_id": "SMALL_6",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.2784395217895508,
+          "path_length": 6.0,
+          "nodes_explored": 13,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.012688636779785156,
+          "path_length": 6.5,
+          "nodes_explored": 17,
+          "path_smoothness": 0.0
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.012970685958862305,
+          "path_length": 6.0,
+          "nodes_explored": 13,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0028145313262939453,
+          "path_length": 6.0,
+          "nodes_explored": 22,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_7": {
+      "scenario": {
+        "scenario_id": "SMALL_7",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.2680830955505371,
+          "path_length": 5.522680508593631,
+          "nodes_explored": 16,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.009479522705078125,
+          "path_length": 6.535533905932739,
+          "nodes_explored": 15,
+          "path_smoothness": 22.500000241483654
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.00735926628112793,
+          "path_length": 5.522680508593631,
+          "nodes_explored": 12,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.002814054489135742,
+          "path_length": 6.0,
+          "nodes_explored": 22,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_8": {
+      "scenario": {
+        "scenario_id": "SMALL_8",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.3183474540710449,
+          "path_length": 4.924428900898052,
+          "nodes_explored": 42,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.008659124374389648,
+          "path_length": 5.535533905932738,
+          "nodes_explored": 12,
+          "path_smoothness": 16.87500045278185
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.006439208984375,
+          "path_length": 4.924428900898052,
+          "nodes_explored": 12,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.009593725204467773,
+          "path_length": 4.47213595499958,
+          "nodes_explored": 84,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_9": {
+      "scenario": {
+        "scenario_id": "SMALL_9",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.23000788688659668,
+          "path_length": 3.5355339059327378,
+          "nodes_explored": 6,
+          "path_smoothness": 1.2074182697257333e-06
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.004024982452392578,
+          "path_length": 3.6213203435596424,
+          "nodes_explored": 8,
+          "path_smoothness": 27.000000241483654
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0058858394622802734,
+          "path_length": 3.5355339059327378,
+          "nodes_explored": 6,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0013287067413330078,
+          "path_length": 4.242640687119285,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_10": {
+      "scenario": {
+        "scenario_id": "SMALL_10",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.2403419017791748,
+          "path_length": 3.2015621187164243,
+          "nodes_explored": 9,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.004453420639038086,
+          "path_length": 4.035533905932738,
+          "nodes_explored": 8,
+          "path_smoothness": 18.000000724450963
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0032880306243896484,
+          "path_length": 3.2015621187164243,
+          "nodes_explored": 6,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.006645917892456055,
+          "path_length": 3.605551275463989,
+          "nodes_explored": 58,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_11": {
+      "scenario": {
+        "scenario_id": "SMALL_11",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.30936431884765625,
+          "path_length": 4.743416490252569,
+          "nodes_explored": 40,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.008424520492553711,
+          "path_length": 5.32842712474619,
+          "nodes_explored": 12,
+          "path_smoothness": 22.50000030185457
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.006954669952392578,
+          "path_length": 4.743416490252569,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.009498357772827148,
+          "path_length": 4.123105625617661,
+          "nodes_explored": 83,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_12": {
+      "scenario": {
+        "scenario_id": "SMALL_12",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.27822232246398926,
+          "path_length": 4.6097722286464435,
+          "nodes_explored": 13,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0059223175048828125,
+          "path_length": 5.535533905932739,
+          "nodes_explored": 12,
+          "path_smoothness": 16.875000452781855
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.008383512496948242,
+          "path_length": 4.6097722286464435,
+          "nodes_explored": 8,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0015211105346679688,
+          "path_length": 4.242640687119285,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_13": {
+      "scenario": {
+        "scenario_id": "SMALL_13",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.2833092212677002,
+          "path_length": 5.315072906367325,
+          "nodes_explored": 16,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.005648136138916016,
+          "path_length": 5.242640687119286,
+          "nodes_explored": 10,
+          "path_smoothness": 19.285714975667585
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.004412174224853516,
+          "path_length": 5.315072906367325,
+          "nodes_explored": 9,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.010961532592773438,
+          "path_length": 5.0,
+          "nodes_explored": 83,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_14": {
+      "scenario": {
+        "scenario_id": "SMALL_14",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.23537206649780273,
+          "path_length": 3.5355339059327378,
+          "nodes_explored": 6,
+          "path_smoothness": 1.2074182697257333e-06
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0042362213134765625,
+          "path_length": 4.121320343559642,
+          "nodes_explored": 11,
+          "path_smoothness": 22.50000020123638
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0029947757720947266,
+          "path_length": 3.5355339059327378,
+          "nodes_explored": 6,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0008435249328613281,
+          "path_length": 2.8284271247461903,
+          "nodes_explored": 6,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_15": {
+      "scenario": {
+        "scenario_id": "SMALL_15",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.33698606491088867,
+          "path_length": 5.408326913195984,
+          "nodes_explored": 41,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.007245779037475586,
+          "path_length": 6.7426406871192865,
+          "nodes_explored": 14,
+          "path_smoothness": 22.500000482967312
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.012264728546142578,
+          "path_length": 5.408326913195984,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.012426376342773438,
+          "path_length": 5.830951894845301,
+          "nodes_explored": 107,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_16": {
+      "scenario": {
+        "scenario_id": "SMALL_16",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.3287320137023926,
+          "path_length": 4.924428900898052,
+          "nodes_explored": 44,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.004433631896972656,
+          "path_length": 4.621320343559642,
+          "nodes_explored": 11,
+          "path_smoothness": 12.857143202119508
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.007176399230957031,
+          "path_length": 4.924428900898052,
+          "nodes_explored": 12,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.012636184692382812,
+          "path_length": 5.385164807134504,
+          "nodes_explored": 108,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_17": {
+      "scenario": {
+        "scenario_id": "SMALL_17",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.2744917869567871,
+          "path_length": 5.0,
+          "nodes_explored": 11,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0075151920318603516,
+          "path_length": 4.707106781186548,
+          "nodes_explored": 12,
+          "path_smoothness": 11.250000000000002
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.014526605606079102,
+          "path_length": 5.0,
+          "nodes_explored": 11,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.002347230911254883,
+          "path_length": 5.0,
+          "nodes_explored": 18,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_18": {
+      "scenario": {
+        "scenario_id": "SMALL_18",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.32257604598999023,
+          "path_length": 7.0178344238090995,
+          "nodes_explored": 28,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.008054256439208984,
+          "path_length": 7.414213562373096,
+          "nodes_explored": 18,
+          "path_smoothness": 13.846153846153848
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.01425313949584961,
+          "path_length": 7.0178344238090995,
+          "nodes_explored": 15,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.017811298370361328,
+          "path_length": 7.0710678118654755,
+          "nodes_explored": 151,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_19": {
+      "scenario": {
+        "scenario_id": "SMALL_19",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.4305393695831299,
+          "path_length": 7.905694150420948,
+          "nodes_explored": 90,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0063724517822265625,
+          "path_length": 7.863961030678929,
+          "nodes_explored": 16,
+          "path_smoothness": 8.181818950175261
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.011295557022094727,
+          "path_length": 7.905694150420948,
+          "nodes_explored": 16,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.014122486114501953,
+          "path_length": 7.810249675906654,
+          "nodes_explored": 126,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_20": {
+      "scenario": {
+        "scenario_id": "SMALL_20",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.5317256450653076,
+          "path_length": 7.433034373659253,
+          "nodes_explored": 165,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.008908271789550781,
+          "path_length": 8.242640687119286,
+          "nodes_explored": 22,
+          "path_smoothness": 20.769230954987428
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.015197038650512695,
+          "path_length": 7.433034373659253,
+          "nodes_explored": 18,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.018350601196289062,
+          "path_length": 7.280109889280518,
+          "nodes_explored": 157,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_21": {
+      "scenario": {
+        "scenario_id": "SMALL_21",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.3151254653930664,
+          "path_length": 4.716990566028302,
+          "nodes_explored": 31,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.005281925201416016,
+          "path_length": 4.82842712474619,
+          "nodes_explored": 11,
+          "path_smoothness": 19.285714630690936
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.005812168121337891,
+          "path_length": 4.716990566028302,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.009678363800048828,
+          "path_length": 4.47213595499958,
+          "nodes_explored": 84,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_22": {
+      "scenario": {
+        "scenario_id": "SMALL_22",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.4466280937194824,
+          "path_length": 6.96419413859206,
+          "nodes_explored": 98,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.007643222808837891,
+          "path_length": 7.949747468305834,
+          "nodes_explored": 17,
+          "path_smoothness": 11.250000503090945
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0162656307220459,
+          "path_length": 6.96419413859206,
+          "nodes_explored": 18,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.020003557205200195,
+          "path_length": 7.615773105863909,
+          "nodes_explored": 158,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_23": {
+      "scenario": {
+        "scenario_id": "SMALL_23",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.253201961517334,
+          "path_length": 3.5,
+          "nodes_explored": 8,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0037229061126708984,
+          "path_length": 3.2071067811865475,
+          "nodes_explored": 8,
+          "path_smoothness": 18.000000000000004
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.004704952239990234,
+          "path_length": 3.5,
+          "nodes_explored": 8,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0013287067413330078,
+          "path_length": 3.0,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_24": {
+      "scenario": {
+        "scenario_id": "SMALL_24",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.3358159065246582,
+          "path_length": 5.5901699437494745,
+          "nodes_explored": 39,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.006549835205078125,
+          "path_length": 6.328427124746191,
+          "nodes_explored": 15,
+          "path_smoothness": 18.000000241483654
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.015234231948852539,
+          "path_length": 5.5901699437494745,
+          "nodes_explored": 12,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.012147903442382812,
+          "path_length": 5.0990195135927845,
+          "nodes_explored": 106,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_25": {
+      "scenario": {
+        "scenario_id": "SMALL_25",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.41266322135925293,
+          "path_length": 6.576473218982953,
+          "nodes_explored": 54,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.012078523635864258,
+          "path_length": 6.207106781186548,
+          "nodes_explored": 16,
+          "path_smoothness": 8.181818181818183
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.019651412963867188,
+          "path_length": 6.576473218982953,
+          "nodes_explored": 14,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.016880512237548828,
+          "path_length": 7.0710678118654755,
+          "nodes_explored": 150,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_26": {
+      "scenario": {
+        "scenario_id": "SMALL_26",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.4549872875213623,
+          "path_length": 6.708203932499369,
+          "nodes_explored": 95,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.011329412460327148,
+          "path_length": 6.7426406871192865,
+          "nodes_explored": 14,
+          "path_smoothness": 9.000000482967307
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.010251998901367188,
+          "path_length": 6.708203932499369,
+          "nodes_explored": 17,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.015454769134521484,
+          "path_length": 6.708203932499369,
+          "nodes_explored": 132,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_27": {
+      "scenario": {
+        "scenario_id": "SMALL_27",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.305408239364624,
+          "path_length": 3.605551275463989,
+          "nodes_explored": 12,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.005486726760864258,
+          "path_length": 4.82842712474619,
+          "nodes_explored": 11,
+          "path_smoothness": 19.285714630690936
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.003831624984741211,
+          "path_length": 3.605551275463989,
+          "nodes_explored": 7,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.006725788116455078,
+          "path_length": 3.605551275463989,
+          "nodes_explored": 58,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_28": {
+      "scenario": {
+        "scenario_id": "SMALL_28",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.3896505832672119,
+          "path_length": 5.852349955359813,
+          "nodes_explored": 65,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.007066249847412109,
+          "path_length": 6.449747468305834,
+          "nodes_explored": 14,
+          "path_smoothness": 20.00000067078793
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.017285823822021484,
+          "path_length": 5.852349955359813,
+          "nodes_explored": 14,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.012469053268432617,
+          "path_length": 5.385164807134504,
+          "nodes_explored": 108,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_29": {
+      "scenario": {
+        "scenario_id": "SMALL_29",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.2975184917449951,
+          "path_length": 6.0,
+          "nodes_explored": 13,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.006300687789916992,
+          "path_length": 6.414213562373096,
+          "nodes_explored": 16,
+          "path_smoothness": 12.272727272727275
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0067081451416015625,
+          "path_length": 6.0,
+          "nodes_explored": 13,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.002834320068359375,
+          "path_length": 6.0,
+          "nodes_explored": 22,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "SMALL_30": {
+      "scenario": {
+        "scenario_id": "SMALL_30",
+        "map_size": "SMALL"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 0.31361865997314453,
+          "path_length": 4.272001872658765,
+          "nodes_explored": 31,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0051157474517822266,
+          "path_length": 4.82842712474619,
+          "nodes_explored": 11,
+          "path_smoothness": 19.285714630690936
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.010003328323364258,
+          "path_length": 4.272001872658765,
+          "nodes_explored": 10,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.009396076202392578,
+          "path_length": 4.123105625617661,
+          "nodes_explored": 83,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_1": {
+      "scenario": {
+        "scenario_id": "MEDIUM_1",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.978438138961792,
+          "path_length": 18.445866745696716,
+          "nodes_explored": 1185,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.018397808074951172,
+          "path_length": 19.422980574618236,
+          "nodes_explored": 38,
+          "path_smoothness": 27.391304347826086
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.06628894805908203,
+          "path_length": 18.445866745696716,
+          "nodes_explored": 46,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.06629514694213867,
+          "path_length": 18.867962264113206,
+          "nodes_explored": 527,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_2": {
+      "scenario": {
+        "scenario_id": "MEDIUM_2",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 7.300743341445923,
+          "path_length": 21.095023109728988,
+          "nodes_explored": 1622,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.01762557029724121,
+          "path_length": 21.34376684661082,
+          "nodes_explored": 36,
+          "path_smoothness": 17.962178678202857
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.09196925163269043,
+          "path_length": 21.095023109728988,
+          "nodes_explored": 63,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.08038020133972168,
+          "path_length": 21.095023109728988,
+          "nodes_explored": 662,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_3": {
+      "scenario": {
+        "scenario_id": "MEDIUM_3",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.002575874328613,
+          "path_length": 25.0,
+          "nodes_explored": 51,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.024549245834350586,
+          "path_length": 25.26831552862278,
+          "nodes_explored": 50,
+          "path_smoothness": 5.0489078492836885
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.11649084091186523,
+          "path_length": 25.0,
+          "nodes_explored": 51,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.02066802978515625,
+          "path_length": 25.0,
+          "nodes_explored": 98,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_4": {
+      "scenario": {
+        "scenario_id": "MEDIUM_4",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 7.4138267040252686,
+          "path_length": 17.269916039170543,
+          "nodes_explored": 1206,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.012381315231323242,
+          "path_length": 17.361771827182,
+          "nodes_explored": 32,
+          "path_smoothness": 20.250000000000004
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.09207797050476074,
+          "path_length": 17.269916039170543,
+          "nodes_explored": 74,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.06096768379211426,
+          "path_length": 17.08800749063506,
+          "nodes_explored": 501,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_5": {
+      "scenario": {
+        "scenario_id": "MEDIUM_5",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 5.77033257484436,
+          "path_length": 30.504098085339287,
+          "nodes_explored": 120,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.022696495056152344,
+          "path_length": 30.650281539872886,
+          "nodes_explored": 62,
+          "path_smoothness": 4.500000000000002
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.14127039909362793,
+          "path_length": 30.504098085339287,
+          "nodes_explored": 62,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0755760669708252,
+          "path_length": 30.01666203960727,
+          "nodes_explored": 666,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_6": {
+      "scenario": {
+        "scenario_id": "MEDIUM_6",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 14.712778806686401,
+          "path_length": 27.730849247724095,
+          "nodes_explored": 4255,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.022457599639892578,
+          "path_length": 27.605509665614097,
+          "nodes_explored": 49,
+          "path_smoothness": 18.608706414621363
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.29825305938720703,
+          "path_length": 27.730849247724095,
+          "nodes_explored": 208,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.164290189743042,
+          "path_length": 27.730849247724095,
+          "nodes_explored": 1333,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_7": {
+      "scenario": {
+        "scenario_id": "MEDIUM_7",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 8.595645666122437,
+          "path_length": 24.20743687382041,
+          "nodes_explored": 1148,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.02004384994506836,
+          "path_length": 23.764553118603413,
+          "nodes_explored": 38,
+          "path_smoothness": 11.250000603709138
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.09093356132507324,
+          "path_length": 24.20743687382041,
+          "nodes_explored": 57,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.07379412651062012,
+          "path_length": 24.20743687382041,
+          "nodes_explored": 599,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_8": {
+      "scenario": {
+        "scenario_id": "MEDIUM_8",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 8.838691711425781,
+          "path_length": 18.117670931993437,
+          "nodes_explored": 1264,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.02238774299621582,
+          "path_length": 17.51205336705489,
+          "nodes_explored": 31,
+          "path_smoothness": 21.315789537232543
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.08925461769104004,
+          "path_length": 18.117670931993437,
+          "nodes_explored": 70,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.06564879417419434,
+          "path_length": 17.88854381999832,
+          "nodes_explored": 539,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_9": {
+      "scenario": {
+        "scenario_id": "MEDIUM_9",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 18.038760900497437,
+          "path_length": 31.18092365533773,
+          "nodes_explored": 5392,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.025704383850097656,
+          "path_length": 32.366155333304555,
+          "nodes_explored": 60,
+          "path_smoothness": 16.153846153846153
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.25512266159057617,
+          "path_length": 31.18092365533773,
+          "nodes_explored": 138,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.19136953353881836,
+          "path_length": 31.32091952673165,
+          "nodes_explored": 1553,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_10": {
+      "scenario": {
+        "scenario_id": "MEDIUM_10",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 15.96672511100769,
+          "path_length": 28.90069203323685,
+          "nodes_explored": 4200,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.025241374969482422,
+          "path_length": 29.348150352733384,
+          "nodes_explored": 51,
+          "path_smoothness": 19.090909310439688
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.22567105293273926,
+          "path_length": 28.90069203323685,
+          "nodes_explored": 140,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.16742849349975586,
+          "path_length": 28.653097563788805,
+          "nodes_explored": 1383,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_11": {
+      "scenario": {
+        "scenario_id": "MEDIUM_11",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 15.78720998764038,
+          "path_length": 32.449961479175904,
+          "nodes_explored": 4623,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.025104045867919922,
+          "path_length": 33.26893662472598,
+          "nodes_explored": 59,
+          "path_smoothness": 18.462976098263702
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.18713784217834473,
+          "path_length": 32.449961479175904,
+          "nodes_explored": 103,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.23390769958496094,
+          "path_length": 32.449961479175904,
+          "nodes_explored": 1535,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_12": {
+      "scenario": {
+        "scenario_id": "MEDIUM_12",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 10.49968671798706,
+          "path_length": 22.89650628371062,
+          "nodes_explored": 2070,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.01440286636352539,
+          "path_length": 22.872728042924066,
+          "nodes_explored": 39,
+          "path_smoothness": 17.262602336863505
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.1066434383392334,
+          "path_length": 22.89650628371062,
+          "nodes_explored": 72,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.1023259162902832,
+          "path_length": 23.323807579381203,
+          "nodes_explored": 825,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_13": {
+      "scenario": {
+        "scenario_id": "MEDIUM_13",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 11.299783945083618,
+          "path_length": 28.853076092507017,
+          "nodes_explored": 2637,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.024832963943481445,
+          "path_length": 28.82952427605901,
+          "nodes_explored": 56,
+          "path_smoothness": 7.500000000000002
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.19727015495300293,
+          "path_length": 28.853076092507017,
+          "nodes_explored": 108,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.1258406639099121,
+          "path_length": 28.442925306655784,
+          "nodes_explored": 1024,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_14": {
+      "scenario": {
+        "scenario_id": "MEDIUM_14",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 8.396339893341064,
+          "path_length": 17.92344832893492,
+          "nodes_explored": 1227,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0124053955078125,
+          "path_length": 18.015339721864635,
+          "nodes_explored": 31,
+          "path_smoothness": 18.000000241483654
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.07003569602966309,
+          "path_length": 17.92344832893492,
+          "nodes_explored": 54,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.058922529220581055,
+          "path_length": 17.4928556845359,
+          "nodes_explored": 479,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_15": {
+      "scenario": {
+        "scenario_id": "MEDIUM_15",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 7.317941427230835,
+          "path_length": 16.224980739587952,
+          "nodes_explored": 886,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.01650214195251465,
+          "path_length": 16.575451317988048,
+          "nodes_explored": 29,
+          "path_smoothness": 21.315789791425864
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.04919004440307617,
+          "path_length": 16.224980739587952,
+          "nodes_explored": 38,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.04538846015930176,
+          "path_length": 15.811388300841896,
+          "nodes_explored": 369,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_16": {
+      "scenario": {
+        "scenario_id": "MEDIUM_16",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 8.349612951278687,
+          "path_length": 27.663152387246107,
+          "nodes_explored": 1567,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.026413440704345703,
+          "path_length": 28.093456298559218,
+          "nodes_explored": 55,
+          "path_smoothness": 7.500000000000002
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.15429472923278809,
+          "path_length": 27.663152387246107,
+          "nodes_explored": 78,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.09323573112487793,
+          "path_length": 27.16615541441225,
+          "nodes_explored": 782,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_17": {
+      "scenario": {
+        "scenario_id": "MEDIUM_17",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 19.663453578948975,
+          "path_length": 32.44225639501667,
+          "nodes_explored": 6226,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.026433229446411133,
+          "path_length": 32.40278639055011,
+          "nodes_explored": 57,
+          "path_smoothness": 21.89189192452482
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.35320043563842773,
+          "path_length": 32.44225639501667,
+          "nodes_explored": 218,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.23126554489135742,
+          "path_length": 32.64965543462902,
+          "nodes_explored": 1966,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_18": {
+      "scenario": {
+        "scenario_id": "MEDIUM_18",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 22.921531915664673,
+          "path_length": 33.12099032335839,
+          "nodes_explored": 6526,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.026051998138427734,
+          "path_length": 33.49514553779652,
+          "nodes_explored": 60,
+          "path_smoothness": 21.52973966273234
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.34496116638183594,
+          "path_length": 33.12099032335839,
+          "nodes_explored": 212,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.23173117637634277,
+          "path_length": 33.12099032335839,
+          "nodes_explored": 1977,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_19": {
+      "scenario": {
+        "scenario_id": "MEDIUM_19",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 9.087501764297485,
+          "path_length": 27.225906780123964,
+          "nodes_explored": 1824,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.026275634765625,
+          "path_length": 27.593456298559218,
+          "nodes_explored": 54,
+          "path_smoothness": 6.428571428571431
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.1421055793762207,
+          "path_length": 27.225906780123964,
+          "nodes_explored": 82,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.09328818321228027,
+          "path_length": 27.16615541441225,
+          "nodes_explored": 782,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_20": {
+      "scenario": {
+        "scenario_id": "MEDIUM_20",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.051923990249634,
+          "path_length": 23.005434140654682,
+          "nodes_explored": 52,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.02013993263244629,
+          "path_length": 23.061208747436233,
+          "nodes_explored": 46,
+          "path_smoothness": 4.935520770832966
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.08613801002502441,
+          "path_length": 23.005434140654682,
+          "nodes_explored": 47,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.014896392822265625,
+          "path_length": 23.0,
+          "nodes_explored": 90,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_21": {
+      "scenario": {
+        "scenario_id": "MEDIUM_21",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 17.545526027679443,
+          "path_length": 31.04834939252005,
+          "nodes_explored": 5181,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.027278900146484375,
+          "path_length": 31.715873793431676,
+          "nodes_explored": 60,
+          "path_smoothness": 11.53846153846154
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.2775726318359375,
+          "path_length": 31.04834939252005,
+          "nodes_explored": 160,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.2705078125,
+          "path_length": 31.04834939252005,
+          "nodes_explored": 1443,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_22": {
+      "scenario": {
+        "scenario_id": "MEDIUM_22",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 13.779500722885132,
+          "path_length": 27.784887978899608,
+          "nodes_explored": 3766,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.023378610610961914,
+          "path_length": 27.523009582796945,
+          "nodes_explored": 49,
+          "path_smoothness": 19.133229341892438
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.1989591121673584,
+          "path_length": 27.784887978899608,
+          "nodes_explored": 126,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.16523313522338867,
+          "path_length": 27.784887978899608,
+          "nodes_explored": 1253,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_23": {
+      "scenario": {
+        "scenario_id": "MEDIUM_23",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 9.580023288726807,
+          "path_length": 23.30772404161333,
+          "nodes_explored": 1678,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.01615762710571289,
+          "path_length": 22.965087190170465,
+          "nodes_explored": 38,
+          "path_smoothness": 14.40000043467058
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0873880386352539,
+          "path_length": 23.30772404161333,
+          "nodes_explored": 62,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.07999134063720703,
+          "path_length": 23.600847442411894,
+          "nodes_explored": 642,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_24": {
+      "scenario": {
+        "scenario_id": "MEDIUM_24",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.067805290222168,
+          "path_length": 15.074813431681335,
+          "nodes_explored": 295,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.010666370391845703,
+          "path_length": 16.004383506122572,
+          "nodes_explored": 32,
+          "path_smoothness": 11.6565051177078
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.047844648361206055,
+          "path_length": 15.074813431681335,
+          "nodes_explored": 34,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.03775668144226074,
+          "path_length": 15.033296378372908,
+          "nodes_explored": 327,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_25": {
+      "scenario": {
+        "scenario_id": "MEDIUM_25",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.726370096206665,
+          "path_length": 21.523243250030884,
+          "nodes_explored": 264,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.021351337432861328,
+          "path_length": 21.561208747436233,
+          "nodes_explored": 43,
+          "path_smoothness": 5.111789369791286
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.07744026184082031,
+          "path_length": 21.523243250030884,
+          "nodes_explored": 44,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.05208849906921387,
+          "path_length": 21.02379604162864,
+          "nodes_explored": 458,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_26": {
+      "scenario": {
+        "scenario_id": "MEDIUM_26",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 9.672330617904663,
+          "path_length": 22.677080940897135,
+          "nodes_explored": 2050,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.018720388412475586,
+          "path_length": 23.65466504599545,
+          "nodes_explored": 45,
+          "path_smoothness": 12.413793103448278
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.13732528686523438,
+          "path_length": 22.677080940897135,
+          "nodes_explored": 98,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.08763790130615234,
+          "path_length": 22.561028345356956,
+          "nodes_explored": 718,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_27": {
+      "scenario": {
+        "scenario_id": "MEDIUM_27",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 7.884525537490845,
+          "path_length": 22.20360331117452,
+          "nodes_explored": 1117,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.01935434341430664,
+          "path_length": 22.386349517372672,
+          "nodes_explored": 44,
+          "path_smoothness": 6.20689655172414
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.09178686141967773,
+          "path_length": 22.20360331117452,
+          "nodes_explored": 59,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.0740957260131836,
+          "path_length": 22.20360331117452,
+          "nodes_explored": 614,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_28": {
+      "scenario": {
+        "scenario_id": "MEDIUM_28",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 13.63758397102356,
+          "path_length": 27.730849247724095,
+          "nodes_explored": 4323,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.023911476135253906,
+          "path_length": 28.965087190170465,
+          "nodes_explored": 50,
+          "path_smoothness": 10.909091238386804
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.28504014015197754,
+          "path_length": 27.730849247724095,
+          "nodes_explored": 208,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.16088151931762695,
+          "path_length": 27.730849247724095,
+          "nodes_explored": 1332,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_29": {
+      "scenario": {
+        "scenario_id": "MEDIUM_29",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 5.724168539047241,
+          "path_length": 19.50640920313116,
+          "nodes_explored": 56,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.014496564865112305,
+          "path_length": 19.207106781186546,
+          "nodes_explored": 39,
+          "path_smoothness": 3.6000000000000005
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.06563854217529297,
+          "path_length": 19.50640920313116,
+          "nodes_explored": 40,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.04718208312988281,
+          "path_length": 19.026297590440446,
+          "nodes_explored": 412,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_30": {
+      "scenario": {
+        "scenario_id": "MEDIUM_30",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 4.993753671646118,
+          "path_length": 27.504545078950134,
+          "nodes_explored": 60,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.02464747428894043,
+          "path_length": 26.82514076993644,
+          "nodes_explored": 54,
+          "path_smoothness": 3.3304300336308
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.10784029960632324,
+          "path_length": 27.504545078950134,
+          "nodes_explored": 56,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.07030272483825684,
+          "path_length": 27.018512172212592,
+          "nodes_explored": 607,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_31": {
+      "scenario": {
+        "scenario_id": "MEDIUM_31",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 34.316726207733154,
+          "path_length": 41.188590653237945,
+          "nodes_explored": 9452,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0310823917388916,
+          "path_length": 41.45475207053159,
+          "nodes_explored": 68,
+          "path_smoothness": 15.000000429304274
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.35287976264953613,
+          "path_length": 41.188590653237945,
+          "nodes_explored": 180,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.3569376468658447,
+          "path_length": 40.496913462633174,
+          "nodes_explored": 2874,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_32": {
+      "scenario": {
+        "scenario_id": "MEDIUM_32",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.866023778915405,
+          "path_length": 15.305227865013967,
+          "nodes_explored": 334,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.009864568710327148,
+          "path_length": 15.2568832576711,
+          "nodes_explored": 24,
+          "path_smoothness": 9.000000804945513
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.042176008224487305,
+          "path_length": 15.305227865013967,
+          "nodes_explored": 32,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.03595304489135742,
+          "path_length": 15.620499351813308,
+          "nodes_explored": 295,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_33": {
+      "scenario": {
+        "scenario_id": "MEDIUM_33",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 8.541684627532959,
+          "path_length": 23.69071548096427,
+          "nodes_explored": 1241,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0209653377532959,
+          "path_length": 24.386349517372672,
+          "nodes_explored": 48,
+          "path_smoothness": 5.806451612903228
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.10787820816040039,
+          "path_length": 23.69071548096427,
+          "nodes_explored": 68,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.08321905136108398,
+          "path_length": 24.186773244895647,
+          "nodes_explored": 680,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_34": {
+      "scenario": {
+        "scenario_id": "MEDIUM_34",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 14.186158895492554,
+          "path_length": 25.947061490658243,
+          "nodes_explored": 3628,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.02038264274597168,
+          "path_length": 26.51643687317744,
+          "nodes_explored": 47,
+          "path_smoothness": 26.129032258064516
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.2544219493865967,
+          "path_length": 25.947061490658243,
+          "nodes_explored": 200,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.14796209335327148,
+          "path_length": 26.40075756488817,
+          "nodes_explored": 1164,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_35": {
+      "scenario": {
+        "scenario_id": "MEDIUM_35",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 10.203043937683105,
+          "path_length": 27.37243138634199,
+          "nodes_explored": 2413,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.02266526222229004,
+          "path_length": 28.536631057245557,
+          "nodes_explored": 55,
+          "path_smoothness": 9.000000000000002
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.17141175270080566,
+          "path_length": 27.37243138634199,
+          "nodes_explored": 104,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.12053751945495605,
+          "path_length": 27.459060435491963,
+          "nodes_explored": 949,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_36": {
+      "scenario": {
+        "scenario_id": "MEDIUM_36",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 21.1446692943573,
+          "path_length": 36.138621999185304,
+          "nodes_explored": 7648,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.030634403228759766,
+          "path_length": 37.36615533330456,
+          "nodes_explored": 70,
+          "path_smoothness": 11.228996588194802
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.4163675308227539,
+          "path_length": 36.138621999185304,
+          "nodes_explored": 230,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.31156086921691895,
+          "path_length": 36.138621999185304,
+          "nodes_explored": 1997,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_37": {
+      "scenario": {
+        "scenario_id": "MEDIUM_37",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 15.50214695930481,
+          "path_length": 33.47013594235912,
+          "nodes_explored": 6014,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.029773473739624023,
+          "path_length": 34.74812134455466,
+          "nodes_explored": 65,
+          "path_smoothness": 13.928571428571429
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.3667268753051758,
+          "path_length": 33.47013594235912,
+          "nodes_explored": 218,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.20923280715942383,
+          "path_length": 33.95585369269929,
+          "nodes_explored": 1683,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_38": {
+      "scenario": {
+        "scenario_id": "MEDIUM_38",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.3486316204071045,
+          "path_length": 23.753947040439407,
+          "nodes_explored": 655,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.020180702209472656,
+          "path_length": 23.85362591104007,
+          "nodes_explored": 38,
+          "path_smoothness": 12.600000627857504
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.06838417053222656,
+          "path_length": 23.753947040439407,
+          "nodes_explored": 46,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.061685800552368164,
+          "path_length": 23.430749027719962,
+          "nodes_explored": 505,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_39": {
+      "scenario": {
+        "scenario_id": "MEDIUM_39",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 5.815251588821411,
+          "path_length": 14.916433890176299,
+          "nodes_explored": 648,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.011121749877929688,
+          "path_length": 15.418597068495664,
+          "nodes_explored": 29,
+          "path_smoothness": 17.5
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.056441545486450195,
+          "path_length": 14.916433890176299,
+          "nodes_explored": 46,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.04619240760803223,
+          "path_length": 15.297058540778355,
+          "nodes_explored": 387,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_40": {
+      "scenario": {
+        "scenario_id": "MEDIUM_40",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 11.40075135231018,
+          "path_length": 30.103986446980738,
+          "nodes_explored": 3781,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.026259660720825195,
+          "path_length": 30.890733023495237,
+          "nodes_explored": 59,
+          "path_smoothness": 10.172764504659948
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.223649263381958,
+          "path_length": 30.103986446980738,
+          "nodes_explored": 130,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.15703535079956055,
+          "path_length": 30.59411708155671,
+          "nodes_explored": 1234,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_41": {
+      "scenario": {
+        "scenario_id": "MEDIUM_41",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.57301926612854,
+          "path_length": 18.7949461292125,
+          "nodes_explored": 1324,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.013701915740966797,
+          "path_length": 19.22244650305118,
+          "nodes_explored": 33,
+          "path_smoothness": 19.672862246849007
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.08882689476013184,
+          "path_length": 18.7949461292125,
+          "nodes_explored": 74,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.07562112808227539,
+          "path_length": 19.235384061671343,
+          "nodes_explored": 603,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_42": {
+      "scenario": {
+        "scenario_id": "MEDIUM_42",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 5.994495153427124,
+          "path_length": 17.26267650163207,
+          "nodes_explored": 733,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.012965917587280273,
+          "path_length": 16.886349517372675,
+          "nodes_explored": 33,
+          "path_smoothness": 8.571428571428575
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.06191444396972656,
+          "path_length": 17.26267650163207,
+          "nodes_explored": 45,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.05342221260070801,
+          "path_length": 17.26267650163207,
+          "nodes_explored": 445,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_43": {
+      "scenario": {
+        "scenario_id": "MEDIUM_43",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 5.951085567474365,
+          "path_length": 17.804493814764857,
+          "nodes_explored": 512,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.013074398040771484,
+          "path_length": 18.610985223920782,
+          "nodes_explored": 30,
+          "path_smoothness": 10.84349548600134
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0581974983215332,
+          "path_length": 17.804493814764857,
+          "nodes_explored": 39,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.045625925064086914,
+          "path_length": 17.804493814764857,
+          "nodes_explored": 374,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_44": {
+      "scenario": {
+        "scenario_id": "MEDIUM_44",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 5.932986497879028,
+          "path_length": 16.3783393541592,
+          "nodes_explored": 816,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.011941909790039062,
+          "path_length": 16.27927174436485,
+          "nodes_explored": 29,
+          "path_smoothness": 17.95167262132384
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.0580296516418457,
+          "path_length": 16.3783393541592,
+          "nodes_explored": 48,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.053784847259521484,
+          "path_length": 16.1245154965971,
+          "nodes_explored": 432,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_45": {
+      "scenario": {
+        "scenario_id": "MEDIUM_45",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 6.796306848526001,
+          "path_length": 22.80350850198276,
+          "nodes_explored": 1047,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.020257949829101562,
+          "path_length": 22.85033955623032,
+          "nodes_explored": 37,
+          "path_smoothness": 13.125000553400042
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.08462047576904297,
+          "path_length": 22.80350850198276,
+          "nodes_explored": 59,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.06932926177978516,
+          "path_length": 22.80350850198276,
+          "nodes_explored": 558,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_46": {
+      "scenario": {
+        "scenario_id": "MEDIUM_46",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 29.883750915527344,
+          "path_length": 38.948684188300895,
+          "nodes_explored": 10244,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.029468059539794922,
+          "path_length": 39.88149505516918,
+          "nodes_explored": 69,
+          "path_smoothness": 20.180669075361052
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.47609543800354004,
+          "path_length": 38.948684188300895,
+          "nodes_explored": 270,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.36717844009399414,
+          "path_length": 38.948684188300895,
+          "nodes_explored": 3038,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_47": {
+      "scenario": {
+        "scenario_id": "MEDIUM_47",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 11.62069034576416,
+          "path_length": 30.805843601498726,
+          "nodes_explored": 3323,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.020857810974121094,
+          "path_length": 30.94708220959928,
+          "nodes_explored": 51,
+          "path_smoothness": 13.077729372374307
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.1561272144317627,
+          "path_length": 30.805843601498726,
+          "nodes_explored": 97,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.1440279483795166,
+          "path_length": 30.805843601498726,
+          "nodes_explored": 1156,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "MEDIUM_48": {
+      "scenario": {
+        "scenario_id": "MEDIUM_48",
+        "map_size": "MEDIUM"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 4.907347202301025,
+          "path_length": 14.866068747318506,
+          "nodes_explored": 103,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.00814962387084961,
+          "path_length": 14.642135623730955,
+          "nodes_explored": 22,
+          "path_smoothness": 3.2142868354598226
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.03127574920654297,
+          "path_length": 14.866068747318506,
+          "nodes_explored": 23,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.02885293960571289,
+          "path_length": 14.866068747318506,
+          "nodes_explored": 244,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_1": {
+      "scenario": {
+        "scenario_id": "LARGE_1",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 78.83230209350586,
+          "path_length": 41.36725758374611,
+          "nodes_explored": 13224,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.019347190856933594,
+          "path_length": 41.753045675902776,
+          "nodes_explored": 49,
+          "path_smoothness": 21.096247186417493
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.6996397972106934,
+          "path_length": 41.36725758374611,
+          "nodes_explored": 380,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.43595433235168457,
+          "path_length": 41.14608122288197,
+          "nodes_explored": 3707,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_2": {
+      "scenario": {
+        "scenario_id": "LARGE_2",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 105.2434184551239,
+          "path_length": 74.33034373659252,
+          "nodes_explored": 19548,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": false,
+          "computation_time": 0,
+          "path_length": 0,
+          "nodes_explored": 0,
+          "path_smoothness": 0
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 1.6940574645996094,
+          "path_length": 74.33034373659252,
+          "nodes_explored": 438,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.5775711536407471,
+          "path_length": 74.33034373659252,
+          "nodes_explored": 4577,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_3": {
+      "scenario": {
+        "scenario_id": "LARGE_3",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 67.6621732711792,
+          "path_length": 41.188590653237945,
+          "nodes_explored": 9492,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": false,
+          "computation_time": 0,
+          "path_length": 0,
+          "nodes_explored": 0,
+          "path_smoothness": 0
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.3665287494659424,
+          "path_length": 41.188590653237945,
+          "nodes_explored": 180,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.40431976318359375,
+          "path_length": 41.88078318274385,
+          "nodes_explored": 3051,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_4": {
+      "scenario": {
+        "scenario_id": "LARGE_4",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 42.20549559593201,
+          "path_length": 31.62672920173694,
+          "nodes_explored": 2004,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.014674901962280273,
+          "path_length": 31.046402133217324,
+          "nodes_explored": 34,
+          "path_smoothness": 10.706480777525089
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.13326263427734375,
+          "path_length": 31.62672920173694,
+          "nodes_explored": 78,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.10766792297363281,
+          "path_length": 31.240998703626616,
+          "nodes_explored": 794,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_5": {
+      "scenario": {
+        "scenario_id": "LARGE_5",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 75.81836199760437,
+          "path_length": 44.02839992550263,
+          "nodes_explored": 13843,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.023369312286376953,
+          "path_length": 43.90903808236111,
+          "nodes_explored": 56,
+          "path_smoothness": 17.468923902359887
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.6954813003540039,
+          "path_length": 44.02839992550263,
+          "nodes_explored": 302,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.4109816551208496,
+          "path_length": 43.41658669218482,
+          "nodes_explored": 3133,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_6": {
+      "scenario": {
+        "scenario_id": "LARGE_6",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 62.91565704345703,
+          "path_length": 48.023431780746364,
+          "nodes_explored": 7261,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.01819133758544922,
+          "path_length": 48.03227071128903,
+          "nodes_explored": 51,
+          "path_smoothness": 10.626020519127913
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.3271820545196533,
+          "path_length": 48.023431780746364,
+          "nodes_explored": 140,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.2743806838989258,
+          "path_length": 47.634021455258214,
+          "nodes_explored": 2188,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_7": {
+      "scenario": {
+        "scenario_id": "LARGE_7",
+        "map_size": "unknown"
+      },
+      "results": {
+        "TA*": {
+          "success": false,
+          "computation_time": 0,
+          "path_length": 0,
+          "nodes_explored": 0,
+          "path_smoothness": 0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.034040212631225586,
+          "path_length": 84.41896877016843,
+          "nodes_explored": 96,
+          "path_smoothness": 17.700045397536474
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 2.4566378593444824,
+          "path_length": 84.17986695166488,
+          "nodes_explored": 688,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 2.584155797958374,
+          "path_length": 83.7615663654877,
+          "nodes_explored": 23136,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_8": {
+      "scenario": {
+        "scenario_id": "LARGE_8",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 53.065958976745605,
+          "path_length": 69.56471806886016,
+          "nodes_explored": 5595,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.0332942008972168,
+          "path_length": 68.84896776571657,
+          "nodes_explored": 92,
+          "path_smoothness": 3.814003727772515
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.878793478012085,
+          "path_length": 69.56471806886016,
+          "nodes_explored": 198,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.292863130569458,
+          "path_length": 70.06425622241343,
+          "nodes_explored": 2230,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_9": {
+      "scenario": {
+        "scenario_id": "LARGE_9",
+        "map_size": "unknown"
+      },
+      "results": {
+        "TA*": {
+          "success": false,
+          "computation_time": 0,
+          "path_length": 0,
+          "nodes_explored": 0,
+          "path_smoothness": 0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.03392481803894043,
+          "path_length": 78.50280675122926,
+          "nodes_explored": 89,
+          "path_smoothness": 17.263685888221612
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 2.378675699234009,
+          "path_length": 78.65271768985481,
+          "nodes_explored": 678,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 2.515540838241577,
+          "path_length": 79.07591289387686,
+          "nodes_explored": 21369,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_10": {
+      "scenario": {
+        "scenario_id": "LARGE_10",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 99.26568913459778,
+          "path_length": 75.11657606680433,
+          "nodes_explored": 12934,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.029339313507080078,
+          "path_length": 75.08378369055022,
+          "nodes_explored": 78,
+          "path_smoothness": 8.770273071547894
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.8078746795654297,
+          "path_length": 75.11657606680433,
+          "nodes_explored": 230,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.4495060443878174,
+          "path_length": 75.07329751649384,
+          "nodes_explored": 3484,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_11": {
+      "scenario": {
+        "scenario_id": "LARGE_11",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 42.101967096328735,
+          "path_length": 38.616706229299254,
+          "nodes_explored": 2125,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.017929553985595703,
+          "path_length": 38.60293991862155,
+          "nodes_explored": 41,
+          "path_smoothness": 10.626020531202098
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.18337440490722656,
+          "path_length": 38.616706229299254,
+          "nodes_explored": 90,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.12826919555664062,
+          "path_length": 38.28837943815329,
+          "nodes_explored": 1006,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_12": {
+      "scenario": {
+        "scenario_id": "LARGE_12",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 47.42123484611511,
+          "path_length": 34.00367627183861,
+          "nodes_explored": 4139,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.01329946517944336,
+          "path_length": 33.72320981984696,
+          "nodes_explored": 37,
+          "path_smoothness": 11.80668941203465
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.21644282341003418,
+          "path_length": 34.00367627183861,
+          "nodes_explored": 120,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.16855502128601074,
+          "path_length": 33.60059523282288,
+          "nodes_explored": 1323,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_13": {
+      "scenario": {
+        "scenario_id": "LARGE_13",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 40.16210460662842,
+          "path_length": 39.080046059338265,
+          "nodes_explored": 2025,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": false,
+          "computation_time": 0,
+          "path_length": 0,
+          "nodes_explored": 0,
+          "path_smoothness": 0
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.2604050636291504,
+          "path_length": 39.080046059338265,
+          "nodes_explored": 102,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.1260228157043457,
+          "path_length": 39.05124837953327,
+          "nodes_explored": 991,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_14": {
+      "scenario": {
+        "scenario_id": "LARGE_14",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 45.84046745300293,
+          "path_length": 41.16430492550555,
+          "nodes_explored": 3423,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": false,
+          "computation_time": 0,
+          "path_length": 0,
+          "nodes_explored": 0,
+          "path_smoothness": 0
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.22481489181518555,
+          "path_length": 41.16430492550555,
+          "nodes_explored": 106,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.1927475929260254,
+          "path_length": 41.23105625617661,
+          "nodes_explored": 1503,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_15": {
+      "scenario": {
+        "scenario_id": "LARGE_15",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 90.90071511268616,
+          "path_length": 45.880278987817846,
+          "nodes_explored": 18239,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": false,
+          "computation_time": 0,
+          "path_length": 0,
+          "nodes_explored": 0,
+          "path_smoothness": 0
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.9185326099395752,
+          "path_length": 45.880278987817846,
+          "nodes_explored": 402,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.6106030941009521,
+          "path_length": 45.880278987817846,
+          "nodes_explored": 4554,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_16": {
+      "scenario": {
+        "scenario_id": "LARGE_16",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 44.32492661476135,
+          "path_length": 35.92005011132362,
+          "nodes_explored": 3257,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.013813257217407227,
+          "path_length": 35.23355547726662,
+          "nodes_explored": 38,
+          "path_smoothness": 9.660003869797345
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.175520658493042,
+          "path_length": 35.92005011132362,
+          "nodes_explored": 92,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.15691184997558594,
+          "path_length": 35.608987629529715,
+          "nodes_explored": 1242,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_17": {
+      "scenario": {
+        "scenario_id": "LARGE_17",
+        "map_size": "LARGE"
+      },
+      "results": {
+        "TA*": {
+          "success": true,
+          "computation_time": 52.30721879005432,
+          "path_length": 32.882366094914765,
+          "nodes_explored": 6609,
+          "path_smoothness": 0.0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.017536401748657227,
+          "path_length": 32.299426403187496,
+          "nodes_explored": 40,
+          "path_smoothness": 16.96033377732788
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 0.3629460334777832,
+          "path_length": 32.882366094914765,
+          "nodes_explored": 224,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 0.24261879920959473,
+          "path_length": 33.12099032335839,
+          "nodes_explored": 1977,
+          "path_smoothness": 0
+        }
+      }
+    },
+    "LARGE_18": {
+      "scenario": {
+        "scenario_id": "LARGE_18",
+        "map_size": "unknown"
+      },
+      "results": {
+        "TA*": {
+          "success": false,
+          "computation_time": 0,
+          "path_length": 0,
+          "nodes_explored": 0,
+          "path_smoothness": 0
+        },
+        "AHA*": {
+          "success": true,
+          "computation_time": 0.030882596969604492,
+          "path_length": 65.40974925152624,
+          "nodes_explored": 82,
+          "path_smoothness": 21.056292203737364
+        },
+        "Theta*": {
+          "success": true,
+          "computation_time": 1.771223783493042,
+          "path_length": 64.8459713474939,
+          "nodes_explored": 572,
+          "path_smoothness": 0
+        },
+        "FieldD*Hybrid": {
+          "success": true,
+          "computation_time": 1.253671646118164,
+          "path_length": 64.8459713474939,
+          "nodes_explored": 10005,
+          "path_smoothness": 0
+        }
+      }
+    }
+  }
+}

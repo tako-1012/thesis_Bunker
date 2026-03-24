@@ -1,0 +1,962 @@
+[
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_1",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.010255098342895508,
+    "path_length_meters": 4.47213595499958,
+    "nodes_explored": 84
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_2",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.0013165473937988281,
+    "path_length_meters": 3.0,
+    "nodes_explored": 10
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_3",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.017490863800048828,
+    "path_length_meters": 6.082762530298219,
+    "nodes_explored": 129
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_4",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.006666421890258789,
+    "path_length_meters": 3.605551275463989,
+    "nodes_explored": 58
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_5",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.0028328895568847656,
+    "path_length_meters": 6.0,
+    "nodes_explored": 22
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_6",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.0028145313262939453,
+    "path_length_meters": 6.0,
+    "nodes_explored": 22
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_7",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.002814054489135742,
+    "path_length_meters": 6.0,
+    "nodes_explored": 22
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_8",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.009593725204467773,
+    "path_length_meters": 4.47213595499958,
+    "nodes_explored": 84
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_9",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.0013287067413330078,
+    "path_length_meters": 4.242640687119285,
+    "nodes_explored": 10
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_10",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.006645917892456055,
+    "path_length_meters": 3.605551275463989,
+    "nodes_explored": 58
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_11",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.009498357772827148,
+    "path_length_meters": 4.123105625617661,
+    "nodes_explored": 83
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_12",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.0015211105346679688,
+    "path_length_meters": 4.242640687119285,
+    "nodes_explored": 10
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_13",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.010961532592773438,
+    "path_length_meters": 5.0,
+    "nodes_explored": 83
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_14",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.0008435249328613281,
+    "path_length_meters": 2.8284271247461903,
+    "nodes_explored": 6
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_15",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.012426376342773438,
+    "path_length_meters": 5.830951894845301,
+    "nodes_explored": 107
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_16",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.012636184692382812,
+    "path_length_meters": 5.385164807134504,
+    "nodes_explored": 108
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_17",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.002347230911254883,
+    "path_length_meters": 5.0,
+    "nodes_explored": 18
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_18",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.017811298370361328,
+    "path_length_meters": 7.0710678118654755,
+    "nodes_explored": 151
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_19",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.014122486114501953,
+    "path_length_meters": 7.810249675906654,
+    "nodes_explored": 126
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_20",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.018350601196289062,
+    "path_length_meters": 7.280109889280518,
+    "nodes_explored": 157
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_21",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.009678363800048828,
+    "path_length_meters": 4.47213595499958,
+    "nodes_explored": 84
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_22",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.020003557205200195,
+    "path_length_meters": 7.615773105863909,
+    "nodes_explored": 158
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_23",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.0013287067413330078,
+    "path_length_meters": 3.0,
+    "nodes_explored": 10
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_24",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.012147903442382812,
+    "path_length_meters": 5.0990195135927845,
+    "nodes_explored": 106
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_25",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.016880512237548828,
+    "path_length_meters": 7.0710678118654755,
+    "nodes_explored": 150
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_26",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.015454769134521484,
+    "path_length_meters": 6.708203932499369,
+    "nodes_explored": 132
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_27",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.006725788116455078,
+    "path_length_meters": 3.605551275463989,
+    "nodes_explored": 58
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_28",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.012469053268432617,
+    "path_length_meters": 5.385164807134504,
+    "nodes_explored": 108
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_29",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.002834320068359375,
+    "path_length_meters": 6.0,
+    "nodes_explored": 22
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "SMALL_30",
+    "environment_type": null,
+    "map_size": 100,
+    "success": true,
+    "computation_time": 0.009396076202392578,
+    "path_length_meters": 4.123105625617661,
+    "nodes_explored": 83
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_1",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.06629514694213867,
+    "path_length_meters": 18.867962264113206,
+    "nodes_explored": 527
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_2",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.08038020133972168,
+    "path_length_meters": 21.095023109728988,
+    "nodes_explored": 662
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_3",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.02066802978515625,
+    "path_length_meters": 25.0,
+    "nodes_explored": 98
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_4",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.06096768379211426,
+    "path_length_meters": 17.08800749063506,
+    "nodes_explored": 501
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_5",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.0755760669708252,
+    "path_length_meters": 30.01666203960727,
+    "nodes_explored": 666
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_6",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.164290189743042,
+    "path_length_meters": 27.730849247724095,
+    "nodes_explored": 1333
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_7",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.07379412651062012,
+    "path_length_meters": 24.20743687382041,
+    "nodes_explored": 599
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_8",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.06564879417419434,
+    "path_length_meters": 17.88854381999832,
+    "nodes_explored": 539
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_9",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.19136953353881836,
+    "path_length_meters": 31.32091952673165,
+    "nodes_explored": 1553
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_10",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.16742849349975586,
+    "path_length_meters": 28.653097563788805,
+    "nodes_explored": 1383
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_11",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.23390769958496094,
+    "path_length_meters": 32.449961479175904,
+    "nodes_explored": 1535
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_12",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.1023259162902832,
+    "path_length_meters": 23.323807579381203,
+    "nodes_explored": 825
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_13",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.1258406639099121,
+    "path_length_meters": 28.442925306655784,
+    "nodes_explored": 1024
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_14",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.058922529220581055,
+    "path_length_meters": 17.4928556845359,
+    "nodes_explored": 479
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_15",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.04538846015930176,
+    "path_length_meters": 15.811388300841896,
+    "nodes_explored": 369
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_16",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.09323573112487793,
+    "path_length_meters": 27.16615541441225,
+    "nodes_explored": 782
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_17",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.23126554489135742,
+    "path_length_meters": 32.64965543462902,
+    "nodes_explored": 1966
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_18",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.23173117637634277,
+    "path_length_meters": 33.12099032335839,
+    "nodes_explored": 1977
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_19",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.09328818321228027,
+    "path_length_meters": 27.16615541441225,
+    "nodes_explored": 782
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_20",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.014896392822265625,
+    "path_length_meters": 23.0,
+    "nodes_explored": 90
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_21",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.2705078125,
+    "path_length_meters": 31.04834939252005,
+    "nodes_explored": 1443
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_22",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.16523313522338867,
+    "path_length_meters": 27.784887978899608,
+    "nodes_explored": 1253
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_23",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.07999134063720703,
+    "path_length_meters": 23.600847442411894,
+    "nodes_explored": 642
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_24",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.03775668144226074,
+    "path_length_meters": 15.033296378372908,
+    "nodes_explored": 327
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_25",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.05208849906921387,
+    "path_length_meters": 21.02379604162864,
+    "nodes_explored": 458
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_26",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.08763790130615234,
+    "path_length_meters": 22.561028345356956,
+    "nodes_explored": 718
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_27",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.0740957260131836,
+    "path_length_meters": 22.20360331117452,
+    "nodes_explored": 614
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_28",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.16088151931762695,
+    "path_length_meters": 27.730849247724095,
+    "nodes_explored": 1332
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_29",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.04718208312988281,
+    "path_length_meters": 19.026297590440446,
+    "nodes_explored": 412
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_30",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.07030272483825684,
+    "path_length_meters": 27.018512172212592,
+    "nodes_explored": 607
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_31",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.3569376468658447,
+    "path_length_meters": 40.496913462633174,
+    "nodes_explored": 2874
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_32",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.03595304489135742,
+    "path_length_meters": 15.620499351813308,
+    "nodes_explored": 295
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_33",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.08321905136108398,
+    "path_length_meters": 24.186773244895647,
+    "nodes_explored": 680
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_34",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.14796209335327148,
+    "path_length_meters": 26.40075756488817,
+    "nodes_explored": 1164
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_35",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.12053751945495605,
+    "path_length_meters": 27.459060435491963,
+    "nodes_explored": 949
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_36",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.31156086921691895,
+    "path_length_meters": 36.138621999185304,
+    "nodes_explored": 1997
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_37",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.20923280715942383,
+    "path_length_meters": 33.95585369269929,
+    "nodes_explored": 1683
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_38",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.061685800552368164,
+    "path_length_meters": 23.430749027719962,
+    "nodes_explored": 505
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_39",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.04619240760803223,
+    "path_length_meters": 15.297058540778355,
+    "nodes_explored": 387
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_40",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.15703535079956055,
+    "path_length_meters": 30.59411708155671,
+    "nodes_explored": 1234
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_41",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.07562112808227539,
+    "path_length_meters": 19.235384061671343,
+    "nodes_explored": 603
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_42",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.05342221260070801,
+    "path_length_meters": 17.26267650163207,
+    "nodes_explored": 445
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_43",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.045625925064086914,
+    "path_length_meters": 17.804493814764857,
+    "nodes_explored": 374
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_44",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.053784847259521484,
+    "path_length_meters": 16.1245154965971,
+    "nodes_explored": 432
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_45",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.06932926177978516,
+    "path_length_meters": 22.80350850198276,
+    "nodes_explored": 558
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_46",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.36717844009399414,
+    "path_length_meters": 38.948684188300895,
+    "nodes_explored": 3038
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_47",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.1440279483795166,
+    "path_length_meters": 30.805843601498726,
+    "nodes_explored": 1156
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "MEDIUM_48",
+    "environment_type": null,
+    "map_size": 500,
+    "success": true,
+    "computation_time": 0.02885293960571289,
+    "path_length_meters": 14.866068747318506,
+    "nodes_explored": 244
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_1",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.43595433235168457,
+    "path_length_meters": 41.14608122288197,
+    "nodes_explored": 3707
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_2",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.5775711536407471,
+    "path_length_meters": 74.33034373659252,
+    "nodes_explored": 4577
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_3",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.40431976318359375,
+    "path_length_meters": 41.88078318274385,
+    "nodes_explored": 3051
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_4",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.10766792297363281,
+    "path_length_meters": 31.240998703626616,
+    "nodes_explored": 794
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_5",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.4109816551208496,
+    "path_length_meters": 43.41658669218482,
+    "nodes_explored": 3133
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_6",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.2743806838989258,
+    "path_length_meters": 47.634021455258214,
+    "nodes_explored": 2188
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_7",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 2.584155797958374,
+    "path_length_meters": 83.7615663654877,
+    "nodes_explored": 23136
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_8",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.292863130569458,
+    "path_length_meters": 70.06425622241343,
+    "nodes_explored": 2230
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_9",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 2.515540838241577,
+    "path_length_meters": 79.07591289387686,
+    "nodes_explored": 21369
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_10",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.4495060443878174,
+    "path_length_meters": 75.07329751649384,
+    "nodes_explored": 3484
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_11",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.12826919555664062,
+    "path_length_meters": 38.28837943815329,
+    "nodes_explored": 1006
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_12",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.16855502128601074,
+    "path_length_meters": 33.60059523282288,
+    "nodes_explored": 1323
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_13",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.1260228157043457,
+    "path_length_meters": 39.05124837953327,
+    "nodes_explored": 991
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_14",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.1927475929260254,
+    "path_length_meters": 41.23105625617661,
+    "nodes_explored": 1503
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_15",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.6106030941009521,
+    "path_length_meters": 45.880278987817846,
+    "nodes_explored": 4554
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_16",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.15691184997558594,
+    "path_length_meters": 35.608987629529715,
+    "nodes_explored": 1242
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_17",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 0.24261879920959473,
+    "path_length_meters": 33.12099032335839,
+    "nodes_explored": 1977
+  },
+  {
+    "planner": "FieldD*Hybrid",
+    "scenario_id": "LARGE_18",
+    "environment_type": null,
+    "map_size": 1000,
+    "success": true,
+    "computation_time": 1.253671646118164,
+    "path_length_meters": 64.8459713474939,
+    "nodes_explored": 10005
+  }
+]

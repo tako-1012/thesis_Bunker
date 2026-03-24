@@ -1,0 +1,773 @@
+{
+  "evaluation_criteria": "avg_slope <= 45.0 degrees",
+  "terrain_statistics": {
+    "avg_slope_mean": 45.80131495021481,
+    "avg_slope_median": 46.457956350071896,
+    "avg_slope_min": 30.15482319654075,
+    "avg_slope_max": 58.18501137970311,
+    "max_slope_mean": 78.04609793304859,
+    "max_slope_median": 78.46234760889025,
+    "feasible_terrain_count": 39,
+    "total_count": 90
+  },
+  "astar": {
+    "total": 90,
+    "path_found": 90,
+    "feasible": 39,
+    "practical_success_rate": 43.333333333333336,
+    "unfeasible_paths": [
+      {
+        "scenario_id": "dataset3_1_1_1",
+        "avg_slope": 52.8149191639224,
+        "max_slope": 80.87381579799306,
+        "path_length": 124.9827560572968,
+        "computation_time": 1.6573309898376465
+      },
+      {
+        "scenario_id": "dataset3_1_1_4",
+        "avg_slope": 55.0704594450264,
+        "max_slope": 81.81513704652909,
+        "path_length": 116.99494936611653,
+        "computation_time": 0.47513484954833984
+      },
+      {
+        "scenario_id": "dataset3_1_1_5",
+        "avg_slope": 46.45273981180564,
+        "max_slope": 78.09610181576484,
+        "path_length": 120.63961030678918,
+        "computation_time": 1.3856408596038818
+      },
+      {
+        "scenario_id": "dataset3_1_1_6",
+        "avg_slope": 53.45867562887058,
+        "max_slope": 81.36207360941631,
+        "path_length": 111.40916292848962,
+        "computation_time": 0.19788050651550293
+      },
+      {
+        "scenario_id": "dataset3_1_1_7",
+        "avg_slope": 52.23353202256968,
+        "max_slope": 81.39285220242614,
+        "path_length": 111.45584412271566,
+        "computation_time": 0.780797004699707
+      },
+      {
+        "scenario_id": "dataset3_1_1_8",
+        "avg_slope": 52.6561000291766,
+        "max_slope": 82.65517476607177,
+        "path_length": 128.2670273047587,
+        "computation_time": 1.436129093170166
+      },
+      {
+        "scenario_id": "dataset3_1_1_9",
+        "avg_slope": 53.90269336216308,
+        "max_slope": 81.04466482962012,
+        "path_length": 114.16652224137034,
+        "computation_time": 0.46142077445983887
+      },
+      {
+        "scenario_id": "dataset3_1_1_10",
+        "avg_slope": 53.454818717970035,
+        "max_slope": 81.07069007981882,
+        "path_length": 127.95331880577395,
+        "computation_time": 1.563126802444458
+      },
+      {
+        "scenario_id": "dataset3_1_2_1",
+        "avg_slope": 46.46317288833815,
+        "max_slope": 78.919700995929,
+        "path_length": 94.87005768508875,
+        "computation_time": 0.6255824565887451
+      },
+      {
+        "scenario_id": "dataset3_1_2_3",
+        "avg_slope": 47.15134177854095,
+        "max_slope": 78.27214977033275,
+        "path_length": 96.97056274847711,
+        "computation_time": 0.4132516384124756
+      },
+      {
+        "scenario_id": "dataset3_1_2_4",
+        "avg_slope": 51.91139763105854,
+        "max_slope": 80.85095411366366,
+        "path_length": 119.48528137423855,
+        "computation_time": 0.22027277946472168
+      },
+      {
+        "scenario_id": "dataset3_1_2_5",
+        "avg_slope": 47.387460038495185,
+        "max_slope": 79.14888345184391,
+        "path_length": 55.65685424949237,
+        "computation_time": 0.04390239715576172
+      },
+      {
+        "scenario_id": "dataset3_1_2_7",
+        "avg_slope": 49.343255072569214,
+        "max_slope": 80.34482516905535,
+        "path_length": 53.740115370177584,
+        "computation_time": 0.0030014514923095703
+      },
+      {
+        "scenario_id": "dataset3_1_2_8",
+        "avg_slope": 51.65787090784036,
+        "max_slope": 81.23874981915048,
+        "path_length": 120.71067811865466,
+        "computation_time": 1.4474687576293945
+      },
+      {
+        "scenario_id": "dataset3_1_3_1",
+        "avg_slope": 52.96873208065375,
+        "max_slope": 82.80841558952893,
+        "path_length": 58.07106781186546,
+        "computation_time": 0.059557437896728516
+      },
+      {
+        "scenario_id": "dataset3_1_3_4",
+        "avg_slope": 47.11888296962058,
+        "max_slope": 78.23546515400504,
+        "path_length": 117.09545442950488,
+        "computation_time": 0.879382848739624
+      },
+      {
+        "scenario_id": "dataset3_1_3_5",
+        "avg_slope": 45.413237897945415,
+        "max_slope": 77.35006782882193,
+        "path_length": 96.71067811865468,
+        "computation_time": 0.5434975624084473
+      },
+      {
+        "scenario_id": "dataset3_1_3_7",
+        "avg_slope": 49.349969015992144,
+        "max_slope": 79.07652156541185,
+        "path_length": 92.49747468305826,
+        "computation_time": 0.6926696300506592
+      },
+      {
+        "scenario_id": "dataset3_1_3_9",
+        "avg_slope": 52.704976168232754,
+        "max_slope": 80.72423549095049,
+        "path_length": 79.65685424949237,
+        "computation_time": 0.06768608093261719
+      },
+      {
+        "scenario_id": "dataset3_1_3_10",
+        "avg_slope": 51.23959461586046,
+        "max_slope": 79.90785805241366,
+        "path_length": 109.81118318204301,
+        "computation_time": 1.0560734272003174
+      },
+      {
+        "scenario_id": "dataset3_2_1_2",
+        "avg_slope": 49.614846152782796,
+        "max_slope": 79.49142100403853,
+        "path_length": 193.74011537017753,
+        "computation_time": 5.0796449184417725
+      },
+      {
+        "scenario_id": "dataset3_2_1_4",
+        "avg_slope": 53.58663207647753,
+        "max_slope": 81.07200104443156,
+        "path_length": 197.79898987322332,
+        "computation_time": 1.680549144744873
+      },
+      {
+        "scenario_id": "dataset3_2_1_6",
+        "avg_slope": 47.1805892928098,
+        "max_slope": 78.97730473012282,
+        "path_length": 197.13708498984744,
+        "computation_time": 6.6953229904174805
+      },
+      {
+        "scenario_id": "dataset3_2_1_7",
+        "avg_slope": 52.36893120179912,
+        "max_slope": 80.70567830704829,
+        "path_length": 192.49747468305824,
+        "computation_time": 4.709903001785278
+      },
+      {
+        "scenario_id": "dataset3_2_1_10",
+        "avg_slope": 47.29504216847967,
+        "max_slope": 78.4880483597515,
+        "path_length": 192.7350647362943,
+        "computation_time": 3.583658218383789
+      },
+      {
+        "scenario_id": "dataset3_2_2_2",
+        "avg_slope": 46.87841575597093,
+        "max_slope": 78.43664685802901,
+        "path_length": 207.76450198781703,
+        "computation_time": 6.799679756164551
+      },
+      {
+        "scenario_id": "dataset3_2_2_3",
+        "avg_slope": 51.47983292840161,
+        "max_slope": 80.87894202195498,
+        "path_length": 214.86500705120528,
+        "computation_time": 8.035299301147461
+      },
+      {
+        "scenario_id": "dataset3_2_2_4",
+        "avg_slope": 49.451506531099774,
+        "max_slope": 81.1840770486777,
+        "path_length": 200.6934341759515,
+        "computation_time": 6.357621192932129
+      },
+      {
+        "scenario_id": "dataset3_2_2_5",
+        "avg_slope": 46.376133702301914,
+        "max_slope": 79.28213879332735,
+        "path_length": 187.31370849898474,
+        "computation_time": 0.6451992988586426
+      },
+      {
+        "scenario_id": "dataset3_2_2_7",
+        "avg_slope": 48.87357037750787,
+        "max_slope": 79.27153773672876,
+        "path_length": 196.1198410471447,
+        "computation_time": 2.002653121948242
+      },
+      {
+        "scenario_id": "dataset3_2_2_9",
+        "avg_slope": 50.61183414005929,
+        "max_slope": 80.68684182966567,
+        "path_length": 184.60512242138333,
+        "computation_time": 0.10149335861206055
+      },
+      {
+        "scenario_id": "dataset3_2_2_10",
+        "avg_slope": 51.54107566817395,
+        "max_slope": 80.87686545789495,
+        "path_length": 184.7989898732233,
+        "computation_time": 1.4294068813323975
+      },
+      {
+        "scenario_id": "dataset3_2_3_10",
+        "avg_slope": 47.39450743331694,
+        "max_slope": 79.14138314014184,
+        "path_length": 167.87005768508877,
+        "computation_time": 1.8612775802612305
+      },
+      {
+        "scenario_id": "dataset3_3_1_1",
+        "avg_slope": 48.3600480524146,
+        "max_slope": 79.29819596655523,
+        "path_length": 297.35743110038146,
+        "computation_time": 3.342162847518921
+      },
+      {
+        "scenario_id": "dataset3_3_1_4",
+        "avg_slope": 50.400356287919315,
+        "max_slope": 79.79914348085403,
+        "path_length": 297.4995667241125,
+        "computation_time": 0.518599271774292
+      },
+      {
+        "scenario_id": "dataset3_3_1_5",
+        "avg_slope": 47.1805707253468,
+        "max_slope": 78.73833463539759,
+        "path_length": 331.22539674441606,
+        "computation_time": 19.558939456939697
+      },
+      {
+        "scenario_id": "dataset3_3_1_6",
+        "avg_slope": 49.125827909396065,
+        "max_slope": 79.63512061364851,
+        "path_length": 319.28636328851593,
+        "computation_time": 14.6167631149292
+      },
+      {
+        "scenario_id": "dataset3_3_1_7",
+        "avg_slope": 48.49453852971566,
+        "max_slope": 79.72266622094675,
+        "path_length": 298.9411254969542,
+        "computation_time": 6.9418416023254395
+      },
+      {
+        "scenario_id": "dataset3_3_1_8",
+        "avg_slope": 50.75285920844689,
+        "max_slope": 80.95846041854037,
+        "path_length": 281.1858582251277,
+        "computation_time": 0.13254165649414062
+      },
+      {
+        "scenario_id": "dataset3_3_1_9",
+        "avg_slope": 47.372961115045634,
+        "max_slope": 79.05186080724587,
+        "path_length": 312.4558441227157,
+        "computation_time": 4.799708604812622
+      },
+      {
+        "scenario_id": "dataset3_3_2_4",
+        "avg_slope": 50.926154528041536,
+        "max_slope": 80.32946428776846,
+        "path_length": 299.47518010647235,
+        "computation_time": 23.974512815475464
+      },
+      {
+        "scenario_id": "dataset3_3_2_5",
+        "avg_slope": 50.12712607320528,
+        "max_slope": 79.86586532031835,
+        "path_length": 328.7766952966371,
+        "computation_time": 35.166877031326294
+      },
+      {
+        "scenario_id": "dataset3_3_2_6",
+        "avg_slope": 46.10700750103985,
+        "max_slope": 78.37921279432291,
+        "path_length": 320.28636328851593,
+        "computation_time": 15.007411479949951
+      },
+      {
+        "scenario_id": "dataset3_3_2_7",
+        "avg_slope": 45.375386333345276,
+        "max_slope": 77.82188879350299,
+        "path_length": 303.91378028648563,
+        "computation_time": 1.3636949062347412
+      },
+      {
+        "scenario_id": "dataset3_3_2_10",
+        "avg_slope": 54.47268428015525,
+        "max_slope": 82.44679198983624,
+        "path_length": 305.24978336205567,
+        "computation_time": 29.133634328842163
+      },
+      {
+        "scenario_id": "dataset3_3_3_3",
+        "avg_slope": 51.64103415672152,
+        "max_slope": 82.15678016143332,
+        "path_length": 131.65685424949237,
+        "computation_time": 0.12907934188842773
+      },
+      {
+        "scenario_id": "dataset3_3_3_6",
+        "avg_slope": 58.18501137970311,
+        "max_slope": 83.76968873008765,
+        "path_length": 151.1959594928932,
+        "computation_time": 3.819523334503174
+      },
+      {
+        "scenario_id": "dataset3_3_3_7",
+        "avg_slope": 53.35850956827895,
+        "max_slope": 83.10644908907746,
+        "path_length": 273.6639969244288,
+        "computation_time": 21.82945418357849
+      },
+      {
+        "scenario_id": "dataset3_3_3_8",
+        "avg_slope": 46.29769997556261,
+        "max_slope": 79.1533578991483,
+        "path_length": 147.5218613006977,
+        "computation_time": 0.5997862815856934
+      },
+      {
+        "scenario_id": "dataset3_3_3_9",
+        "avg_slope": 55.19764276011968,
+        "max_slope": 82.7004202048529,
+        "path_length": 334.87720036002537,
+        "computation_time": 37.143426179885864
+      },
+      {
+        "scenario_id": "dataset3_3_3_10",
+        "avg_slope": 49.798856837290465,
+        "max_slope": 81.95717562595978,
+        "path_length": 235.8284271247462,
+        "computation_time": 0.09165501594543457
+      }
+    ],
+    "feasible_scenarios": [
+      "dataset3_1_1_2",
+      "dataset3_1_1_3",
+      "dataset3_1_2_2",
+      "dataset3_1_2_6",
+      "dataset3_1_2_9",
+      "dataset3_1_2_10",
+      "dataset3_1_3_2",
+      "dataset3_1_3_3",
+      "dataset3_1_3_6",
+      "dataset3_1_3_8",
+      "dataset3_2_1_1",
+      "dataset3_2_1_3",
+      "dataset3_2_1_5",
+      "dataset3_2_1_8",
+      "dataset3_2_1_9",
+      "dataset3_2_2_1",
+      "dataset3_2_2_6",
+      "dataset3_2_2_8",
+      "dataset3_2_3_1",
+      "dataset3_2_3_2",
+      "dataset3_2_3_3",
+      "dataset3_2_3_4",
+      "dataset3_2_3_5",
+      "dataset3_2_3_6",
+      "dataset3_2_3_7",
+      "dataset3_2_3_8",
+      "dataset3_2_3_9",
+      "dataset3_3_1_2",
+      "dataset3_3_1_3",
+      "dataset3_3_1_10",
+      "dataset3_3_2_1",
+      "dataset3_3_2_2",
+      "dataset3_3_2_3",
+      "dataset3_3_2_8",
+      "dataset3_3_2_9",
+      "dataset3_3_3_1",
+      "dataset3_3_3_2",
+      "dataset3_3_3_4",
+      "dataset3_3_3_5"
+    ]
+  },
+  "tastar": {
+    "total": 90,
+    "path_found": 80,
+    "feasible": 36,
+    "practical_success_rate": 40.0,
+    "unfeasible_paths": [
+      {
+        "scenario_id": "dataset3_1_1_1",
+        "avg_slope": 52.8149191639224,
+        "max_slope": 80.87381579799306,
+        "path_length": 124.98275605729678,
+        "computation_time": 4.211662292480469
+      },
+      {
+        "scenario_id": "dataset3_1_1_4",
+        "avg_slope": 55.0704594450264,
+        "max_slope": 81.81513704652909,
+        "path_length": 116.9949493661165,
+        "computation_time": 1.377638339996338
+      },
+      {
+        "scenario_id": "dataset3_1_1_5",
+        "avg_slope": 46.45273981180564,
+        "max_slope": 78.09610181576484,
+        "path_length": 120.63961030678915,
+        "computation_time": 3.128218173980713
+      },
+      {
+        "scenario_id": "dataset3_1_1_6",
+        "avg_slope": 53.45867562887058,
+        "max_slope": 81.36207360941631,
+        "path_length": 111.40916292848961,
+        "computation_time": 0.7042512893676758
+      },
+      {
+        "scenario_id": "dataset3_1_1_7",
+        "avg_slope": 52.23353202256968,
+        "max_slope": 81.39285220242614,
+        "path_length": 111.45584412271566,
+        "computation_time": 1.730839490890503
+      },
+      {
+        "scenario_id": "dataset3_1_1_8",
+        "avg_slope": 52.6561000291766,
+        "max_slope": 82.65517476607177,
+        "path_length": 128.26702730475864,
+        "computation_time": 3.22373628616333
+      },
+      {
+        "scenario_id": "dataset3_1_1_9",
+        "avg_slope": 53.90269336216308,
+        "max_slope": 81.04466482962012,
+        "path_length": 114.16652224137032,
+        "computation_time": 1.3040001392364502
+      },
+      {
+        "scenario_id": "dataset3_1_1_10",
+        "avg_slope": 53.454818717970035,
+        "max_slope": 81.07069007981882,
+        "path_length": 127.95331880577389,
+        "computation_time": 3.6774826049804688
+      },
+      {
+        "scenario_id": "dataset3_1_2_1",
+        "avg_slope": 46.46317288833815,
+        "max_slope": 78.919700995929,
+        "path_length": 94.87005768508875,
+        "computation_time": 1.4041883945465088
+      },
+      {
+        "scenario_id": "dataset3_1_2_3",
+        "avg_slope": 47.15134177854095,
+        "max_slope": 78.27214977033275,
+        "path_length": 96.97056274847711,
+        "computation_time": 0.8999528884887695
+      },
+      {
+        "scenario_id": "dataset3_1_2_4",
+        "avg_slope": 51.91139763105854,
+        "max_slope": 80.85095411366366,
+        "path_length": 119.48528137423855,
+        "computation_time": 0.49842095375061035
+      },
+      {
+        "scenario_id": "dataset3_1_2_5",
+        "avg_slope": 47.387460038495185,
+        "max_slope": 79.14888345184391,
+        "path_length": 55.65685424949237,
+        "computation_time": 0.0987703800201416
+      },
+      {
+        "scenario_id": "dataset3_1_2_7",
+        "avg_slope": 49.343255072569214,
+        "max_slope": 80.34482516905535,
+        "path_length": 53.740115370177584,
+        "computation_time": 0.007656097412109375
+      },
+      {
+        "scenario_id": "dataset3_1_2_8",
+        "avg_slope": 51.65787090784036,
+        "max_slope": 81.23874981915048,
+        "path_length": 120.71067811865461,
+        "computation_time": 3.2873356342315674
+      },
+      {
+        "scenario_id": "dataset3_1_3_1",
+        "avg_slope": 52.96873208065375,
+        "max_slope": 82.80841558952893,
+        "path_length": 58.07106781186546,
+        "computation_time": 0.1397266387939453
+      },
+      {
+        "scenario_id": "dataset3_1_3_4",
+        "avg_slope": 47.11888296962058,
+        "max_slope": 78.23546515400504,
+        "path_length": 117.09545442950483,
+        "computation_time": 2.1301491260528564
+      },
+      {
+        "scenario_id": "dataset3_1_3_5",
+        "avg_slope": 45.413237897945415,
+        "max_slope": 77.35006782882193,
+        "path_length": 96.71067811865463,
+        "computation_time": 1.387613296508789
+      },
+      {
+        "scenario_id": "dataset3_1_3_7",
+        "avg_slope": 49.349969015992144,
+        "max_slope": 79.07652156541185,
+        "path_length": 92.49747468305823,
+        "computation_time": 1.6239490509033203
+      },
+      {
+        "scenario_id": "dataset3_1_3_9",
+        "avg_slope": 52.704976168232754,
+        "max_slope": 80.72423549095049,
+        "path_length": 79.65685424949237,
+        "computation_time": 0.1597599983215332
+      },
+      {
+        "scenario_id": "dataset3_1_3_10",
+        "avg_slope": 51.23959461586046,
+        "max_slope": 79.90785805241366,
+        "path_length": 109.81118318204297,
+        "computation_time": 2.4999477863311768
+      },
+      {
+        "scenario_id": "dataset3_2_1_2",
+        "avg_slope": 49.614846152782796,
+        "max_slope": 79.49142100403853,
+        "path_length": 193.7401153701775,
+        "computation_time": 10.35746717453003
+      },
+      {
+        "scenario_id": "dataset3_2_1_4",
+        "avg_slope": 53.58663207647753,
+        "max_slope": 81.07200104443156,
+        "path_length": 197.7989898732233,
+        "computation_time": 3.4481940269470215
+      },
+      {
+        "scenario_id": "dataset3_2_1_6",
+        "avg_slope": 47.1805892928098,
+        "max_slope": 78.97730473012282,
+        "path_length": 197.13708498984744,
+        "computation_time": 14.101897716522217
+      },
+      {
+        "scenario_id": "dataset3_2_1_7",
+        "avg_slope": 52.36893120179912,
+        "max_slope": 80.70567830704829,
+        "path_length": 192.49747468305821,
+        "computation_time": 9.84684705734253
+      },
+      {
+        "scenario_id": "dataset3_2_1_10",
+        "avg_slope": 47.29504216847967,
+        "max_slope": 78.4880483597515,
+        "path_length": 192.7350647362943,
+        "computation_time": 8.168385028839111
+      },
+      {
+        "scenario_id": "dataset3_2_2_2",
+        "avg_slope": 46.87841575597093,
+        "max_slope": 78.43664685802901,
+        "path_length": 207.76450198781703,
+        "computation_time": 15.021681785583496
+      },
+      {
+        "scenario_id": "dataset3_2_2_3",
+        "avg_slope": 51.47983292840161,
+        "max_slope": 80.87894202195498,
+        "path_length": 214.86500705120528,
+        "computation_time": 21.2870090007782
+      },
+      {
+        "scenario_id": "dataset3_2_2_4",
+        "avg_slope": 49.451506531099774,
+        "max_slope": 81.1840770486777,
+        "path_length": 200.6934341759515,
+        "computation_time": 13.969011306762695
+      },
+      {
+        "scenario_id": "dataset3_2_2_5",
+        "avg_slope": 46.376133702301914,
+        "max_slope": 79.28213879332735,
+        "path_length": 187.31370849898474,
+        "computation_time": 1.40946626663208
+      },
+      {
+        "scenario_id": "dataset3_2_2_7",
+        "avg_slope": 48.87357037750787,
+        "max_slope": 79.27153773672876,
+        "path_length": 196.1198410471447,
+        "computation_time": 5.305957555770874
+      },
+      {
+        "scenario_id": "dataset3_2_2_9",
+        "avg_slope": 50.61183414005929,
+        "max_slope": 80.68684182966567,
+        "path_length": 184.60512242138333,
+        "computation_time": 0.43007516860961914
+      },
+      {
+        "scenario_id": "dataset3_2_2_10",
+        "avg_slope": 51.54107566817395,
+        "max_slope": 80.87686545789495,
+        "path_length": 184.7989898732233,
+        "computation_time": 2.969086170196533
+      },
+      {
+        "scenario_id": "dataset3_2_3_10",
+        "avg_slope": 47.39450743331694,
+        "max_slope": 79.14138314014184,
+        "path_length": 167.87005768508874,
+        "computation_time": 3.894577980041504
+      },
+      {
+        "scenario_id": "dataset3_3_1_1",
+        "avg_slope": 48.3600480524146,
+        "max_slope": 79.29819596655523,
+        "path_length": 297.35743110038146,
+        "computation_time": 9.134387254714966
+      },
+      {
+        "scenario_id": "dataset3_3_1_4",
+        "avg_slope": 50.400356287919315,
+        "max_slope": 79.79914348085403,
+        "path_length": 297.4995667241125,
+        "computation_time": 2.567340135574341
+      },
+      {
+        "scenario_id": "dataset3_3_1_5",
+        "avg_slope": 47.1805707253468,
+        "max_slope": 78.73833463539759,
+        "path_length": 331.22539674441606,
+        "computation_time": 51.72417736053467
+      },
+      {
+        "scenario_id": "dataset3_3_1_7",
+        "avg_slope": 48.49453852971566,
+        "max_slope": 79.72266622094675,
+        "path_length": 298.9411254969542,
+        "computation_time": 16.035550832748413
+      },
+      {
+        "scenario_id": "dataset3_3_1_8",
+        "avg_slope": 50.75285920844689,
+        "max_slope": 80.95846041854037,
+        "path_length": 281.1858582251277,
+        "computation_time": 0.5531866550445557
+      },
+      {
+        "scenario_id": "dataset3_3_1_9",
+        "avg_slope": 47.372961115045634,
+        "max_slope": 79.05186080724587,
+        "path_length": 312.4558441227157,
+        "computation_time": 11.053189992904663
+      },
+      {
+        "scenario_id": "dataset3_3_2_7",
+        "avg_slope": 45.375386333345276,
+        "max_slope": 77.82188879350299,
+        "path_length": 303.91378028648563,
+        "computation_time": 4.701003074645996
+      },
+      {
+        "scenario_id": "dataset3_3_3_3",
+        "avg_slope": 51.64103415672152,
+        "max_slope": 82.15678016143332,
+        "path_length": 131.65685424949237,
+        "computation_time": 0.3584773540496826
+      },
+      {
+        "scenario_id": "dataset3_3_3_6",
+        "avg_slope": 58.18501137970311,
+        "max_slope": 83.76968873008765,
+        "path_length": 151.19595949289317,
+        "computation_time": 9.269526481628418
+      },
+      {
+        "scenario_id": "dataset3_3_3_8",
+        "avg_slope": 46.29769997556261,
+        "max_slope": 79.1533578991483,
+        "path_length": 147.5218613006977,
+        "computation_time": 2.08028507232666
+      },
+      {
+        "scenario_id": "dataset3_3_3_10",
+        "avg_slope": 49.798856837290465,
+        "max_slope": 81.95717562595978,
+        "path_length": 235.82842712474618,
+        "computation_time": 0.2687869071960449
+      }
+    ],
+    "feasible_scenarios": [
+      "dataset3_1_1_2",
+      "dataset3_1_1_3",
+      "dataset3_1_2_2",
+      "dataset3_1_2_6",
+      "dataset3_1_2_9",
+      "dataset3_1_2_10",
+      "dataset3_1_3_2",
+      "dataset3_1_3_3",
+      "dataset3_1_3_6",
+      "dataset3_1_3_8",
+      "dataset3_2_1_1",
+      "dataset3_2_1_3",
+      "dataset3_2_1_5",
+      "dataset3_2_1_8",
+      "dataset3_2_1_9",
+      "dataset3_2_2_1",
+      "dataset3_2_2_6",
+      "dataset3_2_2_8",
+      "dataset3_2_3_1",
+      "dataset3_2_3_2",
+      "dataset3_2_3_3",
+      "dataset3_2_3_4",
+      "dataset3_2_3_5",
+      "dataset3_2_3_6",
+      "dataset3_2_3_7",
+      "dataset3_2_3_8",
+      "dataset3_2_3_9",
+      "dataset3_3_1_2",
+      "dataset3_3_1_3",
+      "dataset3_3_2_2",
+      "dataset3_3_2_8",
+      "dataset3_3_2_9",
+      "dataset3_3_3_1",
+      "dataset3_3_3_2",
+      "dataset3_3_3_4",
+      "dataset3_3_3_5"
+    ]
+  }
+}

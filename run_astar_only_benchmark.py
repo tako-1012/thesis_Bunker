@@ -16,6 +16,9 @@ if PACKAGE_ROOT not in sys.path:
 if MODULE_DIR not in sys.path:
     sys.path.insert(0, MODULE_DIR)
 
+# Use AStar3D (integer voxels) with a high iteration cap
+from astar_3d import AStar3D
+
 
 def build_voxel_grid(scenario, z_layers=8):
     """Build 3D voxel grid from scenario obstacle map"""
@@ -32,8 +35,20 @@ def build_voxel_grid(scenario, z_layers=8):
     return vg
 
 
+def _path_length_m(path):
+    """Compute total Euclidean length of a voxel path (voxel_size=1.0)."""
+    if not path or len(path) < 2:
+        return 0.0
+    length = 0.0
+    for i in range(len(path) - 1):
+        p1 = np.array(path[i], dtype=float)
+        p2 = np.array(path[i + 1], dtype=float)
+        length += float(np.linalg.norm(p2 - p1))
+    return length
+
+
 def run_astar_on_scenario(args):
-    """Run Regular A* on a single scenario"""
+    """Run Regular A* (AStar3D) on a single scenario"""
     scenario, timeout = args
     sid = scenario.get('id', 'unknown')
     start_time = time.time()
@@ -49,25 +64,19 @@ def run_astar_on_scenario(args):
         start = (float(sx), float(sy), 0.0)
         goal = (float(gx), float(gy), 0.0)
 
-        # Import and run A* with NO terrain consideration
-        from ta_star import TAStarPlanner
-        planner = TAStarPlanner(voxel_size=1.0, grid_size=(size, size, z_layers))
-        
-        # Set terrain data but disable terrain weighting
-        planner.set_terrain_data(voxel_grid, None, min_bound=(0.0, 0.0, 0.0))
-        
-        # Force terrain weight to 0
-        if hasattr(planner, 'w_t'):
-            planner.w_t = 0.0
-        if hasattr(planner, 'use_terrain_cost'):
-            planner.use_terrain_cost = False
-        if hasattr(planner, 'terrain_weight'):
-            planner.terrain_weight = 0.0
-            
-        result = planner.plan_path(start, goal, timeout=timeout)
-        success = bool(getattr(result, 'success', False))
-        nodes = int(getattr(result, 'nodes_explored', planner.last_stats.get('nodes_explored', 0)))
-        plen = float(getattr(result, 'path_length', planner.last_stats.get('path_length', 0.0)))
+        planner = AStar3D(voxel_size=1.0, max_iterations=500_000)
+
+        # AStar3D expects integer voxel coordinates; keep terrain cost flat (cost_function=1)
+        path = planner.plan_path(
+            (int(round(start[0])), int(round(start[1])), 0),
+            (int(round(goal[0])), int(round(goal[1])), 0),
+            voxel_grid,
+            cost_function=lambda *_: 1.0,
+        )
+
+        success = path is not None
+        plen = _path_length_m(path) if path else 0.0
+        nodes = planner.nodes_explored  # 実際の探索ノード数を記録
 
         elapsed = time.time() - start_time
         return {
@@ -103,7 +112,7 @@ def main():
 
     outdir = Path('benchmark_results')
     results = []
-    save_path = outdir / 'dataset3_a_star_only_results.json'
+    save_path = outdir / 'dataset3_correct_astar_results.json'
 
     pool_procs = min(8, mp.cpu_count())
     start_time = time.time()
@@ -118,6 +127,7 @@ def main():
             if (i+1) % 10 == 0:
                 with open(save_path, 'w') as f:
                     json.dump(results, f, indent=2)
+                print(f"Saved {i+1}/{len(tasks)} results")
                 elapsed = time.time() - start_time
                 progress = (i+1) / len(tasks)
                 eta = (elapsed / progress - elapsed) if progress>0 else 0
