@@ -21,58 +21,68 @@
 
 ## 📂 プロジェクト構成
 
-### **コア実装**
 ```
-ros2/ros2_ws/src/bunker_ros2/path_planner_3d/
-└── terrain_aware_astar_advanced.py (867行)
-```
-
-### **実験・評価**
-```
-scripts/
-├── benchmark_path_planners.py        # ベンチマークシステム
-└── visualize_benchmark_results.py   # 結果可視化
-
-scenarios/
-└── benchmark_scenarios.json          # テストシナリオ定義
-
-results/
-├── benchmark_results_20251109_155653.json
-└── quick_comparison_20251109_163012.json
-```
-
-### **論文資料**
-```
-figures/
-├── ta_star_time_comparison.png       # 計算時間比較
-├── ta_star_nodes_comparison.png      # 探索効率比較
-├── ta_star_success_rate.png          # 成功率比較
-└── ta_star_speedup_analysis.png      # 高速化率分析
-
-TA_STAR_REPORT.md                     # 実装詳細レポート
-THESIS_EVALUATION.md                  # 卒論評価（85点）
-```
-
-### **文献調査**
-```
-documents/thesis/
-├── literature/                       # 関連論文
-└── paper/                           # 執筆中の論文
+thesis_work/
+├── ta_star_plus.py               # TA* アルゴリズム本体
+├── terrain_cost_calculator.py    # 地形コスト計算モジュール
+├── ros2/                         # ROS2ワークスペース
+│   └── ros2_ws/src/bunker_ros2/path_planner_3d/
+│       └── terrain_aware_astar_advanced.py  # ROS2統合実装
+├── scripts/                      # ベンチマーク・分析・可視化スクリプト群
+├── scenarios/                    # ベンチマークシナリオ定義
+├── terrain_test_scenarios/       # 地形テストデータ（.npz形式）
+├── results/                      # 実験結果
+├── benchmark_results/            # ベンチマーク出力JSON
+├── figures/                      # 論文・発表用図表
+│   ├── final/                    # 最終版の図
+│   └── presentation/             # 発表スライド用の図
+├── thisis_write/                 # 論文執筆ファイル（LaTeX等）
+├── documents/                    # 参考文献・関連資料
+├── docs/                         # 調査・分析レポート（Markdown）
+├── archive/                      # 過去の実装・記録
+└── unity/                        # Unity可視化プロジェクト
 ```
 
 ---
 
-## 🚀 クイックスタート
+## 🖥️ 実験環境
 
-### **ベンチマーク実行**
+- OS: Ubuntu 22.04 LTS
+- Python: 3.10
+- 主要ライブラリ: NumPy, Matplotlib, SciPy, Open3D, NetworkX
+- ロボットOS: ROS2 Humble
+
+---
+
+## 📦 データセットについて
+
+`dataset*.json` は容量が大きいため **Git管理対象外**（`.gitignore` に設定済み）です。
+
+| ファイル | サイズ | 内容 |
+|---------|--------|------|
+| `dataset3_scenarios.json` | 270MB | 主要ベンチマークデータ（96シナリオ） |
+| `dataset3_scenarios_no_terrain.json` | 78MB | 地形情報なし版 |
+| `dataset2_scenarios.json` | 50MB | 旧バージョンデータ |
+
+**復元方法**: バックアップからプロジェクトルートに配置してください。
+
+---
+
+## 🚀 実行手順
+
+### **1. ベンチマーク実行**
 ```bash
-cd scripts
-python3 benchmark_path_planners.py
+python3 scripts/run_fieldd_96_benchmark.py
 ```
 
-### **結果可視化**
+### **2. 結果サマリー確認**
 ```bash
-python3 visualize_benchmark_results.py results/benchmark_results_*.json
+python3 scripts/final_results_summary.py
+```
+
+### **3. 論文用図表生成**
+```bash
+python3 scripts/generate_figures.py
 ```
 
 ---
@@ -87,21 +97,4 @@ python3 visualize_benchmark_results.py results/benchmark_results_*.json
 
 ---
 
-## 📝 論文執筆計画
-
-### 章立て
-1. 序論（研究背景・目的）
-2. 関連研究
-3. 提案手法（TA*）
-4. 実装
-5. 実験
-6. 考察
-7. 結論
-
-### 必要な追加実験
-- [ ] 16シナリオ完全ベンチマーク
-- [ ] 統計的検定（t検定、効果量）
-
----
-
-**最終更新**: 2025年11月9日
+**最終更新**: 2026年3月24日
