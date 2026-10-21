@@ -6,6 +6,14 @@ w_tパラメータ調整実験
 実行方法:
     python experiments/parameter_tuning_wt.py
 """
+# ---------------------------------------------------------------------------
+# WARNING (2026-10 audit): this script does NOT run any planner. Its "results"
+# are hard-coded / modelled values, so they must not be reported as
+# experimental results. Use conference/experiments/run_all.py instead.
+# ---------------------------------------------------------------------------
+raise SystemExit("parameter tuning results in this script are hard-coded, not measured; "
+                 "see conference/AUDIT_ja.md")
+
 import sys
 import json
 import numpy as np
