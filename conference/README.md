@@ -18,7 +18,7 @@ paper/           IEEE conference paper; generated/ and figures/ are produced by 
 pip install numpy scipy matplotlib pandas
 cd conference
 python3 -m tests.test_planners
-python3 experiments/run_all.py        # ~15 min on 4 cores
+python3 experiments/run_all.py        # ~7 min on 4 cores
 python3 experiments/analyze.py
 cd paper && latexmk -pdf main.tex
 ```

@@ -60,7 +60,7 @@
 ```bash
 pip install numpy scipy matplotlib pandas
 python3 -m tests.test_planners
-python3 experiments/run_all.py      # 4コアで約15分
+python3 experiments/run_all.py      # 4コアで約7分
 python3 experiments/analyze.py
 cd paper && latexmk -pdf main.tex
 ```
@@ -74,3 +74,9 @@ cd paper && latexmk -pdf main.tex
 3. **できれば実データで1例追加する**：BUNKER＋RTAB-Map で取った点群から標高マップを作れば、
    `TraversabilityMap(elev, rock)` にそのまま入れて同じ評価ができます。実データが1例あるだけで、論文の説得力が大きく上がります。
 4. 卒論の Field D* Hybrid / AHA* は、今回の再実験には入れていません（元の評価が信頼できないため）。入れたい場合は、同じ評価の枠組みで測り直す必要があります。
+
+---
+
+## 4. 発表の準備
+- 論文 PDF: `paper/main.pdf`（IEEE 会議形式、6ページ）
+- スライド構成案と想定質問: `presentation/slides_outline.md`

@@ -1,0 +1,18 @@
+% AUTO-GENERATED
+\begin{table*}[t]
+\centering
+\caption{Results on the 120 test scenarios. Length and energy are relative to A$^*$ on the same scenario, median [IQR]. Max.\ slope and cost: medians. Exposed: share of paths that enter terrain steeper than $\theta_{\max}$; steep length: mean length driven on such terrain.}
+\label{tab:main}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Planner & Succ.\,[\%] & $\Delta$Length [\%] & $\Delta$Energy [\%] & Max.\ slope [$^\circ$] & Exposed [\%] & Steep len.\ [m] & Cost $\bar c$ & Time [s] \\
+\midrule
+A$^*$ & 100 & 0.0 [0.0, 0.0] & 0.0 [0.0, 0.0] & 31.1 & 76 & 8.5 & 0.324 & 0.037 \\
+Theta$^*$ & 100 & -5.7 [-7.0, -3.8] & -4.6 [-8.4, -1.5] & 33.2 & 82 & 8.1 & 0.337 & 0.057 \\
+A$^*$-HC & 100 & 0.1 [0.0, 2.6] & -1.4 [-7.3, 0.0] & 23.7 & 0 & 0.0 & 0.301 & 0.035 \\
+TA$^*$ & 100 & 11.8 [7.7, 17.8] & -0.7 [-7.0, 3.6] & 12.4 & 0 & 0.0 & 0.141 & 0.180 \\
+TA$^*$-S & 100 & 6.6 [2.6, 12.4] & -5.0 [-10.4, -0.4] & 12.9 & 0 & 0.0 & 0.150 & 0.294 \\
+\bottomrule
+\end{tabular}
+\end{table*}

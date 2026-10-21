@@ -138,6 +138,8 @@ def main():
         N[f"maxSlope{p}"] = f"{ok.max_slope.median():.1f}"
         N[f"pNineFiveSlope{p}"] = f"{ok.p95_slope.median():.1f}"
         N[f"time{p}"] = f"{ok.time.median():.3f}"
+        N[f"maxPitch{p}"] = f"{ok.max_pitch.median():.1f}"
+        N[f"roughRocky{p}"] = f"{1000 * ok[ok.kind == 'rocky'].p95_rough.median():.0f}"
         N[f"timeMax{p}"] = f"{ok.time.max():.2f}"
         name = p.replace("*", "$^*$")
         rows.append(
@@ -190,13 +192,14 @@ def main():
     # ---------------- Table III: paired tests ----------------
     comps = [("TA*-S", "A*"), ("TA*-S", "Theta*"), ("TA*-S", "A*-HC"), ("TA*-S", "TA*")]
     metrics = [("mean_cost", "cost $\\bar c$", "{:+.3f}"), ("p95_slope", "95th-pct.\\ slope [$^\\circ$]", "{:+.2f}"),
+               ("p95_rough", "95th-pct.\\ rough.\\ [mm]", "{:+.1f}"),
                ("climb", "climb [m]", "{:+.2f}"), ("energy_kj", "energy [kJ]", "{:+.2f}"),
                ("length_xy", "length [m]", "{:+.2f}")]
     tests = []
     piv = main[main.success].pivot_table(index=key, columns="planner", values=[m for m, _, _ in metrics])
     for a, b in comps:
         for m, label, fmt in metrics:
-            sub = piv[m][[a, b]].dropna()
+            sub = piv[m][[a, b]].dropna() * (1000.0 if m == "p95_rough" else 1.0)
             p, r, dmed = paired_test(sub[a], sub[b])
             tests.append({"a": a, "b": b, "metric": m, "label": label, "p": p, "r": r,
                           "d": fmt.format(dmed), "n": len(sub), "dval": dmed})
@@ -267,28 +270,28 @@ def main():
                                           energy_rel=("energy_rel", "median"), time=("time", "median")).reset_index()
     agg.to_csv(os.path.join(RES, "sweep_summary.csv"), index=False)
     fig, axs = plt.subplots(1, 2, figsize=(COL_W, 1.75))
+    wpos = {w: i for i, w in enumerate(sorted(agg.w.unique()))}
     for p in ("TA*", "TA*-S"):
         a = agg[agg.planner == p].sort_values("w")
         axs[0].plot(a.len_rel, a.cost, marker=MARK[p], ms=3.5, color=COLOR[p], label=p)
-        axs[1].plot(a.w, a.energy_rel, marker=MARK[p], ms=3.5, color=COLOR[p], label=p)
+        axs[1].plot([wpos[w] for w in a.w], a.energy_rel, marker=MARK[p], ms=3.5, color=COLOR[p], label=p)
         if p == "TA*-S":
             for _, r_ in a.iterrows():
-                if r_.w in (0.0, 2.0, 8.0, 32.0):
+                if r_.w in (0.0, 2.0, 16.0):
                     axs[0].annotate(f"w={r_.w:g}", (r_.len_rel, r_.cost), fontsize=5.5, color=MUTED,
-                                    xytext=(3, 2), textcoords="offset points")
+                                    xytext=(-4, -8), textcoords="offset points", ha="right")
     for p in ("A*", "Theta*"):
         ok = main[(main.planner == p) & main.success]
         axs[0].plot(ok.length_xy_rel.median(), ok.mean_cost.median(), MARK[p], color=COLOR[p], ms=4, label=p)
     axs[0].set_xlabel(r"$\Delta$length vs. A$^*$ [%]")
     axs[0].set_ylabel(r"median cost $\bar c$")
     axs[1].axhline(0, color=MUTED, lw=0.6)
-    axs[1].set_xscale("symlog", linthresh=0.5)
-    axs[1].set_xticks([0, 1, 4, 16])
-    axs[1].set_xticklabels(["0", "1", "4", "16"])
-    axs[1].axvline(w_main, color=MUTED, lw=0.6, ls="--")
+    axs[1].set_xticks(list(wpos.values()))
+    axs[1].set_xticklabels([f"{w:g}" for w in wpos])
+    axs[1].axvline(wpos[w_main], color=MUTED, lw=0.6, ls="--")
     axs[1].set_xlabel("terrain weight $w$")
     axs[1].set_ylabel(r"$\Delta$energy vs. A$^*$ [%]")
-    axs[0].legend(frameon=False, loc="upper right")
+    axs[0].legend(frameon=False, loc="upper right", fontsize=5.5, handlelength=1.5)
     fig.tight_layout(pad=0.3)
     fig.savefig(os.path.join(FIG, "sweep.pdf"))
     fig.savefig(os.path.join(FIG, "sweep.png"))
@@ -345,6 +348,7 @@ def main():
     axs[0].set_ylabel("mean steep length [m]")
     axs[1].set_xlabel(r"elevation noise $\sigma_z$ [m]")
     axs[1].set_ylabel("success [%]")
+    axs[1].set_ylim(80, 101)
     axs[1].legend(frameon=False, loc="lower left")
     fig.tight_layout(pad=0.3)
     fig.savefig(os.path.join(FIG, "noise.pdf"))
@@ -366,7 +370,7 @@ def main():
                 f"($w={w_main:g}$), medians over the test scenarios, evaluated with the default cost map.}}\n"
                 "\\label{tab:ablation}\n\\setlength{\\tabcolsep}{4pt}\n"
                 "\\begin{tabular}{rrrrr}\n\\toprule\n"
-                "$\\alpha$ & 95th-pct.\\ slope [$^\\circ$] & 95th-pct.\\ rough.\\ [mm] & climb [m] & length [m] \\\\\n"
+                "$\\alpha$ & slope$_{95}$ [$^\\circ$] & rough.$_{95}$ [mm] & climb [m] & length [m] \\\\\n"
                 "\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 
     N.write(os.path.join(GEN, "numbers.tex"))
