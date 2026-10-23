@@ -254,7 +254,9 @@ the shortest path).}
 
 \subsection{Main comparison}
 Table~\ref{tab:main} summarises the \nTest{} test scenarios and
-Table~\ref{tab:tests} the paired tests. All planners solve every scenario.
+Table~\ref{tab:tests} the paired tests. All planners solve every scenario; since the benchmark contains only maps
+with a feasible path, this is expected, and infeasible maps are treated
+separately below.
 The terrain-unaware planners \Astar{} and Theta* enter terrain steeper than
 $\thmax$ in \exposedA\% and \exposedTheta\% of the scenarios, driving on
 average \steepMeanA\,m and \steepMeanTheta\,m on such slopes. \HC{} avoids
@@ -334,6 +336,19 @@ retaining most of the roughness avoidance.
 Left: mean distance driven on slopes $>\thmax$. Right: success rate.}
 \label{fig:noise}
 \end{figure}
+
+\subsection{Maps without a feasible path}
+The benchmark keeps only solvable maps, so a success rate of 100\% only
+means that every planner returned \emph{some} path. To test the opposite
+case we generated \nInfeasible{} additional maps with a steep wall across the
+whole map and no pass (10 seeds per map size), not filtered for feasibility.
+\TA, \TAS{} and \HC{} correctly report that no admissible path exists in all
+of them (\infPathsTA, \infPathsTAS{} and \infPathsAHC{} paths returned), after at most
+\infTimeMaxTAS\,s. \Astar{} and Theta*, in contrast, ``succeed'' on all
+\nInfeasible{} maps (\infPathsA{} and \infPathsTheta{} paths), but their paths
+cross the wall with a mean maximum slope of \infMaxSlopeA$^\circ$ and drive
+on average \infSteepA\,m on slopes beyond the limit. For a terrain-unaware
+planner, success is therefore not evidence of a usable path.
 
 \subsection{Robustness to elevation noise}
 Real elevation maps are noisy. We add i.i.d.\ Gaussian noise

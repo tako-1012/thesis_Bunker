@@ -27,6 +27,16 @@ def build(kind, side_m, seed, weights=CostWeights(), robot=Robot(), max_tries=20
     raise RuntimeError(f"no feasible scenario for {kind} {side_m} {seed}")
 
 
+def build_infeasible(side_m, seed, robot=Robot(), weights=CostWeights()):
+    """'wall' terrain without any pass; NOT filtered for feasibility."""
+    sd = int(np.random.SeedSequence([seed, 99, int(side_m)]).generate_state(1)[0])
+    t = terrain.generate("wall", side_m, sd)
+    tm = TraversabilityMap(t["elev"], t["rock"], robot, weights)
+    s, g = terrain.sample_start_goal(tm.lethal, side_m, np.random.default_rng(sd + 7))
+    return {"kind": "wall", "side_m": side_m, "seed": seed, "used_seed": sd,
+            "redraws": 0, "tmap": tm, "start": s, "goal": g}
+
+
 def run_planner(name, sc, w=DEFAULT_W, plan_map=None):
     """plan_map: TraversabilityMap used for planning (defaults to ground truth)."""
     tm = plan_map or sc["tmap"]

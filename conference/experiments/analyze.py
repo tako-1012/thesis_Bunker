@@ -373,6 +373,20 @@ def main():
                 "$\\alpha$ & slope$_{95}$ [$^\\circ$] & rough.$_{95}$ [mm] & climb [m] & length [m] \\\\\n"
                 "\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 
+    # ---------------- E5: infeasible maps ----------------
+    inf = pd.read_csv(os.path.join(RES, "infeasible.csv"))
+    N["nInfeasible"] = inf.groupby(["side_m", "seed"]).ngroups
+    for p in PLANNERS:
+        d = inf[inf.planner == p]
+        N[f"infPaths{p}"] = int(d.returned_path.sum())
+        if d.returned_path.any():
+            ok = d[d.returned_path]
+            N[f"infSteep{p}"] = f"{ok.steep_len.mean():.1f}"
+            N[f"infMaxSlope{p}"] = f"{ok.max_slope.mean():.0f}"
+        else:
+            N[f"infTimeMax{p}"] = f"{d.time.max():.2f}"
+            N[f"infTimeMed{p}"] = f"{d.time.median():.2f}"
+
     N.write(os.path.join(GEN, "numbers.tex"))
     print("wrote", len(N.items), "macros; tables and figures in paper/")
 

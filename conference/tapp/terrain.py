@@ -70,6 +70,13 @@ def generate(kind, side_m, seed):
             yc = rng.uniform(0.15, 0.85) * L
             notch *= 1.0 - 0.85 * np.exp(-((Y - yc) / (0.06 * L)) ** 2)
         elev = elev + ridge * notch
+    elif kind == "wall":
+        # infeasible by construction: a steep ridge across the whole map, no pass
+        elev = relief(n, 4.0, rng)
+        x0 = rng.uniform(0.4, 0.6) * L
+        width = rng.uniform(0.04, 0.06) * L
+        height = rng.uniform(1.1, 1.4) * width  # flank slope ~ 45-50 deg
+        elev = elev + height * np.exp(-((X - x0) / width) ** 2)
     elif kind == "craters":
         elev = relief(n, 4.0, rng)
         for _ in range(rng.integers(6, 12)):
