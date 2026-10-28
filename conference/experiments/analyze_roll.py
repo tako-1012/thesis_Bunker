@@ -14,8 +14,8 @@ import pandas as pd
 from analyze import GEN, RES, Numbers, holm, paired_test, fmt_p  # noqa: E402
 
 KEY = ["kind", "side_m", "seed"]
-LIMITS = (10.0, 15.0, 20.0)
-MAIN = 15.0
+LIMITS = (10.0, 15.0, 20.0, 25.0)
+MAIN = 20.0
 ROWS = ("A*", "Theta*", "A*-HC", "TA*-S", "TA*-R", "TA*-S-R")
 
 
@@ -42,7 +42,7 @@ def main():
                 "max_roll_max": ok.max_roll.max(), "p95_roll": ok.p95_roll.median(),
                 "dL": rel("length_xy"), "dE": rel("energy_kj"), "time": ok.time.median()}
             tag = p.replace("*", "").replace("-", "")
-            lt = {10.0: "Ten", 15.0: "Fifteen", 20.0: "Twenty"}[lim]
+            lt = {10.0: "Ten", 15.0: "Fifteen", 20.0: "Twenty", 25.0: "TwentyFive"}[lim]
             o = out[(p, lim)]
             N[f"rl{tag}Exposed{lt}"] = f"{o['exposed']:.0f}"
             N[f"rl{tag}RollLen{lt}"] = f"{o['roll_len']:.2f}"
@@ -54,6 +54,11 @@ def main():
             N[f"rl{tag}DL{lt}"] = f"{o['dL']:.1f}"
             N[f"rl{tag}DE{lt}"] = f"{o['dE']:.1f}"
             N[f"rl{tag}Time{lt}"] = f"{o['time']:.3f}"
+            if lim == MAIN:
+                for fld, val in (("Exposed", f"{o['exposed']:.0f}"), ("RollLen", f"{o['roll_len']:.2f}"),
+                                 ("Fail", o["nfail"]), ("MaxRoll", f"{o['max_roll']:.1f}"),
+                                 ("DL", f"{o['dL']:.1f}"), ("DE", f"{o['dE']:.1f}")):
+                    N[f"rl{tag}{fld}Main"] = val
 
     # paired tests at the main roll limit: TA*-S-R vs TA*-S
     x = d[(d.roll_limit == MAIN) & d.success]
@@ -90,10 +95,10 @@ def main():
                 f"roll; max, $\\Delta L$, $\\Delta E$ (relative to A$^*$): medians; all at $\\phi_{{\\max}}={MAIN:g}^\\circ$ "
                 "unless stated. TA$^*$-S-R uses the roll limit it is evaluated with.}\n"
                 "\\label{tab:roll}\n\\setlength{\\tabcolsep}{1.3pt}\n"
-                "\\begin{tabular}{lrrrrrrr}\n\\toprule\n"
-                " & \\multicolumn{3}{c}{Exposed [\\%] at $\\phi_{\\max}$} & & & & \\\\\n"
-                "\\cmidrule(lr){2-4}\n"
-                "Planner & 10$^\\circ$ & 15$^\\circ$ & 20$^\\circ$ & len.\\ [m] & max [$^\\circ$] & "
+                "\\begin{tabular}{lrrrrrrrr}\n\\toprule\n"
+                " & \\multicolumn{4}{c}{Exposed [\\%] at $\\phi_{\\max}$} & & & & \\\\\n"
+                "\\cmidrule(lr){2-5}\n"
+                "Planner & 10$^\\circ$ & 15$^\\circ$ & 20$^\\circ$ & 25$^\\circ$ & len.\\ [m] & max [$^\\circ$] & "
                 "$\\Delta L$ [\\%] & $\\Delta E$ [\\%] \\\\\n\\midrule\n"
                 + "\n".join(lines) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
     N.write(os.path.join(GEN, "numbers_roll.tex"))

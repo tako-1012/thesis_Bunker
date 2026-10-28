@@ -69,9 +69,10 @@
 ### 11b. Roll-aware extension
 - 図: `demo/demo_roll_craters.png`（同じ地形で、ロールを考慮しない経路と考慮した経路の比較）
 - Pitch along / roll across the direction of travel; slope term = larger utilisation of the two limits (no new weight)
-- With an assumed roll limit of 15°: A\*, Theta\*, A\*-HC exceed it in ~90% of scenarios; isotropic TA\*-S in 17%; roll-aware TA\*-S-R in 0%
-- Cost: +1 m length, energy still −4.9% vs A\*
-- 話すこと: 「斜面を横切ると横転しないか？」への答え。ロールの限界15°は仮定なので、10〜20°で振った結果も表に載せている。
+- Roll limit 20° (dry, loose sand): BUNKER would tip over only near 45° (track width from the URDF), so sliding and sinkage come first
+- At 20°: A\*, Theta\*, A\*-HC exceed it in ~70% of scenarios; isotropic TA\*-S in 3%; roll-aware TA\*-S-R in 0% at negligible cost (+0.24 m, +0.09 kJ)
+- With a strict 10° limit (slippery ground, high payload): isotropic 56% vs roll-aware 0%
+- 話すこと: 「斜面を横切ると横転しないか？」への答え。乾いた砂なら今の手法でもほぼ大丈夫、滑りやすい地面ではロールの考慮が必須、という整理。
 
 ### 12. Robustness and time
 - 図: `noise.png` と `time.png`、通れないマップの例 `demo/demo_wall_infeasible.png`

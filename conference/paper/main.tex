@@ -49,7 +49,7 @@ Compared with a binary-traversability baseline (hard slope constraint only),
 the continuous cost further lowers the slope, roughness and climb along the
 path (all $p<0.001$, Holm-corrected). A heading-dependent extension that
 separates pitch from roll keeps every path within an assumed roll limit of
-\rlMain$^\circ$, which shortest-path planners violate in about 90\% of the
+\rlMain$^\circ$, which shortest-path planners violate in \rlAExposedMain\% of the
 scenarios. We also report a joint optimisation of the cost weights, a cost
 ablation, infeasible maps, robustness to elevation-map noise and computation
 time. Code and data generators are released.
@@ -106,9 +106,7 @@ grids given an admissible heuristic; D* Lite~\cite{koenig2002dstarlite}
 supports efficient replanning. Any-angle planners such as
 Theta*~\cite{nash2007theta,nash2010lazy} and Field D*~\cite{ferguson2006fielddstar}
 remove the grid's heading restriction; Field D* additionally interpolates
-costs across cells and was deployed on Mars rovers. Sampling-based planners
-such as RRT*~\cite{karaman2011rrtstar} scale to higher-dimensional state spaces
-but are not the focus here.
+costs across cells and was deployed on Mars rovers.
 
 \textbf{Traversability.} Surveys~\cite{papadakis2013survey,guastella2021review}
 distinguish geometric approaches, which derive slope, roughness and step
@@ -204,8 +202,12 @@ weight is added. Since pitch and roll depend only on the move direction, the
 8-connected graph is kept, with one multiplier and one constraint mask per
 direction; costs stay $\ge$ the distance, so Proposition~1 still holds.
 Shortcutting uses the same directional cost and constraints. We call the
-result \TA-R and \TAS-R and use an assumed roll limit $\phi_{\max}=\rlMain^\circ$,
-varied between 10$^\circ$ and 20$^\circ$.
+result \TA-R and \TAS-R. We use $\phi_{\max}=\rlMain^\circ$, which we consider
+representative of dry, loose sand: with the track half-width of our vehicle
+model (0.35\,m) and an estimated centre-of-gravity height of about 0.34\,m,
+static tip-over occurs only near $45^\circ$, so lateral sliding and sinkage of
+the downhill track limit side slopes first. As this value is an assumption, it
+is varied between 10$^\circ$ and 25$^\circ$.
 
 \section{Experimental Setup}\label{sec:setup}
 \subsection{Terrains and scenarios}
@@ -414,26 +416,24 @@ map~\cite{fankhauser2018elevation}, is the natural remedy.
 \input{generated/table_roll.tex}
 
 \subsection{Roll-aware extension}
-Table~\ref{tab:roll} evaluates the roll angle along every path. Terrain-unaware
-planners and \HC{} exceed $\phi_{\max}=\rlMain^\circ$ in \rlAExposedFifteen\%,
-\rlThetaExposedFifteen\% and \rlAHCExposedFifteen\% of the scenarios, driving
-about 10\,m above the limit on average: the hard slope constraint alone does
-not prevent crossing side slopes. The isotropic \TAS{} already avoids most of
-this exposure because it avoids slopes altogether (\rlTASExposedFifteen\% of
-paths, \rlTASRollLenFifteen\,m on average), but not all of it, and its exposure
-grows to \rlTASExposedTen\% for a stricter limit of 10$^\circ$. \TAS-R never
-plans a move beyond the roll limit; the evaluation finds at most
-\rlTASRRollLenMaxTen\,m above it (maximum \rlTASRMaxRollMaxTen$^\circ$ for
-$\phi_{\max}=10^\circ$), which stems from resampling diagonal steps for
-evaluation. Compared with \TAS{} at $\phi_{\max}=\rlMain^\circ$, the median paired
-difference in maximum roll is \rlTestMaxRollD$^\circ$ ($r=\rlTestMaxRollR$, \rlTestMaxRollPexpr),
-at a median length increase of \rlTestLenD\,m and an energy increase of
-\rlTestEnergyD\,kJ (both $p<0.001$); relative to \Astar{} the energy change is
-still \rlTASRDEFifteen\%. With the 10$^\circ$ limit, \TAS-R correctly reports
-that no admissible path exists on \rlTASRFailTen{} map. The roll term therefore
-matters most for vehicles with low lateral stability; for a lenient limit
-(20$^\circ$) the isotropic cost is nearly sufficient
-(\rlTASExposedTwenty\% exposed).
+Table~\ref{tab:roll} evaluates the roll angle along every path. At
+$\phi_{\max}=\rlMain^\circ$, \Astar, Theta* and \HC{} exceed the limit in
+\rlAExposedMain\%, \rlThetaExposedMain\% and \rlAHCExposedMain\% of the
+scenarios: the hard slope constraint alone does not prevent crossing side
+slopes. The isotropic \TAS{} avoids almost all of this
+exposure because it avoids slopes altogether (\rlTASExposedMain\% of paths,
+\rlTASRollLenMain\,m on average), and \TAS-R removes the rest at negligible
+cost: the median paired differences to \TAS{} are \rlTestMaxRollD$^\circ$ in
+maximum roll, \rlTestLenD\,m in length and \rlTestEnergyD\,kJ in energy, and
+the energy change relative to \Astar{} remains \rlTASRDEMain\%. The roll term
+matters when the lateral limit is tighter than the slope limit, e.g., on
+slippery ground or with a high payload: at $\phi_{\max}=10^\circ$ the isotropic
+planner exceeds the limit in \rlTASExposedTen\% of the scenarios, whereas
+\TAS-R stays within it (the evaluation finds at most \rlTASRRollLenMaxTen\,m
+above it, maximum \rlTASRMaxRollMaxTen$^\circ$, an artefact of resampling
+diagonal steps) and correctly reports infeasibility on \rlTASRFailTen{} map.
+At $\phi_{\max}=25^\circ=\thmax$ the slope constraint already bounds roll, and
+no planner with the hard constraint exceeds it.
 
 \subsection{Computation time}
 Terrain awareness has a price in search effort: with $w>0$ the Euclidean
@@ -442,9 +442,8 @@ heuristic underestimates the true cost more, so \TA{} expands more nodes than
 100\,m maps (200$\times$200 cells) is \timeTAOneZeroZero\,s for \TA{} and
 \timeTASOneZeroZero\,s for \TAS, against \timeAOneZeroZero\,s for \Astar; on
 200\,m maps it is \timeTATwoZeroZero\,s and \timeTASTwoZeroZero\,s; the maximum over all scenarios is \timeMaxTAS\,s. All
-planners scale similarly with map size. A compiled implementation, a
-multi-resolution map or incremental replanning with D*
-Lite~\cite{koenig2002dstarlite} would reduce these times by large factors.
+planners scale similarly with map size; a compiled implementation or
+incremental replanning~\cite{koenig2002dstarlite} would cut these times.
 
 \section{Discussion and Limitations}
 \textbf{Synthetic terrain.} The terrains are procedural. They are designed to

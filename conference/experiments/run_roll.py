@@ -24,7 +24,7 @@ from tapp.scenario import build, run_planner                          # noqa: E4
 RESULTS = os.path.join(os.path.dirname(__file__), "..", "results")
 SIZES = (50, 100, 200)
 SEEDS = range(10)
-ROLL_LIMITS = (10.0, 15.0, 20.0)
+ROLL_LIMITS = (10.0, 15.0, 20.0, 25.0)
 BASELINES = ("A*", "Theta*", "A*-HC", "TA*-S")
 
 
