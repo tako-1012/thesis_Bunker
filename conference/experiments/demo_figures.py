@@ -21,11 +21,12 @@ from scipy.ndimage import map_coordinates            # noqa: E402
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from tapp.config import RESOLUTION                                       # noqa: E402
+from tapp.config import DEFAULT_W                                   # noqa: E402
 from tapp.metrics import resample                                        # noqa: E402
 from tapp.scenario import build, build_infeasible, run_planner           # noqa: E402
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "paper", "figures", "demo")
-W = 16.0
+W = DEFAULT_W
 COLOR = {"A*": "#eda100", "TA*-S": "#eb6834"}
 INK, MUTED = "#222222", "#6b6b6b"
 TITLE = {"hills": "Hills", "ridge": "Ridge with passes", "craters": "Craters",

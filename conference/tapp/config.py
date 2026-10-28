@@ -21,10 +21,23 @@ class Robot:
 @dataclass(frozen=True)
 class CostWeights:
     # c = alpha * slope_term + beta * roughness_term, alpha + beta = 1
-    alpha: float = 0.7
-    beta: float = 0.3
+    alpha: float = 0.5
+    beta: float = 0.5
 
 
 RESOLUTION = 0.5          # grid resolution [m/cell]
-DEFAULT_W = 4.0           # terrain weight of TA* (fixed a priori, see sweep)
+# Terrain weight and slope share of the "balanced" profile, selected on the
+# validation split by experiments/analyze_weights.py (results/selected_weights.json).
+# check_selected_weights() guards against the two drifting apart.
+DEFAULT_W = 8.0
 G = 9.81
+
+
+def check_selected_weights(path):
+    """Fail loudly if the defaults differ from the weights selected on validation."""
+    import json
+    sel = json.load(open(path))["main"]
+    if (sel["w"], sel["alpha"]) != (DEFAULT_W, CostWeights().alpha):
+        raise SystemExit(f"config defaults (w={DEFAULT_W}, alpha={CostWeights().alpha}) differ from "
+                         f"selected weights {sel}; update tapp/config.py")
+    return sel

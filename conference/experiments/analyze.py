@@ -103,10 +103,12 @@ def main():
     os.makedirs(FIG, exist_ok=True)
     meta = json.load(open(os.path.join(RES, "meta.json")))
     df = pd.read_csv(os.path.join(RES, "test_results.csv"))
-    val = pd.read_csv(os.path.join(RES, "val_sweep.csv"))
+    wopt = pd.read_csv(os.path.join(RES, "weight_opt.csv"))
+    val = wopt[wopt.split == "val"]
     N = Numbers()
     w_main = meta["w_main"]
     N["wMain"] = f"{w_main:g}"
+    N["alphaMain"] = f"{meta['selected_weights']['alpha']:g}"
     N["nTest"] = df[df.exp == "main"].groupby(["kind", "side_m", "seed"]).ngroups
     N["nVal"] = val.groupby(["kind", "side_m", "seed"]).ngroups
     N["nSeeds"] = len(meta["test_seeds"])
@@ -277,7 +279,7 @@ def main():
         axs[1].plot([wpos[w] for w in a.w], a.energy_rel, marker=MARK[p], ms=3.5, color=COLOR[p], label=p)
         if p == "TA*-S":
             for _, r_ in a.iterrows():
-                if r_.w in (0.0, 2.0, 16.0):
+                if r_.w in (0.0, 2.0, w_main, 32.0):
                     axs[0].annotate(f"w={r_.w:g}", (r_.len_rel, r_.cost), fontsize=5.5, color=MUTED,
                                     xytext=(-4, -8), textcoords="offset points", ha="right")
     for p in ("A*", "Theta*"):
@@ -297,12 +299,13 @@ def main():
     fig.savefig(os.path.join(FIG, "sweep.png"))
     plt.close(fig)
     for _, r_ in agg[agg.planner == "TA*-S"].iterrows():
+        if r_.w == w_main:
+            N["sweepLenMain"] = f"{r_.len_rel:.1f}"
+            N["sweepEnergyMain"] = f"{r_.energy_rel:.1f}"
         tag = f"{r_.w:g}".replace(".", "p")
         N[f"sweepLen{tag}"] = f"{r_.len_rel:.1f}"
         N[f"sweepCost{tag}"] = f"{r_.cost:.3f}"
         N[f"sweepEnergy{tag}"] = f"{r_.energy_rel:.1f}"
-    vo = meta["val_overhead"]
-    N["valOverheadMain"] = f"{100 * vo[str(w_main) if str(w_main) in vo else f'{w_main}']:.1f}"
 
     # ---------------- Fig: computation time vs. map size ----------------
     fig, ax = plt.subplots(figsize=(COL_W * 0.5, 1.75))

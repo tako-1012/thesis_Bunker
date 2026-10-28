@@ -13,11 +13,12 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
+from tapp.config import DEFAULT_W                                   # noqa: E402
 from tapp.metrics import evaluate                                  # noqa: E402
 from tapp.scenario import PLANNERS, build_infeasible, run_planner  # noqa: E402
 
 RESULTS = os.path.join(os.path.dirname(__file__), "..", "results")
-W = 16.0
+W = DEFAULT_W
 
 
 def main():

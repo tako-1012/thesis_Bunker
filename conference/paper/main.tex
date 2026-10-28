@@ -8,6 +8,7 @@
 \usepackage{cite}
 
 \input{generated/numbers.tex}
+\input{generated/numbers_weights.tex}
 \newtheorem{proposition}{Proposition}
 \newcommand{\TAS}{TA$^*$-S}
 \newcommand{\TA}{TA$^*$}
@@ -36,7 +37,7 @@ multiplicative edge cost with an admissible heuristic (\TA), followed by a
 shortcutting step that provably never increases the integrated cost (\TAS).
 Our main contribution is a careful, reproducible evaluation: \nTest{} test
 scenarios over four procedurally generated terrain families and three map
-scales, a held-out validation split used only to select the terrain weight,
+scales, a held-out validation split used only to select the cost weights,
 planner-independent safety and energy metrics, and paired non-parametric
 statistics. Against terrain-unaware \Astar{} and Theta*, \TAS{} changes the median traversability cost along the path by
 \costRelTAS\% relative to \Astar{} and never enters terrain steeper than the
@@ -82,9 +83,10 @@ with hard constraints, used as a multiplicative edge cost in A* with an
 admissible heuristic (\TA), and a cost-aware shortcutting step (\TAS) that
 never increases the integrated cost (Sec.~\ref{sec:method}).
 \item A reproducible benchmark of \nTest{} test and \nVal{} validation
-scenarios over four terrain families and three scales, with a pre-specified
-rule for selecting the terrain weight on the validation split only
-(Sec.~\ref{sec:setup}).
+scenarios over four terrain families and three scales, and a joint
+optimisation of the cost weights on the validation split only, with
+mission-specific selection rules and a stability analysis
+(Secs.~\ref{sec:setup},~\ref{sec:sweep}).
 \item An evaluation with planner-independent safety and energy metrics and
 paired, multiplicity-corrected statistics, including the distance--terrain
 trade-off, an ablation of the cost terms, robustness to elevation noise and
@@ -141,8 +143,9 @@ receives the same cost on every map; normalising by the per-map maximum, as
 is sometimes done, makes costs incomparable across maps and lets a single
 outlier rescale the whole map. Cells with $\theta>\thmax$ or inside an
 inflated obstacle are \emph{lethal}. We use $\thmax=25^\circ$,
-$\rho_{\mathrm{sat}}=0.10$\,m, $r_f=0.5$\,m and $(\alpha,\beta)=(0.7,0.3)$; these
-values were fixed before any experiment and are ablated in Sec.~\ref{sec:ablation}.
+$\rho_{\mathrm{sat}}=0.10$\,m and $r_f=0.5$\,m. The weights
+$(\alpha,\beta)$ and the terrain weight $w$ below are selected on validation
+data (Sec.~\ref{sec:selection}).
 
 \subsection{Terrain-Aware A* (\TA)}
 The grid is 8-connected without corner cutting. The cost of moving between
@@ -209,13 +212,19 @@ same grid, neighbourhood, data structures and language (Python 3, single
 thread), so their computation times are comparable to each other but not to
 optimised C++ implementations.
 
-\subsection{Terrain-weight selection}
-The terrain weight is selected on the validation split with a rule fixed in
-advance: the largest $w\in\{0,0.5,1,2,4,8,16,32\}$ whose median path-length
-overhead of \TAS{} relative to $w=0$ is at most 10\%. This gives
-$w=\wMain$ (median overhead \valOverheadMain\% on validation). The test split
-is never used for tuning; the full sweep on the test split is reported for
-transparency (Sec.~\ref{sec:sweep}).
+\subsection{Weight selection}\label{sec:selection}
+Since $\alpha+\beta=1$, the pair $(w,\alpha)$ sets the slope weight $w\alpha$ and
+the roughness weight $w\beta$ independently. We evaluate \TAS{} on a grid
+$w\in\{0,0.5,1,2,4,8,16,32,64\}$, $\alpha\in\{0,0.25,0.5,0.75,1\}$
+(\woNConfigs{} distinct configurations) on the \woNVal{} validation scenarios and
+select weights for three mission profiles, using objectives that do not depend
+on the weights themselves: \emph{energy}, the minimum median energy change
+relative to \Astar; \emph{safety}, the minimum median 95th-percentile slope
+under the path subject to a median length increase of at most 10\%; and
+\emph{balanced}, the knee of the energy--slope Pareto front, i.e., the front
+point closest to the utopia point after min--max normalisation. The balanced
+weights, $w=\wMain$ and $\alpha=\alphaMain$, are used in all other experiments.
+The test split is never used for selection.
 
 \subsection{Metrics}
 All paths are resampled every 0.1\,m and evaluated on the ground-truth map
@@ -293,29 +302,43 @@ detours. On rocky terrain the roughness term dominates: the
 95th-percentile roughness under the path is \roughRockyTAS\,mm for \TAS{}
 versus \roughRockyA\,mm for \Astar{} and \roughRockyAHC\,mm for \HC.
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/sweep.pdf}
-\caption{Terrain-weight sweep on the test split (medians). Left: distance--cost
-trade-off of \TA{} and \TAS{}, with \Astar{} and Theta* for reference. Right:
-estimated energy relative to \Astar; the dashed line marks the weight
-$w=\wMain$ selected on the validation split.}
-\label{fig:sweep}
-\end{figure}
+\includegraphics[width=\textwidth]{figures/weights.pdf}
+\caption{Weight optimisation on the validation split. Left and centre: median
+energy change relative to \Astar{} and median 95th-percentile slope under the
+\TAS{} path for every $(w,\alpha)$ ($w=0$ ignores $\alpha$). Right: all
+configurations, their Pareto front and the weights selected for the three
+mission profiles (circle: energy, triangle: safety, square: balanced).}
+\label{fig:weights}
+\end{figure*}
 
-\subsection{Terrain-weight trade-off}\label{sec:sweep}
-Fig.~\ref{fig:sweep} shows the full sweep on the test split. Increasing $w$
-moves along a smooth distance--cost front with diminishing returns: the
-median cost of \TAS{} falls from \sweepCostZero{} ($w=0$) to \sweepCostTwo{}
-($w=2$) and \sweepCostOneSix{} ($w=16$), while the length change relative to
-\Astar{} grows from \sweepLenZero\% to \sweepLenTwo\% and \sweepLenOneSix\%.
-Shortcutting shifts the whole front towards shorter paths. The energy
-estimate is minimised at intermediate weights (\sweepEnergyTwo\% at $w=2$),
-because large weights add distance to avoid moderate slopes that cost little
-energy. The weight therefore encodes a mission preference: our validation
-rule, which bounds the length overhead, selects a safety-oriented $w=\wMain$;
-a mission that prioritises energy would choose $w\approx 2$, which is still
-free of steep exposure by virtue of the hard constraint.
+\input{generated/table_weights.tex}
+
+\subsection{Weight optimisation}\label{sec:sweep}
+Fig.~\ref{fig:weights} shows the validation grid. The terrain weight $w$
+controls a smooth trade-off: small weights minimise the energy estimate,
+large weights minimise the slope under the path, and no configuration is best
+for both. Mixing both cost terms pays off: the pure-roughness cost ($\alpha=0$)
+is Pareto-dominated for every $w>0$, and all three selected configurations
+use $\alpha\in\{0.5,0.75\}$. Table~\ref{tab:weights} reports the selected
+weights on the test split. The energy profile ($w=\woEnergyW$,
+$\alpha=\woEnergyAlpha$) changes the energy by \woEnergyEnergy\% and the length
+by \woEnergyLen\% relative to \Astar, but leaves the 95th-percentile slope at
+\woEnergySlope$^\circ$; the safety profile ($w=\woSafetyW$,
+$\alpha=\woSafetyAlpha$) reaches \woSafetySlope$^\circ$ at +\woSafetyLen\% length;
+the balanced profile lies in between (\woBalancedEnergy\% energy,
++\woBalancedLen\% length, \woBalancedSlope$^\circ$). Even with the
+energy-oriented weights no test path enters terrain steeper than $\thmax$,
+because the hard constraint, not the weight, enforces the limit.
+
+The exact optimum is not stable: the balanced configuration is reselected in
+\woBalancedBoot\% of \nBoot{} bootstrap resamples of the validation scenarios and in
+\woBalancedLofo{} of 4 leave-one-terrain-family-out runs. The alternatives,
+however, are grid neighbours (a factor of two in $w$, $\alpha\in\{0.5,0.75\}$)
+with nearly identical performance, so the objectives are flat around the
+optimum and the planner does not depend on precise tuning. The weight should
+be chosen per mission, coarsely.
 
 \input{generated/table_ablation.tex}
 
@@ -326,7 +349,7 @@ A roughness-only cost ($\alpha=0$) leaves the 95th-percentile slope at
 \abSlopeZeropTwoFive$^\circ$ or less. Conversely, the 95th-percentile roughness
 grows from \abRoughZero\,mm to \abRoughOne\,mm as the roughness term is
 removed. The two terms thus act on the quantities they are designed for, and
-the default $\alpha=0.7$ lies on the flat part of the slope curve while
+the selected $\alpha=\alphaMain$ lies on the flat part of the slope curve while
 retaining most of the roughness avoidance.
 
 \begin{figure}[t]
