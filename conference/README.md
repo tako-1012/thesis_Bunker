@@ -18,7 +18,9 @@ paper/           IEEE conference paper; generated/ and figures/ are produced by 
 pip install numpy scipy matplotlib pandas
 cd conference
 python3 -m tests.test_planners
-python3 experiments/run_all.py        # ~7 min on 4 cores
+python3 experiments/run_weight_opt.py  # grid over (w, alpha) on validation + test, ~6 min
+python3 experiments/analyze_weights.py # selects weights on VALIDATION only -> results/selected_weights.json
+python3 experiments/run_all.py         # main experiments with the selected weights, ~3 min
 python3 experiments/run_infeasible.py   # maps without a feasible path
 python3 experiments/analyze.py
 python3 experiments/demo_figures.py     # illustrative figures (paper/figures/demo/)

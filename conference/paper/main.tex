@@ -282,8 +282,9 @@ median path-length increase of \lenRelTAS\%. Against \HC, the continuous cost
 changes the 95th-percentile slope by \dTASAHCpNineFiveslope$^\circ$ and the
 climb by \dTASAHCclimb\,m (median paired differences, $|r|\ge 0.98$). Against
 Theta*, which produces the shortest paths, \TAS{} is longer by a median of
-\dTASThetalengthxy\,m while the energy estimate does not differ significantly
-($p=\pTASThetaenergykj$): the extra distance is paid for by less climbing.
+\dTASThetalengthxy\,m and still uses slightly less energy (median
+\dTASThetaenergykj\,kJ, $r=\rTASThetaenergykj$, $p=\pTASThetaenergykj$): the
+extra distance is more than paid for by less climbing.
 The shortcutting step matters: compared with plain \TA{}, \TAS{} changes the
 length by \dTASTAlengthxy\,m (median) and uses less energy in every scenario
 ($r=\rTASTAenergykj$), at a small cost increase of \dTASTAmeancost.
@@ -432,8 +433,8 @@ meant for comparison between planners, not as absolute real-time claims.
 A traversability cost normalised by the robot's own limits, embedded in A*
 with an admissible heuristic and followed by cost-aware shortcutting, removes
 all excursions onto slopes beyond the robot's limit that shortest-path
-planners make in most of our scenarios, roughly halves the mean
-traversability cost and lowers climb and estimated energy, at a median
+planners make in most of our scenarios, lowers the mean
+traversability cost by a median of \costRelTAS\% and reduces climb and estimated energy, at a median
 distance overhead of a few percent. The terrain weight sets a clear
 distance--cost--energy trade-off that should be chosen per mission. We
 release the generator, planners, raw results and the analysis script that

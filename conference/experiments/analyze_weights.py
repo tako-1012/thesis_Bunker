@@ -119,13 +119,14 @@ def main():
         d = test_idx[(test_idx.w == w) & (test_idx.alpha == a)]
         rows.append((p, (w, a), d, 100 * counts[p].get(sel[p], 0) / B, sum(c == sel[p] for c in lofo[p])))
 
-    def line(name, d, extra):
-        return (f"{name} & {d.energy_rel.median():.1f} & {d.len_rel.median():.1f} & "
-                f"{d.p95_slope.median():.1f} & {d.rough_mm.median():.1f} & {d.time.median():.2f} & {extra} \\\\")
+    def line(name, c, d, extra):
+        a = "--" if c[1] < 0 else f"{c[1]:g}"
+        return (f"{name} & {c[0]:g} & {a} & {d.energy_rel.median():.1f} & {d.len_rel.median():.1f} & "
+                f"{d.p95_slope.median():.1f} & {d.rough_mm.median():.1f} & {extra} \\\\")
 
     body = []
     for p, c, d, boot, same in rows:
-        body.append(line(f"{PROFILES[p].capitalize()} ({label(c)})", d, f"{boot:.0f}\\% / {same}/4"))
+        body.append(line(PROFILES[p].capitalize(), c, d, f"{boot:.0f}\\%, {same}/4"))
         tag = PROFILES[p].capitalize()
         N[f"wo{tag}W"] = f"{c[0]:g}"
         N[f"wo{tag}Alpha"] = "--" if c[1] < 0 else f"{c[1]:g}"
@@ -141,10 +142,10 @@ def main():
                 "performance on the test split (medians; $\\Delta$ relative to A$^*$). Stability: share of "
                 f"{B} bootstrap resamples of the validation split that select the same weights / number of "
                 "leave-one-terrain-family-out selections (out of 4) that agree.}\n"
-                "\\label{tab:weights}\n\\setlength{\\tabcolsep}{2.5pt}\n"
-                "\\begin{tabular}{lrrrrrr}\n\\toprule\n"
-                "Weights & $\\Delta E$ [\\%] & $\\Delta L$ [\\%] & slope$_{95}$ [$^\\circ$] & "
-                "rough.$_{95}$ [mm] & time [s] & stability \\\\\n\\midrule\n"
+                "\\label{tab:weights}\n\\setlength{\\tabcolsep}{1.5pt}\n"
+                "\\begin{tabular}{lrrrrrrr}\n\\toprule\n"
+                "Profile & $w$ & $\\alpha$ & $\\Delta E$ [\\%] & $\\Delta L$ [\\%] & slope$_{95}$ [$^\\circ$] & "
+                "rough.$_{95}$ [mm] & stab. \\\\\n\\midrule\n"
                 + "\n".join(body) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
     N.write(os.path.join(GEN, "numbers_weights.tex"))
 
