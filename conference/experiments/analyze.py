@@ -217,6 +217,8 @@ def main():
         last = pair
         N[f"r{t['a']}{t['b']}{t['metric']}"] = f"{t['r']:+.2f}"
         N[f"p{t['a']}{t['b']}{t['metric']}"] = fmt_p(t["p_holm"])
+        N[f"pexpr{t['a']}{t['b']}{t['metric']}"] = ("$p<0.001$" if t["p_holm"] < 1e-3
+                                                   else f"$p={t['p_holm']:.3f}$")
         N[f"d{t['a']}{t['b']}{t['metric']}"] = t["d"]
     N["nTests"] = len(tests)
     with open(os.path.join(GEN, "table_tests.tex"), "w") as f:

@@ -9,6 +9,7 @@
 
 \input{generated/numbers.tex}
 \input{generated/numbers_weights.tex}
+\input{generated/numbers_roll.tex}
 \newtheorem{proposition}{Proposition}
 \newcommand{\TAS}{TA$^*$-S}
 \newcommand{\TA}{TA$^*$}
@@ -46,9 +47,12 @@ slope limit, whereas \Astar{} and Theta* do so in \exposedA\% and
 +\lenRelTAS\% and the median change in estimated energy is \energyRelTAS\%.
 Compared with a binary-traversability baseline (hard slope constraint only),
 the continuous cost further lowers the slope, roughness and climb along the
-path (all $p<0.001$, Holm-corrected). We also report the trade-off over the terrain weight, a cost
-ablation, robustness to elevation-map noise and computation time. Code and
-data generators are released.
+path (all $p<0.001$, Holm-corrected). A heading-dependent extension that
+separates pitch from roll keeps every path within an assumed roll limit of
+\rlMain$^\circ$, which shortest-path planners violate in about 90\% of the
+scenarios. We also report a joint optimisation of the cost weights, a cost
+ablation, infeasible maps, robustness to elevation-map noise and computation
+time. Code and data generators are released.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -81,7 +85,8 @@ This paper provides such an evaluation for a tracked UGV. Our contributions are:
 normalised by the robot's limits rather than by per-map maxima, combined
 with hard constraints, used as a multiplicative edge cost in A* with an
 admissible heuristic (\TA), and a cost-aware shortcutting step (\TAS) that
-never increases the integrated cost (Sec.~\ref{sec:method}).
+never increases the integrated cost, with a heading-dependent extension
+that bounds roll as well as pitch (Sec.~\ref{sec:method}).
 \item A reproducible benchmark of \nTest{} test and \nVal{} validation
 scenarios over four terrain families and three scales, and a joint
 optimisation of the cost weights on the validation split only, with
@@ -186,6 +191,22 @@ that passes the visibility test; the result is a concatenation of such
 segments.
 \end{proof}
 
+\subsection{Roll-aware extension (\TAS-R)}\label{sec:roll}
+The cost \eqref{eq:cost} is isotropic: crossing a slope costs as much as
+climbing it, although crossing produces roll, which tracked vehicles often
+tolerate less than pitch. On a cell with elevation gradient $\nabla z$, moving
+in unit direction $\mathbf u$ gives $\tan\psi=|\nabla z\cdot\mathbf u|$ (pitch)
+and $\tan\phi=|\nabla z\times\mathbf u|$ (roll). The heading-dependent variant
+replaces the slope term of \eqref{eq:cost} by
+$\min(\max(\psi/\thmax,\ \phi/\phi_{\max}),1)$, the larger utilisation of the
+two limits, and forbids moves with $\psi>\thmax$ or $\phi>\phi_{\max}$. No
+weight is added. Since pitch and roll depend only on the move direction, the
+8-connected graph is kept, with one multiplier and one constraint mask per
+direction; costs stay $\ge$ the distance, so Proposition~1 still holds.
+Shortcutting uses the same directional cost and constraints. We call the
+result \TA-R and \TAS-R and use an assumed roll limit $\phi_{\max}=\rlMain^\circ$,
+varied between 10$^\circ$ and 20$^\circ$.
+
 \section{Experimental Setup}\label{sec:setup}
 \subsection{Terrains and scenarios}
 We generate four terrain families (Fig.~\ref{fig:examples}): \emph{hills}
@@ -235,7 +256,9 @@ mean cost $\bar c$ \eqref{eq:cost}; 95th-percentile roughness; and an energy
 estimate $E = m g(\mu_r L + H^+)$ with $m=150$\,kg, rolling-resistance
 coefficient $\mu_r=0.15$, length $L$ and climb $H^+$ (no regeneration). The
 energy model is deliberately simple and is used only for relative
-comparisons.
+comparisons. For the roll-aware extension we also measure the roll angle
+along the direction of travel and the distance driven with roll above
+$\phi_{\max}$.
 
 \subsection{Statistics}
 Planners are compared on the same scenarios, so we use paired two-sided
@@ -283,7 +306,7 @@ changes the 95th-percentile slope by \dTASAHCpNineFiveslope$^\circ$ and the
 climb by \dTASAHCclimb\,m (median paired differences, $|r|\ge 0.98$). Against
 Theta*, which produces the shortest paths, \TAS{} is longer by a median of
 \dTASThetalengthxy\,m and still uses slightly less energy (median
-\dTASThetaenergykj\,kJ, $r=\rTASThetaenergykj$, $p=\pTASThetaenergykj$): the
+\dTASThetaenergykj\,kJ, $r=\rTASThetaenergykj$, \pexprTASThetaenergykj): the
 extra distance is more than paid for by less climbing.
 The shortcutting step matters: compared with plain \TA{}, \TAS{} changes the
 length by \dTASTAlengthxy\,m (median) and uses less energy in every scenario
@@ -388,13 +411,29 @@ The mean cost of \TA{} paths rises from \noiseCostTAZeropZeroTwo{} to
 map before computing slopes, or using an uncertainty-aware elevation
 map~\cite{fankhauser2018elevation}, is the natural remedy.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.62\columnwidth]{figures/time.pdf}
-\caption{Median planning time versus map side length (log--log). All planners
-share one Python implementation.}
-\label{fig:time}
-\end{figure}
+\input{generated/table_roll.tex}
+
+\subsection{Roll-aware extension}
+Table~\ref{tab:roll} evaluates the roll angle along every path. Terrain-unaware
+planners and \HC{} exceed $\phi_{\max}=\rlMain^\circ$ in \rlAExposedFifteen\%,
+\rlThetaExposedFifteen\% and \rlAHCExposedFifteen\% of the scenarios, driving
+about 10\,m above the limit on average: the hard slope constraint alone does
+not prevent crossing side slopes. The isotropic \TAS{} already avoids most of
+this exposure because it avoids slopes altogether (\rlTASExposedFifteen\% of
+paths, \rlTASRollLenFifteen\,m on average), but not all of it, and its exposure
+grows to \rlTASExposedTen\% for a stricter limit of 10$^\circ$. \TAS-R never
+plans a move beyond the roll limit; the evaluation finds at most
+\rlTASRRollLenMaxTen\,m above it (maximum \rlTASRMaxRollMaxTen$^\circ$ for
+$\phi_{\max}=10^\circ$), which stems from resampling diagonal steps for
+evaluation. Compared with \TAS{} at $\phi_{\max}=\rlMain^\circ$, the median paired
+difference in maximum roll is \rlTestMaxRollD$^\circ$ ($r=\rlTestMaxRollR$, \rlTestMaxRollPexpr),
+at a median length increase of \rlTestLenD\,m and an energy increase of
+\rlTestEnergyD\,kJ (both $p<0.001$); relative to \Astar{} the energy change is
+still \rlTASRDEFifteen\%. With the 10$^\circ$ limit, \TAS-R correctly reports
+that no admissible path exists on \rlTASRFailTen{} map. The roll term therefore
+matters most for vehicles with low lateral stability; for a lenient limit
+(20$^\circ$) the isotropic cost is nearly sufficient
+(\rlTASExposedTwenty\% exposed).
 
 \subsection{Computation time}
 Terrain awareness has a price in search effort: with $w>0$ the Euclidean
@@ -402,8 +441,7 @@ heuristic underestimates the true cost more, so \TA{} expands more nodes than
 \Astar. In our single-threaded Python implementation the median time on
 100\,m maps (200$\times$200 cells) is \timeTAOneZeroZero\,s for \TA{} and
 \timeTASOneZeroZero\,s for \TAS, against \timeAOneZeroZero\,s for \Astar; on
-200\,m maps it is \timeTATwoZeroZero\,s and \timeTASTwoZeroZero\,s
-(Fig.~\ref{fig:time}); the maximum over all scenarios is \timeMaxTAS\,s. All
+200\,m maps it is \timeTATwoZeroZero\,s and \timeTASTwoZeroZero\,s; the maximum over all scenarios is \timeMaxTAS\,s. All
 planners scale similarly with map size. A compiled implementation, a
 multi-resolution map or incremental replanning with D*
 Lite~\cite{koenig2002dstarlite} would reduce these times by large factors.
@@ -416,10 +454,10 @@ are not measured terrain. The pipeline accepts any elevation map; applying it
 to maps built with RTAB-Map~\cite{labbe2019rtabmap} on our tracked UGV is the
 next step.
 
-\textbf{Isotropic cost.} The cost depends on the slope magnitude, not on the
-heading. Driving along a contour on a side slope produces roll rather than
-pitch, which may be the more critical mode for some vehicles. A heading-dependent
-cost on a state lattice would capture this at higher search cost.
+\textbf{Attitude model.} The roll-aware extension uses the terrain gradient
+under a point robot and an assumed roll limit; it ignores the vehicle's
+footprint, turning on slopes and dynamic effects. A heading state lattice and
+a footprint-based attitude estimate would refine it.
 
 \textbf{Energy and dynamics.} The energy estimate ignores speed, slip,
 turning losses and regeneration, and no path is executed by a controller.

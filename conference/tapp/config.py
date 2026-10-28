@@ -9,6 +9,9 @@ from dataclasses import dataclass
 class Robot:
     # Conservative traversable slope limit for the tracked UGV [deg].
     max_slope_deg: float = 25.0
+    # Lateral (roll) limit used only by the roll-aware extension [deg]. This is
+    # an assumption (no manufacturer value); its effect is studied in a sweep.
+    max_roll_deg: float = 15.0
     # Roughness at which the roughness term saturates [m] (local height std).
     rough_sat: float = 0.10
     # Footprint radius used to inflate geometric obstacles (rocks) [m].

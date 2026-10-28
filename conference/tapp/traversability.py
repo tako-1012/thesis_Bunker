@@ -34,6 +34,8 @@ class TraversabilityMap:
         self.robot = robot
         self.weights = weights
         self.slope = slope_deg(elev)
+        # elevation gradient [m/m] along axis 0 (x) and axis 1 (y)
+        self.gx, self.gy = np.gradient(elev, RESOLUTION)
         self.rough = roughness(elev)
         self.rock = inflate(rock, robot.footprint_radius) if rock.any() else rock.copy()
         self.steep = self.slope > robot.max_slope_deg

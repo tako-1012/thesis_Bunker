@@ -22,8 +22,11 @@ python3 experiments/run_weight_opt.py  # grid over (w, alpha) on validation + te
 python3 experiments/analyze_weights.py # selects weights on VALIDATION only -> results/selected_weights.json
 python3 experiments/run_all.py         # main experiments with the selected weights, ~3 min
 python3 experiments/run_infeasible.py   # maps without a feasible path
+python3 experiments/run_roll.py         # roll-aware extension (TA*-S-R), ~1 min
 python3 experiments/analyze.py
+python3 experiments/analyze_roll.py
 python3 experiments/demo_figures.py     # illustrative figures (paper/figures/demo/)
+python3 experiments/demo_roll.py craters 0
 cd paper && latexmk -pdf main.tex
 ```
 

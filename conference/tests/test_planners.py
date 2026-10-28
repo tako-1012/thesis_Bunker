@@ -69,5 +69,48 @@ def main():
     print("all planner tests passed")
 
 
+
+def test_roll_aware():
+    """TA*-R matches a directional Dijkstra; smoothing keeps cost and constraints."""
+    from tapp.aniso import DirectionalCost, astar_roll, smooth_roll
+    from tapp.scenario import build
+    for kind, seed in (("hills", 3), ("ridge", 1), ("craters", 2)):
+        sc = build(kind, 50, seed)
+        tm = sc["tmap"]
+        dc = DirectionalCost(tm, w=8.0)
+        n = tm.shape[0]
+        A = lil_matrix((n * n, n * n))
+        for x in range(n):
+            for y in range(n):
+                for k, (dx, dy, d) in enumerate(NBRS):
+                    vx, vy = x + dx, y + dy
+                    if not (0 <= vx < n and 0 <= vy < n):
+                        continue
+                    u, v = x * n + y, vx * n + vy
+                    if dc.block[k][u] or dc.block[k][v]:
+                        continue
+                    if dx and dy and (tm.rock[x, vy] or tm.rock[vx, y]):
+                        continue
+                    A[u, v] = d * 0.5 * (dc.mult[k][u] + dc.mult[k][v])
+        s, g = sc["start"], sc["goal"]
+        ref = dijkstra(A.tocsr(), indices=s[0] * n + s[1])[g[0] * n + g[1]]
+        r = astar_roll(dc, s, g)
+        if not np.isfinite(ref):
+            assert not r["success"]
+            continue
+        assert r["success"] and abs(r["cost"] / 0.5 - ref) < 1e-6, (kind, r["cost"] / 0.5, ref)
+        sp, _ = smooth_roll(r["path"], dc)
+        c0 = sum(dc.segment(a, b)[1] for a, b in zip(r["path"][:-1], r["path"][1:]))
+        c1 = sum(dc.segment(a, b)[1] for a, b in zip(sp[:-1], sp[1:]))
+        assert c1 <= c0 + 1e-9, (c1, c0)
+        # every shortcut segment (not an original grid edge) passes the constraint check
+        orig = set(zip(r["path"][:-1], r["path"][1:]))
+        for a, b in zip(sp[:-1], sp[1:]):
+            if (a, b) not in orig:
+                assert dc.segment(a, b)[0]
+
+
 if __name__ == "__main__":
     main()
+    test_roll_aware()
+    print("roll-aware tests passed")

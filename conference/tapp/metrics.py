@@ -23,7 +23,7 @@ def resample(path_cells):
     return x, y
 
 
-def evaluate(path_cells, tmap):
+def evaluate(path_cells, tmap, roll_limit=None):
     x, y = resample(path_cells)
     z = map_coordinates(tmap.elev, [x, y], order=1, mode="nearest")
     xi = np.clip(np.rint(x).astype(int), 0, tmap.shape[0] - 1)
@@ -50,6 +50,13 @@ def evaluate(path_cells, tmap):
         max_pitch = float(pitch.max())
     else:
         max_pitch = 0.0
+    # heading-dependent attitude: pitch along, roll across the direction of travel
+    hx, hy = np.diff(x), np.diff(y)
+    hn = np.maximum(np.hypot(hx, hy), 1e-12)
+    ux, uy = hx / hn, hy / hn
+    gxs, gys = tmap.gx[xi[:-1], yi[:-1]], tmap.gy[xi[:-1], yi[:-1]]
+    pitch_dir = np.degrees(np.arctan(np.abs(gxs * ux + gys * uy)))
+    roll = np.degrees(np.arctan(np.abs(gxs * uy - gys * ux)))
     m, mu = tmap.robot.mass_kg, tmap.robot.rolling_coeff
     energy_kj = m * G * (mu * length_xy + climb) / 1000.0
     return {
@@ -59,6 +66,11 @@ def evaluate(path_cells, tmap):
         "max_slope": float(slope.max()),
         "p95_slope": float(np.percentile(slope, 95)),
         "max_pitch": max_pitch,
+        "max_roll": float(roll.max()),
+        "p95_roll": float(np.percentile(roll, 95)),
+        "roll_frac": float((roll > (tmap.robot.max_roll_deg if roll_limit is None else roll_limit)).mean()),
+        "max_pitch_dir": float(pitch_dir.max()),
+        "pitch_frac": float((pitch_dir > tmap.robot.max_slope_deg).mean()),
         "mean_cost": mean_cost,
         "mean_rough": float(rough.mean()),
         "p95_rough": float(np.percentile(rough, 95)),

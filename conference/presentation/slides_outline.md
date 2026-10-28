@@ -66,6 +66,13 @@
 - 話すこと: 卒論では重みを経験的に決めていたが、今回は検証用データで最適化し、テスト用データで評価した。
 - 話すこと: w はミッションごとに選ぶもの（安全重視か、エネルギー重視か）。
 
+### 11b. Roll-aware extension
+- 図: `demo/demo_roll_craters.png`（同じ地形で、ロールを考慮しない経路と考慮した経路の比較）
+- Pitch along / roll across the direction of travel; slope term = larger utilisation of the two limits (no new weight)
+- With an assumed roll limit of 15°: A\*, Theta\*, A\*-HC exceed it in ~90% of scenarios; isotropic TA\*-S in 17%; roll-aware TA\*-S-R in 0%
+- Cost: +1 m length, energy still −4.9% vs A\*
+- 話すこと: 「斜面を横切ると横転しないか？」への答え。ロールの限界15°は仮定なので、10〜20°で振った結果も表に載せている。
+
 ### 12. Robustness and time
 - 図: `noise.png` と `time.png`、通れないマップの例 `demo/demo_wall_infeasible.png`
 - Infeasible maps: TA\* correctly reports "no path" (30/30); A\* and Theta\* return paths over ~48° slopes
@@ -74,7 +81,7 @@
 
 ### 13. Limitations and next steps
 - Synthetic terrain → next: elevation maps from RTAB-Map on our BUNKER UGV
-- Isotropic cost (roll not modelled), simple energy model, Python timing
+- Roll limit is assumed; point-robot attitude (no footprint, no turning dynamics); simple energy model; Python timing
 - 話すこと: 実機データでの検証を「次にやること」として明言する。
 
 ### 14. Conclusion
