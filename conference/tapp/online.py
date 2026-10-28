@@ -16,7 +16,7 @@ import time
 import numpy as np
 
 from .config import RESOLUTION
-from .planners import astar, smooth_cost_aware
+from .planners import astar, line_of_sight, smooth_cost_aware
 
 
 class OnlineResult(dict):
@@ -131,7 +131,13 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
             if not res["success"]:
                 return OnlineResult(success=False, reason="no_path", traj=traj, plan_time=t_plan,
                                     n_plans=n_plans, max_plan_time=t_max)
-            path = [pos.copy()] + [np.array(p, dtype=float) for p in res["path"][1:]]
+            # join the new plan through the centre of the current cell, so the
+            # connecting segment never cuts across a lethal neighbour
+            rest = [np.array(p, dtype=float) for p in res["path"][1:]]
+            if rest and line_of_sight(known & tm.lethal, tuple(pos), tuple(rest[0])):
+                path = [pos.copy()] + rest
+            else:
+                path = [pos.copy(), np.array(cell, dtype=float)] + rest
             seg = 0
     traj.append(tuple(np.array(goal, dtype=float)))
     return OnlineResult(success=True, reason="", traj=traj, plan_time=t_plan, n_plans=n_plans,
