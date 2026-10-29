@@ -1,0 +1,27 @@
+{
+  "H": 0.8,
+  "DROPLETS_PER_CELL": {
+    "rolling": 0.03,
+    "mountain": 0.12,
+    "badlands": 0.3
+  },
+  "MAX_STEPS": 40,
+  "ERODE_RATE": 0.3,
+  "DEPOSIT_RATE": 0.3,
+  "CAPACITY": 4.0,
+  "EVAPORATION": 0.02,
+  "INERTIA": 0.05,
+  "EROSION_RADIUS": 2,
+  "GRAVITY": 4.0,
+  "MIN_DROP": 0.01,
+  "BATCH_SIZE": 512,
+  "THERMAL_STEPS": 15,
+  "TARGET_SLOPE": {
+    "rolling": 5.5,
+    "mountain": 15.0,
+    "badlands": 15.0
+  },
+  "ROCK_K": 0.1,
+  "MIN_DIAMETER": 0.1,
+  "generator_sha256": "b697774741c396e8e47dcfc3fe48c26a832f268a8ab07b155888a3313fefc494"
+}
