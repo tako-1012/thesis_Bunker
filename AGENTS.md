@@ -17,6 +17,7 @@ pip install numpy scipy matplotlib pandas
 cd conference
 python3 -m tests.test_planners        # 変更の前後で必ず通ること
 python3 -m tests.test_online
+python3 -m tests.test_dstar
 ```
 作業を終える前に、`conference/tests/` の下にあるすべてのテストを実行すること。
 
@@ -29,11 +30,11 @@ python3 -m tests.test_online
 ## 変更禁止のファイル（指示書で明示的に許可された場合を除く）
 - `conference/paper/`（論文、自動生成の表と図）
 - `conference/results/*.csv`、`conference/results/*.json`、`conference/results/explore/`、
-  `conference/results/online/`、`conference/results/online_prior/`
+  `conference/results/online/`、`conference/results/online_prior/`、`conference/results/online_dstar/`
 - `conference/tapp/planners.py`、`metrics.py`、`scenario.py`、`terrain.py`、
-  `traversability.py`、`config.py`、`aniso.py`、`prior.py`
+  `traversability.py`、`config.py`、`aniso.py`、`prior.py`、`dstar_lite.py`
 - `conference/experiments/run_all.py`、`analyze*.py`、`run_weight_opt.py`、`run_roll.py`、
-  `run_infeasible.py`、`online_replanning.py`、`online_prior.py`
+  `run_infeasible.py`、`online_replanning.py`、`online_prior.py`、`online_dstar.py`
 
 既存の結果は、1ビットも変わらずに再現できる状態を保つこと。新しい機能は、新しいファイルに追加するか、
 既定値で今までと同じ動きをする新しいキーワード引数の後ろに追加すること。
