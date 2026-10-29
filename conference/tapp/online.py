@@ -5,7 +5,8 @@ within `sense_radius_m` (perfect local mapping, no occlusion yet), updates its
 planning map and moves `step_m` along the current plan. Unknown cells are
 assumed traversable with cost `unknown_cost`: a number (0 = optimistic
 free-space assumption) or "adaptive", the mean cost of the cells observed so
-far. It replans when a newly observed cell on the remaining path is
+far. An optional coarse prior supplies unknown costs and a hard, soft or ignored
+lethal mask instead. It replans when a newly observed cell on the remaining path is
 lethal or costlier than assumed, and every `replan_every_m` metres.
 
 The executed trajectory is evaluated on the ground truth with tapp.metrics.
@@ -29,7 +30,15 @@ def _disk(r_cells):
 
 
 def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
-               sense_radius_m=15.0, step_m=1.0, replan_every_m=10.0, max_factor=6.0):
+               sense_radius_m=15.0, step_m=1.0, replan_every_m=10.0, max_factor=6.0,
+               prior_map=None, prior_lethal="soft"):
+    if prior_lethal not in ("hard", "soft", "ignore"):
+        raise ValueError("prior_lethal must be 'hard', 'soft' or 'ignore'")
+    if prior_map is not None:
+        if prior_map.cost.shape != tm.shape or prior_map.lethal.shape != tm.shape:
+            raise ValueError("prior arrays must match the terrain shape")
+        assumed_cost = (np.where(prior_map.lethal, 1.0, prior_map.cost)
+                        if prior_lethal == "soft" else prior_map.cost)
     n = tm.shape[0]
     r = int(round(sense_radius_m / RESOLUTION))
     disk = _disk(r)
@@ -52,7 +61,12 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
 
     def planning_maps():
         lethal = known & tm.lethal
-        cost = np.where(known, tm.cost, prior())
+        if prior_map is None:
+            cost = np.where(known, tm.cost, prior())
+        else:
+            if prior_lethal == "hard":
+                lethal = lethal | (~known & prior_map.lethal)
+            cost = np.where(known, tm.cost, assumed_cost)
         return lethal, 1.0 + w * cost if terrain_aware else None
 
     def plan(cell):
@@ -108,6 +122,10 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
         new, (ox, oy) = sense(cell)
         # does newly observed terrain invalidate the remaining plan?
         trigger = since_replan >= replan_every_m
+        if prior_map is not None and prior_lethal == "hard" and new.any():
+            region = np.s_[ox:ox + new.shape[0], oy:oy + new.shape[1]]
+            # Clearing a false prior obstacle can open a route off the old path.
+            trigger |= bool((new & prior_map.lethal[region] & ~tm.lethal[region]).any())
         if not trigger and new.any():
             rem = np.array([pos] + path[seg + 1:])
             for a, b in zip(rem[:-1], rem[1:]):
@@ -121,7 +139,8 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
                 if (newly & tm.lethal[xs, ys]).any():
                     trigger = True
                     break
-                if terrain_aware and (newly & (tm.cost[xs, ys] > prior() + 0.05)).any():
+                assumed = prior() if prior_map is None else assumed_cost[xs, ys]
+                if (terrain_aware or prior_map is not None) and (newly & (tm.cost[xs, ys] > assumed + 0.05)).any():
                     trigger = True
                     break
         if trigger:
