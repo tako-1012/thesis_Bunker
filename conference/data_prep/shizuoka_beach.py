@@ -29,7 +29,7 @@ from collections import defaultdict
 
 import numpy as np
 import pandas as pd
-from scipy.ndimage import binary_dilation, map_coordinates
+from scipy.ndimage import binary_dilation, label, map_coordinates
 
 RES = 0.5
 LIST_URL = ("https://gsic-opendata.s3.ap-northeast-1.amazonaws.com/local-gov/shizuoka/point-cloud/2025/"
@@ -44,6 +44,25 @@ def sheet_origin(code):
     r, c = ord(code[2]) - 65, ord(code[3]) - 65
     a, b, d, e = map(int, code[4:8])
     return 300000 - r * 30000 - a * 3000 - d * 300, -160000 + c * 40000 + b * 4000 + e * 400
+
+
+def shoreline_y(z):
+    """Cross-shore position [m] of the first land cell (z > 0) seen from the sea, per alongshore column."""
+    land = z > 0
+    first = np.where(land.any(1), land.argmax(1), -1)
+    return np.where(first >= 0, first * RES - 50 + RES / 2, np.nan)
+
+
+def good_patch(z):
+    """Sea on the y < 0 side, land on the y > 0 side, and the shoreline within 15 m of y = 0 in 80 % of columns."""
+    if np.isnan(z[:, :40]).mean() > 0.1 or np.isnan(z[:, 100:200]).all(0).any():
+        return False   # the sea side (y < -30 m) and the beach (y = 0..50 m) must be measured
+    prof = np.nanmean(z, axis=0)
+    if not (prof[:40].mean() < 0 and prof[100:200].max() > 0):
+        return False
+    if np.isnan(z).mean() > 0.35:
+        return False
+    return np.mean(np.abs(np.nan_to_num(shoreline_y(z), nan=1e9)) < 15) >= 0.8
 
 
 def download(work):
@@ -81,7 +100,12 @@ def extract(work, tmp):
                     G[i[ok], j[ok]] = a[ok, 3]
         valid = np.isfinite(G).astype(np.float32)
         Gz = np.nan_to_num(G, nan=0.0)
-        shore = (G > 0) & binary_dilation(G <= 0, iterations=1)
+        # the mainland is the largest land component; detached breakwaters and jetty heads are ignored
+        lab, nlab = label(G > 0)
+        if nlab == 0:
+            continue
+        main = lab == np.argmax(np.bincount(lab.ravel())[1:]) + 1
+        shore = main & binary_dilation(G <= 0, iterations=1)
         pi, pj = np.nonzero(shore)
         if len(pi) < 500:
             continue
@@ -101,11 +125,16 @@ def extract(work, tmp):
                 nrm = -nrm
             if t[1] < 0:
                 t = -t
-            pts = (cq[None, None, :] + XX[..., None] * t + YY[..., None] * nrm) / RES
-            z = map_coordinates(Gz, [pts[..., 0], pts[..., 1]], order=1, mode="constant", cval=0.0)
-            v = map_coordinates(valid, [pts[..., 0], pts[..., 1]], order=1, mode="constant", cval=0.0)
-            z = np.where(v > 0.999, z, np.nan).astype(np.float32)
-            if np.isnan(z).mean() > 0.35 or np.median((z > 0).sum(1)) * RES < 50:
+            for _ in range(2):   # second pass moves the patch so the median shoreline lies at y = 0
+                pts = (cq[None, None, :] + XX[..., None] * t + YY[..., None] * nrm) / RES
+                z = map_coordinates(Gz, [pts[..., 0], pts[..., 1]], order=1, mode="constant", cval=0.0)
+                v = map_coordinates(valid, [pts[..., 0], pts[..., 1]], order=1, mode="constant", cval=0.0)
+                z = np.where(v > 0.999, z, np.nan).astype(np.float32)
+                cross = shoreline_y(z)
+                if np.isfinite(cross).mean() < 0.8:
+                    break
+                cq = cq + np.nanmedian(cross) * nrm
+            if not good_patch(z) or np.median((z > 0).sum(1)) * RES < 50:
                 continue
             np.savez_compressed(os.path.join(tmp, f"{grp}_{int(s0):05d}.npz"), elev=z,
                                 origin_xy=np.array([X0 - cq[0], Y0 + cq[1]]), tangent=t, normal=nrm, res=RES)
@@ -126,11 +155,13 @@ def select(tmp):
         rows.append(dict(name=os.path.basename(f)[:-4], X=float(X), Y=float(Y), lat=round(lat, 4), lon=round(lon, 4),
                          nan_frac=round(float(np.isnan(z).mean()), 4),
                          land_width_m=float(np.median(land.sum(1)) * RES), zmax=round(float(np.nanmax(z)), 3),
-                         steep_land=round(float((sl[land & np.isfinite(sl)] > 25).mean()), 5)))
-    ok = sorted((r for r in rows if r["nan_frac"] < 0.30 and r["land_width_m"] >= 60), key=lambda r: r["Y"])
+                         steep_land=round(float((sl[land & np.isfinite(sl)] > 25).mean()), 5),
+                         good=bool(good_patch(z))))
+    ok = sorted((r for r in rows if r["nan_frac"] < 0.30 and r["land_width_m"] >= 60 and r["good"]), key=lambda r: r["Y"])
     sel = [ok[i] for i in np.unique(np.round(np.linspace(0, len(ok) - 1, 60)).astype(int))]
     os.makedirs(OUT, exist_ok=True)
     for i, r in enumerate(sel):
+        del r["good"]
         r["split"] = "validation" if i % 5 == 2 else "test"
         shutil.copy(os.path.join(tmp, r["name"] + ".npz"), os.path.join(OUT, r["name"] + ".npz"))
     with open(os.path.join(OUT, "index.json"), "w") as f:
