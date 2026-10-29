@@ -1,56 +1,61 @@
-# Instructions for coding agents (Codex etc.)
+# コーディングエージェント（Codex など）への指示
 
-This repository holds a master's student's research on terrain-aware path
-planning for a tracked UGV (AgileX BUNKER). The active, trustworthy code is in
-`conference/`. Do not use or modify anything outside `conference/`:
-`ros2/` comes from the lab repositories (`hayashilab/bunker_ros2`,
-`hayashilab/bunker_unity`), and `scripts/`, `analysis/`, `benchmark_results/`,
-`results/`, `tables/`, `figures/`, `thisis_write/` are the archived bachelor's
-thesis (its numbers are known to be unreliable, see `conference/AUDIT_ja.md`).
+このリポジトリは、クローラー型ロボット AgileX BUNKER のための「地形を考慮した経路計画」に関する、
+修士学生の研究リポジトリです。信頼できる現役のコードは `conference/` にあります。
+`conference/` の外にあるものは、使うことも変更することもしないでください。
+- `ros2/` は研究室のリポジトリ（`hayashilab/bunker_ros2`、`hayashilab/bunker_unity`）から持ってきたもの
+- `scripts/`、`analysis/`、`benchmark_results/`、`results/`、`tables/`、`figures/`、`thisis_write/` は卒論の保管用。
+  卒論の数値は信頼できないことがわかっている（`conference/AUDIT_ja.md` を参照）
 
-## Setup and checks
+## 言語
+- **PR の説明、最終報告、コミットメッセージは日本語で書くこと。**
+- コードの中のコメントと変数名は、周りのコードに合わせて英語でよい。論文（`conference/paper/`）は英語。
+
+## セットアップと確認
 ```bash
 pip install numpy scipy matplotlib pandas
 cd conference
-python3 -m tests.test_planners        # must pass before and after your change
+python3 -m tests.test_planners        # 変更の前後で必ず通ること
+python3 -m tests.test_online
 ```
-Run every test file under `conference/tests/` before you finish.
+作業を終える前に、`conference/tests/` の下にあるすべてのテストを実行すること。
 
-## Branches
-- `realtime-map`: base branch for new research work. Open pull requests
-  against `realtime-map`, never against `main` or `claude/laughing-tesla-igaehc`.
-- Commit `ac9d9e7` is the ICAROB 2026 submission state. Never rewrite history.
+## ブランチ
+- `realtime-map`：新しい研究作業の土台。PR は必ず `realtime-map` に向けて作る
+  （`main` や `claude/laughing-tesla-igaehc` には向けない）。
+- 作業を始める前に、`realtime-map` の最新の状態を取得すること。
+- コミット `ac9d9e7` は ICAROB 2026 に出した時点の状態。履歴の書き換えは絶対にしない。
 
-## Protected paths (do not modify, unless a task file explicitly says so)
-- `conference/paper/` (paper, generated tables, figures)
-- `conference/results/*.csv`, `conference/results/*.json`, `conference/results/explore/`,
-  `conference/results/online/`
-- `conference/tapp/planners.py`, `metrics.py`, `scenario.py`, `terrain.py`,
-  `traversability.py`, `config.py`, `aniso.py`
-- `conference/experiments/run_all.py`, `analyze*.py`, `run_weight_opt.py`, `run_roll.py`,
-  `run_infeasible.py`
-Existing results must stay reproducible bit-for-bit. Add new behaviour in new
-modules or behind new keyword arguments whose default keeps the old behaviour.
+## 変更禁止のファイル（指示書で明示的に許可された場合を除く）
+- `conference/paper/`（論文、自動生成の表と図）
+- `conference/results/*.csv`、`conference/results/*.json`、`conference/results/explore/`、
+  `conference/results/online/`、`conference/results/online_prior/`
+- `conference/tapp/planners.py`、`metrics.py`、`scenario.py`、`terrain.py`、
+  `traversability.py`、`config.py`、`aniso.py`、`prior.py`
+- `conference/experiments/run_all.py`、`analyze*.py`、`run_weight_opt.py`、`run_roll.py`、
+  `run_infeasible.py`、`online_replanning.py`、`online_prior.py`
 
-## Research-integrity rules (strict)
-- Never hard-code, model or "fill in" experimental results. Every number must come
-  from running the planners. If something cannot be computed, say so in the PR.
-- Never tune parameters on the test seeds (`range(10)`). Validation seeds are
-  `range(100, 105)`.
-- All randomness must be seeded and must not depend on Python's `hash()`.
-- Do not weaken or delete tests to make them pass.
+既存の結果は、1ビットも変わらずに再現できる状態を保つこと。新しい機能は、新しいファイルに追加するか、
+既定値で今までと同じ動きをする新しいキーワード引数の後ろに追加すること。
 
-## Style
-- Python 3, numpy/scipy only (no new heavy dependencies). Match the existing style:
-  short module docstring explaining the method, comments only where needed.
-- Results of new experiments go to a new folder `conference/results/<task-name>/`
-  (CSV + the printed summary as `*_log.txt`). Keep files < 5 MB.
+## 研究の信頼性に関する決まり（厳守）
+- 実験結果を手で書いたり、式で作ったり、「埋めたり」しないこと。すべての数値はプランナーを実行して得ること。
+  計算できなかったものがあれば、PR にそう書くこと。
+- テスト用のシード（`range(10)`）でパラメータを調整しないこと。検証用のシードは `range(100, 105)`。
+- 乱数はすべてシードを固定し、Python の `hash()` に依存させないこと。
+- テストを通すために、テストを弱めたり消したりしないこと。
 
-## Reporting (PR description)
-1. What was implemented (files, functions).
-2. Exact commands run and their full test output.
-3. The summary table printed by the experiment script (copy it verbatim).
-4. Anything you could not do or are unsure about.
+## 書き方
+- Python 3、numpy と scipy だけを使う（重いライブラリを新しく増やさない）。周りのコードの書き方に合わせる：
+  ファイルの先頭に方法を説明する短い docstring を書き、コメントは必要なところだけにする。
+- 新しい実験の結果は、新しいフォルダ `conference/results/<タスク名>/` に置く
+  （CSV と、表示した集計結果を `*_log.txt` として保存）。ファイルは 5 MB 未満にする。
 
-Task specifications live in `conference/tasks/`. Follow the task file exactly;
-if it is ambiguous, choose the simpler option and state the choice in the PR.
+## 報告（PR の説明、日本語で）
+1. 実装したもの（ファイル、関数）
+2. 実行したコマンドと、テストの出力の全文
+3. 実験スクリプトが表示した集計表（そのまま貼る）
+4. できなかったこと、自信がないこと
+
+指示書は `conference/tasks/` にあります。指示書に正確に従うこと。
+あいまいな点があれば、より単純な方を選び、そう選んだことを PR に書くこと。
