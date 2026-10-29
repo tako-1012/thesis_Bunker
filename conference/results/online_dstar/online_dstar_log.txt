@@ -1,0 +1,42 @@
+                          succ  steep_exposed  dL_oracle  dE_oracle   dE_A   cost  slope95  plans  plan_time  max_plan
+variant                                                                                                               
+oracle A*                  1.0           0.73     -3.146      7.485  0.000  0.298   25.234    1.0      0.023     0.323
+oracle TA*-S               1.0           0.00      0.000      0.000 -6.964  0.160    9.439    1.0      0.146     1.998
+A* prior5                  1.0           0.00     -0.405     -0.245 -7.019  0.167    9.558   58.0      2.229     2.191
+D*Lite prior5              1.0           0.00     -0.405     -0.245 -7.019  0.167    9.558   58.0      3.843     2.154
+A* prior5 every-step       1.0           0.00     -0.631     -0.497 -7.995  0.170    9.776   76.0      1.906     0.885
+D*Lite prior5 every-step   1.0           0.00     -0.552     -0.417 -6.973  0.167    9.641   83.0      4.565     1.913
+
+per size (planning times [s], median over individual calls):
+                                 call_median_s  call_max_s  total_median_s
+variant                  side_m                                           
+oracle A*                50           0.010264    0.019271        0.010264
+                         100          0.033127    0.282853        0.033127
+                         200          0.134137    0.323359        0.134137
+oracle TA*-S             50           0.083880    0.163166        0.083880
+                         100          0.177814    0.515262        0.177814
+                         200          0.729563    1.997819        0.729563
+A* prior5                50           0.023836    0.139460        0.643419
+                         100          0.039172    0.539408        2.849275
+                         200          0.137487    2.191117       23.690956
+D*Lite prior5            50           0.076301    0.230582        1.838923
+                         100          0.067823    0.545084        4.466410
+                         200          0.104709    2.153783       16.321694
+A* prior5 every-step     50           0.016638    0.135393        0.880487
+                         100          0.033275    0.885229        3.664887
+                         200               NaN         NaN             NaN
+D*Lite prior5 every-step 50           0.060730    0.446186        2.424687
+                         100          0.057371    0.535991        5.205266
+                         200          0.094362    1.913122       18.655943
+
+paired path length difference (D*Lite prior5 - A* prior5 [m]):
+        pairs  dL_median_m  abs_dL_median_m  abs_dL_max_m
+side_m                                                   
+all       100          0.0              0.0           0.0
+50         40          0.0              0.0           0.0
+100        40          0.0              0.0           0.0
+200        20          0.0              0.0           0.0
+
+A* prior5 every-step is not run at 200 m (NaN above).
+
+failures: {}

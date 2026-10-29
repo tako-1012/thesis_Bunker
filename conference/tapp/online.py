@@ -8,6 +8,10 @@ free-space assumption) or "adaptive", the mean cost of the cells observed so
 far. An optional coarse prior supplies unknown costs and a hard, soft or ignored
 lethal mask instead. It replans when a newly observed cell on the remaining path is
 lethal or costlier than assumed, and every `replan_every_m` metres.
+The optional D* Lite backend reuses searches for fixed unknown-cell priors.
+`record_plan_times=True` adds per-call wall times with identical boundaries:
+search/update/extraction/smoothing, excluding map assembly and execution.
+Legacy A* timing fields retain their original measurement boundaries.
 
 The executed trajectory is evaluated on the ground truth with tapp.metrics.
 """
@@ -17,6 +21,7 @@ import time
 import numpy as np
 
 from .config import RESOLUTION
+from .dstar_lite import DStarLite
 from .planners import astar, line_of_sight, smooth_cost_aware
 
 
@@ -31,7 +36,14 @@ def _disk(r_cells):
 
 def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
                sense_radius_m=15.0, step_m=1.0, replan_every_m=10.0, max_factor=6.0,
-               prior_map=None, prior_lethal="soft"):
+               prior_map=None, prior_lethal="soft", search="astar", record_plan_times=False):
+    if search not in ("astar", "dstar_lite"):
+        raise ValueError("search must be 'astar' or 'dstar_lite'")
+    if search == "dstar_lite":
+        if prior_map is None and unknown_cost == "adaptive":
+            raise ValueError("D* Lite requires a fixed unknown-cell cost or a prior map")
+        if planner == "A*-HC":
+            raise NotImplementedError("D* Lite is not implemented for A*-HC")
     if prior_lethal not in ("hard", "soft", "ignore"):
         raise ValueError("prior_lethal must be 'hard', 'soft' or 'ignore'")
     if prior_map is not None:
@@ -69,15 +81,42 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
             cost = np.where(known, tm.cost, assumed_cost)
         return lethal, 1.0 + w * cost if terrain_aware else None
 
+    dstar = None
+    last_lethal = last_mult = None
+    plan_times = []
+    timing = {"plan_times": plan_times} if record_plan_times else {}
+
     def plan(cell):
+        nonlocal dstar, last_lethal, last_mult
         lethal, mult = planning_maps()
-        if planner == "A*-HC":
+        if search == "dstar_lite" or record_plan_times:
+            t0 = time.perf_counter()
+        if search == "dstar_lite":
+            if mult is None:
+                mult = np.ones(tm.shape, dtype=float)
+            if dstar is None:
+                dstar = DStarLite(lethal, mult, cell, goal)
+            else:
+                changed = np.argwhere((lethal != last_lethal) | (mult != last_mult))
+                dstar.update_cells(changed, lethal, mult)
+                dstar.move_start(cell)
+            last_lethal, last_mult = lethal, mult
+            stats = dstar.compute()
+            p = dstar.path()
+            r_ = dict(stats, path=p, success=p is not None)
+        elif planner == "A*-HC":
             r_ = astar(lethal, cell, goal)
         else:
             r_ = astar(lethal, cell, goal, mult)
         if r_["success"] and planner == "TA*-S":
             p, ts = smooth_cost_aware(r_["path"], lethal, mult)
             r_ = dict(r_, path=p, time=r_["time"] + ts)
+        if search == "dstar_lite" or record_plan_times:
+            elapsed = time.perf_counter() - t0
+            if search == "dstar_lite":
+                r_["time"] = elapsed
+            if record_plan_times:
+                plan_times.append(elapsed)
         return r_
 
     pos = np.array(start, dtype=float)
@@ -88,7 +127,7 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
     t_plan += res["time"]; n_plans += 1; t_max = max(t_max, res["time"])
     if not res["success"]:
         return OnlineResult(success=False, reason="no_path", traj=traj, plan_time=t_plan,
-                            n_plans=n_plans, max_plan_time=t_max)
+                            n_plans=n_plans, max_plan_time=t_max, **timing)
     path = [np.array(p, dtype=float) for p in res["path"]]
     seg = 0                                   # index of current segment start
     since_replan = 0.0
@@ -118,7 +157,7 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
             break
         if travelled > max_factor * straight:
             return OnlineResult(success=False, reason="too_long", traj=traj, plan_time=t_plan,
-                                n_plans=n_plans, max_plan_time=t_max)
+                                n_plans=n_plans, max_plan_time=t_max, **timing)
         new, (ox, oy) = sense(cell)
         # does newly observed terrain invalidate the remaining plan?
         trigger = since_replan >= replan_every_m
@@ -149,7 +188,7 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
             since_replan = 0.0
             if not res["success"]:
                 return OnlineResult(success=False, reason="no_path", traj=traj, plan_time=t_plan,
-                                    n_plans=n_plans, max_plan_time=t_max)
+                                    n_plans=n_plans, max_plan_time=t_max, **timing)
             # join the new plan through the centre of the current cell, so the
             # connecting segment never cuts across a lethal neighbour
             rest = [np.array(p, dtype=float) for p in res["path"][1:]]
@@ -160,4 +199,4 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
             seg = 0
     traj.append(tuple(np.array(goal, dtype=float)))
     return OnlineResult(success=True, reason="", traj=traj, plan_time=t_plan, n_plans=n_plans,
-                        max_plan_time=t_max, sim_time=time.perf_counter() - t0)
+                        max_plan_time=t_max, sim_time=time.perf_counter() - t0, **timing)
