@@ -1,0 +1,23 @@
+{
+  "main_profile": "balanced",
+  "main": {
+    "w": 8.0,
+    "alpha": 0.5
+  },
+  "profiles": {
+    "energy": {
+      "w": 1.0,
+      "alpha": 0.75
+    },
+    "safety": {
+      "w": 32.0,
+      "alpha": 0.75
+    },
+    "balanced": {
+      "w": 8.0,
+      "alpha": 0.5
+    }
+  },
+  "selected_on": "validation split only",
+  "len_cap_percent": 10.0
+}

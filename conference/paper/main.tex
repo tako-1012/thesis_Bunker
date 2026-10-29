@@ -1,0 +1,488 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cite}
+
+\input{generated/numbers.tex}
+\input{generated/numbers_weights.tex}
+\input{generated/numbers_roll.tex}
+\newtheorem{proposition}{Proposition}
+\newcommand{\TAS}{TA$^*$-S}
+\newcommand{\TA}{TA$^*$}
+\newcommand{\Astar}{A$^*$}
+\newcommand{\HC}{A$^*$-HC}
+\newcommand{\thmax}{\theta_{\max}}
+
+\begin{document}
+
+\title{Terrain-Aware A* with Robot-Grounded Traversability Costs:\\
+A Reproducible Evaluation for Tracked UGVs on Uneven Terrain}
+
+% TODO(author): fill in names and affiliations
+\author{\IEEEauthorblockN{Author Name}
+\IEEEauthorblockA{Affiliation\\ City, Country\\ email@example.com}}
+
+\maketitle
+
+\begin{abstract}
+Shortest-path planners routinely send ground robots across slopes and rough
+patches that a cost-aware planner would avoid at small extra distance. We
+study a simple and fully specified terrain-aware planner for tracked unmanned
+ground vehicles (UGVs): a traversability cost that is normalised by the
+robot's own limits (slope limit and roughness saturation), embedded in A* as a
+multiplicative edge cost with an admissible heuristic (\TA), followed by a
+shortcutting step that provably never increases the integrated cost (\TAS).
+Our main contribution is a careful, reproducible evaluation: \nTest{} test
+scenarios over four procedurally generated terrain families and three map
+scales, a held-out validation split used only to select the cost weights,
+planner-independent safety and energy metrics, and paired non-parametric
+statistics. Against terrain-unaware \Astar{} and Theta*, \TAS{} changes the median traversability cost along the path by
+\costRelTAS\% relative to \Astar{} and never enters terrain steeper than the
+slope limit, whereas \Astar{} and Theta* do so in \exposedA\% and
+\exposedTheta\% of the scenarios; the median path-length change is
++\lenRelTAS\% and the median change in estimated energy is \energyRelTAS\%.
+Compared with a binary-traversability baseline (hard slope constraint only),
+the continuous cost further lowers the slope, roughness and climb along the
+path (all $p<0.001$, Holm-corrected). A heading-dependent extension that
+separates pitch from roll keeps every path within an assumed roll limit of
+\rlMain$^\circ$, which shortest-path planners violate in \rlAExposedMain\% of the
+scenarios. We also report a joint optimisation of the cost weights, a cost
+ablation, infeasible maps, robustness to elevation-map noise and computation
+time. Code and data generators are released.
+\end{abstract}
+
+\begin{IEEEkeywords}
+path planning, traversability, field robotics, unmanned ground vehicles, uneven terrain
+\end{IEEEkeywords}
+
+\section{Introduction}
+Field robots in agriculture, construction and disaster response operate on
+terrain where the shortest path is often not the best one: a straight line
+over a hill or through a rough patch costs energy, increases the risk of
+slipping or tipping, and may exceed the vehicle's climbing capability.
+Terrain-aware planning addresses this by attaching a traversability cost to
+the map and searching for paths that trade distance against terrain
+difficulty~\cite{papadakis2013survey,guastella2021review}.
+
+The idea itself is well established---planetary rovers have used
+traversability maps for two decades~\cite{goldberg2002gestalt,ferguson2006fielddstar}---and
+adding a terrain term to a graph-search cost is, algorithmically, a small
+step. What is often less clear in practice is \emph{how much} such a cost
+actually buys on a given robot, under which conditions, and at what price
+in distance, energy and computation. Answering this requires evaluations
+whose metrics are tied to the robot (e.g., distance driven on slopes beyond
+its limit), whose baselines include both terrain-unaware and binary
+traversability planners, whose parameters are not tuned on the test data,
+and whose statistics respect the paired design of planner benchmarks.
+
+This paper provides such an evaluation for a tracked UGV. Our contributions are:
+\begin{enumerate}
+\item A fully specified terrain-aware planner: a slope/roughness cost
+normalised by the robot's limits rather than by per-map maxima, combined
+with hard constraints, used as a multiplicative edge cost in A* with an
+admissible heuristic (\TA), and a cost-aware shortcutting step (\TAS) that
+never increases the integrated cost, with a heading-dependent extension
+that bounds roll as well as pitch (Sec.~\ref{sec:method}).
+\item A reproducible benchmark of \nTest{} test and \nVal{} validation
+scenarios over four terrain families and three scales, and a joint
+optimisation of the cost weights on the validation split only, with
+mission-specific selection rules and a stability analysis
+(Secs.~\ref{sec:setup},~\ref{sec:sweep}).
+\item An evaluation with planner-independent safety and energy metrics and
+paired, multiplicity-corrected statistics, including the distance--terrain
+trade-off, an ablation of the cost terms, robustness to elevation noise and
+computation time (Sec.~\ref{sec:results}).
+\end{enumerate}
+All numbers in this paper are generated from the released raw results by a
+single script.
+
+\section{Related Work}
+\textbf{Grid search.} A*~\cite{hart1968astar} finds minimum-cost paths on
+grids given an admissible heuristic; D* Lite~\cite{koenig2002dstarlite}
+supports efficient replanning. Any-angle planners such as
+Theta*~\cite{nash2007theta,nash2010lazy} and Field D*~\cite{ferguson2006fielddstar}
+remove the grid's heading restriction; Field D* additionally interpolates
+costs across cells and was deployed on Mars rovers.
+
+\textbf{Traversability.} Surveys~\cite{papadakis2013survey,guastella2021review}
+distinguish geometric approaches, which derive slope, roughness and step
+height from elevation maps or point clouds, from appearance- and
+learning-based ones. Elevation mapping with uncertainty~\cite{fankhauser2018elevation}
+and SLAM systems such as RTAB-Map~\cite{labbe2019rtabmap} provide the maps on
+which such features are computed. Geometric traversability costs have been
+used for legged robots~\cite{wermelinger2016legged}, for planning directly on
+point clouds~\cite{krusi2017pointclouds} and for energy-efficient paths on
+uneven terrain~\cite{ganganath2015energy}.
+
+\textbf{Positioning.} We do not propose a new search algorithm. We contribute
+a carefully specified cost and planner for tracked UGVs and, mainly, an
+evaluation protocol whose metrics, baselines, data split and statistics make
+the benefit of terrain awareness measurable and reproducible.
+
+\section{Method}\label{sec:method}
+\subsection{Elevation map and terrain features}
+The environment is a 2.5D elevation map $z(x,y)$ on a grid of resolution
+$\Delta=0.5$\,m, as produced, for example, from an RTAB-Map point
+cloud~\cite{labbe2019rtabmap}. For each cell we compute the slope
+$\theta=\arctan\|\nabla z\|$ (central differences) and the roughness $\rho$,
+the local standard deviation (3$\times$3 window) of the residual
+$z - G_\sigma * z$ after removing smooth relief with a Gaussian filter
+($\sigma=1.5$ cells). Geometric obstacles (rocks) are inflated by the robot's
+footprint radius $r_f$.
+
+\subsection{Robot-grounded cost and constraints}
+Let $\thmax$ be the robot's admissible slope and $\rho_{\mathrm{sat}}$ a
+roughness at which the roughness penalty saturates. The cost of a cell is
+\begin{equation}
+c = \alpha\,\min\!\Big(\frac{\theta}{\thmax},1\Big) + \beta\,\min\!\Big(\frac{\rho}{\rho_{\mathrm{sat}}},1\Big),\quad \alpha+\beta=1,
+\label{eq:cost}
+\end{equation}
+so $c\in[0,1]$. Because the normalisers are robot properties, the same terrain
+receives the same cost on every map; normalising by the per-map maximum, as
+is sometimes done, makes costs incomparable across maps and lets a single
+outlier rescale the whole map. Cells with $\theta>\thmax$ or inside an
+inflated obstacle are \emph{lethal}. We use $\thmax=25^\circ$,
+$\rho_{\mathrm{sat}}=0.10$\,m and $r_f=0.5$\,m. The weights
+$(\alpha,\beta)$ and the terrain weight $w$ below are selected on validation
+data (Sec.~\ref{sec:selection}).
+
+\subsection{Terrain-Aware A* (\TA)}
+The grid is 8-connected without corner cutting. The cost of moving between
+neighbouring free cells $u,v$ at horizontal distance $d_{uv}$ is
+\begin{equation}
+k(u,v) = d_{uv}\Big(1 + w\,\frac{c_u + c_v}{2}\Big),
+\label{eq:edge}
+\end{equation}
+with terrain weight $w\ge 0$. The path cost $g$ accumulates $k$; the
+heuristic is the Euclidean distance to the goal.
+\begin{proposition}
+For any $w\ge 0$ the Euclidean heuristic is consistent for \eqref{eq:edge};
+hence \TA{} returns a minimum-cost path.
+\end{proposition}
+\begin{proof}
+Since $c\ge 0$, $k(u,v)\ge d_{uv}\ge h(u)-h(v)$ by the triangle inequality.
+Consistency implies optimality of A*~\cite{hart1968astar}.
+\end{proof}
+Note that the terrain term must enter the \emph{accumulated} cost $g$: adding
+it only to the priority $f=g+h+w\,c(n)$ changes the expansion order but not
+the objective that the returned path optimises. With $w=0$, \TA{} reduces to A*
+with hard constraints (\HC), i.e., binary traversability.
+
+\subsection{Cost-aware shortcutting (\TAS)}
+Grid paths contain heading artefacts. Standard string-pulling removes them
+but can cut straight across costly terrain. \TAS{} shortcuts greedily: from
+waypoint $p_i$ it extends a straight segment to the farthest $p_j$ such that
+(i) the segment is collision-free with respect to lethal cells (a conservative
+visibility test that also checks cells touched at boundaries) and (ii) its
+integrated cost $\int(1+w\,c)\,ds$ does not exceed the cost of the original
+sub-path $p_i\ldots p_j$ evaluated with the same quadrature.
+\begin{proposition}
+\TAS{} never increases the integrated path cost and never enters a lethal cell.
+\end{proposition}
+\begin{proof}
+Each accepted shortcut replaces a sub-path by a segment of no greater cost
+that passes the visibility test; the result is a concatenation of such
+segments.
+\end{proof}
+
+\subsection{Roll-aware extension (\TAS-R)}\label{sec:roll}
+The cost \eqref{eq:cost} is isotropic: crossing a slope costs as much as
+climbing it, although crossing produces roll, which tracked vehicles often
+tolerate less than pitch. On a cell with elevation gradient $\nabla z$, moving
+in unit direction $\mathbf u$ gives $\tan\psi=|\nabla z\cdot\mathbf u|$ (pitch)
+and $\tan\phi=|\nabla z\times\mathbf u|$ (roll). The heading-dependent variant
+replaces the slope term of \eqref{eq:cost} by
+$\min(\max(\psi/\thmax,\ \phi/\phi_{\max}),1)$, the larger utilisation of the
+two limits, and forbids moves with $\psi>\thmax$ or $\phi>\phi_{\max}$. No
+weight is added. Since pitch and roll depend only on the move direction, the
+8-connected graph is kept, with one multiplier and one constraint mask per
+direction; costs stay $\ge$ the distance, so Proposition~1 still holds.
+Shortcutting uses the same directional cost and constraints. We call the
+result \TA-R and \TAS-R. We use $\phi_{\max}=\rlMain^\circ$, which we consider
+representative of dry, loose sand: with the track half-width of our vehicle
+model (0.35\,m) and an estimated centre-of-gravity height of about 0.34\,m,
+static tip-over occurs only near $45^\circ$, so lateral sliding and sinkage of
+the downhill track limit side slopes first. As this value is an assumption, it
+is varied between 10$^\circ$ and 25$^\circ$.
+
+\section{Experimental Setup}\label{sec:setup}
+\subsection{Terrains and scenarios}
+We generate four terrain families (Fig.~\ref{fig:examples}): \emph{hills}
+(fractal relief, median slope $11^\circ$), \emph{ridge} (gentle relief with a
+steep ridge across the start--goal line and one or two passes),
+\emph{craters} (gentle relief with 6--11 crater-like depressions) and
+\emph{rocky} (gentle relief, rough patches and scattered rocks). Relief is
+produced by $1/f^\beta$ spectral synthesis and scaled to a target median slope,
+so slope statistics are comparable across the three map sizes (50, 100 and
+200\,m, i.e., up to 400$\times$400 cells). A centimetre-scale micro relief is
+added everywhere. The start lies in the left and the goal in the right band
+of the map. A scenario is kept only if a path exists under the hard
+constraints, so every planner faces a solvable instance; \nRedraw{} of the
+\nTest{} test scenarios needed a redraw. Each (family, size) cell contains
+\nSeeds{} test seeds; a disjoint set of seeds (\nVal{} scenarios) forms the
+validation split. All randomness is seeded and independent of the Python
+hash seed.
+
+\subsection{Planners}
+\Astar{} (shortest path, obstacles only), Theta* (Lazy
+Theta*~\cite{nash2010lazy}, any-angle shortest path, obstacles only), \HC{}
+(shortest path with hard constraints), \TA{} and \TAS. All planners share the
+same grid, neighbourhood, data structures and language (Python 3, single
+thread), so their computation times are comparable to each other but not to
+optimised C++ implementations.
+
+\subsection{Weight selection}\label{sec:selection}
+Since $\alpha+\beta=1$, the pair $(w,\alpha)$ sets the slope weight $w\alpha$ and
+the roughness weight $w\beta$ independently. We evaluate \TAS{} on a grid
+$w\in\{0,0.5,1,2,4,8,16,32,64\}$, $\alpha\in\{0,0.25,0.5,0.75,1\}$
+(\woNConfigs{} distinct configurations) on the \woNVal{} validation scenarios and
+select weights for three mission profiles, using objectives that do not depend
+on the weights themselves: \emph{energy}, the minimum median energy change
+relative to \Astar; \emph{safety}, the minimum median 95th-percentile slope
+under the path subject to a median length increase of at most 10\%; and
+\emph{balanced}, the knee of the energy--slope Pareto front, i.e., the front
+point closest to the utopia point after min--max normalisation. The balanced
+weights, $w=\wMain$ and $\alpha=\alphaMain$, are used in all other experiments.
+The test split is never used for selection.
+
+\subsection{Metrics}
+All paths are resampled every 0.1\,m and evaluated on the ground-truth map
+with the same code: horizontal length; cumulative climb (sum of positive
+elevation changes); maximum and 95th-percentile slope under the path;
+\emph{steep length}, the distance driven on cells with $\theta>\thmax$;
+mean cost $\bar c$ \eqref{eq:cost}; 95th-percentile roughness; and an energy
+estimate $E = m g(\mu_r L + H^+)$ with $m=150$\,kg, rolling-resistance
+coefficient $\mu_r=0.15$, length $L$ and climb $H^+$ (no regeneration). The
+energy model is deliberately simple and is used only for relative
+comparisons. For the roll-aware extension we also measure the roll angle
+along the direction of travel and the distance driven with roll above
+$\phi_{\max}$.
+
+\subsection{Statistics}
+Planners are compared on the same scenarios, so we use paired two-sided
+Wilcoxon signed-rank tests~\cite{wilcoxon1945}, report the median paired
+difference and the matched-pairs rank-biserial correlation $r$~\cite{kerby2014}
+as effect size, and correct all \nTests{} tests with Holm's
+method~\cite{holm1979}. Distributions are summarised by median and
+interquartile range (IQR) because computation times and several metrics are
+strongly skewed.
+
+\section{Results}\label{sec:results}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/examples.pdf}
+\caption{Example test scenarios (100\,m, seed 0) for the four terrain families
+on a hillshade; darker shading marks lethal cells (slope $>\thmax$ or inflated
+rocks). Circle: start, star: goal. Where lines are not visible they coincide
+with another planner's path (e.g., \Astar{} and \HC{} when no lethal cell lies on
+the shortest path).}
+\label{fig:examples}
+\end{figure*}
+
+\input{generated/table_main.tex}
+
+\subsection{Main comparison}
+Table~\ref{tab:main} summarises the \nTest{} test scenarios and
+Table~\ref{tab:tests} the paired tests. All planners solve every scenario; since the benchmark contains only maps
+with a feasible path, this is expected, and infeasible maps are treated
+separately below.
+The terrain-unaware planners \Astar{} and Theta* enter terrain steeper than
+$\thmax$ in \exposedA\% and \exposedTheta\% of the scenarios, driving on
+average \steepMeanA\,m and \steepMeanTheta\,m on such slopes. \HC{} avoids
+lethal cells by construction but hugs the limit: its median maximum slope is
+\maxSlopeAHC$^\circ$ against $\thmax=25^\circ$. \TAS{} keeps a margin: the
+median maximum slope under the path is \maxSlopeTAS$^\circ$ and the median
+maximum pitch over 1\,m windows is \maxPitchTAS$^\circ$ (\Astar: \maxPitchA$^\circ$,
+\HC: \maxPitchAHC$^\circ$).
+
+Relative to \Astar{} on the same scenario, \TAS{} changes the mean
+traversability cost by \costRelTAS\%, the cumulative climb by
+\climbRelTAS\% and the estimated energy by \energyRelTAS\% (median), at a
+median path-length increase of \lenRelTAS\%. Against \HC, the continuous cost
+changes the 95th-percentile slope by \dTASAHCpNineFiveslope$^\circ$ and the
+climb by \dTASAHCclimb\,m (median paired differences, $|r|\ge 0.98$). Against
+Theta*, which produces the shortest paths, \TAS{} is longer by a median of
+\dTASThetalengthxy\,m and still uses slightly less energy (median
+\dTASThetaenergykj\,kJ, $r=\rTASThetaenergykj$, \pexprTASThetaenergykj): the
+extra distance is more than paid for by less climbing.
+The shortcutting step matters: compared with plain \TA{}, \TAS{} changes the
+length by \dTASTAlengthxy\,m (median) and uses less energy in every scenario
+($r=\rTASTAenergykj$), at a small cost increase of \dTASTAmeancost.
+
+\input{generated/table_tests.tex}
+\input{generated/table_kind.tex}
+
+\subsection{Terrain families}
+Table~\ref{tab:kind} breaks the results down by terrain family. Exposure of
+the terrain-unaware planners is highest on the ridge terrain
+(\exposedAridge\% of \Astar{} paths), where the shortest path crosses the ridge
+flank instead of using a pass. The energy benefit of \TAS{} is largest on
+craters (\energyRelTAScraters\%) and smallest on hills
+(\energyRelTAShills\%), where elevation changes cannot be avoided by short
+detours. On rocky terrain the roughness term dominates: the
+95th-percentile roughness under the path is \roughRockyTAS\,mm for \TAS{}
+versus \roughRockyA\,mm for \Astar{} and \roughRockyAHC\,mm for \HC.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/weights.pdf}
+\caption{Weight optimisation on the validation split. Left and centre: median
+energy change relative to \Astar{} and median 95th-percentile slope under the
+\TAS{} path for every $(w,\alpha)$ ($w=0$ ignores $\alpha$). Right: all
+configurations, their Pareto front and the weights selected for the three
+mission profiles (circle: energy, triangle: safety, square: balanced).}
+\label{fig:weights}
+\end{figure*}
+
+\input{generated/table_weights.tex}
+
+\subsection{Weight optimisation}\label{sec:sweep}
+Fig.~\ref{fig:weights} shows the validation grid. The terrain weight $w$
+controls a smooth trade-off: small weights minimise the energy estimate,
+large weights minimise the slope under the path, and no configuration is best
+for both. Mixing both cost terms pays off: the pure-roughness cost ($\alpha=0$)
+is Pareto-dominated for every $w>0$, and all three selected configurations
+use $\alpha\in\{0.5,0.75\}$. Table~\ref{tab:weights} reports the selected
+weights on the test split. The energy profile ($w=\woEnergyW$,
+$\alpha=\woEnergyAlpha$) changes the energy by \woEnergyEnergy\% and the length
+by \woEnergyLen\% relative to \Astar, but leaves the 95th-percentile slope at
+\woEnergySlope$^\circ$; the safety profile ($w=\woSafetyW$,
+$\alpha=\woSafetyAlpha$) reaches \woSafetySlope$^\circ$ at +\woSafetyLen\% length;
+the balanced profile lies in between (\woBalancedEnergy\% energy,
++\woBalancedLen\% length, \woBalancedSlope$^\circ$). Even with the
+energy-oriented weights no test path enters terrain steeper than $\thmax$,
+because the hard constraint, not the weight, enforces the limit.
+
+The exact optimum is not stable: the balanced configuration is reselected in
+\woBalancedBoot\% of \nBoot{} bootstrap resamples of the validation scenarios and in
+\woBalancedLofo{} of 4 leave-one-terrain-family-out runs. The alternatives,
+however, are grid neighbours (a factor of two in $w$, $\alpha\in\{0.5,0.75\}$)
+with nearly identical performance, so the objectives are flat around the
+optimum and the planner does not depend on precise tuning. The weight should
+be chosen per mission, coarsely.
+
+\input{generated/table_ablation.tex}
+
+\subsection{Cost ablation}\label{sec:ablation}
+Table~\ref{tab:ablation} varies the slope weight $\alpha$ ($\beta=1-\alpha$).
+A roughness-only cost ($\alpha=0$) leaves the 95th-percentile slope at
+\abSlopeZero$^\circ$; any slope weight $\alpha\ge 0.25$ lowers it to
+\abSlopeZeropTwoFive$^\circ$ or less. Conversely, the 95th-percentile roughness
+grows from \abRoughZero\,mm to \abRoughOne\,mm as the roughness term is
+removed. The two terms thus act on the quantities they are designed for, and
+the selected $\alpha=\alphaMain$ lies on the flat part of the slope curve while
+retaining most of the roughness avoidance.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/noise.pdf}
+\caption{Planning on a noisy elevation map, evaluation on the ground truth.
+Left: mean distance driven on slopes $>\thmax$. Right: success rate.}
+\label{fig:noise}
+\end{figure}
+
+\subsection{Maps without a feasible path}
+The benchmark keeps only solvable maps, so a success rate of 100\% only
+means that every planner returned \emph{some} path. To test the opposite
+case we generated \nInfeasible{} additional maps with a steep wall across the
+whole map and no pass (10 seeds per map size), not filtered for feasibility.
+\TA, \TAS{} and \HC{} correctly report that no admissible path exists in all
+of them (\infPathsTA, \infPathsTAS{} and \infPathsAHC{} paths returned), after at most
+\infTimeMaxTAS\,s. \Astar{} and Theta*, in contrast, ``succeed'' on all
+\nInfeasible{} maps (\infPathsA{} and \infPathsTheta{} paths), but their paths
+cross the wall with a mean maximum slope of \infMaxSlopeA$^\circ$ and drive
+on average \infSteepA\,m on slopes beyond the limit. For a terrain-unaware
+planner, success is therefore not evidence of a usable path.
+
+\subsection{Robustness to elevation noise}
+Real elevation maps are noisy. We add i.i.d.\ Gaussian noise
+$\sigma_z\in\{0.02,0.05,0.10\}$\,m to the elevation used for planning and
+evaluate the resulting paths on the ground truth (Fig.~\ref{fig:noise}).
+Noise inflates the estimated slope, so both planners occasionally misjudge
+cells near the limit and enter truly steep terrain. Because \TA{} keeps a
+margin from $\thmax$, its exposure stays smaller than that of \HC{}
+(mean \noiseSteepTAZeropOne\,m vs.\ \noiseSteepAHCZeropOne\,m at
+$\sigma_z=0.10$\,m); both remain at or above \noiseSuccTAZeropOne\% success.
+The mean cost of \TA{} paths rises from \noiseCostTAZeropZeroTwo{} to
+\noiseCostTAZeropOne{}, i.e., the benefit degrades gracefully. Filtering the
+map before computing slopes, or using an uncertainty-aware elevation
+map~\cite{fankhauser2018elevation}, is the natural remedy.
+
+\input{generated/table_roll.tex}
+
+\subsection{Roll-aware extension}
+Table~\ref{tab:roll} evaluates the roll angle along every path. At
+$\phi_{\max}=\rlMain^\circ$, \Astar, Theta* and \HC{} exceed the limit in
+\rlAExposedMain\%, \rlThetaExposedMain\% and \rlAHCExposedMain\% of the
+scenarios: the hard slope constraint alone does not prevent crossing side
+slopes. The isotropic \TAS{} avoids almost all of this
+exposure because it avoids slopes altogether (\rlTASExposedMain\% of paths,
+\rlTASRollLenMain\,m on average), and \TAS-R removes the rest at negligible
+cost: the median paired differences to \TAS{} are \rlTestMaxRollD$^\circ$ in
+maximum roll, \rlTestLenD\,m in length and \rlTestEnergyD\,kJ in energy, and
+the energy change relative to \Astar{} remains \rlTASRDEMain\%. The roll term
+matters when the lateral limit is tighter than the slope limit, e.g., on
+slippery ground or with a high payload: at $\phi_{\max}=10^\circ$ the isotropic
+planner exceeds the limit in \rlTASExposedTen\% of the scenarios, whereas
+\TAS-R stays within it (the evaluation finds at most \rlTASRRollLenMaxTen\,m
+above it, maximum \rlTASRMaxRollMaxTen$^\circ$, an artefact of resampling
+diagonal steps) and correctly reports infeasibility on \rlTASRFailTen{} map.
+At $\phi_{\max}=25^\circ=\thmax$ the slope constraint already bounds roll, and
+no planner with the hard constraint exceeds it.
+
+\subsection{Computation time}
+Terrain awareness has a price in search effort: with $w>0$ the Euclidean
+heuristic underestimates the true cost more, so \TA{} expands more nodes than
+\Astar. In our single-threaded Python implementation the median time on
+100\,m maps (200$\times$200 cells) is \timeTAOneZeroZero\,s for \TA{} and
+\timeTASOneZeroZero\,s for \TAS, against \timeAOneZeroZero\,s for \Astar; on
+200\,m maps it is \timeTATwoZeroZero\,s and \timeTASTwoZeroZero\,s; the maximum over all scenarios is \timeMaxTAS\,s. All
+planners scale similarly with map size; a compiled implementation or
+incremental replanning~\cite{koenig2002dstarlite} would cut these times.
+
+\section{Discussion and Limitations}
+\textbf{Synthetic terrain.} The terrains are procedural. They are designed to
+cover qualitatively different situations (unavoidable relief, a barrier with
+passes, local depressions, rough patches) and are scaled by slope, but they
+are not measured terrain. The pipeline accepts any elevation map; applying it
+to maps built with RTAB-Map~\cite{labbe2019rtabmap} on our tracked UGV is the
+next step.
+
+\textbf{Attitude model.} The roll-aware extension uses the terrain gradient
+under a point robot and an assumed roll limit; it ignores the vehicle's
+footprint, turning on slopes and dynamic effects. A heading state lattice and
+a footprint-based attitude estimate would refine it.
+
+\textbf{Energy and dynamics.} The energy estimate ignores speed, slip,
+turning losses and regeneration, and no path is executed by a controller.
+The reported energy changes should therefore be read as relative indications,
+not predictions.
+
+\textbf{Implementation.} Times are from a pure-Python implementation and are
+meant for comparison between planners, not as absolute real-time claims.
+
+\section{Conclusion}
+A traversability cost normalised by the robot's own limits, embedded in A*
+with an admissible heuristic and followed by cost-aware shortcutting, removes
+all excursions onto slopes beyond the robot's limit that shortest-path
+planners make in most of our scenarios, lowers the mean
+traversability cost by a median of \costRelTAS\% and reduces climb and estimated energy, at a median
+distance overhead of a few percent. The terrain weight sets a clear
+distance--cost--energy trade-off that should be chosen per mission. We
+release the generator, planners, raw results and the analysis script that
+produces every number in this paper.
+
+% TODO(author): add repository URL after the review period if double-blind
+\section*{Code and Data Availability}
+All code, raw results and the analysis script are available at
+\url{https://github.com/tako-1012/thesis_Bunker} (directory \texttt{conference/}).
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,69 @@
+20/120 (178s)
+40/120 (296s)
+60/120 (338s)
+80/120 (369s)
+100/120 (380s)
+120/120 (389s)
+done in 389s
+== medians (test split, 120 scenarios) ==
+                succ     dL      dE  climb  slope95  maxslope  rough95   cost  maxroll   time  time_max
+planner                                                                                                
+A*               1.0  0.000   0.000  5.248   25.234    31.066   28.631  0.300   24.702  0.026     0.214
+A*-HC            1.0  0.051  -1.369  3.872   19.685    23.731   25.652  0.267   21.528  0.025     0.236
+TA*              1.0  7.664  -3.262  3.249    8.810    12.749   20.608  0.147    9.386  0.116     1.220
+TA*-S            1.0  2.989  -7.320  3.104    9.349    13.669   21.574  0.160   10.379  0.153     1.057
+Energy-A*        1.0  2.272 -10.988  2.403   15.629    21.469   25.327  0.232   20.182  0.063     0.624
+Surface-A*       1.0  0.180  -9.385  2.855   17.619    22.024   25.007  0.251   20.833  0.032     0.408
+Terrain-Theta*   1.0  4.215  -5.720  3.230    8.735    12.888   20.710  0.148    9.084  6.667    50.498
+
+== paired tests: TA*-S minus other (median diff), rank-biserial r, Holm p ==
+vs Energy-A*       energy_kj  d=   +0.746  r=+0.89  p=2.7e-16
+vs Energy-A*       climb      d=   +0.479  r=+0.93  p=9.7e-18
+vs Energy-A*       p95_slope  d=   -4.877  r=-0.99  p=7e-20
+vs Energy-A*       rough_mm   d=   -3.583  r=-0.97  p=6.7e-19
+vs Energy-A*       mean_cost  d=   -0.066  r=-1.00  p=5.5e-20
+vs Energy-A*       length_xy  d=   -0.336  r=-0.08  p=0.48
+vs Energy-A*       time       d=   +0.089  r=+1.00  p=5.5e-20
+vs Surface-A*      energy_kj  d=   +0.416  r=+0.58  p=1.8e-07
+vs Surface-A*      climb      d=   +0.157  r=+0.25  p=0.049
+vs Surface-A*      p95_slope  d=   -5.458  r=-0.99  p=7.6e-20
+vs Surface-A*      rough_mm   d=   -3.948  r=-0.96  p=1.4e-18
+vs Surface-A*      mean_cost  d=   -0.078  r=-1.00  p=5.5e-20
+vs Surface-A*      length_xy  d=   +0.905  r=+0.42  p=0.00031
+vs Surface-A*      time       d=   +0.120  r=+1.00  p=5.5e-20
+vs Terrain-Theta*  energy_kj  d=   -0.324  r=-0.83  p=2.9e-14
+vs Terrain-Theta*  climb      d=   -0.012  r=-0.12  p=0.48
+vs Terrain-Theta*  p95_slope  d=   +0.501  r=+0.83  p=7.9e-14
+vs Terrain-Theta*  rough_mm   d=   +0.906  r=+0.75  p=2.6e-11
+vs Terrain-Theta*  mean_cost  d=   +0.012  r=+0.98  p=2.1e-19
+vs Terrain-Theta*  length_xy  d=   -1.377  r=-0.88  p=5e-16
+vs Terrain-Theta*  time       d=   -6.516  r=-1.00  p=5.5e-20
+vs TA*             energy_kj  d=   -0.974  r=-1.00  p=5.5e-20
+vs TA*             climb      d=   -0.055  r=-0.74  p=1e-11
+vs TA*             p95_slope  d=   +0.510  r=+0.92  p=3.8e-16
+vs TA*             rough_mm   d=   +0.934  r=+0.92  p=2.7e-15
+vs TA*             mean_cost  d=   +0.013  r=+1.00  p=5.5e-20
+vs TA*             length_xy  d=   -3.970  r=-1.00  p=5.5e-20
+vs TA*             time       d=   +0.031  r=+0.86  p=3.3e-15
+
+== per terrain family: median energy change / slope95 ==
+planner   A*  A*-HC   TA*  TA*-S  Energy-A*  Surface-A*  Terrain-Theta*
+kind                                                                   
+craters  0.0  -16.0 -13.8  -16.6      -20.3       -19.1           -15.3
+hills    0.0    0.0   0.3   -3.6      -10.0        -8.4            -2.7
+ridge    0.0   -6.1  -6.3  -10.0      -10.3        -9.5            -8.3
+rocky    0.0   -0.8  -1.5   -5.8      -10.1        -8.4            -4.3
+planner    A*  A*-HC   TA*  TA*-S  Energy-A*  Surface-A*  Terrain-Theta*
+kind                                                                    
+craters  38.2   18.7   7.3    7.6       14.6        15.4             7.4
+hills    22.6   21.5  16.4   17.0       21.6        21.1            16.4
+ridge    31.9   21.4   8.2    8.7       14.6        19.2             8.4
+rocky    19.1   17.0   8.7    9.1       14.3        15.4             8.1
+
+== time by map size (median s) ==
+planner     A*  A*-HC    TA*  TA*-S  Energy-A*  Surface-A*  Terrain-Theta*
+side_m                                                                    
+50       0.006  0.006  0.033  0.052      0.016       0.008           1.929
+100      0.026  0.025  0.116  0.153      0.063       0.032           6.667
+200      0.120  0.115  0.546  0.689      0.276       0.159          24.795
+EXIT=0
