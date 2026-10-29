@@ -1,0 +1,11 @@
+lambda selection (validation seeds only; unrounded medians determine rank):
+ lam  succ  runs  computed_dJ  dJ_median  plans_median
+0.00   1.0   200          200   5.985445          18.0
+0.25   1.0   200          200   6.087428          17.0
+0.50   1.0   200          200   6.282060          16.0
+1.00   1.0   200          200   6.005402          15.0
+2.00   1.0   200          200   6.215938          13.0
+
+selected lambda: 0
+
+failures: {}

@@ -1,0 +1,56 @@
+{
+  "lam": 0.0,
+  "validation_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "sizes": [
+    50,
+    100
+  ],
+  "kinds": [
+    "hills",
+    "ridge",
+    "craters",
+    "rocky"
+  ],
+  "conditions": [
+    [
+      15.0,
+      5.0
+    ],
+    [
+      10.0,
+      10.0
+    ],
+    [
+      10.0,
+      20.0
+    ],
+    [
+      5.0,
+      10.0
+    ],
+    [
+      5.0,
+      20.0
+    ]
+  ],
+  "candidates": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "criterion": [
+    "median dJ",
+    "median n_plans",
+    "smaller lambda"
+  ],
+  "selected_dJ_median": 5.985445231214048,
+  "selected_plans_median": 18.0
+}
