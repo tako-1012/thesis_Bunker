@@ -1,0 +1,9 @@
+{
+  "experiments_s": 308.5087509969999,
+  "total_s": 312.47037981299945,
+  "workers": 5,
+  "generation_sum_s": 169.14308025400533,
+  "statistics_sum_s": 173.13423830498505,
+  "offline_sum_s": 274.36240242599524,
+  "online_sum_s": 1088.686882964008
+}
