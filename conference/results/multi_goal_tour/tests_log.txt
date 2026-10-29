@@ -1,0 +1,65 @@
+$ python3 -m tests.test_beach_terrain
+beach determinism, shapes, finite values, water/wet and unchanged rolling passed
+averaged sea/wet/dry/inland profiles and foreshore slopes passed (validation seeds)
+scarp 45-degree coverage passed: [np.float64(0.465), np.float64(0.615), np.float64(0.0), np.float64(0.16), np.float64(0.555)]
+beach scenarios, delegated planner equality and exact smoothing passed (15 scenarios)
+exact beach online safety passed (9 trajectories)
+all beach-terrain tests passed
+$ python3 -m tests.test_collision
+segment_cells passed (2000 seeded segments vs exhaustive SAT, reversal and boundary cases)
+corner-grazing reproduction and exact rejection passed
+legacy online and smoothing regressions passed
+exact online safety passed (41 trajectories, A* and D* Lite)
+all collision tests passed
+$ python3 -m tests.test_dstar
+static agreement passed (20 random grids, tolerance 1e-9)
+dynamic agreement passed (5 seeds x 20 updates, tolerance 1e-9)
+corner constraints, cost decreases, unreachable/reopened routes and ties passed
+task 001 regression passed (ridge soft and hills hard, search omitted)
+D* Lite safety passed (20 trajectories, normal and every-step replanning)
+error handling and fixed/adaptive-with-map prior handling passed
+all D* Lite tests passed
+$ python3 -m tests.test_natural_terrain
+natural generation determinism, distinct seeds, shape and finite values passed
+pre-erosion radial spectrum passed: [-3.5227452123825955, -3.4854938900090673, -3.5147015961346426, -3.469782545726739, -3.4636674128050786]
+rock area law: 0.4 0.02703765778384137 0.02660688949938067
+rock area law: 0.6 0.014010959187524073 0.013724330217025335
+rock area law: 1.0 0.003425544099666588 0.003651617375374042
+natural scenarios and exact online safety passed (15 trajectories)
+experiment oracle contact audit passed (both reference planners)
+all natural-terrain tests passed
+$ python3 -m tests.test_online
+regression passed (ridge/100 m, seeds 0 and 7)
+perfect prior passed (all terrain kinds/50 m/seed 0)
+coarse prior passed (shape, no rocks, partial blocks, noise, robot/weights, edges)
+prior policies passed (hard/soft/ignore, sensing overrides, cell-specific triggers)
+safety passed (60 trajectories: five online variants and constrained oracle)
+all online tests passed
+$ python3 -m tests.test_planners
+all planner tests passed
+roll-aware tests passed
+$ python3 -m tests.test_risk_prior
+coarse elevation/refactor passed (16 terrain/cell/noise combinations)
+calibration passed (all-cell counts/means, deterministic pooling, JSON, test-seed rejection)
+empty-bin fallback and boundary assignment passed
+risk cost passed (expected means, lambda monotonicity/clipping, noise, unchanged lethal mask)
+risk-prior safety passed (40 trajectories, 40 successful; 20 m cells, R=5/15 m, lambda=0/1)
+all risk-prior tests passed
+$ python3 -m tests.test_tour
+kappa=0 agrees with legacy A* (20 random 25x25 grids)
+directed A*/Dijkstra agree with all-simple-path exhaustive oracle (10 grids); unreachable/corners/budget passed
+uphill/downhill identity, segment units and nonincreasing exact smoothing passed
+Held-Karp matches all permutations (30 asymmetric matrices at each of 2..8 destinations); ties/closure passed
+beach_gentle: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual planning (kappa=0 and physical)
+beach_steep: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual planning (kappa=0 and physical)
+beach_scarp: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual planning (kappa=0 and physical)
+all multi-goal tour tests passed
+$ python3 -m tests.test_tour # expanded individual A*/Dijkstra path equivalence checks
+kappa=0 agrees with legacy A* (20 random 25x25 grids)
+directed A*/Dijkstra agree with all-simple-path exhaustive oracle (10 grids); unreachable/corners/budget passed
+uphill/downhill identity, segment units and nonincreasing exact smoothing passed
+Held-Karp matches all permutations (30 asymmetric matrices at each of 2..8 destinations); ties/closure passed
+beach_gentle: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+beach_steep: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+beach_scarp: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+all multi-goal tour tests passed
