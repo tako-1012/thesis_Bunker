@@ -55,8 +55,10 @@ def shoreline_y(z):
 
 def good_patch(z):
     """Sea on the y < 0 side, land on the y > 0 side, and the shoreline within 15 m of y = 0 in 80 % of columns."""
-    prof = np.nanmean(np.where(np.isnan(z), np.nan, z), axis=0)
-    if not (np.nanmean(prof[:40]) < 0 and np.nanmax(prof[100:200]) > 0):
+    if np.isnan(z[:, :40]).mean() > 0.1 or np.isnan(z[:, 100:200]).all(0).any():
+        return False   # the sea side (y < -30 m) and the beach (y = 0..50 m) must be measured
+    prof = np.nanmean(z, axis=0)
+    if not (prof[:40].mean() < 0 and prof[100:200].max() > 0):
         return False
     if np.isnan(z).mean() > 0.35:
         return False
@@ -153,11 +155,13 @@ def select(tmp):
         rows.append(dict(name=os.path.basename(f)[:-4], X=float(X), Y=float(Y), lat=round(lat, 4), lon=round(lon, 4),
                          nan_frac=round(float(np.isnan(z).mean()), 4),
                          land_width_m=float(np.median(land.sum(1)) * RES), zmax=round(float(np.nanmax(z)), 3),
-                         steep_land=round(float((sl[land & np.isfinite(sl)] > 25).mean()), 5)))
-    ok = sorted((r for r in rows if r["nan_frac"] < 0.30 and r["land_width_m"] >= 60), key=lambda r: r["Y"])
+                         steep_land=round(float((sl[land & np.isfinite(sl)] > 25).mean()), 5),
+                         good=bool(good_patch(z))))
+    ok = sorted((r for r in rows if r["nan_frac"] < 0.30 and r["land_width_m"] >= 60 and r["good"]), key=lambda r: r["Y"])
     sel = [ok[i] for i in np.unique(np.round(np.linspace(0, len(ok) - 1, 60)).astype(int))]
     os.makedirs(OUT, exist_ok=True)
     for i, r in enumerate(sel):
+        del r["good"]
         r["split"] = "validation" if i % 5 == 2 else "test"
         shutil.copy(os.path.join(tmp, r["name"] + ".npz"), os.path.join(OUT, r["name"] + ".npz"))
     with open(os.path.join(OUT, "index.json"), "w") as f:
