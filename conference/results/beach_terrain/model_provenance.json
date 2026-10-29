@@ -1,0 +1,23 @@
+{
+  "source_sha256": "837b9a80cfc8cb79714531e3c010ad7b12ce068a93de6ddb0ca8dedc65966017",
+  "validation_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "test_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "hills_slope": 9.5
+}
