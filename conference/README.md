@@ -25,6 +25,7 @@ AUDIT_ja.md      卒論の問題点と、作り直した内容の記録
 | `tapp/metrics.py` | 経路の評価（急斜面の走行距離、傾斜、ロール、凸凹、エネルギー推定など） |
 | `tapp/online.py` | 走りながらの再計画（センサーの届く範囲だけが見える状況） |
 | `tapp/prior.py` | 粗い全体地図（5m・10m 間隔）を、見えない場所の推定に使う |
+| `tapp/dstar_lite.py` | D\* Lite（変わった部分だけを計算し直す増分探索）。再計画の高速化に使う |
 | `tapp/terrain_baselines.py` | 比較用の地形考慮型プランナー（探索的、論文には未掲載） |
 
 ## 再現手順（`conference/` で実行）
@@ -32,6 +33,7 @@ AUDIT_ja.md      卒論の問題点と、作り直した内容の記録
 pip install numpy scipy matplotlib pandas
 python3 -m tests.test_planners
 python3 -m tests.test_online
+python3 -m tests.test_dstar
 python3 experiments/run_weight_opt.py   # 重み (w, α) の全組み合わせを試す（約6分）
 python3 experiments/analyze_weights.py  # 検証用データだけで重みを選ぶ → results/selected_weights.json
 python3 experiments/run_all.py          # 選んだ重みで本実験（約3分）
@@ -49,6 +51,7 @@ cd paper && latexmk -pdf main.tex
 python3 experiments/explore_terrain_baselines.py  # 他の地形考慮型手法との比較 → results/explore/
 python3 experiments/online_replanning.py          # 走りながらの再計画 → results/online/
 python3 experiments/online_prior.py               # 粗い全体地図を使った再計画 → results/online_prior/
+python3 experiments/online_dstar.py               # D* Lite による再計画の高速化 → results/online_dstar/
 ```
 
 ## 大事な決まり
