@@ -15,7 +15,7 @@ class PriorMap:
     cell_m: float
 
 
-def coarse_prior(tmap, cell_m, z_noise_m=0.0, seed=0) -> PriorMap:
+def coarse_elevation(tmap, cell_m, z_noise_m=0.0, seed=0) -> np.ndarray:
     """Average blocks, then interpolate between their centres (clamped edges).
 
     Partial edge blocks use their actual centres. Noise is added independently
@@ -40,5 +40,11 @@ def coarse_prior(tmap, cell_m, z_noise_m=0.0, seed=0) -> PriorMap:
         centres = s + (count - 1) / 2.0
         coords.append(np.interp(np.arange(n), centres, np.arange(len(s))))
     elev = map_coordinates(coarse, np.meshgrid(*coords, indexing="ij"), order=1, mode="nearest")
+    return elev
+
+
+def coarse_prior(tmap, cell_m, z_noise_m=0.0, seed=0) -> PriorMap:
+    """Build a rock-free traversability prior from the coarse elevation."""
+    elev = coarse_elevation(tmap, cell_m, z_noise_m, seed)
     tm = TraversabilityMap(elev, np.zeros(tmap.shape, dtype=bool), tmap.robot, tmap.weights)
     return PriorMap(cost=tm.cost, lethal=tm.lethal, cell_m=cell_m)
