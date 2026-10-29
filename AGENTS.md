@@ -2,8 +2,11 @@
 
 This repository holds a master's student's research on terrain-aware path
 planning for a tracked UGV (AgileX BUNKER). The active, trustworthy code is in
-`conference/`. Everything outside `conference/` is legacy thesis material:
-do not use it, do not modify it.
+`conference/`. Do not use or modify anything outside `conference/`:
+`ros2/` comes from the lab repositories (`hayashilab/bunker_ros2`,
+`hayashilab/bunker_unity`), and `scripts/`, `analysis/`, `benchmark_results/`,
+`results/`, `tables/`, `figures/`, `thisis_write/` are the archived bachelor's
+thesis (its numbers are known to be unreliable, see `conference/AUDIT_ja.md`).
 
 ## Setup and checks
 ```bash
