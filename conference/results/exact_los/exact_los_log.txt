@@ -1,0 +1,42 @@
+A: unchanged paper planners
+         paths  success  touching_paths  sampled_exposure
+planner                                                  
+TA*        120      1.0               0                 0
+TA*-S      120      1.0               6                 0
+
+A: saved-result mismatches (absolute tolerance 1e-9; timing excluded): 0
+
+B: online replanning
+                      success  touching_runs  sampled_exposure  dJ_median        dJ90  plans  plan_time
+R_m cell_m exact_los                                                                                   
+5   10     False          1.0              4                 2   7.136692   77.086729   63.5   2.071598
+           True           1.0              0                 0   7.243856   55.675435   64.5   1.935636
+    20     False          1.0              2                 1   9.307821  100.590234   72.5   1.864565
+           True           1.0              0                 0   9.196318  100.990954   72.0   1.825377
+10  10     False          1.0              4                 1   3.342535   25.303457   59.0   1.800411
+           True           1.0              0                 0   3.444945   25.252449   60.0   1.838675
+    20     False          1.0              2                 0   4.744195   57.084070   65.5   1.837842
+           True           1.0              0                 0   4.794876   57.185062   66.0   1.852687
+15  5      False          1.0              2                 0   1.497122    5.704775   48.0   2.181050
+           True           1.0              0                 0   1.499733    5.869762   49.0   2.295193
+
+B: saved coarse mismatches (absolute tolerance 1e-9; timing excluded): 0
+
+B: trajectories touching lethal cells:
+ R_m  cell_m    kind  side_m  seed  exact_los  lethal_cells
+  10      10 craters     100     0      False             1
+   5      10 craters     100     7      False             2
+  10      20   hills      50     1      False             1
+  15       5   hills     100     9      False             1
+   5      20   ridge     100     3      False             1
+   5      10   rocky      50     6      False             1
+   5      20   rocky      50     7      False             2
+  10      10   rocky     100     0      False             2
+  15       5   rocky     100     0      False             2
+   5      10   rocky     100     3      False             3
+  10      10   rocky     100     4      False             1
+  10      10   rocky     100     5      False             1
+  10      20   rocky     100     6      False             2
+   5      10   rocky     100     7      False             1
+
+failures: {}
