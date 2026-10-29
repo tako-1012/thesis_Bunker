@@ -201,8 +201,10 @@ def lazy_theta(blocked, start, goal, max_expansions=10_000_000):
                       expansions=exp)
 
 
-def smooth_cost_aware(path, blocked, mult):
+def smooth_cost_aware(path, blocked, mult, *, los=None):
     """Greedy shortcutting accepted only if collision-free and not costlier."""
+    if los is None:
+        los = line_of_sight
     t0 = time.perf_counter()
     pts = list(path)
     seg = [segment_cost(mult, pts[i], pts[i + 1]) for i in range(len(pts) - 1)]
@@ -215,7 +217,7 @@ def smooth_cost_aware(path, blocked, mult):
         while j < len(pts) - 1:
             acc += seg[j]
             cand = pts[j + 1]
-            if not line_of_sight(blocked, pts[i], cand):
+            if not los(blocked, pts[i], cand):
                 break
             if segment_cost(mult, pts[i], cand) <= acc + 1e-9:
                 best = j + 1

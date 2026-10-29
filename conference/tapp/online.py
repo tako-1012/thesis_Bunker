@@ -20,6 +20,7 @@ import time
 
 import numpy as np
 
+from .collision import line_of_sight_exact, segment_cells
 from .config import RESOLUTION
 from .dstar_lite import DStarLite
 from .planners import astar, line_of_sight, smooth_cost_aware
@@ -36,7 +37,7 @@ def _disk(r_cells):
 
 def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
                sense_radius_m=15.0, step_m=1.0, replan_every_m=10.0, max_factor=6.0,
-               prior_map=None, prior_lethal="soft", search="astar", record_plan_times=False):
+               prior_map=None, prior_lethal="soft", search="astar", record_plan_times=False, exact_los=False):
     if search not in ("astar", "dstar_lite"):
         raise ValueError("search must be 'astar' or 'dstar_lite'")
     if search == "dstar_lite":
@@ -81,6 +82,7 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
             cost = np.where(known, tm.cost, assumed_cost)
         return lethal, 1.0 + w * cost if terrain_aware else None
 
+    los = line_of_sight_exact if exact_los else line_of_sight
     dstar = None
     last_lethal = last_mult = None
     plan_times = []
@@ -109,7 +111,10 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
         else:
             r_ = astar(lethal, cell, goal, mult)
         if r_["success"] and planner == "TA*-S":
-            p, ts = smooth_cost_aware(r_["path"], lethal, mult)
+            if exact_los:
+                p, ts = smooth_cost_aware(r_["path"], lethal, mult, los=los)
+            else:
+                p, ts = smooth_cost_aware(r_["path"], lethal, mult)
             r_ = dict(r_, path=p, time=r_["time"] + ts)
         if search == "dstar_lite" or record_plan_times:
             elapsed = time.perf_counter() - t0
@@ -168,9 +173,12 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
         if not trigger and new.any():
             rem = np.array([pos] + path[seg + 1:])
             for a, b in zip(rem[:-1], rem[1:]):
-                L = max(int(np.ceil(np.hypot(*(b - a)) * 2)), 1)
-                t = np.linspace(0, 1, L + 1)[:, None]
-                pts = np.rint(a + (b - a) * t).astype(int)
+                if exact_los:
+                    pts = segment_cells(a, b, tm.shape)
+                else:
+                    L = max(int(np.ceil(np.hypot(*(b - a)) * 2)), 1)
+                    t = np.linspace(0, 1, L + 1)[:, None]
+                    pts = np.rint(a + (b - a) * t).astype(int)
                 xs, ys = pts[:, 0], pts[:, 1]
                 newly = np.zeros(len(xs), dtype=bool)
                 inside = (xs >= ox) & (xs < ox + new.shape[0]) & (ys >= oy) & (ys < oy + new.shape[1])
@@ -192,7 +200,7 @@ def run_online(tm, start, goal, *, planner="TA*-S", w=8.0, unknown_cost=0.0,
             # join the new plan through the centre of the current cell, so the
             # connecting segment never cuts across a lethal neighbour
             rest = [np.array(p, dtype=float) for p in res["path"][1:]]
-            if rest and line_of_sight(known & tm.lethal, tuple(pos), tuple(rest[0])):
+            if rest and los(known & tm.lethal, tuple(pos), tuple(rest[0])):
                 path = [pos.copy()] + rest
             else:
                 path = [pos.copy(), np.array(cell, dtype=float)] + rest
