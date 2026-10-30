@@ -3,14 +3,15 @@
 Ubuntu 24.04で、Webで計画した経路をGazeboのBUNKER模型へ送ります。WebサーバーはMacでも動き、ROSには依存しません。
 この実装は実機制御・GPS・Nav2・砂の沈み込みや滑りの再現を含みません。
 
-## この環境で確認できた範囲
+## 確認できた範囲
 
-公式 `osrf/ros:jazzy-desktop-full` を取得し、コンテナで `rclpy`・numpy・scipy・matplotlib・colconと
-`gz sim --versions`（8.11.0）の存在を確認しました。しかし、Dockerの `vfs` ストレージ方式でコンテナを展開すると
-32GBのディスクが一杯になり、継続検査用コンテナの作成が `no space left on device` で失敗しました。
-**物理のあるGazebo走行、colconビルド、gz_checksはこの環境では完了していません。**
-実行できなかった物理量は0で埋めず、`gz_checks/results/environment.json` に未実行として記録しています。
-ROSなしのモデル・パッケージ・追従・CSV解析・API・地形の検証結果は `REPORT_ja.md` を参照してください。
+Codex の環境では Docker の容量不足などで Gazebo を動かせませんでしたが、そのあと Claude がクラウドの Docker
+（`osrf/ros:jazzy-desktop-full`、Gazebo 8.11.0）で、colcon のビルドと Gazebo での確認を実行しました。
+結果は `gz_checks/results/claude_docker_run/`・`gz_checks/results/claude_docker_run_las/`・
+`../results/online_mission/gazebo_claude/` にあります（平地・本物の砂浜とも巡回を完走、通れない場所への接触 0）。
+`gz_checks/results/environment.json` は、Codex の環境で実行できなかったときの記録です。
+
+**Ubuntu のパソコンで Claude Code や Codex に環境を作らせるときは、`SETUP_AGENT_ja.md` を読ませてください。**
 
 ## Ubuntu 24.04のセットアップ
 
