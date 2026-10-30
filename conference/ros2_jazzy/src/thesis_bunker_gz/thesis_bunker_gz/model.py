@@ -114,7 +114,6 @@ def make_model(output, lab_mesh_dir="", mass_kg=150.0):
         publish_sensor_pose="false",
         use_pose_vector_msg="true",
         update_frequency="20",
-        topic="/bunker/pose",
     ).items():
         node(poses, tag, value)
     ET.indent(sdf)

@@ -60,6 +60,11 @@ def test_model():
         poses.findtext("publish_model_pose") == "true"
         and poses.findtext("publish_link_pose") == "false"
     )
+    # Harmonic's PosePublisher ignores <topic> and always uses /model/<name>/pose.
+    assert poses.find("topic") is None
+    bridge = (WORKSPACE / "src/thesis_bunker_gz/config/bridge.yaml").read_text()
+    truth = bridge.split("ros_topic_name: /ground_truth")[1].split("- ros_topic_name")[0]
+    assert "gz_topic_name: /model/" + model.attrib["name"] + "/pose" in truth
     assert not model.findall(".//mesh")
     with tempfile.TemporaryDirectory() as tmp:
         generated = make_model(Path(tmp) / "bunker.sdf", mass_kg=Robot().mass_kg)

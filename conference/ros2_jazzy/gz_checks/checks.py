@@ -48,7 +48,7 @@ def run_checks(output):
     rclpy.init()
 
     class Observer(Node):
-        def __init__(self):
+        def __init__(self, probe_count=0):
             super().__init__("gz_checks_observer")
             self.t = None
             self.pose = None
@@ -61,9 +61,11 @@ def run_checks(output):
             self.create_subscription(
                 PoseArray, "/ground_truth", self.ground_truth, qos_profile_sensor_data
             )
-            self.create_subscription(
-                PoseArray, "/checks/probes", self.probe, qos_profile_sensor_data
-            )
+            # PosePublisher ignores <topic>; each probe publishes /model/probe_<i>/pose.
+            for i in range(probe_count):
+                self.create_subscription(
+                    PoseArray, f"/model/probe_{i}/pose", self.probe, qos_profile_sensor_data
+                )
             self.create_subscription(String, "/mission/state", self.state, 10)
             self.vel = self.create_publisher(Twist, "/cmd_vel", 10)
             self.mission = self.create_publisher(String, "/mission/command", 10)
@@ -156,7 +158,6 @@ def run_checks(output):
                     publish_link_pose="false",
                     use_pose_vector_msg="true",
                     update_frequency="20",
-                    topic="/checks/probes",
                 ).items():
                     ET.SubElement(plugin, key).text = value
         target = folder / "world.sdf"
@@ -166,7 +167,7 @@ def run_checks(output):
     def execute(world, sc, label, callback, body=False, probes=None, follower=False):
         processes = []
         streams = []
-        observer = Observer()
+        observer = Observer(len(probes or []))
         try:
             with tempfile.TemporaryDirectory(prefix="thesis-gz-check-") as tmp:
                 runtime = world_file(world, sc, Path(tmp), body, probes)
@@ -189,7 +190,10 @@ def run_checks(output):
                         "run",
                         "ros_gz_bridge",
                         "parameter_bridge",
-                        "/checks/probes@geometry_msgs/msg/PoseArray[gz.msgs.Pose_V",
+                        *[
+                            f"/model/probe_{i}/pose@geometry_msgs/msg/PoseArray[gz.msgs.Pose_V"
+                            for i in range(len(probes or []))
+                        ],
                     ],
                 ]
                 if follower:
