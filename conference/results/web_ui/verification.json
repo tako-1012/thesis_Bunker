@@ -1,0 +1,35 @@
+{
+  "base": "47e55f6cead1fc71d5bf6e6e288c35d27e659a34",
+  "branch": "codex/web-ui",
+  "existing_tracked_conference_files": 320,
+  "unchanged_sha256": true,
+  "python": "3.12.14",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.52.1",
+    "httpx": "0.28.1",
+    "starlette": "1.6.0",
+    "pydantic": "2.13.4",
+    "playwright": "1.62.0"
+  },
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "test_modules": [
+    "test_beach_terrain",
+    "test_collision",
+    "test_dstar",
+    "test_mission",
+    "test_natural_terrain",
+    "test_online",
+    "test_planners",
+    "test_real_beach",
+    "test_risk_prior",
+    "test_tour"
+  ],
+  "safari_verified": false,
+  "webkit_install": "distribution hosts returned HTTP 403 Domain forbidden",
+  "leaflet": "1.9.4",
+  "seed": 100,
+  "side_m": 200
+}

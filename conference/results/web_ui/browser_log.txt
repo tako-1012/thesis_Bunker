@@ -1,0 +1,17 @@
+desktop 1440px: initial map, 17 choices and no horizontal overflow passed
+desktop: map click, numbered marker, drag and popup deletion passed
+desktop: base drag/direct input and pasted five-point coordinates passed
+desktop: JSON browser download, clear and file import round-trip passed
+desktop: live terrain plan, responsive API while busy and results table passed
+desktop: sequential comparison, two overlaid routes and side-by-side metrics passed
+desktop: playback observed 1.074393m in 0.803400s, consistent with 1.388m/s
+tablet 834x1112: touch addition, JSON import, real comparison/playback, >=44px buttons and no horizontal overflow passed (Chromium touch emulation)
+tablet 1112x834: landscape reflow and fit map passed (Chromium touch emulation)
+real validation map: image/selection, reset points and Shizuoka attribution passed
+browser console: no page errors; runtime network: no external asset requests
+method points length_xy_m climb_m mean_cost energy_kj matrix_s solve_s lethal_cells
+terrain 5 420.58536002380254 7.645805434245405 0.14820350457915832 104.08450628774592 8.274970651007607 0.00024937099078670144 0
+terrain 5 420.58536002380254 7.645805434245405 0.14820350457915832 104.08450628774592 8.279307296994375 0.0002115909883286804 0
+euclid 5 418.9902256815595 7.677065554892854 0.14972338029314744 103.77841952758705 8.13907878799364 0.0002292989956913516 0
+terrain 5 420.58536002380254 7.645805434245405 0.14820350457915832 104.08450628774592 8.65072353099822 0.00020631200459320098 0
+euclid 5 418.9902256815595 7.677065554892854 0.14972338029314744 103.77841952758705 8.372395162004977 0.00019969200366176665 0
