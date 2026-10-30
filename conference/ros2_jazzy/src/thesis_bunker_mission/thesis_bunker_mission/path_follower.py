@@ -11,6 +11,7 @@ from std_msgs.msg import String, Empty
 from tapp.follower import MissionFollower
 from tapp.run_log import RunLog
 from .transport import pose3d, rpy
+from .online_runtime import replace_running_path, record_plan_history
 
 
 class PathFollower(Node):
@@ -19,6 +20,10 @@ class PathFollower(Node):
         self.declare_parameter("map_id", "file/flat_test_100m.npz")
         self.declare_parameter("run_root", "")
         self.declare_parameter("stall_timeout_s", 10.0)
+        self.declare_parameter("online", False)
+        self.online = self.get_parameter("online").value
+        self.current_mission = None
+        self.n_replans = 0
         self.map_id = self.get_parameter("map_id").value
         self.pose = None
         self.imu = None
@@ -34,7 +39,12 @@ class PathFollower(Node):
             PoseArray, "/ground_truth", self.on_pose, qos_profile_sensor_data
         )
         self.create_subscription(Imu, "/imu", self.on_imu, qos_profile_sensor_data)
-        self.create_subscription(String, "/mission/command", self.on_mission, 10)
+        self.create_subscription(
+            String,
+            "/mission/online_command" if self.online else "/mission/command",
+            self.on_mission,
+            10,
+        )
         self.create_subscription(Empty, "/mission/stop", lambda _: self.stop(), 10)
         self.create_timer(0.05, self.tick)
 
@@ -52,6 +62,17 @@ class PathFollower(Node):
             if mission["map_id"] != self.map_id:
                 self.publish_state("map_mismatch")
                 return
+            if self.online and mission.get("online_error"):
+                if self.log is not None and mission.get("id") == self.mission_id:
+                    record_plan_history(self.log, mission)
+                if int(mission.get("id", 0)) != self.mission_id:
+                    self.current_mission = None
+                self.n_replans = sum(
+                    e["reason"] != "start_leg" for e in mission.get("plan_history", [])
+                )
+                self.mission_id = int(mission.get("id", 0))
+                self.stop("no_path")
+                return
             settings = dict(
                 lookahead_m=mission.get("lookahead_m", 1.0),
                 v_max=1.0,
@@ -59,16 +80,37 @@ class PathFollower(Node):
                 goal_tol_m=0.3,
                 stall_timeout_s=float(self.get_parameter("stall_timeout_s").value),
             )
+            if (
+                self.online
+                and mission.get("replace_path")
+                and self.log is not None
+                and int(mission.get("id", 0)) == self.mission_id
+            ):
+                self.follower = replace_running_path(
+                    self.log,
+                    mission,
+                    settings,
+                    self.get_clock().now().nanoseconds / 1e9,
+                    previous=self.follower,
+                )
+                self.current_mission = mission
+                self.n_replans = mission["n_replans"]
+                self.last_status = "running"
+                return
             follower = MissionFollower(mission["path"], **settings)
             self.stop("replaced")
             self.follower = follower
             self.mission_id = int(mission.get("id", 0))
             self.started = None
             self.last_status = "running"
+            self.current_mission = mission
+            self.n_replans = mission.get("n_replans", 0)
             self.log = RunLog(
                 dict(mission, controller=settings),
                 self.get_parameter("run_root").value or None,
             )
+            if self.online:
+                record_plan_history(self.log, mission)
             self.get_logger().info("run log: " + str(self.log.folder))
         except (ValueError, KeyError, TypeError) as exc:
             self.get_logger().error(str(exc))
@@ -76,15 +118,18 @@ class PathFollower(Node):
 
     def publish_state(self, status, t=0.0):
         message = String()
-        message.data = json.dumps(
-            dict(
-                map_id=self.map_id,
-                mission_id=self.mission_id,
-                status=status,
-                pose=self.pose,
-                sim_time=t,
-            )
+        payload = dict(
+            map_id=self.map_id,
+            mission_id=self.mission_id,
+            status=status,
+            pose=self.pose,
+            sim_time=t,
         )
+        if self.online and self.current_mission:
+            payload.update(
+                current_path=self.current_mission["path"], n_replans=self.n_replans
+            )
+        message.data = json.dumps(payload)
         self.state.publish(message)
 
     def tick(self):
@@ -111,6 +156,15 @@ class PathFollower(Node):
         self.cmd.publish(command)
         self.log.write(self.follower.log_row(now, self.pose, self.imu, v, w))
         status = self.follower.status
+        if (
+            done
+            and status == "completed"
+            and self.online
+            and not self.current_mission.get("final_leg", True)
+        ):
+            # Keep the same run/CSV open while the next leg is planned.
+            status = "waiting_for_plan"
+            done = False
         self.last_status = status
         if done:
             self.log.close(status)

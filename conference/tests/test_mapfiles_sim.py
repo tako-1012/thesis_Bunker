@@ -72,7 +72,22 @@ def test_maps():
     legacy_files = [p for p in files if not p.name.startswith("real_las_")]
     # task 013 appends the 12 point-cloud beaches (real_las_*); the task 011 maps must stay exactly the same
     assert len(legacy_files) == 23
-    assert len(files) - len(legacy_files) == 12
+    old_files = {"flat_test_100m.npz"}
+    old_files |= {
+        f"{kind}_{size}m_100.npz"
+        for kind in ("beach_gentle", "beach_steep", "beach_scarp", "rolling", "hills")
+        for size in (100, 200)
+    }
+    old_files |= {
+        f'real_{row["name"]}_200m_0.npz' for row in list_patches("validation")
+    }
+    old_files |= {
+        f'real_las_{row["name"]}_200m_0.npz'
+        for row in list_patches("validation", dataset="shizuoka_beach_las")
+    }
+    added_files = {"real_las_08OB87_-0206_200m_0_debris.npz"}
+    assert len(old_files) == 35 and len(added_files) == 1
+    assert {p.name for p in files} == old_files | added_files
     for path in files:
         sc = load_map_file(path)
         assert np.isfinite(sc["tmap"].cost).all() and not sc["tmap"].lethal[sc["start"]]
@@ -271,6 +286,7 @@ def test_api():
     with TestClient(app) as client:
         rows = client.get("/api/maps").json()
         assert len([r for r in rows if not r["id"].startswith("file/real_las_")]) == 40
+        assert len(rows) == 17 + len(list((ROOT / "maps").glob("*.npz")))
         map_id = "file/flat_test_100m.npz"
         assert any(r["id"] == map_id for r in rows)
         info = client.get("/api/maps/" + map_id)

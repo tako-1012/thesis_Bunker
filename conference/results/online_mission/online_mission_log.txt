@@ -1,0 +1,40 @@
+
+Task 014: J vs full-truth oracle, same truth/waypoints; bad tail=p90; metres/grid=0.5
+     prior  radius_m   mode  runs  completed  failed  contact_audited  touching  debris_touching  dJ_median  dJ_p90  dJ_max  replans_median  replans_max  plan_calls  plan_s_median  plan_s_p95  plan_s_max  calls_over_1s
+    oracle         5 online    48         48       0               48         0                0          0       0       0              38           60        2130       0.060777    0.408004     1.19211              4
+    oracle        10 online    48         48       0               48         0                0          0       0       0              38           60        2129      0.0603297    0.397455     1.28013              4
+    oracle        15 online    48         48       0               48         0                0          0       0       0              38           60        2129      0.0620595    0.394937     1.30781              8
+coarse c10         5 online    48         46       2               48         0                0    6.51596 51.8432 78.3836           217.5          457       11142       0.050116    0.300825     1.18225             13
+coarse c10        10 online    48         45       3               48         0                0     4.2116 27.6546 58.1804           181.5          443        9347      0.0565181    0.374672     1.72113             28
+coarse c10        15 online    48         46       2               48         0                0    2.92738 19.8007 51.9435           156.5          356        8236      0.0657305    0.376629     1.48944             31
+     stale         5 online    48         46       2               48         0                0    1.95421 10.2739 30.3772             101          240        6010      0.0464642     0.28594     1.26618              5
+     stale         5  fixed    48         48       0               48        46               45    3.82976 10.8952 14.5958               0            0         288      0.0943159    0.513914     1.09228              2
+     stale        10 online    48         46       2               48         0                0   0.945069 6.60292 22.8123            94.5          224        5428      0.0510014    0.292423     1.32438             17
+     stale        10  fixed    48         48       0               48        46               45    3.82976 10.8952 14.5958               0            0         288      0.0960628    0.506712     1.25659              2
+     stale        15 online    48         47       1               48         0                0   0.688622 5.29695 18.6182              85          301        5153      0.0573626    0.305459     1.76405             19
+     stale        15  fixed    48         48       0               48        46               45    3.82976 10.8952 14.5958               0            0         288      0.0942355     0.48541     1.26557              2
+
+Incomplete tours and reasons
+     prior  radius_m   mode   reason  runs
+coarse c10         5 online too_long     2
+coarse c10        10 online too_long     3
+coarse c10        15 online too_long     2
+     stale         5 online too_long     2
+     stale        10 online too_long     2
+     stale        15 online too_long     1
+
+Stale map: fixed prior-only paths versus online replanning; contacts include failed runs
+prior  radius_m   mode  runs  completed  failed  contact_audited  touching  debris_touching  dJ_median  dJ_p90  dJ_max  replans_median  replans_max  plan_calls  plan_s_median  plan_s_p95  plan_s_max  calls_over_1s
+stale         5 online    48         46       2               48         0                0    1.95421 10.2739 30.3772             101          240        6010      0.0464642     0.28594     1.26618              5
+stale         5  fixed    48         48       0               48        46               45    3.82976 10.8952 14.5958               0            0         288      0.0943159    0.513914     1.09228              2
+stale        10 online    48         46       2               48         0                0   0.945069 6.60292 22.8123            94.5          224        5428      0.0510014    0.292423     1.32438             17
+stale        10  fixed    48         48       0               48        46               45    3.82976 10.8952 14.5958               0            0         288      0.0960628    0.506712     1.25659              2
+stale        15 online    48         47       1               48         0                0   0.688622 5.29695 18.6182              85          301        5153      0.0573626    0.305459     1.76405             19
+stale        15  fixed    48         48       0               48        46               45    3.82976 10.8952 14.5958               0            0         288      0.0942355     0.48541     1.26557              2
+
+Measured wall times [s]
+ compute_wall_s  figures_wall_s  total_wall_s  workers
+        1848.99         4.45801        1853.8        5
+Sensing is perfect radius visibility of the fixed truth map, without LiDAR, occlusion or sensor error. Movement follows the polyline exactly; asynchronous latency, tracking and physics are not modeled here.
+Tour order is fixed on each prior before departure. Stale uses debris truth waypoints; its denominator is a separately executed full-truth oracle on those same waypoints. Oracle uses hard truth obstacles; coarse/stale use the unchanged soft-prior policy.
+Planning times cover A* search and exact cost-aware smoothing, excluding map assembly, sensing and tour ordering. At 1m/s, planning_s seconds corresponds to planning_s metres travelled; these CPU-load-dependent measurements alone do not prove real-time safety.

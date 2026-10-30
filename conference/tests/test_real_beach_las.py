@@ -159,7 +159,7 @@ def test_mapfiles():
     from webui.server import app
 
     folder = Path(__file__).resolve().parent.parent / "maps"
-    files = sorted(folder.glob("real_las_*.npz"))
+    files = sorted(folder.glob("real_las_*_200m_0.npz"))
     rows = list_patches("validation", dataset=DATASET)
     assert len(files) == len(rows) == 12
     assert {p.name for p in files} == {f'real_las_{r["name"]}_200m_0.npz' for r in rows}

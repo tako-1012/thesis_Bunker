@@ -1,0 +1,2 @@
+browser: current green path replacement, continuous purple trail, replanning count and desktop/tablet layout passed
+telemetry_source: labelled browser fixture only; not Gazebo measurements

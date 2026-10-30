@@ -44,6 +44,8 @@ def launch_nodes(context):
     world_key = {
         "flat_test_100m": "flat_test",
         "real_08OB87_-0206_200m_0": "real_08OB87_-0206",
+        "real_las_08OB87_-0206_200m_0": "real_las_08OB87_-0206",
+        "real_las_08OB87_-0206_200m_0_debris": "real_las_08OB87_-0206_debris",
     }.get(stem, stem)
     world = root / "gazebo_worlds" / world_key / "world.sdf"
     if not world.is_file():
@@ -78,6 +80,8 @@ def launch_nodes(context):
     )
     gz = ExecuteProcess(cmd=["gz", "sim", "-r", str(temporary_world)], output="screen")
     common = {"use_sim_time": True, "map_id": map_id}
+    online = LaunchConfiguration("online").perform(context).lower() == "true"
+    follower_parameters = [common, {"online": True}] if online else [common]
     actions = [
         env,
         gz,
@@ -90,7 +94,7 @@ def launch_nodes(context):
         Node(
             package="thesis_bunker_mission",
             executable="path_follower",
-            parameters=[common],
+            parameters=follower_parameters,
             output="screen",
         ),
         RegisterEventHandler(
@@ -100,6 +104,31 @@ def launch_nodes(context):
             )
         ),
     ]
+    if online:
+        prior_map = LaunchConfiguration("prior_map").perform(context)
+        if (
+            prior_map
+            and not prior_map.startswith("coarse:")
+            and not Path(prior_map).is_absolute()
+        ):
+            prior_map = str(root / "maps" / prior_map)
+        actions.append(
+            Node(
+                package="thesis_bunker_mission",
+                executable="online_planner",
+                parameters=[
+                    {
+                        "use_sim_time": True,
+                        "truth_map": str(map_path),
+                        "prior_map": prior_map,
+                        "sense_radius_m": float(
+                            LaunchConfiguration("sense_radius_m").perform(context)
+                        ),
+                    }
+                ],
+                output="screen",
+            )
+        )
     webui = LaunchConfiguration("webui").perform(context)
     if webui:
         actions.append(
@@ -120,6 +149,9 @@ def generate_launch_description():
             DeclareLaunchArgument("lab_mesh_dir", default_value=""),
             DeclareLaunchArgument("webui", default_value=""),
             DeclareLaunchArgument("conference_dir", default_value=default_conference()),
+            DeclareLaunchArgument("online", default_value="false"),
+            DeclareLaunchArgument("prior_map", default_value=""),
+            DeclareLaunchArgument("sense_radius_m", default_value="10.0"),
             OpaqueFunction(function=launch_nodes),
         ]
     )
