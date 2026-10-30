@@ -1,0 +1,16 @@
+{
+  "base_commit": "3bfd55b33d63166183f6cc4e399f53e0a6c33431",
+  "tracked_conference_files_checked": 534,
+  "changed_existing_files": [
+    "conference/data_prep/export_maps.py",
+    "conference/experiments/real_beach.py",
+    "conference/maps/README_ja.md",
+    "conference/tapp/real_beach.py"
+  ],
+  "only_explicitly_allowed_existing_files_changed": true,
+  "all_other_tracked_conference_files_byte_identical": true,
+  "run_source_sha256_unchanged": true,
+  "map_count": 35,
+  "maps_total_bytes": 18312437,
+  "new_heightmap_bytes": 2623704
+}

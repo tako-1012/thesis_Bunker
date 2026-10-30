@@ -1,0 +1,19 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "fastapi": "0.141.1",
+  "httpx": "0.28.1",
+  "base_commit": "3bfd55b",
+  "branch": "codex/real-beach-las",
+  "cpu_max": "400000 100000",
+  "experiment_env": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "MPLCONFIGDIR": "/tmp/las-mpl",
+    "XDG_CACHE_HOME": "/tmp/las-cache"
+  },
+  "protected_existing_files_modified": false
+}

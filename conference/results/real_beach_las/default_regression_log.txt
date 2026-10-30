@@ -1,0 +1,1 @@
+Original Git source vs new default: bit-identical arrays and generation metadata for 12 scenarios
