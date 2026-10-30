@@ -1,0 +1,2 @@
+map pixels side_m max_error_m quantization_bound_m obstacle_boxes
+real_las_08OB87_-0206_200m_0_debris.npz 2049 200.0 0.07629140363858733 6.23610787859658e-05 265

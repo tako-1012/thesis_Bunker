@@ -1,0 +1,21 @@
+{
+  "base_commit": "e7ac5e4111d157a96b77cbe1da77b4e3aecd2d16",
+  "tracked_conference_files_checked": 639,
+  "changed_existing_files": [
+    "conference/data_prep/export_maps.py",
+    "conference/maps/README_ja.md",
+    "conference/ros2_jazzy/README_ja.md",
+    "conference/ros2_jazzy/src/thesis_bunker_gz/launch/sim.launch.py",
+    "conference/ros2_jazzy/src/thesis_bunker_mission/setup.py",
+    "conference/ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/path_follower.py",
+    "conference/tests/test_mapfiles_sim.py",
+    "conference/webui/README_ja.md",
+    "conference/webui/robot_api.py",
+    "conference/webui/static/app.js"
+  ],
+  "only_authorized_existing_files_changed": true,
+  "unchanged_existing_files": 629,
+  "old_maps_byte_identical": 35,
+  "all_old_data_results_worlds_byte_identical": true,
+  "active_experiment_sources_unchanged": true
+}

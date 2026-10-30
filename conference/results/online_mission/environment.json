@@ -1,0 +1,19 @@
+{
+  "base": "e7ac5e4",
+  "branch": "codex/online-replanning-ros2",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "pandas": "2.2.3",
+  "cpu_max": "400000 100000",
+  "experiment_env": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "MPLCONFIGDIR": "/tmp/online-mission-mpl",
+    "XDG_CACHE_HOME": "/tmp/online-mission-cache"
+  },
+  "gazebo_status": "not_executed",
+  "gazebo_blockers": [
+    "desktop-full image layer failed: no space left on device",
+    "ROS2 packages HTTP and HTTPS both proxy 403 Forbidden; ros-jazzy-ros-gz unavailable"
+  ]
+}

@@ -80,3 +80,21 @@ LAS版の元データの作り方と注意点は `conference/data/shizuoka_beach
   https://www.geospatial.jp/ckan/dataset/shizuoka-2025-pointcloud-alb
 - ライセンス：CC BY 4.0 / ODbL。**このフォルダのデータは、上のデータを加工して作成したものです。**
 - 元データの座標：日本測地系2024・平面直角座標系第8系、高さは東京湾平均海面（T.P.）。
+# 指示書014：古い地図と漂着物ありの地形
+
+`real_las_08OB87_-0206_200m_0_debris.npz` を追加しました。
+`build_real("08OB87_-0206", 200, 0, debris=True, dataset="shizuoka_beach_las")` の地形です。
+事前地図には既存の `real_las_08OB87_-0206_200m_0.npz` を使います。既存35枚は上書きしません。
+漂着物を加えた後の標高面を保存し、元の水域・データなしマスクを別に保持します。
+地形コスト、通行不可マスク、膨張前の漂着物マスクを元の生成結果と完全一致で検証します。
+
+```bash
+cd conference
+python3 data_prep/export_maps.py
+python3 data_prep/export_gazebo.py maps/real_las_08OB87_-0206_200m_0_debris.npz gazebo_worlds/real_las_08OB87_-0206_debris
+python3 data_prep/compress_heightmap_png.py gazebo_worlds/real_las_08OB87_-0206_debris/heightmap.png
+```
+
+出典：静岡県「VIRTUAL SHIZUOKA 静岡県 中西部沿岸 点群データ」ALB 地面の点群（Ground）。
+https://www.geospatial.jp/ckan/dataset/shizuoka-2025-pointcloud-alb 。CC BY 4.0 / ODbL。この地図は、上のデータを加工して作成したものです。
+漂着物の位置・形状は固定シードで加えた人工の仮定で、測量時の漂着物を測定したものではありません。
