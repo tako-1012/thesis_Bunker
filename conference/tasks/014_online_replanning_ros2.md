@@ -1,6 +1,11 @@
 # 指示書 014：走りながら地図を更新して計画し直す部分を、ROS2・Gazebo に入れる
 
-> **状態：未着手**。
+> **状態：完了**（Codex が実装・Python の実験。報告は `conference/results/online_mission/REPORT_ja.md`）。
+> Claude が `tests/test_real_beach_las.py` の地図の対象を `real_las_*_200m_0.npz` に絞り、Gazebo での確認を Docker で実行した
+> （`conference/results/online_mission/gazebo_claude/README_ja.md`）。
+> `stale`（地図が古く漂着物が来た）では、計画し直さないと 48 走行中 46 で通れない場所に触れ（漂着物 45）、計画し直すと 0。
+> 計画し直す場合も 48 走行中 1〜2 は、砂丘の入り組んだ所で遠回りしすぎて打ち切り（直線の 6 倍）。Gazebo では、計画し直さないと
+> 漂着物で立ち往生、し直すと完走した。1 回の計画は中央値 0.06 秒、最大 1.8 秒。
 
 最初に、リポジトリ直下の `AGENTS.md` を読むこと。土台にするブランチは `realtime-map`（最新を取得すること）。
 報告・PR の説明・コミットメッセージは日本語で書くこと。
