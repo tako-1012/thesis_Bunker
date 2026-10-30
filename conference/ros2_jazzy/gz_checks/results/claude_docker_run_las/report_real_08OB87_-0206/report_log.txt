@@ -1,0 +1,7 @@
+data_source robot_recording
+source completed elapsed_s deviation_mean_m deviation_max_m lethal_cells
+recorded True 348.2 0.026981114685767197 0.5856524042773258 0
+kinematic True 346.65000000000003 0.015252123386116204 0.5815870108151945 0
+attitude actual_p95_deg map_p95_deg
+roll 4.760055633621264 4.584739327007045
+pitch 6.2016760689930654 6.317354127324588
