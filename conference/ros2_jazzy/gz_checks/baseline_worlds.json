@@ -1,0 +1,24 @@
+{
+  "real_08OB87_-0206": {
+    "png_sha256": "108b5f25d7601d56627e6c2e793b9a20aaeecf2247d5c14e0c8286534ab2b40b",
+    "heightmap_pos": [
+      99.75,
+      99.75,
+      -1.2999999523162842
+    ],
+    "obstacles": []
+  },
+  "flat_test": {
+    "png_sha256": "03166ac1d06b01905a6f66391cb422384b2869ab8732e863f5adc71f0c3776e7",
+    "heightmap_pos": [
+      49.75,
+      49.75,
+      0.0
+    ],
+    "obstacles": [
+      "<model name=\"obstacle_1\">\n      <static>true</static>\n      <pose>36.0 42.25 0.2 0 0 0</pose>\n      <link name=\"box_link\">\n        <collision name=\"box_collision\">\n          <geometry>\n            <box>\n              <size>7.5 10.0 0.6</size>\n            </box>\n          </geometry>\n        </collision>\n        <visual name=\"box_visual\">\n          <geometry>\n            <box>\n              <size>7.5 10.0 0.6</size>\n            </box>\n          </geometry>\n        </visual>\n      </link>\n    </model>",
+      "<model name=\"obstacle_2\">\n      <static>true</static>\n      <pose>52.25 63.5 0.2 0 0 0</pose>\n      <link name=\"box_link\">\n        <collision name=\"box_collision\">\n          <geometry>\n            <box>\n              <size>10.0 7.5 0.6</size>\n            </box>\n          </geometry>\n        </collision>\n        <visual name=\"box_visual\">\n          <geometry>\n            <box>\n              <size>10.0 7.5 0.6</size>\n            </box>\n          </geometry>\n        </visual>\n      </link>\n    </model>",
+      "<model name=\"obstacle_3\">\n      <static>true</static>\n      <pose>68.5 34.75 0.2 0 0 0</pose>\n      <link name=\"box_link\">\n        <collision name=\"box_collision\">\n          <geometry>\n            <box>\n              <size>7.5 10.0 0.6</size>\n            </box>\n          </geometry>\n        </collision>\n        <visual name=\"box_visual\">\n          <geometry>\n            <box>\n              <size>7.5 10.0 0.6</size>\n            </box>\n          </geometry>\n        </visual>\n      </link>\n    </model>"
+    ]
+  }
+}

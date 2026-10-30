@@ -15,6 +15,11 @@ const state = {
   robot: null,
   simulation: null,
   simulatedRoute: null,
+  liveRobot: null,
+  liveTrail: null,
+  livePoints: [],
+  liveMission: null,
+  sending: false,
 };
 const map = L.map("map", {
   crs: L.CRS.Simple,
@@ -82,6 +87,10 @@ function updateButtons() {
     state.busy || !state.results.some((r) => r.path.length > 1);
   $("simulate").disabled =
     state.busy || !state.results.some((r) => r.path.length > 1);
+  $("send-robot").disabled =
+    state.busy ||
+    state.sending ||
+    !state.results.some((r) => r.path.length > 1);
   $("point-count").textContent = `${state.points.length} / 12`;
   $("map-tip").hidden = state.points.length > 0 || state.busy;
 }
@@ -185,6 +194,7 @@ function edited() {
 }
 
 async function selectMap(id, imported = null) {
+  clearLiveRobot();
   busy(true);
   clearResults();
   status("地図を読み込んでいます…", "busy");
@@ -666,3 +676,104 @@ async function init() {
 }
 new ResizeObserver(() => map.invalidateSize()).observe($("map"));
 init();
+
+function clearLiveRobot() {
+  if (state.liveRobot) map.removeLayer(state.liveRobot);
+  if (state.liveTrail) map.removeLayer(state.liveTrail);
+  state.liveRobot = null;
+  state.liveTrail = null;
+  state.livePoints = [];
+  state.liveMission = null;
+}
+
+$("send-robot").addEventListener("click", async () => {
+  const result =
+    state.results.find((r) => r.method === "terrain" && r.path.length > 1) ||
+    state.results.find((r) => r.path.length > 1);
+  if (!result || state.sending || state.busy) return;
+  state.sending = true;
+  updateButtons();
+  try {
+    const mission = await api("/api/robot/mission", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        map_id: state.info.id,
+        path: result.path,
+        points: state.points.filter((_, i) => result.order.includes(i + 1)),
+        lookahead_m: Number($("lookahead").value),
+      }),
+    });
+    status(
+      `送信番号 ${mission.id}：ロボットが経路を取りに来るのを待っています。`,
+    );
+  } catch (error) {
+    status(error.message, "error");
+  } finally {
+    state.sending = false;
+    updateButtons();
+  }
+});
+
+async function pollRobot() {
+  try {
+    const robot = await api("/api/robot/state");
+    if (!robot.connected) {
+      $("robot-status").textContent = "ロボットとつながっていません";
+    } else {
+      const labels = {
+        idle: "待機中",
+        running: "走行中",
+        completed: "完了",
+        stuck: "立ち往生",
+        map_mismatch: "地図が一致しません",
+        pose_timeout: "位置情報が届いていません",
+        stopped: "停止",
+        replaced: "経路を切替中",
+      };
+      $("robot-status").textContent =
+        `ロボット：${labels[robot.status] || robot.status} ／ 送信番号 ${robot.mission_id || 0}${robot.message ? " ／ " + robot.message : ""}`;
+      if (robot.map_id === state.info?.id && robot.pose) {
+        if (state.liveMission !== robot.mission_id) {
+          clearLiveRobot();
+          state.liveMission = robot.mission_id;
+        }
+        const point = [robot.pose[1], robot.pose[0]];
+        const previous = state.livePoints[state.livePoints.length - 1];
+        if (
+          !previous ||
+          Math.hypot(previous[0] - point[0], previous[1] - point[1]) > 0.001
+        )
+          state.livePoints.push(point);
+        if (state.livePoints.length > 20000) state.livePoints.shift();
+        const icon = L.divIcon({
+          className: "live-robot-shell",
+          html: `<div class="live-robot-icon" style="transform:rotate(${90 - (robot.pose[5] * 180) / Math.PI}deg)">▲</div>`,
+          iconSize: [36, 36],
+          iconAnchor: [18, 18],
+        });
+        if (!state.liveRobot)
+          state.liveRobot = L.marker(point, {
+            icon,
+            zIndexOffset: 1200,
+            title: "ロボットの実際の位置",
+          }).addTo(map);
+        else state.liveRobot.setLatLng(point).setIcon(icon);
+        if (!state.liveTrail)
+          state.liveTrail = L.polyline(state.livePoints, {
+            color: "#8552aa",
+            weight: 3,
+          }).addTo(map);
+        else state.liveTrail.setLatLngs(state.livePoints);
+      } else if (robot.map_id !== state.info?.id) {
+        clearLiveRobot();
+        $("robot-status").textContent += " ／ 別の地図で動作中";
+      }
+    }
+  } catch (_) {
+    $("robot-status").textContent = "ロボットとつながっていません";
+  } finally {
+    setTimeout(pollRobot, 300);
+  }
+}
+pollRobot();
