@@ -1,5 +1,8 @@
 # 指示書 011：地図ファイル、経路の追従（Pure Pursuit）の模型、Gazebo 用の地形の書き出し
 
+> **状態：完了**（Codex が実装。Claude が `tests/test_mission.py` の地図の数の確認を、指示書010の 17 枚がそのまま残っていることの確認に直した）。
+> 報告は `conference/webui/REPORT_mapfiles_sim_ja.md`。地図ファイル 23 枚、巡回の走行で通れない場所への接触は 0、Gazebo の高さ地図の誤差は最大 0.064m。
+
 最初に、リポジトリ直下の `AGENTS.md` を読むこと。土台にするブランチは `realtime-map`（最新を取得すること）。
 報告・PR の説明・コミットメッセージは日本語で書くこと。
 

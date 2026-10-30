@@ -44,7 +44,7 @@
               <option>地図を読み込み中…</option>
             </select>
             <div class="map-facts">
-              <span>200 × 200 m</span><span>解像度 0.5 m</span>
+              <span id="map-size">地図を選択</span><span>解像度 0.5 m</span>
             </div>
           </section>
           <section class="control-section">
@@ -185,15 +185,37 @@
                 </table>
               </div>
               <div id="rejections"></div>
+              <div class="simulation-controls">
+                <label for="lookahead"
+                  >先読みの距離
+                  <output id="lookahead-value">1.0 m</output></label
+                >
+                <input
+                  id="lookahead"
+                  type="range"
+                  min="0.5"
+                  max="3.0"
+                  step="0.1"
+                  value="1.0"
+                />
+                <button id="simulate" class="primary" disabled>
+                  走行をシミュレーション
+                </button>
+                <p class="hint">
+                  滑りや地形による減速を含まない運動学の模型です。橙の軌跡と接触数で、計画経路との違いを確認できます。
+                </p>
+                <div id="simulation-result" hidden></div>
+              </div>
               <p class="hint result-note">
-                再生は 1.388 m/s（約5
-                km/h）の画面内アニメーションです。実機には送信されません。
+                計画のみの再生は1.388
+                m/s。走行シミュレーション後は軌跡を計算時刻どおりに再生します。実機には送信されません。
               </p>
             </div>
           </section>
         </div>
       </div>
       <footer class="source">
+        <p id="file-attribution"></p>
         <strong>地図の見方</strong>
         陰影と傾斜を表示。25°以上の斜面と通行不可を赤、水を青、データなしを灰色で示します。座標の原点は地図の左下のマス中心です。<br /><strong
           >実測地形の出典</strong

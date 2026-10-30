@@ -13,6 +13,8 @@ from starlette.concurrency import run_in_threadpool
 
 from tapp.config import RESOLUTION
 from tapp.mission import list_maps, load_map, plan_mission, render_map_png
+from tapp.robot_sim import simulate, initial_pose
+import numpy as np
 
 STATIC = Path(__file__).resolve().parent / "static"
 app = FastAPI(title="砂浜の巡回計画")
@@ -25,6 +27,12 @@ class PlanRequest(BaseModel):
     start: tuple[float, float]
     points: list[tuple[float, float]] = Field(min_length=1, max_length=12)
     method: str = "terrain"
+
+
+class SimulationRequest(BaseModel):
+    map_id: str
+    path: list[tuple[float, float]] = Field(min_length=1, max_length=20000)
+    lookahead_m: float = Field(default=1.0, ge=0.5, le=3.0)
 
 
 def _map(map_id):
@@ -58,6 +66,8 @@ def map_info(map_id: str):
         side_m=sc["side_m"],
         resolution=RESOLUTION,
         shape=list(sc["tmap"].shape),
+        attribution=sc.get("attribution", ""),
+        source=sc.get("source", ""),
         start=[float(v) * RESOLUTION for v in sc["start"]],
         bounds=[
             [-RESOLUTION / 2, -RESOLUTION / 2],
@@ -81,6 +91,37 @@ async def plan(request: PlanRequest):
         try:
             sc = _map(request.map_id)
             return plan_mission(sc, request.start, request.points, request.method)
+        except ValueError as exc:
+            raise HTTPException(422, str(exc)) from exc
+        finally:
+            _PLANNING.release()
+
+    return await run_in_threadpool(compute)
+
+
+@app.post("/api/simulate")
+async def simulate_route(request: SimulationRequest):
+    if not _PLANNING.acquire(blocking=False):
+        raise HTTPException(
+            409, "別の計算を実行中です。完了後にもう一度実行してください"
+        )
+
+    def compute():
+        try:
+            sc = _map(request.map_id)
+            path = np.asarray(request.path, dtype=float)
+            if (
+                not np.isfinite(path).all()
+                or (path < 0).any()
+                or (path > (np.asarray(sc["tmap"].shape) - 1) * RESOLUTION).any()
+            ):
+                raise ValueError("経路は地図内の有限な座標で指定してください")
+            return simulate(
+                sc,
+                path,
+                initial_pose(path),
+                controller_kwargs=dict(lookahead_m=request.lookahead_m),
+            )
         except ValueError as exc:
             raise HTTPException(422, str(exc)) from exc
         finally:

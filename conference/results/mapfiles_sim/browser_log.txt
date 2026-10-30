@@ -1,0 +1,5 @@
+view completed elapsed_s deviation_mean_m deviation_max_m path_lethal_cells playback_error_m
+desktop True 248.15 0.006614475997696592 0.33848962758007467 0 0.017200000002979738
+ipad True 248.15 0.006614475997696592 0.33848962758007467 0 0.015399999991059945
+file map, five-point plan, lookahead range, simulation, orange trace, timed playback, desktop/tablet reflow passed
+no page errors or external asset requests; Chromium touch emulation, Safari not verified
