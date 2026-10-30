@@ -1,0 +1,2 @@
+data_source,map_id,status,completed,elapsed_s,deviation_mean_m,deviation_max_m,path_lethal_cells,out_of_bounds_samples,fallen_samples,roll_p95_actual_deg,pitch_p95_actual_deg,roll_p95_map_deg,pitch_p95_map_deg
+robot_recording,file/real_08OB87_-0206_200m_0.npz,completed,True,347.80400000000003,0.025835320590927285,0.4228203380257275,0,0,0,4.782994305280232,6.2483840907318395,4.5428797173277005,6.330399510949522

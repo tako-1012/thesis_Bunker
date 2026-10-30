@@ -1,7 +1,9 @@
 # 指示書 012：ROS2 Jazzy ＋ Gazebo（gz sim Harmonic）で BUNKER を走らせる（Web 画面 → ROS2 → Gazebo）
 
-> **状態：未着手**。Claude が、Docker の公式イメージ `osrf/ros:jazzy-desktop-full`（Ubuntu 24.04.4、ROS2 Jazzy、Gazebo Harmonic 8.11、ros_gz）で
-> 指示書011の world を開いて確かめた（下の「わかっていること」）。
+> **状態：完了**（Codex が実装。Gazebo での確認は Codex の環境では容量不足でできなかったため、Claude が Docker で実行した。
+> その前に、位置の出力名の誤り（`PosePublisher` は `<topic>` を無視する）を Claude が直した）。
+> 結果は `conference/ros2_jazzy/gz_checks/results/claude_docker_run/README_ja.md`。平地・本物の砂浜とも巡回を完走し、通れない場所への接触は 0。
+> 本物の砂浜の標高データが 0.1m 刻みの段々になっていることが見つかった（未対応）。
 
 最初に、リポジトリ直下の `AGENTS.md` を読むこと。土台にするブランチは `realtime-map`（最新を取得すること）。
 報告・PR の説明・コミットメッセージは日本語で書くこと。
