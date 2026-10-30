@@ -1,0 +1,7 @@
+data_source synthetic_robot_sim
+source completed elapsed_s deviation_mean_m deviation_max_m lethal_cells
+recorded True 34.2 0.02959598405434589 0.3173397734180379 0
+kinematic True 34.2 0.02959598405434589 0.3173397734180379 0
+attitude actual_p95_deg map_p95_deg
+roll 0.0 0.0
+pitch 0.0 0.0

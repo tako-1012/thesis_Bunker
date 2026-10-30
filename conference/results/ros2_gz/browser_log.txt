@@ -1,0 +1,2 @@
+live UI: real five-point planner, rejected point excluded from send, send/id, labelled mock telemetry, purple marker/trail, desktop/tablet layouts, stale disconnect passed
+telemetry_source: mock_robot display test; not a Gazebo physical run

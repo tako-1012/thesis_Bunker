@@ -1,0 +1,2 @@
+data_source,map_id,status,completed,elapsed_s,deviation_mean_m,deviation_max_m,path_lethal_cells,out_of_bounds_samples,fallen_samples,roll_p95_actual_deg,pitch_p95_actual_deg,roll_p95_map_deg,pitch_p95_map_deg
+robot_recording,file/flat_test_100m.npz,completed,True,249.41099999999997,0.012878284410197035,0.46493487220460344,0,0,0,8.046218261608068e-09,6.420342070166374e-10,0.0,0.0

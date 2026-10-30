@@ -1,0 +1,43 @@
+{
+  "map_id": "file/flat_test_100m.npz",
+  "path": [
+    [
+      10,
+      10
+    ],
+    [
+      20,
+      10
+    ],
+    [
+      20,
+      20
+    ],
+    [
+      10,
+      10
+    ]
+  ],
+  "points": [
+    [
+      20,
+      10
+    ],
+    [
+      20,
+      20
+    ],
+    [
+      10,
+      10
+    ]
+  ],
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3
+  },
+  "data_source": "synthetic_robot_sim",
+  "status": "completed"
+}
