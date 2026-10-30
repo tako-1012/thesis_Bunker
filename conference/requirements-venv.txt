@@ -1,7 +1,7 @@
 # Python libraries for the tests and the web UI (Ubuntu 24.04: use a venv, not apt).
 # Ubuntu 24.04's apt versions (NumPy 1.26, Pydantic 1) fail tests: the web UI needs Pydantic 2,
 # and tests.test_online compares exact path lengths that changed with the NumPy version.
-# Verified with Python 3.12 (Ubuntu) and Python 3.13 (cloud, newer versions) on 2026-10-30.
+# Verified on 2026-10-30: all 14 test modules pass with these pins on Ubuntu 24.04 (Python 3.12.3).
 numpy==2.3.5
 scipy==1.17.0
 matplotlib==3.10.8
