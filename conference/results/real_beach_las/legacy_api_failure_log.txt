@@ -1,0 +1,8 @@
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "/workspace/thesis_Bunker/conference/tests/test_mapfiles_sim.py", line 269, in test_api
+    assert len(rows) == 40
+           ^^^^^^^^^^^^^^^
+AssertionError

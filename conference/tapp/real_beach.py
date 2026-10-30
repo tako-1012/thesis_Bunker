@@ -14,15 +14,21 @@ from .planners import astar
 DATA = Path(__file__).resolve().parent.parent / "data" / "shizuoka_beach"
 
 
-def list_patches(split=None):
-    rows = json.loads((DATA / "index.json").read_text())
+def dataset_dir(dataset):
+    if dataset not in ("shizuoka_beach", "shizuoka_beach_las"):
+        raise ValueError(f"unknown dataset: {dataset}")
+    return DATA if dataset == "shizuoka_beach" else DATA.parent / dataset
+
+
+def list_patches(split=None, *, dataset="shizuoka_beach"):
+    rows = json.loads((dataset_dir(dataset) / "index.json").read_text())
     return [row for row in rows if split is None or row["split"] == split]
 
 
-def load_patch(name):
-    if name not in {row["name"] for row in list_patches()}:
+def load_patch(name, *, dataset="shizuoka_beach"):
+    if name not in {row["name"] for row in list_patches(dataset=dataset)}:
         raise ValueError(f"unknown patch: {name}")
-    with np.load(DATA / (name + ".npz"), allow_pickle=False) as data:
+    with np.load(dataset_dir(dataset) / (name + ".npz"), allow_pickle=False) as data:
         if data["elev"].shape != (400, 400) or float(data["res"]) != RESOLUTION:
             raise ValueError("unexpected patch grid")
         return data["elev"].copy()
@@ -114,16 +120,24 @@ def _debris(raw, filled, side_m, rng):
 
 
 def build_real(
-    name, side_m, seed, debris=False, weights=CostWeights(), robot=Robot(), max_tries=20
+    name,
+    side_m,
+    seed,
+    debris=False,
+    weights=CostWeights(),
+    robot=Robot(),
+    max_tries=20,
+    *,
+    dataset="shizuoka_beach",
 ):
     start = time.perf_counter()
-    rows = list_patches()
+    rows = list_patches(dataset=dataset)
     index = next((i for i, r in enumerate(rows) if r["name"] == name), None)
     if index is None:
         raise ValueError(f"unknown patch: {name}")
     if side_m not in (100, 200):
         raise ValueError("side_m must be 100 or 200")
-    original = load_patch(name)
+    original = load_patch(name, dataset=dataset)
     for attempt in range(max_tries):
         trial = np.random.SeedSequence(
             [seed, 4000, side_m, index], spawn_key=(attempt,)

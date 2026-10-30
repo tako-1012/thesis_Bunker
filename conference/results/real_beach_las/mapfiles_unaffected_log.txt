@@ -1,0 +1,17 @@
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+Unchanged test functions; write-only test output redirected to a temporary folder to preserve old results.
+$ test_controller
+straight completed True max_deviation_m 3.552713678800501e-15 elapsed_s 19.700000000000003
+right_angle completed True max_deviation_m 0.20226302369017546 elapsed_s 39.650000000000006
+closed completed True max_deviation_m 0.3173559828528229 elapsed_s 68.35000000000001
+controller: reverse-heading spin then advance, curvature-preserving saturation, timeout passed
+$ test_tours
+tour map=flat_test_100m.npz elapsed_s=248.15 deviation_mean_m=0.006614475997696592 deviation_max_m=0.33848962758007467 path_lethal_cells=0 out_of_bounds_samples=0 completed=True
+contact_cells_xy_m []
+tour map=beach_gentle_200m_100.npz elapsed_s=418.45000000000005 deviation_mean_m=0.01568040573287969 deviation_max_m=0.20112452978749665 path_lethal_cells=0 out_of_bounds_samples=0 completed=True
+contact_cells_xy_m []
+$ test_gazebo
+gazebo flat_test_100m.npz pixels 257 size_m 100.0 max_error_m 0.0 boxes 3
+gazebo real_08OB87_-0206_200m_0.npz pixels 2049 size_m 200.0 max_error_m 0.06374200885325632 boxes 0
+all unaffected mapfiles/simulation test functions passed

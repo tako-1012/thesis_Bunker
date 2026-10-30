@@ -1,0 +1,3 @@
+comparison: identity joins reject missing/duplicate cases; 16-bit PNG filters preserve standard-decoded height samples
+full experiment and comparison stdout are byte-identical to saved logs
+both D sign/denominator presentations retain original raw CSV identities and statistics
