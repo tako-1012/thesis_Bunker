@@ -304,3 +304,10 @@ iPad相当幅834px（Chromiumのタッチエミュレーション。実際の比
 - ライセンス：CC BY 4.0 / ODbL。**このフォルダのデータは、上のデータを加工して作成したものです**
   （論文や発表で使うときは、この出典を書くこと）。
 - 元データの座標：日本測地系2024・平面直角座標系第8系、高さは東京湾平均海面（T.P.）。
+
+## PR作成の制約
+
+`codex/web-ui` はoriginへpush済みです。日本語のPR本文に上記のテスト全文・実測表・2枚のスクリーンショットを用意しましたが、
+`gh pr create`（GraphQL）と `gh api --method POST repos/tako-1012/thesis_Bunker/pulls`（REST）の両方が `Forbidden` を返しました。
+そのためPRは未作成であり、「realtime-mapに向けたPRがある」という完了条件は未達です。
+[PR作成画面](https://github.com/tako-1012/thesis_Bunker/compare/realtime-map...codex/web-ui?expand=1) から差分を確認できます。
