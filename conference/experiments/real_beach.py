@@ -42,6 +42,7 @@ from experiments.multi_goal_tour import join_legs
 from experiments.analyze import paired_test, holm
 
 OUT = Path(__file__).resolve().parent.parent / "results" / "real_beach"
+DATASET = "shizuoka_beach"
 CACHE = None
 KEY = ["kind", "side_m", "seed", "debris"]
 METHODS = ["euclid", "terrain sym", "terrain dir"]
@@ -115,9 +116,11 @@ def run_a(job):
     source, name, seed = job
     t = time.perf_counter()
     if source == "real":
-        raw = load_patch(name)
+        raw = load_patch(name, dataset=DATASET)
         tm = TraversabilityMap(fill_nodata(raw), ~np.isfinite(raw) | (raw < 0))
-        split = next(r["split"] for r in list_patches() if r["name"] == name)
+        split = next(
+            r["split"] for r in list_patches(dataset=DATASET) if r["name"] == name
+        )
     else:
         sc = build_beach(name, 200, seed)
         tm = sc["tmap"]
@@ -137,7 +140,7 @@ def run_a(job):
 
 def scenario(job):
     name, size, debris = job
-    return build_real(name, size, 0, debris=debris)
+    return build_real(name, size, 0, debris=debris, dataset=DATASET)
 
 
 def base_row(job, sc=None):
@@ -463,8 +466,8 @@ def summary(runtime):
     d = pd.read_csv(OUT / "tours.csv")
     pairs = pd.read_csv(OUT / "pair_costs.csv")
     orientation = []
-    for patch in list_patches():
-        raw = load_patch(patch["name"])
+    for patch in list_patches(dataset=DATASET):
+        raw = load_patch(patch["name"], dataset=DATASET)
         counts = np.isfinite(raw).sum(axis=0)
         profile = np.divide(
             np.nansum(raw, axis=0), counts, out=np.full(400, np.nan), where=counts > 0
@@ -719,7 +722,9 @@ def summary(runtime):
         f'Total wall time [s]: {runtime["total_wall_s"]:.6f}; workers={runtime["workers"]}; resume={runtime["resume"]}'
     )
     print(
-        "Source: 静岡県「VIRTUAL SHIZUOKA 静岡県 中西部沿岸 点群データ」ALB グリッドデータ（0.5m）"
+        "Source: 静岡県「VIRTUAL SHIZUOKA 静岡県 中西部沿岸 点群データ」ALB 地面の点群（Ground）"
+        if DATASET == "shizuoka_beach_las"
+        else "Source: 静岡県「VIRTUAL SHIZUOKA 静岡県 中西部沿岸 点群データ」ALB グリッドデータ（0.5m）"
     )
     print("https://www.geospatial.jp/ckan/dataset/shizuoka-2025-pointcloud-alb")
     print(
@@ -815,18 +820,33 @@ def figures(c, d_results):
             )
 
 
+def configure_worker(dataset, cache):
+    global DATASET, CACHE
+    DATASET, CACHE = dataset, Path(cache)
+
+
 def main():
-    global CACHE
+    global CACHE, OUT, DATASET
     parser = argparse.ArgumentParser()
     parser.add_argument("--workers", type=int, default=min(5, os.cpu_count() or 1))
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--summary-only", action="store_true")
+    parser.add_argument(
+        "--dataset",
+        choices=["shizuoka_beach", "shizuoka_beach_las"],
+        default="shizuoka_beach",
+    )
     args = parser.parse_args()
+    DATASET = args.dataset
+    if DATASET == "shizuoka_beach_las":
+        OUT = OUT.parent / "real_beach_las"
     OUT.mkdir(parents=True, exist_ok=True)
     fingerprint = hashlib.sha256(
         Path(__file__).read_bytes()
         + (Path(__file__).parent.parent / "tapp" / "real_beach.py").read_bytes()
     ).hexdigest()[:16]
+    if DATASET != "shizuoka_beach":
+        fingerprint = hashlib.sha256((fingerprint + DATASET).encode()).hexdigest()[:16]
     CACHE = Path("/tmp/real-beach-cache") / fingerprint
     CACHE.mkdir(parents=True, exist_ok=True)
     if args.summary_only:
@@ -834,7 +854,7 @@ def main():
     else:
         start = time.perf_counter()
         phases = {}
-        rows = list_patches()
+        rows = list_patches(dataset=DATASET)
         names = [r["name"] for r in rows if r["split"] == "test"]
         jobs = [
             (name, size, debris)
@@ -842,7 +862,9 @@ def main():
             for size in (100, 200)
             for debris in (False, True)
         ]
-        with Pool(args.workers) as pool:
+        with Pool(
+            args.workers, initializer=configure_worker, initargs=(DATASET, str(CACHE))
+        ) as pool:
             a, phases["A"] = pool_phase(
                 pool,
                 "A",

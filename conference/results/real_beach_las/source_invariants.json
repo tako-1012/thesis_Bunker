@@ -1,0 +1,17 @@
+{
+  "conference/tapp/real_beach.py:fill_nodata": true,
+  "conference/tapp/real_beach.py:_debris": true,
+  "conference/experiments/real_beach.py:statistics": true,
+  "conference/experiments/real_beach.py:run_b": true,
+  "conference/experiments/real_beach.py:run_c": true,
+  "conference/experiments/real_beach.py:run_d": true,
+  "conference/experiments/real_beach.py:base_row": true,
+  "conference/experiments/real_beach.py:dispatch": true,
+  "conference/experiments/real_beach.py:pool_phase": true,
+  "conference/experiments/real_beach.py:offline_summary": true,
+  "conference/experiments/real_beach.py:online_summary": true,
+  "conference/experiments/real_beach.py:tour_summary": true,
+  "conference/experiments/real_beach.py:draw_paths": true,
+  "conference/experiments/real_beach.py:figures": true,
+  "active_source_sha256_unchanged": true
+}

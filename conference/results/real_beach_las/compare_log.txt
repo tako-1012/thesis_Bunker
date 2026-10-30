@@ -1,0 +1,202 @@
+Paired scenario identities; fixed parameters, no calibration. Old=0.1m source grid; new=LAS Ground.
+B original009_10: five outcomes x debris, unchanged family. B requested_12: six requested outcomes x debris, separate supplementary family.
+
+A: matched real-patch statistics; new minus old (all 60)
+            metric  n  old_median  new_median  paired_delta_median
+           slope50 60      4.3875     3.37456            -0.898305
+           slope90 60     10.1517     9.46497            -0.369965
+           slope99 60     24.0888     24.4173             0.351147
+        steep_land 60  0.00875393  0.00934883          0.000234165
+foreshore_gradient 60   0.0542857   0.0538368         -0.000486597
+      land_width_m 60       102.5       97.75                 -0.5
+             rough 60   0.0190807  0.00830043           -0.0107202
+          spectrum 60    -2.92709     -2.9264         -0.000889163
+       lethal_land 60   0.0166063   0.0192172           0.00103983
+   nodata_fraction 60    0.132631    0.130853           0.00211563
+    water_fraction 60      0.2444    0.240016          -0.00256562
+
+A: artificial medians outside the real p10..p90 range, before/after
+        kind             metric  old_outside  new_outside   change  synthetic_old  synthetic_new     old_p10   old_p90     new_p10   new_p90
+beach_gentle            slope90         True         True     both         39.953         39.953     7.25627   18.5342     6.90292   18.9575
+beach_gentle            slope99         True         True     both        42.1333        42.1333      12.842   36.2999     13.0184   37.8504
+beach_gentle         steep_land         True         True     both       0.138051       0.138051 0.000433524 0.0583909 0.000612472 0.0607766
+beach_gentle              rough        False         True new_only      0.0193392      0.0193392   0.0171683 0.0207502  0.00608757 0.0115208
+beach_gentle        lethal_land         True         True     both       0.153638       0.153638   0.0077981 0.0691932  0.00862912 0.0714204
+ beach_scarp            slope90         True         True     both        40.2853        40.2853     7.25627   18.5342     6.90292   18.9575
+ beach_scarp            slope99         True         True     both        42.7474        42.7474      12.842   36.2999     13.0184   37.8504
+ beach_scarp         steep_land         True         True     both       0.213943       0.213943 0.000433524 0.0583909 0.000612472 0.0607766
+ beach_scarp       land_width_m         True         True     both             16             16       71.95    148.55      66.625    147.65
+ beach_scarp              rough        False         True new_only      0.0191346      0.0191346   0.0171683 0.0207502  0.00608757 0.0115208
+ beach_scarp        lethal_land         True         True     both       0.229267       0.229267   0.0077981 0.0691932  0.00862912 0.0714204
+ beach_steep            slope90         True         True     both        40.0925        40.0925     7.25627   18.5342     6.90292   18.9575
+ beach_steep            slope99         True         True     both        42.2108        42.2108      12.842   36.2999     13.0184   37.8504
+ beach_steep         steep_land         True         True     both       0.161693       0.161693 0.000433524 0.0583909 0.000612472 0.0607766
+ beach_steep foreshore_gradient         True         True     both    0.000726161    0.000726161   0.0266336 0.0904585     0.03898 0.0755233
+ beach_steep       land_width_m         True         True     both             29             29       71.95    148.55      66.625    147.65
+ beach_steep              rough        False         True new_only      0.0202472      0.0202472   0.0171683 0.0207502  0.00608757 0.0115208
+ beach_steep        lethal_land         True         True     both        0.17253        0.17253   0.0077981 0.0691932  0.00862912 0.0714204
+
+A: unchanged artificial generator audit (maximum absolute old/new difference)
+            metric  max_abs_difference
+           slope50                   0
+           slope90                   0
+           slope99                   0
+        steep_land                   0
+foreshore_gradient                   0
+      land_width_m                   0
+             rough                   0
+          spectrum         6.66134e-15
+       lethal_land                   0
+
+B: nominal identity pairing audit; endpoints can change with terrain masks
+ debris  rows  same_seed_stream  same_crop  old_success  new_success
+  False   480               475        480          480          480
+   True   480               475        480          480          480
+
+B: original009_10; paired two-sided Wilcoxon, Holm within each dataset/family
+        family  debris          metric  n_old center    A_old  exact_old  delta_median_old       p_old     r_old  p_holm_old  significant_old direction_old  n_new    A_new  exact_new  delta_median_new       p_new     r_new  p_holm_new  significant_new direction_new  significance_changed  direction_changed
+original009_10   False           climb     96 median  1.72385   0.584851         -0.894315 2.85324e-17 -0.993557 2.28259e-16             True         lower     96   1.4402   0.959826         -0.286006 2.12358e-16 -0.965636  1.4865e-15             True         lower                 False              False
+original009_10   False energy_vs_A_pct     96 median        0   -2.03554          -2.03554 4.67536e-06  -0.53823 1.40261e-05             True         lower     96        0   -4.06554          -4.06554 3.50869e-10 -0.737543 2.10521e-09             True         lower                 False              False
+original009_10   False       length_xy     96 median  120.556    121.927           2.38802 7.18613e-08  0.633162 3.59306e-07             True        higher     96  120.556    120.845          -2.53101 0.000351682 -0.420103  0.00140673             True         lower                 False               True
+original009_10   False       mean_cost     96 median 0.164558  0.0717415        -0.0873069 1.78129e-17        -1 1.78129e-16             True         lower     96 0.114426   0.077346        -0.0280918  4.0231e-17 -0.988832 3.62079e-16             True         lower                 False              False
+original009_10   False       steep_len     96 median        0          0                 0  0.00390625        -1   0.0078125             True         lower     96        0          0                 0  0.00390625        -1   0.0117188             True         lower                 False              False
+original009_10    True           climb     96 median  2.45084   0.882012          -1.18527 3.66381e-17  -0.99012 2.56467e-16             True         lower     96  2.22844    1.25993          -0.55376 4.70068e-17 -0.986684 3.76055e-16             True         lower                 False              False
+original009_10    True energy_vs_A_pct     96 median        0   -2.49006          -2.49006 9.74215e-07 -0.575601 3.89686e-06             True         lower     96        0   -4.49297          -4.49297 1.22361e-09 -0.714347 6.11805e-09             True         lower                 False              False
+original009_10    True       length_xy     96 median  121.754    126.546           3.82323 1.04136e-10   0.75945 6.24817e-10             True        higher     96  120.746    121.498         -0.657586    0.301057 -0.121564    0.301057            False         lower                  True               True
+original009_10    True       mean_cost     96 median 0.182026  0.0888778        -0.0911477 1.78129e-17        -1 1.78129e-16             True         lower     96 0.144652  0.0887103        -0.0450661 1.78129e-17        -1 1.78129e-16             True         lower                 False              False
+original009_10    True       steep_len     96 median        0          0                 0  0.00390625        -1   0.0078125             True         lower     96        0          0                 0  0.00390625        -1   0.0117188             True         lower                 False              False
+
+B: requested_12; paired two-sided Wilcoxon, Holm within each dataset/family
+      family  debris            metric  n_old       center    A_old  exact_old  delta_median_old       p_old     r_old  p_holm_old  significant_old direction_old  n_new    A_new  exact_new  delta_median_new       p_new     r_new  p_holm_new  significant_new direction_new  significance_changed  direction_changed
+requested_12   False             climb     96       median  1.72385   0.584851         -0.894315 2.85324e-17 -0.993557 2.28259e-16             True         lower     96   1.4402   0.959826         -0.286006 2.12358e-16 -0.965636 1.59844e-15             True         lower                 False              False
+requested_12   False   energy_vs_A_pct     96       median        0   -2.03554          -2.03554 4.67536e-06  -0.53823 1.40261e-05             True         lower     96        0   -4.06554          -4.06554 3.50869e-10 -0.737543 2.10521e-09             True         lower                 False              False
+requested_12   False         length_xy     96       median  120.556    121.927           2.38802 7.18613e-08  0.633162 3.59306e-07             True        higher     96  120.556    120.845          -2.53101 0.000351682 -0.420103  0.00140673             True         lower                 False               True
+requested_12   False         mean_cost     96       median 0.164558  0.0717415        -0.0873069 1.78129e-17        -1 2.13755e-16             True         lower     96 0.114426   0.077346        -0.0280918  4.0231e-17 -0.988832  4.0231e-16             True         lower                 False              False
+requested_12   False          p95_roll     96       median  5.72724    3.22593          -3.09506  1.8383e-17  -0.99957 2.13755e-16             True         lower     96  5.57075    3.52955          -1.85643 1.99805e-16 -0.966495 1.59844e-15             True         lower                 False              False
+requested_12   False steep_exposed_pct     96 mean_percent    9.375          0                 0  0.00390625        -1   0.0078125             True         lower     96    9.375          0                 0  0.00390625        -1   0.0117188             True         lower                 False              False
+requested_12    True             climb     96       median  2.45084   0.882012          -1.18527 3.66381e-17  -0.99012 2.56467e-16             True         lower     96  2.22844    1.25993          -0.55376 4.70068e-17 -0.986684 4.23062e-16             True         lower                 False              False
+requested_12    True   energy_vs_A_pct     96       median        0   -2.49006          -2.49006 9.74215e-07 -0.575601 3.89686e-06             True         lower     96        0   -4.49297          -4.49297 1.22361e-09 -0.714347 6.11805e-09             True         lower                 False              False
+requested_12    True         length_xy     96       median  121.754    126.546           3.82323 1.04136e-10   0.75945 6.24817e-10             True        higher     96  120.746    121.498         -0.657586    0.301057 -0.121564    0.301057            False         lower                  True               True
+requested_12    True         mean_cost     96       median 0.182026  0.0888778        -0.0911477 1.78129e-17        -1 2.13755e-16             True         lower     96 0.144652  0.0887103        -0.0450661 1.78129e-17        -1 2.13755e-16             True         lower                 False              False
+requested_12    True          p95_roll     96       median  6.61923    3.50932          -3.49593 1.78129e-17        -1 2.13755e-16             True         lower     96   6.1046    3.74967          -2.33866 2.76527e-17 -0.993986  3.0418e-16             True         lower                 False              False
+requested_12    True steep_exposed_pct     96 mean_percent    9.375          0                 0  0.00390625        -1   0.0078125             True         lower     96    9.375          0                 0  0.00390625        -1   0.0117188             True         lower                 False              False
+
+B: changed significance or rank direction (non-significant direction is descriptive only)
+        family  debris    metric  n_old center   A_old  exact_old  delta_median_old       p_old    r_old  p_holm_old  significant_old direction_old  n_new   A_new  exact_new  delta_median_new       p_new     r_new  p_holm_new  significant_new direction_new  significance_changed  direction_changed
+original009_10   False length_xy     96 median 120.556    121.927           2.38802 7.18613e-08 0.633162 3.59306e-07             True        higher     96 120.556    120.845          -2.53101 0.000351682 -0.420103  0.00140673             True         lower                 False               True
+original009_10    True length_xy     96 median 121.754    126.546           3.82323 1.04136e-10  0.75945 6.24817e-10             True        higher     96 120.746    121.498         -0.657586    0.301057 -0.121564    0.301057            False         lower                  True               True
+  requested_12   False length_xy     96 median 120.556    121.927           2.38802 7.18613e-08 0.633162 3.59306e-07             True        higher     96 120.556    120.845          -2.53101 0.000351682 -0.420103  0.00140673             True         lower                 False               True
+  requested_12    True length_xy     96 median 121.754    126.546           3.82323 1.04136e-10  0.75945 6.24817e-10             True        higher     96 120.746    121.498         -0.657586    0.301057 -0.121564    0.301057            False         lower                  True               True
+
+B: reproduce stored task-009 tests from original raw CSV
+statistic  max_abs_difference
+        p         1.29247e-26
+        r         1.11022e-16
+   p_holm                   0
+
+C: dJ [%] paired on patch/size/seed/debris/variant; bad tail=p90
+ debris  side_m             variant  n  paired_success  old_success  new_success  old_median  old_p90  old_max  new_median  new_p90  new_max  paired_delta_median  old_touching  new_touching  old_contact_audited  new_contact_audited
+  False     100      coarse R10 c10 48              48           48           48     3.91996  15.4366  26.1867     2.33867  10.4655  23.3936             -2.60338             0             0                   48                   48
+  False     100       coarse R15 c5 48              48           48           48     2.04986  7.47123  25.5176     1.10097  2.79437  39.0617            -0.424609             0             0                   48                   48
+  False     100       coarse R5 c10 48              48           48           48     12.0509  25.1726  44.7699     3.20686  17.1685  33.1578             -7.66931             0             0                   48                   48
+  False     100       coarse R5 c20 48              48           48           48     16.4809  37.5094  75.4604     6.57569  27.8974  48.6312             -10.1208             0             0                   48                   48
+  False     100 online adaptive R15 48              48           48           48     7.02352  18.3052  27.1238     2.60966  10.6517  23.0402             -3.57996             0             0                   48                   48
+  False     100           oracle A* 48              48           48           48     30.8223  57.8185  110.071     13.0448  30.0299  56.3921             -15.3535             0             0                   48                   48
+  False     100        oracle TA*-S 48              48           48           48           0        0        0           0        0        0                    0             0             0                   48                   48
+  False     200      coarse R10 c10 48              48           48           48     8.78857  26.7285  127.847      5.5816  22.0292  112.149             -2.93514             0             0                   48                   48
+  False     200       coarse R15 c5 48              48           48           48     2.96248  10.6284   95.859     1.86753  7.98001  91.1908             -1.15528             0             0                   48                   48
+  False     200       coarse R5 c10 48              48           48           48     17.9615  35.9297  162.393     6.83863  23.9862  132.758             -9.29542             0             0                   48                   48
+  False     200       coarse R5 c20 48              48           48           48     22.9307  41.6149  204.054     10.8738  35.4153  143.099             -8.63556             0             0                   48                   48
+  False     200 online adaptive R15 48              48           48           48      21.306  39.9342  130.658     10.0409  27.1219  108.128             -8.65678             0             0                   48                   48
+  False     200           oracle A* 48              48           48           48     47.0926  68.9886  122.402     20.6732  50.8304  183.095             -22.6443            10            10                   48                   48
+  False     200        oracle TA*-S 48              48           48           48           0        0        0           0        0        0                    0             0             0                   48                   48
+   True     100      coarse R10 c10 48              48           48           48     5.30061  12.1468  28.0532     3.54132  9.59366  23.3052             -1.27309             0             0                   48                   48
+   True     100       coarse R15 c5 48              48           48           48     2.64441  6.28686   11.915     1.50883  5.41622  32.2488            -0.670589             0             0                   48                   48
+   True     100       coarse R5 c10 48              48           48           48     10.4476  24.2442  39.5975     6.47122  14.8776  32.0776             -4.58329             0             0                   48                   48
+   True     100       coarse R5 c20 48              48           48           48      14.577   32.343  64.7574     9.23335  25.2374   45.868             -6.71626             0             0                   48                   48
+   True     100 online adaptive R15 48              48           48           48     6.73134  13.6125  27.4618     4.46457  9.27661  12.5512             -2.80628             0             0                   48                   48
+   True     100           oracle A* 48              48           48           48     30.1613  51.6094  83.1875     18.2664  31.7125  62.7128             -11.0389             0             0                   48                   48
+   True     100        oracle TA*-S 48              48           48           48           0        0        0           0        0        0                    0             0             0                   48                   48
+   True     200      coarse R10 c10 48              48           48           48     7.11793  20.8115   123.86     6.02537    14.48   111.26            -0.754757             0             0                   48                   48
+   True     200       coarse R15 c5 48              48           48           48     3.15777  9.64132  93.9626     2.69906  8.81879  59.1419              -0.4337             0             0                   48                   48
+   True     200       coarse R5 c10 48              48           48           48      16.642   31.377  153.397     9.80982  22.4937  162.311             -5.30217             0             0                   48                   48
+   True     200       coarse R5 c20 48              48           48           48     20.4687  42.6129  195.458     13.4248  31.8586  138.201             -7.77829             0             0                   48                   48
+   True     200 online adaptive R15 48              48           48           48     19.4888  35.4696  127.317     12.8585  23.9835  100.021             -5.50591             0             0                   48                   48
+   True     200           oracle A* 48              48           48           48     42.2209  66.8666  116.125     26.7837  56.7788  171.187             -13.7656            11            10                   48                   48
+   True     200        oracle TA*-S 48              48           48           48           0        0        0           0        0        0                    0             0             0                   48                   48
+
+C: contact runs, replanning methods only (oracles excluded)
+ debris  old_touching  new_touching  old_contact_audited  new_contact_audited  old_success  new_success
+  False             0             0                  480                  480          480          480
+   True             0             0                  480                  480          480          480
+
+D: nominal scenario pairing audit; sampled waypoints can differ with masks
+ debris  n_goals  cases  same_waypoint_sets
+  False        5     48                   0
+  False        8     48                   0
+  False       12     48                   0
+   True        5     48                   0
+   True        8     48                   0
+   True       12     48                   0
+
+D: terrain dir / euclid - 1 [%]; lower is better, bad tail=p90
+ debris  n_goals    metric  n  paired_success  old_success  new_success  old_median  old_p90  new_median  new_p90  paired_delta_median
+  False        5  cost_dir 48              48           48           48   -0.049098        0    -0.08897        0                    0
+  False        5 energy_kj 48              48           48           48           0 0.943002           0 0.250663          -0.00363583
+  False        8  cost_dir 48              48           48           48  -0.0841249        0  -0.0799056        0                    0
+  False        8 energy_kj 48              48           48           48           0  1.01797           0 0.283432                    0
+  False       12  cost_dir 48              48           48           48    -0.16202        0   -0.116424        0           -0.0358762
+  False       12 energy_kj 48              48           48           48           0  1.25049           0  1.05366          -0.00162194
+   True        5  cost_dir 48              48           48           48  -0.0682206        0  -0.0894655        0                    0
+   True        5 energy_kj 48              48           48           48           0   0.2859           0 0.274946                    0
+   True        8  cost_dir 48              48           48           48    -0.13712        0   -0.122656        0            0.0266081
+   True        8 energy_kj 48              48           48           48           0 0.180144           0 0.421158            0.0877163
+   True       12  cost_dir 48              48           48           48   -0.187688        0   -0.262398        0           0.00274332
+   True       12 energy_kj 48              48           48           48           0 0.732722           0 0.322986           -0.0672505
+
+D: task-009 euclid / terrain dir - 1 [%]; euclid excess, bad tail=p90
+ debris  n_goals    metric  n  paired_success  old_success  new_success  old_median  old_p90  new_median  new_p90  paired_delta_median
+  False        5  cost_dir 48              48           48           48   0.0491222   1.4044   0.0890499 0.946608                    0
+  False        5 energy_kj 48              48           48           48           0 0.352756           0  1.15403            0.0036361
+  False        8  cost_dir 48              48           48           48   0.0841958  4.05983   0.0799695  3.04383                    0
+  False        8 energy_kj 48              48           48           48           0  1.49917           0  2.54293                    0
+  False       12  cost_dir 48              48           48           48    0.162283  5.01094     0.11656  9.82485            0.0359641
+  False       12 energy_kj 48              48           48           48           0  1.83171           0  6.03872           0.00162189
+   True        5  cost_dir 48              48           48           48   0.0682695  1.07617   0.0895497  1.51007                    0
+   True        5 energy_kj 48              48           48           48           0 0.846048           0  0.66711                    0
+   True        8  cost_dir 48              48           48           48    0.137312  3.11359    0.122807   2.1761           -0.0266633
+   True        8 energy_kj 48              48           48           48           0  1.72698           0 0.961838           -0.0877918
+   True       12  cost_dir 48              48           48           48    0.188041   5.6979    0.263089  5.51624          -0.00274694
+   True       12 energy_kj 48              48           48           48           0  2.52754           0  4.32558            0.0670719
+
+D: original task-009 Holm-corrected tour tests, before/after
+ debris  n_goals                 comparison  n_old       p_old  r_old  median_cost_difference_old  p_holm_old  n_new       p_new  r_new  median_cost_difference_new  p_holm_new  significance_changed
+  False        5      euclid vs terrain dir     48 1.49012e-08      1                    0.973025 1.04308e-07     48 1.86265e-09      1                     1.26468 1.49012e-08                 False
+  False        5 terrain sym vs terrain dir     48 7.62939e-06      1                           0 2.28882e-05     48 6.10352e-05      1                           0 6.10352e-05                 False
+  False        8      euclid vs terrain dir     48 9.31323e-10      1                     1.74419  8.3819e-09     48 5.82077e-11      1                     1.53458 5.82077e-10                 False
+  False        8 terrain sym vs terrain dir     48 7.62939e-06      1                           0 2.28882e-05     48 2.98023e-08      1                    0.169026 1.78814e-07                 False
+  False       12      euclid vs terrain dir     48 1.16415e-10      1                     3.80942 1.28057e-09     48 7.27596e-12      1                      2.3494 8.73115e-11                 False
+  False       12 terrain sym vs terrain dir     48  3.8147e-06      1                           0 1.52588e-05     48 1.90735e-06      1                           0 7.62939e-06                 False
+   True        5      euclid vs terrain dir     48 9.31323e-10      1                      1.0585  8.3819e-09     48 1.86265e-09      1                     1.35829 1.49012e-08                 False
+   True        5 terrain sym vs terrain dir     48 4.76837e-07      1                           0 2.38419e-06     48 1.90735e-06      1                           0 7.62939e-06                 False
+   True        8      euclid vs terrain dir     48 4.65661e-10      1                     3.04901 4.65661e-09     48 4.65661e-10      1                     2.46327 4.19095e-09                 False
+   True        8 terrain sym vs terrain dir     48 1.19209e-07      1                   0.0156518 7.15256e-07     48 2.38419e-07      1                           0 1.19209e-06                 False
+   True       12      euclid vs terrain dir     48 7.27596e-12      1                     4.65225 8.73115e-11     48 1.45519e-11      1                     5.96524 1.60071e-10                 False
+   True       12 terrain sym vs terrain dir     48 7.62939e-06      1                           0 2.28882e-05     48  3.8147e-06      1                           0 7.62939e-06                 False
+
+Measured experiment wall times [s]; hardware/load/workers differ, not a speed comparison
+dataset   phase  wall_s  workers  resume
+    old       A 9.02156        4   False
+    old       B 94.6351        4   False
+    old       C  2926.5        4   False
+    old       D 2075.46        4   False
+    old figures 19.9805        4   False
+    old   total 5125.93        4   False
+    new       A 4.95343        5   False
+    new       B 62.3535        5   False
+    new       C 1902.29        5   False
+    new       D 1077.78        5   False
+    new figures 13.8451        5   False
+    new   total  3061.6        5   False
+Directions use the sign of matched-pairs rank-biserial r; a zero paired median alone is not interpreted as equality.
+Nominal scenario pairs share name/size/seed/debris; masks, retry/crop choices and sampled endpoints/waypoints can differ. This is the prescribed rerun, not fixed-coordinate causal isolation.

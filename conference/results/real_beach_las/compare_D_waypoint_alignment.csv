@@ -1,0 +1,7 @@
+debris,n_goals,cases,same_waypoint_sets
+False,5,48,0
+False,8,48,0
+False,12,48,0
+True,5,48,0
+True,8,48,0
+True,12,48,0
