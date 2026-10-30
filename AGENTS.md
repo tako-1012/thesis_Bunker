@@ -40,7 +40,7 @@ python3 -m tests.test_ros2_gz          # ROS2・Gazebo なしで動く
 - `conference/paper/`（論文、自動生成の表と図）
 - `conference/results/*.csv`、`conference/results/*.json`、`conference/results/explore/`、
   `conference/results/online/`、`conference/results/online_prior/`、`conference/results/online_dstar/`、`conference/results/risk_prior/`、`conference/results/exact_los/`、
-  `conference/results/natural_terrain/`、`conference/results/beach_terrain/`、`conference/results/multi_goal_tour/`、`conference/results/real_beach/`、`conference/results/ros2_gz/`
+  `conference/results/natural_terrain/`、`conference/results/beach_terrain/`、`conference/results/multi_goal_tour/`、`conference/results/real_beach/`、`conference/results/ros2_gz/`、`conference/results/real_beach_las/`
 - `conference/data/`（本物の地形データ。`conference/data_prep/` のスクリプトで作ったもの）
 - `conference/tapp/planners.py`、`metrics.py`、`scenario.py`、`terrain.py`、
   `traversability.py`、`config.py`、`aniso.py`、`prior.py`、`dstar_lite.py`、`risk_prior.py`、`collision.py`、`online.py`、
