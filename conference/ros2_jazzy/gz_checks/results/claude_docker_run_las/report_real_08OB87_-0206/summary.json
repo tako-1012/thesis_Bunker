@@ -1,0 +1,23 @@
+{
+  "data_source": "robot_recording",
+  "map_id": "file/real_08OB87_-0206_200m_0.npz",
+  "status": "completed",
+  "completed": true,
+  "elapsed_s": 348.2,
+  "deviation_mean_m": 0.026981114685767197,
+  "deviation_max_m": 0.5856524042773258,
+  "path_lethal_cells": 0,
+  "out_of_bounds_samples": 0,
+  "fallen_samples": 0,
+  "roll_p95_actual_deg": 4.760055633621264,
+  "pitch_p95_actual_deg": 6.2016760689930654,
+  "roll_p95_map_deg": 4.584739327007045,
+  "pitch_p95_map_deg": 6.317354127324588,
+  "kinematic": {
+    "elapsed_s": 346.65000000000003,
+    "deviation_mean_m": 0.015252123386116204,
+    "deviation_max_m": 0.5815870108151945,
+    "path_lethal_cells": 0,
+    "completed": true
+  }
+}
