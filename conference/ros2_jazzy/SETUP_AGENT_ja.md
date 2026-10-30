@@ -38,17 +38,26 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 sudo apt update
 sudo apt install -y ros-jazzy-desktop ros-jazzy-ros-gz python3-colcon-common-extensions
 ```
-Python のライブラリも apt で入れる（Ubuntu 24.04 では `pip install` がシステムに入れられないため）：
+Python のライブラリは、**ROS2・Gazebo 用（apt）と、テスト・Web 画面用（venv）を分ける**。
+Ubuntu 24.04 の apt の版（NumPy 1.26、Pydantic 1）では、テストと Web 画面が動かないため。
 ```bash
-sudo apt install -y python3-numpy python3-scipy python3-matplotlib python3-pandas \
-  python3-fastapi python3-uvicorn python3-httpx
+# ROS2・Gazebo の確認スクリプト用（システムの python3）
+sudo apt install -y python3-numpy python3-scipy python3-matplotlib python3-pandas python3.12-venv
 ```
+テスト・Web 画面用の venv は、2 でリポジトリを取ってきたあとに作る（版は `conference/requirements-venv.txt` で固定）：
+```bash
+python3 -m venv ~/.venvs/thesis-python
+~/.venvs/thesis-python/bin/python -m pip install -r ~/thesis_Bunker/conference/requirements-venv.txt
+```
+**venv は、3 のテストと 6 の Web 画面のときだけ有効にする。4・5（colcon・Gazebo）は venv を有効にしないターミナルで行う**
+（ROS2 はシステムの python3 に合わせて作られているため）。
+
 **確かめること**
 ```bash
 source /opt/ros/jazzy/setup.bash
 echo $ROS_DISTRO                      # jazzy
 gz sim --versions                     # 8.x（Harmonic）
-python3 -c "import numpy, scipy, matplotlib, pandas, fastapi, uvicorn, httpx; print('ok')"
+python3 -c "import numpy, scipy, matplotlib, pandas; print('ok')"   # システム側（apt）
 timeout 30 gz sim -s -r --iterations 2000 shapes.sdf; echo "exit=$?"   # 画面なしで Gazebo が動くこと（exit=0）
 ```
 
@@ -61,10 +70,12 @@ cd ~/thesis_Bunker && git checkout main && git pull
 
 ## 3. Python のテスト（ROS2・Gazebo なしで動く。10〜20 分）
 ```bash
+source ~/.venvs/thesis-python/bin/activate     # テストは venv で
 cd ~/thesis_Bunker/conference
 for t in $(ls tests/test_*.py | sed 's#tests/##;s#\.py##'); do python3 -m tests.$t > /tmp/$t.log 2>&1; echo "$t exit=$?"; done
 ```
 **確かめること**：すべて `exit=0`（2026年10月時点で 14 個）。落ちたものは、その `.log` の最後の 30 行を報告する。
+終わったら `deactivate` で venv を抜ける（または新しいターミナルを開く）。
 
 ## 4. ROS2 のパッケージを作る
 ```bash
@@ -96,12 +107,13 @@ python3 ros2_jazzy/gz_checks/online_checks.py --output ~/thesis_checks/online
 ## 6. 画面ありで動かす（利用者が見て確かめる）
 ターミナルを 2 つ使う。
 
-ターミナル 1（Web 画面のサーバー。この Ubuntu の中で動かすので、大学の Wi-Fi でも問題ない）：
+ターミナル 1（Web 画面のサーバー。この Ubuntu の中で動かすので、大学の Wi-Fi でも問題ない。**venv を使う**）：
 ```bash
+source ~/.venvs/thesis-python/bin/activate
 cd ~/thesis_Bunker/conference
 python3 -m webui.server --host 127.0.0.1 --port 8080
 ```
-ターミナル 2（Gazebo と BUNKER）：
+ターミナル 2（Gazebo と BUNKER。**venv は使わない**）：
 ```bash
 cd ~/thesis_Bunker/conference/ros2_jazzy
 source /opt/ros/jazzy/setup.bash && source install/setup.bash
