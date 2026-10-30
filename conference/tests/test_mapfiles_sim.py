@@ -69,7 +69,10 @@ def test_maps():
         else:
             raise AssertionError("unsupported resolution accepted")
     files = sorted((ROOT / "maps").glob("*.npz"))
-    assert len(files) == 23
+    legacy_files = [p for p in files if not p.name.startswith("real_las_")]
+    # task 013 appends the 12 point-cloud beaches (real_las_*); the task 011 maps must stay exactly the same
+    assert len(legacy_files) == 23
+    assert len(files) - len(legacy_files) == 12
     for path in files:
         sc = load_map_file(path)
         assert np.isfinite(sc["tmap"].cost).all() and not sc["tmap"].lethal[sc["start"]]
@@ -87,9 +90,10 @@ def test_maps():
         r["id"] for r in rows if not r["id"].startswith("file/")
     ]
     assert (
-        sum(p.stat().st_size for p in (ROOT / "maps").rglob("*") if p.is_file())
+        sum(p.stat().st_size for p in (ROOT / "maps").rglob("*") if p.is_file() and not p.name.startswith("real_las_"))
         < 15_000_000
     )
+    assert sum(p.stat().st_size for p in (ROOT / "maps").rglob("*") if p.is_file()) < 25_000_000
     print(
         "maps: 5 lossless scenario round trips, float32+residual, NaN, all 23 files and all 17 legacy IDs passed",
         flush=True,
@@ -266,7 +270,7 @@ def test_gazebo():
 def test_api():
     with TestClient(app) as client:
         rows = client.get("/api/maps").json()
-        assert len(rows) == 40
+        assert len([r for r in rows if not r["id"].startswith("file/real_las_")]) == 40
         map_id = "file/flat_test_100m.npz"
         assert any(r["id"] == map_id for r in rows)
         info = client.get("/api/maps/" + map_id)
