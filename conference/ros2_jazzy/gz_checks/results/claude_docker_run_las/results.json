@@ -1,0 +1,515 @@
+{
+  "image": "osrf/ros:jazzy-desktop-full",
+  "gazebo_version": "8.11.0",
+  "seed": 100,
+  "terrain": [
+    {
+      "world": "flat_test",
+      "samples": [
+        {
+          "x": 83.5,
+          "y": 83.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958556617447e-07
+        },
+        {
+          "x": 59.5,
+          "y": 65.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958638773951e-07
+        },
+        {
+          "x": 58.5,
+          "y": 97.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958494444958e-07
+        },
+        {
+          "x": 92.5,
+          "y": 36.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958765339376e-07
+        },
+        {
+          "x": 79.5,
+          "y": 19.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958840834541e-07
+        },
+        {
+          "x": 77.0,
+          "y": 59.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958663198857e-07
+        },
+        {
+          "x": 18.0,
+          "y": 94.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.55395850998808e-07
+        },
+        {
+          "x": 91.0,
+          "y": 54.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958685403318e-07
+        },
+        {
+          "x": 0.0,
+          "y": 67.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958627671721e-07
+        },
+        {
+          "x": 69.0,
+          "y": 59.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958665419303e-07
+        },
+        {
+          "x": 59.5,
+          "y": 66.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958634333059e-07
+        },
+        {
+          "x": 44.0,
+          "y": 5.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958901896808e-07
+        },
+        {
+          "x": 4.0,
+          "y": 34.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958772000714e-07
+        },
+        {
+          "x": 12.0,
+          "y": 13.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958865259448e-07
+        },
+        {
+          "x": 97.0,
+          "y": 82.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958561058339e-07
+        },
+        {
+          "x": 28.0,
+          "y": 14.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958860818556e-07
+        },
+        {
+          "x": 7.5,
+          "y": 60.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958660978411e-07
+        },
+        {
+          "x": 40.5,
+          "y": 92.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958516649418e-07
+        },
+        {
+          "x": 72.5,
+          "y": 28.0,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958800866512e-07
+        },
+        {
+          "x": 94.5,
+          "y": 69.5,
+          "expected_z": 0.0,
+          "measured_ground_z": -8.553958618789936e-07
+        }
+      ],
+      "max_height_error_m": 8.553958901896808e-07,
+      "fallen": 0
+    },
+    {
+      "world": "real_08OB87_-0206",
+      "samples": [
+        {
+          "x": 164.5,
+          "y": 99.0,
+          "expected_z": 2.0218148231506348,
+          "measured_ground_z": 2.0268067765237543
+        },
+        {
+          "x": 115.0,
+          "y": 82.0,
+          "expected_z": 2.101494789123535,
+          "measured_ground_z": 2.1047649422841004
+        },
+        {
+          "x": 113.0,
+          "y": 127.5,
+          "expected_z": 4.214207649230957,
+          "measured_ground_z": 4.215085648932281
+        },
+        {
+          "x": 183.5,
+          "y": 105.5,
+          "expected_z": 2.6438281536102295,
+          "measured_ground_z": 2.6463505396516744
+        },
+        {
+          "x": 155.0,
+          "y": 107.0,
+          "expected_z": 2.4000000953674316,
+          "measured_ground_z": 2.398974146157645
+        },
+        {
+          "x": 150.0,
+          "y": 101.5,
+          "expected_z": 2.200000047683716,
+          "measured_ground_z": 2.200029013059173
+        },
+        {
+          "x": 34.5,
+          "y": 117.0,
+          "expected_z": 2.799999952316284,
+          "measured_ground_z": 2.7996367063770493
+        },
+        {
+          "x": 180.5,
+          "y": 91.5,
+          "expected_z": 2.0,
+          "measured_ground_z": 1.9992175909347962
+        },
+        {
+          "x": 0.5,
+          "y": 74.0,
+          "expected_z": 0.8999999761581421,
+          "measured_ground_z": 0.900486178801248
+        },
+        {
+          "x": 133.5,
+          "y": 123.0,
+          "expected_z": 3.807891845703125,
+          "measured_ground_z": 3.8142147716369794
+        },
+        {
+          "x": 115.0,
+          "y": 81.5,
+          "expected_z": 2.0999999046325684,
+          "measured_ground_z": 2.0975462048794573
+        },
+        {
+          "x": 84.0,
+          "y": 74.5,
+          "expected_z": 1.1777422428131104,
+          "measured_ground_z": 1.1711686117041904
+        },
+        {
+          "x": 7.5,
+          "y": 96.5,
+          "expected_z": 1.8354281187057495,
+          "measured_ground_z": 1.8360466414738674
+        },
+        {
+          "x": 22.5,
+          "y": 60.5,
+          "expected_z": 0.5,
+          "measured_ground_z": 0.501329064810237
+        },
+        {
+          "x": 194.0,
+          "y": 94.5,
+          "expected_z": 2.4293432235717773,
+          "measured_ground_z": 2.434216062169586
+        },
+        {
+          "x": 53.5,
+          "y": 52.0,
+          "expected_z": 0.10000000149011612,
+          "measured_ground_z": 0.09998688676040239
+        },
+        {
+          "x": 14.5,
+          "y": 48.0,
+          "expected_z": 0.007937977090477943,
+          "measured_ground_z": 0.006951656749609
+        },
+        {
+          "x": 77.5,
+          "y": 89.5,
+          "expected_z": 1.600000023841858,
+          "measured_ground_z": 1.6000806845464626
+        },
+        {
+          "x": 140.0,
+          "y": 107.5,
+          "expected_z": 2.5252013206481934,
+          "measured_ground_z": 2.5235973887336467
+        },
+        {
+          "x": 188.5,
+          "y": 61.0,
+          "expected_z": 0.8397958278656006,
+          "measured_ground_z": 0.8400166833739118
+        }
+      ],
+      "max_height_error_m": 0.006573631108919953,
+      "fallen": 0
+    },
+    {
+      "world": "real_las_08OB87_-0206",
+      "samples": [
+        {
+          "x": 164.5,
+          "y": 120.5,
+          "expected_z": 2.837714195251465,
+          "measured_ground_z": 2.8415265537549486
+        },
+        {
+          "x": 115.0,
+          "y": 112.0,
+          "expected_z": 2.8540000915527344,
+          "measured_ground_z": 2.855893700236095
+        },
+        {
+          "x": 113.5,
+          "y": 63.0,
+          "expected_z": 0.7513333559036255,
+          "measured_ground_z": 0.7489400714648607
+        },
+        {
+          "x": 183.5,
+          "y": 121.0,
+          "expected_z": 4.045000076293945,
+          "measured_ground_z": 4.0535655899737675
+        },
+        {
+          "x": 155.0,
+          "y": 129.0,
+          "expected_z": 2.9553332328796387,
+          "measured_ground_z": 2.9704548406385967
+        },
+        {
+          "x": 150.0,
+          "y": 127.0,
+          "expected_z": 2.948909044265747,
+          "measured_ground_z": 2.949481059984473
+        },
+        {
+          "x": 34.5,
+          "y": 119.0,
+          "expected_z": 2.8582499027252197,
+          "measured_ground_z": 2.8617310462659455
+        },
+        {
+          "x": 180.5,
+          "y": 107.5,
+          "expected_z": 2.690833330154419,
+          "measured_ground_z": 2.694380439636464
+        },
+        {
+          "x": 0.5,
+          "y": 74.0,
+          "expected_z": 0.9317142963409424,
+          "measured_ground_z": 0.9304027154797916
+        },
+        {
+          "x": 134.0,
+          "y": 56.0,
+          "expected_z": 0.3894999921321869,
+          "measured_ground_z": 0.3879993963631769
+        },
+        {
+          "x": 115.0,
+          "y": 111.0,
+          "expected_z": 2.7981667518615723,
+          "measured_ground_z": 2.800131965908226
+        },
+        {
+          "x": 84.0,
+          "y": 98.5,
+          "expected_z": 2.104599952697754,
+          "measured_ground_z": 2.1032881049968495
+        },
+        {
+          "x": 7.5,
+          "y": 95.0,
+          "expected_z": 1.7869999408721924,
+          "measured_ground_z": 1.7893829667734498
+        },
+        {
+          "x": 22.5,
+          "y": 62.5,
+          "expected_z": 0.5951428413391113,
+          "measured_ground_z": 0.5944908431501339
+        },
+        {
+          "x": 194.0,
+          "y": 102.0,
+          "expected_z": 2.694499969482422,
+          "measured_ground_z": 2.698112725503073
+        },
+        {
+          "x": 53.5,
+          "y": 64.5,
+          "expected_z": 0.6970000267028809,
+          "measured_ground_z": 0.6958661819004606
+        },
+        {
+          "x": 14.5,
+          "y": 49.0,
+          "expected_z": 0.045499999076128006,
+          "measured_ground_z": 0.0459160995134255
+        },
+        {
+          "x": 77.5,
+          "y": 114.5,
+          "expected_z": 2.4648332595825195,
+          "measured_ground_z": 2.4661311595969466
+        },
+        {
+          "x": 140.0,
+          "y": 134.5,
+          "expected_z": 4.235000133514404,
+          "measured_ground_z": 4.238528513896583
+        },
+        {
+          "x": 188.5,
+          "y": 73.0,
+          "expected_z": 1.1694999933242798,
+          "measured_ground_z": 1.171880561547119
+        }
+      ],
+      "max_height_error_m": 0.015121607758957989,
+      "fallen": 0
+    }
+  ],
+  "bunker": [
+    {
+      "map": "flat_test_100m.npz",
+      "pose": [
+        10.0,
+        10.0,
+        -9.63121480346274e-08,
+        4.371769120081599e-16,
+        1.0047138330979958e-19,
+        -8.780724658124706e-19
+      ],
+      "z_range_m": 0.0,
+      "xy_drift_m": 0.0,
+      "expected_ground_z": 0.0,
+      "fallen": false
+    },
+    {
+      "map": "real_08OB87_-0206_200m_0.npz",
+      "pose": [
+        27.001799139806923,
+        71.01403527966218,
+        0.9163332500151078,
+        1.1786759589689052e-08,
+        -0.04495684031315242,
+        0.004990809524238474
+      ],
+      "z_range_m": 1.0487853241425427e-07,
+      "xy_drift_m": 2.101102855215935e-06,
+      "expected_ground_z": 0.8999999761581421,
+      "fallen": false
+    },
+    {
+      "map": "real_las_08OB87_-0206_200m_0.npz",
+      "pose": [
+        27.0008103021703,
+        70.99954381767493,
+        0.9342899673195704,
+        0.021833470221938125,
+        -0.00628613611566898,
+        -0.0006900318983619658
+      ],
+      "z_range_m": 0.0,
+      "xy_drift_m": 0.0,
+      "expected_ground_z": 0.9356666803359985,
+      "fallen": false
+    }
+  ],
+  "drive": {
+    "forward_m": 4.9611623271082195,
+    "forward_ratio": 0.9922324654216439,
+    "turn_rad": 4.464128856135108,
+    "turn_ratio": 0.8928257712270217,
+    "turn_xy_drift_m": 9.85844725535147e-09
+  },
+  "tours": [
+    {
+      "data_source": "robot_recording",
+      "map_id": "file/flat_test_100m.npz",
+      "status": "completed",
+      "completed": true,
+      "elapsed_s": 249.41200000000003,
+      "deviation_mean_m": 0.012889973282061182,
+      "deviation_max_m": 0.46697201054285986,
+      "path_lethal_cells": 0,
+      "out_of_bounds_samples": 0,
+      "fallen_samples": 0,
+      "roll_p95_actual_deg": 8.056312937216255e-09,
+      "pitch_p95_actual_deg": 6.796621086615912e-10,
+      "roll_p95_map_deg": 0.0,
+      "pitch_p95_map_deg": 0.0,
+      "kinematic": {
+        "elapsed_s": 248.20000000000002,
+        "deviation_mean_m": 0.00809258568725042,
+        "deviation_max_m": 0.34452857268482434,
+        "path_lethal_cells": 0,
+        "completed": true
+      }
+    },
+    {
+      "data_source": "robot_recording",
+      "map_id": "file/real_08OB87_-0206_200m_0.npz",
+      "status": "completed",
+      "completed": true,
+      "elapsed_s": 348.2,
+      "deviation_mean_m": 0.026981114685767197,
+      "deviation_max_m": 0.5856524042773258,
+      "path_lethal_cells": 0,
+      "out_of_bounds_samples": 0,
+      "fallen_samples": 0,
+      "roll_p95_actual_deg": 4.760055633621264,
+      "pitch_p95_actual_deg": 6.2016760689930654,
+      "roll_p95_map_deg": 4.584739327007045,
+      "pitch_p95_map_deg": 6.317354127324588,
+      "kinematic": {
+        "elapsed_s": 346.65000000000003,
+        "deviation_mean_m": 0.015252123386116204,
+        "deviation_max_m": 0.5815870108151945,
+        "path_lethal_cells": 0,
+        "completed": true
+      }
+    },
+    {
+      "data_source": "robot_recording",
+      "map_id": "file/real_las_08OB87_-0206_200m_0.npz",
+      "status": "completed",
+      "completed": true,
+      "elapsed_s": 289.516,
+      "deviation_mean_m": 0.03117199917757716,
+      "deviation_max_m": 0.8102655579449639,
+      "path_lethal_cells": 0,
+      "out_of_bounds_samples": 0,
+      "fallen_samples": 0,
+      "roll_p95_actual_deg": 3.8394142404499174,
+      "pitch_p95_actual_deg": 2.4790028690960764,
+      "roll_p95_map_deg": 3.8495748332948354,
+      "pitch_p95_map_deg": 2.5865147095039918,
+      "kinematic": {
+        "elapsed_s": 287.15000000000003,
+        "deviation_mean_m": 0.014046791209369651,
+        "deviation_max_m": 0.585631568302779,
+        "path_lethal_cells": 0,
+        "completed": true
+      }
+    }
+  ],
+  "errors": [],
+  "failed": false
+}

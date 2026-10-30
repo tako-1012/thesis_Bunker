@@ -1,0 +1,23 @@
+{
+  "data_source": "robot_recording",
+  "map_id": "file/real_las_08OB87_-0206_200m_0.npz",
+  "status": "completed",
+  "completed": true,
+  "elapsed_s": 289.516,
+  "deviation_mean_m": 0.03117199917757716,
+  "deviation_max_m": 0.8102655579449639,
+  "path_lethal_cells": 0,
+  "out_of_bounds_samples": 0,
+  "fallen_samples": 0,
+  "roll_p95_actual_deg": 3.8394142404499174,
+  "pitch_p95_actual_deg": 2.4790028690960764,
+  "roll_p95_map_deg": 3.8495748332948354,
+  "pitch_p95_map_deg": 2.5865147095039918,
+  "kinematic": {
+    "elapsed_s": 287.15000000000003,
+    "deviation_mean_m": 0.014046791209369651,
+    "deviation_max_m": 0.585631568302779,
+    "path_lethal_cells": 0,
+    "completed": true
+  }
+}
