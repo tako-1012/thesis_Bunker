@@ -1,0 +1,11 @@
+desktop 1440px: initial map, 17 choices and no horizontal overflow passed
+desktop: map click, numbered marker, drag and popup deletion passed
+desktop: base drag/direct input and pasted five-point coordinates passed
+desktop: JSON browser download, clear and file import round-trip passed
+desktop: live terrain plan, responsive API while busy and results table passed
+desktop: sequential comparison, two overlaid routes and side-by-side metrics passed
+desktop: playback observed 1.074393m in 0.803400s, consistent with 1.388m/s
+tablet 834x1112: touch addition, JSON import, real comparison/playback, >=44px buttons and no horizontal overflow passed (Chromium touch emulation)
+tablet 1112x834: landscape reflow and fit map passed (Chromium touch emulation)
+real validation map: image/selection, reset points and Shizuoka attribution passed
+browser console: no page errors; runtime network: no external asset requests
