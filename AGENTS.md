@@ -25,6 +25,7 @@ python3 -m tests.test_beach_terrain
 python3 -m tests.test_tour
 python3 -m tests.test_real_beach
 python3 -m tests.test_mission          # pip install fastapi uvicorn httpx が必要
+python3 -m tests.test_mapfiles_sim
 ```
 作業を終える前に、`conference/tests/` の下にあるすべてのテストを実行すること。
 
@@ -42,7 +43,8 @@ python3 -m tests.test_mission          # pip install fastapi uvicorn httpx が�
 - `conference/data/`（本物の地形データ。`conference/data_prep/` のスクリプトで作ったもの）
 - `conference/tapp/planners.py`、`metrics.py`、`scenario.py`、`terrain.py`、
   `traversability.py`、`config.py`、`aniso.py`、`prior.py`、`dstar_lite.py`、`risk_prior.py`、`collision.py`、`online.py`、
-  `natural_terrain.py`、`natural_scenario.py`、`beach_terrain.py`、`beach_scenario.py`、`exact_planners.py`、`directional.py`、`tour.py`、`real_beach.py`、`mission.py`
+  `natural_terrain.py`、`natural_scenario.py`、`beach_terrain.py`、`beach_scenario.py`、`exact_planners.py`、`directional.py`、`tour.py`、`real_beach.py`、`mission.py`、`mapfile.py`、`pure_pursuit.py`、`robot_sim.py`
+- `conference/maps/`、`conference/gazebo_worlds/`（地図ファイルと Gazebo の world。`conference/data_prep/` のスクリプトで作ったもの）
 - `conference/webui/`（Web 画面。指示書で許可された場合だけ変更する）
 - `conference/experiments/run_all.py`、`analyze*.py`、`run_weight_opt.py`、`run_roll.py`、
   `run_infeasible.py`、`online_replanning.py`、`online_prior.py`、`online_dstar.py`、`risk_prior.py`、`exact_los.py`、

@@ -1,0 +1,44 @@
+{
+  "base": "ace93a9a16dbb7fca581995c3bf3366709c8a7cd",
+  "branch": "codex/mapfiles-sim",
+  "existing_files": 351,
+  "allowed_existing_changes": [
+    "conference/tapp/mission.py",
+    "conference/webui/README_ja.md",
+    "conference/webui/server.py",
+    "conference/webui/static/app.js",
+    "conference/webui/static/index.html",
+    "conference/webui/static/style.css"
+  ],
+  "other_files_sha256_identical": 345,
+  "maps_count": 23,
+  "maps_bytes": 12643079,
+  "gazebo_worlds_bytes": 4214298,
+  "test_modules": [
+    "test_beach_terrain",
+    "test_collision",
+    "test_dstar",
+    "test_mapfiles_sim",
+    "test_mission",
+    "test_natural_terrain",
+    "test_online",
+    "test_planners",
+    "test_real_beach",
+    "test_risk_prior",
+    "test_tour"
+  ],
+  "failed_modules": [
+    "test_mission"
+  ],
+  "python": "3.12.14",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.52.1",
+    "httpx": "0.28.1",
+    "playwright": "1.62.0"
+  },
+  "gazebo_executed": false,
+  "safari_verified": false
+}

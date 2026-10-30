@@ -799,3 +799,30 @@ thead th {
 .leaflet-popup-content {
   margin-top: 40px;
 }
+.simulation-controls {
+  margin-top: 18px;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+.simulation-controls label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.simulation-controls output {
+  color: var(--teal);
+  font-variant-numeric: tabular-nums;
+}
+.simulation-controls input[type="range"] {
+  accent-color: var(--teal);
+  padding: 0;
+  min-height: 44px;
+}
+.simulation-controls .primary {
+  justify-content: center;
+}
+#simulation-result h3 {
+  font-size: 13px;
+  color: var(--orange);
+  margin: 18px 0 2px;
+}

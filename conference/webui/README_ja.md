@@ -28,8 +28,9 @@ Linux の `hostname -I` または `ip addr` で調べられます。ループバ
 
 ## 使い方
 
-1. 「地図を選ぶ」で人工5種類、または実測の検証用12パッチを選択します。すべて200m四方、0.5m格子です。
-   人工地形・実測地形ともシード100を固定し、実測地形には漂着物を追加していません。
+1. 「地図を選ぶ」で従来の人工5種類・実測12パッチ、または地図ファイル23枚を選択します。
+   地図ファイルには100m／200mの人工地形、実測12か所、平地と箱3つの `flat_test` があります。すべて0.5m格子です。
+   従来の地図IDのシード100は変えていません。実測の地図ファイルはシード0、漂着物追加なしです。
 2. 地図をタップ／クリックして地点を追加します。オレンジの番号は入力番号です。
    ドラッグで移動し、タップして開く「この地点を削除」で削除できます。◆の基地も移動できます。
 3. 「地点の座標」に `x, y` を1行1点で入力して「座標を適用」すると、地点一覧を置き換えます。
@@ -42,12 +43,19 @@ Linux の `hostname -I` または `ip addr` で調べられます。ループバ
    比較時のマーカーは地形を考慮した順番です。受付外は「×」です。
 6. 「再生」で経路に沿ってロボットのマーカーが1.388m/s（約5km/h）で動きます。「停止」で終了。
    比較時は地形を考慮した経路を再生します。地点を編集すると古い経路と結果は消えます。
+7. 計画後に「先読みの距離」を0.5〜3.0m（初期値1.0m）から選び、「走行をシミュレーション」を押します。
+   Pure Pursuitによる走行軌跡を橙で重ね、所要時間・経路からのずれの平均／最大・通行不可との接触数・完走の有無を表示します。
+   比較後は地形方式の経路を使います。先読みの距離を変えると以前の走行結果は消えます。
+   シミュレーション後の「再生」は走行軌跡を計算時刻どおりに再生します。
+   速度上限1.0m/s、角速度上限1.0rad/s、時間刻み0.05秒、到達許容距離0.3mです。
+   滑り・傾斜による減速・衝突回避は入れていません。計画が安全でも、追従時に角を内側へ曲がって接触する可能性があります。
 
 ## 座標・計算・API
 
 画面とAPIの座標はローカルなメートル単位です。xは海岸線方向、yは海から陸へ向かう方向。
 `round(x / 0.5), round(y / 0.5)` で格子へ変換します（ちょうど半分はPythonの偶数丸め）。
-格子中心は0〜199.5m、これを超える座標は拒否します。画像境界は−0.25〜199.75mとし、マーカーと画素の中心を一致させています。
+格子中心は200m地図で0〜199.5m、100m地図で0〜99.5mです。これを超える座標は拒否します。
+画像境界は格子中心から半マス分延長し、マーカーと画素の中心を一致させています。
 実測データREADMEの元の範囲（x=−100〜100m、y=−50〜150m）に対し、ここでは最初の格子中心を(0,0)とします。
 方向は同じです。緯度・経度やGPS座標ではありません。丘陵・起伏地の軸はローカルなx・yです。
 
@@ -61,10 +69,12 @@ Linux の `hostname -I` または `ip addr` で調べられます。ループバ
 |---|---|
 | `GET /api/maps` | ID・日本語名・大きさ |
 | `GET /api/maps/{map_id}` | 大きさ・解像度・形状・基地・Leaflet用画像境界 |
-| `GET /api/maps/{map_id}/image.png` | 400×400画素PNG（x右向き、y上向き） |
+| `GET /api/maps/{map_id}/image.png` | 1マス1画素PNG（x右向き、y上向き） |
 | `POST /api/plan` | `{map_id, start: [x,y], points: [[x,y],...], method: "terrain" または "euclid"}` |
+| `POST /api/simulate` | `{map_id, path: [[x,y],...], lookahead_m: 1.0}` |
 
-IDは `synthetic/beach_gentle/200/100`、`real/<パッチ名>/200` の形式です。スラッシュを含むままで指定できます。
+IDは `synthetic/beach_gentle/200/100`、`real/<パッチ名>/200`、`file/<ファイル名>.npz` の形式です。スラッシュを含むままで指定できます。
+地図ファイルは `conference/maps/` に置き、サーバーを再起動してください。形式と出典は `maps/README_ja.md` を参照してください。
 計画結果の `order` は基地0・入力地点1始まり、末尾の基地の繰り返しは省略します。
 `path` は復路も含むメートル単位の点列。`legs` は元の入力番号での始点・終点、経路、長さ[m]、コスト。
 `tour_cost` は両方式とも実際に通る区間の向き付きコストの合計（既存コードの格子コスト単位）。
@@ -79,6 +89,10 @@ IDは `synthetic/beach_gentle/200/100`、`real/<パッチ名>/200` の形式で�
 
 地図不明は404、0個／13個以上の地点や不正形式は422、先行計画の計算中はすぐ409を返します。
 計画と地図生成はワーカースレッドで実行し、計算依頼を待ち行列に積みません。
+走行シミュレーションも同じ排他制御を使います。`trajectory` の各行は `[時刻秒,xメートル,yメートル,yawラジアン]`。
+`elapsed_s`、`deviation_mean_m`、`deviation_max_m`、`path_lethal_cells`、`lethal_cells`（マス座標）、
+`out_of_bounds_samples`、`completed` を返します。初期の向きは最初の長さのある区間に合わせます。
+閉じた巡回の終点が基地でも開始直後に終了しないよう、経路に沿う進捗も使って到達を判断します。
 ログイン・実機への送信・複数人の同時利用は対象外です。
 
 ## テストと画面の検証
@@ -86,10 +100,13 @@ IDは `synthetic/beach_gentle/200/100`、`real/<パッチ名>/200` の形式で�
 ```bash
 cd conference
 python3 -m tests.test_mission
+python3 -m tests.test_mapfiles_sim
 ```
 
-既存テストを含む実行結果、ブラウザ検証の範囲、実測時間、制約は `REPORT_ja.md` を参照してください。
-`screenshots/desktop.png` と `screenshots/ipad.png` に計画・比較結果のスクリーンショットを置きます。
+タスク010の記録は `REPORT_ja.md`、タスク011の現在の実行結果と制約は `REPORT_mapfiles_sim_ja.md` を参照してください。
+既存の `tests.test_mission` には地図17件固定の検査があり、ファイル地図追加後はその検査で失敗します。
+指示書で既存テストの変更が許可されていないため、そのまま保持し、報告書に失敗出力を記録しています。
+現在の画面は `screenshots/mapfiles_sim_desktop.png` と `screenshots/mapfiles_sim_ipad.png` にあります。
 
 画面の自動検証を再実行する場合だけ、開発用に `pip install playwright` を実行し、
 Chromiumをシステムに用意するか `python3 -m playwright install chromium` で取得します。
@@ -97,12 +114,24 @@ Chromiumをシステムに用意するか `python3 -m playwright install chromiu
 
 ```bash
 cd conference
-python3 -m webui.check_browser
+python3 -m webui.check_mapfiles_sim
 ```
 
-実際のプランナーで単独計画・比較を行い、スクリーンショットと `results/web_ui/` の検証ログ・CSV・JSONを更新します。
+実際のプランナーでファイル地図の計画・走行・再生を行い、スクリーンショットと `results/mapfiles_sim/` の検証CSV・入力JSONを更新します。
 `WEBUI_BASE_URL` 環境変数で接続先を変更できます。iPad相当の検証はChromiumのタッチエミュレーションです。
 Safari実機の検証を代替するものではありません。
+
+タスク011の実装・テスト結果・接触の記録・Gazebo変換誤差は `REPORT_mapfiles_sim_ja.md` を参照してください。
+タスク011の画面確認は `python3 -m webui.check_mapfiles_sim` で再実行できます。
+Gazebo用の地形は次のコマンドで書き出します（Gazeboのインストールは不要）。
+
+```bash
+cd conference
+python3 data_prep/export_gazebo.py maps/flat_test_100m.npz gazebo_worlds/flat_test
+```
+
+Ubuntu 24.04のGazebo Harmonicでの起動方法は、出力先の `README_ja.md` を参照してください。
+この環境ではGazeboの実行は検証していません。
 
 ## 実測地形の出典
 

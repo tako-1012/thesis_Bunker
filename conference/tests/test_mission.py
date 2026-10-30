@@ -37,8 +37,10 @@ def test_maps():
         for kind in ("beach_gentle", "beach_steep", "beach_scarp", "rolling", "hills")
     }
     expected |= {f'real/{row["name"]}/200' for row in list_patches("validation")}
-    assert len(maps) == 17 and {row["id"] for row in maps} == expected
-    assert all(row["name"] and row["side_m"] == 200 for row in maps)
+    # task 011 appends map files (id "file/..."); the task 010 built-in maps must stay exactly the same
+    builtin = [row for row in maps if not row["id"].startswith("file/")]
+    assert len(builtin) == 17 and {row["id"] for row in builtin} == expected
+    assert all(row["name"] and row["side_m"] == 200 for row in builtin)
     sc = load_map(maps[0]["id"])
     assert load_map(maps[0]["id"]) is sc
     image = render_map_png(sc)
@@ -195,7 +197,8 @@ def test_safety():
 def test_api():
     with TestClient(app) as client:
         maps = client.get("/api/maps")
-        assert maps.status_code == 200 and len(maps.json()) == 17
+        assert maps.status_code == 200
+        assert len([m for m in maps.json() if not m["id"].startswith("file/")]) == 17
         map_id = maps.json()[0]["id"]
         info = client.get(f"/api/maps/{map_id}")
         assert info.status_code == 200 and info.json()["resolution"] == RESOLUTION
