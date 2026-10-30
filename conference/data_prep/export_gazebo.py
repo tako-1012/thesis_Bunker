@@ -76,8 +76,12 @@ def export_gazebo(map_path, output):
         ("gz-sim-physics-system", "gz::sim::systems::Physics"),
         ("gz-sim-user-commands-system", "gz::sim::systems::UserCommands"),
         ("gz-sim-scene-broadcaster-system", "gz::sim::systems::SceneBroadcaster"),
+        ("gz-sim-sensors-system", "gz::sim::systems::Sensors"),
+        ("gz-sim-imu-system", "gz::sim::systems::Imu"),
     ]:
-        node(world, "plugin", filename=filename, name=plugin_name)
+        plugin = node(world, "plugin", filename=filename, name=plugin_name)
+        if filename == "gz-sim-sensors-system":
+            node(plugin, "render_engine", "ogre2")
     physics = node(world, "physics", name="physics", type="ignored")
     node(physics, "max_step_size", "0.001")
     node(physics, "real_time_factor", "1")
@@ -91,15 +95,14 @@ def export_gazebo(map_path, output):
     node(sun, "specular", "0.2 0.2 0.2 1")
     model = node(world, "model", name="terrain")
     node(model, "static", "true")
+    node(model, "pose", f"{side/2-res/2:.17g} {side/2-res/2:.17g} {minimum:.17g} 0 0 0")
     link = node(model, "link", name="terrain_link")
     for tag in ("collision", "visual"):
         item = node(link, tag, name="terrain_" + tag)
         heightmap = node(node(item, "geometry"), "heightmap")
         node(heightmap, "uri", "heightmap.png")
         node(heightmap, "size", f"{side:.17g} {side:.17g} {span:.17g}")
-        node(
-            heightmap, "pos", f"{side/2-res/2:.17g} {side/2-res/2:.17g} {minimum:.17g}"
-        )
+        node(heightmap, "pos", "0 0 0")
         node(heightmap, "sampling", "1")
         if tag == "collision":
             ode = node(node(node(item, "surface"), "friction"), "ode")
@@ -163,7 +166,8 @@ gz sim world.sdf
 地図の各マス中心は(x,y)=(i×{res},j×{res})m、x右向き・y上向き、PNGの上端は+y側です。
 地形の範囲は両軸とも−{res/2}〜{side-res/2}m、原点は最初のマス中心です。
 マス境界まで半マス延長して双線形補間し、端は最近傍値で延長しました。
-NaNは地図ローダーで最近傍の実測値を使って埋めます。高さは最小値{minimum:.17g}mをpos.zに、幅{span:.17g}mをsize.zに分けています。
+NaNは地図ローダーで最近傍の実測値を使って埋めます。最小値{minimum:.17g}mと平行移動は地形モデルのposeに、幅{span:.17g}mはsize.zに設定しています。
+Harmonicの衝突地形ではheightmap.posが無視されるため、見た目・衝突のposをともに0 0 0としています。IMUとセンサーのsystemを有効にしています。
 16bit量子化の上限は{span/65535/2:.17g}m、元格子中心へ戻した最大誤差は{error:.17g}mでした。
 障害物は膨張前マスクの4近傍連結成分ごとの軸平行な外接箱{count}個です。
 各箱はその領域の最小標高より0.1m下から最大標高より0.5m上までとする形状の仮定です。穴や非矩形部分も箱で覆います。

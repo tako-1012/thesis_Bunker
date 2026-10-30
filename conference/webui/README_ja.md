@@ -101,12 +101,12 @@ IDは `synthetic/beach_gentle/200/100`、`real/<パッチ名>/200`、`file/<フ�
 cd conference
 python3 -m tests.test_mission
 python3 -m tests.test_mapfiles_sim
+python3 -m tests.test_ros2_gz
 ```
 
-タスク010の記録は `REPORT_ja.md`、タスク011の現在の実行結果と制約は `REPORT_mapfiles_sim_ja.md` を参照してください。
-既存の `tests.test_mission` には地図17件固定の検査があり、ファイル地図追加後はその検査で失敗します。
-指示書で既存テストの変更が許可されていないため、そのまま保持し、報告書に失敗出力を記録しています。
-現在の画面は `screenshots/mapfiles_sim_desktop.png` と `screenshots/mapfiles_sim_ipad.png` にあります。
+タスク010の記録は `REPORT_ja.md`、タスク011の当時の結果は `REPORT_mapfiles_sim_ja.md` を参照してください。
+旧17件固定の検査は上流のrealtime-mapで修正済みです。タスク012の最新結果・制約は `conference/ros2_jazzy/REPORT_ja.md` にまとめています。
+走行模型の画面は `screenshots/mapfiles_sim_*.png`、模擬ロボット表示の画面は `screenshots/ros2_robot_*.png` です。
 
 画面の自動検証を再実行する場合だけ、開発用に `pip install playwright` を実行し、
 Chromiumをシステムに用意するか `python3 -m playwright install chromium` で取得します。
@@ -133,7 +133,32 @@ python3 data_prep/export_gazebo.py maps/flat_test_100m.npz gazebo_worlds/flat_te
 Ubuntu 24.04のGazebo Harmonicでの起動方法は、出力先の `README_ja.md` を参照してください。
 この環境ではGazeboの実行は検証していません。
 
-## 実測地形の出典
+## ROS2・Gazeboのロボットへ送る（タスク012）
+
+Ubuntu側のセットアップ・模型の値と出典・起動方法は `conference/ros2_jazzy/README_ja.md` を参照してください。
+WebサーバーにはROS2をインストールする必要はありません。
+同じファイル地図をGazeboとWebで選び、計画結果の「ロボットに送る」で送信します。
+比較後は地形方式を送ります。紫のマーカー・線はロボットから届いたworld座標の位置・走行軌跡です。
+送信番号と走行中／完了／立ち往生を表示し、3秒以上状態が届かなければ未接続と表示します。
+停止はUbuntu側で行います。サーバーの再起動時にはUbuntu側の橋渡しノードも再起動してください。
+
+`POST /api/robot/mission` は `{map_id,path,lookahead_m}`（任意の `points` も可）を保存し、`id` 付きで返します。
+`GET /api/robot/mission?after=<id>` は新しい指示がなければ204。
+`POST /api/robot/state` は `{map_id,mission_id,status,pose:[x,y,z,roll,pitch,yaw],sim_time,message}`、
+`GET /api/robot/state` は最終状態と `connected`・`age_s` を返します。座標はm、角度はradです。
+保存は単一プロセスのメモリ内・最新指示1件です。従来の地図・計画・シミュレーションAPIはそのまま使用できます。
+
+実機やGazeboがないときの表示確認用（**模擬状態であり、走行の測定値ではありません**）：
+
+```bash
+cd conference
+python3 -m webui.mock_robot --map-id file/flat_test_100m.npz --pose 10,10,0,0,0,0
+```
+
+`python3 -m webui.check_ros2_gz` で計画・送信・模擬位置・軌跡・未接続表示のブラウザ検証を再実行できます。
+`screenshots/ros2_robot_desktop.png` と `screenshots/ros2_robot_ipad.png` はこの表示確認の画面です。
+
+## 実測地形の出典（共通）
 
 - 出典：静岡県「VIRTUAL SHIZUOKA 静岡県 中西部沿岸 点群データ」ALB グリッドデータ（0.5m）
   https://www.geospatial.jp/ckan/dataset/shizuoka-2025-pointcloud-alb

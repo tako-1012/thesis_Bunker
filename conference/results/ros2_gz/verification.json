@@ -1,0 +1,47 @@
+{
+  "base": "363f0b6ae53a7db7950faf28065c40ff66523d77",
+  "branch": "codex/ros2-gazebo-bunker",
+  "existing_files": 406,
+  "allowed_existing_changes": [
+    "conference/data_prep/export_gazebo.py",
+    "conference/gazebo_worlds/flat_test/README_ja.md",
+    "conference/gazebo_worlds/flat_test/world.sdf",
+    "conference/gazebo_worlds/real_08OB87_-0206/README_ja.md",
+    "conference/gazebo_worlds/real_08OB87_-0206/world.sdf",
+    "conference/tests/test_mapfiles_sim.py",
+    "conference/webui/README_ja.md",
+    "conference/webui/server.py",
+    "conference/webui/static/app.js",
+    "conference/webui/static/index.html",
+    "conference/webui/static/style.css"
+  ],
+  "other_sha256_unchanged": 395,
+  "test_modules": [
+    "test_beach_terrain",
+    "test_collision",
+    "test_dstar",
+    "test_mapfiles_sim",
+    "test_mission",
+    "test_natural_terrain",
+    "test_online",
+    "test_planners",
+    "test_real_beach",
+    "test_risk_prior",
+    "test_ros2_gz",
+    "test_tour"
+  ],
+  "failed_test_modules": [],
+  "python": "3.12.14",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.52.1",
+    "httpx": "0.28.1",
+    "playwright": "1.62.0"
+  },
+  "gazebo_physics_verified": false,
+  "colcon_build_verified": false,
+  "safari_verified": false,
+  "all_added_stl_files": []
+}

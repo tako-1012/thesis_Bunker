@@ -1,0 +1,145 @@
+変更前
+$ cd conference && python3 -m tests.test_planners
+all planner tests passed
+roll-aware tests passed
+exit code: 0
+
+変更後の既存全11モジュール
+$ python3 -m tests.test_beach_terrain
+beach determinism, shapes, finite values, water/wet and unchanged rolling passed
+averaged sea/wet/dry/inland profiles and foreshore slopes passed (validation seeds)
+scarp 45-degree coverage passed: [np.float64(0.465), np.float64(0.615), np.float64(0.0), np.float64(0.16), np.float64(0.555)]
+beach scenarios, delegated planner equality and exact smoothing passed (15 scenarios)
+exact beach online safety passed (9 trajectories)
+all beach-terrain tests passed
+exit code: 0
+$ python3 -m tests.test_collision
+segment_cells passed (2000 seeded segments vs exhaustive SAT, reversal and boundary cases)
+corner-grazing reproduction and exact rejection passed
+legacy online and smoothing regressions passed
+exact online safety passed (41 trajectories, A* and D* Lite)
+all collision tests passed
+exit code: 0
+$ python3 -m tests.test_dstar
+static agreement passed (20 random grids, tolerance 1e-9)
+dynamic agreement passed (5 seeds x 20 updates, tolerance 1e-9)
+corner constraints, cost decreases, unreachable/reopened routes and ties passed
+task 001 regression passed (ridge soft and hills hard, search omitted)
+D* Lite safety passed (20 trajectories, normal and every-step replanning)
+error handling and fixed/adaptive-with-map prior handling passed
+all D* Lite tests passed
+exit code: 0
+$ python3 -m tests.test_mapfiles_sim
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+maps: 5 lossless scenario round trips, float32+residual, NaN, all 23 files and all 17 legacy IDs passed
+straight completed True max_deviation_m 3.552713678800501e-15 elapsed_s 19.700000000000003
+right_angle completed True max_deviation_m 0.20226302369017546 elapsed_s 39.650000000000006
+closed completed True max_deviation_m 0.3173559828528229 elapsed_s 68.35000000000001
+controller: reverse-heading spin then advance, curvature-preserving saturation, timeout passed
+tour map=flat_test_100m.npz elapsed_s=248.15 deviation_mean_m=0.006614475997696592 deviation_max_m=0.33848962758007467 path_lethal_cells=0 out_of_bounds_samples=0 completed=True
+contact_cells_xy_m []
+tour map=beach_gentle_200m_100.npz elapsed_s=418.45000000000005 deviation_mean_m=0.01568040573287969 deviation_max_m=0.20112452978749665 path_lethal_cells=0 out_of_bounds_samples=0 completed=True
+contact_cells_xy_m []
+gazebo flat_test_100m.npz pixels 257 size_m 100.0 max_error_m 0.0 boxes 3
+gazebo real_08OB87_-0206_200m_0.npz pixels 2049 size_m 200.0 max_error_m 0.06374200885325632 boxes 0
+API: 40 maps, file metadata/PNG, five-point planning/simulation, 404/422, immediate 409 and guard recovery passed
+all mapfiles/simulation tests passed
+exit code: 0
+$ python3 -m tests.test_mission
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+maps: 5 synthetic + 12 validation, cache, PNG dimensions/orientation passed
+parity: 5-point terrain order/cost/path and Euclidean order/physical legs passed
+validation: outside, water, blocked, unreachable, counts, rounding, duplicate/invalid base passed
+safety: synthetic/beach_gentle/200/100, 5 points, terrain/euclid contact=0
+safety: synthetic/beach_steep/200/100, 5 points, terrain/euclid contact=0
+safety: synthetic/beach_scarp/200/100, 5 points, terrain/euclid contact=0
+safety: real/08OB87_-0206/200, 5 points, terrain/euclid contact=0
+safety: real/08OB88_01332/200, 5 points, terrain/euclid contact=0
+API: maps/info/PNG/plan/static, 404/422, responsive worker, immediate 409 and guard recovery passed
+all mission tests passed
+exit code: 0
+$ python3 -m tests.test_natural_terrain
+natural generation determinism, distinct seeds, shape and finite values passed
+pre-erosion radial spectrum passed: [-3.5227452123825955, -3.4854938900090673, -3.5147015961346426, -3.469782545726739, -3.4636674128050786]
+rock area law: 0.4 0.02703765778384137 0.02660688949938067
+rock area law: 0.6 0.014010959187524073 0.013724330217025335
+rock area law: 1.0 0.003425544099666588 0.003651617375374042
+natural scenarios and exact online safety passed (15 trajectories)
+experiment oracle contact audit passed (both reference planners)
+all natural-terrain tests passed
+exit code: 0
+$ python3 -m tests.test_online
+regression passed (ridge/100 m, seeds 0 and 7)
+perfect prior passed (all terrain kinds/50 m/seed 0)
+coarse prior passed (shape, no rocks, partial blocks, noise, robot/weights, edges)
+prior policies passed (hard/soft/ignore, sensing overrides, cell-specific triggers)
+safety passed (60 trajectories: five online variants and constrained oracle)
+all online tests passed
+exit code: 0
+$ python3 -m tests.test_planners
+all planner tests passed
+roll-aware tests passed
+exit code: 0
+$ python3 -m tests.test_real_beach
+all 60 patches loaded: shapes, 12/48 split, nearest-data fill passed
+all 60 patches satisfy sea-to-land orientation
+08OB86_00294: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB86_-0205: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB87_-0706: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB88_-1417: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB88_-0167: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB86_00294: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB86_-0205: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB87_-0706: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB88_-1417: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB88_-0167: exact offline and coarse R5 c10 online safety passed, clean/debris
+real-beach test groups failed: 0
+all real-beach tests passed
+exit code: 0
+$ python3 -m tests.test_risk_prior
+coarse elevation/refactor passed (16 terrain/cell/noise combinations)
+calibration passed (all-cell counts/means, deterministic pooling, JSON, test-seed rejection)
+empty-bin fallback and boundary assignment passed
+risk cost passed (expected means, lambda monotonicity/clipping, noise, unchanged lethal mask)
+risk-prior safety passed (40 trajectories, 40 successful; 20 m cells, R=5/15 m, lambda=0/1)
+all risk-prior tests passed
+exit code: 0
+$ python3 -m tests.test_tour
+kappa=0 agrees with legacy A* (20 random 25x25 grids)
+directed A*/Dijkstra agree with all-simple-path exhaustive oracle (10 grids); unreachable/corners/budget passed
+uphill/downhill identity, segment units and nonincreasing exact smoothing passed
+Held-Karp matches all permutations (30 asymmetric matrices at each of 2..8 destinations); ties/closure passed
+beach_gentle: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+beach_steep: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+beach_scarp: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+all multi-goal tour tests passed
+exit code: 0
+Failed modules: []
+
+$ python3 -m tests.test_ros2_gz
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+model: 150kg box inertia, 0.699m spacing, 4 wheels/side, DiffDrive joints, IMU, world pose and opt-in external visual passed
+packages: ament_python metadata, resource markers, node entry points, launch/bridge configuration and Python syntax passed
+follower: bit-identical kinematic trajectory, completion, stationary watchdog and CSV fields passed
+data_source synthetic_robot_sim
+source completed elapsed_s deviation_mean_m deviation_max_m lethal_cells
+recorded True 34.2 0.02959598405434589 0.3173397734180379 0
+kinematic True 34.2 0.02959598405434589 0.3173397734180379 0
+attitude actual_p95_deg map_p95_deg
+roll 0.0 0.0
+pitch 0.0 0.0
+data_source synthetic_robot_sim
+source completed elapsed_s deviation_mean_m deviation_max_m lethal_cells
+recorded True 7.7 0.0 0.0 0
+kinematic True 7.7 0.0 0.0 0
+attitude actual_p95_deg map_p95_deg
+roll 0.0 11.309932474020224
+pitch 0.0 5.710593137499648
+report: synthetic robot_sim CSV deviation/contact/time parity, kinematic comparison and plots passed (not Gazebo measurements)
+API: send/fetch/id/204, telemetry/freshness, invalid map/path 422 and bridge map rejection passed
+worlds: original PNG hashes/obstacle XML preserved, effective terrain transforms unchanged, sensors and IMU added
+all ROS-free ROS2/Gazebo tests passed
+exit code: 0

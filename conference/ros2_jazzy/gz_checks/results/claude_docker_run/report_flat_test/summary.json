@@ -1,0 +1,23 @@
+{
+  "data_source": "robot_recording",
+  "map_id": "file/flat_test_100m.npz",
+  "status": "completed",
+  "completed": true,
+  "elapsed_s": 249.41099999999997,
+  "deviation_mean_m": 0.012878284410197035,
+  "deviation_max_m": 0.46493487220460344,
+  "path_lethal_cells": 0,
+  "out_of_bounds_samples": 0,
+  "fallen_samples": 0,
+  "roll_p95_actual_deg": 8.046218261608068e-09,
+  "pitch_p95_actual_deg": 6.420342070166374e-10,
+  "roll_p95_map_deg": 0.0,
+  "pitch_p95_map_deg": 0.0,
+  "kinematic": {
+    "elapsed_s": 248.20000000000002,
+    "deviation_mean_m": 0.00809258568725042,
+    "deviation_max_m": 0.34452857268482434,
+    "path_lethal_cells": 0,
+    "completed": true
+  }
+}
