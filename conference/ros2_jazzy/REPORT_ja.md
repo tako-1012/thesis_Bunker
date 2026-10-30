@@ -420,3 +420,10 @@ telemetry_source: mock_robot display test; not a Gazebo physical run
 - 単一ロボット、単一Webプロセス、最新指示1件のメモリ保持です。サーバー再起動後には橋渡しも再起動してください。
 - 車輪で近似した理想DiffDriveであり、砂の沈下・クローラー形状・駆動トルク・実機の摩擦を同定したものではありません。
 - ログの実際の姿勢と地図予測のサンプル重みの違い、停止時間、追従誤差による姿勢差は残ります。数値を一致させる補正はしていません。
+
+## PR作成の制約
+
+`codex/ros2-gazebo-bunker` はoriginへpush済みです。上記のテスト全文・解析表・模擬表示の画像を含む日本語本文で
+`realtime-map` 向けドラフトPRを作成しようとしましたが、GraphQLの `gh pr create` とRESTの `POST /repos/tako-1012/thesis_Bunker/pulls` が
+ともに `Forbidden` を返しました。PRは未作成であり、この完了条件は未達です。
+[PR作成画面](https://github.com/tako-1012/thesis_Bunker/compare/realtime-map...codex/ros2-gazebo-bunker?expand=1) で差分を確認できます。
