@@ -1,0 +1,23 @@
+{
+  "data_source": "synthetic_robot_sim",
+  "map_id": "file/flat_test_100m.npz",
+  "status": "completed",
+  "completed": true,
+  "elapsed_s": 34.2,
+  "deviation_mean_m": 0.02959598405434589,
+  "deviation_max_m": 0.3173397734180379,
+  "path_lethal_cells": 0,
+  "out_of_bounds_samples": 0,
+  "fallen_samples": 0,
+  "roll_p95_actual_deg": 0.0,
+  "pitch_p95_actual_deg": 0.0,
+  "roll_p95_map_deg": 0.0,
+  "pitch_p95_map_deg": 0.0,
+  "kinematic": {
+    "elapsed_s": 34.2,
+    "deviation_mean_m": 0.02959598405434589,
+    "deviation_max_m": 0.3173397734180379,
+    "path_lethal_cells": 0,
+    "completed": true
+  }
+}

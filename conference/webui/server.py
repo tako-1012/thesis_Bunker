@@ -14,10 +14,12 @@ from starlette.concurrency import run_in_threadpool
 from tapp.config import RESOLUTION
 from tapp.mission import list_maps, load_map, plan_mission, render_map_png
 from tapp.robot_sim import simulate, initial_pose
+from .robot_api import router as robot_router
 import numpy as np
 
 STATIC = Path(__file__).resolve().parent / "static"
 app = FastAPI(title="砂浜の巡回計画")
+app.include_router(robot_router)
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
 _PLANNING = threading.Lock()
 

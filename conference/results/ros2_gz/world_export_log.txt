@@ -1,0 +1,4 @@
+map pixels side_m max_error_m quantization_bound_m obstacle_boxes
+flat_test_100m.npz 257 100.0 0.0 7.629510948348211e-09 3
+map pixels side_m max_error_m quantization_bound_m obstacle_boxes
+real_08OB87_-0206_200m_0.npz 2049 200.0 0.06374200885325632 6.179867596959889e-05 0

@@ -1,0 +1,12 @@
+{
+  "physical_checks_executed": false,
+  "probe_succeeded": true,
+  "image": "osrf/ros:jazzy-desktop-full",
+  "image_digest": "sha256:ae7ad3ac243da1dfd8bd402a2fa08e149ffbf7a385013bd8ef798d0800accdc8",
+  "probe_stdout": "rclpy True\nnumpy True\nscipy True\nmatplotlib True\nfastapi False\n/usr/bin/colcon\n8.11.0\n",
+  "failure": "docker: Error response from daemon: mkdir /var/lib/docker/image/vfs/layerdb/mounts/8a755bd28a9ff9646f876ce6c032bd41a5f0dbc03060da524267f3a1a5189d1e: no space left on device\n\nRun 'docker run --help' for more information\n",
+  "reason": "Docker vfs writable-layer creation exceeded filesystem capacity",
+  "measurements": null,
+  "storage_driver": "vfs",
+  "filesystem_total_bytes": 33770192896
+}

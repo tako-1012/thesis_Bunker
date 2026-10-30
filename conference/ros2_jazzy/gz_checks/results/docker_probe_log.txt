@@ -1,0 +1,10 @@
+rclpy True
+numpy True
+scipy True
+matplotlib True
+fastapi False
+/usr/bin/colcon
+8.11.0
+docker: Error response from daemon: mkdir /var/lib/docker/image/vfs/layerdb/mounts/8a755bd28a9ff9646f876ce6c032bd41a5f0dbc03060da524267f3a1a5189d1e: no space left on device
+
+Run 'docker run --help' for more information

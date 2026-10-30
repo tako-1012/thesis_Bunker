@@ -4,6 +4,10 @@
     <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
     <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
     <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
     <physics name="physics" type="ignored">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
@@ -20,13 +24,14 @@
     </light>
     <model name="terrain">
       <static>true</static>
+      <pose>99.75 99.75 -1.2999999523162842 0 0 0</pose>
       <link name="terrain_link">
         <collision name="terrain_collision">
           <geometry>
             <heightmap>
               <uri>heightmap.png</uri>
               <size>200 200 8.0999524593353271</size>
-              <pos>99.75 99.75 -1.2999999523162842</pos>
+              <pos>0 0 0</pos>
               <sampling>1</sampling>
             </heightmap>
           </geometry>
@@ -44,7 +49,7 @@
             <heightmap>
               <uri>heightmap.png</uri>
               <size>200 200 8.0999524593353271</size>
-              <pos>99.75 99.75 -1.2999999523162842</pos>
+              <pos>0 0 0</pos>
               <sampling>1</sampling>
             </heightmap>
           </geometry>

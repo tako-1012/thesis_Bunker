@@ -216,6 +216,12 @@ def test_gazebo():
             hm = xml.find('.//model[@name="terrain"]/link/collision/geometry/heightmap')
             size = np.fromstring(hm.findtext("size"), sep=" ")
             pos = np.fromstring(hm.findtext("pos"), sep=" ")
+            model_pose = np.fromstring(
+                xml.findtext('.//model[@name="terrain"]/pose'), sep=" "
+            )
+            assert np.array_equal(pos, [0, 0, 0])
+            assert np.array_equal(model_pose[3:], [0, 0, 0])
+            pos = pos + model_pose[:3]
             sc = load_map_file(ROOT / "maps" / name)
             z = sc["tmap"].elev
             side = z.shape[0] * 0.5
