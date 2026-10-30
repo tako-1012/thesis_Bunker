@@ -6,6 +6,7 @@ import struct
 import threading
 import time
 import zlib
+from pathlib import Path
 
 import numpy as np
 from scipy.ndimage import label
@@ -17,29 +18,55 @@ from .config import DEFAULT_W, RESOLUTION
 from .metrics import evaluate
 from .real_beach import build_real, list_patches
 from .tour import cost_matrix, euclid_matrix, solve_tour, tour_legs
+from .mapfile import load_map_file
 
 _MAP_LOCK = threading.Lock()
+MAPS_DIR = Path(__file__).resolve().parent.parent / "maps"
 _NAMES = dict(
     zip(BEACH_TYPES, ("緩やかな砂浜", "急な砂浜", "浜崖のある砂浜", "起伏地", "丘陵"))
 )
 
 
 def list_maps() -> list:
-    return [
-        dict(id=f"synthetic/{kind}/200/100", name=f"人工：{_NAMES[kind]}", side_m=200)
-        for kind in BEACH_TYPES
-    ] + [
-        dict(id=f'real/{row["name"]}/200', name=f'静岡県：{row["name"]}', side_m=200)
-        for row in list_patches("validation")
-    ]
+    return (
+        [
+            dict(
+                id=f"synthetic/{kind}/200/100", name=f"人工：{_NAMES[kind]}", side_m=200
+            )
+            for kind in BEACH_TYPES
+        ]
+        + [
+            dict(
+                id=f'real/{row["name"]}/200', name=f'静岡県：{row["name"]}', side_m=200
+            )
+            for row in list_patches("validation")
+        ]
+        + _file_maps()
+    )
 
 
-@functools.lru_cache(maxsize=17)
+def _file_maps():
+    maps = []
+    for path in sorted(MAPS_DIR.glob("*.npz")):
+        with np.load(path, allow_pickle=False) as data:
+            maps.append(
+                dict(
+                    id="file/" + path.name,
+                    name=str(data["name"].item()),
+                    side_m=data["elev"].shape[0] * float(data["resolution"]),
+                )
+            )
+    return maps
+
+
+@functools.lru_cache(maxsize=64)
 def _load_map(map_id):
     if map_id not in {row["id"] for row in list_maps()}:
         raise ValueError("地図が見つかりません")
     parts = map_id.split("/")
-    if parts[0] == "synthetic":
+    if parts[0] == "file":
+        sc = load_map_file(MAPS_DIR / parts[1])
+    elif parts[0] == "synthetic":
         sc = build_beach(parts[1], 200, 100)
     else:
         sc = build_real(parts[1], 200, 100)

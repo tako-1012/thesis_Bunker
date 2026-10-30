@@ -13,6 +13,8 @@ const state = {
   busy: false,
   playback: null,
   robot: null,
+  simulation: null,
+  simulatedRoute: null,
 };
 const map = L.map("map", {
   crs: L.CRS.Simple,
@@ -63,6 +65,7 @@ function busy(value) {
     "clear-points",
     "save-points",
     "method",
+    "lookahead",
   ])
     $(id).disabled = value || !state.info;
   for (const marker of [...state.markers, state.base].filter(Boolean)) {
@@ -76,6 +79,8 @@ function updateButtons() {
   $("plan").disabled = $("compare").disabled =
     state.busy || !state.info || !state.points.length;
   $("play").disabled =
+    state.busy || !state.results.some((r) => r.path.length > 1);
+  $("simulate").disabled =
     state.busy || !state.results.some((r) => r.path.length > 1);
   $("point-count").textContent = `${state.points.length} / 12`;
   $("map-tip").hidden = state.points.length > 0 || state.busy;
@@ -91,11 +96,20 @@ function stopPlayback() {
 
 function clearResults() {
   stopPlayback();
+  clearSimulation();
   for (const route of state.routes) map.removeLayer(route);
   state.routes = [];
   state.results = [];
   $("result-content").hidden = true;
   $("empty-results").hidden = false;
+}
+
+function clearSimulation() {
+  stopPlayback();
+  if (state.simulatedRoute) map.removeLayer(state.simulatedRoute);
+  state.simulatedRoute = null;
+  state.simulation = null;
+  $("simulation-result").hidden = true;
 }
 
 function waypointIcon(text) {
@@ -191,6 +205,11 @@ async function selectMap(id, imported = null) {
     if (state.image) map.removeLayer(state.image);
     state.image = image;
     state.info = info;
+    $("map-size").textContent =
+      `${info.shape[0] * info.resolution} × ${info.shape[1] * info.resolution} m`;
+    $("file-attribution").textContent = info.attribution
+      ? `選択中の地図の出典：${info.attribution}`
+      : "";
     state.start = imported ? imported.start : info.start;
     state.points = imported ? imported.points : [];
     if (imported) $("method").value = imported.method || "terrain";
@@ -375,6 +394,10 @@ function play() {
     state.results.find((r) => r.method === "terrain" && r.path.length > 1) ||
     state.results.find((r) => r.path.length > 1);
   if (!result) return;
+  if (state.simulation) {
+    playSimulation();
+    return;
+  }
   const path = result.path,
     cumulative = [0];
   for (let i = 1; i < path.length; i++)
@@ -422,6 +445,111 @@ function play() {
   }
   state.playback.frame = requestAnimationFrame(frame);
 }
+
+async function simulateDriving() {
+  if (state.busy) return;
+  const result =
+    state.results.find((r) => r.method === "terrain" && r.path.length > 1) ||
+    state.results.find((r) => r.path.length > 1);
+  if (!result) return;
+  clearSimulation();
+  busy(true);
+  status("Pure Pursuitで走行を計算しています…", "busy");
+  try {
+    const run = await api("/api/simulate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        map_id: state.info.id,
+        path: result.path,
+        lookahead_m: Number($("lookahead").value),
+      }),
+    });
+    state.simulation = run;
+    state.simulatedRoute = L.polyline(
+      run.trajectory.map((p) => [p[2], p[1]]),
+      { color: "#ce6b35", weight: 3, opacity: 0.95 },
+    ).addTo(map);
+    const box = $("simulation-result");
+    box.replaceChildren();
+    box.hidden = false;
+    const title = document.createElement("h3");
+    title.textContent = "走行シミュレーション（橙の軌跡）";
+    box.append(title);
+    const table = document.createElement("table");
+    for (const [label, value] of [
+      ["完走", run.completed ? "完走しました" : "時間内に完走しませんでした"],
+      ["所要時間", `${number(run.elapsed_s)} 秒`],
+      ["ずれの平均", `${number(run.deviation_mean_m, 3)} m`],
+      ["ずれの最大", `${number(run.deviation_max_m, 3)} m`],
+      ["通行不可への接触", `${run.path_lethal_cells} マス`],
+      ["地図外の軌跡サンプル", `${run.out_of_bounds_samples} 個`],
+    ]) {
+      const row = document.createElement("tr"),
+        th = document.createElement("th"),
+        td = document.createElement("td");
+      th.textContent = label;
+      td.textContent = value;
+      row.append(th, td);
+      table.append(row);
+    }
+    box.append(table);
+    status(
+      run.path_lethal_cells || run.out_of_bounds_samples
+        ? "走行で通行不可や地図外に接触しました。軌跡と結果を確認してください。"
+        : "走行の計算が完了しました。「再生」で軌跡を時刻どおりに再生できます。",
+      run.path_lethal_cells || run.out_of_bounds_samples ? "error" : "",
+    );
+  } catch (error) {
+    status(error.message, "error");
+  } finally {
+    busy(false);
+  }
+}
+
+function playSimulation() {
+  const trace = state.simulation.trajectory;
+  state.robot = L.marker([trace[0][2], trace[0][1]], {
+    interactive: false,
+    zIndexOffset: 1000,
+    icon: L.divIcon({
+      className: "robot-shell",
+      html: '<div class="robot-icon"></div>',
+      iconSize: [22, 22],
+      iconAnchor: [11, 11],
+    }),
+  }).addTo(map);
+  state.playback = { start: performance.now(), segment: 0, frame: null };
+  $("play").textContent = "■ 停止";
+  function frame(now) {
+    const run = state.playback;
+    if (!run) return;
+    const seconds = (now - run.start) / 1000;
+    if (seconds >= trace[trace.length - 1][0]) {
+      stopPlayback();
+      status("走行軌跡の再生が完了しました。");
+      return;
+    }
+    while (
+      run.segment < trace.length - 2 &&
+      trace[run.segment + 1][0] <= seconds
+    )
+      run.segment++;
+    const a = trace[run.segment],
+      b = trace[run.segment + 1],
+      t = (seconds - a[0]) / (b[0] - a[0]);
+    state.robot.setLatLng([a[2] + t * (b[2] - a[2]), a[1] + t * (b[1] - a[1])]);
+    run.frame = requestAnimationFrame(frame);
+  }
+  state.playback.frame = requestAnimationFrame(frame);
+}
+
+$("simulate").addEventListener("click", simulateDriving);
+$("lookahead").addEventListener("input", () => {
+  clearSimulation();
+  $("lookahead-value").textContent =
+    `${Number($("lookahead").value).toFixed(1)} m`;
+});
 
 map.on("click", (event) => {
   if (state.busy || !state.info) return;
