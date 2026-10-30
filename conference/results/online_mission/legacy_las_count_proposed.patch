@@ -1,0 +1,7 @@
+--- a/conference/tests/test_real_beach_las.py
++++ b/conference/tests/test_real_beach_las.py
+@@ -161,3 +161,3 @@
+     folder = Path(__file__).resolve().parent.parent / "maps"
+-    files = sorted(folder.glob("real_las_*.npz"))
++    files = sorted(folder.glob("real_las_*_200m_0.npz"))
+     rows = list_patches("validation", dataset=DATASET)

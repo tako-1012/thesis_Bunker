@@ -1,0 +1,968 @@
+{
+  "clean": {
+    "start": [
+      71,
+      126
+    ],
+    "points": [
+      [
+        319,
+        372
+      ],
+      [
+        370,
+        194
+      ],
+      [
+        142,
+        205
+      ],
+      [
+        95,
+        123
+      ],
+      [
+        137,
+        374
+      ]
+    ],
+    "oracle_order": [
+      0,
+      5,
+      1,
+      2,
+      3,
+      4
+    ],
+    "oracle_J": 925.8995182965889,
+    "oracle_plan_times": [
+      1.1167572139966069,
+      0.6688163340004394,
+      0.5857822679972742,
+      0.5711688320006942,
+      0.4842938969959505,
+      0.880939941998804,
+      0.7909991019987501,
+      0.39195951299916487,
+      0.22354169099708088,
+      0.11762915400322527,
+      0.06678729799750727,
+      0.031282145995646715,
+      0.021318219005479477,
+      0.31019797900808044,
+      0.28346641099778935,
+      0.2456905269937124,
+      0.17722633999073878,
+      0.16552725298970472,
+      0.08912848900945392,
+      0.060624047997407615,
+      0.025547490993631072,
+      0.03357045000302605,
+      0.00944091500423383,
+      0.29210533600416966,
+      0.3107000180025352,
+      0.38828771699627396,
+      0.18438367800263222,
+      0.15452474901394453,
+      0.09995995200006291,
+      0.09159819899650756,
+      0.09740819899889175,
+      0.04863034700974822,
+      0.012490480003179982,
+      0.008695918004377745,
+      0.2625789429876022,
+      0.1976386710011866,
+      0.35121465400152374,
+      0.5617103459953796,
+      0.6729952830064576,
+      0.5661233730061213,
+      0.3099952220072737,
+      0.37099092500284314,
+      0.2996864289889345,
+      0.22525971599679906,
+      0.148544513998786,
+      0.02795522499945946,
+      0.16154064299189486,
+      0.13115671899868175,
+      0.05910167300316971,
+      0.04052687399962451,
+      0.018303973993170075,
+      0.050670402008108795,
+      0.015958628006046638
+    ]
+  },
+  "stale": {
+    "start": [
+      71,
+      126
+    ],
+    "points": [
+      [
+        177,
+        371
+      ],
+      [
+        279,
+        282
+      ],
+      [
+        0,
+        384
+      ],
+      [
+        103,
+        237
+      ],
+      [
+        205,
+        169
+      ]
+    ],
+    "oracle_order": [
+      0,
+      4,
+      3,
+      1,
+      2,
+      5
+    ],
+    "oracle_J": 924.4731832441477,
+    "oracle_plan_times": [
+      0.1898362089996226,
+      0.11137129699636716,
+      0.09637173400551546,
+      0.04869869400863536,
+      0.05774711900448892,
+      0.01656280699535273,
+      0.5871921619982459,
+      0.46775293999235146,
+      0.3959406189969741,
+      0.3138572330062743,
+      0.2573394439968979,
+      0.225298017001478,
+      0.17331444199953694,
+      0.09700782099389471,
+      0.0589614289929159,
+      0.017762734001735225,
+      0.43006069300463423,
+      0.3306458900042344,
+      0.2999610700062476,
+      0.22091015899786726,
+      0.2409812930127373,
+      0.17205412600014824,
+      0.13361503899795935,
+      0.08277741199708544,
+      0.03456021600868553,
+      0.03834433598967735,
+      0.3396390599955339,
+      0.24876078600937035,
+      0.1986689750046935,
+      0.12828038701263722,
+      0.0932799620059086,
+      0.040496462999726646,
+      0.03465725800197106,
+      0.039657929999521,
+      0.33406733800075017,
+      0.22736427398922388,
+      0.1744581639941316,
+      0.12854724199860357,
+      0.04751926400058437,
+      0.03336770800524391,
+      0.02322220899804961,
+      0.4290155079943361,
+      0.3768505729967728,
+      0.29513572200085036,
+      0.23965691900230013,
+      0.1735444140067557,
+      0.102385623002192,
+      0.04044048899959307,
+      0.01864344200293999
+    ]
+  },
+  "oracle_order": [
+    0,
+    5,
+    1,
+    2,
+    3,
+    4
+  ],
+  "oracle_R5_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 136,
+      "goal": [
+        137,
+        374
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 13
+    },
+    {
+      "start_index": 136,
+      "end_index": 239,
+      "goal": [
+        319,
+        372
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 10
+    },
+    {
+      "start_index": 239,
+      "end_index": 349,
+      "goal": [
+        370,
+        194
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 11
+    },
+    {
+      "start_index": 349,
+      "end_index": 464,
+      "goal": [
+        142,
+        205
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 12
+    },
+    {
+      "start_index": 464,
+      "end_index": 513,
+      "goal": [
+        95,
+        123
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 5
+    },
+    {
+      "start_index": 513,
+      "end_index": 527,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 2
+    }
+  ],
+  "oracle_R10_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 136,
+      "goal": [
+        137,
+        374
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 13
+    },
+    {
+      "start_index": 136,
+      "end_index": 239,
+      "goal": [
+        319,
+        372
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 10
+    },
+    {
+      "start_index": 239,
+      "end_index": 349,
+      "goal": [
+        370,
+        194
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 11
+    },
+    {
+      "start_index": 349,
+      "end_index": 464,
+      "goal": [
+        142,
+        205
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 12
+    },
+    {
+      "start_index": 464,
+      "end_index": 513,
+      "goal": [
+        95,
+        123
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 5
+    },
+    {
+      "start_index": 513,
+      "end_index": 527,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 2
+    }
+  ],
+  "oracle_R15_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 136,
+      "goal": [
+        137,
+        374
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 13
+    },
+    {
+      "start_index": 136,
+      "end_index": 239,
+      "goal": [
+        319,
+        372
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 10
+    },
+    {
+      "start_index": 239,
+      "end_index": 349,
+      "goal": [
+        370,
+        194
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 11
+    },
+    {
+      "start_index": 349,
+      "end_index": 464,
+      "goal": [
+        142,
+        205
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 12
+    },
+    {
+      "start_index": 464,
+      "end_index": 513,
+      "goal": [
+        95,
+        123
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 5
+    },
+    {
+      "start_index": 513,
+      "end_index": 527,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 2
+    }
+  ],
+  "coarse c10_order": [
+    0,
+    4,
+    2,
+    1,
+    5,
+    3
+  ],
+  "coarse_c10_R5_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 13,
+      "goal": [
+        95,
+        123
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 2
+    },
+    {
+      "start_index": 13,
+      "end_index": 163,
+      "goal": [
+        370,
+        194
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 50
+    },
+    {
+      "start_index": 163,
+      "end_index": 262,
+      "goal": [
+        319,
+        372
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 54
+    },
+    {
+      "start_index": 262,
+      "end_index": 364,
+      "goal": [
+        137,
+        374
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 83
+    },
+    {
+      "start_index": 364,
+      "end_index": 452,
+      "goal": [
+        142,
+        205
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 71
+    },
+    {
+      "start_index": 452,
+      "end_index": 506,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 21
+    }
+  ],
+  "coarse_c10_R10_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 13,
+      "goal": [
+        95,
+        123
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 2
+    },
+    {
+      "start_index": 13,
+      "end_index": 162,
+      "goal": [
+        370,
+        194
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 35
+    },
+    {
+      "start_index": 162,
+      "end_index": 284,
+      "goal": [
+        319,
+        372
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 72
+    },
+    {
+      "start_index": 284,
+      "end_index": 386,
+      "goal": [
+        137,
+        374
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 76
+    },
+    {
+      "start_index": 386,
+      "end_index": 474,
+      "goal": [
+        142,
+        205
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 68
+    },
+    {
+      "start_index": 474,
+      "end_index": 530,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 17
+    }
+  ],
+  "coarse_c10_R15_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 14,
+      "goal": [
+        95,
+        123
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 2
+    },
+    {
+      "start_index": 14,
+      "end_index": 164,
+      "goal": [
+        370,
+        194
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 34
+    },
+    {
+      "start_index": 164,
+      "end_index": 281,
+      "goal": [
+        319,
+        372
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 68
+    },
+    {
+      "start_index": 281,
+      "end_index": 381,
+      "goal": [
+        137,
+        374
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 69
+    },
+    {
+      "start_index": 381,
+      "end_index": 478,
+      "goal": [
+        142,
+        205
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 63
+    },
+    {
+      "start_index": 478,
+      "end_index": 533,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 9
+    }
+  ],
+  "stale_order": [
+    0,
+    5,
+    2,
+    1,
+    3,
+    4
+  ],
+  "stale_R5_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 82,
+      "goal": [
+        205,
+        169
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 15
+    },
+    {
+      "start_index": 82,
+      "end_index": 152,
+      "goal": [
+        279,
+        282
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 17
+    },
+    {
+      "start_index": 152,
+      "end_index": 235,
+      "goal": [
+        177,
+        371
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 22
+    },
+    {
+      "start_index": 235,
+      "end_index": 338,
+      "goal": [
+        0,
+        384
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 12
+    },
+    {
+      "start_index": 338,
+      "end_index": 447,
+      "goal": [
+        103,
+        237
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 20
+    },
+    {
+      "start_index": 447,
+      "end_index": 507,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 7
+    }
+  ],
+  "stale_R5_fixed_legs": [
+    {
+      "success": true,
+      "goal": [
+        205,
+        169
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        279,
+        282
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        177,
+        371
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        0,
+        384
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        103,
+        237
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        71,
+        126
+      ],
+      "reason": ""
+    }
+  ],
+  "stale_R10_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 80,
+      "goal": [
+        205,
+        169
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 10
+    },
+    {
+      "start_index": 80,
+      "end_index": 150,
+      "goal": [
+        279,
+        282
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 19
+    },
+    {
+      "start_index": 150,
+      "end_index": 230,
+      "goal": [
+        177,
+        371
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 20
+    },
+    {
+      "start_index": 230,
+      "end_index": 334,
+      "goal": [
+        0,
+        384
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 12
+    },
+    {
+      "start_index": 334,
+      "end_index": 444,
+      "goal": [
+        103,
+        237
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 19
+    },
+    {
+      "start_index": 444,
+      "end_index": 504,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 7
+    }
+  ],
+  "stale_R10_fixed_legs": [
+    {
+      "success": true,
+      "goal": [
+        205,
+        169
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        279,
+        282
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        177,
+        371
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        0,
+        384
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        103,
+        237
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        71,
+        126
+      ],
+      "reason": ""
+    }
+  ],
+  "stale_R15_online_legs": [
+    {
+      "start_index": 0,
+      "end_index": 85,
+      "goal": [
+        205,
+        169
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 9
+    },
+    {
+      "start_index": 85,
+      "end_index": 158,
+      "goal": [
+        279,
+        282
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 17
+    },
+    {
+      "start_index": 158,
+      "end_index": 239,
+      "goal": [
+        177,
+        371
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 15
+    },
+    {
+      "start_index": 239,
+      "end_index": 343,
+      "goal": [
+        0,
+        384
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 10
+    },
+    {
+      "start_index": 343,
+      "end_index": 453,
+      "goal": [
+        103,
+        237
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 15
+    },
+    {
+      "start_index": 453,
+      "end_index": 512,
+      "goal": [
+        71,
+        126
+      ],
+      "success": true,
+      "reason": "",
+      "n_plans": 7
+    }
+  ],
+  "stale_R15_fixed_legs": [
+    {
+      "success": true,
+      "goal": [
+        205,
+        169
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        279,
+        282
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        177,
+        371
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        0,
+        384
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        103,
+        237
+      ],
+      "reason": ""
+    },
+    {
+      "success": true,
+      "goal": [
+        71,
+        126
+      ],
+      "reason": ""
+    }
+  ]
+}

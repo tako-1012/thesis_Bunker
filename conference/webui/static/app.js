@@ -678,6 +678,8 @@ new ResizeObserver(() => map.invalidateSize()).observe($("map"));
 init();
 
 function clearLiveRobot() {
+  if (state.livePath) map.removeLayer(state.livePath);
+  state.livePath = null;
   if (state.liveRobot) map.removeLayer(state.liveRobot);
   if (state.liveTrail) map.removeLayer(state.liveTrail);
   state.liveRobot = null;
@@ -730,13 +732,22 @@ async function pollRobot() {
         pose_timeout: "位置情報が届いていません",
         stopped: "停止",
         replaced: "経路を切替中",
+        waiting_for_plan: "次の区間を計画中",
       };
       $("robot-status").textContent =
         `ロボット：${labels[robot.status] || robot.status} ／ 送信番号 ${robot.mission_id || 0}${robot.message ? " ／ " + robot.message : ""}`;
+      if (Number.isInteger(robot.n_replans))
+        $("robot-status").textContent += ` ／ 計画し直した回数 ${robot.n_replans}`;
       if (robot.map_id === state.info?.id && robot.pose) {
         if (state.liveMission !== robot.mission_id) {
           clearLiveRobot();
           state.liveMission = robot.mission_id;
+        }
+        if (robot.current_path?.length) {
+          const points = robot.current_path.map(latlng);
+          if (!state.livePath)
+            state.livePath = L.polyline(points, {color: "#138b65", weight: 5, dashArray: "8 5"}).addTo(map);
+          else state.livePath.setLatLngs(points);
         }
         const point = [robot.pose[1], robot.pose[0]];
         const previous = state.livePoints[state.livePoints.length - 1];

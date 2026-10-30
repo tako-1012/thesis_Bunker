@@ -1,4 +1,4 @@
-"""Install the two thin ROS node entry points."""
+"""Install the thin ROS node entry points."""
 
 from setuptools import setup
 
@@ -19,6 +19,7 @@ setup(
         "console_scripts": [
             "path_follower = thesis_bunker_mission.path_follower:main",
             "webui_bridge = thesis_bunker_mission.webui_bridge:main",
+            "online_planner = thesis_bunker_mission.online_planner:main",
         ]
     },
 )

@@ -1,0 +1,74 @@
+{
+  "id": 1,
+  "map_id": "file/real_las_08OB87_-0206_200m_0_debris.npz",
+  "path": [
+    [
+      25.70971525460491,
+      70.24744307874619
+    ],
+    [
+      27.0,
+      71.0
+    ]
+  ],
+  "points": [
+    [
+      37.5,
+      94.0
+    ],
+    [
+      17.5,
+      67.0
+    ],
+    [
+      78.0,
+      66.5
+    ],
+    [
+      90.0,
+      87.0
+    ],
+    [
+      45.0,
+      68.0
+    ]
+  ],
+  "lookahead_m": 1.0,
+  "online_generated": true,
+  "replace_path": false,
+  "reason": "start_leg",
+  "leg_index": 5,
+  "final_leg": true,
+  "n_replans": 129,
+  "plan_time_s": 0.0879168410000375,
+  "planned_at": 8.8,
+  "revision": 135,
+  "order": [
+    0,
+    5,
+    3,
+    4,
+    1,
+    2
+  ],
+  "plan_history": [
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.0879168410000375,
+      "n_plans": 1
+    }
+  ],
+  "handoff_latency_s": 5.522757759000001,
+  "sim_handoff_s": 3.250000000000001,
+  "pose_shift_m": 0.0,
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3,
+    "stall_timeout_s": 10.0
+  },
+  "status": "completed",
+  "logged_plan_calls": 135
+}

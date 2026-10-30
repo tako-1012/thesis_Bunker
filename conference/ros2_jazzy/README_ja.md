@@ -180,3 +180,50 @@ CPU上での検査ではworldの一時コピーだけをreal_time_factor=5にし
 接続しない場合はMacのIP／TCP 8080、地図IDの一致、`ROS_DOMAIN_ID`、`use_sim_time` を確認します。
 模型が落ちる場合は生成済みworldのheightmap.posが0で、平行移動がterrainモデルのposeにあることを確認します。
 位置が届かない場合は `ros2 topic echo /ground_truth` とGazebo／bridgeログ、IMUが届かない場合はworldのSensors／Imu systemを確認します。
+# 指示書014：オンライン地図更新と再計画
+
+`online:=false` が既定です。従来の `/mission/command` の経路をそのまま追う動作を維持します。
+オンライン版は次のように起動します（ビルド後、`conference/` がPythonの検索パスにある状態）。
+
+```bash
+ros2 launch thesis_bunker_gz sim.launch.py \
+  map:=real_las_08OB87_-0206_200m_0_debris online:=true \
+  prior_map:=real_las_08OB87_-0206_200m_0.npz sense_radius_m:=10.0 \
+  webui:=http://localhost:8080
+```
+
+`truth_map` はlaunchの `map` から決まり、Gazebo worldと同じ地図ファイルを読みます。
+`online_planner` を単独で起動するときは `truth_map`・`prior_map`・`sense_radius_m` をROSパラメータとして指定します。
+`prior_map:=coarse:10` は粗地図、空文字はtruth自体を使うoracleです。
+事前地図のファイル名は `maps/` からの相対名か絶対パスです。
+
+**センサーはLiDARの模擬ではありません。** `/ground_truth` の位置の周囲半径Rに入る地形コストと通行不可マスクを、
+worldの元の地図から誤差なく読む仮想観測です。遮蔽・死角・点群密度・測距誤差・自己位置誤差・動く漂着物は扱いません。
+truthを先読みして未観測セルを計画へ渡すことはしません。計画中に届いた位置の観測は保持し、ワーカー終了後に反映します。
+
+出発前に事前地図の方向付きコストで巡回順序を決め、以後は各区間の経路だけを変更します。
+`online_planner` の単一ワーカーがTA*-S exactを計算し、ROSのタイマー・追従は待ちません。
+計画中は古い経路を追い、結果は最新位置へ接続してから `/mission/online_command` と `/mission/path` に出します。
+観測済みの通行不可セルに接続・残り経路が触れる古い結果は適用せず、再びワーカーで計算します。
+次の区間の計画を待つ間も同じ走行ログを維持し、最終区間だけが走行全体を完了します。
+
+走行フォルダの追加ファイル：
+
+- `trajectory.csv`：経路を差し替えても同じファイルへ継続して記録。
+- `replans.csv`：適用した差し替えのシミュレーション時刻・理由・区間・revision・再計画回数・計画時間。
+  検索と平滑化の時間に加え、要求からonline_plannerが結果を渡すまでの実時間、シミュレーション時間、位置の移動量も記録します。
+- `plans.csv`：初回と区間開始を含む各A*＋exact平滑化の実測時間。棄却後に計算し直した呼出しも、次の適用または失敗時に保存します。
+
+検索時間だけでは、1m/sで走りながら安全に差し替えられると判断できません。
+キュー待ち・巡回順序の計算・追従誤差・時計と実時間の差もあるため、`replans.csv` の結果を渡すまでの遅延と移動量、実際の接触を合わせて確認します。
+Python実験は理想的に経路をたどり、計画待ちの間の移動を模擬しません。
+
+漂着物ありworldで、同じ5点を再計画なし／ありで比較する確認：
+
+```bash
+bash conference/ros2_jazzy/gz_checks/run_online_checks.sh
+```
+
+ROS2 Jazzyの使い捨てコンテナでビルドし、`results/online_mission/gazebo/` に実際の走行ログと `results.json` を保存します。
+既定イメージは `ros:jazzy-ros-base`。必要なGazebo・科学計算パッケージがなければコンテナ内でインストールします。
+既に依存関係を持つイメージは `THESIS_ROS_IMAGE` で指定できます。失敗時は `launcher_failure.json` を保存し、測定値を埋めません。

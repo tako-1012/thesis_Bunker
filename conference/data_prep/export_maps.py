@@ -65,6 +65,7 @@ def export_maps(folder):
         assert np.array_equal(sc["tmap"].cost, loaded["tmap"].cost)
         assert np.array_equal(sc["tmap"].lethal, loaded["tmap"].lethal)
     export_las_maps(folder)
+    export_stale_map(folder)
     total = sum(p.stat().st_size for p in folder.rglob("*") if p.is_file())
     if any(p.stat().st_size >= 5_000_000 for p in folder.glob("*.npz")):
         raise RuntimeError("地図ファイルが5 MBを超えました")
@@ -96,6 +97,24 @@ def export_las_maps(folder):
         loaded = load_map_file(path)
         assert np.array_equal(sc["tmap"].cost, loaded["tmap"].cost)
         assert np.array_equal(sc["tmap"].lethal, loaded["tmap"].lethal)
+
+
+def export_stale_map(folder):
+    folder = Path(folder)
+    folder.mkdir(parents=True, exist_ok=True)
+    name = "08OB87_-0206"
+    sc = build_real(name, 200, 0, debris=True, dataset="shizuoka_beach_las")
+    path = folder / f"real_las_{name}_200m_0_debris.npz"
+    if not path.exists():
+        # Debris changes elevations after nearest-data fill. Store that full
+        # physical surface, retaining the original water/nodata masks separately.
+        scenario_to_mapfile(dict(sc, raw_elev=sc["tmap"].elev), path, f"静岡県（点群・漂着物）：{name}（200m）", name,
+                            "静岡県ALB Ground, validation, seed=0, debris=True, dataset=shizuoka_beach_las", LAS_ATTRIBUTION)
+    loaded = load_map_file(path)
+    assert np.array_equal(sc["tmap"].cost, loaded["tmap"].cost)
+    assert np.array_equal(sc["tmap"].lethal, loaded["tmap"].lethal)
+    assert np.array_equal(sc["terrain"]["rock"], loaded["obstacle"])
+    return path
 
 
 if __name__ == "__main__":

@@ -1,0 +1,20 @@
+All prescribed identities, unique calls, per-mission planning counts and frozen source hashes passed.
+
+Incomplete-leg distances from saved executed trajectories, default max_factor=6 unchanged
+       patch      prior  radius_m   mode   reason  failed_leg  leg_travelled_m  leg_straight_m  travelled_over_straight
+08OB88_-0167 coarse c10         5 online too_long           2            175.0       29.038767                 6.026427
+08OB88_-0167 coarse c10        10 online too_long           3            354.0       58.843011                 6.016008
+08OB88_-0167 coarse c10        15 online too_long           2            175.0       29.038767                 6.026427
+08OC95_00928 coarse c10        10 online too_long           1            250.0       41.596274                 6.010154
+08OC96_-1426 coarse c10         5 online too_long           4            184.0       30.610456                 6.011018
+08OC96_-1426 coarse c10        10 online too_long           3            183.0       30.417922                 6.016190
+08OC96_-1426 coarse c10        15 online too_long           3            183.0       30.417922                 6.016190
+08OC96_-1426      stale         5 online too_long           3            196.0       32.638168                 6.005239
+08OC96_-1426      stale        10 online too_long           3            196.0       32.638168                 6.005239
+08OC96_-1426      stale        15 online too_long           3            196.0       32.638168                 6.005239
+08OC99_01733      stale         5 online too_long           2            152.0       25.298221                 6.008328
+08OC99_01733      stale        10 online too_long           2            152.0       25.298221                 6.008328
+
+All online search+exact smoothing calls; load-dependent wall times, not physical measurements
+ online_calls  median_s    p95_s    max_s  calls_over_1s
+        51704  0.055373 0.342244 1.764052            129

@@ -1,0 +1,5 @@
+{
+  "status": "not_completed",
+  "exit_code": 100,
+  "message": "Docker dependency/build/check command failed. Inspect logs; no physical measurements were fabricated."
+}
