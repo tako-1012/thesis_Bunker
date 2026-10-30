@@ -1,0 +1,55 @@
+jazzy-desktop-full: Pulling from osrf/ros
+e51aee9c82ec: Pulling fs layer
+96956bf73b03: Pulling fs layer
+fe29682277ae: Pulling fs layer
+eb005c64ea48: Pulling fs layer
+3092fae25957: Pulling fs layer
+4a398f2aa538: Pulling fs layer
+62beaeaff58d: Pulling fs layer
+a8c6689f23a5: Pulling fs layer
+953ace926a23: Pulling fs layer
+01f17b12da39: Pulling fs layer
+eb005c64ea48: Waiting
+3092fae25957: Waiting
+4a398f2aa538: Waiting
+dd4185219e03: Pulling fs layer
+cf37e7f52474: Pulling fs layer
+62beaeaff58d: Waiting
+a8c6689f23a5: Waiting
+953ace926a23: Waiting
+01f17b12da39: Waiting
+dd4185219e03: Waiting
+cf37e7f52474: Waiting
+96956bf73b03: Verifying Checksum
+96956bf73b03: Download complete
+fe29682277ae: Verifying Checksum
+fe29682277ae: Download complete
+eb005c64ea48: Verifying Checksum
+eb005c64ea48: Download complete
+4a398f2aa538: Download complete
+e51aee9c82ec: Verifying Checksum
+e51aee9c82ec: Download complete
+a8c6689f23a5: Download complete
+953ace926a23: Download complete
+e51aee9c82ec: Pull complete
+01f17b12da39: Verifying Checksum
+01f17b12da39: Download complete
+96956bf73b03: Pull complete
+3092fae25957: Verifying Checksum
+3092fae25957: Download complete
+fe29682277ae: Pull complete
+62beaeaff58d: Verifying Checksum
+62beaeaff58d: Download complete
+eb005c64ea48: Pull complete
+cf37e7f52474: Verifying Checksum
+cf37e7f52474: Download complete
+3092fae25957: Pull complete
+4a398f2aa538: Pull complete
+62beaeaff58d: Pull complete
+a8c6689f23a5: Pull complete
+dd4185219e03: Verifying Checksum
+dd4185219e03: Download complete
+953ace926a23: Pull complete
+01f17b12da39: Pull complete
+dd4185219e03: Pull complete
+failed to register layer: write /usr/include/OGRE/RenderSystems/GL/GL/glext.h: no space left on device

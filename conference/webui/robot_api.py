@@ -30,6 +30,10 @@ class RobotState(BaseModel):
     pose: tuple[float, float, float, float, float, float] | None = None
     sim_time: float = 0.0
     message: str = ""
+    current_path: list[tuple[float, float]] | None = Field(
+        default=None, max_length=20000
+    )
+    n_replans: int = Field(default=0, ge=0)
 
 
 @router.post("/api/robot/mission")
@@ -69,8 +73,14 @@ def send_state(request: RobotState):
         raise HTTPException(422, "姿勢は有限値にしてください")
     if not np.isfinite(request.sim_time):
         raise HTTPException(422, "時刻は有限値にしてください")
+    if request.current_path is not None and not np.isfinite(request.current_path).all():
+        raise HTTPException(422, "経路は有限値にしてください")
+    payload = request.model_dump()
+    for key in ("current_path", "n_replans"):
+        if key not in request.model_fields_set:
+            payload.pop(key)
     with _lock:
-        _state = dict(request.model_dump(), received_at=time.time())
+        _state = dict(payload, received_at=time.time())
     return dict(ok=True)
 
 
