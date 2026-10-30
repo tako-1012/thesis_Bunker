@@ -54,3 +54,29 @@ Webサーバーを起動するとこのフォルダの `*.npz` が `file/<ファ
 - 元データの座標：日本測地系2024・平面直角座標系第8系、高さは東京湾平均海面（T.P.）。
 
 切り出しの詳細と限界は `conference/data/shizuoka_beach/README_ja.md` を参照してください。
+
+## 点群から再作成したLAS版（タスク013）
+
+`real_las_<パッチ名>_200m_0.npz` の12枚を追加しています。
+パッチ名・位置・向き・validationの選択は従来の実測12枚と同じで、
+`build_real(name, 200, 0, dataset="shizuoka_beach_las")` から作成します。
+元データは `conference/data/shizuoka_beach_las/` に同梱済みで、ダウンロードは不要です。
+従来のグリッド版の地図も残してあり、既存ファイルは上書きしません。
+
+```bash
+cd conference
+python3 data_prep/export_maps.py
+```
+
+このコマンドは既存23枚を保持・検証し、LAS版12枚を追加して合計35枚を検証します。
+元の「全体15MB」の制限は12枚追加と両立しないため、追加後は各ファイル5MB未満を検査します。
+元の `tests.test_mapfiles_sim` の枚数・容量・API件数の固定検査は、この指示書では変更許可がないため保持しています。
+実行出力と対応表は `results/real_beach_las/export_maps_log.txt`、検証結果・制約は同フォルダの `REPORT_ja.md` に記録します。
+
+LAS版の元データの作り方と注意点は `conference/data/shizuoka_beach_las/README_ja.md` を参照してください。
+出典・ライセンスは各ファイルの `attribution` にも保存しています。
+
+- 出典：静岡県「VIRTUAL SHIZUOKA 静岡県 中西部沿岸 点群データ」ALB 地面の点群（Ground）
+  https://www.geospatial.jp/ckan/dataset/shizuoka-2025-pointcloud-alb
+- ライセンス：CC BY 4.0 / ODbL。**このフォルダのデータは、上のデータを加工して作成したものです。**
+- 元データの座標：日本測地系2024・平面直角座標系第8系、高さは東京湾平均海面（T.P.）。

@@ -1,0 +1,2 @@
+map pixels side_m max_error_m quantization_bound_m obstacle_boxes
+real_las_08OB87_-0206_200m_0.npz 2049 200.0 0.07634298480037804 6.236107878547843e-05 0

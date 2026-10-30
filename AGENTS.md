@@ -24,6 +24,7 @@ python3 -m tests.test_natural_terrain
 python3 -m tests.test_beach_terrain
 python3 -m tests.test_tour
 python3 -m tests.test_real_beach
+python3 -m tests.test_real_beach_las
 python3 -m tests.test_mission          # pip install fastapi uvicorn httpx が必要
 python3 -m tests.test_mapfiles_sim
 python3 -m tests.test_ros2_gz          # ROS2・Gazebo なしで動く
@@ -50,7 +51,7 @@ python3 -m tests.test_ros2_gz          # ROS2・Gazebo なしで動く
 - `conference/ros2_jazzy/`（ROS2・Gazebo のパッケージと、Gazebo での確認の結果）
 - `conference/experiments/run_all.py`、`analyze*.py`、`run_weight_opt.py`、`run_roll.py`、
   `run_infeasible.py`、`online_replanning.py`、`online_prior.py`、`online_dstar.py`、`risk_prior.py`、`exact_los.py`、
-  `natural_terrain.py`、`beach_terrain.py`、`multi_goal_tour.py`、`real_beach.py`、`gz_run_report.py`
+  `natural_terrain.py`、`beach_terrain.py`、`multi_goal_tour.py`、`real_beach.py`、`gz_run_report.py`、`compare_real_beach_las.py`
 
 既存の結果は、1ビットも変わらずに再現できる状態を保つこと。新しい機能は、新しいファイルに追加するか、
 既定値で今までと同じ動きをする新しいキーワード引数の後ろに追加すること。
