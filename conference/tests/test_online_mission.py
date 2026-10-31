@@ -203,10 +203,13 @@ def test_maps_and_api():
     original = build_real(
         "08OB87_-0206", 200, 0, debris=True, dataset="shizuoka_beach_las"
     )
-    for key in ["cost", "lethal", "elev"]:
-        assert np.array_equal(
-            getattr(truth["tmap"], key), getattr(original["tmap"], key)
-        )
+    # The saved map was written on another CPU. NumPy's SIMD paths differ by CPU (e.g. with or
+    # without AVX-512), which changes the last bits of the debris heights and costs (measured on an
+    # Intel Core Ultra 7 without AVX-512: elev 8.9e-16 m, cost 3.9e-9). The masks that decide the
+    # plans must still match exactly.
+    assert np.array_equal(truth["tmap"].lethal, original["tmap"].lethal)
+    assert np.allclose(truth["tmap"].elev, original["tmap"].elev, rtol=0, atol=1e-12)
+    assert np.allclose(truth["tmap"].cost, original["tmap"].cost, rtol=0, atol=1e-8)
     for key in ["water", "nodata"]:
         assert np.array_equal(truth[key], original[key])
     assert (
