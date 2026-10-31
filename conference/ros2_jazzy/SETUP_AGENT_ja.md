@@ -119,6 +119,10 @@ cd ~/thesis_Bunker/conference/ros2_jazzy
 source /opt/ros/jazzy/setup.bash && source install/setup.bash
 ros2 launch thesis_bunker_gz sim.launch.py map:=flat_test_100m webui:=http://localhost:8080
 ```
+**Gazebo の画面がすぐ落ちる場合**（`Ogre2 … Fragment Program … failed to compile` と出て、`ruby` が止まったと表示される）：
+画面だけ古い描画エンジンを使う。上のコマンドの最後に ` gui_render_engine:=ogre` を付けて起動し直す。
+利用者のパソコン（NVIDIA GeForce RTX 5060、ドライバー 595）ではこれが必要だった。シミュレーションの計算は変わらない。
+
 利用者に次をお願いする：
 1. Gazebo の画面に、平らな地面・箱 3 つ・BUNKER（箱の形）が出る。
 2. ブラウザ（Chrome）で `http://localhost:8080` を開き、地図「`flat_test_100m.npz`」を選ぶ。地点を 3〜5 個置いて「経路を計画」→「ロボットに送る」。
@@ -130,6 +134,7 @@ ros2 launch thesis_bunker_gz sim.launch.py map:=flat_test_100m webui:=http://loc
 ros2 launch thesis_bunker_gz sim.launch.py map:=real_las_08OB87_-0206_200m_0_debris online:=true \
   prior_map:=real_las_08OB87_-0206_200m_0.npz sense_radius_m:=10.0 webui:=http://localhost:8080
 ```
+（画面が落ちるパソコンでは、ここにも ` gui_render_engine:=ogre` を付ける。）
 Web 画面では地図「`real_las_08OB87_-0206_200m_0_debris.npz`」を選んで、同じように送る。
 200m の地図で、Gazebo が重い場合がある（その場合は報告する）。
 
