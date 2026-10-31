@@ -78,7 +78,12 @@ def launch_nodes(context):
     env = SetEnvironmentVariable(
         "PYTHONPATH", str(root) + os.pathsep + os.environ.get("PYTHONPATH", "")
     )
-    gz = ExecuteProcess(cmd=["gz", "sim", "-r", str(temporary_world)], output="screen")
+    gz_command = ["gz", "sim", "-r", str(temporary_world)]
+    # Some laptop GPUs (e.g. RTX 5060 with driver 595) crash the default ogre2 GUI; ogre works.
+    gui_engine = LaunchConfiguration("gui_render_engine").perform(context)
+    if gui_engine:
+        gz_command[2:2] = ["--render-engine-gui", gui_engine]
+    gz = ExecuteProcess(cmd=gz_command, output="screen")
     common = {"use_sim_time": True, "map_id": map_id}
     online = LaunchConfiguration("online").perform(context).lower() == "true"
     follower_parameters = [common, {"online": True}] if online else [common]
@@ -152,6 +157,7 @@ def generate_launch_description():
             DeclareLaunchArgument("online", default_value="false"),
             DeclareLaunchArgument("prior_map", default_value=""),
             DeclareLaunchArgument("sense_radius_m", default_value="10.0"),
+            DeclareLaunchArgument("gui_render_engine", default_value=""),
             OpaqueFunction(function=launch_nodes),
         ]
     )

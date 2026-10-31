@@ -50,7 +50,9 @@ ros2 launch thesis_bunker_gz sim.launch.py map:=flat_test_100m
 ros2 launch thesis_bunker_gz sim.launch.py map:=real_08OB87_-0206_200m_0
 ```
 
-`map` は `conference/maps/<map>.npz` の拡張子なしのファイル名です。起動時に地図の基地と標高を読み、地面より0.1m浮かせて置きます。
+`map` は `conference/maps/<map>.npz` の拡張子なしのファイル名です。
+Gazebo の画面が起動直後に落ちる（`Ogre2 … failed to compile`）パソコンでは、`gui_render_engine:=ogre` を付けると、画面だけ古い描画エンジンで動きます
+（NVIDIA GeForce RTX 5060・ドライバー 595 で必要だった。シミュレーションの計算には影響しない）。起動時に地図の基地と標高を読み、地面より0.1m浮かせて置きます。
 最初の模型の向きは+xです。追従開始時の向きが異なる場合はPure Pursuitがその場で旋回します。
 worldがない地図は、先に `conference/` で次のように生成します。
 
