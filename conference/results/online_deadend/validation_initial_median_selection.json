@@ -1,0 +1,92 @@
+{
+  "A": {
+    "r_A": 10.0,
+    "k_A": 2.0
+  },
+  "A_candidate": "A_r10_k2",
+  "B": {
+    "N_B": 10
+  },
+  "B_candidate": "B_N10",
+  "validation_patches": [
+    "08OB87_-0206",
+    "08OB88_01332",
+    "08OB89_-1597",
+    "08OC90_00270",
+    "08OC91_00811",
+    "08OC93_-1519",
+    "08OC95_-0321",
+    "08OC96_-0676",
+    "08OC97_-0077",
+    "08OC98_-1101",
+    "08OC98_01898",
+    "08OC99_00983"
+  ],
+  "validation_radii": [
+    10
+  ],
+  "candidates": {
+    "baseline": {},
+    "A_r3_k2": {
+      "r_A": 3.0,
+      "k_A": 2.0
+    },
+    "A_r3_k4": {
+      "r_A": 3.0,
+      "k_A": 4.0
+    },
+    "A_r3_k8": {
+      "r_A": 3.0,
+      "k_A": 8.0
+    },
+    "A_r6_k2": {
+      "r_A": 6.0,
+      "k_A": 2.0
+    },
+    "A_r6_k4": {
+      "r_A": 6.0,
+      "k_A": 4.0
+    },
+    "A_r6_k8": {
+      "r_A": 6.0,
+      "k_A": 8.0
+    },
+    "A_r10_k2": {
+      "r_A": 10.0,
+      "k_A": 2.0
+    },
+    "A_r10_k4": {
+      "r_A": 10.0,
+      "k_A": 4.0
+    },
+    "A_r10_k8": {
+      "r_A": 10.0,
+      "k_A": 8.0
+    },
+    "B_N10": {
+      "N_B": 10
+    },
+    "B_N30": {
+      "N_B": 30
+    },
+    "B_N60": {
+      "N_B": 60
+    }
+  },
+  "ranking": [
+    "touching",
+    "failed",
+    "baseline_completed_lost",
+    "too_long",
+    "positive_delta_median",
+    "delta_median",
+    "method"
+  ],
+  "source_sha256": {
+    "tapp/online_deadend.py": "d76f63a3f39c9dae64e22fe6ab8ff32139787b8341b5c51d539d72798a3cfe50",
+    "tapp/online_mission.py": "cb6256d33524a7121a79c4cb12e406b3be32f741bc072ebb4eb01481935882b9",
+    "tapp/real_beach.py": "34e61730bbf27f4156d7533f93eaf3e1200678e0de21ace6a9707080d7cddf67",
+    "data/shizuoka_beach_las/index.json": "7033159d7042f492decf4a190178b1453493518441eac539da9aa5887a7107e2"
+  },
+  "test_data_used": false
+}

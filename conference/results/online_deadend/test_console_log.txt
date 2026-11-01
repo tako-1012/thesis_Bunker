@@ -1,0 +1,161 @@
+test: 1/48 08OB86_00294 (180.0s)
+test: 2/48 08OB86_-0205 (180.0s)
+test: 3/48 08OB87_-0706 (193.1s)
+test: 4/48 08OB88_-1417 (193.1s)
+test: 5/48 08OB88_-0167 (447.9s)
+test: 6/48 08OB88_00332 (447.9s)
+test: 7/48 08OB88_01832 (460.2s)
+test: 8/48 08OB89_00152 (460.2s)
+test: 9/48 08OB89_-0347 (517.6s)
+test: 10/48 08OB89_-0847 (579.8s)
+test: 11/48 08OC80_-1089 (820.2s)
+test: 12/48 08OC80_-0589 (820.2s)
+test: 13/48 08OC80_00160 (820.3s)
+test: 14/48 08OC80_00660 (820.3s)
+test: 15/48 08OC91_-1688 (891.3s)
+test: 16/48 08OC91_-0938 (951.0s)
+test: 17/48 08OC91_-0438 (1060.7s)
+test: 18/48 08OC91_00061 (1134.0s)
+test: 19/48 08OC91_01311 (1134.0s)
+test: 20/48 08OC92_-0891 (1167.2s)
+test: 21/48 08OC92_-0141 (1198.8s)
+test: 22/48 08OC92_00608 (1198.8s)
+test: 23/48 08OC94_-0954 (1345.4s)
+test: 24/48 08OC95_01428 (1458.1s)
+test: 25/48 08OC95_00928 (1504.7s)
+test: 26/48 08OC95_00428 (1504.7s)
+test: 27/48 08OC95_-0821 (1638.3s)
+test: 28/48 08OC95_-1321 (1638.3s)
+test: 29/48 08OC95_-2071 (1781.9s)
+test: 30/48 08OC96_00073 (1781.9s)
+test: 31/48 08OC96_-1426 (1781.9s)
+test: 32/48 08OC97_01672 (2085.5s)
+test: 33/48 08OC97_01172 (2085.6s)
+test: 34/48 08OC97_00422 (2085.6s)
+test: 35/48 08OC97_-0577 (2085.6s)
+test: 36/48 08OC97_-1077 (2256.2s)
+test: 37/48 08OC97_-1827 (2256.2s)
+test: 38/48 08OC98_-1601 (2306.8s)
+test: 39/48 08OC98_-0351 (2373.9s)
+test: 40/48 08OC98_00148 (2374.0s)
+test: 41/48 08OC98_00648 (2374.0s)
+test: 42/48 08OC98_01398 (2438.6s)
+test: 43/48 08OC99_-1516 (2506.5s)
+test: 44/48 08OC99_-1016 (2506.5s)
+test: 45/48 08OC99_-0016 (2914.6s)
+test: 46/48 08OC99_00483 (2914.6s)
+test: 47/48 08OC99_01733 (2914.6s)
+test: 48/48 08PD00_-1730 (2914.7s)
+Frozen parameters: {"A": {"k_A": 2.0, "r_A": 10.0}, "B": {"N_B": 30}}
+
+Test: same task-014 tours, fixed validation-only parameters
+     prior  radius_m   method  runs  completed  too_long  touching  dJ_median  dJ_p90  dJ_max  replans_median  replans_max  plan_calls  plan_s_median  plan_s_p95  plan_s_max
+coarse c10         5 baseline    48         46         2         0    6.51596 51.8432 78.3836           217.5          457       11142      0.0254293    0.144794    0.603819
+coarse c10         5        A    48         46         2         0    6.01498 51.9883 76.2151           211.5          523       10885      0.0268048    0.148977    0.608122
+coarse c10         5        B    48         46         2         0    6.51596 51.8432 78.3836           217.5          457       11142      0.0260497    0.144713    0.609814
+coarse c10         5      A+B    48         46         2         0    6.01498 51.9883 76.2151           211.5          523       10885      0.0274321    0.150749    0.604384
+coarse c10        10 baseline    48         45         3         0     4.2116 27.6546 58.1804           181.5          443        9347      0.0296146    0.173689    0.642573
+coarse c10        10        A    48         46         2         0    3.90202 29.9212 57.1692             187          391        9378       0.031091    0.173267    0.611572
+coarse c10        10        B    48         45         3         0     4.2116 27.6546 58.1804           181.5          443        9347      0.0314489    0.190137     0.61707
+coarse c10        10      A+B    48         46         2         0    3.90202 29.9212 57.1692             187          391        9378      0.0317297    0.178572    0.616638
+coarse c10        15 baseline    48         46         2         0    2.92738 19.8007 51.9435           156.5          356        8236      0.0350347    0.174482    0.584866
+coarse c10        15        A    48         46         2         0    2.87747 23.1069 50.2353           154.5          375        8088      0.0347437    0.173468    0.607189
+coarse c10        15        B    48         46         2         0    2.92738 19.8007 51.9435           156.5          356        8236      0.0348127    0.171258    0.454009
+coarse c10        15      A+B    48         46         2         0    2.87747 23.1069 50.2353           154.5          375        8088      0.0351313    0.169333     0.46271
+     stale         5 baseline    48         46         2         0    1.95421 10.2739 30.3772             101          240        6010      0.0278865    0.169759    0.613606
+     stale         5        A    48         47         1         0    2.17071 9.42774 37.1691            99.5          341        6015      0.0286295    0.182732    0.741568
+     stale         5        B    48         47         1         0    2.02754 9.22268 21.2192            99.5          346        6085      0.0288577    0.175289    0.741588
+     stale         5      A+B    48         47         1         0    2.17071 7.74396 25.9962              98          333        5979      0.0287471    0.184098    0.713691
+     stale        10 baseline    48         46         2         0   0.945069 6.60292 22.8123            94.5          224        5428      0.0323494    0.177852    0.643621
+     stale        10        A    48         46         2         0    1.28185 6.69846 21.7571              92          219        5277      0.0311357    0.178625    0.642973
+     stale        10        B    48         47         1         0    0.95184 6.73941 15.3136              93          316        5560      0.0302814    0.169611    0.633784
+     stale        10      A+B    48         46         2         0    1.28185 6.69846 19.4537            89.5          219        5238       0.030022    0.174257    0.666108
+     stale        15 baseline    48         47         1         0   0.688622 5.29695 18.6182              85          301        5153      0.0335537    0.166183    0.663355
+     stale        15        A    48         48         0         0   0.964253 5.12445 20.7014            85.5          277        5051      0.0339094     0.17017    0.662841
+     stale        15        B    48         47         1         0   0.688622 5.37548 11.8795            84.5          304        5110      0.0328201    0.157929     0.64674
+     stale        15      A+B    48         48         0         0   0.964253 5.12895 17.5318            85.5          279        5038       0.033727    0.172066    0.659765
+
+Paired dJ differences (new minus baseline); losses include all previously completed runs
+     prior  radius_m method  paired_completed  baseline_completed_lost  newly_completed  worsened  delta_median  delta_p90  delta_max
+coarse c10         5      A                46                        0                0        11             0    1.63731    17.8267
+coarse c10         5      B                46                        0                0         0             0          0          0
+coarse c10         5    A+B                46                        0                0        11             0    1.63731    17.8267
+coarse c10        10      A                45                        0                1        10             0   0.368429    4.74875
+coarse c10        10      B                45                        0                0         0             0          0          0
+coarse c10        10    A+B                45                        0                1        10             0   0.368429    4.74875
+coarse c10        15      A                46                        0                0         7             0  0.0819485    9.24543
+coarse c10        15      B                46                        0                0         0             0          0          0
+coarse c10        15    A+B                46                        0                0         7             0  0.0819485    9.24543
+     stale         5      A                46                        0                1        21             0   0.970635    10.9051
+     stale         5      B                46                        0                1         0             0          0          0
+     stale         5    A+B                46                        0                1        20    -0.0017642   0.782144    10.7518
+     stale        10      A                46                        0                0        22             0   0.623754    9.92052
+     stale        10      B                46                        0                1         0             0          0          0
+     stale        10    A+B                46                        0                0        22             0   0.623754    9.92052
+     stale        15      A                47                        0                1        21             0    1.20802     2.2965
+     stale        15      B                47                        0                0         1             0          0   0.196334
+     stale        15    A+B                47                        0                1        21             0    1.11309     2.2965
+
+Unchanged baseline vs task 014 (wall timings are newly measured)
+       field  matching  runs  max_abs_difference
+     success       288   288                 NaN
+     n_plans       288   288                 NaN
+   n_replans       288   288                 NaN
+lethal_cells       288   288                 NaN
+debris_cells       288   288                 NaN
+       order       288   288                 NaN
+    oracle_J       NaN   NaN                   0
+           J       NaN   NaN                   0
+          dJ       NaN   NaN                   0
+   length_xy       NaN   NaN                   0
+
+Every formerly too_long tour: all methods
+       patch      prior  radius_m   method  success   reason      dJ  n_replans  lethal_cells
+08OB88_-0167 coarse c10         5 baseline    False too_long     NaN        213             0
+08OB88_-0167 coarse c10         5        A    False too_long     NaN        211             0
+08OB88_-0167 coarse c10         5        B    False too_long     NaN        213             0
+08OB88_-0167 coarse c10         5      A+B    False too_long     NaN        211             0
+08OB88_-0167 coarse c10        10 baseline    False too_long     NaN        404             0
+08OB88_-0167 coarse c10        10        A    False too_long     NaN        388             0
+08OB88_-0167 coarse c10        10        B    False too_long     NaN        404             0
+08OB88_-0167 coarse c10        10      A+B    False too_long     NaN        388             0
+08OB88_-0167 coarse c10        15 baseline    False too_long     NaN        162             0
+08OB88_-0167 coarse c10        15        A    False too_long     NaN        164             0
+08OB88_-0167 coarse c10        15        B    False too_long     NaN        162             0
+08OB88_-0167 coarse c10        15      A+B    False too_long     NaN        164             0
+08OC95_00928 coarse c10        10 baseline    False too_long     NaN        129             0
+08OC95_00928 coarse c10        10        A     True          43.9299        290             0
+08OC95_00928 coarse c10        10        B    False too_long     NaN        129             0
+08OC95_00928 coarse c10        10      A+B     True          43.9299        290             0
+08OC96_-1426 coarse c10         5 baseline    False too_long     NaN        410             0
+08OC96_-1426 coarse c10         5        A    False too_long     NaN        257             0
+08OC96_-1426 coarse c10         5        B    False too_long     NaN        410             0
+08OC96_-1426 coarse c10         5      A+B    False too_long     NaN        257             0
+08OC96_-1426 coarse c10        10 baseline    False too_long     NaN        268             0
+08OC96_-1426 coarse c10        10        A    False too_long     NaN        263             0
+08OC96_-1426 coarse c10        10        B    False too_long     NaN        268             0
+08OC96_-1426 coarse c10        10      A+B    False too_long     NaN        263             0
+08OC96_-1426 coarse c10        15 baseline    False too_long     NaN        256             0
+08OC96_-1426 coarse c10        15        A    False too_long     NaN        235             0
+08OC96_-1426 coarse c10        15        B    False too_long     NaN        256             0
+08OC96_-1426 coarse c10        15      A+B    False too_long     NaN        235             0
+08OC96_-1426      stale         5 baseline    False too_long     NaN         85             0
+08OC96_-1426      stale         5        A    False too_long     NaN         62             0
+08OC96_-1426      stale         5        B    False too_long     NaN         68             0
+08OC96_-1426      stale         5      A+B    False too_long     NaN         60             0
+08OC96_-1426      stale        10 baseline    False too_long     NaN         93             0
+08OC96_-1426      stale        10        A    False too_long     NaN         60             0
+08OC96_-1426      stale        10        B    False too_long     NaN         74             0
+08OC96_-1426      stale        10      A+B    False too_long     NaN         59             0
+08OC96_-1426      stale        15 baseline    False too_long     NaN         80             0
+08OC96_-1426      stale        15        A     True          4.60618         89             0
+08OC96_-1426      stale        15        B    False too_long     NaN         72             0
+08OC96_-1426      stale        15      A+B     True          4.60618         89             0
+08OC99_01733      stale         5 baseline    False too_long     NaN        148             0
+08OC99_01733      stale         5        A     True          16.9298        341             0
+08OC99_01733      stale         5        B     True          11.4594        346             0
+08OC99_01733      stale         5      A+B     True          14.4578        333             0
+08OC99_01733      stale        10 baseline    False too_long     NaN        123             0
+08OC99_01733      stale        10        A    False too_long     NaN        110             0
+08OC99_01733      stale        10        B     True          14.5579        316             0
+08OC99_01733      stale        10      A+B    False too_long     NaN         88             0

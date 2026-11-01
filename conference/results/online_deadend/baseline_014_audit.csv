@@ -1,0 +1,11 @@
+field,matching,runs,max_abs_difference
+success,288.0,288.0,
+n_plans,288.0,288.0,
+n_replans,288.0,288.0,
+lethal_cells,288.0,288.0,
+debris_cells,288.0,288.0,
+order,288.0,288.0,
+oracle_J,,,0.0
+J,,,0.0
+dJ,,,0.0
+length_xy,,,0.0
