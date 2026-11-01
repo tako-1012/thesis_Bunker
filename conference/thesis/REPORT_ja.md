@@ -311,4 +311,4 @@ file/real_las_08OB87_-0206_200m_0.npz offline tour       True                  0
 - T3のオンライン実行の時間は、記録CSVの最後と最初の時刻の差。実行管理JSONの開始から終了までの時間とは、記録前後の分だけ異なる。
 - 旧DEMのGazebo走行とF3の旧データは比較対照として出典を明記している。F1はLASだけを使用。
 - Holmの族を8検定とする選択、図表の論文への配置、既存物理記録の解釈をClaudeに確認してほしい。
-- GitHub CLI の認証状態が invalid token のため、PRを作れない場合もこの報告書をブランチに残す。
+- `git push -u origin codex/015-thesis-figures` は成功。`gh pr create --base realtime-map` は `Post "https://api.github.com/graphql": Forbidden` で失敗し、PRは未作成。共通ルールに従い報告をこのブランチに保存。マージは行っていない。
