@@ -1,0 +1,12 @@
+executable: /tmp/thesis-apt-compat/bin/python
+python: 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]
+{
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "pandas": "2.2.3",
+  "pydantic": "2.13.4",
+  "fastapi": "0.141.1",
+  "httpx": "0.28.1"
+}
+Docker client=28.4.0 server=28.4.0

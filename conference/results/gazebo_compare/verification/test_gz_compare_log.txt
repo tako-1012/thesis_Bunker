@@ -1,0 +1,7 @@
+$ python3 -m tests.test_gz_compare
+comparison scenarios: first six LAS test patches, clean 200m seed0; both methods match direct start/goal/path calls
+comparison report: 6x2 kinematic fixtures agree with analyze_run; paired medians, immutable raw logs and excluded columns passed
+fixture values are simulated test data, not Gazebo measurements
+all Gazebo comparison tests passed (ROS2/Gazebo not required)
+
+exit=0
