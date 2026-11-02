@@ -1,0 +1,23 @@
+{
+  "data_source": "gazebo",
+  "map_id": "file/real_las_08OB88_-1417_200m_0.npz",
+  "status": "completed",
+  "completed": true,
+  "elapsed_s": 154.45000000000002,
+  "deviation_mean_m": 0.015496885207320482,
+  "deviation_max_m": 0.22764232750179758,
+  "path_lethal_cells": 0,
+  "out_of_bounds_samples": 0,
+  "fallen_samples": 0,
+  "roll_p95_actual_deg": 5.218450327947507,
+  "pitch_p95_actual_deg": 2.3592497105635335,
+  "roll_p95_map_deg": 5.095779342400315,
+  "pitch_p95_map_deg": 2.5016609941582897,
+  "kinematic": {
+    "elapsed_s": 154.25,
+    "deviation_mean_m": 0.004055142675522966,
+    "deviation_max_m": 0.1778021819052924,
+    "path_lethal_cells": 0,
+    "completed": true
+  }
+}

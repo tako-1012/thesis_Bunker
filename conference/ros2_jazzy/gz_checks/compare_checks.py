@@ -42,17 +42,17 @@ def scenario_cases():
 def prepare_cases(output,world_root=None,*,cases=None):
     output=Path(output).resolve();(output/"maps").mkdir(parents=True,exist_ok=True)
     cases=scenario_cases() if cases is None else cases
-    manifest=dict(dataset="shizuoka_beach_las",side_m=200,seed=0,cases=[],world_exports={},world_errors={})
+    manifest=dict(dataset="shizuoka_beach_las",side_m=200,seed=0,cases=[],world_exports={},world_errors={},world_max_pixels=4097)
     for case in cases:
         name=case["patch"];filename=f'real_las_{name}_200m_0.npz';path=output/"maps"/filename
         if not path.exists():
             scenario_to_mapfile(case["scenario"],path,name,name,"task019 LAS Ground, test, seed=0, clean",LAS_ATTRIBUTION)
         if world_root is not None and name not in manifest["world_exports"] and name not in manifest["world_errors"]:
             try:
-                manifest["world_exports"][name]=export_gazebo(path,Path(world_root)/name)
+                manifest["world_exports"][name]=export_gazebo(path,Path(world_root)/name,max_pixels=manifest["world_max_pixels"])
             except (ValueError,OSError) as exc:
                 # Keep every scenario and its failure visible; never alter a map or
-                # relax the protected exporter's reconstruction-error threshold.
+                # relax the exporter's reconstruction-error threshold.
                 manifest["world_errors"][name]=type(exc).__name__+": "+str(exc)
         entry=dict(patch=name,planner=case["planner"],map_file="maps/"+filename,
                                       start=case["start"],goal=case["goal"],path_cells=case["path_cells"].tolist(),

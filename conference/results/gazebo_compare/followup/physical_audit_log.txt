@@ -1,0 +1,132 @@
+{
+  "actor_source_files_checked": 44,
+  "worlds": 6,
+  "cases": 12,
+  "runs": [
+    {
+      "patch": "08OB86_00294",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3320,
+      "goal_error_m": 0.2878517765733064,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB86_00294",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3225,
+      "goal_error_m": 0.29802869850362,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB86_-0205",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3150,
+      "goal_error_m": 0.28356093062032933,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB86_-0205",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3079,
+      "goal_error_m": 0.2752664307753353,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB87_-0706",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3272,
+      "goal_error_m": 0.28724313456587347,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB87_-0706",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3183,
+      "goal_error_m": 0.28567395649416455,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB88_-1417",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3090,
+      "goal_error_m": 0.26458450154887525,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB88_-1417",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3102,
+      "goal_error_m": 0.28301032144092236,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB88_-0167",
+      "planner": "A*",
+      "status": "stuck",
+      "samples": 2891,
+      "goal_error_m": 10.329048979724575,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0,
+      "stagnation_diagnostic": {
+        "window_s": 10.0,
+        "xy_net_displacement_m": 0.004006097292327659,
+        "v_command_mean_m_s": 0.9950248756218906,
+        "w_command_abs_mean_rad_s": 0.1649956333528573,
+        "roll_abs_final_deg": 167.11136960843143,
+        "pitch_abs_final_deg": 17.048164112044738
+      }
+    },
+    {
+      "patch": "08OB88_-0167",
+      "planner": "TA*-S",
+      "status": "stuck",
+      "samples": 5430,
+      "goal_error_m": 30.548497888149896,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0,
+      "stagnation_diagnostic": {
+        "window_s": 10.0,
+        "xy_net_displacement_m": 0.029881162846267007,
+        "v_command_mean_m_s": 0.0,
+        "w_command_abs_mean_rad_s": 0.9950248756218906,
+        "roll_abs_final_deg": 170.0752826120545,
+        "pitch_abs_final_deg": 26.280991492972632
+      }
+    },
+    {
+      "patch": "08OB88_00332",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3489,
+      "goal_error_m": 0.2609872033492553,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB88_00332",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3427,
+      "goal_error_m": 0.2918503473954353,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    }
+  ]
+}
+Frozen source, real Gazebo provenance, terminal recordings, path identity, finite data, command limits and completed-goal distances passed.

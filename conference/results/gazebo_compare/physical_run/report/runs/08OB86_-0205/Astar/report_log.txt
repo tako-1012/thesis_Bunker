@@ -1,0 +1,7 @@
+data_source gazebo
+source completed elapsed_s deviation_mean_m deviation_max_m lethal_cells
+recorded True 157.45 0.26777809917493284 6.191381660121408 0
+kinematic True 156.95000000000002 0.13737726290745536 4.944865265777224 1
+attitude actual_p95_deg map_p95_deg
+roll 11.805658115536145 10.157003131656875
+pitch 6.948303499841306 6.758667509403658

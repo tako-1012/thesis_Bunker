@@ -1,0 +1,37 @@
+{
+  "flat_test_100m.npz": {
+    "summary": {
+      "map": "flat_test_100m.npz",
+      "pixels": 257,
+      "side_m": 100.0,
+      "z_min": 0.0,
+      "z_span": 0.001,
+      "max_error_m": 0.0,
+      "quantization_bound_m": 7.629510948348211e-09,
+      "obstacle_boxes": 3
+    },
+    "sha256": {
+      "README_ja.md": "cb92ab0fdb0d32c76986630bfc9049fe33796347dd06159e4ff2529d792989b1",
+      "heightmap.png": "03166ac1d06b01905a6f66391cb422384b2869ab8732e863f5adc71f0c3776e7",
+      "world.sdf": "41c6e85b78aa36357c1fb65a9da4603015a6cee51850cd63118c8545bc31315e"
+    }
+  },
+  "real_08OB87_-0206_200m_0.npz": {
+    "summary": {
+      "map": "real_08OB87_-0206_200m_0.npz",
+      "pixels": 2049,
+      "side_m": 200.0,
+      "z_min": -1.2999999523162842,
+      "z_span": 8.099952459335327,
+      "max_error_m": 0.06374200885325632,
+      "quantization_bound_m": 6.179867596959889e-05,
+      "obstacle_boxes": 0
+    },
+    "sha256": {
+      "README_ja.md": "b8ff3ebc7cb2f20d003cd3100ea29fd6ba98f7a6bbfddd610316ad2c9aa8e073",
+      "heightmap.png": "108b5f25d7601d56627e6c2e793b9a20aaeecf2247d5c14e0c8286534ab2b40b",
+      "world.sdf": "559020b37cfddf8fe7314ab9df6dfa90c3d6176aa3534bc2c83e12336fdeb77f"
+    }
+  }
+}
+Default exporter outputs before/after: metadata, PNG, SDF and README all match byte-for-byte.

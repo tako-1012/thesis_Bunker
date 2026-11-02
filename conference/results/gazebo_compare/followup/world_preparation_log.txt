@@ -1,0 +1,68 @@
+Temporary world generation only; no physical Gazebo measurements.
+{
+  "world_max_pixels": 4097,
+  "world_exports": {
+    "08OB86_00294": {
+      "map": "real_las_08OB86_00294_200m_0.npz",
+      "pixels": 2049,
+      "side_m": 200.0,
+      "z_min": -1.3849999904632568,
+      "z_span": 7.694166421890259,
+      "max_error_m": 0.061695935096075516,
+      "quantization_bound_m": 5.8702726954224906e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB86_-0205": {
+      "map": "real_las_08OB86_-0205_200m_0.npz",
+      "pixels": 2049,
+      "side_m": 200.0,
+      "z_min": -1.2760000228881836,
+      "z_span": 6.869285583496094,
+      "max_error_m": 0.06354209578655112,
+      "quantization_bound_m": 5.240928956661397e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB87_-0706": {
+      "map": "real_las_08OB87_-0706_200m_0.npz",
+      "pixels": 1025,
+      "side_m": 200.0,
+      "z_min": -1.2669999599456787,
+      "z_span": 7.20799994468689,
+      "max_error_m": 0.09197745315509853,
+      "quantization_bound_m": 5.4993514493681925e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB88_-1417": {
+      "map": "real_las_08OB88_-1417_200m_0.npz",
+      "pixels": 4097,
+      "side_m": 200.0,
+      "z_min": -1.3049999475479126,
+      "z_span": 10.07099974155426,
+      "max_error_m": 0.06239859486475474,
+      "quantization_bound_m": 7.683680278900023e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB88_-0167": {
+      "map": "real_las_08OB88_-0167_200m_0.npz",
+      "pixels": 4097,
+      "side_m": 200.0,
+      "z_min": -1.2259999513626099,
+      "z_span": 9.790000081062317,
+      "max_error_m": 0.06638817009318743,
+      "quantization_bound_m": 7.469291280279481e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB88_00332": {
+      "map": "real_las_08OB88_00332_200m_0.npz",
+      "pixels": 4097,
+      "side_m": 200.0,
+      "z_min": -1.4709999561309814,
+      "z_span": 9.908000230789185,
+      "max_error_m": 0.056513540446618826,
+      "quantization_bound_m": 7.559319623704268e-05,
+      "obstacle_boxes": 0
+    }
+  },
+  "world_errors": {}
+}
+All six worlds satisfy the unchanged 0.1m error bound; temporary worlds removed on exit.

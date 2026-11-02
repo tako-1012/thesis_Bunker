@@ -3,8 +3,10 @@
 import hashlib
 import json
 from pathlib import Path
+import struct
 import tempfile
 from unittest.mock import patch
+import zlib
 import numpy as np
 from scipy.ndimage import map_coordinates
 from ros2_jazzy.gz_checks.compare_checks import scenario_cases,prepare_cases
@@ -16,6 +18,7 @@ from tapp.real_beach import build_real,list_patches
 from tapp.exact_planners import run_planner_exact
 from tapp.robot_sim import simulate
 from tapp.run_log import RunLog
+from data_prep.export_gazebo import export_gazebo
 
 
 def test_scenarios():
@@ -118,8 +121,59 @@ def test_failed_preparation(cases):
     print('unavailable-world fixture: all scenarios retained, one export attempt per beach, no invented physical measurements',flush=True)
 
 
+def read_heightmap(path):
+    """Decode the exporter's filter-zero 16-bit PNG independently of its summary."""
+    raw=Path(path).read_bytes()
+    assert raw[:8]==b'\x89PNG\r\n\x1a\n'
+    width,height,depth,color=struct.unpack('>IIBB',raw[16:26])
+    assert depth==16 and color==0
+    offset=8;parts=[]
+    while offset<len(raw):
+        size=struct.unpack('>I',raw[offset:offset+4])[0]
+        kind=raw[offset+4:offset+8];payload=raw[offset+8:offset+8+size]
+        assert zlib.crc32(kind+payload)==struct.unpack('>I',raw[offset+8+size:offset+12+size])[0]
+        if kind==b'IDAT':parts.append(payload)
+        offset+=size+12
+    rows=np.frombuffer(zlib.decompress(b''.join(parts)),np.uint8).reshape(height,1+2*width)
+    assert (rows[:,0]==0).all()
+    return rows[:,1:].copy().view('>u2').reshape(height,width)
+
+
+def test_world_preparation(cases):
+    """All six real maps meet the same error bound using opt-in raster refinement."""
+    with tempfile.TemporaryDirectory() as tmp:
+        root=Path(tmp)
+        manifest=prepare_cases(root/'output',root/'worlds',cases=cases)
+        assert len(manifest['world_exports'])==6 and not manifest['world_errors']
+        assert len(manifest['cases'])==12 and not any('error' in c for c in manifest['cases'])
+        for name,result in manifest['world_exports'].items():
+            source=load_map_file(root/'output/maps'/result['map'])['tmap'].elev
+            # Undo the PNG's +y-up image orientation, then sample original centres.
+            pixels=read_heightmap(root/'worlds'/name/'heightmap.png')[::-1].T
+            n=result['pixels']
+            assert pixels.shape==(n,n) and ((n-1)&(n-2))==0
+            assert n<=manifest['world_max_pixels']
+            decoded=pixels.astype(float)/65535*result['z_span']+result['z_min']
+            axis=(np.arange(source.shape[0])+.5)/source.shape[0]*(n-1)
+            x,y=np.meshgrid(axis,axis,indexing='ij')
+            restored=map_coordinates(decoded,[x,y],order=1,mode='nearest')
+            error=float(np.max(np.abs(restored-source)))
+            assert error<=.1 and abs(error-result['max_error_m'])<1e-12
+        flat=Path(__file__).resolve().parents[1]/'maps/flat_test_100m.npz'
+        legacy=export_gazebo(flat,root/'default')
+        explicit=export_gazebo(flat,root/'explicit',max_pixels=2049)
+        assert legacy==explicit
+        assert {p.name:p.read_bytes() for p in (root/'default').iterdir()}=={p.name:p.read_bytes() for p in (root/'explicit').iterdir()}
+        for invalid in (1,4,2048,2049.0,True):
+            try:export_gazebo(flat,root/'invalid',max_pixels=invalid)
+            except ValueError:pass
+            else:raise AssertionError('invalid raster limit accepted')
+    print('worlds: all six LAS maps reconstructed from decoded PNGs within 0.1m; default exports unchanged by explicit legacy limit; invalid limits rejected',flush=True)
+
+
 if __name__=="__main__":
     cases=test_scenarios()
     test_failed_preparation(cases)
+    test_world_preparation(cases)
     test_report(cases)
     print("all Gazebo comparison tests passed (ROS2/Gazebo not required)",flush=True)

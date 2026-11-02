@@ -1,26 +1,226 @@
-# 指示書019：LAS砂浜のA*・TA*-S Gazebo比較
+# 指示書019：LAS砂浜6地形のA*・TA*-S Gazebo比較
 
-作業日：2026-11-02（日本時間）。ブランチ：`codex/019-gazebo-compare`。
-基点：`origin/realtime-map` の `b4c92a1ccaf60eff85362564d2f0d9915c3d10ae`。
-他の指示書の変更を取り込まず、この基点から独立して実装した。
+報告更新日：2026-11-03（日本時間）。
+ブランチ：`codex/019-gazebo-compare`。基点：`origin/realtime-map` の `b4c92a1ccaf60eff85362564d2f0d9915c3d10ae`。他の指示書を取り込まず、マージしていない。
 
-## 実装したもの
+## 実行結果
 
-- `ros2_jazzy/gz_checks/compare_checks.py`：`scenario_cases` がLASデータのtest先頭6か所について、200m・seed 0・漂着物なしの `build_real` と既定の `run_planner_exact` を呼ぶ。開始・終了点はそのまま使用する。
-- `prepare_cases`：解析用NPZ、経路、計画時の地図指標、world変換結果をmanifestへ記録する。worldは既存 `export_gazebo` を呼び、一時フォルダにだけ作る。変換できない地形は原因を残して両方法を実行失敗とし、他の地形の処理を継続する。既存exporterの上限や地形は変えない。
-- `run_checks`：各方法で同じworldを新規起動し、同じ位置・yaw=0から5秒静置後、既存 `path_follower` で走らせる。乱数seed 0、先読み1m、速度・角速度・到着許容・停滞監視は既存値を使う。環境を記録し、記録を上書きせず、プロセスエラーと未実行を記録する。
-- `run_compare_checks.sh`：既存Dockerfile（`osrf/ros:jazzy-desktop-full` + pandas）を使用し、`THESIS_ROS_IMAGE` にも対応する。ソースは読取専用、colconのbuild/install/logとworldはコンテナの一時領域、出力だけを保存先にマウントする。
-- `experiments/gz_compare_report.py`：既存 `analyze_run` を変更せず使用する。12走行の表、完走した対だけのTA*-S−A*の中央値、各砂浜の2軌跡・roll時系列図を作る。実測roll/pitchの絶対値の95%と最大、記録zの正の増分の総和、計画経路への `evaluate` の地図指標を併記する。元のmission JSONは書き換えず、一時ビューで移動後の地図パスを解決する。
-- `tests/test_gz_compare.py`：ROS2なしで、直接呼出しとの経路一致、運動学の試験用記録と `analyze_run` の値の一致、最大角度・登り・地図指標・対の中央値、元ログの不変性、エネルギー列がないことを検証する。未実行・world変換失敗を測定値0にしないことも確かめる。
+Gazeboで全ケースを実行し、実際の記録から集計した。完走・終了状態の件数（記録から計算）：
 
-エネルギーは集計しない。6砂浜での記述比較として傾向を見るだけであり、検定は行わない。
-登りの指標は記録zの正の増分をそのまま足すため、車体の揺れ・記録ノイズも含む。
+- A* / completed：5
+- A* / stuck：1
+- TA*-S / completed：5
+- TA*-S / stuck：1
+
+未完走の走行も原記録と表に残し、再試行・設定の調整はしていない。停滞記録の終端値：
+
+- 08OB88_-0167 / A*：目標誤差 10.329m、最終絶対roll 167.111度、最終絶対pitch 17.0482度。
+
+- 08OB88_-0167 / TA*-S：目標誤差 30.5485m、最終絶対roll 170.075度、最終絶対pitch 26.281度。
+
+同じ地形で両方法が停滞し、終端の姿勢は車体の反転と整合する大きなrollを示した。原因は接触力などを記録していないため確定していない。未完走の値は部分走行の測定として扱う。完走した対の中央値と、全ケースの終了状態の両方を読む必要がある。
+
+## 実装
+
+- `data_prep/export_gazebo.py` にキーワード専用 `max_pixels=2049` を追加。既定値と高さ誤差上限0.1mを維持し、019だけ上限4097画素を指定する。基準を満たす最小の2^n+1画像を選び、地形・開始終了点・プランナーの重みは変更しない。AGENTS.mdの変更禁止一覧にこのスクリプトは含まれておらず、既定動作を保つキーワード追加の方針に従った。
+- `ros2_jazzy/gz_checks/compare_checks.py`：`shizuoka_beach_las` のtest先頭6地形、200m、seed 0、漂着物なし。`build_real` の開始終了点から既定の `run_planner_exact` のA*とTA*-Sで計画し、同じworld・同じ初期位置・yaw=0で既存 `path_follower` を実行する。5シミュレーション秒の静置後に出発する。worldは既存exporterで一時フォルダにのみ生成する。変換失敗・プロセス異常は残し、記録は上書きしない。
+- `run_compare_checks.sh`：既存Dockerfile（osrf/ros:jazzy-desktop-full + pandas）を使い、`THESIS_ROS_IMAGE` に対応。ソースは読取専用で、ビルド・worldは一時領域、出力だけを保存する。
+- `experiments/gz_compare_report.py`：変更していない `analyze_run` を使用し、12走行の表と完走した対のTA*-S−A*の中央値を出す。実測roll/pitchの絶対値の95%と最大、記録zの正の増分、計画経路に対する `evaluate` の地図指標、各砂浜の2軌跡とroll時系列を保存する。原mission JSONを書き換えず、一時ビューで地図パスを解決する。
+- `tests/test_gz_compare.py`：直接呼出しとの開始終了点・経路一致、運動学の試験用記録と `analyze_run` の値の一致、最大角度・登り・地図指標・対の中央値、原記録の不変性、未実行や変換失敗を測定値0にしないことを検証する。生成PNGを独立に復号し、6地形すべてで元格子中心への復元誤差を確認する。
+- `followup/audit_physical.py`：実走記録の出所、終端状態、経路同一性、有限値・時刻、指令上限、完走時の到着誤差、凍結したソースのハッシュを確認する。
+
+エネルギーは集計しない。6砂浜の記述比較として傾向を見るだけで、検定は行わない。走行中に計画・追従パラメータを調整していない。画像解像度は従来からの固定誤差基準で決め、走行の性能値を使っていない。
 
 ## 変更ファイル一覧
 
+コード・報告・生成物を含む全ファイル（`changed_files.txt` にも保存）：
+
+<details><summary>全ファイル</summary>
+
+- `conference/data_prep/export_gazebo.py`
 - `conference/experiments/gz_compare_report.py`
 - `conference/results/gazebo_compare/REPORT_ja.md`
+- `conference/results/gazebo_compare/changed_files.txt`
 - `conference/results/gazebo_compare/docker_attempt_log.txt`
+- `conference/results/gazebo_compare/followup/audit_physical.py`
+- `conference/results/gazebo_compare/followup/baseline_audit.json`
+- `conference/results/gazebo_compare/followup/default_export_after_log.txt`
+- `conference/results/gazebo_compare/followup/default_export_before_log.txt`
+- `conference/results/gazebo_compare/followup/headless_dependency_probe_log.txt`
+- `conference/results/gazebo_compare/followup/headless_https_probe_log.txt`
+- `conference/results/gazebo_compare/followup/namespace_first_attempt_log.txt`
+- `conference/results/gazebo_compare/followup/namespace_resolver_failure_log.txt`
+- `conference/results/gazebo_compare/followup/namespace_run_log.txt`
+- `conference/results/gazebo_compare/followup/namespace_run_log.txt.gz`
+- `conference/results/gazebo_compare/followup/oci_extract_log.txt`
+- `conference/results/gazebo_compare/followup/physical_audit_log.txt`
+- `conference/results/gazebo_compare/followup/planners_before_log.txt`
+- `conference/results/gazebo_compare/followup/runtime_setup/README_ja.md`
+- `conference/results/gazebo_compare/followup/runtime_setup/image_manifest.json`
+- `conference/results/gazebo_compare/followup/runtime_setup/image_source.json`
+- `conference/results/gazebo_compare/followup/runtime_setup/namespace_run.sh`
+- `conference/results/gazebo_compare/followup/runtime_setup/pull_runtime.py`
+- `conference/results/gazebo_compare/followup/test_environment_log.txt`
+- `conference/results/gazebo_compare/followup/test_gz_compare_initial_log.txt`
+- `conference/results/gazebo_compare/followup/tests/all_tests_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_beach_terrain_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_collision_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_dstar_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_gz_compare_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_mapfiles_sim_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_mission_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_natural_terrain_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_online_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_online_mission_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_planners_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_real_beach_las_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_real_beach_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_risk_prior_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_ros2_gz_log.txt`
+- `conference/results/gazebo_compare/followup/tests/test_summary.txt`
+- `conference/results/gazebo_compare/followup/tests/test_tour_log.txt`
+- `conference/results/gazebo_compare/followup/world_preparation_log.txt`
+- `conference/results/gazebo_compare/physical_run/actor_source_sha256.json`
+- `conference/results/gazebo_compare/physical_run/environment_details.json`
+- `conference/results/gazebo_compare/physical_run/integrity_audit.json`
+- `conference/results/gazebo_compare/physical_run/manifest.json`
+- `conference/results/gazebo_compare/physical_run/maps/real_las_08OB86_-0205_200m_0.npz`
+- `conference/results/gazebo_compare/physical_run/maps/real_las_08OB86_00294_200m_0.npz`
+- `conference/results/gazebo_compare/physical_run/maps/real_las_08OB87_-0706_200m_0.npz`
+- `conference/results/gazebo_compare/physical_run/maps/real_las_08OB88_-0167_200m_0.npz`
+- `conference/results/gazebo_compare/physical_run/maps/real_las_08OB88_-1417_200m_0.npz`
+- `conference/results/gazebo_compare/physical_run/maps/real_las_08OB88_00332_200m_0.npz`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_Astar/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_Astar/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_Astar/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_Astar/runs/20261103T015631_761023_file_real_las_08OB86_-0205_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_Astar/runs/20261103T015631_761023_file_real_las_08OB86_-0205_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_TAstar-S/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_TAstar-S/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_TAstar-S/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_TAstar-S/runs/20261103T015921_202775_file_real_las_08OB86_-0205_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_-0205_TAstar-S/runs/20261103T015921_202775_file_real_las_08OB86_-0205_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_Astar/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_Astar/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_Astar/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_Astar/runs/20261103T015041_310441_file_real_las_08OB86_00294_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_Astar/runs/20261103T015041_310441_file_real_las_08OB86_00294_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_TAstar-S/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_TAstar-S/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_TAstar-S/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_TAstar-S/runs/20261103T015338_462198_file_real_las_08OB86_00294_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB86_00294_TAstar-S/runs/20261103T015338_462198_file_real_las_08OB86_00294_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_Astar/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_Astar/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_Astar/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_Astar/runs/20261103T020216_963337_file_real_las_08OB87_-0706_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_Astar/runs/20261103T020216_963337_file_real_las_08OB87_-0706_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_TAstar-S/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_TAstar-S/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_TAstar-S/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_TAstar-S/runs/20261103T020513_700111_file_real_las_08OB87_-0706_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB87_-0706_TAstar-S/runs/20261103T020513_700111_file_real_las_08OB87_-0706_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_Astar/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_Astar/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_Astar/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_Astar/runs/20261103T021340_015434_file_real_las_08OB88_-0167_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_Astar/runs/20261103T021340_015434_file_real_las_08OB88_-0167_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_TAstar-S/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_TAstar-S/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_TAstar-S/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_TAstar-S/runs/20261103T021821_357115_file_real_las_08OB88_-0167_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-0167_TAstar-S/runs/20261103T021821_357115_file_real_las_08OB88_-0167_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_Astar/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_Astar/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_Astar/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_Astar/runs/20261103T020807_910128_file_real_las_08OB88_-1417_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_Astar/runs/20261103T020807_910128_file_real_las_08OB88_-1417_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_TAstar-S/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_TAstar-S/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_TAstar-S/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_TAstar-S/runs/20261103T021053_705544_file_real_las_08OB88_-1417_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_-1417_TAstar-S/runs/20261103T021053_705544_file_real_las_08OB88_-1417_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_Astar/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_Astar/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_Astar/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_Astar/runs/20261103T022410_663181_file_real_las_08OB88_00332_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_Astar/runs/20261103T022410_663181_file_real_las_08OB88_00332_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_TAstar-S/process_0.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_TAstar-S/process_1.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_TAstar-S/process_2.log`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_TAstar-S/runs/20261103T022717_239390_file_real_las_08OB88_00332_200m_0_npz/mission.json`
+- `conference/results/gazebo_compare/physical_run/raw/08OB88_00332_TAstar-S/runs/20261103T022717_239390_file_real_las_08OB88_00332_200m_0_npz/trajectory.csv`
+- `conference/results/gazebo_compare/physical_run/raw_recordings_sha256.json`
+- `conference/results/gazebo_compare/physical_run/report/08OB86_-0205.png`
+- `conference/results/gazebo_compare/physical_run/report/08OB86_00294.png`
+- `conference/results/gazebo_compare/physical_run/report/08OB87_-0706.png`
+- `conference/results/gazebo_compare/physical_run/report/08OB88_-0167.png`
+- `conference/results/gazebo_compare/physical_run/report/08OB88_-1417.png`
+- `conference/results/gazebo_compare/physical_run/report/08OB88_00332.png`
+- `conference/results/gazebo_compare/physical_run/report/compare_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/paired_differences.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/Astar/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/Astar/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/Astar/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/Astar/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/Astar/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/TAstar-S/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/TAstar-S/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/TAstar-S/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/TAstar-S/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_-0205/TAstar-S/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/Astar/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/Astar/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/Astar/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/Astar/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/Astar/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/TAstar-S/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/TAstar-S/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/TAstar-S/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/TAstar-S/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB86_00294/TAstar-S/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/Astar/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/Astar/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/Astar/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/Astar/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/Astar/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/TAstar-S/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/TAstar-S/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/TAstar-S/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/TAstar-S/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB87_-0706/TAstar-S/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/Astar/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/Astar/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/Astar/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/Astar/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/Astar/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/TAstar-S/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/TAstar-S/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/TAstar-S/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/TAstar-S/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-0167/TAstar-S/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/Astar/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/Astar/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/Astar/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/Astar/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/Astar/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/TAstar-S/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/TAstar-S/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/TAstar-S/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/TAstar-S/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_-1417/TAstar-S/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/Astar/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/Astar/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/Astar/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/Astar/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/Astar/summary.json`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/TAstar-S/attitude.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/TAstar-S/paths.png`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/TAstar-S/report_log.txt`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/TAstar-S/summary.csv`
+- `conference/results/gazebo_compare/physical_run/report/runs/08OB88_00332/TAstar-S/summary.json`
+- `conference/results/gazebo_compare/physical_run/runtime_source.json`
 - `conference/results/gazebo_compare/verification/all_tests_log.txt`
 - `conference/results/gazebo_compare/verification/baseline_audit.json`
 - `conference/results/gazebo_compare/verification/environment_log.txt`
@@ -48,39 +248,188 @@
 - `conference/ros2_jazzy/gz_checks/run_compare_checks.sh`
 - `conference/tests/test_gz_compare.py`
 
-すべて新規ファイル。既存14テストの変更なし。既存コード・データ・地図・world・結果の804ファイルは、作業前のSHA-256とすべて一致した。
+</details>
+
+## 既存結果と既定出力の互換性
+
+既存テストを変更していない。基点のファイルのSHA-256監査結果：
 
 ```json
 {
   "tracked_baseline_files": 804,
-  "changed": []
+  "changed": [
+    "conference/data_prep/export_gazebo.py"
+  ]
 }
 ```
 
-## 実行環境
+基点の既存ファイルでは、後方互換の引数追加をしたexporter以外のファイルはすべて一致した。既存データ・地図・world・結果は変更していない。修正前に保存した2地図の既定出力と修正後の出力について、返り値とPNG・SDF・READMEのSHA-256がすべて一致することも確認した。
 
 ```text
-executable: /tmp/thesis-apt-compat/bin/python
-python: 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]
 {
-  "numpy": "2.3.5",
-  "scipy": "1.17.0",
-  "matplotlib": "3.10.8",
-  "pandas": "2.2.3",
-  "pydantic": "2.13.4",
-  "fastapi": "0.141.1",
-  "httpx": "0.28.1"
+  "flat_test_100m.npz": {
+    "summary": {
+      "map": "flat_test_100m.npz",
+      "pixels": 257,
+      "side_m": 100.0,
+      "z_min": 0.0,
+      "z_span": 0.001,
+      "max_error_m": 0.0,
+      "quantization_bound_m": 7.629510948348211e-09,
+      "obstacle_boxes": 3
+    },
+    "sha256": {
+      "README_ja.md": "cb92ab0fdb0d32c76986630bfc9049fe33796347dd06159e4ff2529d792989b1",
+      "heightmap.png": "03166ac1d06b01905a6f66391cb422384b2869ab8732e863f5adc71f0c3776e7",
+      "world.sdf": "41c6e85b78aa36357c1fb65a9da4603015a6cee51850cd63118c8545bc31315e"
+    }
+  },
+  "real_08OB87_-0206_200m_0.npz": {
+    "summary": {
+      "map": "real_08OB87_-0206_200m_0.npz",
+      "pixels": 2049,
+      "side_m": 200.0,
+      "z_min": -1.2999999523162842,
+      "z_span": 8.099952459335327,
+      "max_error_m": 0.06374200885325632,
+      "quantization_bound_m": 6.179867596959889e-05,
+      "obstacle_boxes": 0
+    },
+    "sha256": {
+      "README_ja.md": "b8ff3ebc7cb2f20d003cd3100ea29fd6ba98f7a6bbfddd610316ad2c9aa8e073",
+      "heightmap.png": "108b5f25d7601d56627e6c2e793b9a20aaeecf2247d5c14e0c8286534ab2b40b",
+      "world.sdf": "559020b37cfddf8fe7314ab9df6dfa90c3d6176aa3534bc2c83e12336fdeb77f"
+    }
+  }
 }
-Docker client=28.4.0 server=28.4.0
+Default exporter outputs before/after: metadata, PNG, SDF and README all match byte-for-byte.
 ```
 
-テストでは `/tmp/thesis-apt-compat/bin/python` を使用した。
-`OPENBLAS_NUM_THREADS=1`、`MPLCONFIGDIR=/tmp/thesis-batch-mpl`、`XDG_CACHE_HOME=/tmp/thesis-batch-cache` を設定した。
-Gazebo本体はホストにない。ホストへのsudo・ROS2/Gazeboのインストールは行っていない。
+## world生成の確認
 
-## 実行したコマンドとテスト出力の全文
+独立のPNG復号による誤差検証は新規テストで実行した。以下はPythonテスト用venvでの一時world準備の出力全文で、走行測定値ではない。実走時の変換結果は `physical_run/manifest.json` に別途保存している。
 
-変更前：
+```text
+Temporary world generation only; no physical Gazebo measurements.
+{
+  "world_max_pixels": 4097,
+  "world_exports": {
+    "08OB86_00294": {
+      "map": "real_las_08OB86_00294_200m_0.npz",
+      "pixels": 2049,
+      "side_m": 200.0,
+      "z_min": -1.3849999904632568,
+      "z_span": 7.694166421890259,
+      "max_error_m": 0.061695935096075516,
+      "quantization_bound_m": 5.8702726954224906e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB86_-0205": {
+      "map": "real_las_08OB86_-0205_200m_0.npz",
+      "pixels": 2049,
+      "side_m": 200.0,
+      "z_min": -1.2760000228881836,
+      "z_span": 6.869285583496094,
+      "max_error_m": 0.06354209578655112,
+      "quantization_bound_m": 5.240928956661397e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB87_-0706": {
+      "map": "real_las_08OB87_-0706_200m_0.npz",
+      "pixels": 1025,
+      "side_m": 200.0,
+      "z_min": -1.2669999599456787,
+      "z_span": 7.20799994468689,
+      "max_error_m": 0.09197745315509853,
+      "quantization_bound_m": 5.4993514493681925e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB88_-1417": {
+      "map": "real_las_08OB88_-1417_200m_0.npz",
+      "pixels": 4097,
+      "side_m": 200.0,
+      "z_min": -1.3049999475479126,
+      "z_span": 10.07099974155426,
+      "max_error_m": 0.06239859486475474,
+      "quantization_bound_m": 7.683680278900023e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB88_-0167": {
+      "map": "real_las_08OB88_-0167_200m_0.npz",
+      "pixels": 4097,
+      "side_m": 200.0,
+      "z_min": -1.2259999513626099,
+      "z_span": 9.790000081062317,
+      "max_error_m": 0.06638817009318743,
+      "quantization_bound_m": 7.469291280279481e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB88_00332": {
+      "map": "real_las_08OB88_00332_200m_0.npz",
+      "pixels": 4097,
+      "side_m": 200.0,
+      "z_min": -1.4709999561309814,
+      "z_span": 9.908000230789185,
+      "max_error_m": 0.056513540446618826,
+      "quantization_bound_m": 7.559319623704268e-05,
+      "obstacle_boxes": 0
+    }
+  },
+  "world_errors": {}
+}
+All six worlds satisfy the unchanged 0.1m error bound; temporary worlds removed on exit.
+```
+
+## 実行環境とGazeboの起動
+
+ホストのDocker VFS領域では既定イメージのレイヤー展開が容量不足となった。軽量構成の依存関係取得もROS配布サーバーへの403で失敗したため、公開Dockerイメージを空きのある `/tmp` に取得し、各レイヤーのSHA-256を照合して展開した。一般ユーザーのuser/mount namespace内で一時rootfsにchrootし、既存Dockerfileと同じくpandasを追加して実行した。ソースは読取専用、結果は書込可能なマウントとし、ホストへのsudo・パッケージ導入は行っていない。通常のDocker起動スクリプトの経路は、このクラウドの容量制約では最後まで実行していない。
+
+```json
+{
+  "image": "osrf/ros:jazzy-desktop-full",
+  "index_digest": "sha256:ae7ad3ac243da1dfd8bd402a2fa08e149ffbf7a385013bd8ef798d0800accdc8",
+  "manifest_digest": "sha256:ae7ad3ac243da1dfd8bd402a2fa08e149ffbf7a385013bd8ef798d0800accdc8",
+  "runtime": "temporary root filesystem in an unprivileged user/mount namespace; default image flattened after SHA-256 verification"
+}
+```
+
+```json
+{
+  "runtime": "unprivileged user/mount namespace and chroot; source read-only, output writable",
+  "versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "matplotlib": "3.6.3",
+    "pandas": "2.1.4"
+  },
+  "colcon_build": "both thesis_bunker_mission and thesis_bunker_gz finished successfully; full output in followup/namespace_run_log.txt"
+}
+```
+
+Gazebo記録のmanifestに保存した実測環境：
+
+```json
+{
+  "image": "osrf/ros:jazzy-desktop-full@sha256:ae7ad3ac243da1dfd8bd402a2fa08e149ffbf7a385013bd8ef798d0800accdc8",
+  "gazebo": "8.11.0",
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4"
+}
+```
+
+実行したコマンド：
+
+```bash
+python3 /tmp/task019_pull_runtime.py
+bash /tmp/task019_namespace_run.sh > conference/results/gazebo_compare/followup/namespace_run_log.txt 2>&1
+```
+
+実際に使った補助手順とイメージmanifestは `followup/runtime_setup/` に保存した。クラウド固有のパスをそのまま残した実行記録であり、通常の再実行にはDockerスクリプトを使用する。ROS2のcolcon buildとGazebo起動を含む全ログは `followup/namespace_run_log.txt`（端末進捗のCR改行をLFに統一し行末空白を除去）。元のバイト列は `followup/namespace_run_log.txt.gz` に損失なく保存した。
+
+## テストのコマンドと出力全文
+
+Pythonテストは `/tmp/thesis-apt-compat/bin/python`、`OPENBLAS_NUM_THREADS=1`、`MPLCONFIGDIR=/tmp/thesis-batch-mpl`、`XDG_CACHE_HOME=/tmp/thesis-batch-cache` で実行した。実走側のPython/NumPy/SciPyとは環境を区別している。変更前：
 
 ```bash
 cd conference
@@ -88,14 +437,26 @@ python3 -m tests.test_planners
 ```
 
 ```text
+executable: /tmp/thesis-apt-compat/bin/python
+Python: 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]
+numpy 2.3.5
+scipy 1.17.0
+matplotlib 3.10.8
+pandas 2.2.3
+pydantic 2.13.4
+fastapi 0.141.1
+httpx 0.28.1
+```
+
+```text
 all planner tests passed
 roll-aware tests passed
 ```
 
-変更後は `conference/tests/test_*.py` の全モジュールを次のドライバーで順に実行した（各コマンドは以下の全文に記載）。
+変更後は全 `conference/tests/test_*.py` を順番に実行：
 
 ```bash
-python3 /tmp/thesis_batch_tools.py suite /workspace/thesis-019 /workspace/thesis-019/conference/results/gazebo_compare/verification
+python3 /tmp/thesis_batch_tools.py suite /workspace/thesis-019 /workspace/thesis-019/conference/results/gazebo_compare/followup/tests
 ```
 
 ```text
@@ -131,6 +492,8 @@ exit=0
 
 $ python3 -m tests.test_gz_compare
 comparison scenarios: first six LAS test patches, clean 200m seed0; both methods match direct start/goal/path calls
+unavailable-world fixture: all scenarios retained, one export attempt per beach, no invented physical measurements
+worlds: all six LAS maps reconstructed from decoded PNGs within 0.1m; default exports unchanged by explicit legacy limit; invalid limits rejected
 comparison report: 6x2 kinematic fixtures agree with analyze_run; paired medians, immutable raw logs and excluded columns passed
 fixture values are simulated test data, not Gazebo measurements
 all Gazebo comparison tests passed (ROS2/Gazebo not required)
@@ -307,8 +670,6 @@ all multi-goal tour tests passed
 exit=0
 ```
 
-全実行結果：
-
 ```text
 test_beach_terrain exit=0
 test_collision exit=0
@@ -328,156 +689,216 @@ test_tour exit=0
 Failed modules: []
 ```
 
-world生成失敗の扱いを追加した後、影響のある新規モジュールを最後に再実行した。以下もexit=0。
+## 物理記録の整合性確認
 
 ```bash
 cd conference
-python3 -m tests.test_gz_compare
+python3 results/gazebo_compare/followup/audit_physical.py
 ```
 
 ```text
-comparison scenarios: first six LAS test patches, clean 200m seed0; both methods match direct start/goal/path calls
-unavailable-world fixture: all scenarios retained, one export attempt per beach, no invented physical measurements
-comparison report: 6x2 kinematic fixtures agree with analyze_run; paired medians, immutable raw logs and excluded columns passed
-fixture values are simulated test data, not Gazebo measurements
-all Gazebo comparison tests passed (ROS2/Gazebo not required)
-```
-
-シェルは `bash -n ros2_jazzy/gz_checks/run_compare_checks.sh`、新規Pythonは `compile`、差分は `git diff --check` で確認した。
-
-## Gazebo実行：未実行
-
-実行したコマンド：
-
-```bash
-cd conference
-bash ros2_jazzy/gz_checks/run_compare_checks.sh results/gazebo_compare
-```
-
-最初はサンドボックスによる `~/.docker/buildx` への書込制限で失敗したため、サンドボックス外で再試行した。
-Docker daemonには接続でき、既定イメージのダウンロードまで進んだが、レイヤー展開時に容量不足で失敗した（exit=1）。
-実行ログ（行末の空白だけ除去）は `docker_attempt_log.txt`。末尾をそのまま示す。
-
-```text
-#4 sha256:dd4185219e03a01423809840312f0982ad8e9deea9bb03ab0540ef999a8a7f45 808.45MB / 965.91MB 43.9s
-#4 sha256:dd4185219e03a01423809840312f0982ad8e9deea9bb03ab0540ef999a8a7f45 858.78MB / 965.91MB 46.3s
-#4 sha256:dd4185219e03a01423809840312f0982ad8e9deea9bb03ab0540ef999a8a7f45 909.12MB / 965.91MB 48.7s
-#4 sha256:dd4185219e03a01423809840312f0982ad8e9deea9bb03ab0540ef999a8a7f45 958.40MB / 965.91MB 51.0s
-#4 sha256:dd4185219e03a01423809840312f0982ad8e9deea9bb03ab0540ef999a8a7f45 965.91MB / 965.91MB 51.5s done
-#4 extracting sha256:dd4185219e03a01423809840312f0982ad8e9deea9bb03ab0540ef999a8a7f45
-#4 extracting sha256:dd4185219e03a01423809840312f0982ad8e9deea9bb03ab0540ef999a8a7f45 5.3s
-#4 ERROR: failed to register layer: write /usr/include/vtk-9.1/vtkLegacy.h: no space left on device
-------
- > [1/2] FROM docker.io/osrf/ros:jazzy-desktop-full@sha256:ae7ad3ac243da1dfd8bd402a2fa08e149ffbf7a385013bd8ef798d0800accdc8:
-------
-Dockerfile:1
---------------------
-   1 | >>> FROM osrf/ros:jazzy-desktop-full
-   2 |     RUN rm -f /etc/apt/sources.list.d/ros2*.list /etc/apt/sources.list.d/ros2.sources 2>/dev/null; ls /etc/apt/sources.list.d/; apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends python3-pandas && rm -rf /var/lib/apt/lists/*
-   3 |
---------------------
-ERROR: failed to build: failed to solve: failed to register layer: write /usr/include/vtk-9.1/vtkLegacy.h: no space left on device
-
-exit=1
-```
-
-**物理走行は未実行。Gazeboの12走行の集計表、対の差、軌跡・rollの比較図は未生成。測定値は埋めていない。**
-ROS2不要のテスト用記録は `kinematic_test_fixture` と明示し、一時フォルダでのみ生成・集計して破棄した。これらをGazebo実験結果として保存・報告していない。
-
-## world生成だけの確認（Gazebo走行ではない）
-
-Dockerに依存しない部分について、`prepare_cases` を一時フォルダに対して実行した。
-対象6地形・12ケースを保持すること、成功したworld数が生成ファイル数と一致すること、失敗理由が両方法に付くこと、manifestをJSON化できることを確認した。
-すべての一時world・解析用地図は終了時に削除した。使用したコマンド：
-
-```bash
-cd conference
-python3 - <<'PY'
-import json, tempfile
-from pathlib import Path
-from ros2_jazzy.gz_checks.compare_checks import prepare_cases
-with tempfile.TemporaryDirectory(prefix='task019-world-check-') as tmp:
-    root=Path(tmp)
-    manifest=prepare_cases(root/'output',root/'worlds')
-    assert len(manifest['cases'])==12
-    assert len(manifest['world_exports'])+len(manifest['world_errors'])==6
-    assert len(list((root/'worlds').glob('*/world.sdf')))==len(manifest['world_exports'])
-    for case in manifest['cases']:
-        assert ('error' in case)==(case['patch'] in manifest['world_errors'])
-    json.dumps(manifest)
-    print('Temporary preparation only; no Gazebo physical run was performed.')
-    print(json.dumps({k:manifest[k] for k in ['world_exports','world_errors']},ensure_ascii=False,indent=2))
-    print('All six world preparations attempted; 12 portable case definitions validated; export failures are explicit; temporary worlds removed on exit.')
-PY
-```
-
-出力全文（地形変換の検証値であり、走行実験の集計表ではない）：
-
-```text
-Temporary preparation only; no Gazebo physical run was performed.
 {
-  "world_exports": {
-    "08OB86_00294": {
-      "map": "real_las_08OB86_00294_200m_0.npz",
-      "pixels": 2049,
-      "side_m": 200.0,
-      "z_min": -1.3849999904632568,
-      "z_span": 7.694166421890259,
-      "max_error_m": 0.061695935096075516,
-      "quantization_bound_m": 5.8702726954224906e-05,
-      "obstacle_boxes": 0
+  "actor_source_files_checked": 44,
+  "worlds": 6,
+  "cases": 12,
+  "runs": [
+    {
+      "patch": "08OB86_00294",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3320,
+      "goal_error_m": 0.2878517765733064,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
     },
-    "08OB86_-0205": {
-      "map": "real_las_08OB86_-0205_200m_0.npz",
-      "pixels": 2049,
-      "side_m": 200.0,
-      "z_min": -1.2760000228881836,
-      "z_span": 6.869285583496094,
-      "max_error_m": 0.06354209578655112,
-      "quantization_bound_m": 5.240928956661397e-05,
-      "obstacle_boxes": 0
+    {
+      "patch": "08OB86_00294",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3225,
+      "goal_error_m": 0.29802869850362,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
     },
-    "08OB87_-0706": {
-      "map": "real_las_08OB87_-0706_200m_0.npz",
-      "pixels": 1025,
-      "side_m": 200.0,
-      "z_min": -1.2669999599456787,
-      "z_span": 7.20799994468689,
-      "max_error_m": 0.09197745315509853,
-      "quantization_bound_m": 5.4993514493681925e-05,
-      "obstacle_boxes": 0
+    {
+      "patch": "08OB86_-0205",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3150,
+      "goal_error_m": 0.28356093062032933,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB86_-0205",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3079,
+      "goal_error_m": 0.2752664307753353,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB87_-0706",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3272,
+      "goal_error_m": 0.28724313456587347,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB87_-0706",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3183,
+      "goal_error_m": 0.28567395649416455,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB88_-1417",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3090,
+      "goal_error_m": 0.26458450154887525,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB88_-1417",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3102,
+      "goal_error_m": 0.28301032144092236,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB88_-0167",
+      "planner": "A*",
+      "status": "stuck",
+      "samples": 2891,
+      "goal_error_m": 10.329048979724575,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0,
+      "stagnation_diagnostic": {
+        "window_s": 10.0,
+        "xy_net_displacement_m": 0.004006097292327659,
+        "v_command_mean_m_s": 0.9950248756218906,
+        "w_command_abs_mean_rad_s": 0.1649956333528573,
+        "roll_abs_final_deg": 167.11136960843143,
+        "pitch_abs_final_deg": 17.048164112044738
+      }
+    },
+    {
+      "patch": "08OB88_-0167",
+      "planner": "TA*-S",
+      "status": "stuck",
+      "samples": 5430,
+      "goal_error_m": 30.548497888149896,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0,
+      "stagnation_diagnostic": {
+        "window_s": 10.0,
+        "xy_net_displacement_m": 0.029881162846267007,
+        "v_command_mean_m_s": 0.0,
+        "w_command_abs_mean_rad_s": 0.9950248756218906,
+        "roll_abs_final_deg": 170.0752826120545,
+        "pitch_abs_final_deg": 26.280991492972632
+      }
+    },
+    {
+      "patch": "08OB88_00332",
+      "planner": "A*",
+      "status": "completed",
+      "samples": 3489,
+      "goal_error_m": 0.2609872033492553,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
+    },
+    {
+      "patch": "08OB88_00332",
+      "planner": "TA*-S",
+      "status": "completed",
+      "samples": 3427,
+      "goal_error_m": 0.2918503473954353,
+      "fallen_samples": 0,
+      "out_of_bounds_samples": 0
     }
-  },
-  "world_errors": {
-    "08OB88_-1417": "ValueError: 高さ地図の補間誤差が0.1mを超えています: 0.12298041835012263",
-    "08OB88_-0167": "ValueError: 高さ地図の補間誤差が0.1mを超えています: 0.16549192188655937",
-    "08OB88_00332": "ValueError: 高さ地図の補間誤差が0.1mを超えています: 0.10710643607727643"
-  }
+  ]
 }
-All six world preparations attempted; 12 portable case definitions validated; export failures are explicit; temporary worlds removed on exit.
+Frozen source, real Gazebo provenance, terminal recordings, path identity, finite data, command limits and completed-goal distances passed.
 ```
 
-この環境では3地形が既存exporterの補間誤差上限0.1mを満たせなかった。
-上限を緩めたり、対象を別の砂浜に替えたりせず、失敗を保持する実装を選んだ。
-現在のスクリプトは、Dockerを使える環境でもこの失敗が生じれば該当する両方法を実行失敗として残し、残りを試行して最後に非0で終了する。
-**6地形すべての物理比較には、実行環境でのworld生成の再確認と、必要なら既存exporter側の対応が残る。**
-保護対象の `data_prep/export_gazebo.py` は変更していない。
+## experiments/gz_compare_report.py の集計表（そのまま）
 
-## 再実行手順・Claudeに確認してほしいこと
+以下はGazeboで実際に測定した軌跡から、比較スクリプトが出力した全文。運動学の試験用データは含めない。
 
-十分なディスク容量のあるDocker環境で、`ros2_jazzy/gz_checks/README_compare_ja.md` のworld生成確認を先に実行する。
-その後、新しい出力先を指定する：
+```text
+Six beaches x two planners; descriptive trends only, no hypothesis tests.
+Missing physical recordings are 未実行; paired differences use only two completed recordings.
+       patch planner    status  completed data_source error  elapsed_s  deviation_mean_m  deviation_max_m  path_lethal_cells  roll_p95_actual_deg  pitch_p95_actual_deg  roll_max_actual_deg  pitch_max_actual_deg  climb_actual_m  map_length_xy  map_climb  map_mean_cost  map_p95_slope  map_p95_roll  map_max_roll  map_max_pitch_dir  roll_p95_recorded_xy_map_deg  pitch_p95_recorded_xy_map_deg
+08OB86_00294      A* completed       True      gazebo              166         0.0155309         0.283747                  0              4.57977               3.20701              6.34223               7.33646         1.35143         166.45    2.09937       0.116112        5.10152       4.75077       6.12944            5.80548                       4.69694                        2.93522
+08OB86_00294   TA*-S completed       True      gazebo            161.2         0.0110132         0.293225                  0              4.16851               2.23449              5.58198               6.51558        0.889737        160.949    1.29658      0.0993425        4.54547       4.20589       5.98096             4.2124                       4.21586                        2.25498
+08OB86_-0205      A* completed       True      gazebo           157.45          0.267778          6.19138                  0              11.8057                6.9483              19.6117                10.297         2.79364        155.085    2.98103       0.175112        13.7217       12.7104        25.748            10.3288                        10.157                        6.75867
+08OB86_-0205   TA*-S completed       True      gazebo              154         0.0698109          3.31719                  0              3.13187               1.88349              5.27948               5.86883        0.912171        156.831    1.13326      0.0794646        3.78309       3.18944       5.69173            9.61358                        3.0554                        2.02659
+08OB87_-0706      A* completed       True      gazebo           163.55         0.0217786         0.266098                  0              5.14706               3.18229              6.40325               7.10212        0.721888        164.493    1.57973       0.129899        5.96148       5.12886        6.6874            6.96167                       5.14935                        3.59127
+08OB87_-0706   TA*-S completed       True      gazebo           159.15        0.00647007         0.128161                  0              3.15048               2.63982              5.63635               5.22304        0.506069        159.351   0.812158      0.0835471        4.15879       3.34804       4.86051            4.61208                       3.34949                        3.03682
+08OB88_-1417      A* completed       True      gazebo           154.45         0.0154969         0.227642                  0              5.21845               2.35925              9.30999               7.15519         1.23867        155.002    1.74114       0.115239        5.36712       5.08998       8.37479             5.8079                       5.09578                        2.50166
+08OB88_-1417   TA*-S completed       True      gazebo           155.05        0.00410578          0.23445                  0              2.29267              0.807219              3.49959               3.37278         0.52038        155.199   0.733826      0.0526041         2.5868       2.41772       3.07078            3.11248                       2.38563                       0.820092
+08OB88_-0167      A*     stuck      False      gazebo            144.5          0.843477           5.2174                 90              167.111               33.0629              176.682               43.7947         9.66845         157.68    8.10689       0.451117        33.7886       33.6112       39.1973            25.4503                       31.8871                        18.1473
+08OB88_-0167   TA*-S     stuck      False      gazebo           271.45         0.0796587          1.28426                  9              13.2141                26.281               176.26                79.867         7.44885        289.767    7.90873       0.137976        10.2882       5.98149       18.0338            23.7975                       5.80491                        9.28437
+08OB88_00332      A* completed       True      gazebo            174.4         0.0105396         0.285094                  0              4.04249               4.76705              8.38286               12.5081        0.281719        174.858   0.599038      0.0863766        5.70541        3.8628       6.83518            10.9966                       3.87505                        4.69552
+08OB88_00332   TA*-S completed       True      gazebo            171.3        0.00999076          0.39661                  0              3.77867               4.55179              5.11535               9.66308        0.231823         170.97    0.38637      0.0749039        5.37827       3.75626       5.20394            9.60764                       3.69879                        4.28301
+
+TA*-S minus A*: paired median differences
+              metric  paired_completed  delta_median
+           elapsed_s                 5         -3.45
+    deviation_mean_m                 5    -0.0113911
+     deviation_max_m                 5    0.00680795
+   path_lethal_cells                 5             0
+ roll_p95_actual_deg                 5      -1.99658
+pitch_p95_actual_deg                 5     -0.972516
+ roll_max_actual_deg                 5      -3.26751
+pitch_max_actual_deg                 5      -2.84502
+      climb_actual_m                 5     -0.461692
+Climb sums positive recorded z increments without denoising; it includes physical/logging noise.
+```
+
+## 図
+
+各図の左は両方法の実測軌跡、右は実測rollの時系列。6枚すべてを目視確認した。軌跡は各走行の終了時までを表示し、停滞した記録も残している。rollはEuler角で±180度で折り返す。
+
+- [08OB86_00294](physical_run/report/08OB86_00294.png)（A*: completed、TA*-S: completed）
+
+- [08OB86_-0205](physical_run/report/08OB86_-0205.png)（A*: completed、TA*-S: completed）
+
+- [08OB87_-0706](physical_run/report/08OB87_-0706.png)（A*: completed、TA*-S: completed）
+
+- [08OB88_-1417](physical_run/report/08OB88_-1417.png)（A*: completed、TA*-S: completed）
+
+- [08OB88_-0167](physical_run/report/08OB88_-0167.png)（A*: stuck、TA*-S: stuck）
+
+- [08OB88_00332](physical_run/report/08OB88_00332.png)（A*: completed、TA*-S: completed）
+
+監査の `fallen_samples` は、既存analyze_runの定義で「zが地図標高より1m以上低い記録数」を表す。rollによる反転した姿勢は別に読む。
+
+## 解釈の範囲・残る制約
+
+所要時間は記録の最終tと最初のtの差（シミュレーション秒）で、準備と静置を含めない。対の中央値は両方法が完走した砂浜だけで算出する。登りは記録zの正の増分をノイズ除去せず合計するため、車体の揺れも含む。地図の指標は計画経路に対する値、実測姿勢は走行記録からの値として区別する。接触セルは、実測xy軌跡が通過した地図上の通行不可セル数を既存analyze_runで数えたもの。
+
+車体形状・摩擦・heightmap補間・水面の扱いは既存モデルの仮定を引き継ぐ。実砂での接地・沈下や実機の走行を検証したものではない。6砂浜だけの記述比較であり、有意差や一般的な性能保証は主張しない。Gazeboの版とPython環境は上の記録に固定して読む必要がある。
+
+## 再実行
+
+十分なディスク容量がある環境で、新しい出力先を指定する：
 
 ```bash
 git switch codex/019-gazebo-compare
 cd conference
-bash ros2_jazzy/gz_checks/run_compare_checks.sh results/gazebo_compare/physical_run
-python3 experiments/gz_compare_report.py results/gazebo_compare/physical_run
+bash ros2_jazzy/gz_checks/run_compare_checks.sh results/gazebo_compare/new_run
+python3 experiments/gz_compare_report.py results/gazebo_compare/new_run
 ```
 
-既存イメージを使う場合は `THESIS_ROS_IMAGE=...` を付ける。既存manifestがある出力先は上書きせず停止するので、再走行では別の出力先を選ぶ。
-原記録は出力先の `manifest.json`、`maps/`、`raw/`、再集計は `report/` に保存される。
-
-ROS2の起動・初期静置・追従・プロセス終了、Gazeboでの実測記録、実測図の見た目は未確認。
-車体形状・接地摩擦・heightmap補間・水面の扱いは既存exporter/modelの仮定を引き継ぐ。
-world生成の制約と物理走行の確認を優先してレビューしてほしい。
+既存manifestがある保存先は上書きせず停止する。`THESIS_ROS_IMAGE` でイメージを変更できる。今回の原記録は `physical_run/`、最新のPython検証は `followup/tests/`、初回実装時の検証ログは `verification/` に保管している。
