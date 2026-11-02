@@ -1,0 +1,17 @@
+patch,prior,sensor,cause,unique_cells
+08OB88_-0167,coarse c10,LOS h0.5,already_known,2
+08OB88_-0167,coarse c10,LOS h0.5,occluded,3
+08OB89_-0347,coarse c10,LOS h0.5,already_known,1
+08OB89_-0347,coarse c10,LOS h0.5,occluded,1
+08OC80_00660,coarse c10,LOS h0.5,already_known,1
+08OC80_00660,coarse c10,LOS h0.5,occluded,1
+08OC95_00928,stale,LOS h0.5,already_known,1
+08OC95_00928,stale,LOS h0.5,occluded,1
+08OC97_-0577,coarse c10,LOS h0.5,already_known,1
+08OC97_-0577,coarse c10,LOS h0.5,occluded,1
+08OC98_00148,coarse c10,LOS h0.5,already_known,1
+08OC98_00148,coarse c10,LOS h0.5,occluded,1
+08OC99_00483,coarse c10,LOS h0.5,already_known,1
+08OC99_00483,coarse c10,LOS h0.5,occluded,1
+08OC99_01733,stale,LOS h0.5,already_known,1
+08OC99_01733,stale,LOS h0.5,occluded,1
