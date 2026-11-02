@@ -117,9 +117,50 @@ def export_stale_map(folder):
     return path
 
 
+def export_geo_sidecars(folder):
+    """Attach source patch geometry without opening any existing map for writing."""
+    import hashlib
+    import json
+    from tapp.real_beach import dataset_dir
+
+    output=[]
+    for path in sorted(Path(folder).glob("real_las_*.npz")):
+        body=path.stem.removeprefix("real_las_")
+        debris=body.endswith("_debris")
+        if debris:body=body.removesuffix("_debris")
+        name,side,seed=body.rsplit("_",2)
+        side_m=int(side.removesuffix("m"));seed=int(seed)
+        patch=dataset_dir("shizuoka_beach_las")/(name+".npz")
+        with np.load(patch,allow_pickle=False) as data:
+            geometry={key:data[key].tolist() for key in ("origin_xy","tangent","normal")}
+            res=float(data["res"])
+        with np.load(path,allow_pickle=False) as data:
+            if data["elev"].shape!=(int(side_m/res),)*2 or float(data["resolution"])!=res:
+                raise ValueError("map shape/resolution differs from source geometry")
+        crop=(0,0) if side_m==200 else build_real(name,side_m,seed,debris=debris,dataset="shizuoka_beach_las")["crop_origin_cells"]
+        meta=dict(geometry,zone=8,resolution=res,
+                  coordinate_system="JGD2011/JGD2024, GRS80, Japan Plane Rectangular CS VIII",
+                  map_file=path.name,map_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                  source_patch=name,source_dataset="shizuoka_beach_las",
+                  source_patch_sha256=hashlib.sha256(patch.read_bytes()).hexdigest(),
+                  crop_origin_cells=list(crop),
+                  offset_uv_m=[-100+res/2+crop[0]*res,-50+res/2+crop[1]*res])
+        sidecar=path.with_suffix(".geo.json")
+        text=json.dumps(meta,ensure_ascii=False,indent=2,sort_keys=True)+"\n"
+        if not sidecar.exists() or sidecar.read_text()!=text:sidecar.write_text(text)
+        output.append(sidecar)
+    return output
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="固定シードの地図ファイルを書き出す")
     parser.add_argument(
         "--output", type=Path, default=Path(__file__).resolve().parent.parent / "maps"
     )
-    export_maps(parser.parse_args().output)
+    parser.add_argument("--geo-only", action="store_true", help="write only geographic sidecars, preserving every NPZ")
+    args = parser.parse_args()
+    if args.geo_only:
+        for path in export_geo_sidecars(args.output):
+            print(path.name)
+    else:
+        export_maps(args.output)

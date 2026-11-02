@@ -1,0 +1,13 @@
+{
+  "base_commit": "b4c92a1ccaf60eff85362564d2f0d9915c3d10ae",
+  "baseline_files": 804,
+  "authorized_source_changes": [
+    "conference/data_prep/export_maps.py",
+    "conference/webui/server.py",
+    "conference/webui/static/app.js",
+    "conference/webui/static/index.html",
+    "conference/webui/static/style.css"
+  ],
+  "other_changes": [],
+  "map_files_unchanged": true
+}

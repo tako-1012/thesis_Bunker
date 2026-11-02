@@ -1,0 +1,9 @@
+$ python3 -m tests.test_beach_terrain
+beach determinism, shapes, finite values, water/wet and unchanged rolling passed
+averaged sea/wet/dry/inland profiles and foreshore slopes passed (validation seeds)
+scarp 45-degree coverage passed: [np.float64(0.465), np.float64(0.615), np.float64(0.0), np.float64(0.16), np.float64(0.555)]
+beach scenarios, delegated planner equality and exact smoothing passed (15 scenarios)
+exact beach online safety passed (9 trajectories)
+all beach-terrain tests passed
+
+exit=0

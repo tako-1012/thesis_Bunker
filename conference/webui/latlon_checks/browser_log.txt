@@ -1,0 +1,3 @@
+desktop: geographic cursor, lat/lng list, actual JSON/text downloads and both import round trips passed
+phone 390x844: touch coordinate display, lat/lng text file import and no horizontal overflow passed (Chromium emulation)
+unreferenced map: geographic tools hidden; no browser errors or external requests

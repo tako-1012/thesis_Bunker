@@ -15,11 +15,13 @@ from tapp.config import RESOLUTION
 from tapp.mission import list_maps, load_map, plan_mission, render_map_png
 from tapp.robot_sim import simulate, initial_pose
 from .robot_api import router as robot_router
+from .geo_api import router as geo_router, geo_for_map
 import numpy as np
 
 STATIC = Path(__file__).resolve().parent / "static"
 app = FastAPI(title="砂浜の巡回計画")
 app.include_router(robot_router)
+app.include_router(geo_router)
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
 _PLANNING = threading.Lock()
 
@@ -63,7 +65,7 @@ def image(map_id: str):
 @app.get("/api/maps/{map_id:path}")
 def map_info(map_id: str):
     sc = _map(map_id)
-    return dict(
+    info = dict(
         id=map_id,
         side_m=sc["side_m"],
         resolution=RESOLUTION,
@@ -79,6 +81,14 @@ def map_info(map_id: str):
             ],
         ],
     )
+
+    try:
+        geo = geo_for_map(map_id)
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+    if geo is not None:
+        info["geo"] = geo
+    return info
 
 
 @app.post("/api/plan")
