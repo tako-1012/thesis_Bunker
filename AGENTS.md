@@ -34,6 +34,7 @@ python3 -m tests.test_online_deadend
 python3 -m tests.test_visibility
 python3 -m tests.test_geo
 python3 -m tests.test_gz_compare
+python3 -m tests.test_footprint
 ```
 作業を終える前に、`conference/tests/` の下にあるすべてのテストを実行すること。
 
@@ -48,11 +49,11 @@ python3 -m tests.test_gz_compare
 - `conference/results/*.csv`、`conference/results/*.json`、`conference/results/explore/`、
   `conference/results/online/`、`conference/results/online_prior/`、`conference/results/online_dstar/`、`conference/results/risk_prior/`、`conference/results/exact_los/`、
   `conference/results/natural_terrain/`、`conference/results/beach_terrain/`、`conference/results/multi_goal_tour/`、`conference/results/real_beach/`、`conference/results/ros2_gz/`、`conference/results/real_beach_las/`、`conference/results/online_mission/`、
-  `conference/results/online_deadend/`、`conference/results/online_visibility/`、`conference/results/gazebo_compare/`、`conference/thesis/out/`
+  `conference/results/online_deadend/`、`conference/results/online_visibility/`、`conference/results/gazebo_compare/`、`conference/results/footprint_steep/`、`conference/thesis/out/`
 - `conference/data/`（本物の地形データ。`conference/data_prep/` のスクリプトで作ったもの）
 - `conference/tapp/planners.py`、`metrics.py`、`scenario.py`、`terrain.py`、
   `traversability.py`、`config.py`、`aniso.py`、`prior.py`、`dstar_lite.py`、`risk_prior.py`、`collision.py`、`online.py`、
-  `natural_terrain.py`、`natural_scenario.py`、`beach_terrain.py`、`beach_scenario.py`、`exact_planners.py`、`directional.py`、`tour.py`、`real_beach.py`、`mission.py`、`mapfile.py`、`pure_pursuit.py`、`robot_sim.py`、`follower.py`、`run_log.py`、`online_mission.py`、`online_deadend.py`、`visibility.py`、`geo.py`
+  `natural_terrain.py`、`natural_scenario.py`、`beach_terrain.py`、`beach_scenario.py`、`exact_planners.py`、`directional.py`、`tour.py`、`real_beach.py`、`mission.py`、`mapfile.py`、`pure_pursuit.py`、`robot_sim.py`、`follower.py`、`run_log.py`、`online_mission.py`、`online_deadend.py`、`visibility.py`、`geo.py`、`footprint.py`
 - `conference/maps/`、`conference/gazebo_worlds/`（地図ファイルと Gazebo の world。`conference/data_prep/` のスクリプトで作ったもの）
 - `conference/webui/`（Web 画面。指示書で許可された場合だけ変更する）
 - `conference/ros2_jazzy/`（ROS2・Gazebo のパッケージと、Gazebo での確認の結果）
