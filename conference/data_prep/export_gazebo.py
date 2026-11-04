@@ -32,11 +32,21 @@ def png16(pixels):
     )
 
 
-def export_gazebo(map_path, output):
+def export_gazebo(map_path, output, *, max_pixels=2049):
+    """Refine the raster up to max_pixels without changing the 0.1m error bound.
+
+    The default preserves the existing exports; larger rasters require opt-in.
+    """
     sc = load_map_file(map_path)
     z = sc["tmap"].elev
     if z.shape[0] != z.shape[1]:
         raise ValueError("Gazeboの地形は正方形の地図にしてください")
+    if (
+        not isinstance(max_pixels, (int, np.integer))
+        or max_pixels < 3
+        or ((max_pixels - 1) & (max_pixels - 2)) != 0
+    ):
+        raise ValueError("max_pixels must be 2^n+1 and at least 3")
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     n = z.shape[0]
@@ -45,6 +55,8 @@ def export_gazebo(map_path, output):
     minimum = float(z.min())
     span = max(float(z.max() - minimum), 1.0e-3)
     pixels = 2 ** int(np.ceil(np.log2(n - 1))) + 1
+    if pixels > max_pixels:
+        raise ValueError("max_pixels is smaller than the initial heightmap raster")
     # Use the smallest legal raster meeting the required reconstruction error.
     # Nearest-data fills can introduce sharper edges than a 513-pixel grid retains.
     while True:
@@ -59,7 +71,7 @@ def export_gazebo(map_path, output):
         error = float(np.max(np.abs(restored - z)))
         if error <= 0.1:
             break
-        if pixels >= 2049:
+        if pixels >= max_pixels:
             raise ValueError(f"高さ地図の補間誤差が0.1mを超えています: {error}")
         pixels = 2 * (pixels - 1) + 1
     (output / "heightmap.png").write_bytes(png16(encoded.T[::-1]))
@@ -195,8 +207,9 @@ if __name__ == "__main__":
     )
     parser.add_argument("map", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--max-pixels", type=int, default=2049)
     args = parser.parse_args()
-    result = export_gazebo(args.map, args.output)
+    result = export_gazebo(args.map, args.output, max_pixels=args.max_pixels)
     print("map pixels side_m max_error_m quantization_bound_m obstacle_boxes")
     print(
         *(

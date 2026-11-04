@@ -1,0 +1,6 @@
+{
+  "image": "osrf/ros:jazzy-desktop-full",
+  "index_digest": "sha256:ae7ad3ac243da1dfd8bd402a2fa08e149ffbf7a385013bd8ef798d0800accdc8",
+  "manifest_digest": "sha256:ae7ad3ac243da1dfd8bd402a2fa08e149ffbf7a385013bd8ef798d0800accdc8",
+  "runtime": "temporary root filesystem in an unprivileged user/mount namespace; default image flattened after SHA-256 verification"
+}

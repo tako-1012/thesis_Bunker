@@ -1,0 +1,2 @@
+data_source,map_id,status,completed,elapsed_s,deviation_mean_m,deviation_max_m,path_lethal_cells,out_of_bounds_samples,fallen_samples,roll_p95_actual_deg,pitch_p95_actual_deg,roll_p95_map_deg,pitch_p95_map_deg
+gazebo,file/real_las_08OB86_00294_200m_0.npz,completed,True,161.2,0.011013155761192316,0.29322501370960247,0,0,0,4.168513558586901,2.2344918537289153,4.215856291298811,2.2549795523983525
