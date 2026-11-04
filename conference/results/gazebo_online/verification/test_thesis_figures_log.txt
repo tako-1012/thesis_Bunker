@@ -1,0 +1,34 @@
+$ python3 -m tests.test_thesis_figures
+
+T1
+ debris    metric  n    A_median   TAS_median  delta_median              p         p_holm
+  False mean_cost 48 0.110342949 0.0767774554 -0.0352167333 7.10542736e-15 5.68434189e-14
+  False     climb 48  1.50126915  0.890802236  -0.410943017 7.10542736e-15 5.68434189e-14
+  False  p95_roll 48  5.45746622     3.567633   -1.89097743 7.10542736e-15 5.68434189e-14
+  False length_xy 48         NaN          NaN   -2.00026809   0.0276182014   0.0552364028
+   True mean_cost 48 0.154226921 0.0855587032 -0.0582350381 7.10542736e-15 5.68434189e-14
+   True     climb 48  2.07159806   1.30575231  -0.803948405 2.13162821e-14 6.39488462e-14
+   True  p95_roll 48  6.86720155   3.63401103   -2.80093993 7.10542736e-15 5.68434189e-14
+   True length_xy 48         NaN          NaN  -0.764154874    0.947340222    0.947340222
+
+T2
+ radius_m   mode  runs  completed  touching   dJ_median     dJ_p90  replans_median  plan_s_median  plan_s_p95  plan_s_max
+        5  fixed    48         48        46   3.8297614 10.8951737               0   0.0943159025 0.513914058  1.09228056
+        5 online    48         46         0   1.9542052 10.2738521             101   0.0464642375  0.28593965  1.26618145
+       10  fixed    48         48        46   3.8297614 10.8951737               0   0.0960627685 0.506711613  1.25659096
+       10 online    48         46         0 0.945069248  6.6029207            94.5   0.0510014495 0.292423272  1.32438343
+       15  fixed    48         48        46   3.8297614 10.8951737               0    0.094235528 0.485409814  1.26557115
+       15 online    48         47         0 0.688622405 5.29694595              85    0.057362561 0.305458798  1.76405173
+
+T3
+                                world         mode  completed  path_lethal_cells  elapsed_s  roll_p95_actual_deg  pitch_p95_actual_deg  roll_p95_map_deg  pitch_p95_map_deg
+              file/flat_test_100m.npz offline tour       True                  0    249.412       8.05631294e-09        6.79662109e-10                 0                  0
+    file/real_08OB87_-0206_200m_0.npz offline tour       True                  0      348.2           4.76005563            6.20167607        4.58473933         6.31735413
+file/real_las_08OB87_-0206_200m_0.npz offline tour       True                  0    289.516           3.83941424            2.47900287        3.84957483         2.58651471
+       real_las_08OB87_-0206 / debris        fixed      False                  0      96.15           4.54713144            5.69114628        5.33797683         6.55378208
+       real_las_08OB87_-0206 / debris       online       True                  0     190.95           4.31378469            4.21973305        4.30333238         3.67841423
+thesis: F1-F7 PDF/PNG, T1-T3 LaTeX/Markdown and numbers.tex generated
+statistics: 48 paired beaches, size means, medians and archived contact counts verified
+outputs: no excluded measurement columns or values; all thesis figure tests passed
+
+exit=0
