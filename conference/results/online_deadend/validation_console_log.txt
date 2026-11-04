@@ -1,0 +1,28 @@
+validation: 1/12 08OB87_-0206 (182.7s)
+validation: 2/12 08OB88_01332 (279.1s)
+validation: 3/12 08OB89_-1597 (386.8s)
+validation: 4/12 08OC90_00270 (386.9s)
+validation: 5/12 08OC91_00811 (464.3s)
+validation: 6/12 08OC93_-1519 (464.4s)
+validation: 7/12 08OC95_-0321 (595.8s)
+validation: 8/12 08OC96_-0676 (1639.1s)
+validation: 9/12 08OC97_-0077 (1639.1s)
+validation: 10/12 08OC98_-1101 (1639.1s)
+validation: 11/12 08OC98_01898 (1639.1s)
+validation: 12/12 08OC99_00983 (1639.1s)
+
+Validation-only parameter selection: both priors, R10; lower lexicographic score wins
+  method  runs  touching  failed  too_long  baseline_completed_lost  positive_delta_median  delta_median
+A_r10_k2    24         0       1         1                        0                      0             0
+A_r10_k4    24         0       1         1                        0                      0             0
+A_r10_k8    24         0       1         1                        0                      0             0
+ A_r3_k2    24         0       1         1                        0                      0             0
+ A_r3_k4    24         0       1         1                        0                      0             0
+ A_r3_k8    24         0       1         1                        0                      0             0
+ A_r6_k2    24         0       1         1                        0                      0             0
+ A_r6_k4    24         0       1         1                        0                      0             0
+ A_r6_k8    24         0       1         1                        0                      0             0
+   B_N10    24         0       1         1                        0                      0             0
+   B_N30    24         0       1         1                        0                      0             0
+   B_N60    24         0       1         1                        0                      0             0
+Frozen parameters: {"A": {"k_A": 2.0, "r_A": 10.0}, "B": {"N_B": 10}}

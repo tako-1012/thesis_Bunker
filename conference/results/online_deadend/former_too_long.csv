@@ -1,0 +1,49 @@
+patch,prior,radius_m,method,success,reason,dJ,n_replans,lethal_cells
+08OB88_-0167,coarse c10,5,baseline,False,too_long,,213,0
+08OB88_-0167,coarse c10,5,A,False,too_long,,211,0
+08OB88_-0167,coarse c10,5,B,False,too_long,,213,0
+08OB88_-0167,coarse c10,5,A+B,False,too_long,,211,0
+08OB88_-0167,coarse c10,10,baseline,False,too_long,,404,0
+08OB88_-0167,coarse c10,10,A,False,too_long,,388,0
+08OB88_-0167,coarse c10,10,B,False,too_long,,404,0
+08OB88_-0167,coarse c10,10,A+B,False,too_long,,388,0
+08OB88_-0167,coarse c10,15,baseline,False,too_long,,162,0
+08OB88_-0167,coarse c10,15,A,False,too_long,,164,0
+08OB88_-0167,coarse c10,15,B,False,too_long,,162,0
+08OB88_-0167,coarse c10,15,A+B,False,too_long,,164,0
+08OC95_00928,coarse c10,10,baseline,False,too_long,,129,0
+08OC95_00928,coarse c10,10,A,True,,43.92990240798995,290,0
+08OC95_00928,coarse c10,10,B,False,too_long,,129,0
+08OC95_00928,coarse c10,10,A+B,True,,43.92990240798995,290,0
+08OC96_-1426,coarse c10,5,baseline,False,too_long,,410,0
+08OC96_-1426,coarse c10,5,A,False,too_long,,257,0
+08OC96_-1426,coarse c10,5,B,False,too_long,,410,0
+08OC96_-1426,coarse c10,5,A+B,False,too_long,,257,0
+08OC96_-1426,coarse c10,10,baseline,False,too_long,,268,0
+08OC96_-1426,coarse c10,10,A,False,too_long,,263,0
+08OC96_-1426,coarse c10,10,B,False,too_long,,268,0
+08OC96_-1426,coarse c10,10,A+B,False,too_long,,263,0
+08OC96_-1426,coarse c10,15,baseline,False,too_long,,256,0
+08OC96_-1426,coarse c10,15,A,False,too_long,,235,0
+08OC96_-1426,coarse c10,15,B,False,too_long,,256,0
+08OC96_-1426,coarse c10,15,A+B,False,too_long,,235,0
+08OC96_-1426,stale,5,baseline,False,too_long,,85,0
+08OC96_-1426,stale,5,A,False,too_long,,62,0
+08OC96_-1426,stale,5,B,False,too_long,,68,0
+08OC96_-1426,stale,5,A+B,False,too_long,,60,0
+08OC96_-1426,stale,10,baseline,False,too_long,,93,0
+08OC96_-1426,stale,10,A,False,too_long,,60,0
+08OC96_-1426,stale,10,B,False,too_long,,74,0
+08OC96_-1426,stale,10,A+B,False,too_long,,59,0
+08OC96_-1426,stale,15,baseline,False,too_long,,80,0
+08OC96_-1426,stale,15,A,True,,4.606180297838192,89,0
+08OC96_-1426,stale,15,B,False,too_long,,72,0
+08OC96_-1426,stale,15,A+B,True,,4.606180297838192,89,0
+08OC99_01733,stale,5,baseline,False,too_long,,148,0
+08OC99_01733,stale,5,A,True,,16.929768646234365,341,0
+08OC99_01733,stale,5,B,True,,11.459398135496478,346,0
+08OC99_01733,stale,5,A+B,True,,14.45782026394291,333,0
+08OC99_01733,stale,10,baseline,False,too_long,,123,0
+08OC99_01733,stale,10,A,False,too_long,,110,0
+08OC99_01733,stale,10,B,True,,14.557886980335244,316,0
+08OC99_01733,stale,10,A+B,False,too_long,,88,0
