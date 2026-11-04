@@ -1,0 +1,31 @@
+debris,method,reference,metric,n_beaches,excluded_beaches,delta_median,p,rank_biserial,p_holm
+False,TA*-S,A*,length_xy,48,0,-2.000268094103447,0.027618201382949792,-0.36394557823129253,0.6076004304248954
+False,TA*-S,A*,mean_cost,48,0,-0.035216733303440016,7.105427357601002e-15,-1.0,2.1316282072803006e-13
+False,TA*-S,A*,climb,48,0,-0.4109430173126011,7.105427357601002e-15,-1.0,2.1316282072803006e-13
+False,TA*-S,A*,p95_roll,48,0,-1.8909774297978723,7.105427357601002e-15,-1.0,2.1316282072803006e-13
+False,TA*-S,A*,steep_near_fraction,48,0,0.0,0.001953125,-0.9696969696969697,0.046875
+False,TA*-S+inflate r0.5,TA*-S,length_xy,47,1,0.0,1.0,-0.3333333333333333,1.0
+False,TA*-S+inflate r0.5,TA*-S,mean_cost,47,1,0.0,1.0,0.3333333333333333,1.0
+False,TA*-S+inflate r0.5,TA*-S,climb,47,1,0.0,0.5,1.0,1.0
+False,TA*-S+inflate r0.5,TA*-S,p95_roll,47,1,0.0,1.0,0.3333333333333333,1.0
+False,TA*-S+inflate r0.5,TA*-S,steep_near_fraction,47,1,0.0,1.0,-1.0,1.0
+False,TA*-S+inflate r0.39,TA*-S,length_xy,47,1,0.0,1.0,-0.3333333333333333,1.0
+False,TA*-S+inflate r0.39,TA*-S,mean_cost,47,1,0.0,1.0,0.3333333333333333,1.0
+False,TA*-S+inflate r0.39,TA*-S,climb,47,1,0.0,0.5,1.0,1.0
+False,TA*-S+inflate r0.39,TA*-S,p95_roll,47,1,0.0,1.0,0.3333333333333333,1.0
+False,TA*-S+inflate r0.39,TA*-S,steep_near_fraction,47,1,0.0,1.0,-1.0,1.0
+True,TA*-S,A*,length_xy,48,0,-0.7641548742919824,0.947340221793219,-0.011904761904761904,1.0
+True,TA*-S,A*,mean_cost,48,0,-0.05823503806352599,7.105427357601002e-15,-1.0,2.1316282072803006e-13
+True,TA*-S,A*,climb,48,0,-0.8039484050290361,2.1316282072803006e-14,-0.9965986394557823,5.329070518200751e-13
+True,TA*-S,A*,p95_roll,48,0,-2.800939932131494,7.105427357601002e-15,-1.0,2.1316282072803006e-13
+True,TA*-S,A*,steep_near_fraction,48,0,0.0,0.001953125,-1.0,0.046875
+True,TA*-S+inflate r0.5,TA*-S,length_xy,47,1,0.0,0.5,-1.0,1.0
+True,TA*-S+inflate r0.5,TA*-S,mean_cost,47,1,0.0,0.5,1.0,1.0
+True,TA*-S+inflate r0.5,TA*-S,climb,47,1,0.0,1.0,0.3333333333333333,1.0
+True,TA*-S+inflate r0.5,TA*-S,p95_roll,47,1,0.0,1.0,-1.0,1.0
+True,TA*-S+inflate r0.5,TA*-S,steep_near_fraction,47,1,0.0,1.0,0.0,1.0
+True,TA*-S+inflate r0.39,TA*-S,length_xy,47,1,0.0,0.5,-1.0,1.0
+True,TA*-S+inflate r0.39,TA*-S,mean_cost,47,1,0.0,0.5,1.0,1.0
+True,TA*-S+inflate r0.39,TA*-S,climb,47,1,0.0,1.0,0.3333333333333333,1.0
+True,TA*-S+inflate r0.39,TA*-S,p95_roll,47,1,0.0,1.0,-1.0,1.0
+True,TA*-S+inflate r0.39,TA*-S,steep_near_fraction,47,1,0.0,1.0,0.0,1.0

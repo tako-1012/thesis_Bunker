@@ -1,0 +1,13 @@
+extracting verified layer 1 / 12 compressed_bytes 29763253
+extracting verified layer 2 / 12 compressed_bytes 683384
+extracting verified layer 3 / 12 compressed_bytes 6710881
+extracting verified layer 4 / 12 compressed_bytes 94738
+extracting verified layer 5 / 12 compressed_bytes 120495834
+extracting verified layer 6 / 12 compressed_bytes 195
+extracting verified layer 7 / 12 compressed_bytes 110216432
+extracting verified layer 8 / 12 compressed_bytes 412436
+extracting verified layer 9 / 12 compressed_bytes 2501
+extracting verified layer 10 / 12 compressed_bytes 28081386
+extracting verified layer 11 / 12 compressed_bytes 965913414
+extracting verified layer 12 / 12 compressed_bytes 160512094
+all image layers verified and extracted: /tmp/task020-oci/rootfs

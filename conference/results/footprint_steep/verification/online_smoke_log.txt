@@ -1,0 +1,2 @@
+[('coarse c10', 'TA*-S', True, ''), ('coarse c10', 'TA*-S+inflate r0.5', True, ''), ('coarse c10', 'TA*-S+inflate r0.39', True, ''), ('stale', 'TA*-S', True, ''), ('stale', 'TA*-S+inflate r0.5', True, ''), ('stale', 'TA*-S+inflate r0.39', True, '')]
+timings 759

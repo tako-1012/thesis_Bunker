@@ -1,0 +1,9 @@
+debris,side_m,planner,paired_success,lost_solutions,length_xy_increased_cases,length_xy_delta_max,length_xy_delta_pct_p90,length_xy_delta_pct_max,mean_cost_increased_cases,mean_cost_delta_max,mean_cost_delta_pct_p90,mean_cost_delta_pct_max
+False,100,TA*-S+inflate r0.5,48,0,0,0.0,0.0,0.0,1,0.003681777258572133,0.0,2.7096327333526737
+False,100,TA*-S+inflate r0.39,48,0,0,0.0,0.0,0.0,1,0.003681777258572133,0.0,2.7096327333526737
+False,200,TA*-S+inflate r0.5,47,1,1,0.362239459405572,0.0,0.1832309784693953,0,0.0,0.0,0.0
+False,200,TA*-S+inflate r0.39,47,1,1,0.362239459405572,0.0,0.1832309784693953,0,0.0,0.0,0.0
+True,100,TA*-S+inflate r0.5,48,0,0,0.0,0.0,0.0,1,0.009830827473077536,0.0,7.017086943400863
+True,100,TA*-S+inflate r0.39,48,0,0,0.0,0.0,0.0,1,0.009830827473077536,0.0,7.017086943400863
+True,200,TA*-S+inflate r0.5,47,1,0,0.0,0.0,0.0,1,0.00014168896827426725,0.0,0.0953843004824817
+True,200,TA*-S+inflate r0.39,47,1,0,0.0,0.0,0.0,1,0.00014168896827426725,0.0,0.0953843004824817

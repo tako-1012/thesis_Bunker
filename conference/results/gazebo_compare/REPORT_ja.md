@@ -1,5 +1,17 @@
 # 指示書019：LAS砂浜6地形のA*・TA*-S Gazebo比較
 
+## 指示書020による転倒判定の追記
+
+集計に `rolled_over` を追加した。走行中のどこかで絶対rollが90度を超えた走行は、集計の `status` を `rollover` とする。
+`recorded_status` には元の終了状態を保持する。最初に閾値を超えた記録のシミュレーション時刻・開始からの経過秒・地図上のx,y位置も追加した。
+この判定で `08OB88_-0167` の両方法が転倒に該当した。原missionの終了状態は両方 `stuck` のままである。
+
+変更した既存結果は、この報告書、`physical_run/report/runs.csv`（転倒の列と派生status）、
+`physical_run/report/compare_log.txt`（同じ列を表示する表）の3ファイルだけ。
+既存の数値はCSVの文字列表現を含めて維持し、原mission・軌跡、地図、図、走行別数値、対の差の数値は変更していない。
+以下に残している当時の整合性監査JSONの `stuck` は原記録の終了状態であり、集計の `rollover` と区別して読む。
+再分類の監査は `../footprint_steep/rollover_annotation_audit.json`、新しい対策の検証は `../footprint_steep/REPORT_ja.md` に記載する。
+
 報告更新日：2026-11-03（日本時間）。
 ブランチ：`codex/019-gazebo-compare`。基点：`origin/realtime-map` の `b4c92a1ccaf60eff85362564d2f0d9915c3d10ae`。他の指示書を取り込まず、マージしていない。
 
@@ -8,17 +20,17 @@
 Gazeboで全ケースを実行し、実際の記録から集計した。完走・終了状態の件数（記録から計算）：
 
 - A* / completed：5
-- A* / stuck：1
+- A* / rollover：1
 - TA*-S / completed：5
-- TA*-S / stuck：1
+- TA*-S / rollover：1
 
-未完走の走行も原記録と表に残し、再試行・設定の調整はしていない。停滞記録の終端値：
+未完走の走行も原記録と表に残し、再試行・設定の調整はしていない。転倒記録（原記録ではstuck終了）の終端値：
 
 - 08OB88_-0167 / A*：目標誤差 10.329m、最終絶対roll 167.111度、最終絶対pitch 17.0482度。
 
 - 08OB88_-0167 / TA*-S：目標誤差 30.5485m、最終絶対roll 170.075度、最終絶対pitch 26.281度。
 
-同じ地形で両方法が停滞し、終端の姿勢は車体の反転と整合する大きなrollを示した。原因は接触力などを記録していないため確定していない。未完走の値は部分走行の測定として扱う。完走した対の中央値と、全ケースの終了状態の両方を読む必要がある。
+同じ地形で両方法が転倒し、終端の姿勢は車体の反転と整合する大きなrollを示した。原因は接触力などを記録していないため確定していない。未完走の値は部分走行の測定として扱う。完走した対の中央値と、全ケースの終了状態の両方を読む必要がある。
 
 ## 実装
 
@@ -837,22 +849,22 @@ Frozen source, real Gazebo provenance, terminal recordings, path identity, finit
 
 ```text
 Six beaches x two planners; descriptive trends only, no hypothesis tests.
-Missing physical recordings are 未実行; paired differences use only two completed recordings.
-       patch planner    status  completed data_source error  elapsed_s  deviation_mean_m  deviation_max_m  path_lethal_cells  roll_p95_actual_deg  pitch_p95_actual_deg  roll_max_actual_deg  pitch_max_actual_deg  climb_actual_m  map_length_xy  map_climb  map_mean_cost  map_p95_slope  map_p95_roll  map_max_roll  map_max_pitch_dir  roll_p95_recorded_xy_map_deg  pitch_p95_recorded_xy_map_deg
-08OB86_00294      A* completed       True      gazebo              166         0.0155309         0.283747                  0              4.57977               3.20701              6.34223               7.33646         1.35143         166.45    2.09937       0.116112        5.10152       4.75077       6.12944            5.80548                       4.69694                        2.93522
-08OB86_00294   TA*-S completed       True      gazebo            161.2         0.0110132         0.293225                  0              4.16851               2.23449              5.58198               6.51558        0.889737        160.949    1.29658      0.0993425        4.54547       4.20589       5.98096             4.2124                       4.21586                        2.25498
-08OB86_-0205      A* completed       True      gazebo           157.45          0.267778          6.19138                  0              11.8057                6.9483              19.6117                10.297         2.79364        155.085    2.98103       0.175112        13.7217       12.7104        25.748            10.3288                        10.157                        6.75867
-08OB86_-0205   TA*-S completed       True      gazebo              154         0.0698109          3.31719                  0              3.13187               1.88349              5.27948               5.86883        0.912171        156.831    1.13326      0.0794646        3.78309       3.18944       5.69173            9.61358                        3.0554                        2.02659
-08OB87_-0706      A* completed       True      gazebo           163.55         0.0217786         0.266098                  0              5.14706               3.18229              6.40325               7.10212        0.721888        164.493    1.57973       0.129899        5.96148       5.12886        6.6874            6.96167                       5.14935                        3.59127
-08OB87_-0706   TA*-S completed       True      gazebo           159.15        0.00647007         0.128161                  0              3.15048               2.63982              5.63635               5.22304        0.506069        159.351   0.812158      0.0835471        4.15879       3.34804       4.86051            4.61208                       3.34949                        3.03682
-08OB88_-1417      A* completed       True      gazebo           154.45         0.0154969         0.227642                  0              5.21845               2.35925              9.30999               7.15519         1.23867        155.002    1.74114       0.115239        5.36712       5.08998       8.37479             5.8079                       5.09578                        2.50166
-08OB88_-1417   TA*-S completed       True      gazebo           155.05        0.00410578          0.23445                  0              2.29267              0.807219              3.49959               3.37278         0.52038        155.199   0.733826      0.0526041         2.5868       2.41772       3.07078            3.11248                       2.38563                       0.820092
-08OB88_-0167      A*     stuck      False      gazebo            144.5          0.843477           5.2174                 90              167.111               33.0629              176.682               43.7947         9.66845         157.68    8.10689       0.451117        33.7886       33.6112       39.1973            25.4503                       31.8871                        18.1473
-08OB88_-0167   TA*-S     stuck      False      gazebo           271.45         0.0796587          1.28426                  9              13.2141                26.281               176.26                79.867         7.44885        289.767    7.90873       0.137976        10.2882       5.98149       18.0338            23.7975                       5.80491                        9.28437
-08OB88_00332      A* completed       True      gazebo            174.4         0.0105396         0.285094                  0              4.04249               4.76705              8.38286               12.5081        0.281719        174.858   0.599038      0.0863766        5.70541        3.8628       6.83518            10.9966                       3.87505                        4.69552
-08OB88_00332   TA*-S completed       True      gazebo            171.3        0.00999076          0.39661                  0              3.77867               4.55179              5.11535               9.66308        0.231823         170.97    0.38637      0.0749039        5.37827       3.75626       5.20394            9.60764                       3.69879                        4.28301
+rollover: first recorded |roll| > 90 deg; recorded_status preserves the original mission status.
+       patch planner    status  completed data_source  error  elapsed_s  deviation_mean_m  deviation_max_m  path_lethal_cells  roll_p95_actual_deg  pitch_p95_actual_deg  roll_max_actual_deg  pitch_max_actual_deg  climb_actual_m  map_length_xy  map_climb  map_mean_cost  map_p95_slope  map_p95_roll  map_max_roll  map_max_pitch_dir  roll_p95_recorded_xy_map_deg  pitch_p95_recorded_xy_map_deg recorded_status  rolled_over  rollover_t_s  rollover_elapsed_s  rollover_x_m  rollover_y_m
+08OB86_00294      A* completed       True      gazebo    NaN        166         0.0155309         0.283747                  0              4.57977               3.20701              6.34223               7.33646         1.35143         166.45    2.09937       0.116112        5.10152       4.75077       6.12944            5.80548                       4.69694                        2.93522       completed        False           NaN                 NaN           NaN           NaN
+08OB86_00294   TA*-S completed       True      gazebo    NaN      161.2         0.0110132         0.293225                  0              4.16851               2.23449              5.58198               6.51558        0.889737        160.949    1.29658      0.0993425        4.54547       4.20589       5.98096             4.2124                       4.21586                        2.25498       completed        False           NaN                 NaN           NaN           NaN
+08OB86_-0205      A* completed       True      gazebo    NaN     157.45          0.267778          6.19138                  0              11.8057                6.9483              19.6117                10.297         2.79364        155.085    2.98103       0.175112        13.7217       12.7104        25.748            10.3288                        10.157                        6.75867       completed        False           NaN                 NaN           NaN           NaN
+08OB86_-0205   TA*-S completed       True      gazebo    NaN        154         0.0698109          3.31719                  0              3.13187               1.88349              5.27948               5.86883        0.912171        156.831    1.13326      0.0794646        3.78309       3.18944       5.69173            9.61358                        3.0554                        2.02659       completed        False           NaN                 NaN           NaN           NaN
+08OB87_-0706      A* completed       True      gazebo    NaN     163.55         0.0217786         0.266098                  0              5.14706               3.18229              6.40325               7.10212        0.721888        164.493    1.57973       0.129899        5.96148       5.12886        6.6874            6.96167                       5.14935                        3.59127       completed        False           NaN                 NaN           NaN           NaN
+08OB87_-0706   TA*-S completed       True      gazebo    NaN     159.15        0.00647007         0.128161                  0              3.15048               2.63982              5.63635               5.22304        0.506069        159.351   0.812158      0.0835471        4.15879       3.34804       4.86051            4.61208                       3.34949                        3.03682       completed        False           NaN                 NaN           NaN           NaN
+08OB88_-1417      A* completed       True      gazebo    NaN     154.45         0.0154969         0.227642                  0              5.21845               2.35925              9.30999               7.15519         1.23867        155.002    1.74114       0.115239        5.36712       5.08998       8.37479             5.8079                       5.09578                        2.50166       completed        False           NaN                 NaN           NaN           NaN
+08OB88_-1417   TA*-S completed       True      gazebo    NaN     155.05        0.00410578          0.23445                  0              2.29267              0.807219              3.49959               3.37278         0.52038        155.199   0.733826      0.0526041         2.5868       2.41772       3.07078            3.11248                       2.38563                       0.820092       completed        False           NaN                 NaN           NaN           NaN
+08OB88_-0167      A*  rollover      False      gazebo    NaN      144.5          0.843477           5.2174                 90              167.111               33.0629              176.682               43.7947         9.66845         157.68    8.10689       0.451117        33.7886       33.6112       39.1973            25.4503                       31.8871                        18.1473           stuck         True         138.9               133.8       155.523       138.025
+08OB88_-0167   TA*-S  rollover      False      gazebo    NaN     271.45         0.0796587          1.28426                  9              13.2141                26.281               176.26                79.867         7.44885        289.767    7.90873       0.137976        10.2882       5.98149       18.0338            23.7975                       5.80491                        9.28437           stuck         True        265.35              260.25       196.387       141.841
+08OB88_00332      A* completed       True      gazebo    NaN      174.4         0.0105396         0.285094                  0              4.04249               4.76705              8.38286               12.5081        0.281719        174.858   0.599038      0.0863766        5.70541        3.8628       6.83518            10.9966                       3.87505                        4.69552       completed        False           NaN                 NaN           NaN           NaN
+08OB88_00332   TA*-S completed       True      gazebo    NaN      171.3        0.00999076          0.39661                  0              3.77867               4.55179              5.11535               9.66308        0.231823         170.97    0.38637      0.0749039        5.37827       3.75626       5.20394            9.60764                       3.69879                        4.28301       completed        False           NaN                 NaN           NaN           NaN
 
-TA*-S minus A*: paired median differences
+TA*-S minus A*: paired median differences (both completed, without rollover)
               metric  paired_completed  delta_median
            elapsed_s                 5         -3.45
     deviation_mean_m                 5    -0.0113911
@@ -868,7 +880,7 @@ Climb sums positive recorded z increments without denoising; it includes physica
 
 ## 図
 
-各図の左は両方法の実測軌跡、右は実測rollの時系列。6枚すべてを目視確認した。軌跡は各走行の終了時までを表示し、停滞した記録も残している。rollはEuler角で±180度で折り返す。
+各図の左は両方法の実測軌跡、右は実測rollの時系列。6枚すべてを目視確認した。軌跡は各走行の終了時までを表示し、転倒した記録も残している。rollはEuler角で±180度で折り返す。
 
 - [08OB86_00294](physical_run/report/08OB86_00294.png)（A*: completed、TA*-S: completed）
 
@@ -878,7 +890,7 @@ Climb sums positive recorded z increments without denoising; it includes physica
 
 - [08OB88_-1417](physical_run/report/08OB88_-1417.png)（A*: completed、TA*-S: completed）
 
-- [08OB88_-0167](physical_run/report/08OB88_-0167.png)（A*: stuck、TA*-S: stuck）
+- [08OB88_-0167](physical_run/report/08OB88_-0167.png)（A*: rollover（原記録stuck）、TA*-S: rollover（原記録stuck））
 
 - [08OB88_00332](physical_run/report/08OB88_00332.png)（A*: completed、TA*-S: completed）
 

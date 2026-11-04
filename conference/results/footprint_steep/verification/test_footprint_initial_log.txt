@@ -1,0 +1,6 @@
+dilation: 0.5m circle, rocks not doubled, zero radius, immutable costs/endpoints and raster rounding passed
+proximity: analytic line-circle lengths, overlapping unions and tangencies passed
+requested LAS case: inflated planner reports no_path without moving endpoints
+online: zero radius preserves exact task014 trajectory and planning count
+rollover: strict +/-90deg threshold, first time/position and immutable fake records passed
+all footprint and rollover tests passed

@@ -1,6 +1,9 @@
 # 指示書 020：急斜面をロボットの大きさの分だけ避ける（Gazebo での転倒への対策）と、019 の転倒の判定
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと（共通の決まりはこの指示書にも当てはまる）。
+> **状態：完了**（Codex が実装・Python の実験。報告は `conference/results/footprint_steep/REPORT_ja.md`）。
+> 0.5m の格子では、半径 0.5m と 0.39m の膨らませは同じ（1 マス）。地図をすべて知っている場合、48 か所中 47 か所で経路はまったく同じ。
+> 019 で転倒した `08OB88_-0167`（200m）だけが「安全な経路なし」になった。Claude が 019 の 6 か所で確かめたところ、5 か所は 019 の TA*-S と同じ経路で、
+> 1 か所は経路なしだったので、Gazebo の走らせ直しはしていない（同じ経路は 019 で走らせ済み）。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと（共通の決まりはこの指示書にも当てはまる）。
 > ブランチは `codex/020-footprint`（`realtime-map` の最新から）。結果は `conference/results/footprint_steep/`、報告は同じ場所の `REPORT_ja.md`。
 
 ## 背景
