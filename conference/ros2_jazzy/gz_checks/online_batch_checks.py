@@ -145,8 +145,9 @@ def run_checks(output, planner=PLANNERS[0]):
                 folder.mkdir()
                 truth_file, prior_file = folder / 'truth.npz', folder / 'prior.npz'
                 try:
-                    scenario_to_mapfile(sc['truth'], truth_file, attribution=LAS_ATTRIBUTION)
-                    scenario_to_mapfile(sc['clean'], prior_file, attribution=LAS_ATTRIBUTION)
+                    # Debris changes elevations after the nodata fill: store that surface (as task014's export_stale_map).
+                    scenario_to_mapfile(dict(sc['truth'], raw_elev=sc['truth']['tmap'].elev), truth_file, sc['patch'] + '_debris', sc['patch'], 'task021 LAS Ground, test, seed=0, debris (truth)', LAS_ATTRIBUTION)
+                    scenario_to_mapfile(sc['clean'], prior_file, sc['patch'], sc['patch'], 'task021 LAS Ground, test, seed=0, clean (stale prior)', LAS_ATTRIBUTION)
                     export_gazebo(truth_file, folder / 'world', max_pixels=4097)
                 except Exception as exc:
                     for case in paired:
