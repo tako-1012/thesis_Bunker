@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/static/style.css" />
     <script defer src="/static/vendor/leaflet/leaflet.js"></script>
     <script defer src="/static/app.js"></script>
+    <script defer src="/static/geo.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -105,6 +106,21 @@
                 hidden
               />
             </div>
+            <details id="geo-tools" class="geo-tools" hidden open>
+              <summary>緯度・経度で扱う</summary>
+              <label for="geo-coordinates">地点 [度]：緯度,経度</label>
+              <textarea id="geo-coordinates" rows="3" spellcheck="false" placeholder="1行に lat,lng"></textarea>
+              <p class="hint">地図上の地点を表示します。緯度・経度の貼り付けやファイル読み込みもできます。</p>
+              <div class="button-row">
+                <button id="apply-geo" class="secondary">座標を適用</button>
+                <button id="load-geo" class="quiet">↑ 読み込み</button>
+              </div>
+              <div class="file-row">
+                <button id="save-geo-json" class="text-button">↓ JSONで保存</button>
+                <button id="save-geo-txt" class="text-button">↓ lat,lngで保存</button>
+              </div>
+              <input id="geo-file-input" type="file" accept=".json,.txt,.csv,application/json,text/plain,text/csv" hidden />
+            </details>
           </section>
           <section class="control-section planning-section">
             <h2><span class="step">03</span> 経路を計画する</h2>
@@ -150,7 +166,7 @@
                 ><span><i class="legend-blocked"></i> 通行不可</span
                 ><span><i class="legend-nodata"></i> データなし</span>
               </div>
-              <span id="cursor-position">単位：m</span>
+              <span class="cursor-stack"><span id="cursor-position">単位：m</span><span id="cursor-latlon" hidden></span></span>
             </div>
           </section>
           <div id="status" class="status" role="status" aria-live="polite">

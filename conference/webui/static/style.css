@@ -852,3 +852,8 @@ thead th {
   line-height: 30px;
   font-size: 23px;
 }
+
+.geo-tools { border-top: 1px dashed var(--line); margin-top: 12px; padding-top: 5px; }
+.geo-tools summary { cursor: pointer; min-height: 44px; padding: 10px 0; font-weight: 600; color: var(--teal); }
+.cursor-stack { display: grid; gap: 3px; text-align: right; }
+#cursor-latlon { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }

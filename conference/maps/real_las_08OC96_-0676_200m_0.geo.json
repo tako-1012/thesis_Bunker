@@ -1,0 +1,30 @@
+{
+  "coordinate_system": "JGD2011/JGD2024, GRS80, Japan Plane Rectangular CS VIII",
+  "crop_origin_cells": [
+    0,
+    0
+  ],
+  "map_file": "real_las_08OC96_-0676_200m_0.npz",
+  "map_sha256": "1682b9a231494e28cef41448f613e67c4d7a05caf25a2f6b03c2686b5213abf1",
+  "normal": [
+    -0.9908736149531137,
+    -0.13479421052014198
+  ],
+  "offset_uv_m": [
+    -99.75,
+    -49.75
+  ],
+  "origin_xy": [
+    -147670.66115650444,
+    -53110.81044380383
+  ],
+  "resolution": 0.5,
+  "source_dataset": "shizuoka_beach_las",
+  "source_patch": "08OC96_-0676",
+  "source_patch_sha256": "fb89920533861f6e60d41a537806c9fc85341ff37088f3ad1491aac485fc1577",
+  "tangent": [
+    -0.13479421052014198,
+    0.9908736149531137
+  ],
+  "zone": 8
+}
