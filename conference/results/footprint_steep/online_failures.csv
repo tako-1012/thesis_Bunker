@@ -1,0 +1,11 @@
+prior,planner,reason,runs
+coarse c10,TA*-S,too_long,3
+coarse c10,TA*-S+inflate r0.39,blocked_endpoint,2
+coarse c10,TA*-S+inflate r0.39,too_long,2
+coarse c10,TA*-S+inflate r0.5,blocked_endpoint,2
+coarse c10,TA*-S+inflate r0.5,too_long,2
+stale,TA*-S,too_long,2
+stale,TA*-S+inflate r0.39,blocked_endpoint,2
+stale,TA*-S+inflate r0.39,too_long,1
+stale,TA*-S+inflate r0.5,blocked_endpoint,2
+stale,TA*-S+inflate r0.5,too_long,1

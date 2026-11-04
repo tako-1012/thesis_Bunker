@@ -1,0 +1,102 @@
+
+A: complete-map LAS test scenarios; proximity is path length within 0.5m of steep cell centres
+ debris  side_m             planner  runs  solved  blocked_endpoints  length_xy_median  mean_cost_median  climb_median  p95_roll_median  steep_near_fraction_median
+  False     100                  A*    48      48                  0           82.5379          0.109997      0.893688          5.13232                           0
+  False     100               TA*-S    48      48                  0           79.9381          0.077131      0.697998          3.41686                           0
+  False     100  TA*-S+inflate r0.5    48      48                  0           79.9381          0.077131      0.697998          3.41686                           0
+  False     100 TA*-S+inflate r0.39    48      48                  0           79.9381          0.077131      0.697998          3.41686                           0
+   True     100                  A*    48      48                  0           82.5391          0.130638       1.15501          5.55472                           0
+   True     100               TA*-S    48      48                  0           81.3635         0.0895878       0.83999          3.67915                           0
+   True     100  TA*-S+inflate r0.5    48      48                  0           81.3635         0.0895878       0.83999          3.67915                           0
+   True     100 TA*-S+inflate r0.39    48      48                  0           81.3635         0.0895878       0.83999          3.67915                           0
+  False     200                  A*    48      48                  0           161.023          0.116468        1.9024          5.87802                           0
+  False     200               TA*-S    48      48                  0           161.296          0.077346       1.21992          3.65797                           0
+  False     200  TA*-S+inflate r0.5    48      47                  0            161.28         0.0773394       1.14326          3.64844                           0
+  False     200 TA*-S+inflate r0.39    48      47                  0            161.28         0.0773394       1.14326          3.64844                           0
+   True     200                  A*    48      48                  0           162.354          0.163323       2.97632          7.57515                           0
+   True     200               TA*-S    48      48                  0            165.22         0.0872846       1.68975          3.85708                           0
+   True     200  TA*-S+inflate r0.5    48      47                  0           164.769         0.0860286       1.62638          3.83922                           0
+   True     200 TA*-S+inflate r0.39    48      47                  0           164.769         0.0860286       1.62638          3.83922                           0
+
+Inflation versus unchanged TA*-S: feasibility and paired length/cost increases
+ debris  side_m             planner  lost_solutions  gained_solutions  paired_success  length_delta_median  length_delta_pct_median  cost_delta_median  cost_delta_pct_median
+  False     100  TA*-S+inflate r0.5               0                 0              48                    0                        0                  0                      0
+  False     100 TA*-S+inflate r0.39               0                 0              48                    0                        0                  0                      0
+   True     100  TA*-S+inflate r0.5               0                 0              48                    0                        0                  0                      0
+   True     100 TA*-S+inflate r0.39               0                 0              48                    0                        0                  0                      0
+  False     200  TA*-S+inflate r0.5               1                 0              47                    0                        0                  0                      0
+  False     200 TA*-S+inflate r0.39               1                 0              47                    0                        0                  0                      0
+   True     200  TA*-S+inflate r0.5               1                 0              47                    0                        0                  0                      0
+   True     200 TA*-S+inflate r0.39               1                 0              47                    0                        0                  0                      0
+
+48 beaches as units; both sizes paired before averaging; one Holm family of 30 tests
+ debris              method reference              metric  n_beaches  excluded_beaches  delta_median           p  rank_biserial      p_holm
+  False               TA*-S        A*           length_xy         48                 0      -2.00027   0.0276182      -0.363946      0.6076
+  False               TA*-S        A*           mean_cost         48                 0    -0.0352167 7.10543e-15             -1 2.13163e-13
+  False               TA*-S        A*               climb         48                 0     -0.410943 7.10543e-15             -1 2.13163e-13
+  False               TA*-S        A*            p95_roll         48                 0      -1.89098 7.10543e-15             -1 2.13163e-13
+  False               TA*-S        A* steep_near_fraction         48                 0             0  0.00195312      -0.969697    0.046875
+  False  TA*-S+inflate r0.5     TA*-S           length_xy         47                 1             0           1      -0.333333           1
+  False  TA*-S+inflate r0.5     TA*-S           mean_cost         47                 1             0           1       0.333333           1
+  False  TA*-S+inflate r0.5     TA*-S               climb         47                 1             0         0.5              1           1
+  False  TA*-S+inflate r0.5     TA*-S            p95_roll         47                 1             0           1       0.333333           1
+  False  TA*-S+inflate r0.5     TA*-S steep_near_fraction         47                 1             0           1             -1           1
+  False TA*-S+inflate r0.39     TA*-S           length_xy         47                 1             0           1      -0.333333           1
+  False TA*-S+inflate r0.39     TA*-S           mean_cost         47                 1             0           1       0.333333           1
+  False TA*-S+inflate r0.39     TA*-S               climb         47                 1             0         0.5              1           1
+  False TA*-S+inflate r0.39     TA*-S            p95_roll         47                 1             0           1       0.333333           1
+  False TA*-S+inflate r0.39     TA*-S steep_near_fraction         47                 1             0           1             -1           1
+   True               TA*-S        A*           length_xy         48                 0     -0.764155     0.94734     -0.0119048           1
+   True               TA*-S        A*           mean_cost         48                 0     -0.058235 7.10543e-15             -1 2.13163e-13
+   True               TA*-S        A*               climb         48                 0     -0.803948 2.13163e-14      -0.996599 5.32907e-13
+   True               TA*-S        A*            p95_roll         48                 0      -2.80094 7.10543e-15             -1 2.13163e-13
+   True               TA*-S        A* steep_near_fraction         48                 0             0  0.00195312             -1    0.046875
+   True  TA*-S+inflate r0.5     TA*-S           length_xy         47                 1             0         0.5             -1           1
+   True  TA*-S+inflate r0.5     TA*-S           mean_cost         47                 1             0         0.5              1           1
+   True  TA*-S+inflate r0.5     TA*-S               climb         47                 1             0           1       0.333333           1
+   True  TA*-S+inflate r0.5     TA*-S            p95_roll         47                 1             0           1             -1           1
+   True  TA*-S+inflate r0.5     TA*-S steep_near_fraction         47                 1             0           1              0           1
+   True TA*-S+inflate r0.39     TA*-S           length_xy         47                 1             0         0.5             -1           1
+   True TA*-S+inflate r0.39     TA*-S           mean_cost         47                 1             0         0.5              1           1
+   True TA*-S+inflate r0.39     TA*-S               climb         47                 1             0           1       0.333333           1
+   True TA*-S+inflate r0.39     TA*-S            p95_roll         47                 1             0           1             -1           1
+   True TA*-S+inflate r0.39     TA*-S steep_near_fraction         47                 1             0           1              0           1
+
+Re-executed baseline versus archived task013 LAS results
+   metric  max_abs_difference
+length_xy                   0
+mean_cost                   0
+    climb                   0
+ p95_roll                   0
+
+B: task014 fixed prior tour order, R10; dJ vs unchanged full-truth oracle
+     prior             planner  runs  completed  failed  contact_audited  touching  debris_touching  dJ_median  dJ_p90  dJ_max  replans_median  replans_max  completed_replans_median  plan_calls  plan_s_median  plan_s_p95  plan_s_max  calls_over_1s
+coarse c10               TA*-S    48         45       3               48         0                0     4.2116 27.6546 58.1804           181.5          443                       175        9347      0.0324025    0.178425    0.536284              0
+coarse c10  TA*-S+inflate r0.5    48         44       4               46         0                0    4.26327  28.718 75.6173           174.5          358                     174.5        8921      0.0338732    0.209061    0.796838              0
+coarse c10 TA*-S+inflate r0.39    48         44       4               46         0                0    4.26327  28.718 75.6173           174.5          358                     174.5        8921      0.0345219    0.228574    0.587901              0
+     stale               TA*-S    48         46       2               48         0                0   0.945069 6.60292 22.8123            94.5          224                      94.5        5428      0.0322038    0.180929    0.766565              0
+     stale  TA*-S+inflate r0.5    48         45       3               46         0                0   0.994251 7.54903 99.4886            95.5          308                        98        5553      0.0351382    0.223907    0.898632              0
+     stale TA*-S+inflate r0.39    48         45       3               46         0                0   0.994251 7.54903 99.4886            95.5          308                        98        5553      0.0365247    0.216726    0.757317              0
+
+Incomplete tours (endpoints never moved)
+     prior             planner           reason  runs
+coarse c10               TA*-S         too_long     3
+coarse c10 TA*-S+inflate r0.39 blocked_endpoint     2
+coarse c10 TA*-S+inflate r0.39         too_long     2
+coarse c10  TA*-S+inflate r0.5 blocked_endpoint     2
+coarse c10  TA*-S+inflate r0.5         too_long     2
+     stale               TA*-S         too_long     2
+     stale TA*-S+inflate r0.39 blocked_endpoint     2
+     stale TA*-S+inflate r0.39         too_long     1
+     stale  TA*-S+inflate r0.5 blocked_endpoint     2
+     stale  TA*-S+inflate r0.5         too_long     1
+
+Re-executed online control versus task014 archive (timings independently measured)
+       field  max_abs_difference
+     success                   0
+     n_plans                   0
+   n_replans                   0
+lethal_cells                   0
+           J                   0
+          dJ                   0
+    oracle_J                   0

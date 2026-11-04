@@ -1,0 +1,4 @@
+planner,scenarios,planning_failed,executed,completed,rolled_over,unexecuted
+A*,6,0,6,5.0,1.0,0
+TA*-S,6,0,6,5.0,1.0,0
+TA*-S+inflate,6,1,0,,,5
