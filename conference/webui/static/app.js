@@ -93,6 +93,7 @@ function updateButtons() {
     !state.results.some((r) => r.path.length > 1);
   $("point-count").textContent = `${state.points.length} / 12`;
   $("map-tip").hidden = state.points.length > 0 || state.busy;
+  document.dispatchEvent(new Event("bunker:update"));
 }
 
 function stopPlayback() {

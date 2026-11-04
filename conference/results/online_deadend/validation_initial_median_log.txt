@@ -1,0 +1,16 @@
+
+Validation-only parameter selection: both priors, R10; lower lexicographic score wins
+  method  runs  touching  failed  too_long  baseline_completed_lost  positive_delta_median  delta_median
+A_r10_k2    24         0       1         1                        0                      0             0
+A_r10_k4    24         0       1         1                        0                      0             0
+A_r10_k8    24         0       1         1                        0                      0             0
+ A_r3_k2    24         0       1         1                        0                      0             0
+ A_r3_k4    24         0       1         1                        0                      0             0
+ A_r3_k8    24         0       1         1                        0                      0             0
+ A_r6_k2    24         0       1         1                        0                      0             0
+ A_r6_k4    24         0       1         1                        0                      0             0
+ A_r6_k8    24         0       1         1                        0                      0             0
+   B_N10    24         0       1         1                        0                      0             0
+   B_N30    24         0       1         1                        0                      0             0
+   B_N60    24         0       1         1                        0                      0             0
+Frozen parameters: {"A": {"k_A": 2.0, "r_A": 10.0}, "B": {"N_B": 10}}

@@ -1,0 +1,10 @@
+metric,paired_completed,delta_median
+elapsed_s,5,-3.4499999999999886
+deviation_mean_m,5,-0.011391107435690261
+deviation_max_m,5,0.006807949464081697
+path_lethal_cells,5,0.0
+roll_p95_actual_deg,5,-1.9965846278635535
+pitch_p95_actual_deg,5,-0.9725161825336954
+roll_max_actual_deg,5,-3.267508252534123
+pitch_max_actual_deg,5,-2.8450160180395834
+climb_actual_m,5,-0.4616922491748865

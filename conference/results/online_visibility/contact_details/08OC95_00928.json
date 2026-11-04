@@ -1,0 +1,95 @@
+{
+  "coarse_c10__radius": [],
+  "coarse_c10__LOS_h0.5": [],
+  "coarse_c10__LOS_h0.8": [],
+  "coarse_c10__LOS_h1.2": [],
+  "stale__radius": [],
+  "stale__LOS_h0.5": [
+    {
+      "cell": [
+        67,
+        276
+      ],
+      "segment_start": [
+        67.85170874186281,
+        277.7034174837256
+      ],
+      "segment_end": [
+        67.0,
+        276.0
+      ],
+      "sensor_cell": [
+        68,
+        278
+      ],
+      "known_before": false,
+      "visible_last": false,
+      "cause": "occluded"
+    },
+    {
+      "cell": [
+        67,
+        276
+      ],
+      "segment_start": [
+        67.0,
+        276.0
+      ],
+      "segment_end": [
+        67.00950473018425,
+        275.90495269815756
+      ],
+      "sensor_cell": [
+        68,
+        278
+      ],
+      "known_before": false,
+      "visible_last": false,
+      "cause": "occluded"
+    },
+    {
+      "cell": [
+        67,
+        276
+      ],
+      "segment_start": [
+        67.00950473018425,
+        275.90495269815756
+      ],
+      "segment_end": [
+        67.0,
+        276.0
+      ],
+      "sensor_cell": [
+        67,
+        276
+      ],
+      "known_before": true,
+      "visible_last": true,
+      "cause": "already_known"
+    },
+    {
+      "cell": [
+        67,
+        276
+      ],
+      "segment_start": [
+        67.0,
+        276.0
+      ],
+      "segment_end": [
+        67.0,
+        275.0
+      ],
+      "sensor_cell": [
+        67,
+        276
+      ],
+      "known_before": true,
+      "visible_last": true,
+      "cause": "already_known"
+    }
+  ],
+  "stale__LOS_h0.8": [],
+  "stale__LOS_h1.2": []
+}

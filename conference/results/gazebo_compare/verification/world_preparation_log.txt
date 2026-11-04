@@ -1,0 +1,41 @@
+Temporary preparation only; no Gazebo physical run was performed.
+{
+  "world_exports": {
+    "08OB86_00294": {
+      "map": "real_las_08OB86_00294_200m_0.npz",
+      "pixels": 2049,
+      "side_m": 200.0,
+      "z_min": -1.3849999904632568,
+      "z_span": 7.694166421890259,
+      "max_error_m": 0.061695935096075516,
+      "quantization_bound_m": 5.8702726954224906e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB86_-0205": {
+      "map": "real_las_08OB86_-0205_200m_0.npz",
+      "pixels": 2049,
+      "side_m": 200.0,
+      "z_min": -1.2760000228881836,
+      "z_span": 6.869285583496094,
+      "max_error_m": 0.06354209578655112,
+      "quantization_bound_m": 5.240928956661397e-05,
+      "obstacle_boxes": 0
+    },
+    "08OB87_-0706": {
+      "map": "real_las_08OB87_-0706_200m_0.npz",
+      "pixels": 1025,
+      "side_m": 200.0,
+      "z_min": -1.2669999599456787,
+      "z_span": 7.20799994468689,
+      "max_error_m": 0.09197745315509853,
+      "quantization_bound_m": 5.4993514493681925e-05,
+      "obstacle_boxes": 0
+    }
+  },
+  "world_errors": {
+    "08OB88_-1417": "ValueError: 高さ地図の補間誤差が0.1mを超えています: 0.12298041835012263",
+    "08OB88_-0167": "ValueError: 高さ地図の補間誤差が0.1mを超えています: 0.16549192188655937",
+    "08OB88_00332": "ValueError: 高さ地図の補間誤差が0.1mを超えています: 0.10710643607727643"
+  }
+}
+All six world preparations attempted; 12 portable case definitions validated; export failures are explicit; temporary worlds removed on exit.
