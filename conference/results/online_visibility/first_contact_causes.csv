@@ -1,0 +1,3 @@
+prior,sensor,cause,contact_runs,unique_contact_cells
+coarse c10,LOS h0.5,occluded,6,8
+stale,LOS h0.5,occluded,2,2
