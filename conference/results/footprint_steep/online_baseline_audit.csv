@@ -1,0 +1,8 @@
+field,max_abs_difference
+success,0.0
+n_plans,0.0
+n_replans,0.0
+lethal_cells,0.0
+J,0.0
+dJ,0.0
+oracle_J,0.0

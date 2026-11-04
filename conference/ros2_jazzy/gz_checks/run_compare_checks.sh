@@ -25,5 +25,5 @@ docker run --rm --network host \
     python3 -c "import numpy,scipy,matplotlib,pandas"
     colcon --log-base /tmp/thesis-colcon-log build --base-paths /conference/ros2_jazzy/src --build-base /tmp/thesis-build --install-base /tmp/thesis-install
     source /tmp/thesis-install/setup.bash
-    python3 /conference/ros2_jazzy/gz_checks/compare_checks.py --output /output
-  '
+    python3 /conference/ros2_jazzy/gz_checks/compare_checks.py --output /output "$@"
+  ' bash "${@:2}"

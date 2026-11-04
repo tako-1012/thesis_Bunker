@@ -1,0 +1,6 @@
+{
+  "baseline": "results/gazebo_compare/physical_run",
+  "inflated": "results/footprint_steep/gazebo_comparison/planning_only",
+  "new_physical_records": 0,
+  "note": "Cached baseline numeric values reused; no raw recording changed."
+}
