@@ -44,6 +44,28 @@ def box_cloud(seed):
     return local, pose
 
 
+def clearance_oracle(raw, *, coarse):
+    """Exhaustively measure query points against every closed obstacle square.
+
+    Coordinates are integer multiples of 0.05m, so no distance rounding or
+    floating tolerance affects the <=0.5m contact boundary.
+    """
+    if coarse:
+        shape = tuple(n//RATIO for n in raw.shape)
+        query = np.indices(shape)*2*RATIO
+    else:
+        shape = raw.shape
+        query = np.indices(shape)*2+1-RATIO
+    blocked = np.zeros(shape, bool)
+    for cell in np.argwhere(raw):
+        lo = 2*cell-RATIO
+        hi = lo+2
+        dx = np.maximum(np.maximum(lo[0]-query[0], query[0]-hi[0]), 0)
+        dy = np.maximum(np.maximum(lo[1]-query[1], query[1]-hi[1]), 0)
+        blocked |= dx*dx+dy*dy <= 100  # (0.5m / 0.05m)**2
+    return blocked
+
+
 def test_flat():
     z = np.zeros((25, 25))
     fine = PointCloudMapFine(z)
@@ -75,7 +97,7 @@ def test_noisy_box():
         counts.append((seed, old_count, new_count))
         # Cost formula, prior inflation, and steep-cell dilation remain exact.
         terrain = TraversabilityMap(fine.elev, fine.raw_obstacle)
-        expected = inflate_steep(terrain) | coarse_overlap(fine.fine_inflated)
+        expected = inflate_steep(terrain) | clearance_oracle(fine.fine_obstacle, coarse=True)
         assert np.array_equal(fine.lethal, expected)
     print('noisy box fixture (seed, coarse outside lethal, fine outside lethal):', counts)
     print('box retained; 0.5m heights/cost/seen bytes and steep inflation unchanged')
@@ -87,23 +109,24 @@ def test_one_dilation():
     key = int(np.ravel_multi_index((70, 72), fine.fine_shape))
     fine._add_obstacles([key])
     raw = fine.fine_obstacle.copy()
-    x, y = np.mgrid[-5:6, -5:6]
-    expected = binary_dilation(raw, structure=x*x+y*y <= 25)
+    expected = clearance_oracle(raw, coarse=False)
     assert np.array_equal(fine.fine_inflated, expected)
-    blocked = coarse_overlap(fine.fine_inflated)
+    assert np.array_equal(fine._inflated_coarse, clearance_oracle(raw, coarse=True))
+    assert np.array_equal(fine.detected_obstacle, coarse_overlap(raw))
+    blocked = fine._inflated_coarse
     fine._add_obstacles([key])
     assert np.array_equal(fine.fine_inflated, expected)  # Repeated observations cannot grow a second halo.
     obstacle_lo = -.25+np.array([70, 72])*.1
     obstacle_hi = obstacle_lo+.1
     for cell in np.argwhere(blocked):
-        cell_lo = cell*.5-.25
-        cell_hi = cell_lo+.5
-        separation = np.maximum(np.maximum(obstacle_lo-cell_hi, cell_lo-obstacle_hi), 0)
+        centre = cell*.5
+        separation = np.maximum(np.maximum(obstacle_lo-centre, centre-obstacle_hi), 0)
         assert np.linalg.norm(separation) <= .5+1e-12
     other = int(np.ravel_multi_index((75, 76), fine.fine_shape))
     fine._add_obstacles([other])
-    expected = binary_dilation(fine.fine_obstacle, structure=x*x+y*y <= 25)
+    expected = clearance_oracle(fine.fine_obstacle, coarse=False)
     assert np.array_equal(fine.fine_inflated, expected)
+    assert np.array_equal(fine._inflated_coarse, clearance_oracle(fine.fine_obstacle, coarse=True))
     with tempfile.TemporaryDirectory() as temporary:
         path = Path(temporary)/'map.npz'
         fine.save(path)
@@ -111,7 +134,38 @@ def test_one_dilation():
             restored = np.unpackbits(data['fine_inflated_bits'])[:np.prod(data['fine_shape'])].reshape(data['fine_shape'])
             assert np.array_equal(restored, expected)
         assert path.stat().st_size < 5_000_000
-    print('one dilation: independent full disk, repeated/additive seeds, rectangle-distance radius bound, packed save passed')
+    print('one dilation: exhaustive centre-to-square distance, repeated/additive seeds, centre radius bound, packed save passed')
+
+
+def test_side_spill_and_centre_clearance():
+    fine = PointCloudMapFine(np.zeros((30, 30)))
+    # The true side is x=5.25. Side hits at x=5.35 spill by 0.1m into the
+    # adjacent coarse cell; ground support avoids unrelated steep labels.
+    world = np.array([[5.35, 5., .4]]*3+[[5.5, 5., 0.]]*16)
+    fine.update(world-[2, 2, .8], [2, 2, 0, 0, 0, 0])
+    assert fine.detected_obstacle[11, 10] and fine.lethal[11, 10]
+    assert not fine.lethal[12, 10]  # x=6.0 is 0.65m from the square's edge.
+    x, y = np.mgrid[-5:6, -5:6]
+    previous = coarse_overlap(binary_dilation(fine.fine_obstacle, structure=x*x+y*y <= 25))
+    assert previous[12, 10]  # The old area-overlap projection caused the regression.
+    assert np.array_equal(fine.lethal, clearance_oracle(fine.fine_obstacle, coarse=True))
+    # Check all 25 fine-cell phases within a coarse cell, plus map clipping.
+    seeds = [(50+i, 50+j) for i in range(5) for j in range(5)]
+    seeds += [(0, 0), (0, 149), (149, 0), (149, 149)]
+    for cell in seeds:
+        mapper = PointCloudMapFine(np.zeros((30, 30)))
+        mapper._add_obstacles([int(np.ravel_multi_index(cell, mapper.fine_shape))])
+        expected = clearance_oracle(mapper.fine_obstacle, coarse=True)
+        assert np.array_equal(mapper._inflated_coarse, expected), cell
+    # Diagonal clearance must use a square edge/corner, not its centre or
+    # a scalar half-cell subtraction from an EDT centre distance.
+    mapper = PointCloudMapFine(np.zeros((30, 30)))
+    mapper._add_obstacles([int(np.ravel_multi_index((47, 50), mapper.fine_shape))])
+    assert np.hypot(.5, .2) > .5 and np.hypot(.45, .15) < .5
+    assert mapper._inflated_coarse[10, 10]
+    assert not mapper._inflated_coarse[10, 11]
+    print('centre clearance: 0.1m side spill leaves the next coarse centre free; all <=0.5m centres blocked')
+    print('boundaries: all 25 subcell phases, four map corners and diagonal square-edge clearance passed')
 
 
 def test_legacy_bytes():
@@ -247,6 +301,7 @@ if __name__ == '__main__':
     test_flat()
     test_noisy_box()
     test_one_dilation()
+    test_side_spill_and_centre_clearance()
     test_legacy_bytes()
     test_selection_protocol()
     test_docker_arguments()

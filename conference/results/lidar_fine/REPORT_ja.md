@@ -2771,3 +2771,509 @@ GitHub APIへのPOSTが `Forbidden` で拒否された。実際の出力は次�
 - `conference/tapp/pointcloud_map_fine.py`
 - `conference/tasks/023_lidar_fine_grid.md`
 - `conference/tests/test_pointcloud_map_fine.py`
+
+
+## 追記：粗セル中心から障害物セルの端までの距離で判定
+
+この追記が現行の実装を説明する。上記の方法・図・出力・SHA-256は `a6bf889` 時点の記録として保持した。既存の数値やファイルは再生成していない。
+
+### 変更の理由と範囲
+
+経路計画でロボットの中心を粗セルの中心とみなすため、粗セルの領域が膨張マスクに少しでも重なることを禁止条件にすると、余分な粗セルまで通行不可になる。
+`PointCloudMapFine._add_obstacles` の膨張後の集約を、粗セル中心の距離判定へ変更した。
+`detected_obstacle = coarse_overlap(self.fine_obstacle)` はそのまま。0.1m・0.3m・3点・0.5mは変更・調整していない。
+022の方式、地面の高さ、コスト、急斜面の膨張、ROS用の選択引数、経路計画は変更していない。
+
+### セルの端と境界の扱い
+
+障害物の細セルは、中心から各軸±0.05mの**閉じた正方形**として扱う。粗セル中心と障害物の細セル中心の差を各軸Δx、Δyとすると、
+最も近い端または角までの距離は `sqrt(max(abs(Δx)-0.05,0)^2 + max(abs(Δy)-0.05,0)^2)`。
+これが0.5m以下なら通行不可で、円とセルがちょうど接する場合も含む。障害物セル中心までの距離ではない。
+
+粗セルの中心は、5×5分割した細セルの中央と一致する。円と正方形の距離を表す構造要素で、生の障害物を1回だけ膨張し、
+`fine_inflated[2::5, 2::5]` の値を選ぶ。粗セルの領域に対するany集約を使わない。
+距離計算を0.05m単位の整数座標で表し、各軸の距離 `max(2*abs(offset)-1,0)` の二乗和を100以下と判定する。
+これにより、斜めの角も含めて正方形までの距離をそのまま判定する。EDTの中心間距離から一律0.05mを引く近似は使わない。
+既に膨張した結果を再膨張させず、新しい生の障害物に対する結果との和を取る。
+
+点の細セルへの割り当ては従来のfloor式とclipを変更していない。数学的には境界の正方向のセルへ割り当てる半開区間で、
+浮動小数の丸めによる境界直近の割り当ても従来のまま。一方、衝突の距離計算では割り当てられたセルの両端を含める。
+地図の端では配列外へ折り返さずに切り取り、観測のない外側セルを新たに作らない。
+
+### テストで変更した期待値
+
+- `test_noisy_box`：膨張済み細格子のany集約を期待する式を、全障害物の正方形と全粗セル中心との距離を列挙する独立の参照計算へ変更した。高さ・コスト・seenのバイト一致、中心の検出、022より外側セルが少ないことは引き続き確認する。
+- `test_one_dilation`：細セル中心からの円盤と粗セル領域間の距離を期待していた部分を、障害物正方形の端までの距離と粗セル中心の判定へ変更した。繰り返し・追加の観測で二重に膨張しないことと保存マスクの検証は保持した。
+- `test_side_spill_and_centre_clearance` を追加：箱の側面の点が隣セル内の0.1mの細セルを占めても、次の粗セル中心が0.5mより遠ければ通れることを確認した。全25通りの細セルの位置、地図の四隅、斜め方向について、半径内の中心を含めたマスク全体を独立計算と完全一致で比較する。
+- 既存の他のテストファイルは変更していない。022の既定/明示選択で出力バイトが一致する確認も成功した。
+
+### 箱周辺の通行不可セル数：変更前後を実行して比較
+
+`a6bf889` の `pointcloud_map_fine.py` をGitから読み、変更後と同じ点群をそれぞれ処理した。
+`before_total/after_total` は通行不可セルの総数、`*_outside` は真の箱の中心セル(10,10)を除いた数。
+`*_next_cell` は中心(6.0,5.0)mの粗セル(12,10)の通行不可判定。
+数値はすべて下記スクリプトを実行して得た。実機/Gazeboの値やFPの件数ではない。
+
+```text
+Synthetic inputs only; not Gazebo measurements. Before = exact a6bf889c763484640bda6139e6291d2492d191ff mapper.
+Outside excludes the true box centre cell (10,10); next cell is (12,10), centre (6.0,5.0)m.
+fixture,before_total,after_total,before_outside,after_outside,before_next_cell,after_next_cell
+noisy_box_100,9,9,8,8,False,False
+noisy_box_101,9,9,8,8,False,False
+noisy_box_102,9,9,8,8,False,False
+noisy_box_103,9,9,8,8,False,False
+noisy_box_104,9,9,8,8,False,False
+side_spill_0.1m,7,4,6,3,True,False
+Height, cost, seen and detected obstacle bytes are unchanged on every fixture.
+```
+
+元のノイズ付き箱の5ケースではセル数に変化がなかった。追加した0.1mはみ出しの回帰ケースで、次の粗セルが通れることを確認した。
+比較した全入力で、高さ・コスト・seen・障害物そのものの粗格子/細格子のバイトは変更前後で一致した。
+
+### 実行コマンドとテストの出力全文
+
+変更前に `cd conference && python3 -m tests.test_planners` を実行し、出力は次のとおりだった。
+
+```text
+all planner tests passed
+roll-aware tests passed
+```
+
+続いて以下を実行した。Pythonには `OPENBLAS_NUM_THREADS=1 MPLCONFIGDIR=/tmp/thesis-023-mpl XDG_CACHE_HOME=/tmp/thesis-023-cache` を指定した。
+
+```bash
+cd conference
+python3 -m tests.test_pointcloud_map_fine
+python3 results/lidar_fine/center_update/compare_boxes.py
+python3 results/lidar_fine/center_update/run_tests.py
+python3 results/lidar_fine/center_update/append_report.py
+```
+
+最初の集中確認の出力全文：
+
+```text
+/workspace/thesis-023/conference/experiments/lidar_fine_report.py:168: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  data = pd.concat([old, pd.DataFrame(rows)], ignore_index=True)
+flat: no obstacles; only hit cells become known
+noisy box fixture (seed, coarse outside lethal, fine outside lethal): [(100, 12, 8), (101, 11, 8), (102, 12, 8), (103, 12, 8), (104, 12, 8)]
+box retained; 0.5m heights/cost/seen bytes and steep inflation unchanged
+one dilation: exhaustive centre-to-square distance, repeated/additive seeds, centre radius bound, packed save passed
+centre clearance: 0.1m side spill leaves the next coarse centre free; all <=0.5m centres blocked
+boundaries: all 25 subcell phases, four map corners and diagonal square-edge clearance passed
+legacy: default/explicit coarse use the unchanged class; full controlled-clock update and NPZ bytes identical
+selection: legacy manifest bytes identical; fine preserves exact task022 cohort, mesh/0.3x/1s protocol
+Docker wrapper fixture: coarse defaults preserved; both fine flag spellings forward the fixed run settings
+map audit fixtures: final-lethal versus raw-detector errors distinguished; four methods retain cached values and missing fine outcomes
+all fine-grid pointcloud tests passed (synthetic fixtures only, no Gazebo results)
+```
+
+全テストの出力全文：
+
+```text
+$ python3 -m tests.test_beach_terrain
+beach determinism, shapes, finite values, water/wet and unchanged rolling passed
+averaged sea/wet/dry/inland profiles and foreshore slopes passed (validation seeds)
+scarp 45-degree coverage passed: [np.float64(0.465), np.float64(0.615), np.float64(0.0), np.float64(0.16), np.float64(0.555)]
+beach scenarios, delegated planner equality and exact smoothing passed (15 scenarios)
+exact beach online safety passed (9 trajectories)
+all beach-terrain tests passed
+
+exit=0
+
+$ python3 -m tests.test_collision
+segment_cells passed (2000 seeded segments vs exhaustive SAT, reversal and boundary cases)
+corner-grazing reproduction and exact rejection passed
+legacy online and smoothing regressions passed
+exact online safety passed (41 trajectories, A* and D* Lite)
+all collision tests passed
+
+exit=0
+
+$ python3 -m tests.test_dstar
+static agreement passed (20 random grids, tolerance 1e-9)
+dynamic agreement passed (5 seeds x 20 updates, tolerance 1e-9)
+corner constraints, cost decreases, unreachable/reopened routes and ties passed
+task 001 regression passed (ridge soft and hills hard, search omitted)
+D* Lite safety passed (20 trajectories, normal and every-step replanning)
+error handling and fixed/adaptive-with-map prior handling passed
+all D* Lite tests passed
+
+exit=0
+
+$ python3 -m tests.test_footprint
+dilation: 0.5m circle, rocks not doubled, zero radius, immutable costs/endpoints and raster rounding passed
+proximity: analytic line-circle lengths, overlapping unions and tangencies passed
+requested LAS case: inflated planner reports no_path without moving endpoints
+online: zero radius preserves exact task014 trajectory and planning count
+rollover: strict +/-90deg threshold, first time/position and immutable fake records passed
+statistics: two sizes averaged within beach, incomplete pairs excluded, one fixed Holm family passed (synthetic fixtures only)
+Gazebo selection: six fixed scenarios, inflated-only selection and explicit infeasibility passed
+comparison: unknown physical outcomes stay unknown; rollover pairs excluded; explicit executed denominator passed (fixtures only)
+three-method reports: each contrast uses its own completion cohort; third-method failure does not drop old pairs (fixtures only)
+all footprint and rollover tests passed
+
+exit=0
+
+$ python3 -m tests.test_geo
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+zone VIII reference differences [latitude_deg, longitude_deg]:
+-4.25145429972e-09 2.46816966865e-09
+-4.06389943919e-09 -3.64556740351e-09
+2.36028796508e-09 -3.05306002701e-10
+2.78198797332e-10 -4.38916458734e-10
+projection round-trip max error [m]: 7.10133463144e-09
+geographic sidecars: 13 maps; source axes, coastline anchor, half-cell offset, round trips and NPZ hashes passed
+Web APIs: geographic map conversions, unavailable-map response and unchanged legacy metadata/image passed
+all geographic conversion tests passed
+
+exit=0
+
+$ python3 -m tests.test_gz_compare
+comparison scenarios: first six LAS test patches, clean 200m seed0; both methods match direct start/goal/path calls
+unavailable-world fixture: all scenarios retained, one export attempt per beach, no invented physical measurements
+worlds: all six LAS maps reconstructed from decoded PNGs within 0.1m; default exports unchanged by explicit legacy limit; invalid limits rejected
+comparison report: 6x2 kinematic fixtures agree with analyze_run; paired medians, immutable raw logs and excluded columns passed
+fixture values are simulated test data, not Gazebo measurements
+all Gazebo comparison tests passed (ROS2/Gazebo not required)
+
+exit=0
+
+$ python3 -m tests.test_gz_online_batch
+scenarios: first ten LAS test beaches; truth/prior arrays, seed-selected five points, task014 order and inflated plans agree with direct calls
+runtime: unchanged async worker uses the predeparture order; opt-in masks and blocked endpoints verified
+synthetic fixtures only: completion/stuck/rollover/timeout, five-target prefix, contact, active-path deviation, planning times and immutable originals passed
+raw CSV parts: strict file limit, repeated headers, exact numeric strings and complete record order passed
+unrun report: twenty scenarios retained, unknown physical outcomes stay blank, no energy/map/world artifacts and overwrite refused
+synthetic paired counts: incomplete tours excluded from paired medians; each outcome retains the actual-recording denominator
+all Gazebo online batch tests passed (ROS2/Gazebo not required; fixture measurements are not experimental data)
+
+exit=0
+
+$ python3 -m tests.test_mapfiles_sim
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+maps: 5 lossless scenario round trips, float32+residual, NaN, all 23 files and all 17 legacy IDs passed
+straight completed True max_deviation_m 3.552713678800501e-15 elapsed_s 19.700000000000003
+right_angle completed True max_deviation_m 0.20226302369017546 elapsed_s 39.650000000000006
+closed completed True max_deviation_m 0.3173559828528229 elapsed_s 68.35000000000001
+controller: reverse-heading spin then advance, curvature-preserving saturation, timeout passed
+tour map=flat_test_100m.npz elapsed_s=248.15 deviation_mean_m=0.006614475997696592 deviation_max_m=0.33848962758007467 path_lethal_cells=0 out_of_bounds_samples=0 completed=True
+contact_cells_xy_m []
+tour map=beach_gentle_200m_100.npz elapsed_s=418.45000000000005 deviation_mean_m=0.01568040573287969 deviation_max_m=0.20112452978749665 path_lethal_cells=0 out_of_bounds_samples=0 completed=True
+contact_cells_xy_m []
+gazebo flat_test_100m.npz pixels 257 size_m 100.0 max_error_m 0.0 boxes 3
+gazebo real_08OB87_-0206_200m_0.npz pixels 2049 size_m 200.0 max_error_m 0.06374200885325632 boxes 0
+API: 40 maps, file metadata/PNG, five-point planning/simulation, 404/422, immediate 409 and guard recovery passed
+all mapfiles/simulation tests passed
+
+exit=0
+
+$ python3 -m tests.test_mission
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+maps: 5 synthetic + 12 validation, cache, PNG dimensions/orientation passed
+parity: 5-point terrain order/cost/path and Euclidean order/physical legs passed
+validation: outside, water, blocked, unreachable, counts, rounding, duplicate/invalid base passed
+safety: synthetic/beach_gentle/200/100, 5 points, terrain/euclid contact=0
+safety: synthetic/beach_steep/200/100, 5 points, terrain/euclid contact=0
+safety: synthetic/beach_scarp/200/100, 5 points, terrain/euclid contact=0
+safety: real/08OB87_-0206/200, 5 points, terrain/euclid contact=0
+safety: real/08OB88_01332/200, 5 points, terrain/euclid contact=0
+API: maps/info/PNG/plan/static, 404/422, responsive worker, immediate 409 and guard recovery passed
+all mission tests passed
+
+exit=0
+
+$ python3 -m tests.test_natural_terrain
+natural generation determinism, distinct seeds, shape and finite values passed
+pre-erosion radial spectrum passed: [-3.5227452123825955, -3.4854938900090673, -3.5147015961346426, -3.469782545726739, -3.4636674128050786]
+rock area law: 0.4 0.02703765778384137 0.02660688949938067
+rock area law: 0.6 0.014010959187524073 0.013724330217025335
+rock area law: 1.0 0.003425544099666588 0.003651617375374042
+natural scenarios and exact online safety passed (15 trajectories)
+experiment oracle contact audit passed (both reference planners)
+all natural-terrain tests passed
+
+exit=0
+
+$ python3 -m tests.test_online
+regression passed (ridge/100 m, seeds 0 and 7)
+perfect prior passed (all terrain kinds/50 m/seed 0)
+coarse prior passed (shape, no rocks, partial blocks, noise, robot/weights, edges)
+prior policies passed (hard/soft/ignore, sensing overrides, cell-specific triggers)
+safety passed (60 trajectories: five online variants and constrained oracle)
+all online tests passed
+
+exit=0
+
+$ python3 -m tests.test_online_deadend
+safeguards: unknown-only memory, known truth precedence, strict N_B threshold and per-leg reset passed
+08OB86_00294: disabled trajectory/count parity and A/B/A+B stale five-point contacts=0
+08OB86_-0205: disabled trajectory/count parity and A/B/A+B stale five-point contacts=0
+08OB87_-0706: disabled trajectory/count parity and A/B/A+B stale five-point contacts=0
+08OC99_01733 stale R10: validation-frozen B completed without contact
+all online dead-end tests passed
+
+exit=0
+
+$ python3 -m tests.test_online_mission
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+beach_gentle: no-prior/coarse exact trajectory and plan-count parity; contact=0
+beach_steep: no-prior/coarse exact trajectory and plan-count parity; contact=0
+08OB87_-0206: no-prior/coarse exact trajectory and plan-count parity; contact=0
+08OB88_01332: no-prior/coarse exact trajectory and plan-count parity; contact=0
+08OB87_-0206 stale five-point tour: online contact=0; fixed debris cells= 11
+08OB88_01332 stale five-point tour: online contact=0; fixed debris cells= 18
+08OB89_-1597 stale five-point tour: online contact=0; fixed debris cells= 6
+async: worker blocked while simulation time advances, old path/positive commands continue; latest-pose replacement, one trajectory, plan/event logs and stale/cross-run rejection passed
+follower adapter: legacy completion/telemetry unchanged; intermediate-leg CSV stays open; final completion and stationary watchdog terminate the run
+maps/API: debris elevations, cost/lethal/obstacle/water/nodata match; coarse prior, legacy telemetry, live path/count validation and online=false default passed
+all online-mission tests passed
+
+exit=0
+
+$ python3 -m tests.test_planners
+all planner tests passed
+roll-aware tests passed
+
+exit=0
+
+$ python3 -m tests.test_pointcloud_map
+flat fixture: median height, zero slope/cost, exact hit-only mask, unknown cells and immutable prior passed
+box fixtures: prior-relative clusters, exact TraversabilityMap features, steep inflation and bounded unknown halo passed
+registration: model/sensor offset, roll/pitch/yaw convention and stamped SO(3) interpolation passed
+PointCloud2 layouts: endian, point/row padding, truncation, nonfinite/range/bounds filtering passed
+model: default SDF bytes unchanged; 16 x 2deg channels, 360deg/10Hz/30m and configurable assumed mount/noise passed
+LiDAR runtime: worker and delayed handoff use hit-only clouds; truth maps and virtual_sense are unavailable
+/workspace/thesis-023/conference/experiments/gz_lidar_report.py:159: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  data = pd.concat([old, pd.DataFrame(rows)], ignore_index=True)
+quality fixtures: unique hit-cell errors, measured map times, unchanged task021 controls and unknown LiDAR outcomes passed
+all pointcloud map tests passed (synthetic fixtures only; no Gazebo measurements)
+
+exit=0
+
+$ python3 -m tests.test_pointcloud_map_fine
+flat: no obstacles; only hit cells become known
+noisy box fixture (seed, coarse outside lethal, fine outside lethal): [(100, 12, 8), (101, 11, 8), (102, 12, 8), (103, 12, 8), (104, 12, 8)]
+box retained; 0.5m heights/cost/seen bytes and steep inflation unchanged
+one dilation: exhaustive centre-to-square distance, repeated/additive seeds, centre radius bound, packed save passed
+centre clearance: 0.1m side spill leaves the next coarse centre free; all <=0.5m centres blocked
+boundaries: all 25 subcell phases, four map corners and diagonal square-edge clearance passed
+legacy: default/explicit coarse use the unchanged class; full controlled-clock update and NPZ bytes identical
+selection: legacy manifest bytes identical; fine preserves exact task022 cohort, mesh/0.3x/1s protocol
+Docker wrapper fixture: coarse defaults preserved; both fine flag spellings forward the fixed run settings
+/workspace/thesis-023/conference/experiments/lidar_fine_report.py:168: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  data = pd.concat([old, pd.DataFrame(rows)], ignore_index=True)
+map audit fixtures: final-lethal versus raw-detector errors distinguished; four methods retain cached values and missing fine outcomes
+all fine-grid pointcloud tests passed (synthetic fixtures only, no Gazebo results)
+
+exit=0
+
+$ python3 -m tests.test_real_beach
+all 60 patches loaded: shapes, 12/48 split, nearest-data fill passed
+all 60 patches satisfy sea-to-land orientation
+08OB86_00294: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB86_-0205: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB87_-0706: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB88_-1417: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB88_-0167: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB86_00294: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB86_-0205: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB87_-0706: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB88_-1417: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB88_-0167: exact offline and coarse R5 c10 online safety passed, clean/debris
+real-beach test groups failed: 0
+all real-beach tests passed
+
+exit=0
+
+$ python3 -m tests.test_real_beach_las
+data: all 60 LAS patches, 12/48 split, exact names/order/origin/axes, npts and sea-to-land orientation passed
+quantized_0.1m_fraction: new_max 0.0035301084084904803 old_min 0.27882342564826246
+defaults: implicit/explicit shizuoka_beach are bit-identical for the first 3 test patches
+08OB86_00294: LAS 100/200m clean/debris repeatability, masks and reachability passed
+08OB86_-0205: LAS 100/200m clean/debris repeatability, masks and reachability passed
+08OB87_-0706: LAS 100/200m clean/debris repeatability, masks and reachability passed
+08OB88_-1417: LAS 100/200m clean/debris repeatability, masks and reachability passed
+08OB88_-0167: LAS 100/200m clean/debris repeatability, masks and reachability passed
+08OB86_00294: exact offline and coarse R5 c10 safety, clean/debris contact=0
+08OB86_-0205: exact offline and coarse R5 c10 safety, clean/debris contact=0
+08OB87_-0706: exact offline and coarse R5 c10 safety, clean/debris contact=0
+08OB88_-1417: exact offline and coarse R5 c10 safety, clean/debris contact=0
+08OB88_-0167: exact offline and coarse R5 c10 safety, clean/debris contact=0
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+mapfiles: all 12 LAS validation files match build_real exactly and retain Ground attribution
+comparison: identity joins reject missing/duplicate cases; 16-bit PNG filters preserve standard-decoded height samples
+all real-beach LAS tests passed
+
+exit=0
+
+$ python3 -m tests.test_risk_prior
+coarse elevation/refactor passed (16 terrain/cell/noise combinations)
+calibration passed (all-cell counts/means, deterministic pooling, JSON, test-seed rejection)
+empty-bin fallback and boundary assignment passed
+risk cost passed (expected means, lambda monotonicity/clipping, noise, unchanged lethal mask)
+risk-prior safety passed (40 trajectories, 40 successful; 20 m cells, R=5/15 m, lambda=0/1)
+all risk-prior tests passed
+
+exit=0
+
+$ python3 -m tests.test_ros2_gz
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+model: 150kg box inertia, 0.699m spacing, 4 wheels/side, DiffDrive joints, IMU, world pose and opt-in external visual passed
+packages: ament_python metadata, resource markers, node entry points, launch/bridge configuration and Python syntax passed
+follower: bit-identical kinematic trajectory, completion, stationary watchdog and CSV fields passed
+data_source synthetic_robot_sim
+source completed elapsed_s deviation_mean_m deviation_max_m lethal_cells
+recorded True 34.2 0.02959598405434589 0.3173397734180379 0
+kinematic True 34.2 0.02959598405434589 0.3173397734180379 0
+attitude actual_p95_deg map_p95_deg
+roll 0.0 0.0
+pitch 0.0 0.0
+data_source synthetic_robot_sim
+source completed elapsed_s deviation_mean_m deviation_max_m lethal_cells
+recorded True 7.7 0.0 0.0 0
+kinematic True 7.7 0.0 0.0 0
+attitude actual_p95_deg map_p95_deg
+roll 0.0 11.309932474020224
+pitch 0.0 5.710593137499648
+report: synthetic robot_sim CSV deviation/contact/time parity, kinematic comparison and plots passed (not Gazebo measurements)
+API: send/fetch/id/204, telemetry/freshness, invalid map/path 422 and bridge map rejection passed
+worlds: original PNG hashes/obstacle XML preserved, effective terrain transforms unchanged, sensors and IMU added
+all ROS-free ROS2/Gazebo tests passed
+
+exit=0
+
+$ python3 -m tests.test_thesis_figures
+
+T1
+ debris    metric  n    A_median   TAS_median  delta_median              p         p_holm
+  False mean_cost 48 0.110342949 0.0767774554 -0.0352167333 7.10542736e-15 5.68434189e-14
+  False     climb 48  1.50126915  0.890802236  -0.410943017 7.10542736e-15 5.68434189e-14
+  False  p95_roll 48  5.45746622     3.567633   -1.89097743 7.10542736e-15 5.68434189e-14
+  False length_xy 48         NaN          NaN   -2.00026809   0.0276182014   0.0552364028
+   True mean_cost 48 0.154226921 0.0855587032 -0.0582350381 7.10542736e-15 5.68434189e-14
+   True     climb 48  2.07159806   1.30575231  -0.803948405 2.13162821e-14 6.39488462e-14
+   True  p95_roll 48  6.86720155   3.63401103   -2.80093993 7.10542736e-15 5.68434189e-14
+   True length_xy 48         NaN          NaN  -0.764154874    0.947340222    0.947340222
+
+T2
+ radius_m   mode  runs  completed  touching   dJ_median     dJ_p90  replans_median  plan_s_median  plan_s_p95  plan_s_max
+        5  fixed    48         48        46   3.8297614 10.8951737               0   0.0943159025 0.513914058  1.09228056
+        5 online    48         46         0   1.9542052 10.2738521             101   0.0464642375  0.28593965  1.26618145
+       10  fixed    48         48        46   3.8297614 10.8951737               0   0.0960627685 0.506711613  1.25659096
+       10 online    48         46         0 0.945069248  6.6029207            94.5   0.0510014495 0.292423272  1.32438343
+       15  fixed    48         48        46   3.8297614 10.8951737               0    0.094235528 0.485409814  1.26557115
+       15 online    48         47         0 0.688622405 5.29694595              85    0.057362561 0.305458798  1.76405173
+
+T3
+                                world         mode  completed  path_lethal_cells  elapsed_s  roll_p95_actual_deg  pitch_p95_actual_deg  roll_p95_map_deg  pitch_p95_map_deg
+              file/flat_test_100m.npz offline tour       True                  0    249.412       8.05631294e-09        6.79662109e-10                 0                  0
+    file/real_08OB87_-0206_200m_0.npz offline tour       True                  0      348.2           4.76005563            6.20167607        4.58473933         6.31735413
+file/real_las_08OB87_-0206_200m_0.npz offline tour       True                  0    289.516           3.83941424            2.47900287        3.84957483         2.58651471
+       real_las_08OB87_-0206 / debris        fixed      False                  0      96.15           4.54713144            5.69114628        5.33797683         6.55378208
+       real_las_08OB87_-0206 / debris       online       True                  0     190.95           4.31378469            4.21973305        4.30333238         3.67841423
+thesis: F1-F7 PDF/PNG, T1-T3 LaTeX/Markdown and numbers.tex generated
+statistics: 48 paired beaches, size means, medians and archived contact counts verified
+outputs: no excluded measurement columns or values; all thesis figure tests passed
+
+exit=0
+
+$ python3 -m tests.test_tour
+kappa=0 agrees with legacy A* (20 random 25x25 grids)
+directed A*/Dijkstra agree with all-simple-path exhaustive oracle (10 grids); unreachable/corners/budget passed
+uphill/downhill identity, segment units and nonincreasing exact smoothing passed
+Held-Karp matches all permutations (30 asymmetric matrices at each of 2..8 destinations); ties/closure passed
+beach_gentle: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+beach_steep: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+beach_scarp: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+all multi-goal tour tests passed
+
+exit=0
+
+$ python3 -m tests.test_visibility
+visibility: all cells in the physical radius visible on flat terrain, including clipped edges
+visibility: front and wall top visible, cells behind the wall occluded
+visibility: raising the sensor 0.5 -> 0.8 -> 1.2m never loses a visible cell
+sensing: bool mask/cost/lethal tuple and explicit raw-obstacle assumed height passed
+control: radial trajectory/count parity; contact diagnostics agree with exact trajectory audit
+all visibility tests passed
+
+exit=0
+```
+
+```text
+test_beach_terrain exit=0
+test_collision exit=0
+test_dstar exit=0
+test_footprint exit=0
+test_geo exit=0
+test_gz_compare exit=0
+test_gz_online_batch exit=0
+test_mapfiles_sim exit=0
+test_mission exit=0
+test_natural_terrain exit=0
+test_online exit=0
+test_online_deadend exit=0
+test_online_mission exit=0
+test_planners exit=0
+test_pointcloud_map exit=0
+test_pointcloud_map_fine exit=0
+test_real_beach exit=0
+test_real_beach_las exit=0
+test_risk_prior exit=0
+test_ros2_gz exit=0
+test_thesis_figures exit=0
+test_tour exit=0
+test_visibility exit=0
+```
+
+### 既存ファイルの保持と現在のソース
+
+```text
+{
+  "base": "a6bf889c763484640bda6139e6291d2492d191ff",
+  "original_tracked_files": 3884,
+  "permitted_existing_changes": [
+    "conference/tapp/pointcloud_map_fine.py",
+    "conference/tests/test_pointcloud_map_fine.py",
+    "conference/results/lidar_fine/REPORT_ja.md"
+  ],
+  "other_original_files_unchanged": true,
+  "previous_report_is_byte_identical_prefix": true,
+  "old_results_unchanged": "All previous result files except the explicitly requested REPORT_ja.md append"
+}
+```
+
+```text
+{
+  "base": "a6bf889c763484640bda6139e6291d2492d191ff",
+  "branch": "codex/023-lidar-fine-grid",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "fine_resolution_m": 0.1,
+  "obstacle_height_m": 0.3,
+  "min_obstacle_points": 3,
+  "robot_radius_m": 0.5,
+  "criterion": "coarse centre to nearest point on closed raw fine-cell square <= 0.5m",
+  "contact_boundary": "inclusive; exact integer half-fine-cell coordinate comparison",
+  "parameter_tuning": false,
+  "new_gazebo_runs": 0,
+  "source_sha256": {
+    "conference/tapp/pointcloud_map_fine.py": "59d936881b8b5354dc4248ead8b9d1b105e5da1ef5fa09c6b5c900a67992abbf",
+    "conference/tests/test_pointcloud_map_fine.py": "adc48a34bb405f6787d62a5538d1e8b47df62d32b64a7fcc4fb49b26508e3ab2"
+  }
+}
+```
+
+### 未実行・確認してほしいこと
+
+今回もGazebo実走は実施していない。完走率・実走の誤検出・更新時間への影響は未測定で、合成箱の結果から補っていない。
+保存済みのmanifest、図、比較表、旧プロトコルは修正前の記録として残した。現在の細格子の幾何とソースハッシュはこの追記と `center_update/protocol.json` を参照する。
+Claudeには実走時に、同じ10地形・world・地点・速さ・途切れ期限を保ち、特に閉塞した通路と疎な障害物の見落としを確認してほしい。
+同じ作業ブランチを更新し、マージは行わない。

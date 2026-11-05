@@ -1,8 +1,10 @@
-"""Task023: fine obstacle evidence, one fine-grid dilation, unchanged coarse DEM.
+"""Task023: fine evidence and robot-centre clearance, unchanged coarse DEM.
 
 Five 0.1m cells tile each existing 0.5m cell, sharing its boundaries. Height
 fusion and its 64-return history stay on the original coarse grid; each return
 also retains its fine cell ID so only that cell's evidence can form a cluster.
+Collision uses distance to the closed fine-cell square, sampled at coarse
+cell centres; a coarse cell's area overlapping the halo does not block it.
 """
 
 import time
@@ -38,7 +40,12 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self._inflated_coarse = np.zeros(self.prior.shape, bool)
         radius_cells = int(np.ceil(self.robot.footprint_radius/FINE_RESOLUTION))
         x, y = np.mgrid[-radius_cells:radius_cells+1, -radius_cells:radius_cells+1]
-        self._disk = x*x+y*y <= (self.robot.footprint_radius/FINE_RESOLUTION)**2
+        # In half-fine-cell units, distance from a query centre to the nearest
+        # point of an occupied square is max(2*abs(offset)-1, 0) on each axis.
+        # Integer offsets retain the cell edges, including diagonal corners;
+        # subtracting just 0.05m from a scalar centre distance would not.
+        dx, dy = np.maximum(2*np.abs(x)-1, 0), np.maximum(2*np.abs(y)-1, 0)
+        self._disk = dx*dx+dy*dy <= (2*self.robot.footprint_radius/FINE_RESOLUTION)**2
         self._radius_cells = radius_cells
 
     def _add_obstacles(self, keys):
@@ -55,7 +62,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         # the already dilated mask is never a dilation input.
         self.fine_inflated[region] |= binary_dilation(seeds, structure=self._disk)
         self.detected_obstacle = coarse_overlap(self.fine_obstacle)
-        self._inflated_coarse = coarse_overlap(self.fine_inflated)
+        # RATIO is odd: each coarse centre is exactly the middle fine centre.
+        self._inflated_coarse = self.fine_inflated[RATIO//2::RATIO, RATIO//2::RATIO].copy()
 
     def update(self, sensor_points, pose):
         began = time.perf_counter()
