@@ -266,8 +266,9 @@ def run_checks(output, **kwargs):
                     observer.command.publish(message)
                     distance = float(np.linalg.norm(np.diff(np.asarray(meta['initial_path']), axis=0), axis=1).sum())
                     limit = max(120, 6*distance+60)
+                    # Wall-clock guard scales with the slowed simulation (real_time_factor 0.3 -> 10x the sim limit).
                     observer.wait_until(lambda: (observer.state.get('mission_id') == 1 and observer.state['status'] in TERMINAL)
-                                        or observer.t-mission['started_t'] > limit, processes, wall_limit=max(180, limit*3))
+                                        or observer.t-mission['started_t'] > limit, processes, wall_limit=max(180, limit*3/min(1., manifest['real_time_factor'])))
                     case['termination'] = 'simulation_timeout' if observer.t-mission['started_t'] > limit else observer.state['status']
                     mission.update(status=case['termination'], finished_t=observer.t, final_state=observer.state,
                                    perception=observer.perception, wall_elapsed_s=time.perf_counter()-mission['wall_started'])
