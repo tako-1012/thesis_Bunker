@@ -24,6 +24,7 @@ from tapp.mapfile import scenario_to_mapfile
 from tapp.run_log import FIELDS
 from data_prep.export_maps import LAS_ATTRIBUTION
 from data_prep.export_gazebo import export_gazebo
+from ros2_jazzy.gz_checks.terrain_mesh import write_terrain_obj, use_mesh_visual
 from ros2_jazzy.gz_checks.online_batch_runtime import CsvChunks, map_signature, split_follower_logs
 from ros2_jazzy.gz_checks.online_batch_checks import TERMINAL, save_manifest
 
@@ -206,6 +207,8 @@ def run_checks(output, **kwargs):
                     w.find('physics/real_time_factor').text = '1'
                     for uri in tree.findall('.//heightmap/uri'):
                         uri.text = (world.parent/'heightmap.png').as_uri()
+                    # GPU LiDAR sees visuals only; the heightmap visual crashes ogre2 without a GPU.
+                    use_mesh_visual(tree, write_terrain_obj(truth['tmap'].elev, folder/'terrain.obj').resolve().as_uri())
                     model = ET.parse(make_model(folder/'bunker.sdf', mass_kg=truth['tmap'].robot.mass_kg,
                                                 lidar=True, lidar_height_m=manifest['sensor_height_m'],
                                                 lidar_spec=LidarSpec(**manifest['lidar_spec']))).find('model')
