@@ -102,6 +102,8 @@ def run_checks(output, **kwargs):
 
     output = Path(output).resolve()
     manifest = prepare_cases(output, **kwargs)
+    # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
+    manifest['real_time_factor'] = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
     manifest.update(execution='started', environment=dict(
         image=os.environ.get('THESIS_ROS_IMAGE', 'thesis/jazzy-gz:1'),
         gazebo=subprocess.check_output(['gz', 'sim', '--versions'], text=True).strip(), python=sys.version))
@@ -204,7 +206,7 @@ def run_checks(output, **kwargs):
                     world = folder/'world/world.sdf'
                     tree = ET.parse(world)
                     w = tree.find('world')
-                    w.find('physics/real_time_factor').text = '1'
+                    w.find('physics/real_time_factor').text = os.environ.get('THESIS_REAL_TIME_FACTOR', '1')
                     for uri in tree.findall('.//heightmap/uri'):
                         uri.text = (world.parent/'heightmap.png').as_uri()
                     # GPU LiDAR sees visuals only; the heightmap visual crashes ogre2 without a GPU.

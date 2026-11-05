@@ -11,6 +11,7 @@ if [[ -e "$output_dir/manifest.json" ]]; then
 fi
 docker run --rm --pull=never --network host \
   -e ROS_DOMAIN_ID="${THESIS_ROS_DOMAIN_ID:-50}" \
+  -e THESIS_REAL_TIME_FACTOR="${THESIS_REAL_TIME_FACTOR:-1}" \
   -e THESIS_OUTPUT_UID="$(id -u)" -e THESIS_OUTPUT_GID="$(id -g)" \
   -e ROS_LOG_DIR=/tmp/thesis-ros-log -e PYTHONPATH=/conference \
   -e MPLCONFIGDIR=/tmp/thesis-mpl -e XDG_CACHE_HOME=/tmp/thesis-cache \
