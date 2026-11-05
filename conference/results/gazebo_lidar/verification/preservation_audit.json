@@ -1,0 +1,7 @@
+{
+  "original_files": 2139,
+  "changed": [
+    "conference/ros2_jazzy/src/thesis_bunker_gz/thesis_bunker_gz/model.py"
+  ],
+  "reason": "Task022 explicitly permits an opt-in LiDAR keyword; default/mass SDF bytes are frozen and tested unchanged."
+}
