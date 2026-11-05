@@ -2,6 +2,7 @@ conference/experiments/lidar_fine_report.py
 conference/results/lidar_fine/PR_DESCRIPTION_ja.md
 conference/results/lidar_fine/README_ja.md
 conference/results/lidar_fine/REPORT_ja.md
+conference/results/lidar_fine/SUBMISSION_ja.md
 conference/results/lidar_fine/box_fixture.png
 conference/results/lidar_fine/changed_files.txt
 conference/results/lidar_fine/input_audit.json
@@ -17,6 +18,9 @@ conference/results/lidar_fine/verification/legacy_manifest_before.json
 conference/results/lidar_fine/verification/planners_before_log.txt
 conference/results/lidar_fine/verification/plot_fixture.py
 conference/results/lidar_fine/verification/plot_fixture_log.txt
+conference/results/lidar_fine/verification/pr_create_log.txt
+conference/results/lidar_fine/verification/pr_rest_log.txt
+conference/results/lidar_fine/verification/pr_rest_retry_log.txt
 conference/results/lidar_fine/verification/prepare_console_log.txt
 conference/results/lidar_fine/verification/preservation_audit.json
 conference/results/lidar_fine/verification/protocol.json
