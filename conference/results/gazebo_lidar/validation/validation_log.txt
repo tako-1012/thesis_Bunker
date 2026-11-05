@@ -1,0 +1,14 @@
+VALIDATION ONLY: dense artificial DEM returns, not Gazebo/VLP-16 measurements; no tuning.
+                             source        patch  observed_cells  error_median_m  error_p95_m  update_s  input_points
+validation_dense_artificial_returns 08OB87_-0206           11086     0.000352349   0.00193533  0.384788         33258
+validation_dense_artificial_returns 08OB88_01332           11250     0.000377498   0.00221333  0.281524         33750
+validation_dense_artificial_returns 08OB89_-1597            9887     0.000330137   0.00274032  0.241511         29664
+validation_dense_artificial_returns 08OC90_00270           10081     0.000351986   0.00212163  0.236031         30243
+validation_dense_artificial_returns 08OC91_00811           11256     0.000263028    0.0020687  0.267921         33768
+validation_dense_artificial_returns 08OC93_-1519           11144     0.000323986   0.00191017  0.274128         33435
+validation_dense_artificial_returns 08OC95_-0321           11260     0.000308378   0.00232001  0.320561         33780
+validation_dense_artificial_returns 08OC96_-0676            8818     0.000491998   0.00334322  0.226692         26454
+validation_dense_artificial_returns 08OC97_-0077           11261     0.000318206   0.00206651  0.286032         33783
+validation_dense_artificial_returns 08OC98_-1101           10647     0.000383787   0.00225024  0.269964         31941
+validation_dense_artificial_returns 08OC98_01898           10299     0.000542452   0.00259834  0.259226         30897
+validation_dense_artificial_returns 08OC99_00983            9802      0.00040039    0.0021909  0.245144         29409

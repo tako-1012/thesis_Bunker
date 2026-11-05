@@ -1,0 +1,6 @@
+flat fixture: median height, zero slope/cost, exact hit-only mask, unknown cells and immutable prior passed
+box fixtures: prior-relative clusters, exact TraversabilityMap features, steep inflation and bounded unknown halo passed
+registration: model/sensor offset, roll/pitch/yaw convention and stamped SO(3) interpolation passed
+PointCloud2 layouts: endian, point/row padding, truncation, nonfinite/range/bounds filtering passed
+model: default SDF bytes unchanged; 16 x 2deg channels, 360deg/10Hz/30m and configurable assumed mount/noise passed
+all pointcloud map tests passed (synthetic fixtures only; no Gazebo measurements)
