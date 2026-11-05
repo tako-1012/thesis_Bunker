@@ -1,0 +1,1 @@
+[ERROR] [1793843052.787888756] [online_planner]: ValueError: position outside truth map

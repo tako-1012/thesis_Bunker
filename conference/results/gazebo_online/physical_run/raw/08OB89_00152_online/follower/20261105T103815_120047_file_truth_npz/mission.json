@@ -1,0 +1,145 @@
+{
+  "id": 1,
+  "map_id": "file/truth.npz",
+  "data_source": "gazebo",
+  "patch": "08OB89_00152",
+  "mode": "online",
+  "planner": "TA*-S+inflate",
+  "path": [
+    [
+      98.90663331544852,
+      198.77186285606584
+    ],
+    [
+      108.5,
+      198.0
+    ],
+    [
+      114.0,
+      199.0
+    ],
+    [
+      117.0,
+      198.0
+    ],
+    [
+      129.0,
+      199.0
+    ],
+    [
+      132.0,
+      198.0
+    ],
+    [
+      137.5,
+      198.0
+    ],
+    [
+      138.5,
+      199.0
+    ],
+    [
+      139.0,
+      199.5
+    ]
+  ],
+  "points": [
+    [
+      139.0,
+      199.5
+    ],
+    [
+      99.0,
+      199.0
+    ],
+    [
+      148.0,
+      86.5
+    ],
+    [
+      91.5,
+      186.0
+    ],
+    [
+      194.5,
+      58.5
+    ]
+  ],
+  "order": [
+    0,
+    4,
+    2,
+    1,
+    5,
+    3
+  ],
+  "stops_cells": [
+    [
+      183,
+      372
+    ],
+    [
+      198,
+      398
+    ],
+    [
+      278,
+      399
+    ],
+    [
+      389,
+      117
+    ],
+    [
+      296,
+      173
+    ],
+    [
+      48,
+      341
+    ]
+  ],
+  "start_cells": [
+    48,
+    341
+  ],
+  "lookahead_m": 1.0,
+  "status": "no_path",
+  "started_t": 5.05,
+  "start_pose": [
+    24.024880455404023,
+    166.93626343855493,
+    3.6787966582341083,
+    -0.029834419760874534,
+    -0.062382878161109566,
+    0.00547671615102983
+  ],
+  "online_generated": true,
+  "replace_path": false,
+  "reason": "start_leg",
+  "leg_index": 2,
+  "final_leg": false,
+  "n_replans": 14,
+  "plan_time_s": 0.3616522829997848,
+  "planned_at": 5.3,
+  "revision": 17,
+  "plan_history": [
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.3616522829997848,
+      "n_plans": 1
+    }
+  ],
+  "handoff_latency_s": 0.5278498099996796,
+  "sim_handoff_s": 0.20000000000000018,
+  "pose_shift_m": 0.0,
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3,
+    "stall_timeout_s": 10.0
+  },
+  "logged_plan_calls": 17
+}
