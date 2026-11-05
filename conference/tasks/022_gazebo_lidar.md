@@ -1,6 +1,8 @@
 # 指示書 022：センサーを Gazebo の LiDAR に替えて、走りながら計画し直す（試験的）
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。
+> **状態：完了（試験的）**（Codex が実装。Gazebo は Claude が通常の Docker で 3 か所→10 か所の順に実行。地形の見た目をメッシュにし、実時間の 0.3 倍・途切れの基準 1.0 秒で走らせた）。
+> 結果は `conference/results/gazebo_lidar/physical_10/README_ja.md`：LiDAR で完走 4/10、経路なし 4/10（漂着物の箱の側面の点が隣のマスに入り、通れないマスが増えて通路が閉じた）、地図の端での転倒 2/10。
+> （半径 10m が誤差なく見える 021 は 9/10、古い地図のまま 0/10。）最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。
 > **指示書021 が `realtime-map` にマージされてから始めること**（021 のシナリオと集計を使う）。
 > ブランチは `codex/022-gazebo-lidar`。結果は `conference/results/gazebo_lidar/`、報告は同じ場所の `REPORT_ja.md`。
 > **試験的な指示書**：全部できなくてよい。できたところまでと、できなかった理由を報告に書くこと。
