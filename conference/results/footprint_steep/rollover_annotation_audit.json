@@ -1,0 +1,12 @@
+{
+  "original_rows": 12,
+  "original_cells_preserved": 276,
+  "raw_files_preserved": 24,
+  "rollover_runs": 2,
+  "changed_old_result_files": [
+    "results/gazebo_compare/REPORT_ja.md",
+    "results/gazebo_compare/physical_run/report/runs.csv",
+    "results/gazebo_compare/physical_run/report/compare_log.txt"
+  ],
+  "reason": "Add strict >90-degree rollover classification and first recorded event; preserve all original numeric strings and raw statuses."
+}

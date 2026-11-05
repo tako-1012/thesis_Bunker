@@ -1,0 +1,14 @@
+$ python3 -m tests.test_geo
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+zone VIII reference differences [latitude_deg, longitude_deg]:
+-4.25145429972e-09 2.46816966865e-09
+-4.06389943919e-09 -3.64556740351e-09
+2.36028796508e-09 -3.05306002701e-10
+2.78198797332e-10 -4.38916458734e-10
+projection round-trip max error [m]: 7.10133463144e-09
+geographic sidecars: 13 maps; source axes, coastline anchor, half-cell offset, round trips and NPZ hashes passed
+Web APIs: geographic map conversions, unavailable-map response and unchanged legacy metadata/image passed
+all geographic conversion tests passed
+
+exit=0

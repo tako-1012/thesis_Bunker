@@ -5,7 +5,7 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
-def make_model(output, lab_mesh_dir="", mass_kg=150.0):
+def make_model(output, lab_mesh_dir="", mass_kg=150.0, *, lidar=False, lidar_height_m=0.8, lidar_spec=None):
     sdf = ET.Element("sdf", version="1.9")
     model = ET.SubElement(sdf, "model", name="bunker")
 
@@ -52,6 +52,10 @@ def make_model(output, lab_mesh_dir="", mass_kg=150.0):
     node(sensor, "update_rate", "50")
     node(sensor, "topic", "/imu")
     node(sensor, "imu")
+    if lidar:
+        from .lidar import add_lidar, LidarSpec
+        add_lidar(body, sensor_height_m=lidar_height_m,
+                  spec=LidarSpec() if lidar_spec is None else lidar_spec)
     drive = node(
         model,
         "plugin",

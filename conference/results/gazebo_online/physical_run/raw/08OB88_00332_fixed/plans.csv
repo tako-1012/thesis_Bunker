@@ -1,0 +1,7 @@
+n_plans,reason,success,plan_time_s
+1,start_leg,True,0.053327129999956924
+2,start_leg,True,0.024613177999981417
+3,start_leg,True,0.04092713800002912
+4,start_leg,True,0.0337649699999929
+5,start_leg,True,0.03452223499999718
+6,start_leg,True,0.09777324399999543

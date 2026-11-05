@@ -1,0 +1,927 @@
+{
+  "id": 1,
+  "map_id": "file/truth.npz",
+  "data_source": "gazebo",
+  "patch": "08OB89_-0347",
+  "mode": "online",
+  "planner": "TA*-S+inflate",
+  "path": [
+    [
+      27.510700334345497,
+      162.70150548102183
+    ],
+    [
+      27.5,
+      163.0
+    ]
+  ],
+  "points": [
+    [
+      147.0,
+      112.0
+    ],
+    [
+      2.5,
+      124.0
+    ],
+    [
+      82.0,
+      84.5
+    ],
+    [
+      106.5,
+      72.0
+    ],
+    [
+      97.5,
+      176.0
+    ]
+  ],
+  "order": [
+    0,
+    5,
+    1,
+    4,
+    3,
+    2
+  ],
+  "stops_cells": [
+    [
+      195,
+      352
+    ],
+    [
+      294,
+      224
+    ],
+    [
+      213,
+      144
+    ],
+    [
+      164,
+      169
+    ],
+    [
+      5,
+      248
+    ],
+    [
+      55,
+      326
+    ]
+  ],
+  "start_cells": [
+    55,
+    326
+  ],
+  "lookahead_m": 1.0,
+  "status": "completed",
+  "started_t": 5.051,
+  "start_pose": [
+    27.504165608713812,
+    162.99223676271632,
+    2.1778545484357403,
+    -0.007533873605931322,
+    0.08354489247858153,
+    -0.029493495106589305
+  ],
+  "online_generated": true,
+  "replace_path": true,
+  "reason": "distance",
+  "leg_index": 5,
+  "final_leg": true,
+  "n_replans": 130,
+  "plan_time_s": 0.014001850000568083,
+  "planned_at": 390.9,
+  "revision": 135,
+  "plan_history": [
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.2546966110003268,
+      "n_plans": 1
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.17293698200046492,
+      "n_plans": 2
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.18851574399923265,
+      "n_plans": 3
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.1901056509996124,
+      "n_plans": 4
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.24023415000010573,
+      "n_plans": 5
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.17170941899894387,
+      "n_plans": 6
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.18423381700085883,
+      "n_plans": 7
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.16145011600019643,
+      "n_plans": 8
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.16540398100005405,
+      "n_plans": 9
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.13779102800071996,
+      "n_plans": 10
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.1608829759989021,
+      "n_plans": 11
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.2119815940004628,
+      "n_plans": 12
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.15699748699989868,
+      "n_plans": 13
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.15776444599941897,
+      "n_plans": 14
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.15462800900058937,
+      "n_plans": 15
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.17073622699899715,
+      "n_plans": 16
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.21228533199973754,
+      "n_plans": 17
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.21640395400027046,
+      "n_plans": 18
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.1575500290000491,
+      "n_plans": 19
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.14278904399907333,
+      "n_plans": 20
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11464567199982412,
+      "n_plans": 21
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10534465499949874,
+      "n_plans": 22
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10500312200019835,
+      "n_plans": 23
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11059099799967953,
+      "n_plans": 24
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10395983300077205,
+      "n_plans": 25
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.09406000700073491,
+      "n_plans": 26
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.09014185299929522,
+      "n_plans": 27
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.12940574299864238,
+      "n_plans": 28
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11480621100054123,
+      "n_plans": 29
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11489314500067849,
+      "n_plans": 30
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10545230299976538,
+      "n_plans": 31
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11558625599900552,
+      "n_plans": 32
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.17957703199863317,
+      "n_plans": 33
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.09955499499847065,
+      "n_plans": 34
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11676084799910313,
+      "n_plans": 35
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10949382800026797,
+      "n_plans": 36
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10653975100103708,
+      "n_plans": 37
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10820867999973416,
+      "n_plans": 38
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.08992017099990335,
+      "n_plans": 39
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10794157800046378,
+      "n_plans": 40
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.12122222300058638,
+      "n_plans": 41
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.07097052900098788,
+      "n_plans": 42
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.07527728999957617,
+      "n_plans": 43
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.08320200799971644,
+      "n_plans": 44
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.0703734219987382,
+      "n_plans": 45
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06804962399837677,
+      "n_plans": 46
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.09757573400020192,
+      "n_plans": 47
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06133368100017833,
+      "n_plans": 48
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06541832000038994,
+      "n_plans": 49
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.02977055900009873,
+      "n_plans": 50
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.027903635000257054,
+      "n_plans": 51
+    },
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.3195127999988472,
+      "n_plans": 52
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.18285320500035596,
+      "n_plans": 53
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.18230678399959288,
+      "n_plans": 54
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.12762496000141255,
+      "n_plans": 55
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.0959629290009616,
+      "n_plans": 56
+    },
+    {
+      "reason": "new_lethal",
+      "success": true,
+      "plan_time_s": 0.06080221500087646,
+      "n_plans": 57
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.07493857699955697,
+      "n_plans": 58
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.053863474999161554,
+      "n_plans": 59
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.0646074790001876,
+      "n_plans": 60
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06071165100001963,
+      "n_plans": 61
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06383029900098336,
+      "n_plans": 62
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.07134898999902362,
+      "n_plans": 63
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.05961378299980424,
+      "n_plans": 64
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06422737300090375,
+      "n_plans": 65
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.0753443960002187,
+      "n_plans": 66
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.05681531200025347,
+      "n_plans": 67
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.08561040099993988,
+      "n_plans": 68
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.08597954399920127,
+      "n_plans": 69
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.08481186700009857,
+      "n_plans": 70
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.1002760709998256,
+      "n_plans": 71
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.07818177599983755,
+      "n_plans": 72
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11369249800009129,
+      "n_plans": 73
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.03493255300054443,
+      "n_plans": 74
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.034031481000056374,
+      "n_plans": 75
+    },
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.10918725700139476,
+      "n_plans": 76
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.15411646599932283,
+      "n_plans": 77
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.1272376359993359,
+      "n_plans": 78
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.06497387299896218,
+      "n_plans": 79
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.0465236760010157,
+      "n_plans": 80
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.07940044899987697,
+      "n_plans": 81
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.03054251300090982,
+      "n_plans": 82
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.024491344000125537,
+      "n_plans": 83
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.027787736000391305,
+      "n_plans": 84
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.049596659000599175,
+      "n_plans": 85
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.02301545100090152,
+      "n_plans": 86
+    },
+    {
+      "reason": "new_lethal",
+      "success": true,
+      "plan_time_s": 0.04711295800007065,
+      "n_plans": 87
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.02327233200048795,
+      "n_plans": 88
+    },
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.055297984999924665,
+      "n_plans": 89
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.03797070299879124,
+      "n_plans": 90
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.021600019999823417,
+      "n_plans": 91
+    },
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.1635473659989657,
+      "n_plans": 92
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.17425430399998731,
+      "n_plans": 93
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.18500643100014713,
+      "n_plans": 94
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.1409654609997233,
+      "n_plans": 95
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.13415136900039215,
+      "n_plans": 96
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.16205587100012053,
+      "n_plans": 97
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.2163797120010713,
+      "n_plans": 98
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.15110290499978873,
+      "n_plans": 99
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.12982514200120931,
+      "n_plans": 100
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.1254233199997543,
+      "n_plans": 101
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11270546699961415,
+      "n_plans": 102
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.11503677300061099,
+      "n_plans": 103
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.10809458599942445,
+      "n_plans": 104
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.09175966900147614,
+      "n_plans": 105
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.08006722500067553,
+      "n_plans": 106
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06397013499918103,
+      "n_plans": 107
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.10185411400016164,
+      "n_plans": 108
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.09210332799921161,
+      "n_plans": 109
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.07431659999929252,
+      "n_plans": 110
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.04162637799890945,
+      "n_plans": 111
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.056228531000670046,
+      "n_plans": 112
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.07034178300091298,
+      "n_plans": 113
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.03522464100024081,
+      "n_plans": 114
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.03871940099998028,
+      "n_plans": 115
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.051949197999419994,
+      "n_plans": 116
+    },
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.07156409399976837,
+      "n_plans": 117
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.06614442099998996,
+      "n_plans": 118
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.05473884999992151,
+      "n_plans": 119
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.05353278999973554,
+      "n_plans": 120
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.0500965310002357,
+      "n_plans": 121
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.05449636199955421,
+      "n_plans": 122
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.0515693689994805,
+      "n_plans": 123
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06130816000040795,
+      "n_plans": 124
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06462442999873019,
+      "n_plans": 125
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.0492510330004734,
+      "n_plans": 126
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.06309162700017623,
+      "n_plans": 127
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.05375125300088257,
+      "n_plans": 128
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.0694873339998594,
+      "n_plans": 129
+    },
+    {
+      "reason": "new_lethal",
+      "success": true,
+      "plan_time_s": 0.05986421700072242,
+      "n_plans": 130
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.03503286999875854,
+      "n_plans": 131
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.04155284399894299,
+      "n_plans": 132
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.03323793600065983,
+      "n_plans": 133
+    },
+    {
+      "reason": "new_cost",
+      "success": true,
+      "plan_time_s": 0.046667865999552305,
+      "n_plans": 134
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.022353364000082365,
+      "n_plans": 135
+    },
+    {
+      "reason": "distance",
+      "success": true,
+      "plan_time_s": 0.014001850000568083,
+      "n_plans": 136
+    }
+  ],
+  "handoff_latency_s": 0.1290137699998013,
+  "sim_handoff_s": 0.049999999999954525,
+  "pose_shift_m": 0.030994168464380342,
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3,
+    "stall_timeout_s": 10.0
+  },
+  "logged_plan_calls": 136
+}

@@ -1,0 +1,11 @@
+$ python3 -m tests.test_tour
+kappa=0 agrees with legacy A* (20 random 25x25 grids)
+directed A*/Dijkstra agree with all-simple-path exhaustive oracle (10 grids); unreachable/corners/budget passed
+uphill/downhill identity, segment units and nonincreasing exact smoothing passed
+Held-Karp matches all permutations (30 asymmetric matrices at each of 2..8 destinations); ties/closure passed
+beach_gentle: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+beach_steep: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+beach_scarp: reproducible reachable separated waypoints; all directed legs safe; matrix agrees with individual A*/Dijkstra planning (kappa=0 and physical)
+all multi-goal tour tests passed
+
+exit=0

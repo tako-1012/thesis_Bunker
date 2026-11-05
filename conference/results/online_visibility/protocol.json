@@ -1,0 +1,43 @@
+{
+  "dataset": "shizuoka_beach_las",
+  "split": "test",
+  "side_m": 200,
+  "seed": 0,
+  "radius_m": 10,
+  "sensors": [
+    [
+      "radius",
+      false,
+      0.8
+    ],
+    [
+      "LOS h0.5",
+      true,
+      0.5
+    ],
+    [
+      "LOS h0.8",
+      true,
+      0.8
+    ],
+    [
+      "LOS h1.2",
+      true,
+      1.2
+    ]
+  ],
+  "assumed_driftwood_height_m": 0.3,
+  "boulder_height": "already embedded in build_real elevation; not added twice",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "workers": 4,
+  "source_sha256": {
+    "tapp/visibility.py": "45e5a3e78553acf571651d00e855044948018603fec10c17bbc5c57df8e65482",
+    "tapp/online_mission.py": "cb6256d33524a7121a79c4cb12e406b3be32f741bc072ebb4eb01481935882b9",
+    "tapp/real_beach.py": "34e61730bbf27f4156d7533f93eaf3e1200678e0de21ace6a9707080d7cddf67",
+    "tapp/config.py": "5c4cfe860b16f2d4540e970f2ca19a634f563a24deb361d0e85b7daa6e6c7895",
+    "experiments/online_visibility.py": "ecb376cf6e113760bdb4b52047940e7d79021dce2b0bf6719a41a6d9bb0317bf",
+    "experiments/online_mission.py": "77f3e1554983b23481ff463f746d18e0c2411961c96d4a56e84a27c4955fd7e5",
+    "data/shizuoka_beach_las/index.json": "7033159d7042f492decf4a190178b1453493518441eac539da9aa5887a7107e2"
+  }
+}

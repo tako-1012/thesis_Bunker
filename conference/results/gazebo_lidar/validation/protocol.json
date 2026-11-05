@@ -1,0 +1,7 @@
+{
+  "split": "validation",
+  "dataset": "shizuoka_beach_las",
+  "seed": "SeedSequence([100,22,patch_index])",
+  "scope": "dense cell-centre synthetic returns, independent Gaussian 0.02m radial noise; no occlusion/beam model",
+  "parameter_selection": "none; assumptions fixed before audit"
+}

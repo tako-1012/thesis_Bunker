@@ -1,0 +1,51 @@
+
+Test: task-014 tours, R10; sensor/obstacle heights are assumptions
+     prior   sensor  runs  completed  too_long  touching  debris_touching  dJ_median  dJ_p90  dJ_max  replans_median  replans_max  plan_calls  plan_s_median  plan_s_p95  plan_s_max  visible_fraction_median
+coarse c10   radius    48         45         3         0                0     4.2116 27.6546 58.1804           181.5          443        9347      0.0338989    0.214052    0.617529                        1
+coarse c10 LOS h0.5    48         45         2         6                0    6.58038 50.6507 87.9287           181.5          373        9413      0.0329212    0.184331    0.648725                 0.929992
+coarse c10 LOS h0.8    48         46         2         0                0    5.40638 45.1416 81.2774             190          417        9784      0.0329725    0.198266    0.623101                 0.979615
+coarse c10 LOS h1.2    48         46         2         0                0    4.31989 39.0019  70.039             188          385        9523      0.0322046    0.174012    0.618155                 0.996022
+     stale   radius    48         46         2         0                0   0.945069 6.60292 22.8123            94.5          224        5428      0.0319496    0.182882    0.618836                        1
+     stale LOS h0.5    48         46         2         2                0     1.3719 7.70953 36.3317            92.5          237        5592      0.0316194     0.18155    0.633089                 0.838504
+     stale LOS h0.8    48         46         2         0                0    1.16265  7.0726 35.8381              96          224        5587      0.0328615    0.184374    0.685261                 0.926014
+     stale LOS h1.2    48         46         2         0                0    1.16535 7.09318 28.9627              97          228        5547      0.0330384    0.180476    0.665912                 0.968974
+Radius control: scenario identities, outcomes, plan/replan/contact counts and dJ match task 014.
+
+LOS minus radius-control dJ; paired completed runs only, completion losses reported separately
+     prior   sensor  paired_completed  completed_lost  newly_completed  delta_median  delta_p90  delta_max
+coarse c10 LOS h0.5                44               1                1       1.36657    20.8139    41.4519
+coarse c10 LOS h0.8                45               0                1      0.947752    12.0621    34.5992
+coarse c10 LOS h1.2                45               0                1      0.108124    6.65766    31.0182
+     stale LOS h0.5                46               0                0      0.439088    1.74441    14.1416
+     stale LOS h0.8                46               0                0      0.172516    2.47329    13.0257
+     stale LOS h1.2                46               0                0     0.0319652    2.14855    12.1538
+
+Contact cases (includes failed tours)
+       patch  side_m  seed      prior  radius_m   sensor  success   reason  n_plans  n_replans  lethal_cells  debris_cells  oracle_J  visible_fraction_median  observations       J      dJ
+08OB88_-0167     200     0 coarse c10        10 LOS h0.5    False  no_path      166        164             3             0   1252.46                 0.768496           255     NaN     NaN
+08OB89_-0347     200     0 coarse c10        10 LOS h0.5     True               185        179             1             0   885.943                 0.949483           504 1013.81 14.4324
+08OC80_00660     200     0 coarse c10        10 LOS h0.5     True               249        243             1             0     925.9                 0.887033           511 1029.27 11.1644
+08OC95_00928     200     0      stale        10 LOS h0.5     True                99         93             1             0   861.169                   0.8572           458 1030.51 19.6646
+08OC97_-0577     200     0 coarse c10        10 LOS h0.5     True               214        208             1             0   795.861                 0.712808           491 1304.89 63.9595
+08OC98_00148     200     0 coarse c10        10 LOS h0.5     True               234        228             1             0   815.468                 0.960223           467  955.11 17.1242
+08OC99_00483     200     0 coarse c10        10 LOS h0.5     True               204        198             1             0   885.828                 0.833731           409 979.876  10.617
+08OC99_01733     200     0      stale        10 LOS h0.5    False too_long      109        107             1             0   1451.17                 0.505171           257     NaN     NaN
+
+Contact cause at the last observation (cell counts may overlap across causes)
+       patch      prior   sensor         cause  unique_cells
+08OB88_-0167 coarse c10 LOS h0.5 already_known             2
+08OB88_-0167 coarse c10 LOS h0.5      occluded             3
+08OB89_-0347 coarse c10 LOS h0.5 already_known             1
+08OB89_-0347 coarse c10 LOS h0.5      occluded             1
+08OC80_00660 coarse c10 LOS h0.5 already_known             1
+08OC80_00660 coarse c10 LOS h0.5      occluded             1
+08OC95_00928      stale LOS h0.5 already_known             1
+08OC95_00928      stale LOS h0.5      occluded             1
+08OC97_-0577 coarse c10 LOS h0.5 already_known             1
+08OC97_-0577 coarse c10 LOS h0.5      occluded             1
+08OC98_00148 coarse c10 LOS h0.5 already_known             1
+08OC98_00148 coarse c10 LOS h0.5      occluded             1
+08OC99_00483 coarse c10 LOS h0.5 already_known             1
+08OC99_00483 coarse c10 LOS h0.5      occluded             1
+08OC99_01733      stale LOS h0.5 already_known             1
+08OC99_01733      stale LOS h0.5      occluded             1

@@ -1,0 +1,9 @@
+debris,side_m,planner,lost_solutions,gained_solutions,paired_success,length_delta_median,length_delta_pct_median,cost_delta_median,cost_delta_pct_median
+False,100,TA*-S+inflate r0.5,0,0,48,0.0,0.0,0.0,0.0
+False,100,TA*-S+inflate r0.39,0,0,48,0.0,0.0,0.0,0.0
+True,100,TA*-S+inflate r0.5,0,0,48,0.0,0.0,0.0,0.0
+True,100,TA*-S+inflate r0.39,0,0,48,0.0,0.0,0.0,0.0
+False,200,TA*-S+inflate r0.5,1,0,47,0.0,0.0,0.0,0.0
+False,200,TA*-S+inflate r0.39,1,0,47,0.0,0.0,0.0,0.0
+True,200,TA*-S+inflate r0.5,1,0,47,0.0,0.0,0.0,0.0
+True,200,TA*-S+inflate r0.39,1,0,47,0.0,0.0,0.0,0.0

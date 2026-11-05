@@ -1,0 +1,121 @@
+{
+  "id": 1,
+  "map_id": "file/truth.npz",
+  "data_source": "gazebo",
+  "patch": "08OB86_-0205",
+  "mode": "online",
+  "planner": "TA*-S+inflate",
+  "path": [
+    [
+      26.927497678258955,
+      131.67523276416887
+    ],
+    [
+      25.0,
+      133.5
+    ],
+    [
+      24.5,
+      135.0
+    ]
+  ],
+  "points": [
+    [
+      57.0,
+      51.0
+    ],
+    [
+      57.0,
+      107.0
+    ],
+    [
+      21.0,
+      89.5
+    ],
+    [
+      67.5,
+      127.5
+    ],
+    [
+      46.5,
+      98.5
+    ]
+  ],
+  "order": [
+    0,
+    3,
+    1,
+    5,
+    2,
+    4
+  ],
+  "stops_cells": [
+    [
+      42,
+      179
+    ],
+    [
+      114,
+      102
+    ],
+    [
+      93,
+      197
+    ],
+    [
+      114,
+      214
+    ],
+    [
+      135,
+      255
+    ],
+    [
+      49,
+      270
+    ]
+  ],
+  "start_cells": [
+    49,
+    270
+  ],
+  "lookahead_m": 1.0,
+  "status": "completed",
+  "started_t": 5.051,
+  "start_pose": [
+    24.47517790920309,
+    131.73858372436476,
+    3.3273824928312927,
+    0.16903314488874183,
+    0.01770342116341253,
+    -0.00992917828257066
+  ],
+  "online_generated": true,
+  "replace_path": false,
+  "reason": "start_leg",
+  "leg_index": 5,
+  "final_leg": true,
+  "n_replans": 92,
+  "plan_time_s": 0.1522344059999341,
+  "planned_at": 5.2,
+  "revision": 98,
+  "plan_history": [
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.1522344059999341,
+      "n_plans": 1
+    }
+  ],
+  "handoff_latency_s": 0.2058984509999391,
+  "sim_handoff_s": 0.10000000000000053,
+  "pose_shift_m": 0.14021531370750884,
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3,
+    "stall_timeout_s": 10.0
+  },
+  "logged_plan_calls": 98
+}

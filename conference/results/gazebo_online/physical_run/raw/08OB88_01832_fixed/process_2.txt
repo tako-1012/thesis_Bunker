@@ -1,0 +1,1 @@
+[INFO] [1793841366.914034293] [path_follower]: run log: /output/raw/08OB88_01832_fixed/follower/20261105T101606_857465_file_truth_npz

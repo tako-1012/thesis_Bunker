@@ -1,0 +1,333 @@
+{
+  "dataset": "shizuoka_beach_las",
+  "side_m": 200,
+  "seed": 0,
+  "cases": [
+    {
+      "patch": "08OB86_00294",
+      "planner": "TA*-S+inflate",
+      "map_file": "maps/real_las_08OB86_00294_200m_0.npz",
+      "start": [
+        52,
+        195
+      ],
+      "goal": [
+        363,
+        142
+      ],
+      "path_cells": [
+        [
+          52.0,
+          195.0
+        ],
+        [
+          187.0,
+          143.0
+        ],
+        [
+          220.0,
+          143.0
+        ],
+        [
+          226.0,
+          141.0
+        ],
+        [
+          280.0,
+          139.0
+        ],
+        [
+          332.0,
+          141.0
+        ],
+        [
+          361.0,
+          140.0
+        ],
+        [
+          363.0,
+          142.0
+        ]
+      ],
+      "map_metrics": {
+        "length_xy": 160.94937025421402,
+        "climb": 1.296579295647781,
+        "mean_cost": 0.09934254738028371,
+        "p95_slope": 4.545468591911271,
+        "p95_roll": 4.2058852448230315,
+        "max_roll": 5.98095538027892,
+        "max_pitch_dir": 4.212395499375023
+      },
+      "planning_s": 0.2710684999910882,
+      "run_folder": null,
+      "planning_status": "planned"
+    },
+    {
+      "patch": "08OB86_-0205",
+      "planner": "TA*-S+inflate",
+      "map_file": "maps/real_las_08OB86_-0205_200m_0.npz",
+      "start": [
+        49,
+        270
+      ],
+      "goal": [
+        348,
+        243
+      ],
+      "path_cells": [
+        [
+          49.0,
+          270.0
+        ],
+        [
+          59.0,
+          258.0
+        ],
+        [
+          99.0,
+          235.0
+        ],
+        [
+          143.0,
+          229.0
+        ],
+        [
+          170.0,
+          231.0
+        ],
+        [
+          183.0,
+          228.0
+        ],
+        [
+          225.0,
+          227.0
+        ],
+        [
+          292.0,
+          231.0
+        ],
+        [
+          307.0,
+          236.0
+        ],
+        [
+          346.0,
+          241.0
+        ],
+        [
+          348.0,
+          243.0
+        ]
+      ],
+      "map_metrics": {
+        "length_xy": 156.83124817429467,
+        "climb": 1.1332630431856119,
+        "mean_cost": 0.0794646388394625,
+        "p95_slope": 3.7830904415714817,
+        "p95_roll": 3.18944033882009,
+        "max_roll": 5.6917321562385474,
+        "max_pitch_dir": 9.613582262098207
+      },
+      "planning_s": 0.27255757999955676,
+      "run_folder": null,
+      "planning_status": "planned"
+    },
+    {
+      "patch": "08OB87_-0706",
+      "planner": "TA*-S+inflate",
+      "map_file": "maps/real_las_08OB87_-0706_200m_0.npz",
+      "start": [
+        50,
+        200
+      ],
+      "goal": [
+        346,
+        120
+      ],
+      "path_cells": [
+        [
+          50.0,
+          200.0
+        ],
+        [
+          127.0,
+          205.0
+        ],
+        [
+          158.0,
+          202.0
+        ],
+        [
+          203.0,
+          188.0
+        ],
+        [
+          259.0,
+          152.0
+        ],
+        [
+          270.0,
+          151.0
+        ],
+        [
+          290.0,
+          151.0
+        ],
+        [
+          321.0,
+          142.0
+        ],
+        [
+          343.0,
+          122.0
+        ],
+        [
+          345.0,
+          121.0
+        ],
+        [
+          346.0,
+          120.0
+        ]
+      ],
+      "map_metrics": {
+        "length_xy": 159.35126755755866,
+        "climb": 0.8121583176817346,
+        "mean_cost": 0.08354709905546945,
+        "p95_slope": 4.158790643689584,
+        "p95_roll": 3.348037673204954,
+        "max_roll": 4.860511481684514,
+        "max_pitch_dir": 4.612079192708135
+      },
+      "planning_s": 0.2867412119958317,
+      "run_folder": null,
+      "planning_status": "planned"
+    },
+    {
+      "patch": "08OB88_-1417",
+      "planner": "TA*-S+inflate",
+      "map_file": "maps/real_las_08OB88_-1417_200m_0.npz",
+      "start": [
+        52,
+        153
+      ],
+      "goal": [
+        360,
+        148
+      ],
+      "path_cells": [
+        [
+          52.0,
+          153.0
+        ],
+        [
+          101.0,
+          148.0
+        ],
+        [
+          245.0,
+          143.0
+        ],
+        [
+          355.0,
+          143.0
+        ],
+        [
+          360.0,
+          148.0
+        ]
+      ],
+      "map_metrics": {
+        "length_xy": 155.19895009899528,
+        "climb": 0.7338263069368021,
+        "mean_cost": 0.05260413815830641,
+        "p95_slope": 2.5867961177232712,
+        "p95_roll": 2.4177213575076477,
+        "max_roll": 3.0707795551927837,
+        "max_pitch_dir": 3.1124843934389097
+      },
+      "planning_s": 0.16209267600788735,
+      "run_folder": null,
+      "planning_status": "planned"
+    },
+    {
+      "patch": "08OB88_-0167",
+      "planner": "TA*-S+inflate",
+      "map_file": "maps/real_las_08OB88_-0167_200m_0.npz",
+      "start": [
+        38,
+        231
+      ],
+      "goal": [
+        331,
+        285
+      ],
+      "path_cells": [],
+      "map_metrics": {
+        "length_xy": null,
+        "climb": null,
+        "mean_cost": null,
+        "p95_slope": null,
+        "p95_roll": null,
+        "max_roll": null,
+        "max_pitch_dir": null
+      },
+      "planning_s": 0.21963767299894243,
+      "run_folder": null,
+      "planning_status": "no_path",
+      "error": "planning: no_path",
+      "termination": "no_path"
+    },
+    {
+      "patch": "08OB88_00332",
+      "planner": "TA*-S+inflate",
+      "map_file": "maps/real_las_08OB88_00332_200m_0.npz",
+      "start": [
+        45,
+        228
+      ],
+      "goal": [
+        360,
+        144
+      ],
+      "path_cells": [
+        [
+          45.0,
+          228.0
+        ],
+        [
+          63.0,
+          202.0
+        ],
+        [
+          187.0,
+          143.0
+        ],
+        [
+          360.0,
+          144.0
+        ]
+      ],
+      "map_metrics": {
+        "length_xy": 170.97035585720235,
+        "climb": 0.38637007650734834,
+        "mean_cost": 0.07490390342823636,
+        "p95_slope": 5.3782671531540975,
+        "p95_roll": 3.756255578592316,
+        "max_roll": 5.20394169627103,
+        "max_pitch_dir": 9.60763558048189
+      },
+      "planning_s": 0.2119008170120651,
+      "run_folder": null,
+      "planning_status": "planned"
+    }
+  ],
+  "world_exports": {},
+  "world_errors": {},
+  "world_max_pixels": 4097,
+  "planners": [
+    "TA*-S+inflate"
+  ],
+  "execution": "planning_only; no physical Gazebo trial performed"
+}

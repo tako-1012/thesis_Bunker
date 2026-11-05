@@ -1,0 +1,3 @@
+mode,scheduled,executed,unexecuted,planning_infeasible,completed,stuck,rollover,timeout,no_path,incomplete_waypoints,runtime_error,other_failure,goals_reached_median,lethal_cells_median,debris_cells_median,n_replans_median,elapsed_s_median,deviation_mean_m_median,deviation_max_m_median,roll_p95_deg_median,roll_max_deg_median,pitch_p95_deg_median,pitch_max_deg_median,plan_s_median_median,plan_s_p95_median,plan_s_max_median
+fixed,10,0,10,0,,,,,,,,,,,,,,,,,,,,,,
+online,10,0,10,0,,,,,,,,,,,,,,,,,,,,,,

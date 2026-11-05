@@ -1,0 +1,10 @@
+{
+  "coarse_c10__radius": [],
+  "coarse_c10__LOS_h0.5": [],
+  "coarse_c10__LOS_h0.8": [],
+  "coarse_c10__LOS_h1.2": [],
+  "stale__radius": [],
+  "stale__LOS_h0.5": [],
+  "stale__LOS_h0.8": [],
+  "stale__LOS_h1.2": []
+}

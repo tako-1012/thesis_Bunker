@@ -1,0 +1,57 @@
+{
+  "id": 1,
+  "map_id": "file/real_las_08OB86_00294_200m_0.npz",
+  "map_file": "/output/maps/real_las_08OB86_00294_200m_0.npz",
+  "patch": "08OB86_00294",
+  "planner": "TA*-S",
+  "data_source": "gazebo",
+  "path": [
+    [
+      26.0,
+      97.5
+    ],
+    [
+      93.5,
+      71.5
+    ],
+    [
+      110.0,
+      71.5
+    ],
+    [
+      113.0,
+      70.5
+    ],
+    [
+      140.0,
+      69.5
+    ],
+    [
+      166.0,
+      70.5
+    ],
+    [
+      180.5,
+      70.0
+    ],
+    [
+      181.5,
+      71.0
+    ]
+  ],
+  "points": [
+    [
+      181.5,
+      71.0
+    ]
+  ],
+  "lookahead_m": 1.0,
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3,
+    "stall_timeout_s": 10.0
+  },
+  "status": "completed"
+}

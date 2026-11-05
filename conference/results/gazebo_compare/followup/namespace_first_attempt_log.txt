@@ -1,0 +1,2 @@
+mount: /tmp/task019-oci/rootfs/sys: wrong fs type, bad option, bad superblock on /sys, missing codepage or helper program, or other error.
+       dmesg(1) may have more information after failed mount system call.

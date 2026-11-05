@@ -1,0 +1,10 @@
+{
+  "runtime": "unprivileged user/mount namespace and chroot; source read-only, output writable",
+  "versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "matplotlib": "3.6.3",
+    "pandas": "2.1.4"
+  },
+  "colcon_build": "both thesis_bunker_mission and thesis_bunker_gz finished successfully; full output in followup/namespace_run_log.txt"
+}
