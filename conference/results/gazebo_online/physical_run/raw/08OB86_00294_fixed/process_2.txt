@@ -1,0 +1,15 @@
+[INFO] [1793834972.425407416] [path_follower]: run log: /output/raw/08OB86_00294_fixed/follower/20261105T082932_396602_file_truth_npz
+Traceback (most recent call last):
+  File "/tmp/thesis-install/thesis_bunker_mission/lib/thesis_bunker_mission/path_follower", line 33, in <module>
+    sys.exit(load_entry_point('thesis-bunker-mission==0.1.0', 'console_scripts', 'path_follower')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/thesis-install/thesis_bunker_mission/lib/python3.12/site-packages/thesis_bunker_mission/path_follower.py", line 194, in main
+    node.stop()
+  File "/tmp/thesis-install/thesis_bunker_mission/lib/python3.12/site-packages/thesis_bunker_mission/path_follower.py", line 183, in stop
+    self.publish_state(status, self.get_clock().now().nanoseconds / 1e9)
+  File "/tmp/thesis-install/thesis_bunker_mission/lib/python3.12/site-packages/thesis_bunker_mission/path_follower.py", line 133, in publish_state
+    self.state.publish(message)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/publisher.py", line 70, in publish
+    self.__publisher.publish(msg)
+rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:423
+[ros2run]: Process exited with failure 1
