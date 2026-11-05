@@ -33,8 +33,11 @@ class LidarPlannerNode(OnlinePlannerNode):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         for name, default in [('prior_map', ''), ('map_id', 'file/truth.npz'), ('run_folder', ''),
-                              ('sensor_height_m', .8), ('max_range_m', 30.), ('obstacle_height_m', .3), ('range_resolution_m', .01)]:
+                              ('sensor_height_m', .8), ('max_range_m', 30.), ('obstacle_height_m', .3), ('range_resolution_m', .01),
+                              ('stale_timeout_s', .5)]:
             self.declare_parameter(name, default)
+        # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
+        self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
         prior = load_map_file(self.get_parameter('prior_map').value)
         self.folder = Path(self.get_parameter('run_folder').value)
         if not self.get_parameter('run_folder').value:
@@ -156,11 +159,11 @@ class LidarPlannerNode(OnlinePlannerNode):
                 self.pending = None
                 self.future_stamp = stamp
                 self.future = self.map_pool.submit(self._update, message, pose)
-            elif now-stamp > .5:
+            elif now-stamp > self.stale_timeout_s:
                 self.pending = None
                 self.dropped += 1
                 self.last_error = 'no bracketing stamped pose for LiDAR cloud'
-        state = dict(ready=self.last_cloud_stamp is not None and now-self.last_cloud_stamp <= .5,
+        state = dict(ready=self.last_cloud_stamp is not None and now-self.last_cloud_stamp <= self.stale_timeout_s,
                      observed_cells=self.observed_cells, received_clouds=self.received_clouds,
                      queue_drops=self.dropped, last_cloud_stamp=self.last_cloud_stamp,
                      error=self.terminal_sensor_error or self.last_error)
@@ -171,7 +174,7 @@ class LidarPlannerNode(OnlinePlannerNode):
     def tick(self):
         now = self.get_clock().now().nanoseconds/1e9
         if self.runtime.state is not None and not self.runtime.finished:
-            if self.last_cloud_stamp is None or now-self.last_cloud_stamp > .5:
+            if self.last_cloud_stamp is None or now-self.last_cloud_stamp > self.stale_timeout_s:
                 if self.mission_started is not None and now-self.mission_started > .5 and not self.watchdog_sent:
                     self.terminal_sensor_error = 'lidar_unavailable_or_stale'
                     message = String()

@@ -104,6 +104,7 @@ def run_checks(output, **kwargs):
     manifest = prepare_cases(output, **kwargs)
     # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
     manifest['real_time_factor'] = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
+    manifest['stale_timeout_s'] = float(os.environ.get('THESIS_STALE_TIMEOUT_S', '0.5'))
     manifest.update(execution='started', environment=dict(
         image=os.environ.get('THESIS_ROS_IMAGE', 'thesis/jazzy-gz:1'),
         gazebo=subprocess.check_output(['gz', 'sim', '--versions'], text=True).strip(), python=sys.version))
@@ -229,7 +230,8 @@ def run_checks(output, **kwargs):
                          '-p', 'prior_map:='+str(prior_file), '-p', 'map_id:='+mission['map_id'], '-p', 'run_folder:='+str(raw),
                          '-p', 'sensor_height_m:='+str(manifest['sensor_height_m']), '-p', 'obstacle_height_m:='+str(manifest['obstacle_height_m']),
                          '-p', 'max_range_m:='+str(manifest['lidar_spec']['max_range_m']),
-                         '-p', 'range_resolution_m:='+str(manifest['lidar_spec']['range_resolution_m'])]]
+                         '-p', 'range_resolution_m:='+str(manifest['lidar_spec']['range_resolution_m']),
+                         '-p', 'stale_timeout_s:='+str(manifest['stale_timeout_s'])]]
                     for i, command in enumerate(commands):
                         stream = (raw/f'process_{i}.txt').open('w')
                         streams.append(stream)
