@@ -1,0 +1,10 @@
+{
+  "original_files": 2412,
+  "changed": [
+    "conference/ros2_jazzy/gz_checks/lidar_checks.py",
+    "conference/ros2_jazzy/gz_checks/lidar_planner.py",
+    "conference/ros2_jazzy/gz_checks/run_lidar_checks.sh"
+  ],
+  "unchanged_original_files": 2409,
+  "reason": "Only opt-in selection/argument forwarding in three ROS files. Legacy core, costs, source data and all old results remain byte-identical."
+}

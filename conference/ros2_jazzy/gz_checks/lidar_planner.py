@@ -23,6 +23,7 @@ from tapp.mapfile import load_map_file
 from tapp.pointcloud_map import PointCloudMap, PoseBuffer, decode_xyz
 from ros2_jazzy.gz_checks.lidar_runtime import LidarOnlineMission
 from ros2_jazzy.gz_checks.online_batch_runtime import CsvChunks
+from ros2_jazzy.gz_checks.lidar_map import make_pointcloud_map
 
 UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepted_points',
                  'observed_cells', 'update_s', 'decode_s', 'queue_drops', 'cloud_sha256']
@@ -34,7 +35,7 @@ class LidarPlannerNode(OnlinePlannerNode):
         Node.__init__(self, 'lidar_planner')
         for name, default in [('prior_map', ''), ('map_id', 'file/truth.npz'), ('run_folder', ''),
                               ('sensor_height_m', .8), ('max_range_m', 30.), ('obstacle_height_m', .3), ('range_resolution_m', .01),
-                              ('stale_timeout_s', .5)]:
+                              ('stale_timeout_s', .5), ('map_method', 'coarse')]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -45,7 +46,8 @@ class LidarPlannerNode(OnlinePlannerNode):
         self.folder.mkdir(parents=True, exist_ok=True)
         self.map_id = self.get_parameter('map_id').value
         raw_obstacle = prior['obstacle'] | prior['water'] | prior['nodata']
-        self.mapper = PointCloudMap(prior['tmap'].elev, raw_obstacle,
+        self.mapper = make_pointcloud_map(prior['tmap'].elev, raw_obstacle,
+                                    map_method=self.get_parameter('map_method').value,
                                     robot=prior['tmap'].robot, weights=prior['tmap'].weights,
                                     sensor_height_m=self.get_parameter('sensor_height_m').value,
                                     max_range_m=self.get_parameter('max_range_m').value,

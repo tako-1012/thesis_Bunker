@@ -1,0 +1,1 @@
+[ERROR] [1793896179.344240660] [lidar_planner]: new_cost

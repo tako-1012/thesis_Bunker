@@ -1,0 +1,19 @@
+{
+  "base": "a6bf889c763484640bda6139e6291d2492d191ff",
+  "branch": "codex/023-lidar-fine-grid",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "fine_resolution_m": 0.1,
+  "obstacle_height_m": 0.3,
+  "min_obstacle_points": 3,
+  "robot_radius_m": 0.5,
+  "criterion": "coarse centre to nearest point on closed raw fine-cell square <= 0.5m",
+  "contact_boundary": "inclusive; exact integer half-fine-cell coordinate comparison",
+  "parameter_tuning": false,
+  "new_gazebo_runs": 0,
+  "source_sha256": {
+    "conference/tapp/pointcloud_map_fine.py": "59d936881b8b5354dc4248ead8b9d1b105e5da1ef5fa09c6b5c900a67992abbf",
+    "conference/tests/test_pointcloud_map_fine.py": "adc48a34bb405f6787d62a5538d1e8b47df62d32b64a7fcc4fb49b26508e3ab2"
+  }
+}

@@ -1,0 +1,1 @@
+Synthetic fixture outside lethal cells: [('022 coarse', 12), ('023 fine', 8)]
