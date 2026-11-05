@@ -1,0 +1,6 @@
+flat: no obstacles; only hit cells become known
+noisy box fixture (seed, coarse outside lethal, fine outside lethal): [(100, 12, 8), (101, 11, 8), (102, 12, 8), (103, 12, 8), (104, 12, 8)]
+box retained; 0.5m heights/cost/seen bytes and steep inflation unchanged
+one dilation: independent full disk, repeated/additive seeds, rectangle-distance radius bound, packed save passed
+legacy: default/explicit coarse use the unchanged class; full controlled-clock update and NPZ bytes identical
+all fine-grid pointcloud tests passed (synthetic fixtures only, no Gazebo results)

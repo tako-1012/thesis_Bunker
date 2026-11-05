@@ -27,6 +27,7 @@ from data_prep.export_gazebo import export_gazebo
 from ros2_jazzy.gz_checks.terrain_mesh import write_terrain_obj, use_mesh_visual
 from ros2_jazzy.gz_checks.online_batch_runtime import CsvChunks, map_signature, split_follower_logs
 from ros2_jazzy.gz_checks.online_batch_checks import TERMINAL, save_manifest
+from ros2_jazzy.gz_checks.lidar_map import fine_protocol, matched_task022_maps
 
 BASELINE = ROOT/'results/gazebo_online/physical_run'
 
@@ -58,7 +59,7 @@ def verify_inputs(patch, meta, truth, prior):
 
 
 def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
-                  noise_stddev_m=.02, max_range_m=30.):
+                  noise_stddev_m=.02, max_range_m=30., map_method='coarse'):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output/'manifest.json').exists():
@@ -69,6 +70,14 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     spec.validate()
     if not np.isfinite([sensor_height_m, obstacle_height_m]).all() or min(sensor_height_m, obstacle_height_m) <= 0:
         raise ValueError('height assumptions must be positive')
+    if map_method not in ('coarse', 'fine'):
+        raise ValueError('map method must be coarse or fine')
+    fine_settings = fine_protocol() if map_method == 'fine' else None
+    if fine_settings is not None:
+        reference = json.loads((ROOT/'results/gazebo_lidar/physical_10/manifest.json').read_text())
+        if (asdict(spec) != reference['lidar_spec'] or sensor_height_m != reference['sensor_height_m']
+                or obstacle_height_m != .3 or obstacle_height_m != reference['obstacle_height_m']):
+            raise ValueError('fine comparison keeps the task022 sensor and threshold unchanged')
     baseline = json.loads((BASELINE/'manifest.json').read_text())
     scenarios = baseline['scenarios']
     expected = [r['name'] for r in list_patches('test', dataset='shizuoka_beach_las')[:10]]
@@ -86,6 +95,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                     cases=[dict(patch=s['patch'], mode='lidar', selected=i < patch_count,
                                 planning_status=s['planning_status'], run_folder=None, error='', termination=None)
                            for i, s in enumerate(scenarios)])
+    if fine_settings is not None:
+        manifest.update(fine_settings)
     save_manifest(output, manifest)
     return manifest
 
@@ -103,8 +114,9 @@ def run_checks(output, **kwargs):
     output = Path(output).resolve()
     manifest = prepare_cases(output, **kwargs)
     # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
-    manifest['real_time_factor'] = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
-    manifest['stale_timeout_s'] = float(os.environ.get('THESIS_STALE_TIMEOUT_S', '0.5'))
+    if manifest.get('map_method') != 'fine':
+        manifest['real_time_factor'] = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
+        manifest['stale_timeout_s'] = float(os.environ.get('THESIS_STALE_TIMEOUT_S', '0.5'))
     manifest.update(execution='started', environment=dict(
         image=os.environ.get('THESIS_ROS_IMAGE', 'thesis/jazzy-gz:1'),
         gazebo=subprocess.check_output(['gz', 'sim', '--versions'], text=True).strip(), python=sys.version))
@@ -193,6 +205,8 @@ def run_checks(output, **kwargs):
                     folder.mkdir()
                     truth = build_real(case['patch'], 200, 0, debris=True, dataset='shizuoka_beach_las')
                     prior = build_real(case['patch'], 200, 0, dataset='shizuoka_beach_las')
+                    if manifest.get('map_method') == 'fine':
+                        truth, prior, case['world_reference'] = matched_task022_maps(case['patch'], truth, prior)
                     case['input_audit'] = verify_inputs(case['patch'], meta, truth, prior)
                     # Evaluation arrays, not a deployable map/world: preserve the
                     # actual-run float bits for offline analysis on other CPUs.
@@ -207,7 +221,8 @@ def run_checks(output, **kwargs):
                     world = folder/'world/world.sdf'
                     tree = ET.parse(world)
                     w = tree.find('world')
-                    w.find('physics/real_time_factor').text = os.environ.get('THESIS_REAL_TIME_FACTOR', '1')
+                    w.find('physics/real_time_factor').text = ('0.3' if manifest.get('map_method') == 'fine'
+                                                             else os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
                     for uri in tree.findall('.//heightmap/uri'):
                         uri.text = (world.parent/'heightmap.png').as_uri()
                     # GPU LiDAR sees visuals only; the heightmap visual crashes ogre2 without a GPU.
@@ -232,6 +247,8 @@ def run_checks(output, **kwargs):
                          '-p', 'max_range_m:='+str(manifest['lidar_spec']['max_range_m']),
                          '-p', 'range_resolution_m:='+str(manifest['lidar_spec']['range_resolution_m']),
                          '-p', 'stale_timeout_s:='+str(manifest['stale_timeout_s'])]]
+                    if manifest.get('map_method') == 'fine':
+                        commands[-1].extend(['-p', 'map_method:=fine'])
                     for i, command in enumerate(commands):
                         stream = (raw/f'process_{i}.txt').open('w')
                         streams.append(stream)
@@ -283,7 +300,10 @@ def run_checks(output, **kwargs):
                     save_manifest(output, manifest)
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
-        from experiments.gz_lidar_report import summarize
+        if manifest.get('map_method') == 'fine':
+            from experiments.lidar_fine_report import summarize
+        else:
+            from experiments.gz_lidar_report import summarize
         summarize(output)
         if manifest['execution'] == 'finished_with_errors':
             raise RuntimeError('some LiDAR trials could not run; inspect manifest')
@@ -299,12 +319,16 @@ def main():
     parser.add_argument('--obstacle-height-m', type=float, default=.3)
     parser.add_argument('--noise-stddev-m', type=float, default=.02)
     parser.add_argument('--max-range-m', type=float, default=30.)
+    parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
-        prepare_cases(output, **args)
-        from experiments.gz_lidar_report import summarize
+        manifest = prepare_cases(output, **args)
+        if manifest.get('map_method') == 'fine':
+            from experiments.lidar_fine_report import summarize
+        else:
+            from experiments.gz_lidar_report import summarize
         summarize(output)
     else:
         run_checks(output, **args)
