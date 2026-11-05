@@ -35,6 +35,7 @@ python3 -m tests.test_visibility
 python3 -m tests.test_geo
 python3 -m tests.test_gz_compare
 python3 -m tests.test_footprint
+python3 -m tests.test_gz_online_batch
 ```
 作業を終える前に、`conference/tests/` の下にあるすべてのテストを実行すること。
 
@@ -49,7 +50,7 @@ python3 -m tests.test_footprint
 - `conference/results/*.csv`、`conference/results/*.json`、`conference/results/explore/`、
   `conference/results/online/`、`conference/results/online_prior/`、`conference/results/online_dstar/`、`conference/results/risk_prior/`、`conference/results/exact_los/`、
   `conference/results/natural_terrain/`、`conference/results/beach_terrain/`、`conference/results/multi_goal_tour/`、`conference/results/real_beach/`、`conference/results/ros2_gz/`、`conference/results/real_beach_las/`、`conference/results/online_mission/`、
-  `conference/results/online_deadend/`、`conference/results/online_visibility/`、`conference/results/gazebo_compare/`、`conference/results/footprint_steep/`、`conference/thesis/out/`
+  `conference/results/online_deadend/`、`conference/results/online_visibility/`、`conference/results/gazebo_compare/`、`conference/results/footprint_steep/`、`conference/results/gazebo_online/`、`conference/thesis/out/`
 - `conference/data/`（本物の地形データ。`conference/data_prep/` のスクリプトで作ったもの）
 - `conference/tapp/planners.py`、`metrics.py`、`scenario.py`、`terrain.py`、
   `traversability.py`、`config.py`、`aniso.py`、`prior.py`、`dstar_lite.py`、`risk_prior.py`、`collision.py`、`online.py`、
@@ -59,7 +60,7 @@ python3 -m tests.test_footprint
 - `conference/ros2_jazzy/`（ROS2・Gazebo のパッケージと、Gazebo での確認の結果）
 - `conference/experiments/run_all.py`、`analyze*.py`、`run_weight_opt.py`、`run_roll.py`、
   `run_infeasible.py`、`online_replanning.py`、`online_prior.py`、`online_dstar.py`、`risk_prior.py`、`exact_los.py`、
-  `natural_terrain.py`、`beach_terrain.py`、`multi_goal_tour.py`、`real_beach.py`、`gz_run_report.py`、`compare_real_beach_las.py`、`online_mission.py`、`audit_online_mission.py`、`online_deadend.py`、`online_visibility.py`、`audit_visibility.py`、`gz_compare_report.py`
+  `natural_terrain.py`、`beach_terrain.py`、`multi_goal_tour.py`、`real_beach.py`、`gz_run_report.py`、`compare_real_beach_las.py`、`online_mission.py`、`audit_online_mission.py`、`online_deadend.py`、`online_visibility.py`、`audit_visibility.py`、`gz_compare_report.py`、`gz_online_batch_report.py`
 
 既存の結果は、1ビットも変わらずに再現できる状態を保つこと。新しい機能は、新しいファイルに追加するか、
 既定値で今までと同じ動きをする新しいキーワード引数の後ろに追加すること。

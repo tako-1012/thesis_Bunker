@@ -1,6 +1,8 @@
 # 指示書 021：漂着物のある砂浜 10 か所で、古い地図のまま走る場合と、走りながら計画し直す場合を Gazebo で比べる
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。
+> **状態：完了**（Codex が実装。Gazebo は Claude が通常の Docker で実行。地図の書き出しの不具合を Claude が直した）。
+> 結果は `conference/results/gazebo_online/physical_run/README_ja.md`：古い地図のまま 0/10 完走（9 か所で漂着物に当たって立ち往生）、
+> 計画し直すと 9/10 完走。両方で転倒した `08OB89_00152` は、地点が地図の端（0.25m）にあったことによる境界の問題。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。
 > **指示書020 が `realtime-map` にマージされてから始めること**（020 の急斜面の膨らませと、転倒の判定を使う）。
 > ブランチは `codex/021-gazebo-online`（その時点の `realtime-map` の最新から）。結果は `conference/results/gazebo_online/`、報告は同じ場所の `REPORT_ja.md`。
 
