@@ -13,6 +13,7 @@ conference/results/gazebo_lidar/08OB89_00152.png
 conference/results/gazebo_lidar/PR_DESCRIPTION_ja.md
 conference/results/gazebo_lidar/README_ja.md
 conference/results/gazebo_lidar/REPORT_ja.md
+conference/results/gazebo_lidar/SUBMISSION_ja.md
 conference/results/gazebo_lidar/baseline_input_audit.json
 conference/results/gazebo_lidar/changed_files.txt
 conference/results/gazebo_lidar/gazebo_lidar_log.txt
@@ -30,6 +31,8 @@ conference/results/gazebo_lidar/verification/docker_launcher_log.txt
 conference/results/gazebo_lidar/verification/model_default_before.sdf
 conference/results/gazebo_lidar/verification/model_mass_before.sdf
 conference/results/gazebo_lidar/verification/planners_before_log.txt
+conference/results/gazebo_lidar/verification/pr_create_log.txt
+conference/results/gazebo_lidar/verification/pr_rest_log.txt
 conference/results/gazebo_lidar/verification/prepare_console_log.txt
 conference/results/gazebo_lidar/verification/preservation_audit.json
 conference/results/gazebo_lidar/verification/protocol.json
