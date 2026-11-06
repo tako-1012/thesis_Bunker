@@ -1,0 +1,5 @@
+[rule_first zoom] 08OB86_-0205: same paths as rule_first (offline.csv match True).
+  top strip: path bounding box + 10 m, x 14.8-184.2 m, y 103.8-145.2 m (20 m bar)
+  bottom: enlarged x 55-125 m, y 99-149 m (10 m bar), rectangle on the strip
+  A 1:1 crop of the path bounding box + 10 m would be about 169 m square (paths span ~149 m x ~21 m),
+  no larger than the original figure, so the route is shown as a strip plus an enlarged window.
