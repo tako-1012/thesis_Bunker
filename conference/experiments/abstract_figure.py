@@ -116,6 +116,88 @@ def draw(sc, paths, path_png, path_pdf):
     return lo, hi
 
 
+def _background(ax, sc):
+    tm = sc["tmap"]
+    n = tm.shape[0]
+    extent = [0, n * RESOLUTION, 0, n * RESOLUTION]
+    ax.imshow(np.clip(tm.slope, 0, STEEP).T, origin="lower", extent=extent, cmap="Greys", vmin=0, vmax=STEEP * 1.25)
+    for mask, colour in [(tm.slope > STEEP, "#d62728"), (sc["water"], "#9ecae1"), (sc["nodata"], "#c7b9e3")]:
+        ax.imshow(np.ma.masked_where(~mask.T, mask.T), origin="lower", extent=extent,
+                  cmap=ListedColormap([colour]), vmin=0, vmax=1, interpolation="nearest")
+
+
+def _scalebar(ax, lo, hi, bar, right=False):
+    w, h = hi[0] - lo[0], hi[1] - lo[1]
+    x0, y0 = (hi[0] - 0.04 * w - bar if right else lo[0] + 0.04 * w), lo[1] + 0.08 * h
+    ax.plot([x0, x0 + bar], [y0, y0], color="black", lw=2, solid_capstyle="butt")
+    ax.text(x0 + bar / 2, y0 + 0.04 * h, f"{bar:.0f} m", ha="center", va="bottom", fontsize=7,
+            bbox=dict(fc="white", ec="none", alpha=0.7, pad=0.5))
+
+
+def draw_zoom(sc, paths, path_png, path_pdf, zoom_lo, zoom_hi, margin_m=10.0):
+    """Square panel: whole route as a strip (top) and an enlarged window where the paths part (bottom)."""
+    pts = np.vstack([(p["path"] + 0.5) * RESOLUTION for p in paths.values()])
+    lo, hi = pts.min(axis=0) - margin_m, pts.max(axis=0) + margin_m
+    zoom_lo, zoom_hi = np.asarray(zoom_lo, float), np.asarray(zoom_hi, float)
+    plt.rcParams.update({"font.size": 8, "font.family": "DejaVu Sans"})
+    top_h = (hi[1] - lo[1]) / (hi[0] - lo[0])
+    bottom_h = (zoom_hi[1] - zoom_lo[1]) / (zoom_hi[0] - zoom_lo[0])
+    fig, (top, bottom) = plt.subplots(2, 1, figsize=(1.8, 1.8), gridspec_kw=dict(height_ratios=[top_h, bottom_h]))
+    style = {"A*": dict(color="#0072B2", ls=(0, (3, 1.5)), lw=1.4), "TA*-S": dict(color="#E69F00", ls="-", lw=1.4)}
+    for ax, (a, b) in [(top, (lo, hi)), (bottom, (zoom_lo, zoom_hi))]:
+        _background(ax, sc)
+        for label in ["A*", "TA*-S"]:
+            p = (paths[label]["path"] + 0.5) * RESOLUTION
+            ax.plot(p[:, 0], p[:, 1], label=label, **dict(style[label], lw=style[label]["lw"] * (0.8 if ax is top else 1)))
+        ax.set_xlim(a[0], b[0])
+        ax.set_ylim(a[1], b[1])
+        ax.set_aspect("equal")
+        ax.set_xticks([])
+        ax.set_yticks([])
+    start = (paths["A*"]["path"][0] + 0.5) * RESOLUTION
+    goal = (paths["A*"]["path"][-1] + 0.5) * RESOLUTION
+    top.plot(*start, marker="o", ms=4, mfc="white", mec="black", mew=0.8, ls="none")
+    top.plot(*goal, marker="*", ms=6, mfc="black", mec="white", mew=0.4, ls="none")
+    top.annotate("S", start, xytext=(1, -3), textcoords="offset points", ha="left", va="top", fontsize=7, weight="bold")
+    top.annotate("G", goal, xytext=(2, 2), textcoords="offset points", fontsize=7, weight="bold")
+    # Outline of the enlarged window, clipped to the strip so all four edges show.
+    r_lo = np.maximum(zoom_lo, lo + 0.6)
+    r_hi = np.minimum(zoom_hi, hi - 0.6)
+    top.add_patch(plt.Rectangle(r_lo, *(r_hi - r_lo), fill=False, ec="black", lw=0.8))
+    _scalebar(top, lo, hi, 20.0)
+    _scalebar(bottom, zoom_lo, zoom_hi, 10.0, right=True)
+    bottom.legend(loc="upper right", fontsize=8, framealpha=0.9, handlelength=2.0, borderpad=0.3, labelspacing=0.2)
+    fig.tight_layout(pad=0.05, h_pad=0.2)
+    fig.savefig(path_png, dpi=300)
+    fig.savefig(path_pdf)
+    plt.close(fig)
+    return lo, hi
+
+
+# Enlarged window for the requested rule-1 figure: where the paths part and >25 deg cells lie
+# (steep cells near the route are at x 60-120 m); fixed by geometry, not by any result.
+ZOOM = dict(rule_first=((55.0, 99.0), (125.0, 149.0)))
+
+
+def main_zoom():
+    offline = pd.read_csv(OFFLINE)
+    chosen, _ = choose(offline)
+    name = chosen["rule_first"]
+    sc, paths = paths_for(name, offline)
+    if not all(c[2] for p in paths.values() for c in p["check"].values()):
+        raise RuntimeError("recomputed paths differ from offline.csv")
+    stem = OUT / f"astar_vs_tas_rule_first_{name}_zoom"
+    lo, hi = draw_zoom(sc, paths, stem.with_suffix(".png"), stem.with_suffix(".pdf"), *ZOOM["rule_first"])
+    zl, zh = ZOOM["rule_first"]
+    text = (f"[rule_first zoom] {name}: same paths as rule_first (offline.csv match True).\n"
+            f"  top strip: path bounding box + 10 m, x {lo[0]:.1f}-{hi[0]:.1f} m, y {lo[1]:.1f}-{hi[1]:.1f} m (20 m bar)\n"
+            f"  bottom: enlarged x {zl[0]:.0f}-{zh[0]:.0f} m, y {zl[1]:.0f}-{zh[1]:.0f} m (10 m bar), rectangle on the strip\n"
+            "  A 1:1 crop of the path bounding box + 10 m would be about 169 m square (paths span ~149 m x ~21 m),\n"
+            "  no larger than the original figure, so the route is shown as a strip plus an enlarged window.\n")
+    (OUT / "abstract_figure_zoom_log.txt").write_text(text)
+    print(text)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     offline = pd.read_csv(OFFLINE)
@@ -151,4 +233,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main_zoom() if "--zoom" in sys.argv else main()
