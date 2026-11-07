@@ -2,11 +2,12 @@
 
 重い比較実験・学習・Gazebo のシミュレーションは、研究 PC「hayashi」が使えるときは**この PC で優先して実行する**。
 （クラウドの Docker で Gazebo を走らせると、CPU の描画のため実時間の 0.3 倍まで落とす必要があった。022・023 を参照。）
-この文書は利用者が確認した情報（2026-11-07 時点）。変わったら更新すること。
+この文書は利用者が確認した情報（2026-11-07 時点。同日、Mac からの公開鍵認証を設定）。変わったら更新すること。
 
 ## 接続
-- `ssh kotaro@100.86.47.99`（Tailscale 経由）。同じ LAN と、Mac のテザリング（別の回線）の両方で接続を確認済み。
-- **SSH の公開鍵認証はまだ設定していない**。今はパスワードの入力が必要（パスワードはリポジトリに書かない。エージェントは聞き出さない）。
+- Mac からは **`ssh hayashi`**（公開鍵認証、2026-11-07 に設定済み）。Mac の `~/.ssh/config` の別名で、実体は `kotaro@100.86.47.99`（Tailscale 経由）。
+  同じ LAN と、Mac のテザリング（別の回線）の両方で接続を確認済み。
+- 別名のない端末からは `ssh kotaro@100.86.47.99`（その端末に鍵がなければパスワードの入力が必要。パスワード・秘密鍵はリポジトリに書かない。エージェントは聞き出さない）。
 - つながらないときは、原因を区別して報告する：
   - `Permission denied (password/publickey)` など → **認証の誤り**（PC は動いている）
   - `Connection timed out`／`No route to host` → **PC の停止、Tailscale が切れている、ネットワーク不通**
@@ -49,7 +50,7 @@
 
 ## 次回からの手順（例：Gazebo の LiDAR の 10 か所）
 ```bash
-ssh kotaro@100.86.47.99                 # パスワードを入力
+ssh hayashi                             # Mac から（公開鍵認証）
 tmux new -s lidar_fine10
 cd /home/kotaro/thesis_Bunker && git fetch origin && git checkout realtime-map && git pull
 git rev-parse HEAD; git status --short   # 記録する
