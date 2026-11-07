@@ -1,0 +1,10 @@
+8.11.0
+Starting >>> thesis_bunker_mission
+Finished <<< thesis_bunker_mission [1.89s]
+Starting >>> thesis_bunker_gz
+Finished <<< thesis_bunker_gz [1.18s]
+
+Summary: 2 packages finished [3.41s]
+08OB86_00294 completed
+08OB86_-0205 completed
+08OB87_-0706 completed
