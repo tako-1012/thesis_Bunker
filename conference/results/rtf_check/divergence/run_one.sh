@@ -10,7 +10,7 @@ PATCH=08OB87_-0706
 DOMAIN=61
 case "$COND" in
   R1) T=0.3; GPU_ARGS=(); SOFT=1 ;;
-  R2) T=1.0; GPU_ARGS=(--gpus all -e NVIDIA_DRIVER_CAPABILITIES=all); SOFT=0 ;;
+  R2) T=1.0; GPU_ARGS=(--device nvidia.com/gpu=all); SOFT=0 ;;  # CDI: --gpus all gave no /dev/dri or NVIDIA EGL vendor file
   *) echo "unknown condition"; exit 2 ;;
 esac
 cd "$WT" || exit 1

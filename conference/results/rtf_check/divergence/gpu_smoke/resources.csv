@@ -1,0 +1,27 @@
+wall,cpu_avg_pct,cpu_max_core_pct,mem_used_gib,gpu_util_pct,gpu_mem_mib,gpu_power_w,gpu_temp_c,top_procs_pct
+2026-11-07T19:55:25+0900,5.4,33.0,3.23,0,15,5.13,54,containerd=1 systemd=1 napi/phy0-0=1 dockerd=1 kworker/u80:4-mt76=1 systemd-logind=0
+2026-11-07T19:55:30+0900,4.1,18.4,3.90,1,134,7.66,54,python3=85 ruby=69 path_follower=18 parameter_bridg=6 kworker/u80:4-mt76=1 napi/phy0-0=0
+2026-11-07T19:55:35+0900,4.8,15.1,3.89,1,134,6.68,55,python3=115 ruby=74 path_follower=23 parameter_bridg=8 kworker/u80:6-mt76=1 khugepaged=0
+2026-11-07T19:55:40+0900,5.0,12.0,3.85,1,134,6.78,55,python3=115 ruby=74 path_follower=24 parameter_bridg=7 kworker/u80:3-events_power_efficient=1 napi/phy0-0=0
+2026-11-07T19:55:45+0900,4.6,18.2,3.85,1,134,6.76,56,python3=113 ruby=74 path_follower=23 parameter_bridg=7 kworker/u80:3-events_unbound=1 napi/phy0-0=0
+2026-11-07T19:55:50+0900,4.8,20.8,3.83,1,134,6.81,56,python3=117 ruby=74 path_follower=23 parameter_bridg=7 kworker/u80:6-mt76=1 napi/phy0-0=0
+2026-11-07T19:55:55+0900,8.6,20.6,3.83,1,134,6.85,57,python3=116 ruby=74 path_follower=24 parameter_bridg=7 kworker/u80:2-events_power_efficient=1 napi/phy0-0=0
+2026-11-07T19:56:00+0900,8.7,17.6,3.83,1,134,6.89,57,python3=110 ruby=75 path_follower=23 parameter_bridg=7 kworker/u80:6-flush-259:0=1 irq/9-acpi=0
+2026-11-07T19:56:05+0900,8.9,20.7,3.82,1,134,6.91,58,python3=121 ruby=74 path_follower=23 parameter_bridg=7 kworker/u80:4-flush-259:0=1 napi/phy0-0=0
+2026-11-07T19:56:11+0900,8.8,32.6,3.83,1,134,6.93,58,python3=117 ruby=74 path_follower=23 parameter_bridg=7 kworker/u80:6-events_power_efficient=1 kworker/u80:2-mt76=0
+2026-11-07T19:56:16+0900,13.3,29.4,3.83,0,134,7.03,59,python3=128 ruby=75 path_follower=24 parameter_bridg=7 kworker/u80:3-mt76=1 napi/phy0-0=0
+2026-11-07T19:56:21+0900,15.7,23.9,3.84,0,134,7.05,59,python3=119 ruby=74 path_follower=23 parameter_bridg=8 kworker/u80:6-mt76=1 rcu_preempt=0
+2026-11-07T19:56:26+0900,15.9,32.8,3.83,1,134,7.05,60,python3=129 ruby=74 path_follower=24 parameter_bridg=8 kworker/u80:6-events_power_efficient=1 irq/9-acpi=0
+2026-11-07T19:56:31+0900,16.5,27.1,3.85,0,134,7.06,60,python3=148 ruby=75 path_follower=24 parameter_bridg=8 kworker/u80:3-mt76=1 irq/9-acpi=0
+2026-11-07T19:56:36+0900,15.6,29.6,3.83,0,134,7.01,59,python3=135 ruby=74 path_follower=23 parameter_bridg=7 kworker/u80:6-writeback=1 irq/9-acpi=0
+2026-11-07T19:56:41+0900,15.3,26.4,3.84,0,134,7.05,58,python3=139 ruby=74 path_follower=23 parameter_bridg=8 kworker/u80:6-mt76=1 irq/9-acpi=0
+2026-11-07T19:56:46+0900,14.9,26.1,3.85,1,134,6.99,58,python3=131 ruby=75 path_follower=24 parameter_bridg=8 kworker/u80:6-mt76=1 napi/phy0-0=1
+2026-11-07T19:56:51+0900,14.9,27.7,3.85,0,134,6.93,57,python3=126 ruby=74 path_follower=24 parameter_bridg=7 kworker/u80:6-mt76=1 napi/phy0-0=0
+2026-11-07T19:56:56+0900,16.1,26.2,3.84,1,134,6.92,57,python3=120 ruby=75 path_follower=23 parameter_bridg=7 kworker/u80:3-flush-259:0=1 gnome-shell=0
+2026-11-07T19:57:01+0900,15.5,28.5,3.84,0,134,6.98,57,python3=120 ruby=74 path_follower=24 parameter_bridg=7 napi/phy0-0=1 systemd-logind=1
+2026-11-07T19:57:06+0900,14.6,29.1,3.84,1,134,6.86,57,python3=125 ruby=75 path_follower=23 parameter_bridg=8 kworker/u80:4-events_unbound=1 napi/phy0-0=0
+2026-11-07T19:57:11+0900,15.9,31.3,3.86,0,134,6.91,57,python3=133 ruby=74 path_follower=23 parameter_bridg=7 kworker/u80:6-events_power_efficient=1 anydesk=0
+2026-11-07T19:57:16+0900,15.1,24.6,3.86,0,134,6.92,57,python3=119 ruby=74 path_follower=24 parameter_bridg=7 kworker/u80:3-mt76=1 napi/phy0-0=0
+2026-11-07T19:57:21+0900,17.4,27.0,3.84,0,134,6.92,57,python3=123 ruby=74 path_follower=23 parameter_bridg=7 kworker/u80:4-mt76=1 tailscaled=0
+2026-11-07T19:57:26+0900,15.8,29.5,3.84,0,134,6.94,58,python3=120 ruby=74 path_follower=23 parameter_bridg=7 napi/phy0-0=0 kworker/u80:4-mt76=0
+2026-11-07T19:57:31+0900,14.1,28.0,2.20,0,15,6.66,59,dockerd=1 systemd-logind=1 nv_mem_pool_scrubber_queue=1 gvfs-udisks2-vo=1 containerd=1 systemd=0

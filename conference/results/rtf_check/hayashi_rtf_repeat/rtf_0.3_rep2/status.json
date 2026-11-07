@@ -1,0 +1,46 @@
+{
+  "run": "rtf_0.3_rep2",
+  "simulation": {
+    "docker_exit": 0,
+    "timed_out": false,
+    "manifest": "ok",
+    "cases": [
+      {
+        "patch": "08OB87_-0706",
+        "termination": "completed",
+        "error": "",
+        "status": "completed",
+        "started_t": 5.16,
+        "finished_t": 462.15,
+        "wall_elapsed_s": 1523.3071474079989,
+        "online_error": null
+      }
+    ],
+    "execution": "finished",
+    "real_time_factor": 0.3,
+    "stale_timeout_s": 1.0,
+    "map_method": "fine",
+    "gazebo": "8.11.0",
+    "ok": true
+  },
+  "measurement": {
+    "probe_rows": 1554,
+    "resource_rows": 310,
+    "gz_stats_samples": 127,
+    "world_audit": [
+      "8:      <render_engine>ogre2</render_engine>",
+      "12:      <max_step_size>0.001</max_step_size>",
+      "13:      <real_time_factor>0.3</real_time_factor>",
+      "3743:        <update_rate>50</update_rate>",
+      "3750:        <update_rate>10.0</update_rate>"
+    ],
+    "probe_stderr_tail": [],
+    "ok": true
+  },
+  "existing_report": {
+    "lidar_checks_exit": 0,
+    "result": "passed",
+    "last_error": "",
+    "note": "execution is saved before summarize runs, so a report failure does not touch raw records"
+  }
+}
