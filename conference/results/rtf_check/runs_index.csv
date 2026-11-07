@@ -10,3 +10,13 @@ order,started,group,patch,rendering,real_time_factor,stale_timeout_s,map_method,
 9,20261107T184430,hayashi_rtf_repeat/rtf_0.3_rep2,08OB87_-0706,software,0.3,1.0,fine,50,completed,,hayashi_rtf_repeat/rtf_0.3_rep2/physical_1/raw/08OB87_-0706
 10,20261107T191033,hayashi_rtf_repeat/rtf_1_rep3,08OB87_-0706,software,1.0,1.0,fine,50,completed,,hayashi_rtf_repeat/rtf_1_rep3/physical_1/raw/08OB87_-0706
 11,20261107T191854,hayashi_rtf_repeat/rtf_0.3_rep3,08OB87_-0706,software,0.3,1.0,fine,50,completed,,hayashi_rtf_repeat/rtf_0.3_rep3/physical_1/raw/08OB87_-0706
+12,20261107T195902,divergence/R1_01,08OB87_-0706,software,0.3,1.0,fine,61,completed,,divergence/R1_01/physical_1/raw/08OB87_-0706
+13,20261107T202508,divergence/R2_01,08OB87_-0706,gpu,1.0,1.0,fine,61,completed,,divergence/R2_01/physical_1/raw/08OB87_-0706
+14,20261107T203332,divergence/R1_02,08OB87_-0706,software,0.3,1.0,fine,61,completed,,divergence/R1_02/physical_1/raw/08OB87_-0706
+15,20261107T205933,divergence/R2_02,08OB87_-0706,gpu,1.0,1.0,fine,61,completed,,divergence/R2_02/physical_1/raw/08OB87_-0706
+16,20261107T210755,divergence/R1_03,08OB87_-0706,software,0.3,1.0,fine,61,completed,,divergence/R1_03/physical_1/raw/08OB87_-0706
+17,20261107T213356,divergence/R2_03,08OB87_-0706,gpu,1.0,1.0,fine,61,completed,,divergence/R2_03/physical_1/raw/08OB87_-0706
+18,20261107T214221,divergence/R1_04,08OB87_-0706,software,0.3,1.0,fine,61,completed,,divergence/R1_04/physical_1/raw/08OB87_-0706
+19,20261107T220841,divergence/R2_04,08OB87_-0706,gpu,1.0,1.0,fine,61,completed,,divergence/R2_04/physical_1/raw/08OB87_-0706
+20,20261107T221702,divergence/R1_05,08OB87_-0706,software,0.3,1.0,fine,61,no_path,,divergence/R1_05/physical_1/raw/08OB87_-0706
+21,20261107T222302,divergence/R2_05,08OB87_-0706,gpu,1.0,1.0,fine,61,completed,,divergence/R2_05/physical_1/raw/08OB87_-0706

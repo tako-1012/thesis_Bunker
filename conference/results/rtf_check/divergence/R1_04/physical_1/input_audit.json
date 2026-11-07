@@ -1,0 +1,182 @@
+[
+  {
+    "patch": "08OB86_00294",
+    "las_sha256": "a28761a28ecd3b99b26d1d7e9899c0eba55a43047c726a74361f08e022b81e72",
+    "signatures": {
+      "truth": {
+        "elev": "9226aae1721570145c3d1efa224f51d4ad4f6f570cdfd51ad00b7fbb3f03570b",
+        "lethal": "7ed14f758ece6fc21fe49419454b3e62c3f88c30d2d6052f5bbf897a7561ea62",
+        "rock": "b0b52cb5a9e764910ac8d4e69dcc4f950d853240096a466b437693facb96ba87"
+      },
+      "prior": {
+        "elev": "06f417823b36cea218cf5ed2897911e772bdf63080178a788b43885321ab75bf",
+        "lethal": "955836072744a537ab22514c7fc14a73acf7a02f3575e252da1a69a042fcb6c7",
+        "rock": "8b51c5179bc998be8bb2d0b63e48a869b2c0beb9ce0c65f3adc0bbdf6e878e5b"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB86_-0205",
+    "las_sha256": "5a363b942c0991542b46e1e8657088b641647726fd5a2af684327cb3cdb762c9",
+    "signatures": {
+      "truth": {
+        "elev": "aa94dc077e47aff6a0134a0e7fc3dda716a23f04d4de83256c2bb379043ed61b",
+        "lethal": "e46b1e845737da313eac2b893c2b750e71c919a453356fbf749cb6e2ae706bcc",
+        "rock": "221072c1cab9f2f48b7c03b74f7af552462697afe4c72881f3ce2b99bcf4b3da"
+      },
+      "prior": {
+        "elev": "7692fc79e1b4099af724d33ef3eab8949539cd4735aa57077f897cf2dfbac2a8",
+        "lethal": "f1225d7397f8e3937d5664ebb7e26d2ba78b04c0d7d962bd99fca9a250c737cb",
+        "rock": "6feb83e08f8cfefae386d327f9a32481b855a6548e753f343825a4f60f4b722c"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB87_-0706",
+    "las_sha256": "040ed7b94cd70b41e9d2b94259b40ab8c1210d849732b1132f34cb5230c64d64",
+    "signatures": {
+      "truth": {
+        "elev": "93aae56aa75e4bf624a1a070b22ee71ad23a7fa014756f3666e452e239a10a28",
+        "lethal": "77b9a58bec28a3f123f8cabee901a87a98be8d30b0f9c479b9efee2a5342ffb6",
+        "rock": "2c94c6c1ac6bd3ca4e50f2456d1ea65506785e1325cd58dd5ef78b2919b8acc7"
+      },
+      "prior": {
+        "elev": "53c049b7e1cf1940b928740f60e7f58eba47db505cfcdf76b8bc0c18db59869a",
+        "lethal": "053b5221d06b4dcd5ccbddbd8a0943db4109a85336637f3608f132dfb1c5f179",
+        "rock": "bba4745e20744684f84c4896c52ff0f8f222650dcd0fc5774bdf3b03542e683a"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB88_-1417",
+    "las_sha256": "f0ecb31bd4d851ea4c88ce0057e3c379591572d3b2308066f6120c061dd7c7cd",
+    "signatures": {
+      "truth": {
+        "elev": "0190c175785a846f181f4fe05da09035efa1b18d771ecba51ffe1c3dfb4d56cc",
+        "lethal": "f38c6a901e4a0ffbc99ef00207abecd9e42693bdd64bf70db1b6c09a870dfbf6",
+        "rock": "9733aa5ad147ecf7fecbc03ca331fbb493be5728ff32f063cafba28cb33a9762"
+      },
+      "prior": {
+        "elev": "0d68ad3e7b83d8ff2a9c31b7015a9716638cf627cf1452216c3f4feeb49c6b54",
+        "lethal": "2a4fa502deb5b40343bbffbd947c6221d87a39cf618615da804fdc887e59b14d",
+        "rock": "0110056d01ebf0cb4213f3efce21092b32c1f2c12ccaaa6ae19a6026a3efd955"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB88_-0167",
+    "las_sha256": "9896a3892eef5fc439daad325c22f149e0a2157c94daec0be60296ebbc5f06dc",
+    "signatures": {
+      "truth": {
+        "elev": "133cfb07d9e3e06ae81f5d60f30fe87a0f33e7f0d6c62ec34373cfda6a7d3fc8",
+        "lethal": "764a684bb1ff899bb2f01cd36131052e5dbf99ad993814321262a01fcc4e7b1a",
+        "rock": "b18ca235bff3c9fa4b9d6d05f3c8a463b687bb4f99c4dc6340d329b2530c8cd4"
+      },
+      "prior": {
+        "elev": "23722bc88cf47c848bc9e12321d347247b75f09c27f10492985146ca14779aed",
+        "lethal": "259f3907787df5b726fefee3cf1026dbae420f1e0fccd9eb532a06b6c5326d94",
+        "rock": "71842a3c59c1ccbe171d140914a1ac4c1b3b4458171e7a718434b44b023b5d1e"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB88_00332",
+    "las_sha256": "36aa756efe874f15dbd9ce45d1ccb85997c6d9131ac20bbaeab3ed2c368e172d",
+    "signatures": {
+      "truth": {
+        "elev": "10fbef2ca4f256542e070d6dc1c2a0eef69e1cf78f0a2360c58cd3aa43c759cc",
+        "lethal": "aa52077035de8a49b5cdb396c3f2c0e2c504d5fcfabcc2a2d4ef1bb9f3be2bd1",
+        "rock": "1e013680f6df39c44e88e3c8cd5b14d2539b662e3100216c0501e9cad03c0e54"
+      },
+      "prior": {
+        "elev": "1f6774027103f5d3629c0e993ff7b8aa5fbb356a1e84ee5e1dee6c9d828b4928",
+        "lethal": "e908c08af69bb5ace1d25e8f3b4cc043f50f553718100511c9d57fa0b35775a1",
+        "rock": "739172300967b99e78a2cd0d5afa164e1cff83c5ba4e8893a93d40fa8763ef08"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB88_01832",
+    "las_sha256": "709d8f2f68753a49293a315091a595bc6f489439cbfcf763920c23abbeb71d84",
+    "signatures": {
+      "truth": {
+        "elev": "a496211695a40261c52aeeccd89a93439338bd80cce09421edfccbe797f51fa4",
+        "lethal": "0f428c5f00ed2725d62cb89cad4d476b4b83cf7f4fee2ed92ad2bf8d130a242d",
+        "rock": "9f8cb7448827d13f6c0eebbdbdf450eaccb7045ffb2129f8c50817ee93537c53"
+      },
+      "prior": {
+        "elev": "23565122185b3529415815b007f6b63b5c51a859312db88a5e036b0d8bc18790",
+        "lethal": "7ec00b5a8f1d0c948d0c422a712530266fbeccf532244961c26a37212156def5",
+        "rock": "f7bd00cdfbd51194bef9aed8718d5f91053d207ae9abe954d44b4567bcbebca1"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB89_00152",
+    "las_sha256": "82dfbd220de3f07afa0161c884941f8dba65c3d8d2ad4d8fef59d18d5efd7b50",
+    "signatures": {
+      "truth": {
+        "elev": "a329fca378492fd499f7cfc98e0c43a731fe05063343dfc6e962ca335f6e356f",
+        "lethal": "569476611522d38cb2a37dd7a31581e779de501dff490e56fe887ac74c1fb588",
+        "rock": "a39ec589d5c1e7cf1fb8f817d0e047411c8e6c7a0b3fd9559a3771bf7b65a8d4"
+      },
+      "prior": {
+        "elev": "aafbb2e5214391454aa2888c6350759d726267104c65135b34b8a44a498121fd",
+        "lethal": "83ff4866c6d7474aae926d5498e2fb9289f6734ecb152d54b43b5dd785e80a60",
+        "rock": "f31bc10da7931780eda075fe9aadcad104962beb2d0ac630ed0c3470f5f009bd"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB89_-0347",
+    "las_sha256": "4308458273952d62958f2f4a080253e9a676337594dd1c6ea87f277c92e12882",
+    "signatures": {
+      "truth": {
+        "elev": "e5f64bb29fc4e4675de275de2b4e544418464473888ef57e7fd3b7e360bbd47b",
+        "lethal": "604b8b1c47e6506d4fd34257ccfb4525cef5b2f0b5a99125613220dc6b3792fa",
+        "rock": "97aee29b11e415025f724ff0c227af7945f6d890b5c739586c250a9d54bdaca2"
+      },
+      "prior": {
+        "elev": "ecac9095660a758f9efb52f296d0cfcf537eca082e8df4446339084989faf076",
+        "lethal": "616ec5d0c56be61768cd4ee0757e9008fce35525f7d5fbfcf38074abdd026491",
+        "rock": "bc189b89ffe4726466e714a404498fdaab2f1220dec9b7dda8ee302f10d2dfdf"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  },
+  {
+    "patch": "08OB89_-0847",
+    "las_sha256": "c530894cc3784c412abc8a15837e638b852236450421106136e63463814e6476",
+    "signatures": {
+      "truth": {
+        "elev": "eed160844e52db9178f22e4e8790fd4534420b34c660555bca34de7a72ad74b0",
+        "lethal": "a931a54c08d67cc4e953a21af7a9cc911ef0917fa3a2ec66854e98a137cb0055",
+        "rock": "6f2c0c9e9e6ebf92b8c533e5335c2f4fe778591a81eacd26aee19a4211589755"
+      },
+      "prior": {
+        "elev": "b95f74dfd95d40020642542121ae54ae6726638b4d54001d2cbe7f2c5bb7320d",
+        "lethal": "3df5176470c9487cef2af37fb0084d12330d6b37c6672889351969f1809055b0",
+        "rock": "1319048c6ee1bb2f24933d31835d212ee40aad1e23ed6fec55e7bdf11b93ee2d"
+      }
+    },
+    "historical_truth_elevation_equal": false,
+    "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+  }
+]

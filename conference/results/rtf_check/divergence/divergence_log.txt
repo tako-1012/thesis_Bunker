@@ -300,3 +300,73 @@
 -- outcome
    A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
    B {"status": "completed", "elapsed": 456.6, "replans": 116, "plan_calls": 117, "failed_plans": 0, "end_xy": [24.81, 100.15]}
+
+===== 段階3：経路なしになった R1_05 と各走行の比較 =====
+##### first_0.3 vs R1_05
+== first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== R1_05: results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   protocol: None | rtf_check
+-- start / first cloud
+   started_t A 5.160 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.2e-08; range diff mean 0.0001 std 0.0286 m (n=12742)
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 871, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.056, 'update_s_max': 0.149}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 0.89, "same_time_at_s": 59.0, "first_over_0_5m_s": 16.5, "shape_max": 0.72, "shape_p95": 0.54, "shape_at_same_time_max": 0.53}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "no_path", "elapsed": 96.2, "replans": 42, "plan_calls": 49, "failed_plans": 1, "end_xy": [76.88, 71.03], "lethal_within_1m_of_robot": 9, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 47, "reason": "distance", "success": true, "plan_time_s": 0.1257070870015013}, {"n_plans": 48, "reason": "distance", "success": true, "plan_time_s": 0.0864418919991294}, {"n_plans": 49, "reason": "distance", "success": false, "plan_time_s": 0.0066386979997332}]}
+##### cloud_official vs R1_05
+== cloud: results/lidar_fine/physical_10/raw/08OB87_-0706
+== R1_05: results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   protocol: None | rtf_check
+-- start / first cloud
+   started_t A 5.180 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.2e-08; range diff mean 0.0001 std 0.0286 m (n=12742)
+-- sensing / mapping
+   A {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   B {'updates': 871, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.056, 'update_s_max': 0.149}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 96.2, "same_time_max": 1.02, "same_time_at_s": 15.0, "first_over_0_5m_s": 9.5, "shape_max": 1.02, "shape_p95": 0.94, "shape_at_same_time_max": 1.02}
+-- outcome
+   A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+   B {"status": "no_path", "elapsed": 96.2, "replans": 42, "plan_calls": 49, "failed_plans": 1, "end_xy": [76.88, 71.03], "lethal_within_1m_of_robot": 9, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 47, "reason": "distance", "success": true, "plan_time_s": 0.1257070870015013}, {"n_plans": 48, "reason": "distance", "success": true, "plan_time_s": 0.0864418919991294}, {"n_plans": 49, "reason": "distance", "success": false, "plan_time_s": 0.0066386979997332}]}
+##### R1_01 vs R1_05
+== R1_01: results/rtf_check/divergence/R1_01/physical_1/raw/08OB87_-0706
+== R1_05: results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.5e-08; range diff mean -0.0002 std 0.0285 m (n=12742)
+-- sensing / mapping
+   A {'updates': 3929, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 0, 'update_s_median': 0.053, 'update_s_max': 0.078}
+   B {'updates': 871, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.056, 'update_s_max': 0.149}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 96.2, "same_time_max": 1.91, "same_time_at_s": 17.5, "first_over_0_5m_s": 10.0, "shape_max": 1.91, "shape_p95": 1.68, "shape_at_same_time_max": 1.9}
+-- outcome
+   A {"status": "completed", "elapsed": 457.8, "replans": 133, "plan_calls": 134, "failed_plans": 0, "end_xy": [24.81, 100.15]}
+   B {"status": "no_path", "elapsed": 96.2, "replans": 42, "plan_calls": 49, "failed_plans": 1, "end_xy": [76.88, 71.03], "lethal_within_1m_of_robot": 9, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 47, "reason": "distance", "success": true, "plan_time_s": 0.1257070870015013}, {"n_plans": 48, "reason": "distance", "success": true, "plan_time_s": 0.0864418919991294}, {"n_plans": 49, "reason": "distance", "success": false, "plan_time_s": 0.0066386979997332}]}
+##### R1_01 vs R2_01
+== R1_01: results/rtf_check/divergence/R1_01/physical_1/raw/08OB87_-0706
+== R2_01: results/rtf_check/divergence/R2_01/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.160 B 5.220; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.7e-08; range diff mean 0.0001 std 0.0284 m (n=12742)
+-- sensing / mapping
+   A {'updates': 3929, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 0, 'update_s_median': 0.053, 'update_s_max': 0.078}
+   B {'updates': 3947, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 12, 'update_s_median': 0.063, 'update_s_max': 0.241}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 457.8, "same_time_max": 3.18, "same_time_at_s": 315.5, "first_over_0_5m_s": 11.5, "shape_max": 2.56, "shape_p95": 2.13, "shape_at_same_time_max": 2.42}
+-- outcome
+   A {"status": "completed", "elapsed": 457.8, "replans": 133, "plan_calls": 134, "failed_plans": 0, "end_xy": [24.81, 100.15]}
+   B {"status": "completed", "elapsed": 459.8, "replans": 126, "plan_calls": 131, "failed_plans": 0, "end_xy": [24.79, 100.16]}
