@@ -1,0 +1,69 @@
+{
+  "rtf_1": {
+    "follower_replans": 40,
+    "handoff_wall_median_s": 0.05176178650026486,
+    "handoff_wall_p95_s": 0.10198902799947973,
+    "handoff_wall_max_s": 0.10265226299998176,
+    "handoff_sim_median_s": 0.05000000000000071,
+    "handoff_sim_p95_s": 0.10000000000000142,
+    "handoff_sim_max_s": 0.10000000000000142,
+    "pose_shift_median_m": 0.0499885517218877,
+    "pose_shift_max_m": 0.10001761820178057,
+    "update_wall_first_quarter_median_s": 0.06866324100019483,
+    "update_wall_last_quarter_median_s": 0.06979787249974834,
+    "observed_cells_end": 38384,
+    "active_samples": 49,
+    "active_cpu_avg_median": 12.6,
+    "active_cpu_avg_max": 21.9,
+    "active_core_max_median": 19.1,
+    "active_core_max_p95": 26.8,
+    "active_core_max_max": 37.4,
+    "gz_pct_median": 141.0,
+    "gz_pct_max": 144.0,
+    "python_pct_median": 124.0,
+    "python_pct_max": 136.0,
+    "path_length_m": 237.63047385736292,
+    "end_xy": [
+      24.66,
+      134.78
+    ],
+    "roll_abs_max_deg": 11.535765865865,
+    "pitch_abs_max_deg": 16.301169379003248
+  },
+  "rtf_0.3": {
+    "follower_replans": 51,
+    "handoff_wall_median_s": 0.1679666609998094,
+    "handoff_wall_p95_s": 0.16881224999997357,
+    "handoff_wall_max_s": 0.1694282549997297,
+    "handoff_sim_median_s": 0.04999999999999982,
+    "handoff_sim_p95_s": 0.05000000000001137,
+    "handoff_sim_max_s": 0.05000000000001137,
+    "pose_shift_median_m": 0.04997663966840272,
+    "pose_shift_max_m": 0.09882696325862458,
+    "update_wall_first_quarter_median_s": 0.05730843600031221,
+    "update_wall_last_quarter_median_s": 0.04998294600045483,
+    "observed_cells_end": 39709,
+    "active_samples": 162,
+    "active_cpu_avg_median": 5.3,
+    "active_cpu_avg_max": 5.9,
+    "active_core_max_median": 11.45,
+    "active_core_max_p95": 15.1,
+    "active_core_max_max": 18.7,
+    "gz_pct_median": 47.0,
+    "gz_pct_max": 49.0,
+    "python_pct_median": 43.0,
+    "python_pct_max": 51.0,
+    "path_length_m": 237.81210275277988,
+    "end_xy": [
+      24.6,
+      134.78
+    ],
+    "roll_abs_max_deg": 10.981471964580729,
+    "pitch_abs_max_deg": 15.082729293609342
+  },
+  "trajectory_gap_rtf1_to_rtf03_m": {
+    "median": 0.6444699746086199,
+    "p95": 10.979242924428933,
+    "max": 14.453485578002999
+  }
+}
