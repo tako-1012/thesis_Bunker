@@ -43,7 +43,7 @@ python3 -m tests.test_pointcloud_map_fine
 
 ## 重い実験の実行先（研究 PC「hayashi」）
 - 重い比較実験・学習・Gazebo のシミュレーションは、研究 PC「hayashi」が使えるときは、そこで優先して実行する。
-- 接続（`ssh kotaro@100.86.47.99`、Tailscale 経由）、PC の構成、環境の場所、実験の前後の手順は
+- 接続（利用者の Mac からは `ssh hayashi` で公開鍵認証。中身は `kotaro@100.86.47.99`、Tailscale 経由）、PC の構成、環境の場所、実験の前後の手順は
   `conference/RESEARCH_PC_ja.md` を読むこと。
 - 実験の前に、実行するコミット・未コミットの変更・依存の環境を確かめる。長い処理は tmux で実行し、
   条件・コミット ID・ログ・結果を実験ごとの保存先に残す。GPU が使える処理では GPU を使う。
