@@ -41,6 +41,15 @@ python3 -m tests.test_pointcloud_map_fine
 ```
 作業を終える前に、`conference/tests/` の下にあるすべてのテストを実行すること。
 
+## 重い実験の実行先（研究 PC「hayashi」）
+- 重い比較実験・学習・Gazebo のシミュレーションは、研究 PC「hayashi」が使えるときは、そこで優先して実行する。
+- 接続（`ssh kotaro@100.86.47.99`、Tailscale 経由）、PC の構成、環境の場所、実験の前後の手順は
+  `conference/RESEARCH_PC_ja.md` を読むこと。
+- 実験の前に、実行するコミット・未コミットの変更・依存の環境を確かめる。長い処理は tmux で実行し、
+  条件・コミット ID・ログ・結果を実験ごとの保存先に残す。GPU が使える処理では GPU を使う。
+- サンドボックスの中で GPU や通信が制限されるときは、通常の Ubuntu の端末か SSH 先で実行する方法を使う。
+- 研究 PC が使えないときは、認証エラーか、PC の停止・ネットワークの不通かを分けて報告し、代わりの実行先を相談する。
+
 ## ブランチ
 - `realtime-map`：新しい研究作業の土台。PR は必ず `realtime-map` に向けて作る
   （`main` や `claude/laughing-tesla-igaehc` には向けない）。
