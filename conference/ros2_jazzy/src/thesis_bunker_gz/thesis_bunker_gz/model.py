@@ -5,7 +5,20 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
-def make_model(output, lab_mesh_dir="", mass_kg=150.0, *, lidar=False, lidar_height_m=0.8, lidar_spec=None):
+def make_model(output, lab_mesh_dir="", mass_kg=150.0, *, lidar=False, lidar_height_m=0.8, lidar_spec=None,
+               lidar_xyz=None, lidar_rpy=(0., 0., 0.), sensor_preset=None, depth_cameras=False):
+    if sensor_preset is not None:
+        if sensor_preset != 'real_bunker':
+            raise ValueError('unknown sensor preset')
+        from tapp.sensor_geometry import REAL_MOUNTS
+        from .lidar import LidarSpec
+        if lidar_spec is not None:
+            raise ValueError('real_bunker fixes the LiDAR specification')
+        lidar, lidar_height_m = True, 1.40
+        lidar_xyz, lidar_rpy = REAL_MOUNTS['lidar'].xyz, REAL_MOUNTS['lidar'].rpy
+        lidar_spec = LidarSpec(min_range_m=.9)
+    if depth_cameras and sensor_preset != 'real_bunker':
+        raise ValueError('depth cameras require explicit real_bunker preset')
     sdf = ET.Element("sdf", version="1.9")
     model = ET.SubElement(sdf, "model", name="bunker")
 
@@ -55,7 +68,12 @@ def make_model(output, lab_mesh_dir="", mass_kg=150.0, *, lidar=False, lidar_hei
     if lidar:
         from .lidar import add_lidar, LidarSpec
         add_lidar(body, sensor_height_m=lidar_height_m,
-                  spec=LidarSpec() if lidar_spec is None else lidar_spec)
+                  spec=LidarSpec() if lidar_spec is None else lidar_spec,
+                  sensor_xyz=lidar_xyz, sensor_rpy=lidar_rpy)
+    if depth_cameras:
+        from .depth_camera import add_depth_camera
+        for name in ('camera1', 'camera2'):
+            add_depth_camera(body, name=name, mount=REAL_MOUNTS[name])
     drive = node(
         model,
         "plugin",

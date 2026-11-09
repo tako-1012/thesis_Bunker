@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT/'ros2_jazzy/src/thesis_bunker_gz'))
 from thesis_bunker_gz.lidar import LidarSpec
+from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
 from tapp.real_beach import build_real, list_patches
 from tapp.mapfile import scenario_to_mapfile
@@ -27,7 +28,7 @@ from data_prep.export_gazebo import export_gazebo
 from ros2_jazzy.gz_checks.terrain_mesh import write_terrain_obj, use_mesh_visual
 from ros2_jazzy.gz_checks.online_batch_runtime import CsvChunks, map_signature, split_follower_logs
 from ros2_jazzy.gz_checks.online_batch_checks import TERMINAL, save_manifest
-from ros2_jazzy.gz_checks.lidar_map import fine_protocol, matched_task022_maps
+from ros2_jazzy.gz_checks.lidar_map import fine_protocol, matched_task022_maps, sensor_bridge_config
 
 BASELINE = ROOT/'results/gazebo_online/physical_run'
 
@@ -59,21 +60,29 @@ def verify_inputs(patch, meta, truth, prior):
 
 
 def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
-                  noise_stddev_m=.02, max_range_m=30., map_method='coarse'):
+                  noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy'):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output/'manifest.json').exists():
         raise FileExistsError('choose a new output; no existing recordings will be overwritten')
     if patch_count not in (3, 10):
         raise ValueError('run the first three beaches before extending to ten')
-    spec = LidarSpec(noise_stddev_m=noise_stddev_m, max_range_m=max_range_m)
+    configuration = sensor_configuration(sensors)
+    if configuration is not None:
+        if map_method != 'fine':
+            raise ValueError('real sensors require --map fine')
+        if noise_stddev_m != .02 or max_range_m != 30. or sensor_height_m not in (.8, 1.4) or obstacle_height_m != .3:
+            raise ValueError('task027 fixes the real sensor specification and threshold')
+        sensor_height_m = 1.4
+    spec = LidarSpec(noise_stddev_m=noise_stddev_m, max_range_m=max_range_m,
+                     **({'min_range_m': .9} if configuration is not None else {}))
     spec.validate()
     if not np.isfinite([sensor_height_m, obstacle_height_m]).all() or min(sensor_height_m, obstacle_height_m) <= 0:
         raise ValueError('height assumptions must be positive')
     if map_method not in ('coarse', 'fine'):
         raise ValueError('map method must be coarse or fine')
     fine_settings = fine_protocol() if map_method == 'fine' else None
-    if fine_settings is not None:
+    if fine_settings is not None and configuration is None:
         reference = json.loads((ROOT/'results/gazebo_lidar/physical_10/manifest.json').read_text())
         if (asdict(spec) != reference['lidar_spec'] or sensor_height_m != reference['sensor_height_m']
                 or obstacle_height_m != .3 or obstacle_height_m != reference['obstacle_height_m']):
@@ -97,6 +106,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                            for i, s in enumerate(scenarios)])
     if fine_settings is not None:
         manifest.update(fine_settings)
+    if configuration is not None:
+        manifest.update(sensor=sensors, sensors=sensors, sensor_configuration=configuration,
+                        experiment='task027 real sensors; not a matched task022/023 sensor comparison')
     save_manifest(output, manifest)
     return manifest
 
@@ -199,6 +211,8 @@ def run_checks(output, **kwargs):
                                start_cells=meta['start'], stops_cells=meta['stops'], order=meta['order'], lookahead_m=1., status='not_started')
                 def save_run():
                     (raw/'mission.json').write_text(json.dumps(mission, ensure_ascii=False, indent=2)+'\n')
+                if manifest.get('sensors', 'legacy') != 'legacy':
+                    mission['sensors'] = manifest['sensors']
                 save_run()
                 try:
                     folder = Path(temporary)/case['patch']
@@ -227,18 +241,27 @@ def run_checks(output, **kwargs):
                         uri.text = (world.parent/'heightmap.png').as_uri()
                     # GPU LiDAR sees visuals only; the heightmap visual crashes ogre2 without a GPU.
                     use_mesh_visual(tree, write_terrain_obj(truth['tmap'].elev, folder/'terrain.obj').resolve().as_uri())
+                    model_kwargs = dict(lidar=True, lidar_height_m=manifest['sensor_height_m'],
+                                        lidar_spec=LidarSpec(**manifest['lidar_spec']))
+                    if manifest.get('sensors', 'legacy') != 'legacy':
+                        model_kwargs = dict(sensor_preset='real_bunker', depth_cameras=manifest['sensors'].endswith('+depth2'))
                     model = ET.parse(make_model(folder/'bunker.sdf', mass_kg=truth['tmap'].robot.mass_kg,
-                                                lidar=True, lidar_height_m=manifest['sensor_height_m'],
-                                                lidar_spec=LidarSpec(**manifest['lidar_spec']))).find('model')
+                                                **model_kwargs)).find('model')
                     x, y = np.asarray(meta['start'])*RESOLUTION
                     z = float(truth['tmap'].elev[tuple(meta['start'])])+.1
                     ET.SubElement(model, 'pose').text = f'{x} {y} {z} 0 0 0'
                     w.append(model)
                     tree.write(folder/'world.sdf', encoding='utf-8', xml_declaration=True)
+                    bridge = ROOT/'ros2_jazzy/gz_checks/lidar_bridge.yaml'
+                    if manifest.get('sensors') == 'lidar_real+depth2':
+                        bridge_text = sensor_bridge_config(bridge.read_text(), manifest['sensors'])
+                        bridge = folder/'real_sensors_bridge.yaml'
+                        bridge.write_text(bridge_text)
+                        (raw/'real_sensors_bridge.yaml').write_text(bridge_text)
                     commands = [
                         ['gz', 'sim', '-s', '-r', '--headless-rendering', '--seed', '0', str(folder/'world.sdf')],
                         ['ros2', 'run', 'ros_gz_bridge', 'parameter_bridge', '--ros-args', '-p',
-                         'config_file:='+str(ROOT/'ros2_jazzy/gz_checks/lidar_bridge.yaml')],
+                         'config_file:='+str(bridge)],
                         ['ros2', 'run', 'thesis_bunker_mission', 'path_follower', '--ros-args', '-p', 'use_sim_time:=true',
                          '-p', 'online:=true', '-p', 'map_id:='+mission['map_id'], '-p', 'run_root:='+str(raw/'follower')],
                         [sys.executable, str(ROOT/'ros2_jazzy/gz_checks/lidar_planner.py'), '--ros-args', '-p', 'use_sim_time:=true',
@@ -249,6 +272,8 @@ def run_checks(output, **kwargs):
                          '-p', 'stale_timeout_s:='+str(manifest['stale_timeout_s'])]]
                     if manifest.get('map_method') == 'fine':
                         commands[-1].extend(['-p', 'map_method:=fine'])
+                    if manifest.get('sensors', 'legacy') != 'legacy':
+                        commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     for i, command in enumerate(commands):
                         stream = (raw/f'process_{i}.txt').open('w')
                         streams.append(stream)
@@ -301,6 +326,11 @@ def run_checks(output, **kwargs):
                     save_manifest(output, manifest)
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
+        if manifest.get('sensors', 'legacy') != 'legacy':
+            if manifest['execution'] == 'finished_with_errors':
+                raise RuntimeError('some real sensor trials could not run; inspect manifest')
+            print('Task027 raw results saved; legacy task023 aggregation is not applicable:', output)
+            return
         if manifest.get('map_method') == 'fine':
             from experiments.lidar_fine_report import summarize
         else:
@@ -321,11 +351,15 @@ def main():
     parser.add_argument('--noise-stddev-m', type=float, default=.02)
     parser.add_argument('--max-range-m', type=float, default=30.)
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
+    parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('sensors', 'legacy') != 'legacy':
+            print('Task027 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('map_method') == 'fine':
             from experiments.lidar_fine_report import summarize
         else:
