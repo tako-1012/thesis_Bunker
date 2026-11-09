@@ -62,6 +62,18 @@ class PathFollower(Node):
             if mission["map_id"] != self.map_id:
                 self.publish_state("map_mismatch")
                 return
+            if self.online and (mission.get("endpoint_hold") or mission.get("endpoint_finished")):
+                # Keep the same trajectory log during a timed stop/retry.
+                self.follower = None
+                self.mission_id = int(mission.get("id", 0))
+                self.cmd.publish(Twist())
+                if mission.get("endpoint_finished"):
+                    if self.log is not None:
+                        self.log.mission['endpoint_outcomes'] = mission['endpoint_outcomes']
+                    self.stop("completed")
+                else:
+                    self.last_status = "waiting_for_plan"
+                return
             if self.online and mission.get("online_error"):
                 if self.log is not None and mission.get("id") == self.mission_id:
                     record_plan_history(self.log, mission)
