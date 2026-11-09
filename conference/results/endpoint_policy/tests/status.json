@@ -1,0 +1,127 @@
+[
+  {
+    "module": "tests.test_beach_terrain",
+    "exit": 0,
+    "seconds": 7.755
+  },
+  {
+    "module": "tests.test_collision",
+    "exit": 0,
+    "seconds": 32.033
+  },
+  {
+    "module": "tests.test_dstar",
+    "exit": 0,
+    "seconds": 32.743
+  },
+  {
+    "module": "tests.test_endpoint_policy",
+    "exit": 0,
+    "seconds": 2.72
+  },
+  {
+    "module": "tests.test_footprint",
+    "exit": 0,
+    "seconds": 5.906
+  },
+  {
+    "module": "tests.test_geo",
+    "exit": 0,
+    "seconds": 1.033
+  },
+  {
+    "module": "tests.test_gz_compare",
+    "exit": 0,
+    "seconds": 44.053
+  },
+  {
+    "module": "tests.test_gz_online_batch",
+    "exit": 0,
+    "seconds": 115.976
+  },
+  {
+    "module": "tests.test_mapfiles_sim",
+    "exit": 0,
+    "seconds": 15.377
+  },
+  {
+    "module": "tests.test_mission",
+    "exit": 0,
+    "seconds": 77.823
+  },
+  {
+    "module": "tests.test_natural_terrain",
+    "exit": 0,
+    "seconds": 26.533
+  },
+  {
+    "module": "tests.test_online",
+    "exit": 0,
+    "seconds": 34.66
+  },
+  {
+    "module": "tests.test_online_deadend",
+    "exit": 0,
+    "seconds": 83.389
+  },
+  {
+    "module": "tests.test_online_mission",
+    "exit": 0,
+    "seconds": 49.067
+  },
+  {
+    "module": "tests.test_planners",
+    "exit": 0,
+    "seconds": 1.331
+  },
+  {
+    "module": "tests.test_pointcloud_map",
+    "exit": 0,
+    "seconds": 11.971
+  },
+  {
+    "module": "tests.test_pointcloud_map_fine",
+    "exit": 0,
+    "seconds": 12.869
+  },
+  {
+    "module": "tests.test_real_beach",
+    "exit": 0,
+    "seconds": 31.214
+  },
+  {
+    "module": "tests.test_real_beach_las",
+    "exit": 0,
+    "seconds": 30.48
+  },
+  {
+    "module": "tests.test_real_sensors",
+    "exit": 0,
+    "seconds": 1.201
+  },
+  {
+    "module": "tests.test_risk_prior",
+    "exit": 0,
+    "seconds": 14.729
+  },
+  {
+    "module": "tests.test_ros2_gz",
+    "exit": 0,
+    "seconds": 1.763
+  },
+  {
+    "module": "tests.test_thesis_figures",
+    "exit": 0,
+    "seconds": 6.125
+  },
+  {
+    "module": "tests.test_tour",
+    "exit": 0,
+    "seconds": 51.207
+  },
+  {
+    "module": "tests.test_visibility",
+    "exit": 0,
+    "seconds": 0.376
+  }
+]
