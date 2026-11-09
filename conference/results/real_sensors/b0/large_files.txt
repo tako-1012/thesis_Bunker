@@ -1,0 +1,1 @@
+lidar_real_depth2/physical_1/raw/08OB86_-0205/pointcloud_map.npz.sensors.json: 5 MB を超えるため gzip -9 で圧縮して保存（.json.gz）。b0_summary.py の値は圧縮前に計算した。

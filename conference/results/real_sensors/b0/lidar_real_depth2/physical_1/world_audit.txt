@@ -1,0 +1,19 @@
+8:      <render_engine>ogre2</render_engine>
+12:      <max_step_size>0.001</max_step_size>
+13:      <real_time_factor>0.3</real_time_factor>
+4461:      <sensor name="imu" type="imu">
+4463:        <update_rate>50</update_rate>
+4464:        <topic>/imu</topic>
+4467:      <sensor name="lidar" type="gpu_lidar">
+4470:        <update_rate>10.0</update_rate>
+4471:        <topic>/lidar</topic>
+4472:        <gz_frame_id>lidar</gz_frame_id>
+4499:      <sensor name="camera1" type="depth_camera">
+4502:        <update_rate>10.0</update_rate>
+4503:        <topic>/camera1</topic>
+4504:        <gz_frame_id>camera1</gz_frame_id>
+4531:      <sensor name="camera2" type="depth_camera">
+4534:        <update_rate>10.0</update_rate>
+4535:        <topic>/camera2</topic>
+4536:        <gz_frame_id>camera2</gz_frame_id>
+4575:      <topic>/cmd_vel</topic>
