@@ -1,6 +1,6 @@
 # 指示書 027：シミュレーションのセンサーを実機に合わせ、深度カメラ 2 台で近くを見る
 
-> **状態：未着手**。実装は **Codex**（クラウドまたは Mac）、Gazebo の実行は**研究 PC**（`conference/RESEARCH_PC_ja.md`）。
+> **状態：段階 A は完了（`realtime-map` にマージ済み）。段階 B0 から**。実装は **Codex**（クラウドまたは Mac）、Gazebo の実行は**研究 PC**（`conference/RESEARCH_PC_ja.md`）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/REAL_SENSORS_ja.md`、`conference/tasks/022_gazebo_lidar.md`、`023_lidar_fine_grid.md`、`026_divergence_check.md` を読むこと。
 > ブランチは `codex/027-real-sensors`（その時点の `realtime-map` の最新から）。結果は `conference/results/real_sensors/`、報告は同じ場所の `REPORT_ja.md`。
 > **Gazebo の 10 か所の実行は、指示書026 の結論（走らせるたびのばらつき・実時間の倍率）が出てから**、研究 PC で行う（下の「段階 B」）。
@@ -35,6 +35,17 @@
    5. 既存のテストがすべて通る。
 6. **幾何学だけの死角の表**（新しいスクリプト `experiments/sensor_coverage.py`）：平らな地面で、高さ 0.1・0.2・0.3・0.5m の物が、
    「022・023 の LiDAR（0.8m）」「実機の LiDAR」「実機の LiDAR＋カメラ 2 台」でそれぞれどの距離・方向で見えるかを計算し、表と図にする。
+
+## 段階 B0（研究 PC）：本番の前の確認（2026-11-09 に追加。026 の結論と段階 A のレビューを受けて）
+- 026 の結論：研究 PC とクラウドの違いは走らせるたびのばらつきの範囲。**実時間は 0.3 倍を標準にする**（1.0 倍は前もって決めた基準を満たさなかった。GPU で描画しても地図の更新が追いつかない）。描画はソフトウェア（既定）。
+- 段階 A は `realtime-map` に入っている（`--map fine --sensors lidar_real|lidar_real+depth2`）。Gazebo では未確認。
+- 確認すること（砂浜は `08OB86_-0205` だけ。地点がすべて地図の端から 20m 以上離れていて、クラウドの 023 で 2 回とも完走した砂浜）：
+  1. `--sensors lidar_real+depth2` で 1 回走らせ、カメラ 2 台の点群が届くこと（`/camera1/points`・`/camera2/points`、間隔、捨てた数）を確かめる。
+  2. **カメラの点群の向きの確認**：走り始めの最初の点群（`first_cloud_camera1.npz` など）を world に直し、本当の地図の高さと比べる（022 で LiDAR に行ったのと同じ確認。
+     高さの差の中央値と、±10cm 以内の割合）。地面がずれる・傾く・左右が逆になる場合は、そこで止めて報告する（軸の向きの取り違えの可能性）。
+  3. 同じ砂浜で `--sensors lidar_real` を 1 回走らせ、地図の更新の時間・捨てた走査を、`lidar_real+depth2` と並べる（カメラを足して地図の更新が追いつくか）。
+  4. 走行の結果（完走か、経路なしの型）と、障害物を初めて地図に入れたときのロボットからの距離（センサー別、`pointcloud_map.npz.sensors.json`）を出す。
+- これは**動くかの確認**で、比較ではない（1 回ずつなので結論は出さない）。
 
 ## 段階 B（研究 PC）：Gazebo での比較（026 の結論が出てから）
 - 砂浜・world・地点・スタートは 021〜023 と同じ 10 か所（指示書024 の端の条件が先に入っていれば、それに従う）。地図は 023 と同じ細かい格子。
