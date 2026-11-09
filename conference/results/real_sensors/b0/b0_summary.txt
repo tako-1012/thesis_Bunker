@@ -1,0 +1,11 @@
+===== lidar_real_depth2 08OB86_-0205
+outcome completed sim_s 240.87 replans 42
+measured_rtf 0.3 wall_s 802.9
+perception {"lidar": {"received": 2142, "processed": 2142, "queue_drops": 0, "last_stamp": 246.0, "error": ""}, "camera1": {"received": 2335, "processed": 2335, "queue_drops": 0, "last_stamp": 246.1, "error": ""}, "camera2": {"received": 2356, "processed": 2354, "queue_drops": 1, "last_stamp": 246.0, "error": ""}}
+update_s all (median, p95, max) [0.0243, 0.0987, 0.1235] n 6832 errors 0
+ camera1: updates 2335, rate_sim_hz 9.492, gap_sim (median, p95, max) [0.1, 0.2, 0.4], update_s (median, p95, max) [0.0232, 0.028, 0.0549], accepted_points median 7289
+ camera2: updates 2355, rate_sim_hz 9.573, gap_sim (median, p95, max) [0.1, 0.1, 0.3], update_s (median, p95, max) [0.0233, 0.027, 0.0375], accepted_points median 7290
+ lidar: updates 2142, rate_sim_hz 8.711, gap_sim (median, p95, max) [0.1, 0.2, 0.4], update_s (median, p95, max) [0.0832, 0.1073, 0.1235], accepted_points median 12308
+ first detections by lidar: cells 36515, robot distance m (min, median, max) [2.87, 20.51, 30.28], on_truth_lethal 35689, distance on truth lethal (min, median, max) [2.87, 20.51, 30.28]
+ first detections by camera1: cells 207, robot distance m (min, median, max) [1.88, 5.92, 6.49], on_truth_lethal 180, distance on truth lethal (min, median, max) [1.88, 5.95, 6.49]
+ first detections by camera2: cells 163, robot distance m (min, median, max) [2.65, 5.67, 6.48], on_truth_lethal 144, distance on truth lethal (min, median, max) [2.65, 5.57, 6.48]
