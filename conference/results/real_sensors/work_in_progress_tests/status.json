@@ -1,0 +1,117 @@
+[
+  {
+    "module": "tests.test_beach_terrain",
+    "exit": 0,
+    "seconds": 9.26
+  },
+  {
+    "module": "tests.test_collision",
+    "exit": 0,
+    "seconds": 40.67
+  },
+  {
+    "module": "tests.test_dstar",
+    "exit": 0,
+    "seconds": 39.8
+  },
+  {
+    "module": "tests.test_footprint",
+    "exit": 0,
+    "seconds": 8.31
+  },
+  {
+    "module": "tests.test_geo",
+    "exit": 0,
+    "seconds": 1.04
+  },
+  {
+    "module": "tests.test_gz_compare",
+    "exit": 0,
+    "seconds": 53.57
+  },
+  {
+    "module": "tests.test_gz_online_batch",
+    "exit": 0,
+    "seconds": 134.68
+  },
+  {
+    "module": "tests.test_mapfiles_sim",
+    "exit": 0,
+    "seconds": 17.82
+  },
+  {
+    "module": "tests.test_mission",
+    "exit": 0,
+    "seconds": 90.12
+  },
+  {
+    "module": "tests.test_natural_terrain",
+    "exit": 0,
+    "seconds": 30.6
+  },
+  {
+    "module": "tests.test_online",
+    "exit": 0,
+    "seconds": 41.63
+  },
+  {
+    "module": "tests.test_online_deadend",
+    "exit": 0,
+    "seconds": 113.63
+  },
+  {
+    "module": "tests.test_online_mission",
+    "exit": 0,
+    "seconds": 71.64
+  },
+  {
+    "module": "tests.test_planners",
+    "exit": 0,
+    "seconds": 1.86
+  },
+  {
+    "module": "tests.test_pointcloud_map",
+    "exit": 0,
+    "seconds": 16.38
+  },
+  {
+    "module": "tests.test_pointcloud_map_fine",
+    "exit": 0,
+    "seconds": 20.1
+  },
+  {
+    "module": "tests.test_real_beach",
+    "exit": 0,
+    "seconds": 50.44
+  },
+  {
+    "module": "tests.test_real_beach_las",
+    "exit": 0,
+    "seconds": 48.7
+  },
+  {
+    "module": "tests.test_risk_prior",
+    "exit": 0,
+    "seconds": 23.07
+  },
+  {
+    "module": "tests.test_ros2_gz",
+    "exit": 0,
+    "seconds": 2.76
+  },
+  {
+    "module": "tests.test_thesis_figures",
+    "exit": 0,
+    "seconds": 9.92
+  },
+  {
+    "module": "tests.test_tour",
+    "exit": 0,
+    "seconds": 76.62
+  },
+  {
+    "module": "tests.test_visibility",
+    "exit": 0,
+    "seconds": 0.65
+  }
+]

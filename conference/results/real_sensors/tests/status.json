@@ -1,0 +1,122 @@
+[
+  {
+    "module": "tests.test_beach_terrain",
+    "exit": 0,
+    "seconds": 12.52
+  },
+  {
+    "module": "tests.test_collision",
+    "exit": 0,
+    "seconds": 46.46
+  },
+  {
+    "module": "tests.test_dstar",
+    "exit": 0,
+    "seconds": 42.55
+  },
+  {
+    "module": "tests.test_footprint",
+    "exit": 0,
+    "seconds": 9.42
+  },
+  {
+    "module": "tests.test_geo",
+    "exit": 0,
+    "seconds": 1.24
+  },
+  {
+    "module": "tests.test_gz_compare",
+    "exit": 0,
+    "seconds": 65.56
+  },
+  {
+    "module": "tests.test_gz_online_batch",
+    "exit": 0,
+    "seconds": 175.63
+  },
+  {
+    "module": "tests.test_mapfiles_sim",
+    "exit": 0,
+    "seconds": 20.77
+  },
+  {
+    "module": "tests.test_mission",
+    "exit": 0,
+    "seconds": 98.15
+  },
+  {
+    "module": "tests.test_natural_terrain",
+    "exit": 0,
+    "seconds": 33.51
+  },
+  {
+    "module": "tests.test_online",
+    "exit": 0,
+    "seconds": 43.69
+  },
+  {
+    "module": "tests.test_online_deadend",
+    "exit": 0,
+    "seconds": 105.13
+  },
+  {
+    "module": "tests.test_online_mission",
+    "exit": 0,
+    "seconds": 58.48
+  },
+  {
+    "module": "tests.test_planners",
+    "exit": 0,
+    "seconds": 1.6
+  },
+  {
+    "module": "tests.test_pointcloud_map",
+    "exit": 0,
+    "seconds": 15.31
+  },
+  {
+    "module": "tests.test_pointcloud_map_fine",
+    "exit": 0,
+    "seconds": 15.23
+  },
+  {
+    "module": "tests.test_real_beach",
+    "exit": 0,
+    "seconds": 37.26
+  },
+  {
+    "module": "tests.test_real_beach_las",
+    "exit": 0,
+    "seconds": 35.44
+  },
+  {
+    "module": "tests.test_real_sensors",
+    "exit": 0,
+    "seconds": 1.7
+  },
+  {
+    "module": "tests.test_risk_prior",
+    "exit": 0,
+    "seconds": 20.62
+  },
+  {
+    "module": "tests.test_ros2_gz",
+    "exit": 0,
+    "seconds": 3.0
+  },
+  {
+    "module": "tests.test_thesis_figures",
+    "exit": 0,
+    "seconds": 8.15
+  },
+  {
+    "module": "tests.test_tour",
+    "exit": 0,
+    "seconds": 58.64
+  },
+  {
+    "module": "tests.test_visibility",
+    "exit": 0,
+    "seconds": 0.47
+  }
+]
