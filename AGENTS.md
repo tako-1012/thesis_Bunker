@@ -38,6 +38,7 @@ python3 -m tests.test_footprint
 python3 -m tests.test_gz_online_batch
 python3 -m tests.test_pointcloud_map
 python3 -m tests.test_pointcloud_map_fine
+python3 -m tests.test_real_sensors
 ```
 作業を終える前に、`conference/tests/` の下にあるすべてのテストを実行すること。
 
@@ -58,7 +59,7 @@ python3 -m tests.test_pointcloud_map_fine
 - `conference/results/*.csv`、`conference/results/*.json`、`conference/results/explore/`、
   `conference/results/online/`、`conference/results/online_prior/`、`conference/results/online_dstar/`、`conference/results/risk_prior/`、`conference/results/exact_los/`、
   `conference/results/natural_terrain/`、`conference/results/beach_terrain/`、`conference/results/multi_goal_tour/`、`conference/results/real_beach/`、`conference/results/ros2_gz/`、`conference/results/real_beach_las/`、`conference/results/online_mission/`、
-  `conference/results/online_deadend/`、`conference/results/online_visibility/`、`conference/results/gazebo_compare/`、`conference/results/footprint_steep/`、`conference/results/gazebo_online/`、`conference/results/gazebo_lidar/`、`conference/results/lidar_fine/`、`conference/thesis/out/`
+  `conference/results/online_deadend/`、`conference/results/online_visibility/`、`conference/results/gazebo_compare/`、`conference/results/footprint_steep/`、`conference/results/gazebo_online/`、`conference/results/gazebo_lidar/`、`conference/results/lidar_fine/`、`conference/results/rtf_check/`、`conference/results/real_sensors/`、`conference/thesis/out/`
 - `conference/data/`（本物の地形データ。`conference/data_prep/` のスクリプトで作ったもの）
 - `conference/tapp/planners.py`、`metrics.py`、`scenario.py`、`terrain.py`、
   `traversability.py`、`config.py`、`aniso.py`、`prior.py`、`dstar_lite.py`、`risk_prior.py`、`collision.py`、`online.py`、

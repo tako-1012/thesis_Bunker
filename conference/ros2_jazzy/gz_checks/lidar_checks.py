@@ -92,6 +92,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     expected = [r['name'] for r in list_patches('test', dataset='shizuoka_beach_las')[:10]]
     if [s['patch'] for s in scenarios] != expected:
         raise ValueError('baseline must contain the same first ten LAS test beaches')
+    only_patch = os.environ.get('THESIS_ONLY_PATCH') if os.environ.get('THESIS_FINE_PROTOCOL') == 'rtf_check' else None
     manifest = dict(dataset='shizuoka_beach_las', split='test', side_m=200, seed=0,
                     planner='TA*-S+inflate', sensor='lidar', patch_count=patch_count,
                     execution='not_started', world_max_pixels=4097,
@@ -101,7 +102,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                     height_definition='median of last 64 returns per hit cell, including obstacle tops',
                     baseline='results/gazebo_online/physical_run', scenarios=scenarios,
                     input_environment=dict(python=sys.version, numpy=np.__version__),
-                    cases=[dict(patch=s['patch'], mode='lidar', selected=i < patch_count,
+                    cases=[dict(patch=s['patch'], mode='lidar', selected=(s['patch'] == only_patch if only_patch else i < patch_count),
                                 planning_status=s['planning_status'], run_folder=None, error='', termination=None)
                            for i, s in enumerate(scenarios)])
     if fine_settings is not None:
@@ -109,6 +110,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if configuration is not None:
         manifest.update(sensor=sensors, sensors=sensors, sensor_configuration=configuration,
                         experiment='task027 real sensors; not a matched task022/023 sensor comparison')
+    if os.environ.get('THESIS_FINE_PROTOCOL'):
+        manifest.update(protocol=os.environ['THESIS_FINE_PROTOCOL'], only_patch=only_patch,
+                        software_rendering=os.environ.get('LIBGL_ALWAYS_SOFTWARE'))
     save_manifest(output, manifest)
     return manifest
 
@@ -235,7 +239,7 @@ def run_checks(output, **kwargs):
                     world = folder/'world/world.sdf'
                     tree = ET.parse(world)
                     w = tree.find('world')
-                    w.find('physics/real_time_factor').text = ('0.3' if manifest.get('map_method') == 'fine'
+                    w.find('physics/real_time_factor').text = (str(manifest['real_time_factor']) if manifest.get('map_method') == 'fine'
                                                              else os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
                     for uri in tree.findall('.//heightmap/uri'):
                         uri.text = (world.parent/'heightmap.png').as_uri()

@@ -22,7 +22,11 @@ def fine_protocol():
     """Fixed task023 settings, matching task022's actual ten-beach run."""
     factor = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '.3'))
     stale = float(os.environ.get('THESIS_STALE_TIMEOUT_S', '1.0'))
-    if factor != .3 or stale != 1.:
+    # Task 025/026 only: an explicit opt-in may also run 1.0; without it the task023 values stay fixed.
+    protocol = os.environ.get('THESIS_FINE_PROTOCOL')
+    if protocol not in (None, 'rtf_check'):
+        raise ValueError('unknown fine protocol')
+    if factor not in ((.3, 1.) if protocol else (.3,)) or stale != 1.:
         raise ValueError('fine comparison fixes real_time_factor=0.3 and stale_timeout_s=1.0')
     return dict(map_method='fine', obstacle_resolution_m=.1, obstacle_height_m=.3,
                 min_obstacle_points=3, obstacle_inflation_radius_m=.5,
