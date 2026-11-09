@@ -87,6 +87,8 @@ class OnlinePlannerNode(Node):
         message = String()
         message.data = json.dumps(command)
         self.command.publish(message)
+        if command.get("endpoint_hold") or command.get("endpoint_finished"):
+            return
         if command.get("online_error"):
             self.get_logger().error(command["online_error"])
             return
