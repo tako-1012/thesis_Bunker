@@ -46,3 +46,5 @@ docker run --rm --pull=never --network host \
     source /tmp/thesis-install/setup.bash
     python3 /conference/ros2_jazzy/gz_checks/lidar_checks.py --output /output "$@"
   ' bash "${@:2}"
+# Task027 opt-in: pass --map fine --sensors lidar_real or lidar_real+depth2.
+# Arguments already pass unchanged through Docker; no flag keeps task022/023.

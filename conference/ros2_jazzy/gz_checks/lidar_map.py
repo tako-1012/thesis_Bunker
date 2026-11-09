@@ -4,7 +4,12 @@ import os
 from tapp.pointcloud_map import PointCloudMap
 
 
-def make_pointcloud_map(*args, map_method='coarse', **kwargs):
+def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', **kwargs):
+    if sensors != 'legacy':
+        if map_method != 'fine':
+            raise ValueError('real sensors require --map fine')
+        from tapp.pointcloud_map_multi import PointCloudMapMulti
+        return PointCloudMapMulti(*args, sensors=sensors, **kwargs)
     if map_method == 'coarse':
         return PointCloudMap(*args, **kwargs)
     if map_method == 'fine':
@@ -57,3 +62,16 @@ def matched_task022_maps(patch, truth, prior):
                 raise ValueError('task022 reference masks changed')
             result.append(dict(sc, tmap=tm, raw_elev=z, terrain=dict(terrain, elev=z)))
     return *result, str(reference.relative_to(root))
+
+
+def sensor_bridge_config(base, sensors='legacy'):
+    """Keep legacy YAML bytes, adding only explicit camera point-cloud bridges."""
+    from tapp.sensor_geometry import sensor_configuration
+    configuration = sensor_configuration(sensors)
+    if configuration is None or sensors == 'lidar_real':
+        return base
+    for name in ('camera1', 'camera2'):
+        base += (f'\n- ros_topic_name: /{name}/points\n  gz_topic_name: /{name}/points\n'
+                 '  ros_type_name: sensor_msgs/msg/PointCloud2\n'
+                 '  gz_type_name: gz.msgs.PointCloudPacked\n  direction: GZ_TO_ROS\n')
+    return base
