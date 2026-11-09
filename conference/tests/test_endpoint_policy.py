@@ -127,7 +127,6 @@ def test_substitute_replan():
             runtime.tick([2., 2.], t)
         assert planner.endpoint_result['outcome'] == 'nearby'
         goal_m = np.asarray(planner.goal)*RESOLUTION
-        runtime.pose[:2] = goal_m
         for t in (.5, .6, .7):
             runtime.tick(goal_m, t)
         assert runtime.finished and runtime.outcomes[0]['outcome'] == 'nearby'
@@ -158,7 +157,6 @@ def test_retry_runtime():
         assert runtime.outcomes[0]['retries'] == 1
         assert command is None or 'online_error' not in command
         assert runtime.state['leg'] == 1
-        runtime.pose[:2] = [2., 5.]
         for t in (1.2, 1.25, 1.3):
             runtime.tick([2., 5.], t)
         assert runtime.finished

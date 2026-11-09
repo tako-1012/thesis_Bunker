@@ -201,6 +201,9 @@ class EndpointRuntime(LidarOnlineMission):
     def tick(self, position, sim_time):
         if self.pose is None:
             self.pose = np.r_[position, 0., 0., 0., 0.]
+        else:
+            self.pose = np.asarray(self.pose, float).copy()
+            self.pose[:2] = position
         if self.audit_log and not self.finished:
             self.audit_log.write(dict(zip(self.audit_log.fields, [sim_time, *self.pose])))
         if self.state is not None and (self.pending is None or self.pending.done()):
