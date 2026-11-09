@@ -60,13 +60,17 @@ def verify_inputs(patch, meta, truth, prior):
 
 
 def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
-                  noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy'):
+                  noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output/'manifest.json').exists():
         raise FileExistsError('choose a new output; no existing recordings will be overwritten')
     if patch_count not in (3, 10):
         raise ValueError('run the first three beaches before extending to ten')
+    if endpoint_policy not in ('none', 'escape'):
+        raise ValueError('unknown endpoint policy')
+    if (endpoint_policy != 'none' or diagnostics) and map_method != 'fine':
+        raise ValueError('task028 requires --map fine')
     configuration = sensor_configuration(sensors)
     if configuration is not None:
         if map_method != 'fine':
@@ -113,6 +117,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if os.environ.get('THESIS_FINE_PROTOCOL'):
         manifest.update(protocol=os.environ['THESIS_FINE_PROTOCOL'], only_patch=only_patch,
                         software_rendering=os.environ.get('LIBGL_ALWAYS_SOFTWARE'))
+    if endpoint_policy != 'none' or diagnostics:
+        manifest.update(endpoint_policy=endpoint_policy, diagnostics=bool(diagnostics),
+                        endpoint_protocol='task028; separate evaluation from task023')
     save_manifest(output, manifest)
     return manifest
 
@@ -276,6 +283,9 @@ def run_checks(output, **kwargs):
                          '-p', 'stale_timeout_s:='+str(manifest['stale_timeout_s'])]]
                     if manifest.get('map_method') == 'fine':
                         commands[-1].extend(['-p', 'map_method:=fine'])
+                    if manifest.get('endpoint_protocol'):
+                        commands[-1].extend(['-p', 'endpoint_policy:='+manifest['endpoint_policy'],
+                                             '-p', 'diagnostics:='+str(manifest['diagnostics']).lower()])
                     if manifest.get('sensors', 'legacy') != 'legacy':
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     for i, command in enumerate(commands):
@@ -330,6 +340,11 @@ def run_checks(output, **kwargs):
                     save_manifest(output, manifest)
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
+        if manifest.get('endpoint_protocol'):
+            if manifest['execution'] == 'finished_with_errors':
+                raise RuntimeError('task028 trial errors; inspect manifest')
+            print('Task028 raw results saved; evaluate stop outcomes separately:', output)
+            return
         if manifest.get('sensors', 'legacy') != 'legacy':
             if manifest['execution'] == 'finished_with_errors':
                 raise RuntimeError('some real sensor trials could not run; inspect manifest')
@@ -356,11 +371,16 @@ def main():
     parser.add_argument('--max-range-m', type=float, default=30.)
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
+    parser.add_argument('--endpoint-policy', choices=['none', 'escape'], default='none')
+    parser.add_argument('--diagnostics', action='store_true')
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('endpoint_protocol'):
+            print('Task028 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('sensors', 'legacy') != 'legacy':
             print('Task027 preparation only; Gazebo not executed:', output)
             return

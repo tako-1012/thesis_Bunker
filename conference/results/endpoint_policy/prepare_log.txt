@@ -1,0 +1,1 @@
+Task028 preparation only; Gazebo not executed: conference/results/endpoint_policy/prepare_example

@@ -1,0 +1,9 @@
+started=2026-11-10T01:09:42+09:00
+host=hayashi
+kernel=7.0.0-42-generic
+commit=75d400a26aa7fe6d9ee29508af45e4621c7bb100
+branch=claude/027-b0
+tracked_changes=0
+sensors=lidar_real+depth2 patch=08OB86_-0205 map=fine target_rtf=0.3 stale_timeout_s=1.0 software_rendering=1 ros_domain_id=62 time_limit_s=2400
+image_id=sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57
+finished=2026-11-10T01:23:39+09:00 docker_exit=0

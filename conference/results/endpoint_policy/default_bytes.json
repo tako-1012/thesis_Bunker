@@ -1,0 +1,17 @@
+{
+  "base": "75d400a26aa7fe6d9ee29508af45e4621c7bb100",
+  "default_manifest": [
+    {
+      "map": "coarse",
+      "equal": true,
+      "bytes": 34416,
+      "sha256": "b32d9a39293eb1017f64a4c40d429b6f0676a0a33b8d3b5af1b1508b8fea6561"
+    },
+    {
+      "map": "fine",
+      "equal": true,
+      "bytes": 35009,
+      "sha256": "b533efba56749c4e0f7ae348f042e8797445e54d92d4ec7ec50dcd4b62730dc1"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ from std_msgs.msg import String, Empty
 from thesis_bunker_mission.online_planner import OnlinePlannerNode
 from tapp.mapfile import load_map_file
 from tapp.pointcloud_map import PointCloudMap, PoseBuffer, decode_xyz
-from ros2_jazzy.gz_checks.lidar_runtime import LidarOnlineMission
+from ros2_jazzy.gz_checks.endpoint_runtime import make_lidar_runtime
 from ros2_jazzy.gz_checks.online_batch_runtime import CsvChunks
 from ros2_jazzy.gz_checks.lidar_map import make_pointcloud_map
 
@@ -35,7 +35,7 @@ class LidarPlannerNode(OnlinePlannerNode):
         Node.__init__(self, 'lidar_planner')
         for name, default in [('prior_map', ''), ('map_id', 'file/truth.npz'), ('run_folder', ''),
                               ('sensor_height_m', .8), ('max_range_m', 30.), ('obstacle_height_m', .3), ('range_resolution_m', .01),
-                              ('stale_timeout_s', .5), ('map_method', 'coarse'), ('sensors', 'legacy')]:
+                              ('stale_timeout_s', .5), ('map_method', 'coarse'), ('sensors', 'legacy'), ('endpoint_policy', 'none'), ('diagnostics', False)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -57,7 +57,9 @@ class LidarPlannerNode(OnlinePlannerNode):
                                     max_range_m=self.get_parameter('max_range_m').value,
                                     range_resolution_m=self.get_parameter('range_resolution_m').value,
                                     obstacle_height_m=self.get_parameter('obstacle_height_m').value)
-        self.runtime = LidarOnlineMission(prior, self.mapper, plan_log=self.folder / 'plans.csv')
+        self.runtime = make_lidar_runtime(prior, self.mapper, plan_log=self.folder / 'plans.csv',
+            endpoint_policy=self.get_parameter('endpoint_policy').value,
+            diagnostics=self.get_parameter('diagnostics').value)
         self.poses = PoseBuffer()
         self.map_pool = ThreadPoolExecutor(max_workers=1)
         self.pending = self.future = None
@@ -253,6 +255,8 @@ class LidarPlannerNode(OnlinePlannerNode):
                     self.watchdog_sent = True
                     self.runtime.stop()
                 return
+        if hasattr(self.runtime, 'pose') and self.pose is not None:
+            self.runtime.pose = np.asarray(self.pose, float).copy()
         super().tick()
 
     def close(self):
