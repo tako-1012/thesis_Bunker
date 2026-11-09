@@ -1,0 +1,31 @@
+--- ros2_jazzy/gz_checks/lidar_map.py	2026-11-07 15:08:35.645976706 +0900
++++ results/hayashi_rtf1_check/overlay/lidar_map.py	2026-11-07 15:58:06.050822948 +0900
+@@ -17,7 +17,7 @@
+     """Fixed task023 settings, matching task022's actual ten-beach run."""
+     factor = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '.3'))
+     stale = float(os.environ.get('THESIS_STALE_TIMEOUT_S', '1.0'))
+-    if factor != .3 or stale != 1.:
++    if factor not in (.3, 1.) or stale != 1.:
+         raise ValueError('fine comparison fixes real_time_factor=0.3 and stale_timeout_s=1.0')
+     return dict(map_method='fine', obstacle_resolution_m=.1, obstacle_height_m=.3,
+                 min_obstacle_points=3, obstacle_inflation_radius_m=.5,
+--- ros2_jazzy/gz_checks/lidar_checks.py	2026-11-07 15:08:35.645976706 +0900
++++ results/hayashi_rtf1_check/overlay/lidar_checks.py	2026-11-07 15:58:06.050945632 +0900
+@@ -92,7 +92,7 @@
+                     height_definition='median of last 64 returns per hit cell, including obstacle tops',
+                     baseline='results/gazebo_online/physical_run', scenarios=scenarios,
+                     input_environment=dict(python=sys.version, numpy=np.__version__),
+-                    cases=[dict(patch=s['patch'], mode='lidar', selected=i < patch_count,
++                    cases=[dict(patch=s['patch'], mode='lidar', selected=(s['patch'] == os.environ['THESIS_ONLY_PATCH'] if 'THESIS_ONLY_PATCH' in os.environ else i < patch_count),
+                                 planning_status=s['planning_status'], run_folder=None, error='', termination=None)
+                            for i, s in enumerate(scenarios)])
+     if fine_settings is not None:
+@@ -221,7 +221,7 @@
+                     world = folder/'world/world.sdf'
+                     tree = ET.parse(world)
+                     w = tree.find('world')
+-                    w.find('physics/real_time_factor').text = ('0.3' if manifest.get('map_method') == 'fine'
++                    w.find('physics/real_time_factor').text = (os.environ.get('THESIS_REAL_TIME_FACTOR', '0.3') if manifest.get('map_method') == 'fine'
+                                                              else os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
+                     for uri in tree.findall('.//heightmap/uri'):
+                         uri.text = (world.parent/'heightmap.png').as_uri()

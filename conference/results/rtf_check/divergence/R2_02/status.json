@@ -1,0 +1,46 @@
+{
+  "run": "R2_02",
+  "simulation": {
+    "docker_exit": 0,
+    "timed_out": false,
+    "manifest": "ok",
+    "cases": [
+      {
+        "patch": "08OB87_-0706",
+        "termination": "completed",
+        "error": "",
+        "status": "completed",
+        "started_t": 5.32,
+        "finished_t": 463.4,
+        "wall_elapsed_s": 458.09911929100053,
+        "online_error": null
+      }
+    ],
+    "execution": "finished",
+    "real_time_factor": 1.0,
+    "stale_timeout_s": 1.0,
+    "map_method": "fine",
+    "gazebo": "8.11.0",
+    "ok": true
+  },
+  "measurement": {
+    "probe_rows": 468,
+    "resource_rows": 95,
+    "gz_stats_samples": 31,
+    "world_audit": [
+      "8:      <render_engine>ogre2</render_engine>",
+      "12:      <max_step_size>0.001</max_step_size>",
+      "13:      <real_time_factor>1.0</real_time_factor>",
+      "3743:        <update_rate>50</update_rate>",
+      "3750:        <update_rate>10.0</update_rate>"
+    ],
+    "probe_stderr_tail": [],
+    "ok": true
+  },
+  "existing_report": {
+    "lidar_checks_exit": 1,
+    "result": "expected_failure",
+    "last_error": "ValueError: fine run conditions differ from task022",
+    "note": "execution is saved before summarize runs, so a report failure does not touch raw records"
+  }
+}

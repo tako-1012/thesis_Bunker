@@ -1,0 +1,465 @@
+1794054830.707816792
+sim_time {
+  nsec: 20000000
+}
+real_time {
+  sec: 2
+  nsec: 74808475
+}
+iterations: 20
+real_time_factor: 1.000079006241493
+step_size {
+  nsec: 1000000
+}
+
+1794054845.776267764
+sim_time {
+  sec: 15
+  nsec: 88000000
+}
+real_time {
+  sec: 17
+  nsec: 142809551
+}
+iterations: 15088
+real_time_factor: 1.0001080116652599
+step_size {
+  nsec: 1000000
+}
+
+1794054860.844342876
+sim_time {
+  sec: 30
+  nsec: 158000000
+}
+real_time {
+  sec: 32
+  nsec: 216841347
+}
+iterations: 30158
+real_time_factor: 1.0000430018490796
+step_size {
+  nsec: 1000000
+}
+
+1794054875.918146165
+sim_time {
+  sec: 45
+  nsec: 228000000
+}
+real_time {
+  sec: 47
+  nsec: 286842331
+}
+iterations: 45228
+real_time_factor: 0.999002995010979
+step_size {
+  nsec: 1000000
+}
+
+1794054890.988420657
+sim_time {
+  sec: 60
+  nsec: 300000000
+}
+real_time {
+  sec: 62
+  nsec: 361382182
+}
+iterations: 60300
+real_time_factor: 1.0000150002250034
+step_size {
+  nsec: 1000000
+}
+
+1794054906.063267987
+sim_time {
+  sec: 75
+  nsec: 368000000
+}
+real_time {
+  sec: 77
+  nsec: 429382232
+}
+iterations: 75368
+real_time_factor: 0.9999430032488148
+step_size {
+  nsec: 1000000
+}
+
+1794054921.130447599
+sim_time {
+  sec: 90
+  nsec: 440000000
+}
+real_time {
+  sec: 92
+  nsec: 501382442
+}
+iterations: 90440
+real_time_factor: 0.99970308818280973
+step_size {
+  nsec: 1000000
+}
+
+1794054936.202416733
+sim_time {
+  sec: 105
+  nsec: 512000000
+}
+real_time {
+  sec: 107
+  nsec: 573382748
+}
+iterations: 105512
+real_time_factor: 0.99971008407561812
+step_size {
+  nsec: 1000000
+}
+
+1794054951.274676314
+sim_time {
+  sec: 120
+  nsec: 579000000
+}
+real_time {
+  sec: 122
+  nsec: 641425715
+}
+iterations: 120579
+real_time_factor: 1.0001090118822951
+step_size {
+  nsec: 1000000
+}
+
+1794054966.343001580
+sim_time {
+  sec: 135
+  nsec: 648000000
+}
+real_time {
+  sec: 137
+  nsec: 710425810
+}
+iterations: 135648
+real_time_factor: 1.000070004900343
+step_size {
+  nsec: 1000000
+}
+
+1794054981.412412651
+sim_time {
+  sec: 150
+  nsec: 717000000
+}
+real_time {
+  sec: 152
+  nsec: 779425926
+}
+iterations: 150717
+real_time_factor: 0.99993100476067154
+step_size {
+  nsec: 1000000
+}
+
+1794054996.480678045
+sim_time {
+  sec: 165
+  nsec: 788000000
+}
+real_time {
+  sec: 167
+  nsec: 852221816
+}
+iterations: 165788
+real_time_factor: 1.0001340179584064
+step_size {
+  nsec: 1000000
+}
+
+1794055011.554811494
+sim_time {
+  sec: 180
+  nsec: 858000000
+}
+real_time {
+  sec: 182
+  nsec: 922221988
+}
+iterations: 180858
+real_time_factor: 1.000793629348073
+step_size {
+  nsec: 1000000
+}
+
+1794055026.623126703
+sim_time {
+  sec: 195
+  nsec: 932000000
+}
+real_time {
+  sec: 197
+  nsec: 997227627
+}
+iterations: 195932
+real_time_factor: 1.0003671347384491
+step_size {
+  nsec: 1000000
+}
+
+1794055041.698546408
+sim_time {
+  sec: 211
+  nsec: 4000000
+}
+real_time {
+  sec: 213
+  nsec: 69227630
+}
+iterations: 211004
+real_time_factor: 1.000053002809149
+step_size {
+  nsec: 1000000
+}
+
+1794055056.771074350
+sim_time {
+  sec: 226
+  nsec: 74000000
+}
+real_time {
+  sec: 228
+  nsec: 140799627
+}
+iterations: 226074
+real_time_factor: 1.001706908572207
+step_size {
+  nsec: 1000000
+}
+
+1794055071.842807990
+sim_time {
+  sec: 241
+  nsec: 142000000
+}
+real_time {
+  sec: 243
+  nsec: 208799740
+}
+iterations: 241142
+real_time_factor: 1.0000780060844745
+step_size {
+  nsec: 1000000
+}
+
+1794055086.910432977
+sim_time {
+  sec: 256
+  nsec: 214000000
+}
+real_time {
+  sec: 258
+  nsec: 280799699
+}
+iterations: 256214
+real_time_factor: 0.99992000639948808
+step_size {
+  nsec: 1000000
+}
+
+1794055101.982579071
+sim_time {
+  sec: 271
+  nsec: 287000000
+}
+real_time {
+  sec: 273
+  nsec: 353799610
+}
+iterations: 271287
+real_time_factor: 1.0000600036002161
+step_size {
+  nsec: 1000000
+}
+
+1794055117.055440256
+sim_time {
+  sec: 286
+  nsec: 360000000
+}
+real_time {
+  sec: 288
+  nsec: 426982524
+}
+iterations: 286360
+real_time_factor: 0.84536499056149983
+step_size {
+  nsec: 1000000
+}
+
+1794055132.128312287
+sim_time {
+  sec: 301
+  nsec: 428000000
+}
+real_time {
+  sec: 303
+  nsec: 496054230
+}
+iterations: 301428
+real_time_factor: 1.0009549109850797
+step_size {
+  nsec: 1000000
+}
+
+1794055147.198117537
+sim_time {
+  sec: 316
+  nsec: 498000000
+}
+real_time {
+  sec: 318
+  nsec: 566054181
+}
+iterations: 316498
+real_time_factor: 0.99993700396875
+step_size {
+  nsec: 1000000
+}
+
+1794055162.268099777
+sim_time {
+  sec: 331
+  nsec: 570000000
+}
+real_time {
+  sec: 333
+  nsec: 638054944
+}
+iterations: 331570
+real_time_factor: 0.99936240678447152
+step_size {
+  nsec: 1000000
+}
+
+1794055177.339841690
+sim_time {
+  sec: 346
+  nsec: 642000000
+}
+real_time {
+  sec: 348
+  nsec: 710054055
+}
+iterations: 346642
+real_time_factor: 0.99998400025599588
+step_size {
+  nsec: 1000000
+}
+
+1794055192.411422806
+sim_time {
+  sec: 361
+  nsec: 711000000
+}
+real_time {
+  sec: 363
+  nsec: 779055097
+}
+iterations: 361711
+real_time_factor: 0.99925954867443223
+step_size {
+  nsec: 1000000
+}
+
+1794055207.480567753
+sim_time {
+  sec: 376
+  nsec: 778000000
+}
+real_time {
+  sec: 378
+  nsec: 847980619
+}
+iterations: 376778
+real_time_factor: 1.000166027560575
+step_size {
+  nsec: 1000000
+}
+
+1794055222.550231659
+sim_time {
+  sec: 391
+  nsec: 850000000
+}
+real_time {
+  sec: 393
+  nsec: 919980814
+}
+iterations: 391850
+real_time_factor: 0.99968909669092909
+step_size {
+  nsec: 1000000
+}
+
+1794055237.621870613
+sim_time {
+  sec: 406
+  nsec: 921000000
+}
+real_time {
+  sec: 408
+  nsec: 990980723
+}
+iterations: 406921
+real_time_factor: 1.000035001225043
+step_size {
+  nsec: 1000000
+}
+
+1794055252.692216051
+sim_time {
+  sec: 421
+  nsec: 992000000
+}
+real_time {
+  sec: 424
+  nsec: 61981193
+}
+iterations: 421992
+real_time_factor: 0.99939436701358975
+step_size {
+  nsec: 1000000
+}
+
+1794055267.763693624
+sim_time {
+  sec: 437
+  nsec: 64000000
+}
+real_time {
+  sec: 439
+  nsec: 133980580
+}
+iterations: 437064
+real_time_factor: 0.99992600547559485
+step_size {
+  nsec: 1000000
+}
+
+1794055282.835993254
+sim_time {
+  sec: 452
+  nsec: 140000000
+}
+real_time {
+  sec: 454
+  nsec: 209980755
+}
+iterations: 452140
+real_time_factor: 1.0001270161310487
+step_size {
+  nsec: 1000000
+}
+
+1794055297.910914604

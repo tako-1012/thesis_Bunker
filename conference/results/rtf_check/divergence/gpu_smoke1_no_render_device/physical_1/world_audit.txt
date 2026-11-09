@@ -1,0 +1,5 @@
+8:      <render_engine>ogre2</render_engine>
+12:      <max_step_size>0.001</max_step_size>
+13:      <real_time_factor>1.0</real_time_factor>
+3743:        <update_rate>50</update_rate>
+3750:        <update_rate>10.0</update_rate>

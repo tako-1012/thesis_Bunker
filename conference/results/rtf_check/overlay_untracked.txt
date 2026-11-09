@@ -1,0 +1,11 @@
+# 025 相当の実験は git の作業ツリーを変えず、Docker の読み取り専用マウントで次のファイルを差し替えて実行した。
+# overlay.patch はその差分（git diff origin/realtime-map は空になるため、実験時の overlay.diff を保存）。
+analyze_rtf.py
+finalize_status.py
+overlay/lidar_checks.py
+overlay/lidar_map.py
+plot_tracks.py
+probe.py
+resource_sampler.py
+run_both.sh
+run_rtf.sh

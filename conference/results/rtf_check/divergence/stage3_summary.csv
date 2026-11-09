@@ -1,0 +1,9 @@
+condition,n,completed,no_path,rollover,other,metric,min,median,max
+R1,5,4,1,0,0,sim_s,96.19,456.34,462.04
+R1,5,4,1,0,0,shape_gap_cloud_max_m,1.02,2.32,5.53
+R1,5,4,1,0,0,false_lethal,303,837.0,856
+R1,5,4,1,0,0,measured_rtf,0.3,0.3,0.3
+R2,5,5,0,0,0,sim_s,455.43,458.08,460.93
+R2,5,5,0,0,0,shape_gap_cloud_max_m,2.5,2.81,3.74
+R2,5,5,0,0,0,false_lethal,822,829.0,839
+R2,5,5,0,0,0,measured_rtf,1.0,1.0,1.0
