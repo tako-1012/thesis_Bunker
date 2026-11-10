@@ -588,3 +588,7 @@ test_visibility exit=0
 - `conference/ros2_jazzy/src/thesis_bunker_gz/thesis_bunker_gz/depth_camera.py`
 - `conference/tapp/sensor_geometry.py`
 - `conference/tests/test_real_sensors.py`
+
+## 追加確認（2026-11-10）
+
+同名ブランチに先に公開されていた実装と報告（`cbf2cae378b9021211b987edf7ca9aa43111eb7c`）を保持した。独立した作業ツリーで `OPENBLAS_NUM_THREADS=1 PYTHONPATH=conference python3 -m tests.test_real_sensors` を再実行し、終了コード0を確認した。追加確認ではコードも既存の結果も変更せず、Gazeboと実コンテナも起動していない。出力全文は `verification/independent_real_sensors_log.txt`。既存の全25モジュールの出力と一覧も確認した。
