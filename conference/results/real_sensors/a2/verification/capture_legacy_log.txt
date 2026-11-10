@@ -1,0 +1,2 @@
+Captured unchanged baseline SDF/spec and default/fine Docker argv; fake Docker only.
+Original tracked conference files: 3713

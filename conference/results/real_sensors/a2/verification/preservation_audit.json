@@ -1,0 +1,11 @@
+{
+  "original_files": 3713,
+  "changed": [
+    "conference/ros2_jazzy/gz_checks/run_lidar_checks.sh",
+    "conference/ros2_jazzy/src/thesis_bunker_gz/thesis_bunker_gz/depth_camera.py",
+    "conference/tapp/sensor_geometry.py",
+    "conference/tests/test_real_sensors.py"
+  ],
+  "unchanged_original_files": 3709,
+  "old_results_maps_worlds_data_unchanged": true
+}

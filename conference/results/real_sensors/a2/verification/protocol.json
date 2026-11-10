@@ -1,0 +1,19 @@
+{
+  "client_date": "2026-11-10",
+  "client_timezone": "Asia/Tokyo",
+  "base": "0009471845c506fbee9c3f5242163511ff5cf628",
+  "branch": "codex/027a2-camera-fov",
+  "scope": "task027 stage A2 steps1-4; Python tests only",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "gazebo_executed": false,
+  "docker_executed": false,
+  "source_sha256": {
+    "conference/ros2_jazzy/gz_checks/run_lidar_checks.sh": "96215e9c8f76de172db1e3f10950af9049de0400bcf2c8dfbdace3e849fd6245",
+    "conference/ros2_jazzy/src/thesis_bunker_gz/thesis_bunker_gz/depth_camera.py": "cb2c28df142e62e4119ac3e44a1707c427c165be626647f0e2f5cf867f7f583c",
+    "conference/tapp/sensor_geometry.py": "7fd490ba7853fb79252ea2257a2c213fcf1dab763dea0e967d3c0599d07cba57",
+    "conference/tests/test_real_sensors.py": "1180a0cb6a4b70160f2506c84d3f94fc468dae884cef1aea43813bab9e982650"
+  }
+}
