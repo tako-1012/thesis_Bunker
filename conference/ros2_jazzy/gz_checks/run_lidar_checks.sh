@@ -9,10 +9,25 @@ if [[ -e "$output_dir/manifest.json" ]]; then
   echo '既存記録は上書きしません。新しい保存先を指定してください。' >&2
   exit 2
 fi
+lidar_map_method=coarse
+lidar_extra_args=("${@:2}")
+for ((lidar_arg_index=0; lidar_arg_index<${#lidar_extra_args[@]}; lidar_arg_index++)); do
+  if [[ "${lidar_extra_args[$lidar_arg_index]}" == --map ]] && ((lidar_arg_index+1<${#lidar_extra_args[@]})); then
+    lidar_map_method="${lidar_extra_args[$((lidar_arg_index+1))]}"
+  elif [[ "${lidar_extra_args[$lidar_arg_index]}" == --map=* ]]; then
+    lidar_map_method="${lidar_extra_args[$lidar_arg_index]#--map=}"
+  fi
+done
+lidar_real_time_factor="${THESIS_REAL_TIME_FACTOR:-1}"
+lidar_stale_timeout="${THESIS_STALE_TIMEOUT_S:-0.5}"
+if [[ "$lidar_map_method" == fine ]]; then
+  lidar_real_time_factor="${THESIS_REAL_TIME_FACTOR:-0.3}"
+  lidar_stale_timeout="${THESIS_STALE_TIMEOUT_S:-1.0}"
+fi
 docker run --rm --pull=never --network host \
   -e ROS_DOMAIN_ID="${THESIS_ROS_DOMAIN_ID:-50}" \
-  -e THESIS_REAL_TIME_FACTOR="${THESIS_REAL_TIME_FACTOR:-1}" \
-  -e THESIS_STALE_TIMEOUT_S="${THESIS_STALE_TIMEOUT_S:-0.5}" \
+  -e THESIS_REAL_TIME_FACTOR="$lidar_real_time_factor" \
+  -e THESIS_STALE_TIMEOUT_S="$lidar_stale_timeout" \
   -e THESIS_OUTPUT_UID="$(id -u)" -e THESIS_OUTPUT_GID="$(id -g)" \
   -e ROS_LOG_DIR=/tmp/thesis-ros-log -e PYTHONPATH=/conference \
   -e MPLCONFIGDIR=/tmp/thesis-mpl -e XDG_CACHE_HOME=/tmp/thesis-cache \
@@ -31,3 +46,5 @@ docker run --rm --pull=never --network host \
     source /tmp/thesis-install/setup.bash
     python3 /conference/ros2_jazzy/gz_checks/lidar_checks.py --output /output "$@"
   ' bash "${@:2}"
+# Task027 opt-in: pass --map fine --sensors lidar_real or lidar_real+depth2.
+# Arguments already pass unchanged through Docker; no flag keeps task022/023.

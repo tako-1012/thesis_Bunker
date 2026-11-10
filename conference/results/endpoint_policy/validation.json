@@ -1,0 +1,17 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "test_modules": 25,
+  "failed_modules": 0,
+  "final_endpoint_review": "tests/test_endpoint_policy_review.txt",
+  "code_tree": "b316c6476dcae4ecbe4a230f1e547556695c8307",
+  "unchanged_paths": [
+    "conference/results/rtf_check",
+    "conference/results/lidar_fine",
+    "conference/results/real_sensors",
+    "conference/tapp/online_mission.py",
+    "conference/ros2_jazzy/gz_checks/lidar_runtime.py",
+    "conference/ros2_jazzy/gz_checks/lidar_map.py"
+  ]
+}

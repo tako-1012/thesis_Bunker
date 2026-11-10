@@ -1,0 +1,42 @@
+{
+  "run": "gpu_smoke",
+  "simulation": {
+    "docker_exit": 124,
+    "timed_out": true,
+    "manifest": "ok",
+    "cases": [
+      {
+        "patch": "08OB87_-0706",
+        "termination": null,
+        "error": "",
+        "mission_json": "TypeError"
+      }
+    ],
+    "execution": "started",
+    "real_time_factor": 1.0,
+    "stale_timeout_s": 1.0,
+    "map_method": "fine",
+    "gazebo": "8.11.0",
+    "ok": false
+  },
+  "measurement": {
+    "probe_rows": 127,
+    "resource_rows": 27,
+    "gz_stats_samples": 9,
+    "world_audit": [
+      "8:      <render_engine>ogre2</render_engine>",
+      "12:      <max_step_size>0.001</max_step_size>",
+      "13:      <real_time_factor>1.0</real_time_factor>",
+      "3743:        <update_rate>50</update_rate>",
+      "3750:        <update_rate>10.0</update_rate>"
+    ],
+    "probe_stderr_tail": [],
+    "ok": true
+  },
+  "existing_report": {
+    "lidar_checks_exit": null,
+    "result": "not_run",
+    "last_error": "",
+    "note": "execution is saved before summarize runs, so a report failure does not touch raw records"
+  }
+}

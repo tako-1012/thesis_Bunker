@@ -1,0 +1,21 @@
+Task: ICAROB abstract figure (A* vs TA*-S exact), shizuoka_beach_las test, 200 m, seed 0, no debris.
+Settings as task013: w=8.0, alpha=0.5, steep threshold 25.0 deg.
+Rules fixed before drawing:
+  rule_first: first test patch (list_patches order) whose A* path crosses >25 deg cells (offline.csv steep_len > 0).
+  rule_max  : test patch whose A* path crosses the longest >25 deg distance (alternative; worst case, label as such).
+A* steep_len [m] per test patch in order: {"08OB86_00294": 0.0, "08OB86_-0205": 0.5, "08OB87_-0706": 0.0, "08OB88_-1417": 0.0, "08OB88_-0167": 43.47, "08OB88_00332": 0.0, "08OB88_01832": 0.7, "08OB89_00152": 0.0, "08OB89_-0347": 0.0, "08OB89_-0847": 0.0, "08OC80_-1089": 0.0, "08OC80_-0589": 0.0, "08OC80_00160": 0.0, "08OC80_00660": 0.0, "08OC91_-1688": 0.0, "08OC91_-0938": 0.0, "08OC91_-0438": 0.0, "08OC91_00061": 5.69, "08OC91_01311": 0.0, "08OC92_-0891": 0.0, "08OC92_-0141": 0.0, "08OC92_00608": 0.0, "08OC94_-0954": 9.58, "08OC95_01428": 0.0, "08OC95_00928": 0.0, "08OC95_00428": 0.0, "08OC95_-0821": 0.0, "08OC95_-1321": 0.0, "08OC95_-2071": 0.0, "08OC96_00073": 0.0, "08OC96_-1426": 0.0, "08OC97_01672": 0.0, "08OC97_01172": 0.0, "08OC97_00422": 0.0, "08OC97_-0577": 3.59, "08OC97_-1077": 0.0, "08OC97_-1827": 21.88, "08OC98_-1601": 0.0, "08OC98_-0351": 6.28, "08OC98_00148": 0.0, "08OC98_00648": 0.0, "08OC98_01398": 0.0, "08OC99_-1516": 0.0, "08OC99_-1016": 0.0, "08OC99_-0016": 0.0, "08OC99_00483": 2.09, "08OC99_01733": 0.0, "08PD00_-1730": 0.0}
+Selected: rule_first=08OB86_-0205, rule_max=08OB88_-0167
+
+[rule_first] 08OB86_-0205  window x 16.8-182.2 m, y 34.5-200.0 m
+  planner  length_xy[m]  mean_cost  climb[m] steep_len[m]         J  offline.csv match
+  A*             155.09     0.1751      2.98         0.50     372.3  True
+  TA*-S          156.83     0.0795      1.13         0.00     256.5  True
+
+[rule_max] 08OB88_-0167  window x 7.5-200.0 m, y 7.5-200.0 m
+  planner  length_xy[m]  mean_cost  climb[m] steep_len[m]         J  offline.csv match
+  A*             157.68     0.4511      8.11        43.47     726.7  True
+  TA*-S          289.77     0.1380      7.91         0.00     609.6  True
+
+mean_cost = mean robot-normalised terrain cost along the path; J = length_xy*(1+w*mean_cost); climb = summed ascent;
+steep_len = path length on >25 deg cells. Colours: grey slope, red >25 deg, light blue sea, light purple no data;
+A* blue dashed, TA*-S orange solid (Okabe-Ito). No energy values.

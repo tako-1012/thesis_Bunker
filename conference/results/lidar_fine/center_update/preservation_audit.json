@@ -1,0 +1,12 @@
+{
+  "base": "a6bf889c763484640bda6139e6291d2492d191ff",
+  "original_tracked_files": 3884,
+  "permitted_existing_changes": [
+    "conference/tapp/pointcloud_map_fine.py",
+    "conference/tests/test_pointcloud_map_fine.py",
+    "conference/results/lidar_fine/REPORT_ja.md"
+  ],
+  "other_original_files_unchanged": true,
+  "previous_report_is_byte_identical_prefix": true,
+  "old_results_unchanged": "All previous result files except the explicitly requested REPORT_ja.md append"
+}

@@ -1,0 +1,13 @@
+1 PASS: default original runtime, path and CSV bytes unchanged
+2 PASS: fixed 0.5m start escape; all three raw masks remain blocked
+3 PASS: reachable nearest substitute <=1.0m; raw goal unreachable
+3b PASS: substitute remains nearby after replanning and arrival
+4 PASS: actual async runtime stops, waits 1 sim second, retries once, skips and terminates
+4b PASS: stale blocked handoff stops and terminates after one timed retry
+5 PASS: exact failed map, classifications, 10s snapshots/newest 3, offline exact lengths
+5b PASS: time-aligned actual-travel audit; ROS callback holds zero velocity and retains run log
+6 replay: {'case': 'results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706', 'failure_class': 'start_cell', 'none': 'no_path', 'escape': 'unreachable_after_retry_then_next_stop', 'goal': [347, 145], 'outcome': 'unreachable', 'relaxed_cells': 1, 'relaxed_truth_lethal_cells': 0, 'raw_cells_cleared': 0, 'relaxed_length_m': 0.0, 'truth_lethal_length_m': 0.0, 'cells': []}
+6 replay: {'case': 'results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706', 'failure_class': 'start_cell', 'none': 'no_path', 'escape': 'unreachable_after_retry_then_next_stop', 'goal': [347, 145], 'outcome': 'unreachable', 'relaxed_cells': 1, 'relaxed_truth_lethal_cells': 0, 'raw_cells_cleared': 0, 'relaxed_length_m': 0.0, 'truth_lethal_length_m': 0.0, 'cells': []}
+6 replay: {'case': 'results/lidar_fine/physical_10/raw/08OB88_-1417', 'failure_class': 'goal_cell', 'none': 'no_path', 'escape': 'path', 'goal': [198, 151], 'outcome': 'nearby', 'relaxed_cells': 0, 'relaxed_truth_lethal_cells': 0, 'raw_cells_cleared': 0, 'relaxed_length_m': 0.0, 'truth_lethal_length_m': 0.0, 'cells': []}
+6 PASS: three saved failures reproduced without changing fixed constants
+Task028 endpoint policy tests passed; full existing suite is run separately (requirement 7).

@@ -1,0 +1,5 @@
+mode,execution,scheduled,executed,unexecuted,completed,stuck,rollover,no_path,timeout,runtime_error,incomplete_waypoints,debris_audited_runs,debris_touching_runs,map_seen_cells_median,map_lethal_cells_median,truth_lethal_cells_median,map_fp_cells_median,map_fn_cells_median,map_fp_box_adjacent_cells_median,clearance_fp_cells_median,clearance_fn_cells_median,detected_obstacle_cells_median,truth_obstacle_cells_median,detector_fp_cells_median,detector_fn_cells_median,detector_fp_box_adjacent_cells_median,detector_on_unusable_cells_median,map_update_s_median_median,map_update_s_p95_median,map_update_s_max_median
+fixed,記録あり,10,10,0,0.0,9.0,1.0,0.0,0.0,0.0,0.0,10,3.0,,,,,,,,,,,,,,,,,
+online,記録あり,10,10,0,9.0,0.0,1.0,0.0,0.0,0.0,0.0,10,2.0,,,,,,,,,,,,,,,,,
+lidar,記録あり,10,10,0,4.0,0.0,2.0,4.0,0.0,0.0,0.0,10,0.0,41668.5,7555.0,6013.5,1471.5,8.0,15.5,1388.0,30.0,769.5,157.5,601.0,1.0,403.5,161.5,0.08699216925015207,0.12764454002476666,0.5729133445001935
+fine,未実行,10,0,10,,,,,,,,0,,,,,,,,,,,,,,,,,,

@@ -31,7 +31,7 @@ class LidarSpec:
             raise ValueError('invalid rate/range/noise')
 
 
-def add_lidar(body, *, sensor_height_m=.8, spec=LidarSpec()):
+def add_lidar(body, *, sensor_height_m=.8, spec=LidarSpec(), sensor_xyz=None, sensor_rpy=(0., 0., 0.)):
     spec.validate()
     if not math.isfinite(sensor_height_m) or sensor_height_m <= 0:
         raise ValueError('sensor height must be positive')
@@ -41,7 +41,13 @@ def add_lidar(body, *, sensor_height_m=.8, spec=LidarSpec()):
             result.text = str(text)
         return result
     sensor = node(body, 'sensor', name='lidar', type='gpu_lidar')
-    node(sensor, 'pose', f'0 0 {sensor_height_m-.35:.17g} 0 0 0')
+    if sensor_xyz is None and sensor_rpy == (0., 0., 0.):
+        pose = f'0 0 {sensor_height_m-.35:.17g} 0 0 0'
+    else:
+        from tapp.sensor_geometry import SensorMount
+        mount = SensorMount((0., 0., sensor_height_m) if sensor_xyz is None else tuple(sensor_xyz), tuple(sensor_rpy))
+        pose = ' '.join(f'{v:.17g}' for v in (*mount.base_link_xyz, *mount.rpy))
+    node(sensor, 'pose', pose)
     node(sensor, 'always_on', 'true')
     node(sensor, 'update_rate', spec.update_hz)
     node(sensor, 'topic', '/lidar')

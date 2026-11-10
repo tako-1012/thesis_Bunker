@@ -1,0 +1,372 @@
+== hayashi_first_no_path: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== cloud_official: results/lidar_fine/physical_10/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.180; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.4e-08; range diff mean -0.0000 std 0.0285 m (n=12742)
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 0.99, "same_time_at_s": 73.5, "first_over_0_5m_s": 10.5, "shape_max": 0.94, "shape_p95": 0.79, "shape_at_same_time_max": 0.92}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+
+== hayashi_first_no_path: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== cloud_first_attempt: results/lidar_fine/first_attempt_partial/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.400; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.300; pose diff max 0.0504; different scan times, so the clouds are not compared
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 4009, 'failed': 0, 'first_stamp': 0.3, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 14, 'update_s_median': 0.151, 'update_s_max': 0.856}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 1.14, "same_time_at_s": 7.5, "first_over_0_5m_s": 4.0, "shape_max": 1.14, "shape_p95": 0.8, "shape_at_same_time_max": 1.13}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "completed", "elapsed": 457.6, "replans": 129, "plan_calls": 130, "failed_plans": 0, "end_xy": [24.78, 100.17]}
+
+== hayashi_first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB86_-0205
+== hayashi_control_0.3: results/rtf_check/hayashi_rtf1_check/rtf_0.3/physical_1/raw/08OB86_-0205
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.160; start pose A [24.473426199934213, 131.59837935313215, 3.3056794749221012, 0.15160267200056446, 0.019156972862550622, -0.00976151851333631] B [24.473426199934213, 131.59837935313215, 3.3056794749221012, 0.15160267200056446, 0.019156972862550622, -0.00976151851333631]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.8e-08; range diff mean -0.0002 std 0.0285 m (n=12857)
+-- sensing / mapping
+   A {'updates': 2118, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.7, 'queue_drops': 0, 'update_s_median': 0.057, 'update_s_max': 0.081}
+   B {'updates': 2101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.6, 'queue_drops': 0, 'update_s_median': 0.056, 'update_s_max': 0.082}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 240.5, "same_time_max": 16.18, "same_time_at_s": 130.0, "first_over_0_5m_s": 20.5, "shape_max": 14.95, "shape_p95": 11.43, "shape_at_same_time_max": 11.18}
+-- outcome
+   A {"status": "completed", "elapsed": 242.2, "replans": 44, "plan_calls": 49, "failed_plans": 0, "end_xy": [24.65, 134.82]}
+   B {"status": "completed", "elapsed": 240.5, "replans": 51, "plan_calls": 52, "failed_plans": 0, "end_xy": [24.6, 134.78]}
+
+== hayashi_control_0.3: results/rtf_check/hayashi_rtf1_check/rtf_0.3/physical_1/raw/08OB86_-0205
+== hayashi_rtf1: results/rtf_check/hayashi_rtf1_check/rtf_1/physical_1/raw/08OB86_-0205
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.160 B 5.260; start pose A [24.473426199934213, 131.59837935313215, 3.3056794749221012, 0.15160267200056446, 0.019156972862550622, -0.00976151851333631] B [24.471629310666536, 131.45549339191612, 3.2856337519625085, 0.1379783281998604, 0.016893755187596882, -0.010098514249611088]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.8e-08; range diff mean 0.0001 std 0.0287 m (n=12857)
+-- sensing / mapping
+   A {'updates': 2101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.6, 'queue_drops': 0, 'update_s_median': 0.056, 'update_s_max': 0.082}
+   B {'updates': 2241, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 0, 'update_s_median': 0.071, 'update_s_max': 0.128}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 240.5, "same_time_max": 16.74, "same_time_at_s": 134.5, "first_over_0_5m_s": 11.5, "shape_max": 16.44, "shape_p95": 12.36, "shape_at_same_time_max": 12.36}
+-- outcome
+   A {"status": "completed", "elapsed": 240.5, "replans": 51, "plan_calls": 52, "failed_plans": 0, "end_xy": [24.6, 134.78]}
+   B {"status": "completed", "elapsed": 241.5, "replans": 40, "plan_calls": 41, "failed_plans": 0, "end_xy": [24.66, 134.78]}
+
+== hayashi_first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB86_-0205
+== cloud_official: results/lidar_fine/physical_10/raw/08OB86_-0205
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.400; start pose A [24.473426199934213, 131.59837935313215, 3.3056794749221012, 0.15160267200056446, 0.019156972862550622, -0.00976151851333631] B [24.46981874533432, 131.30833647540598, 3.266032770846116, 0.122945441460676, 0.022456802086992696, -0.009320114299347784]
+   stamp A 0.100 B 0.300; pose diff max 0.0985; different scan times, so the clouds are not compared
+-- sensing / mapping
+   A {'updates': 2118, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.7, 'queue_drops': 0, 'update_s_median': 0.057, 'update_s_max': 0.081}
+   B {'updates': 2157, 'failed': 0, 'first_stamp': 0.3, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.148, 'update_s_max': 0.414}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 239.8, "same_time_max": 16.12, "same_time_at_s": 131.0, "first_over_0_5m_s": 19.5, "shape_max": 14.31, "shape_p95": 11.37, "shape_at_same_time_max": 11.73}
+-- outcome
+   A {"status": "completed", "elapsed": 242.2, "replans": 44, "plan_calls": 49, "failed_plans": 0, "end_xy": [24.65, 134.82]}
+   B {"status": "completed", "elapsed": 239.8, "replans": 60, "plan_calls": 61, "failed_plans": 0, "end_xy": [24.63, 134.8]}
+
+===== 反復試験（hayashi_rtf_repeat）を加えた比較 =====
+
+##### first_0.3 vs rtf_0.3_rep1
+== first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== rtf_0.3_rep1: results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep1/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.2e-08; range diff mean 0.0003 std 0.0283 m (n=12742)
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 3965, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 0, 'update_s_median': 0.054, 'update_s_max': 0.143}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 3.77, "same_time_at_s": 95.5, "first_over_0_5m_s": 9.5, "shape_max": 3.85, "shape_p95": 1.45, "shape_at_same_time_max": 3.47}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "completed", "elapsed": 460.2, "replans": 125, "plan_calls": 126, "failed_plans": 0, "end_xy": [24.84, 100.12]}
+
+##### cloud_official vs rtf_0.3_rep1
+== cloud: results/lidar_fine/physical_10/raw/08OB87_-0706
+== rtf_0.3_rep1: results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep1/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.180 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.8e-08; range diff mean 0.0003 std 0.0283 m (n=12742)
+-- sensing / mapping
+   A {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   B {'updates': 3965, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 0, 'update_s_median': 0.054, 'update_s_max': 0.143}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 457.7, "same_time_max": 6.23, "same_time_at_s": 328.5, "first_over_0_5m_s": 17.0, "shape_max": 5.81, "shape_p95": 3.45, "shape_at_same_time_max": 5.25}
+-- outcome
+   A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+   B {"status": "completed", "elapsed": 460.2, "replans": 125, "plan_calls": 126, "failed_plans": 0, "end_xy": [24.84, 100.12]}
+
+##### first_0.3 vs rtf_0.3_rep2
+== first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== rtf_0.3_rep2: results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep2/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.5e-08; range diff mean -0.0001 std 0.0283 m (n=12742)
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 4016, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.6, 'queue_drops': 0, 'update_s_median': 0.053, 'update_s_max': 0.108}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 0.72, "same_time_at_s": 66.5, "first_over_0_5m_s": 29.0, "shape_max": 0.69, "shape_p95": 0.59, "shape_at_same_time_max": 0.67}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "completed", "elapsed": 457.0, "replans": 118, "plan_calls": 122, "failed_plans": 0, "end_xy": [24.82, 100.14]}
+
+##### cloud_official vs rtf_0.3_rep2
+== cloud: results/lidar_fine/physical_10/raw/08OB87_-0706
+== rtf_0.3_rep2: results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep2/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.180 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.5e-08; range diff mean -0.0000 std 0.0282 m (n=12742)
+-- sensing / mapping
+   A {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   B {'updates': 4016, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.6, 'queue_drops': 0, 'update_s_median': 0.053, 'update_s_max': 0.108}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 457.0, "same_time_max": 3.04, "same_time_at_s": 315.5, "first_over_0_5m_s": 9.5, "shape_max": 2.85, "shape_p95": 1.54, "shape_at_same_time_max": 2.64}
+-- outcome
+   A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+   B {"status": "completed", "elapsed": 457.0, "replans": 118, "plan_calls": 122, "failed_plans": 0, "end_xy": [24.82, 100.14]}
+
+##### first_0.3 vs rtf_0.3_rep3
+== first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== rtf_0.3_rep3: results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep3/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.260; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.200; pose diff max 0.0511; different scan times, so the clouds are not compared
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 4006, 'failed': 0, 'first_stamp': 0.2, 'gap_median': 0.1, 'gap_max': 0.6, 'queue_drops': 0, 'update_s_median': 0.053, 'update_s_max': 0.094}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 0.89, "same_time_at_s": 35.5, "first_over_0_5m_s": 11.0, "shape_max": 0.89, "shape_p95": 0.78, "shape_at_same_time_max": 0.87}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "completed", "elapsed": 456.9, "replans": 145, "plan_calls": 150, "failed_plans": 0, "end_xy": [24.82, 100.14]}
+
+##### cloud_official vs rtf_0.3_rep3
+== cloud: results/lidar_fine/physical_10/raw/08OB87_-0706
+== rtf_0.3_rep3: results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep3/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.180 B 5.260; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.200; pose diff max 0.0511; different scan times, so the clouds are not compared
+-- sensing / mapping
+   A {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   B {'updates': 4006, 'failed': 0, 'first_stamp': 0.2, 'gap_median': 0.1, 'gap_max': 0.6, 'queue_drops': 0, 'update_s_median': 0.053, 'update_s_max': 0.094}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 456.9, "same_time_max": 4.72, "same_time_at_s": 326.0, "first_over_0_5m_s": 28.0, "shape_max": 4.71, "shape_p95": 3.11, "shape_at_same_time_max": 4.66}
+-- outcome
+   A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+   B {"status": "completed", "elapsed": 456.9, "replans": 145, "plan_calls": 150, "failed_plans": 0, "end_xy": [24.82, 100.14]}
+
+##### first_0.3 vs rtf_1_rep1
+== first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== rtf_1_rep1: results/rtf_check/hayashi_rtf_repeat/rtf_1_rep1/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.160 B 5.260; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.5e-08; range diff mean 0.0002 std 0.0285 m (n=12742)
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 4195, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 27, 'update_s_median': 0.067, 'update_s_max': 0.242}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 0.76, "same_time_at_s": 52.5, "first_over_0_5m_s": 23.5, "shape_max": 0.76, "shape_p95": 0.58, "shape_at_same_time_max": 0.55}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "completed", "elapsed": 459.1, "replans": 141, "plan_calls": 149, "failed_plans": 0, "end_xy": [24.82, 100.13]}
+
+##### cloud_official vs rtf_1_rep1
+== cloud: results/lidar_fine/physical_10/raw/08OB87_-0706
+== rtf_1_rep1: results/rtf_check/hayashi_rtf_repeat/rtf_1_rep1/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.180 B 5.260; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 7.3e-08; range diff mean 0.0002 std 0.0279 m (n=12742)
+-- sensing / mapping
+   A {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   B {'updates': 4195, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 27, 'update_s_median': 0.067, 'update_s_max': 0.242}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 457.7, "same_time_max": 3.65, "same_time_at_s": 315.0, "first_over_0_5m_s": 21.0, "shape_max": 2.37, "shape_p95": 1.79, "shape_at_same_time_max": 2.12}
+-- outcome
+   A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+   B {"status": "completed", "elapsed": 459.1, "replans": 141, "plan_calls": 149, "failed_plans": 0, "end_xy": [24.82, 100.13]}
+
+##### first_0.3 vs rtf_1_rep2
+== first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== rtf_1_rep2: results/rtf_check/hayashi_rtf_repeat/rtf_1_rep2/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.160 B 5.280; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.5e-08; range diff mean 0.0001 std 0.0285 m (n=12742)
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 4241, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 15, 'update_s_median': 0.067, 'update_s_max': 0.246}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 1.15, "same_time_at_s": 59.0, "first_over_0_5m_s": 10.0, "shape_max": 0.99, "shape_p95": 0.81, "shape_at_same_time_max": 0.58}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "completed", "elapsed": 460.0, "replans": 112, "plan_calls": 113, "failed_plans": 0, "end_xy": [24.84, 100.12]}
+
+##### cloud_official vs rtf_1_rep2
+== cloud: results/lidar_fine/physical_10/raw/08OB87_-0706
+== rtf_1_rep2: results/rtf_check/hayashi_rtf_repeat/rtf_1_rep2/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.180 B 5.280; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.9e-08; range diff mean 0.0002 std 0.0284 m (n=12742)
+-- sensing / mapping
+   A {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   B {'updates': 4241, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 15, 'update_s_median': 0.067, 'update_s_max': 0.246}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 457.7, "same_time_max": 5.75, "same_time_at_s": 398.5, "first_over_0_5m_s": 20.5, "shape_max": 5.14, "shape_p95": 1.76, "shape_at_same_time_max": 0.3}
+-- outcome
+   A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+   B {"status": "completed", "elapsed": 460.0, "replans": 112, "plan_calls": 113, "failed_plans": 0, "end_xy": [24.84, 100.12]}
+
+##### first_0.3 vs rtf_1_rep3
+== first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== rtf_1_rep3: results/rtf_check/hayashi_rtf_repeat/rtf_1_rep3/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.160 B 5.260; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.7e-08; range diff mean -0.0001 std 0.0282 m (n=12742)
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 4165, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 24, 'update_s_median': 0.071, 'update_s_max': 0.246}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 0.71, "same_time_at_s": 87.5, "first_over_0_5m_s": 13.0, "shape_max": 0.65, "shape_p95": 0.55, "shape_at_same_time_max": 0.57}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "completed", "elapsed": 456.6, "replans": 116, "plan_calls": 117, "failed_plans": 0, "end_xy": [24.81, 100.15]}
+
+##### cloud_official vs rtf_1_rep3
+== cloud: results/lidar_fine/physical_10/raw/08OB87_-0706
+== rtf_1_rep3: results/rtf_check/hayashi_rtf_repeat/rtf_1_rep3/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.180 B 5.260; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.4e-08; range diff mean -0.0000 std 0.0284 m (n=12742)
+-- sensing / mapping
+   A {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   B {'updates': 4165, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 24, 'update_s_median': 0.071, 'update_s_max': 0.246}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 456.6, "same_time_max": 2.24, "same_time_at_s": 385.0, "first_over_0_5m_s": 28.0, "shape_max": 2.2, "shape_p95": 1.36, "shape_at_same_time_max": 2.18}
+-- outcome
+   A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+   B {"status": "completed", "elapsed": 456.6, "replans": 116, "plan_calls": 117, "failed_plans": 0, "end_xy": [24.81, 100.15]}
+
+===== 段階3：経路なしになった R1_05 と各走行の比較 =====
+##### first_0.3 vs R1_05
+== first_0.3: results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706
+== R1_05: results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   protocol: None | rtf_check
+-- start / first cloud
+   started_t A 5.160 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.2e-08; range diff mean 0.0001 std 0.0286 m (n=12742)
+-- sensing / mapping
+   A {'updates': 890, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 0, 'update_s_median': 0.055, 'update_s_max': 0.152}
+   B {'updates': 871, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.056, 'update_s_max': 0.149}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 95.9, "same_time_max": 0.89, "same_time_at_s": 59.0, "first_over_0_5m_s": 16.5, "shape_max": 0.72, "shape_p95": 0.54, "shape_at_same_time_max": 0.53}
+-- outcome
+   A {"status": "no_path", "elapsed": 95.9, "replans": 37, "plan_calls": 71, "failed_plans": 1, "end_xy": [76.9, 71.01], "lethal_within_1m_of_robot": 8, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 69, "reason": "distance", "success": true, "plan_time_s": 0.130740128999605}, {"n_plans": 70, "reason": "distance", "success": true, "plan_time_s": 0.0909597589998156}, {"n_plans": 71, "reason": "distance", "success": false, "plan_time_s": 0.0068192910002835}]}
+   B {"status": "no_path", "elapsed": 96.2, "replans": 42, "plan_calls": 49, "failed_plans": 1, "end_xy": [76.88, 71.03], "lethal_within_1m_of_robot": 9, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 47, "reason": "distance", "success": true, "plan_time_s": 0.1257070870015013}, {"n_plans": 48, "reason": "distance", "success": true, "plan_time_s": 0.0864418919991294}, {"n_plans": 49, "reason": "distance", "success": false, "plan_time_s": 0.0066386979997332}]}
+##### cloud_official vs R1_05
+== cloud: results/lidar_fine/physical_10/raw/08OB87_-0706
+== R1_05: results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   protocol: None | rtf_check
+-- start / first cloud
+   started_t A 5.180 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.2e-08; range diff mean 0.0001 std 0.0286 m (n=12742)
+-- sensing / mapping
+   A {'updates': 4101, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.129, 'update_s_max': 0.68}
+   B {'updates': 871, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.056, 'update_s_max': 0.149}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 96.2, "same_time_max": 1.02, "same_time_at_s": 15.0, "first_over_0_5m_s": 9.5, "shape_max": 1.02, "shape_p95": 0.94, "shape_at_same_time_max": 1.02}
+-- outcome
+   A {"status": "completed", "elapsed": 457.7, "replans": 116, "plan_calls": 137, "failed_plans": 0, "end_xy": [24.85, 100.13]}
+   B {"status": "no_path", "elapsed": 96.2, "replans": 42, "plan_calls": 49, "failed_plans": 1, "end_xy": [76.88, 71.03], "lethal_within_1m_of_robot": 9, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 47, "reason": "distance", "success": true, "plan_time_s": 0.1257070870015013}, {"n_plans": 48, "reason": "distance", "success": true, "plan_time_s": 0.0864418919991294}, {"n_plans": 49, "reason": "distance", "success": false, "plan_time_s": 0.0066386979997332}]}
+##### R1_01 vs R1_05
+== R1_01: results/rtf_check/divergence/R1_01/physical_1/raw/08OB87_-0706
+== R1_05: results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   none
+-- start / first cloud
+   started_t A 5.160 B 5.160; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.5e-08; range diff mean -0.0002 std 0.0285 m (n=12742)
+-- sensing / mapping
+   A {'updates': 3929, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 0, 'update_s_median': 0.053, 'update_s_max': 0.078}
+   B {'updates': 871, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.4, 'queue_drops': 1, 'update_s_median': 0.056, 'update_s_max': 0.149}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 96.2, "same_time_max": 1.91, "same_time_at_s": 17.5, "first_over_0_5m_s": 10.0, "shape_max": 1.91, "shape_p95": 1.68, "shape_at_same_time_max": 1.9}
+-- outcome
+   A {"status": "completed", "elapsed": 457.8, "replans": 133, "plan_calls": 134, "failed_plans": 0, "end_xy": [24.81, 100.15]}
+   B {"status": "no_path", "elapsed": 96.2, "replans": 42, "plan_calls": 49, "failed_plans": 1, "end_xy": [76.88, 71.03], "lethal_within_1m_of_robot": 9, "current_goal_cell": [347, 145], "goal_cell_lethal": false, "lethal_within_1m_of_goal": 0, "last_plans": [{"n_plans": 47, "reason": "distance", "success": true, "plan_time_s": 0.1257070870015013}, {"n_plans": 48, "reason": "distance", "success": true, "plan_time_s": 0.0864418919991294}, {"n_plans": 49, "reason": "distance", "success": false, "plan_time_s": 0.0066386979997332}]}
+##### R1_01 vs R2_01
+== R1_01: results/rtf_check/divergence/R1_01/physical_1/raw/08OB87_-0706
+== R2_01: results/rtf_check/divergence/R2_01/physical_1/raw/08OB87_-0706
+-- inputs/settings (differences only)
+   real_time_factor: 0.3 | 1.0
+-- start / first cloud
+   started_t A 5.160 B 5.220; start pose A [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684] B [25.001887874284392, 99.99265145546899, 2.495320409122794, 0.051377514102782317, -0.005808272858677855, 0.006007092991284684]
+   stamp A 0.100 B 0.100; pose diff max 0.0000; identical=False; ray-direction max diff 6.7e-08; range diff mean 0.0001 std 0.0284 m (n=12742)
+-- sensing / mapping
+   A {'updates': 3929, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 0, 'update_s_median': 0.053, 'update_s_max': 0.078}
+   B {'updates': 3947, 'failed': 0, 'first_stamp': 0.1, 'gap_median': 0.1, 'gap_max': 0.5, 'queue_drops': 12, 'update_s_median': 0.063, 'update_s_max': 0.241}
+   identical point clouds shared by both runs: 0
+-- trajectories (same elapsed time vs shape)
+   {"compared_s": 457.8, "same_time_max": 3.18, "same_time_at_s": 315.5, "first_over_0_5m_s": 11.5, "shape_max": 2.56, "shape_p95": 2.13, "shape_at_same_time_max": 2.42}
+-- outcome
+   A {"status": "completed", "elapsed": 457.8, "replans": 133, "plan_calls": 134, "failed_plans": 0, "end_xy": [24.81, 100.15]}
+   B {"status": "completed", "elapsed": 459.8, "replans": 126, "plan_calls": 131, "failed_plans": 0, "end_xy": [24.79, 100.16]}

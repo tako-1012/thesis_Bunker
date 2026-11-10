@@ -1,0 +1,7 @@
+fixture,before_total,after_total,before_outside,after_outside,before_next_cell,after_next_cell
+noisy_box_100,9,9,8,8,False,False
+noisy_box_101,9,9,8,8,False,False
+noisy_box_102,9,9,8,8,False,False
+noisy_box_103,9,9,8,8,False,False
+noisy_box_104,9,9,8,8,False,False
+side_spill_0.1m,7,4,6,3,True,False

@@ -1,0 +1,42 @@
+{
+  "client_date": "2026-11-05",
+  "base": "6d0ae7dc733202b41b92df3c37f62e5a246426bc",
+  "branch": "codex/023-lidar-fine-grid",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8"
+  },
+  "fine_resolution_m": 0.1,
+  "coarse_resolution_m": 0.5,
+  "obstacle_height_m": 0.3,
+  "min_obstacle_points": 3,
+  "radius_m": 0.5,
+  "parameter_selection": "none: all four values prescribed before implementation",
+  "history": "same 64 returns per coarse height cell, retaining fine IDs; same temporal window",
+  "geometry": "fine-cell-centre radius disk, union of raw-seed dilations, then 5x5 any-overlap pooling",
+  "synthetic_box": "0.4m high; sides on coarse cell borders; radial Gaussian sigma0.02m; seeds100..104; not Gazebo",
+  "real_time_factor": 0.3,
+  "stale_timeout_s": 1.0,
+  "terrain_visual": "triangle_mesh",
+  "fine_physical_runs": 0,
+  "source_sha256": {
+    "tapp/pointcloud_map_fine.py": "361014fadd3223fa19cf2c6491b862598801d039b0e41ec11a5a158aaad725b4",
+    "tapp/pointcloud_map.py": "c385c4c90d4b6eb5cf2107a0ece8c79f33d06ca814b34b813dc7e10791c94c99",
+    "tapp/traversability.py": "b655d1b97aef36a74a636bb1ff5089b421f9f5ef1aa8a3e489ac024d4597d9c2",
+    "tapp/footprint.py": "2dcfd352570fbbcd9666439dbfeecd1d98fc911e083ff5f489d1a6c7739b1b4e",
+    "tapp/online_mission.py": "cb6256d33524a7121a79c4cb12e406b3be32f741bc072ebb4eb01481935882b9",
+    "tapp/config.py": "5c4cfe860b16f2d4540e970f2ca19a634f563a24deb361d0e85b7daa6e6c7895",
+    "experiments/lidar_fine_report.py": "5482571ad590bcb270ad1551f0b773066ebff3b49b43867761192df31f861461",
+    "tests/test_pointcloud_map_fine.py": "bca704d3c66c3fdc089ca8a49208daa47e87a6a9c893d709a0e46e7b012de306",
+    "ros2_jazzy/gz_checks/lidar_checks.py": "1129631011731b2b17c41a1d0b993b1972b1c95eaf55745b7d16db9f38c491da",
+    "ros2_jazzy/gz_checks/lidar_planner.py": "35f47b86293e653eac6dd464adbe0e235ca55e7e75e1035225ed571a0524a607",
+    "ros2_jazzy/gz_checks/lidar_map.py": "d65031fa1b5490ff06b3f9db551bcb63dd50324872dd20e40053e60ca89d2a78",
+    "ros2_jazzy/gz_checks/run_lidar_checks.sh": "46a2ff67129cade45aa9684f8c94a766e3d649a92546f32cdfcdc481344bf218",
+    "ros2_jazzy/gz_checks/terrain_mesh.py": "fb6073250c52e9c50e65c83b0d4024b9280ed4f87a8fd41dc4b307ba24aa1be8",
+    "results/lidar_fine/verification/plot_fixture.py": "9a75279b23a1082a8896f044b0e88959fac74d1c8b60f59f07c82bb4d2c06cbf"
+  }
+}

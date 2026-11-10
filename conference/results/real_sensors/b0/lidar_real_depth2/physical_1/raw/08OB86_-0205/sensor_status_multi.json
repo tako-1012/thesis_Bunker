@@ -1,0 +1,23 @@
+{
+  "lidar": {
+    "received": 2143,
+    "processed": 2142,
+    "queue_drops": 0,
+    "last_stamp": 246.0,
+    "error": ""
+  },
+  "camera1": {
+    "received": 2335,
+    "processed": 2335,
+    "queue_drops": 0,
+    "last_stamp": 246.1,
+    "error": ""
+  },
+  "camera2": {
+    "received": 2356,
+    "processed": 2355,
+    "queue_drops": 1,
+    "last_stamp": 246.1,
+    "error": ""
+  }
+}

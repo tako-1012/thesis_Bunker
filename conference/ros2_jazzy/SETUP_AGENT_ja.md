@@ -1,5 +1,7 @@
 # Ubuntu 24.04 の環境構築（コーディングエージェント向けの指示書）
 
+> 研究 PC「hayashi」（この文書の環境が入った PC）への接続と、実験の進め方は `conference/RESEARCH_PC_ja.md` を参照。
+
 この文書は、**Ubuntu 24.04 のパソコンで動く Claude Code や Codex** が読んで、このリポジトリの
 ROS2 Jazzy ＋ Gazebo Harmonic の環境を作り、動くことを確かめるためのものです。
 人が読んでも同じ手順で進められます。詳しい説明は `conference/ros2_jazzy/README_ja.md` にあります。

@@ -1,0 +1,60 @@
+{
+  "run": "lidar_real_depth2",
+  "simulation": {
+    "docker_exit": 0,
+    "timed_out": false,
+    "manifest": "ok",
+    "cases": [
+      {
+        "patch": "08OB86_-0205",
+        "termination": "completed",
+        "error": "",
+        "status": "completed",
+        "started_t": 5.28,
+        "finished_t": 246.15,
+        "wall_elapsed_s": 802.9062598369997,
+        "online_error": null
+      }
+    ],
+    "execution": "finished",
+    "real_time_factor": 0.3,
+    "stale_timeout_s": 1.0,
+    "map_method": "fine",
+    "gazebo": "8.11.0",
+    "ok": true
+  },
+  "measurement": {
+    "probe_rows": 0,
+    "resource_rows": 165,
+    "gz_stats_samples": 28,
+    "world_audit": [
+      "8:      <render_engine>ogre2</render_engine>",
+      "12:      <max_step_size>0.001</max_step_size>",
+      "13:      <real_time_factor>0.3</real_time_factor>",
+      "4461:      <sensor name=\"imu\" type=\"imu\">",
+      "4463:        <update_rate>50</update_rate>",
+      "4464:        <topic>/imu</topic>",
+      "4467:      <sensor name=\"lidar\" type=\"gpu_lidar\">",
+      "4470:        <update_rate>10.0</update_rate>",
+      "4471:        <topic>/lidar</topic>",
+      "4472:        <gz_frame_id>lidar</gz_frame_id>",
+      "4499:      <sensor name=\"camera1\" type=\"depth_camera\">",
+      "4502:        <update_rate>10.0</update_rate>",
+      "4503:        <topic>/camera1</topic>",
+      "4504:        <gz_frame_id>camera1</gz_frame_id>",
+      "4531:      <sensor name=\"camera2\" type=\"depth_camera\">",
+      "4534:        <update_rate>10.0</update_rate>",
+      "4535:        <topic>/camera2</topic>",
+      "4536:        <gz_frame_id>camera2</gz_frame_id>",
+      "4575:      <topic>/cmd_vel</topic>"
+    ],
+    "probe_stderr_tail": [],
+    "ok": false
+  },
+  "existing_report": {
+    "lidar_checks_exit": 0,
+    "result": "passed",
+    "last_error": "",
+    "note": "execution is saved before summarize runs, so a report failure does not touch raw records"
+  }
+}

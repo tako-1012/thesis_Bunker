@@ -1,0 +1,7 @@
+from,to,median_m,p95_m,max_m
+rtf1,rtf03_control,0.64,10.98,14.45
+rtf1,rtf03_first,0.33,3.02,4.04
+rtf1,cloud03,0.61,10.90,14.27
+rtf03_control,rtf03_first,0.59,12.47,14.82
+rtf03_control,cloud03,0.22,0.69,1.17
+rtf03_first,cloud03,0.47,10.04,14.06
