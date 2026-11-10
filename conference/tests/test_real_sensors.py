@@ -71,19 +71,51 @@ def test_preset_sdf():
             assert node.get('type')=='depth_camera'
             assert node.findtext('topic')=='/'+name
             camera=node.find('camera'); spec=DepthCameraSpec()
-            assert int(camera.findtext('image/width'))==212 and int(camera.findtext('image/height'))==120
+            assert int(camera.findtext('image/width'))==214 and int(camera.findtext('image/height'))==125
             assert float(camera.findtext('clip/near'))==.6 and float(camera.findtext('clip/far'))==6
             assert float(node.findtext('update_rate'))==10
             assert float(camera.findtext('noise/stddev'))==.01
-            fx=float(camera.findtext('lens/intrinsics/fx'));fy=float(camera.findtext('lens/intrinsics/fy'))
-            np.testing.assert_allclose(np.rad2deg([2*np.arctan(spec.width/(2*fx)),2*np.arctan(spec.height/(2*fy))]),[87,58])
+            assert camera.find('.//intrinsics') is None
+            horizontal=float(camera.findtext('horizontal_fov'))
+            np.testing.assert_allclose(np.rad2deg(horizontal),87)
+            vertical=np.rad2deg(2*np.arctan(spec.height/spec.width*np.tan(horizontal/2)))
+            assert abs(vertical-58) <= .1
         one=ET.parse(make_model(Path(temp)/'lidar.sdf',sensor_preset='real_bunker'))
         assert one.find(".//sensor[@name='camera1']") is None
     left,right=REAL_MOUNTS['camera1'],REAL_MOUNTS['camera2']
     np.testing.assert_array_equal(right.xyz,[left.xyz[0],-left.xyz[1],left.xyz[2]])
     assert right.rpy[2]==-left.rpy[2]
     raises(lambda: make_model('/tmp/task027-invalid.sdf',sensor_preset='bad'))
-    print('PASS real preset mounts, symmetry, LiDAR unchanged beam/noise spec and camera FOV/ranges/intrinsics')
+    print('PASS real preset mounts, symmetry, unchanged LiDAR spec and camera FOV/ranges without intrinsics')
+
+
+def test_a2_projection_and_other_values():
+    baseline=ROOT/'results/real_sensors/a2/verification/legacy'
+    old_spec=json.loads((baseline/'depth_camera_spec.json').read_text())
+    expected_spec=dict(old_spec,width=214,height=125)
+    assert asdict(DepthCameraSpec())==expected_spec
+    with tempfile.TemporaryDirectory() as temporary:
+        root=Path(temporary)
+        for name,kwargs in [('default.sdf',{}),('lidar.sdf',dict(lidar=True)),
+                            ('real_lidar.sdf',dict(sensor_preset='real_bunker'))]:
+            assert make_model(root/name,**kwargs).read_bytes()==(baseline/name).read_bytes(),name
+        actual=make_model(root/'depth2.sdf',sensor_preset='real_bunker',depth_cameras=True)
+        tree=ET.parse(actual)
+        assert tree.find('.//intrinsics') is None
+        expected=ET.parse(baseline/'depth2.sdf')
+        for name in ('camera1','camera2'):
+            old=expected.find(f".//sensor[@name='{name}']/camera")
+            old.find('image/width').text='214';old.find('image/height').text='125'
+            old.remove(old.find('lens'))
+            camera=tree.find(f".//sensor[@name='{name}']/camera")
+            width=int(camera.findtext('image/width'));height=int(camera.findtext('image/height'))
+            horizontal=float(camera.findtext('horizontal_fov'))
+            vertical=float(np.rad2deg(2*np.arctan(height/width*np.tan(horizontal/2))))
+            assert (width,height)==(214,125) and abs(vertical-58) <= .1
+            print(f'A2 {name}: image={width}x{height}, horizontal_deg={np.rad2deg(horizontal):.12f}, vertical_deg={vertical:.12f}, intrinsics=absent')
+        ET.indent(expected)
+        assert actual.read_bytes()==ET.tostring(expected.getroot(),encoding='utf-8',xml_declaration=True)
+    print('PASS A2: three camera-free SDFs byte-identical; depth SDF/spec change only prescribed resolution and intrinsics')
 
 
 def test_full_rigid_transform():
@@ -192,6 +224,8 @@ def test_manifest_and_wrapper():
             config=manifest['sensor_configuration']
             assert config==sensor_configuration(mode)
             assert len(config['mounts'])==(3 if mode.endswith('depth2') else 1)
+            if mode.endswith('depth2'):
+                assert config['depth_camera_spec']['width']==214 and config['depth_camera_spec']['height']==125
             selected=make_pointcloud_map(np.zeros((10,10)),map_method='fine',sensors=mode)
             assert isinstance(selected,PointCloudMapMulti)
         raises(lambda: prepare_cases(root/'bad',sensors='lidar_real'))
@@ -202,6 +236,38 @@ def test_manifest_and_wrapper():
         subprocess.run(['bash',str(ROOT/'ros2_jazzy/gz_checks/run_lidar_checks.sh'),str(root/'wrapper'),*args],env=env,check=True)
         assert json.loads((root/'args.json').read_text())[-len(args):]==args
     print('PASS manifest records all real specs/mounts; explicit fine selection; Docker wrapper forwards sensor flags')
+
+
+def test_a2_wrapper_protocol_environment():
+    reference=json.loads((ROOT/'results/real_sensors/a2/verification/legacy/wrapper_args.json').read_text())
+    with tempfile.TemporaryDirectory() as temporary:
+        root=Path(temporary)
+        binary=root/'docker'
+        binary.write_text('#!/usr/bin/env python3\nimport os,sys,json\nopen(os.environ["TASK027A2_ARGS"],"w").write(json.dumps(sys.argv[1:]))\n')
+        binary.chmod(0o755)
+        env=dict(os.environ,PATH=str(root)+os.pathsep+os.environ['PATH'],TASK027A2_ARGS=str(root/'args.json'))
+        for name in ('THESIS_FINE_PROTOCOL','THESIS_ONLY_PATCH','THESIS_REAL_TIME_FACTOR','THESIS_STALE_TIMEOUT_S',
+                     'THESIS_ROS_IMAGE','THESIS_ROS_DOMAIN_ID','THESIS_SOFTWARE_RENDERING'):
+            env.pop(name,None)
+        variations=[{}, {'THESIS_FINE_PROTOCOL':'rtf_check'}, {'THESIS_ONLY_PATCH':'08OB86_-0205'},
+                    {'THESIS_FINE_PROTOCOL':'rtf_check','THESIS_ONLY_PATCH':'08OB86_-0205'},
+                    {'THESIS_FINE_PROTOCOL':'','THESIS_ONLY_PATCH':''}]
+        for label,extra in [('default',[]),('fine',['--map','fine','--sensors','lidar_real+depth2'])]:
+            for index,values in enumerate(variations):
+                output=root/(label+str(index))
+                subprocess.run(['bash',str(ROOT/'ros2_jazzy/gz_checks/run_lidar_checks.sh'),str(output),*extra],
+                               env=dict(env,**values),check=True,capture_output=True)
+                args=json.loads((root/'args.json').read_text())
+                args=[arg.replace(str(ROOT),'<CONFERENCE>').replace(str(output),'<OUTPUT>') for arg in args]
+                args=['THESIS_OUTPUT_UID=<UID>' if arg.startswith('THESIS_OUTPUT_UID=') else
+                      'THESIS_OUTPUT_GID=<GID>' if arg.startswith('THESIS_OUTPUT_GID=') else arg for arg in args]
+                added=[]
+                for name in ('THESIS_FINE_PROTOCOL','THESIS_ONLY_PATCH'):
+                    if name in values:
+                        added.extend(['-e',name+'='+values[name]])
+                expected=reference[label][:5]+added+reference[label][5:]
+                assert json.dumps(args).encode()==json.dumps(expected).encode(),(label,values)
+    print('PASS A2 wrapper: unset flags preserve full legacy argv bytes; individual/both/empty supplied values forwarded (fake Docker only)')
 
 
 def test_coverage():
@@ -277,7 +343,8 @@ def test_ros_adapter_without_ros():
 
 
 if __name__=='__main__':
-    for test in (test_legacy_bytes,test_preset_sdf,test_full_rigid_transform,test_ground_box_and_attribution,
-                 test_blind_near_boxes,test_sensor_filters_and_fine_rule,test_manifest_and_wrapper,test_coverage,test_ros_adapter_without_ros):
+    for test in (test_legacy_bytes,test_preset_sdf,test_a2_projection_and_other_values,test_full_rigid_transform,test_ground_box_and_attribution,
+                 test_blind_near_boxes,test_sensor_filters_and_fine_rule,test_manifest_and_wrapper,test_a2_wrapper_protocol_environment,
+                 test_coverage,test_ros_adapter_without_ros):
         test()
     print('all real sensor tests passed (synthetic/geometry only; Gazebo not run)')
