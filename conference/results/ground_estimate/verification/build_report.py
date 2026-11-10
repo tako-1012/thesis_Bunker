@@ -76,7 +76,7 @@ def main(commit):
 ```bash
 git fetch origin realtime-map:refs/remotes/origin/realtime-map
 git worktree add -b codex/029-ground-estimate /workspace/thesis-029 origin/realtime-map
-cd conference
+cd /workspace/thesis-029/conference
 python3 -m tests.test_planners
 python3 results/ground_estimate/verification/capture_legacy.py  # 変更前に一度実行
 python3 -m tests.test_ground_estimate
