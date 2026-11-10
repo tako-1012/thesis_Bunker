@@ -1,0 +1,5 @@
+$ python3 -m tests.test_planners
+all planner tests passed
+roll-aware tests passed
+
+exit=0

@@ -1,4 +1,4 @@
-"""Opt-in depth sensors; 87x58 degree frusta and independent focal lengths."""
+"""Opt-in depth sensors; let horizontal FOV and image aspect set projection."""
 
 import math
 import xml.etree.ElementTree as ET
@@ -32,11 +32,4 @@ def add_depth_camera(body, *, name, mount, spec=DepthCameraSpec()):
     noise = node(camera, 'noise', type='gaussian')
     node(noise, 'mean', 0.)
     node(noise, 'stddev', spec.noise_stddev_m)
-    # Aspect ratio alone gives a different vertical FOV. Explicit fx/fy
-    # preserve the predeclared 87x58 degrees at the reduced 212x120 grid.
-    intrinsics = node(node(camera, 'lens'), 'intrinsics')
-    for key, value in dict(fx=spec.width/(2*math.tan(math.radians(spec.horizontal_fov_deg)/2)),
-                           fy=spec.height/(2*math.tan(math.radians(spec.vertical_fov_deg)/2)),
-                           cx=spec.width/2, cy=spec.height/2, s=0.).items():
-        node(intrinsics, key, value)
     return sensor

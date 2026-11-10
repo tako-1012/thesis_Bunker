@@ -1,0 +1,10 @@
+{
+  "height": 120,
+  "horizontal_fov_deg": 87.0,
+  "max_range_m": 6.0,
+  "min_range_m": 0.6,
+  "noise_stddev_m": 0.01,
+  "update_hz": 10.0,
+  "vertical_fov_deg": 58.0,
+  "width": 212
+}
