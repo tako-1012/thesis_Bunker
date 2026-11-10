@@ -1,0 +1,12 @@
+{
+  "original_files": 3713,
+  "changed": [
+    "conference/experiments/endpoint_replay.py",
+    "conference/ros2_jazzy/gz_checks/endpoint_runtime.py",
+    "conference/ros2_jazzy/gz_checks/lidar_checks.py",
+    "conference/tapp/endpoint_policy.py"
+  ],
+  "unchanged_original_files": 3709,
+  "existing_tests_unchanged": true,
+  "old_results_maps_worlds_data_unchanged": true
+}

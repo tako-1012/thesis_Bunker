@@ -1,0 +1,64 @@
+[
+  {
+    "case": "results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706",
+    "start": [
+      154,
+      142
+    ],
+    "pose": [
+      76.88376807463277,
+      71.02522261229389,
+      1.1045702484245299,
+      0.052334621166215636,
+      0.05732322789624599,
+      -0.03824034704554496
+    ],
+    "start_flags": {
+      "lethal": true,
+      "seen": true,
+      "detected": false,
+      "prior_raw": false,
+      "steep": true
+    },
+    "estimated_slope_deg": 30.881264011006785,
+    "max_slope_deg": 25.0,
+    "truth_slope_deg": 3.8367825193935903,
+    "truth_lethal": false,
+    "source_sha256": {
+      "results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706/pointcloud_map.npz": "e629598282432128a9211a821e9d6f402b47764efb433e207ad2356196745072",
+      "results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706/evaluation_reference.npz": "2df6074987e91901af3746f92351a330a26faa00fe978d43f98693738c27f9ff",
+      "results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706/mission.json": "c523ea47671c743a009ff60de35f7f1325cf1dc98b0f1aa6c8ebb8d7aeceb1fa"
+    }
+  },
+  {
+    "case": "results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706",
+    "start": [
+      154,
+      142
+    ],
+    "pose": [
+      76.89779640631312,
+      71.00667463909443,
+      1.1021476010414557,
+      0.049752738653402205,
+      0.05712842069278519,
+      -0.05176698214392848
+    ],
+    "start_flags": {
+      "lethal": true,
+      "seen": true,
+      "detected": false,
+      "prior_raw": false,
+      "steep": true
+    },
+    "estimated_slope_deg": 30.507702988076584,
+    "max_slope_deg": 25.0,
+    "truth_slope_deg": 3.8367825193935903,
+    "truth_lethal": false,
+    "source_sha256": {
+      "results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706/pointcloud_map.npz": "babb938869c1ffc117e6b46350dbc2ece4d82bbdbcf90c232b6e61597bb69d39",
+      "results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706/evaluation_reference.npz": "2df6074987e91901af3746f92351a330a26faa00fe978d43f98693738c27f9ff",
+      "results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706/mission.json": "447c9fc7e7c6323afb36fca95a66b6d16702c12e41237f82d6d5239f218517e4"
+    }
+  }
+]

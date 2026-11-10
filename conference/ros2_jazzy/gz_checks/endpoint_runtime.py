@@ -5,7 +5,7 @@ import numpy as np
 from tapp.config import RESOLUTION
 from tapp.online_mission import OnlinePlanner
 from tapp.endpoint_policy import (plan_endpoint, classify_failure, SnapshotStore,
-                                  RetryState, escape_maps)
+                                  RetryState, escape_maps, ENDPOINT_POLICIES)
 from tapp.collision import path_lethal_cells, line_of_sight_exact
 from .lidar_runtime import LidarOnlineMission
 from .online_batch_runtime import CsvChunks
@@ -30,12 +30,12 @@ class EndpointPlanner(OnlinePlanner):
     def _plan(self, reason, initial=False):
         snapshot = self.snapshot
         snapshot['start'] = np.rint(self.pos).astype(int)
-        snapshot['goal'] = np.asarray(self.target if self.policy == 'escape' else self.goal, int)
+        snapshot['goal'] = np.asarray(self.target if self.policy != 'none' else self.goal, int)
         if self.policy == 'none':
             result = super()._plan(reason, initial=initial)
         else:
             began = time.perf_counter()
-            outcome = plan_endpoint(snapshot, 'escape')
+            outcome = plan_endpoint(snapshot, self.policy)
             self.endpoint_result = outcome
             self.goal = tuple(outcome['goal'])
             self.path = [np.asarray(p, float) for p in outcome['path']]
@@ -49,7 +49,7 @@ class EndpointPlanner(OnlinePlanner):
             self.owner.record_relaxation(outcome, snapshot, 'search')
         if self.owner.diagnostics:
             actual = dict(snapshot)
-            if self.policy == 'escape':
+            if self.policy != 'none':
                 actual.update(pre_policy_lethal=snapshot['lethal'], lethal=outcome['lethal'],
                               cost=outcome['cost'], original_goal=snapshot['goal'], goal=outcome['goal'])
             self.events[-1]['failure_class'] = '' if result['success'] else classify_failure(actual)
@@ -76,7 +76,7 @@ class EndpointRuntime(LidarOnlineMission):
         self.outcomes = []
         self.stats = dict(start_applications=0, goal_applications=0, relaxed_cells=0, retries=0)
         self.audit_log = CsvChunks(self.folder/'endpoint_trajectory.csv',
-            ['sim_time', 'x', 'y', 'z', 'roll', 'pitch', 'yaw']) if self.policy == 'escape' else None
+            ['sim_time', 'x', 'y', 'z', 'roll', 'pitch', 'yaw']) if self.policy != 'none' else None
 
     def _observe(self, planner):
         # Worker and join both get an immutable map, independent of later updates.
@@ -89,7 +89,7 @@ class EndpointRuntime(LidarOnlineMission):
             self.diagnostics.tick(planner.snapshot)
 
     def record_relaxation(self, result, snapshot, phase):
-        if self.policy != 'escape':
+        if self.policy == 'none':
             return
         mask = result['relaxed']
         self.relax_index += 1
@@ -162,7 +162,7 @@ class EndpointRuntime(LidarOnlineMission):
         snapshot['pose'] = np.asarray(self.pose)
         snapshot['start'] = np.rint(np.asarray(position)/RESOLUTION).astype(int)
         # Revalidate at the latest map/pose, never blindly apply an old clearance.
-        lethal, cost, relaxed = escape_maps(snapshot)
+        lethal, cost, relaxed = escape_maps(snapshot, self.policy)
         clearance = dict(lethal=lethal, cost=cost, relaxed=relaxed, goal=snapshot['goal'], success=True)
         pos = np.asarray(position, float)/RESOLUTION
         cell = np.rint(pos)
@@ -210,7 +210,7 @@ class EndpointRuntime(LidarOnlineMission):
             self.state['_context'] = (float(sim_time), np.array(self.pose, copy=True))
             self.state['_position'] = tuple(position)
         command = super().tick(position, sim_time)
-        if self.policy == 'escape' and self.state is not None:
+        if self.policy != 'none' and self.state is not None:
             if self.finished:
                 if self.finished_sent:
                     return None
@@ -233,7 +233,7 @@ class EndpointRuntime(LidarOnlineMission):
 
 
 def make_lidar_runtime(prior, mapper, *, plan_log, endpoint_policy='none', diagnostics=False, executor=None):
-    if endpoint_policy not in ('none', 'escape'):
+    if endpoint_policy not in ENDPOINT_POLICIES:
         raise ValueError('unknown endpoint policy')
     if endpoint_policy == 'none' and not diagnostics:
         return LidarOnlineMission(prior, mapper, plan_log=plan_log, executor=executor)
