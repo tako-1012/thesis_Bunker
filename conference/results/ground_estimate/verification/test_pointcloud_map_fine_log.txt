@@ -1,0 +1,16 @@
+$ python3 -m tests.test_pointcloud_map_fine
+flat: no obstacles; only hit cells become known
+noisy box fixture (seed, coarse outside lethal, fine outside lethal): [(100, 12, 8), (101, 11, 8), (102, 12, 8), (103, 12, 8), (104, 12, 8)]
+box retained; 0.5m heights/cost/seen bytes and steep inflation unchanged
+one dilation: exhaustive centre-to-square distance, repeated/additive seeds, centre radius bound, packed save passed
+centre clearance: 0.1m side spill leaves the next coarse centre free; all <=0.5m centres blocked
+boundaries: all 25 subcell phases, four map corners and diagonal square-edge clearance passed
+legacy: default/explicit coarse use the unchanged class; full controlled-clock update and NPZ bytes identical
+selection: legacy manifest bytes identical; fine preserves exact task022 cohort, mesh/0.3x/1s protocol
+Docker wrapper fixture: coarse defaults preserved; both fine flag spellings forward the fixed run settings
+/workspace/thesis-029/conference/experiments/lidar_fine_report.py:168: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  data = pd.concat([old, pd.DataFrame(rows)], ignore_index=True)
+map audit fixtures: final-lethal versus raw-detector errors distinguished; four methods retain cached values and missing fine outcomes
+all fine-grid pointcloud tests passed (synthetic fixtures only, no Gazebo results)
+
+exit=0

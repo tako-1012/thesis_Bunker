@@ -18,13 +18,13 @@ from .sensor_geometry import REAL_MOUNTS, DepthCameraSpec, transform_sensor_poin
 
 
 class PointCloudMapMulti(PointCloudMapFine):
-    def __init__(self, *args, sensors='lidar_real+depth2', **kwargs):
+    def __init__(self, *args, sensors='lidar_real+depth2', ground_estimate='all_returns', **kwargs):
         if sensors not in ('lidar_real', 'lidar_real+depth2'):
             raise ValueError('multi mapper needs an explicit real sensor combination')
         # Range rejection belongs to the actual sensor, not the virtual world
         # sensor used to invoke the unmodified task023 registration/fusion.
         kwargs.update(sensor_height_m=.8, min_range_m=0., max_range_m=1e12, range_resolution_m=.01)
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, ground_estimate=ground_estimate, **kwargs)
         self.sensor_mode = sensors
         names = ('lidar', 'camera1', 'camera2') if sensors.endswith('+depth2') else ('lidar',)
         self.mounts = {name: REAL_MOUNTS[name] for name in names}

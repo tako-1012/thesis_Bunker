@@ -1,0 +1,121 @@
+{
+  "mapping": {
+    "fine": {
+      "updates": "[{\"accepted_points\": 11, \"input_points\": 11, \"observed_cells\": 9, \"update_s\": 0.0, \"version\": 1}, {\"accepted_points\": 77, \"input_points\": 77, \"observed_cells\": 9, \"update_s\": 0.0, \"version\": 2}, {\"accepted_points\": 4, \"input_points\": 4, \"observed_cells\": 9, \"update_s\": 0.0, \"version\": 3}, {\"accepted_points\": 0, \"input_points\": 0, \"observed_cells\": 9, \"update_s\": 0.0, \"version\": 3}]",
+      "npz_sha256": "874af208780871bcf6e387f50cc876dfa0cba0b3e34ea3753ce8138d2e59bf29",
+      "snapshot_sha256": [
+        "ac101a77f5d2ec0dd8397920ae100d57e29f25b8185b9ffea0e78dbc652cbbdb",
+        "3f90805dffa80ad73b927c77113ec995c6c97419913d05938c3a2c698df135d3",
+        "260223a3a16e1bc87b0b8a536d53291892e23d5136544f5a9f8a8f8e28c68925"
+      ],
+      "history": {
+        "297": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "298": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "299": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "329": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "330": "6ef18848e79f593905ad2dd9ba013cc57fec3b2973fbebea16c15f3dc99eee2d",
+        "331": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "361": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "362": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "363": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+      },
+      "fine_ids": {
+        "297": "8dee5b71bccc30379b2fe4bb122d7201dd92abdcbc60f5514cd077fb5c0765fb",
+        "298": "699cd691b391c0bde47a033cbe0927b383a19e5edf176e1d51fa4ef27eeb0d04",
+        "299": "c479f03d85abe40225d7fbdd92671e571f8ded13365c131acc737df0e32395a6",
+        "329": "a8b66f932d3567564ac90ba8ee5cfcaceaa17e72690c68124ec7864dca11deec",
+        "330": "6093c4ebf1e43363306b95d46e1a05da06fa5be1b276cbf6ea1aead18d36c996",
+        "331": "7c1fb8f2914bd7660b3db95f49c8ab2d4c46e9fdb537ebe3187b64d174537e9d",
+        "361": "e9da4f2968e6639fa30771312e6e33250eb0a347cc495bab77559c911418569d",
+        "362": "02552ec8524878fc73f0ac12f5e198c4c1413c4bb44bd053ac96d1ef152f3826",
+        "363": "cd6336ca3001395232a04d5154c42effa4d9124e62bf18ede9debedc016129d9"
+      }
+    },
+    "lidar_real": {
+      "updates": "[{\"accepted_points\": 11, \"input_points\": 11, \"new_obstacle_cells\": 1, \"observed_cells\": 9, \"sensor\": \"lidar\", \"update_s\": 0.0, \"version\": 1}]",
+      "npz_sha256": "ac1b3c19e89493292693dcaa1de5330de19357b266b082d879cba98eed4d737e",
+      "snapshot_sha256": [
+        "ac101a77f5d2ec0dd8397920ae100d57e29f25b8185b9ffea0e78dbc652cbbdb",
+        "3f90805dffa80ad73b927c77113ec995c6c97419913d05938c3a2c698df135d3",
+        "260223a3a16e1bc87b0b8a536d53291892e23d5136544f5a9f8a8f8e28c68925"
+      ],
+      "history": {
+        "297": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "298": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "299": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "329": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "330": "3c7c1c06d5b4bf4315f995036fca0e82eaab468da3246e94d1bd3e1daddd53b1",
+        "331": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "361": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "362": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "363": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+      },
+      "fine_ids": {
+        "297": "8dee5b71bccc30379b2fe4bb122d7201dd92abdcbc60f5514cd077fb5c0765fb",
+        "298": "699cd691b391c0bde47a033cbe0927b383a19e5edf176e1d51fa4ef27eeb0d04",
+        "299": "c479f03d85abe40225d7fbdd92671e571f8ded13365c131acc737df0e32395a6",
+        "329": "a8b66f932d3567564ac90ba8ee5cfcaceaa17e72690c68124ec7864dca11deec",
+        "330": "d7dfaca8f322bc4edf67757ca1f61b2fc20066fa39465dbcce686d5238915bc3",
+        "331": "7c1fb8f2914bd7660b3db95f49c8ab2d4c46e9fdb537ebe3187b64d174537e9d",
+        "361": "e9da4f2968e6639fa30771312e6e33250eb0a347cc495bab77559c911418569d",
+        "362": "02552ec8524878fc73f0ac12f5e198c4c1413c4bb44bd053ac96d1ef152f3826",
+        "363": "cd6336ca3001395232a04d5154c42effa4d9124e62bf18ede9debedc016129d9"
+      },
+      "sensor_sidecar_sha256": "d089d54ba5ac116afc5ecfac099c0d3c6758b690314ab5ca85bce2e0f75b35f5"
+    },
+    "lidar_real+depth2": {
+      "updates": "[{\"accepted_points\": 11, \"input_points\": 11, \"new_obstacle_cells\": 1, \"observed_cells\": 9, \"sensor\": \"lidar\", \"update_s\": 0.0, \"version\": 1}, {\"accepted_points\": 11, \"input_points\": 11, \"new_obstacle_cells\": 0, \"observed_cells\": 9, \"sensor\": \"camera1\", \"update_s\": 0.0, \"version\": 2}, {\"accepted_points\": 11, \"input_points\": 11, \"new_obstacle_cells\": 0, \"observed_cells\": 9, \"sensor\": \"camera2\", \"update_s\": 0.0, \"version\": 3}]",
+      "npz_sha256": "874af208780871bcf6e387f50cc876dfa0cba0b3e34ea3753ce8138d2e59bf29",
+      "snapshot_sha256": [
+        "ac101a77f5d2ec0dd8397920ae100d57e29f25b8185b9ffea0e78dbc652cbbdb",
+        "3f90805dffa80ad73b927c77113ec995c6c97419913d05938c3a2c698df135d3",
+        "260223a3a16e1bc87b0b8a536d53291892e23d5136544f5a9f8a8f8e28c68925"
+      ],
+      "history": {
+        "297": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1",
+        "298": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1",
+        "299": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1",
+        "329": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1",
+        "330": "f2ffbfa8558b8e4d0ca42f5f8a86e21fc5d307a279bd7db027325f384c07d9c6",
+        "331": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1",
+        "361": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1",
+        "362": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1",
+        "363": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1"
+      },
+      "fine_ids": {
+        "297": "2a6b170e74c4df514f76da0800d88f5a4d813f41227f6abf6ed59d53a52243bc",
+        "298": "fa7df0b40418b24094352a4f1f811e10653d36f066224f2e6288d4073f8597d7",
+        "299": "dadd52fd090569f90bb58c561fb450696d1a80df3a445709e98309593f8ffd6c",
+        "329": "956311c6bbd3e1736beb19f5583aecee2379d0b1d6fc0c7a0d022cb1be6a270e",
+        "330": "bbde5ef1079d932df44d994610ce2ac0178fedf816188abdb449d977d1974c0c",
+        "331": "7e7ac5d429bea524815649ff259011f909a0915e9424c2355f84917ae13c7316",
+        "361": "733b9eaa5ca61a13461cab389430d67dd5748c09847c9aaa27dd76ddb35d3f87",
+        "362": "f23c3e4fc8ea80be032c87a7d05a3f270fdf91d4f969f104f0c3fd1059428a9a",
+        "363": "c6efca526f56d90e684147f7cb7fc095718f57b7725d91bea0de8e370ef18e9b"
+      },
+      "sensor_sidecar_sha256": "da5c87d78aeb07a9814b3978c7e042e64baa15f0998ff0b4110e2a8f8482f3a7"
+    }
+  },
+  "manifests": {
+    "coarse": {
+      "full_sha256": "b32d9a39293eb1017f64a4c40d429b6f0676a0a33b8d3b5af1b1508b8fea6561",
+      "without_environment_sha256": "e3c4d29ffd5a8ae2b80a18421baf81d9a0bfe674fa8890d8e4994799c3a306dd"
+    },
+    "fine": {
+      "full_sha256": "b533efba56749c4e0f7ae348f042e8797445e54d92d4ec7ec50dcd4b62730dc1",
+      "without_environment_sha256": "a1eb711c729a7c7731475e9cf4f6ab95b475868929207a3a3a6217792750d772"
+    },
+    "lidar_real": {
+      "full_sha256": "4613f7d18093a8f88968b4f9937dcf9dd372579a5f898d7ef189d651130b64d9",
+      "without_environment_sha256": "edb10e7873b2acef901b21d7364371cfd80bbe86deadb90979c0246ed70dca7a"
+    },
+    "lidar_real+depth2": {
+      "full_sha256": "412d94c95fc4560d858e5f01b342dd95e103547c5ee7b1d5ad2c6e500069e1d1",
+      "without_environment_sha256": "3a0f6fe4b0cec28fa9504b634829fd0161a9730ce361625d1a87fb0fd6405a48"
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5"
+  }
+}

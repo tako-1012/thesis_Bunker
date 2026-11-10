@@ -1,6 +1,7 @@
 """Stamped PointCloud2 -> stale-prior map -> task021 async ROS mission adapter."""
 
 from concurrent.futures import ThreadPoolExecutor
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -21,6 +22,7 @@ from std_msgs.msg import String, Empty
 from thesis_bunker_mission.online_planner import OnlinePlannerNode
 from tapp.mapfile import load_map_file
 from tapp.pointcloud_map import PointCloudMap, PoseBuffer, decode_xyz
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES
 from ros2_jazzy.gz_checks.endpoint_runtime import make_lidar_runtime
 from ros2_jazzy.gz_checks.online_batch_runtime import CsvChunks
 from ros2_jazzy.gz_checks.lidar_map import make_pointcloud_map
@@ -30,12 +32,13 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 
 
 class LidarPlannerNode(OnlinePlannerNode):
-    def __init__(self):
+    def __init__(self, *, ground_estimate='all_returns'):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         for name, default in [('prior_map', ''), ('map_id', 'file/truth.npz'), ('run_folder', ''),
                               ('sensor_height_m', .8), ('max_range_m', 30.), ('obstacle_height_m', .3), ('range_resolution_m', .01),
-                              ('stale_timeout_s', .5), ('map_method', 'coarse'), ('sensors', 'legacy'), ('endpoint_policy', 'none'), ('diagnostics', False)]:
+                              ('stale_timeout_s', .5), ('map_method', 'coarse'), ('sensors', 'legacy'), ('endpoint_policy', 'none'), ('diagnostics', False),
+                              ('ground_estimate', ground_estimate)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -52,6 +55,7 @@ class LidarPlannerNode(OnlinePlannerNode):
         self.multi = self.sensor_mode != 'legacy'
         self.mapper = make_pointcloud_map(prior['tmap'].elev, raw_obstacle,
                                     map_method=self.get_parameter('map_method').value, sensors=self.sensor_mode,
+                                    ground_estimate=self.get_parameter('ground_estimate').value,
                                     robot=prior['tmap'].robot, weights=prior['tmap'].weights,
                                     sensor_height_m=self.get_parameter('sensor_height_m').value,
                                     max_range_m=self.get_parameter('max_range_m').value,
@@ -277,8 +281,13 @@ class LidarPlannerNode(OnlinePlannerNode):
 
 
 def main(args=None):
-    rclpy.init(args=args)
-    node = LidarPlannerNode()
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default=None)
+    options, remaining = parser.parse_known_args(sys.argv[1:] if args is None else args)
+    # Without the new flag, pass the exact original args object to ROS.
+    rclpy.init(args=remaining if options.ground_estimate is not None else args)
+    node = (LidarPlannerNode(ground_estimate=options.ground_estimate)
+            if options.ground_estimate is not None else LidarPlannerNode())
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
