@@ -1,0 +1,13 @@
+{
+  "merge_commit": "fbd77d2b286d653d8798de74554ec50f439c62c8",
+  "realtime_map": "78ff634a9c83a39e821a0fee6832517978c724b2",
+  "date": "2026-11-11",
+  "timezone": "Asia/Tokyo",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source_sha256": {
+    "conference/tapp/endpoint_policy.py": "96bb4ca8957edade482a6ebeee83fd24226c9b665d6f7ab6223b9712a0fe5be6",
+    "conference/tests/test_endpoint_component.py": "86fb79551444ae958029c707500b825541201d93ef6d287883a3682092b4ebc3"
+  },
+  "gazebo_executed": false,
+  "untouched_sha256": "de519d47cd895bea21cd4f63fdc13c7cc13286b534977c8448d4ec3a4da86d75"
+}

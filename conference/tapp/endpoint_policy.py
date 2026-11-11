@@ -32,6 +32,8 @@ def classify_failure(snapshot):
         if blocked[goal]:
             return 'goal_cell'
         if blocked[start]:
+            if np.asarray(snapshot['steep'], bool)[start]:
+                return 'start_steep'
             return 'start_cell'
         for dx in (-1, 0, 1):
             for dy in (-1, 0, 1):
