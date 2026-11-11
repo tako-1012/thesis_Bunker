@@ -1,0 +1,13 @@
+$ python3 -m tests.test_pointcloud_map
+flat fixture: median height, zero slope/cost, exact hit-only mask, unknown cells and immutable prior passed
+box fixtures: prior-relative clusters, exact TraversabilityMap features, steep inflation and bounded unknown halo passed
+registration: model/sensor offset, roll/pitch/yaw convention and stamped SO(3) interpolation passed
+PointCloud2 layouts: endian, point/row padding, truncation, nonfinite/range/bounds filtering passed
+model: default SDF bytes unchanged; 16 x 2deg channels, 360deg/10Hz/30m and configurable assumed mount/noise passed
+LiDAR runtime: worker and delayed handoff use hit-only clouds; truth maps and virtual_sense are unavailable
+/workspace/thesis-027a2/conference/experiments/gz_lidar_report.py:159: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  data = pd.concat([old, pd.DataFrame(rows)], ignore_index=True)
+quality fixtures: unique hit-cell errors, measured map times, unchanged task021 controls and unknown LiDAR outcomes passed
+all pointcloud map tests passed (synthetic fixtures only; no Gazebo measurements)
+
+exit=0

@@ -24,7 +24,15 @@ if [[ "$lidar_map_method" == fine ]]; then
   lidar_real_time_factor="${THESIS_REAL_TIME_FACTOR:-0.3}"
   lidar_stale_timeout="${THESIS_STALE_TIMEOUT_S:-1.0}"
 fi
+lidar_protocol_env=()
+if [[ -n "${THESIS_FINE_PROTOCOL+x}" ]]; then
+  lidar_protocol_env+=(-e "THESIS_FINE_PROTOCOL=$THESIS_FINE_PROTOCOL")
+fi
+if [[ -n "${THESIS_ONLY_PATCH+x}" ]]; then
+  lidar_protocol_env+=(-e "THESIS_ONLY_PATCH=$THESIS_ONLY_PATCH")
+fi
 docker run --rm --pull=never --network host \
+  "${lidar_protocol_env[@]}" \
   -e ROS_DOMAIN_ID="${THESIS_ROS_DOMAIN_ID:-50}" \
   -e THESIS_REAL_TIME_FACTOR="$lidar_real_time_factor" \
   -e THESIS_STALE_TIMEOUT_S="$lidar_stale_timeout" \

@@ -26,8 +26,8 @@ class SensorMount:
 class DepthCameraSpec:
     horizontal_fov_deg: float = 87.
     vertical_fov_deg: float = 58.
-    width: int = 212
-    height: int = 120
+    width: int = 214
+    height: int = 125
     min_range_m: float = .6
     max_range_m: float = 6.
     update_hz: float = 10.
