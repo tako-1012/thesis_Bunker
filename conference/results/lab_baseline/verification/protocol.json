@@ -1,0 +1,12 @@
+{
+  "base": "6367b58f89f65d3a707e648a637614f6776d270d",
+  "date": "2026-11-12",
+  "original_count": 3958,
+  "original_sha256": "b1f2a5506e46272e1f71291433a0e700688dd58eaf04661b659c0d7e637523f0",
+  "source_sha256": {
+    "conference/tapp/lab_geometry.py": "0a5b8d6784e8834497d9a3a77d0c2b4c4102fe47cfd9efe2c51edfd0f032abbd",
+    "conference/experiments/lab_baseline.py": "ce756c65d0feabbd506baf32bacf973176b0d6b75e489dfe411f5d4c39747665",
+    "conference/tests/test_lab_geometry.py": "c313072491ff90007ddc7cf46c7fbdb0f00424c5886c3bf17890c7a29ce6ee2e"
+  },
+  "gazebo_executed": false
+}
