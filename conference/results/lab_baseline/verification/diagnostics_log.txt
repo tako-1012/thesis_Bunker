@@ -1,0 +1,14 @@
+ physical_plane_deg  geometry_angle_deg  ros_cost
+                  5            3.028148         0
+                 12            7.323698        25
+                 22           13.728295        50
+                 30           19.244067       127
+
+{
+  "scenarios": 192,
+  "runs": 768,
+  "parity_fields": 7296,
+  "all_matched": true,
+  "maximum_absolute_difference": 0.0,
+  "failed_runs": 0
+}
