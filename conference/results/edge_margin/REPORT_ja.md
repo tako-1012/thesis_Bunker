@@ -1,6 +1,6 @@
 # 指示書024：最新realtime-map上での10m余白の実装・検証
 
-作業ブランチ：`未確定（既存の同名ブランチを保持し、push先を確認待ち）`。実装・検証コミット：`fec264009f6cc741fbb22c20038b490e827a41f7`。土台：`14bcae7abef57dcc4d7767993a86ef9c3252b8b4`（作業開始時の最新realtime-map）。
+作業ブランチ：`codex/024-edge-margin-refresh`（2026-11-12、利用者が新しい名前でのpushを承認）。既存の `codex/024-edge-margin` は保持する。実装・検証コミット：`fec264009f6cc741fbb22c20038b490e827a41f7`。土台：`14bcae7abef57dcc4d7767993a86ef9c3252b8b4`（作業開始時の最新realtime-map）。マージは行わない。
 
 Pythonの全28テストモジュールが成功した。今回Gazebo・実際のDockerは起動していない。
 
