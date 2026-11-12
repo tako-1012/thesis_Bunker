@@ -1,0 +1,17 @@
+$ python3 -m tests.test_real_sensors
+PASS legacy model SDF (with/without LiDAR) and fine-map NPZ SHA256 match pre-change bytes
+PASS real preset mounts, symmetry, unchanged LiDAR spec and camera FOV/ranges without intrinsics
+A2 camera1: image=214x125, horizontal_deg=87.000000000000, vertical_deg=57.999358468411, intrinsics=absent
+A2 camera2: image=214x125, horizontal_deg=87.000000000000, vertical_deg=57.999358468411, intrinsics=absent
+PASS A2: three camera-free SDFs byte-identical; depth SDF/spec change only prescribed resolution and intrinsics
+PASS arbitrary sensor/model roll-pitch-yaw and translation match independent homogeneous transform
+PASS both outward cameras: ground/box registration, shared 2+1 evidence, one inflation and saved provenance
+PASS synthetic camera boxes in LiDAR blind zone at 1.5/2/3m; residual 1m blind zone disclosed
+PASS per-sensor range/FOV/finite filtering and byte-identical task023 fusion/inflation for registered input
+PASS manifest records all real specs/mounts; explicit fine selection; Docker wrapper forwards sensor flags
+PASS A2 wrapper: unset flags preserve full legacy argv bytes; individual/both/empty supplied values forwarded (fake Docker only)
+PASS analytic 4.105m LiDAR near bound, discrete-beam gap, rear blind zone and camera symmetry
+PASS actual ROS adapter: bounded queues, fair sources, stamped transforms, logs and freshness (transport mocked)
+all real sensor tests passed (synthetic/geometry only; Gazebo not run)
+
+exit=0

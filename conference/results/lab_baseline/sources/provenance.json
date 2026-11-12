@@ -1,0 +1,26 @@
+{
+  "branch": "jazzy",
+  "commit": "94d1c2a345dda6ff637e6a72c9101d927ee99f19",
+  "files": [
+    {
+      "file": "nav2_navfn_planner/src/navfn.cpp",
+      "url": "https://raw.githubusercontent.com/ros-navigation/navigation2/94d1c2a345dda6ff637e6a72c9101d927ee99f19/nav2_navfn_planner/src/navfn.cpp",
+      "sha256": "f3dcf705a6c180ec856ddfe77e4ffb8a1b172eb4169e5532db57c976dc571599"
+    },
+    {
+      "file": "nav2_navfn_planner/include/nav2_navfn_planner/navfn.hpp",
+      "url": "https://raw.githubusercontent.com/ros-navigation/navigation2/94d1c2a345dda6ff637e6a72c9101d927ee99f19/nav2_navfn_planner/include/nav2_navfn_planner/navfn.hpp",
+      "sha256": "9e0c0d6c18f869f93c87161cf87a23de8291433430d0e4b160ee75013f0dfc3a"
+    },
+    {
+      "file": "nav2_navfn_planner/package.xml",
+      "url": "https://raw.githubusercontent.com/ros-navigation/navigation2/94d1c2a345dda6ff637e6a72c9101d927ee99f19/nav2_navfn_planner/package.xml",
+      "sha256": "bbea10eee943ad415edfa30f20b89ea57b4126c8586512cb4f9bf18172ed74ea"
+    },
+    {
+      "file": "nav2_navfn_planner/src/navfn_planner.cpp",
+      "url": "https://raw.githubusercontent.com/ros-navigation/navigation2/94d1c2a345dda6ff637e6a72c9101d927ee99f19/nav2_navfn_planner/src/navfn_planner.cpp",
+      "sha256": "fdd1e926c508ac04050b943607552c7410e4edab3835748780b288af34bc53fe"
+    }
+  ]
+}

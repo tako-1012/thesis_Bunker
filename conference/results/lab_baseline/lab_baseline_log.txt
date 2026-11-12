@@ -1,0 +1,100 @@
+Task031: neutral metrics first; paired unit is beach, sizes averaged; no energy.
+mean_cost and J use OUR terrain objective and favour our method; not neutral metrics.
+ debris            planner  scheduled  solved  steep_len  max_slope  p95_slope  max_roll  p95_roll  max_pitch_dir  p95_pitch_dir  max_pitch  obstacle_cells  length_xy    climb  contact_runs  steep_runs  mean_cost          J     time
+  False                 A*         96      96        0.0   8.708286   6.066910  7.541856  5.570753       6.414794       3.663500   5.677646             0.0 120.556252 1.440198             0           9   0.114426 232.710269 0.041052
+  False        TA*-S exact         96      96        0.0   6.691435   4.665437  5.199285  3.529546       5.169635       2.923985   4.574864             0.0 120.845079 0.959826             0           0   0.077346 190.157858 0.238924
+  False       lab_geometry         96      96        0.0   8.162904   5.938159  7.564891  5.191661       6.028917       3.690164   5.751529             0.0 120.628369 1.363369             0           2   0.107792 214.185593 0.195716
+  False lab_geometry+0.35m         96      96        0.0   8.162904   5.938159  7.564891  5.191661       6.028917       3.560526   5.751529             0.0 120.626705 1.363369             0           2   0.108057 216.816883 0.184717
+   True                 A*         96      96        0.0  10.843638   6.941897  9.939500  6.104602       7.738601       4.686579   7.773548             0.0 120.746068 2.228436             0           9   0.144652 243.319342 0.033316
+   True        TA*-S exact         96      96        0.0   8.205284   4.946589  6.356163  3.749669       6.610297       3.390026   6.054865             0.0 121.498341 1.259931             0           0   0.088710 199.592580 0.264035
+   True       lab_geometry         96      96        0.0  10.045574   6.824975  9.099776  5.839614       7.413817       4.407843   5.900700             0.0 120.503468 1.610526             0           1   0.136171 233.256811 0.195710
+   True lab_geometry+0.35m         96      96        0.0   9.701211   6.824975  9.065251  5.966159       7.524853       4.423604   5.882099             0.0 120.739997 1.656718             0           1   0.136616 230.687881 0.188162
+
+Two-sided Wilcoxon, one Holm family over all predefined contrasts/metrics/debris states:
+ debris             method   reference         metric  n_beaches  excluded_beaches  method_mean_size_median  reference_mean_size_median  delta_median            p  rank_biserial       p_holm
+  False                 A* TA*-S exact      steep_len         48                 0                 0.000000                    0.000000      0.000000 3.906250e-03       1.000000 1.093750e-01
+  False                 A* TA*-S exact      max_slope         48                 0                10.530765                    7.507435      2.010564 1.284661e-11       0.955674 6.808705e-10
+  False                 A* TA*-S exact      p95_slope         48                 0                 6.536500                    4.532945      1.485292 1.421085e-14       0.998299 9.521273e-13
+  False                 A* TA*-S exact       max_roll         48                 0                 8.513333                    5.747888      2.957196 3.552714e-14       0.994898 2.202682e-12
+  False                 A* TA*-S exact       p95_roll         48                 0                 5.457466                    3.567633      1.890977 7.105427e-15       1.000000 5.968559e-13
+  False                 A* TA*-S exact  max_pitch_dir         48                 0                 7.730992                    6.306781      1.049898 4.979635e-04       0.561224 1.543687e-02
+  False                 A* TA*-S exact  p95_pitch_dir         48                 0                 3.962602                    3.022243      0.570978 7.812767e-06       0.700680 2.812596e-04
+  False                 A* TA*-S exact      max_pitch         48                 0                 6.939822                    5.937676      1.044939 1.689218e-04       0.602041 5.405496e-03
+  False                 A* TA*-S exact obstacle_cells         48                 0                 0.000000                    0.000000      0.000000 1.000000e+00       0.000000 1.000000e+00
+  False                 A* TA*-S exact      length_xy         48                 0               123.539376                  121.897197      2.000268 2.761820e-02       0.363946 6.450187e-01
+  False                 A* TA*-S exact          climb         48                 0                 1.501269                    0.890802      0.410943 7.105427e-15       1.000000 5.968559e-13
+  False                 A* TA*-S exact      mean_cost         48                 0                 0.110343                    0.076777      0.035217 7.105427e-15       1.000000 5.968559e-13
+  False                 A* TA*-S exact              J         48                 0               235.624489                  194.656483     38.416141 7.105427e-15       1.000000 5.968559e-13
+  False                 A* TA*-S exact           time         48                 0                 0.062120                    0.326624     -0.261791 7.105427e-15      -1.000000 5.968559e-13
+  False       lab_geometry TA*-S exact      steep_len         48                 0                 0.000000                    0.000000      0.000000 5.000000e-01       1.000000 1.000000e+00
+  False       lab_geometry TA*-S exact      max_slope         48                 0                 7.780363                    7.507435      0.533353 3.996788e-02       0.340136 8.792934e-01
+  False       lab_geometry TA*-S exact      p95_slope         48                 0                 5.838144                    4.532945      0.883113 4.691003e-11       0.935374 2.345502e-09
+  False       lab_geometry TA*-S exact       max_roll         48                 0                 7.017861                    5.747888      1.634871 3.062439e-11       0.940476 1.592468e-09
+  False       lab_geometry TA*-S exact       p95_roll         48                 0                 5.222017                    3.567633      1.281396 4.973799e-14       0.993197 3.034017e-12
+  False       lab_geometry TA*-S exact  max_pitch_dir         48                 0                 6.872416                    6.306781      0.211010 3.007799e-01       0.173469 1.000000e+00
+  False       lab_geometry TA*-S exact  p95_pitch_dir         48                 0                 3.672466                    3.022243      0.446915 3.028894e-07       0.784014 1.150980e-05
+  False       lab_geometry TA*-S exact      max_pitch         48                 0                 5.950599                    5.937676      0.335633 9.791293e-02       0.275510 1.000000e+00
+  False       lab_geometry TA*-S exact obstacle_cells         48                 0                 0.000000                    0.000000      0.000000 1.000000e+00       0.000000 1.000000e+00
+  False       lab_geometry TA*-S exact      length_xy         48                 0               124.190612                  121.897197      2.161133 1.023437e-02       0.421769 2.558592e-01
+  False       lab_geometry TA*-S exact          climb         48                 0                 1.560107                    0.890802      0.360663 7.595702e-12       0.955782 4.101679e-10
+  False       lab_geometry TA*-S exact      mean_cost         48                 0                 0.106697                    0.076777      0.027213 1.421085e-14       0.998299 9.521273e-13
+  False       lab_geometry TA*-S exact              J         48                 0               223.218738                  194.656483     35.430962 1.752269e-10       0.918367 8.410893e-09
+  False       lab_geometry TA*-S exact           time         48                 0                 0.293241                    0.326624     -0.056445 6.334253e-05      -0.636054 2.090304e-03
+  False lab_geometry+0.35m TA*-S exact      steep_len         48                 0                 0.000000                    0.000000      0.000000 5.000000e-01       1.000000 1.000000e+00
+  False lab_geometry+0.35m TA*-S exact      max_slope         48                 0                 7.780363                    7.507435      0.533353 3.996788e-02       0.340136 8.792934e-01
+  False lab_geometry+0.35m TA*-S exact      p95_slope         48                 0                 5.838144                    4.532945      0.883113 4.691003e-11       0.935374 2.345502e-09
+  False lab_geometry+0.35m TA*-S exact       max_roll         48                 0                 7.017861                    5.747888      1.634871 3.062439e-11       0.940476 1.592468e-09
+  False lab_geometry+0.35m TA*-S exact       p95_roll         48                 0                 5.222017                    3.567633      1.281396 4.973799e-14       0.993197 3.034017e-12
+  False lab_geometry+0.35m TA*-S exact  max_pitch_dir         48                 0                 6.872416                    6.306781      0.185416 4.124108e-01       0.137755 1.000000e+00
+  False lab_geometry+0.35m TA*-S exact  p95_pitch_dir         48                 0                 3.672466                    3.022243      0.446915 7.707442e-07       0.761905 2.851754e-05
+  False lab_geometry+0.35m TA*-S exact      max_pitch         48                 0                 5.923133                    5.937676      0.335633 1.285661e-01       0.253401 1.000000e+00
+  False lab_geometry+0.35m TA*-S exact obstacle_cells         48                 0                 0.000000                    0.000000      0.000000 1.000000e+00       0.000000 1.000000e+00
+  False lab_geometry+0.35m TA*-S exact      length_xy         48                 0               124.195157                  121.897197      2.348226 8.464591e-03       0.431973 2.200794e-01
+  False lab_geometry+0.35m TA*-S exact          climb         48                 0                 1.556956                    0.890802      0.360663 6.423306e-12       0.957483 3.532818e-10
+  False lab_geometry+0.35m TA*-S exact      mean_cost         48                 0                 0.106697                    0.076777      0.027509 1.421085e-14       0.998299 9.521273e-13
+  False lab_geometry+0.35m TA*-S exact              J         48                 0               223.218738                  194.656483     35.430962 1.752269e-10       0.918367 8.410893e-09
+  False lab_geometry+0.35m TA*-S exact           time         48                 0                 0.293251                    0.326624     -0.060328 7.812767e-06      -0.700680 2.812596e-04
+   True                 A* TA*-S exact      steep_len         48                 0                 0.000000                    0.000000      0.000000 3.906250e-03       1.000000 1.093750e-01
+   True                 A* TA*-S exact      max_slope         48                 0                12.270194                    9.253540      3.067651 7.105427e-15       1.000000 5.968559e-13
+   True                 A* TA*-S exact      p95_slope         48                 0                 7.948389                    4.888920      2.469292 7.105427e-15       1.000000 5.968559e-13
+   True                 A* TA*-S exact       max_roll         48                 0                10.950102                    6.815015      4.351569 1.421085e-14       0.998299 9.521273e-13
+   True                 A* TA*-S exact       p95_roll         48                 0                 6.867202                    3.634011      2.800940 7.105427e-15       1.000000 5.968559e-13
+   True                 A* TA*-S exact  max_pitch_dir         48                 0                 9.251117                    7.826005      1.413164 3.040409e-05       0.659864 1.033739e-03
+   True                 A* TA*-S exact  p95_pitch_dir         48                 0                 4.974038                    3.587462      0.878072 6.348102e-09       0.862245 2.666203e-07
+   True                 A* TA*-S exact      max_pitch         48                 0                 9.130103                    7.138818      1.447059 5.860806e-08       0.819728 2.344322e-06
+   True                 A* TA*-S exact obstacle_cells         48                 0                 0.000000                    0.000000      0.000000 1.000000e+00       0.000000 1.000000e+00
+   True                 A* TA*-S exact      length_xy         48                 0               123.388733                  123.717714      0.764155 9.473402e-01       0.011905 1.000000e+00
+   True                 A* TA*-S exact          climb         48                 0                 2.071598                    1.305752      0.803948 2.131628e-14       0.996599 1.342926e-12
+   True                 A* TA*-S exact      mean_cost         48                 0                 0.154227                    0.085559      0.058235 7.105427e-15       1.000000 5.968559e-13
+   True                 A* TA*-S exact              J         48                 0               282.877996                  207.890256     60.072401 7.105427e-15       1.000000 5.968559e-13
+   True                 A* TA*-S exact           time         48                 0                 0.052433                    0.293453     -0.257637 7.105427e-15      -1.000000 5.968559e-13
+   True       lab_geometry TA*-S exact      steep_len         48                 0                 0.000000                    0.000000      0.000000 1.000000e+00       1.000000 1.000000e+00
+   True       lab_geometry TA*-S exact      max_slope         48                 0                10.468370                    9.253540      1.290017 7.913160e-04       0.542517 2.294816e-02
+   True       lab_geometry TA*-S exact      p95_slope         48                 0                 6.763279                    4.888920      1.219948 7.105427e-15       1.000000 5.968559e-13
+   True       lab_geometry TA*-S exact       max_roll         48                 0                 9.565790                    6.815015      2.692926 9.734435e-13       0.974490 5.645973e-11
+   True       lab_geometry TA*-S exact       p95_roll         48                 0                 5.692150                    3.634011      1.712512 7.105427e-15       1.000000 5.968559e-13
+   True       lab_geometry TA*-S exact  max_pitch_dir         48                 0                 8.236843                    7.826005      0.448763 9.581572e-02       0.277211 1.000000e+00
+   True       lab_geometry TA*-S exact  p95_pitch_dir         48                 0                 4.366720                    3.587462      0.606989 2.121567e-09       0.880952 9.122738e-08
+   True       lab_geometry TA*-S exact      max_pitch         48                 0                 6.463586                    7.138818      0.111451 8.270449e-01       0.037415 1.000000e+00
+   True       lab_geometry TA*-S exact obstacle_cells         48                 0                 0.000000                    0.000000      0.000000 1.000000e+00       0.000000 1.000000e+00
+   True       lab_geometry TA*-S exact      length_xy         48                 0               123.917166                  123.717714      0.862251 8.668424e-01       0.028912 1.000000e+00
+   True       lab_geometry TA*-S exact          climb         48                 0                 1.827642                    1.305752      0.427602 1.797673e-12       0.969388 1.024674e-10
+   True       lab_geometry TA*-S exact      mean_cost         48                 0                 0.141244                    0.085559      0.042210 7.105427e-15       1.000000 5.968559e-13
+   True       lab_geometry TA*-S exact              J         48                 0               256.629857                  207.890256     47.617949 1.752269e-10       0.918367 8.410893e-09
+   True       lab_geometry TA*-S exact           time         48                 0                 0.232593                    0.293453     -0.068006 9.545256e-08      -0.809524 3.722650e-06
+   True lab_geometry+0.35m TA*-S exact      steep_len         48                 0                 0.000000                    0.000000      0.000000 1.000000e+00       1.000000 1.000000e+00
+   True lab_geometry+0.35m TA*-S exact      max_slope         48                 0                10.402335                    9.253540      1.112170 5.906455e-04       0.554422 1.771937e-02
+   True lab_geometry+0.35m TA*-S exact      p95_slope         48                 0                 6.759001                    4.888920      1.301318 7.105427e-15       1.000000 5.968559e-13
+   True lab_geometry+0.35m TA*-S exact       max_roll         48                 0                 9.188946                    6.815015      2.404667 1.350031e-13       0.988095 7.965184e-12
+   True lab_geometry+0.35m TA*-S exact       p95_roll         48                 0                 5.601239                    3.634011      1.873007 7.105427e-15       1.000000 5.968559e-13
+   True lab_geometry+0.35m TA*-S exact  max_pitch_dir         48                 0                 7.906316                    7.826005      0.566385 2.687578e-02       0.365646 6.450187e-01
+   True lab_geometry+0.35m TA*-S exact  p95_pitch_dir         48                 0                 4.414601                    3.587462      0.606042 5.394827e-08       0.821429 2.211879e-06
+   True lab_geometry+0.35m TA*-S exact      max_pitch         48                 0                 6.312860                    7.138818      0.098085 7.955129e-01       0.044218 1.000000e+00
+   True lab_geometry+0.35m TA*-S exact obstacle_cells         48                 0                 0.000000                    0.000000      0.000000 1.000000e+00       0.000000 1.000000e+00
+   True lab_geometry+0.35m TA*-S exact      length_xy         48                 0               124.023168                  123.717714      1.178973 8.508778e-01       0.032313 1.000000e+00
+   True lab_geometry+0.35m TA*-S exact          climb         48                 0                 1.835245                    1.305752      0.428304 2.181366e-12       0.967687 1.221565e-10
+   True lab_geometry+0.35m TA*-S exact      mean_cost         48                 0                 0.139298                    0.085559      0.040470 7.105427e-15       1.000000 5.968559e-13
+   True lab_geometry+0.35m TA*-S exact              J         48                 0               259.065972                  207.890256     46.572777 1.752269e-10       0.918367 8.410893e-09
+   True lab_geometry+0.35m TA*-S exact           time         48                 0                 0.229778                    0.293453     -0.077114 3.223306e-10      -0.909864 1.418255e-08
+A*/TA*-S path metrics match task013 at rtol=atol=1e-9. Runtime is remeasured, not matched.
+Figure selection: {'rule_first': '08OB86_-0205', 'rule_max': '08OB88_-0167'}
