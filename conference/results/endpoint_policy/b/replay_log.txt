@@ -1,0 +1,9 @@
+Task028b: replay saved final maps with both start-clearance definitions; no Gazebo runs.
+The component definition was chosen after inspecting failures on test beaches.
+                                                                    case failure_class           policy    none  result     outcome       goal  relaxed_cells  relaxed_truth_lethal_cells  raw_cells_cleared  raw_path_cells
+          results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706    start_cell           escape no_path no_path unreachable [347, 145]              1                           0                  0               0
+          results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706    start_cell escape_component no_path no_path unreachable [347, 145]              0                           0                  0               0
+results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706    start_cell           escape no_path no_path unreachable [347, 145]              1                           0                  0               0
+results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706    start_cell escape_component no_path no_path unreachable [347, 145]              0                           0                  0               0
+                         results/lidar_fine/physical_10/raw/08OB88_-1417     goal_cell           escape no_path    path      nearby [198, 151]              0                           0                  0               0
+                         results/lidar_fine/physical_10/raw/08OB88_-1417     goal_cell escape_component no_path    path      nearby [198, 151]              0                           0                  0               0

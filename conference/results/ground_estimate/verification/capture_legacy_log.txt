@@ -1,0 +1,5 @@
+mkdir -p failed for path /home/agent/.config/matplotlib: [Errno 30] Read-only file system: '/home/agent/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-zp_vojhr because there was an issue with the default path (/home/agent/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Fontconfig error: No writable cache directories
+Captured pre-change bytes: fine and both multi-sensor modes; four default manifests.
+Baseline: 78ff634a9c83a39e821a0fee6832517978c724b2 tracked conference files: 3759 untouched digest: 094dd6624a16ce95bce0dd7c8d47aceb2b6166d96327c6c80caebd0ca10f9ac6

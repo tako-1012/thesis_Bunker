@@ -20,6 +20,8 @@ sys.path.insert(0, str(ROOT/'ros2_jazzy/src/thesis_bunker_gz'))
 from thesis_bunker_gz.lidar import LidarSpec
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES
+from tapp.endpoint_policy import ENDPOINT_POLICIES
 from tapp.real_beach import build_real, list_patches
 from tapp.mapfile import scenario_to_mapfile
 from tapp.run_log import FIELDS
@@ -60,14 +62,19 @@ def verify_inputs(patch, meta, truth, prior):
 
 
 def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
-                  noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False):
+                  noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
+                  ground_estimate='all_returns'):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output/'manifest.json').exists():
         raise FileExistsError('choose a new output; no existing recordings will be overwritten')
     if patch_count not in (3, 10):
         raise ValueError('run the first three beaches before extending to ten')
-    if endpoint_policy not in ('none', 'escape'):
+    if ground_estimate not in GROUND_ESTIMATES:
+        raise ValueError('unknown ground estimate')
+    if ground_estimate != 'all_returns' and map_method != 'fine':
+        raise ValueError('non_obstacle ground estimate requires --map fine')
+    if endpoint_policy not in ENDPOINT_POLICIES:
         raise ValueError('unknown endpoint policy')
     if (endpoint_policy != 'none' or diagnostics) and map_method != 'fine':
         raise ValueError('task028 requires --map fine')
@@ -120,6 +127,11 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if endpoint_policy != 'none' or diagnostics:
         manifest.update(endpoint_policy=endpoint_policy, diagnostics=bool(diagnostics),
                         endpoint_protocol='task028; separate evaluation from task023')
+    if ground_estimate != 'all_returns':
+        # An absent field still means all_returns in historical/default runs.
+        manifest.update(ground_estimate=ground_estimate,
+                        height_definition='median of last 64 ALL returns with height minus bilinear stale-prior height < 0.3m; '
+                                          'if none remain, retain stale-prior cell height; seen unchanged')
     save_manifest(output, manifest)
     return manifest
 
@@ -288,6 +300,8 @@ def run_checks(output, **kwargs):
                                              '-p', 'diagnostics:='+str(manifest['diagnostics']).lower()])
                     if manifest.get('sensors', 'legacy') != 'legacy':
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
+                    if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
+                        commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
                     for i, command in enumerate(commands):
                         stream = (raw/f'process_{i}.txt').open('w')
                         streams.append(stream)
@@ -340,6 +354,11 @@ def run_checks(output, **kwargs):
                     save_manifest(output, manifest)
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
+        if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
+            if manifest['execution'] == 'finished_with_errors':
+                raise RuntimeError('task029 trial errors; inspect manifest')
+            print('Task029 raw results saved; evaluate ground estimates separately:', output)
+            return
         if manifest.get('endpoint_protocol'):
             if manifest['execution'] == 'finished_with_errors':
                 raise RuntimeError('task028 trial errors; inspect manifest')
@@ -371,13 +390,17 @@ def main():
     parser.add_argument('--max-range-m', type=float, default=30.)
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
-    parser.add_argument('--endpoint-policy', choices=['none', 'escape'], default='none')
+    parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
+    parser.add_argument('--endpoint-policy', choices=ENDPOINT_POLICIES, default='none')
     parser.add_argument('--diagnostics', action='store_true')
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
+            print('Task029 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('endpoint_protocol'):
             print('Task028 preparation only; Gazebo not executed:', output)
             return

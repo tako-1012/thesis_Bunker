@@ -1,0 +1,2 @@
+./lidar_real_depth2/physical_1/raw/08OB86_-0205/pointcloud_map.npz.sensors.json: 10260347 バイトで 5 MB を超えるため gzip -9 で圧縮（.json.gz）。b0_summary.py は圧縮後も読める。
+./lidar_real/physical_1/raw/08OB86_-0205/pointcloud_map.npz.sensors.json: 8748665 バイトで 5 MB を超えるため gzip -9 で圧縮（.json.gz）。b0_summary.py は圧縮後も読める。

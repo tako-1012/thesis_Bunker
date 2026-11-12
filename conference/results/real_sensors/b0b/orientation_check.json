@@ -1,0 +1,121 @@
+{
+ "lidar": {
+  "file": "first_cloud.npz",
+  "stamp": 0.1,
+  "pose": [
+   24.4987,
+   135.019,
+   3.7565,
+   0.0679,
+   0.0108,
+   -0.0027
+  ],
+  "as_saved": {
+   "points": 11742,
+   "ground_points": 10639,
+   "rock_points": 1103,
+   "dz_median_m": -0.0001,
+   "dz_abs_median_m": 0.008,
+   "within_0p10_share": 1.0,
+   "dz_p05_p95_m": [
+    -0.021,
+    0.02
+   ],
+   "slope_dz_per_m_forward": -0.0,
+   "slope_dz_per_m_left": 0.0001,
+   "bearing_deg_median": -11.7,
+   "bearing_deg_p05_p95": [
+    -159.4,
+    158.8
+   ],
+   "forward_m_p05_median_p95": [
+    -14.35,
+    0.51,
+    14.76
+   ],
+   "rock_points_dz_median_m": 0.003
+  }
+ },
+ "camera1": {
+  "file": "first_cloud_camera1.npz",
+  "stamp": 0.1,
+  "pose": [
+   24.4987,
+   135.019,
+   3.7565,
+   0.0679,
+   0.0108,
+   -0.0027
+  ],
+  "as_saved": {
+   "points": 9736,
+   "ground_points": 9736,
+   "rock_points": 0,
+   "dz_median_m": 0.0,
+   "dz_abs_median_m": 0.007,
+   "within_0p10_share": 1.0,
+   "dz_p05_p95_m": [
+    -0.017,
+    0.017
+   ],
+   "slope_dz_per_m_forward": -0.0,
+   "slope_dz_per_m_left": 0.0003,
+   "bearing_deg_median": 23.2,
+   "bearing_deg_p05_p95": [
+    -13.3,
+    56.2
+   ],
+   "forward_m_p05_median_p95": [
+    1.47,
+    2.45,
+    5.09
+   ],
+   "rock_points_dz_median_m": null
+  },
+  "if_optical_frame": {
+   "points": 0,
+   "note": "fewer than 4 points pass the range filter in this reading"
+  }
+ },
+ "camera2": {
+  "file": "first_cloud_camera2.npz",
+  "stamp": 0.1,
+  "pose": [
+   24.4987,
+   135.019,
+   3.7565,
+   0.0679,
+   0.0108,
+   -0.0027
+  ],
+  "as_saved": {
+   "points": 9333,
+   "ground_points": 9333,
+   "rock_points": 0,
+   "dz_median_m": 0.0001,
+   "dz_abs_median_m": 0.007,
+   "within_0p10_share": 1.0,
+   "dz_p05_p95_m": [
+    -0.017,
+    0.018
+   ],
+   "slope_dz_per_m_forward": -0.0004,
+   "slope_dz_per_m_left": 0.0001,
+   "bearing_deg_median": -20.6,
+   "bearing_deg_p05_p95": [
+    -56.4,
+    13.8
+   ],
+   "forward_m_p05_median_p95": [
+    1.77,
+    2.68,
+    5.23
+   ],
+   "rock_points_dz_median_m": null
+  },
+  "if_optical_frame": {
+   "points": 0,
+   "note": "fewer than 4 points pass the range filter in this reading"
+  }
+ }
+}

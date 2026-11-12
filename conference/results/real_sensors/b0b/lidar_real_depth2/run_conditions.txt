@@ -1,0 +1,7 @@
+started=2026-11-12T15:13:39+09:00
+commit=78ff634a9c83a39e821a0fee6832517978c724b2
+branch=claude/027-b0b
+tracked_changes=0
+sensors=lidar_real+depth2 patch=08OB86_-0205 map=fine rtf=default(0.3) stale=default(1.0) software_rendering=default(1) ros_domain_id=62
+image_id=sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57
+finished=2026-11-12T15:27:34+09:00 exit=0

@@ -1,0 +1,32 @@
+{
+ "spec": {
+  "horizontal_fov_deg": 87.0,
+  "vertical_fov_deg": 58.0,
+  "width": 214,
+  "height": 125,
+  "min_range_m": 0.6,
+  "max_range_m": 6.0,
+  "update_hz": 10.0,
+  "noise_stddev_m": 0.01
+ },
+ "expected_tan_step_per_pixel": 0.008869,
+ "implied_vertical_fov_deg": 57.9994,
+ "camera1": {
+  "row_step": 0.008884,
+  "row_ratio": 1.0017,
+  "col_step": 0.008871,
+  "col_ratio": 1.0003,
+  "z_over_x_at_centre_row": 0.00046,
+  "rows_used": 48,
+  "cols_used": 214
+ },
+ "camera2": {
+  "row_step": 0.008864,
+  "row_ratio": 0.9994,
+  "col_step": 0.008867,
+  "col_ratio": 0.9998,
+  "z_over_x_at_centre_row": -5e-05,
+  "rows_used": 47,
+  "cols_used": 214
+ }
+}

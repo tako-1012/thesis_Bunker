@@ -1,0 +1,9 @@
+$ python3 -m tests.test_risk_prior
+coarse elevation/refactor passed (16 terrain/cell/noise combinations)
+calibration passed (all-cell counts/means, deterministic pooling, JSON, test-seed rejection)
+empty-bin fallback and boundary assignment passed
+risk cost passed (expected means, lambda monotonicity/clipping, noise, unchanged lethal mask)
+risk-prior safety passed (40 trajectories, 40 successful; 20 m cells, R=5/15 m, lambda=0/1)
+all risk-prior tests passed
+
+exit=0
