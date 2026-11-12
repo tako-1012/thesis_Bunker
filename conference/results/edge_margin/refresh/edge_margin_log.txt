@@ -1,0 +1,211 @@
+Task024: fixed 10m edge margin, same ten LAS test patches, four methods; no tuning.
+Distance uses outermost grid centres [0,199.5]m; start is never moved.
+Waypoint audit: old/new cell coordinates and edge distances [m].
+       patch  points_changed  eligible     start  start_edge_m  slot  old_point  old_edge_m  new_point  new_edge_m
+08OB86_00294            True      True [52, 195]          26.0     1 [309, 113]        45.0 [309, 113]        45.0
+08OB86_00294            True      True [52, 195]          26.0     2   [6, 289]         3.0 [273, 232]        63.0
+08OB86_00294            True      True [52, 195]          26.0     3 [273, 232]        63.0 [104, 176]        52.0
+08OB86_00294            True      True [52, 195]          26.0     4 [104, 176]        52.0  [46, 121]        23.0
+08OB86_00294            True      True [52, 195]          26.0     5  [46, 121]        23.0 [250, 270]        64.5
+08OB86_-0205           False      True [49, 270]          24.5     1 [114, 102]        51.0 [114, 102]        51.0
+08OB86_-0205           False      True [49, 270]          24.5     2 [114, 214]        57.0 [114, 214]        57.0
+08OB86_-0205           False      True [49, 270]          24.5     3  [42, 179]        21.0  [42, 179]        21.0
+08OB86_-0205           False      True [49, 270]          24.5     4 [135, 255]        67.5 [135, 255]        67.5
+08OB86_-0205           False      True [49, 270]          24.5     5  [93, 197]        46.5  [93, 197]        46.5
+08OB87_-0706            True      True [50, 200]          25.0     1   [9, 255]         4.5  [89, 197]        44.5
+08OB87_-0706            True      True [50, 200]          25.0     2  [89, 197]        44.5 [263, 259]        68.0
+08OB87_-0706            True      True [50, 200]          25.0     3 [263, 259]        68.0  [59, 119]        29.5
+08OB87_-0706            True      True [50, 200]          25.0     4  [59, 119]        29.5 [347, 145]        26.0
+08OB87_-0706            True      True [50, 200]          25.0     5 [347, 145]        26.0  [39, 236]        19.5
+08OB88_-1417           False      True [70, 169]          35.0     1 [337, 140]        31.0 [337, 140]        31.0
+08OB88_-1417           False      True [70, 169]          35.0     2 [313, 165]        43.0 [313, 165]        43.0
+08OB88_-1417           False      True [70, 169]          35.0     3 [199, 151]        75.5 [199, 151]        75.5
+08OB88_-1417           False      True [70, 169]          35.0     4 [264, 194]        67.5 [264, 194]        67.5
+08OB88_-1417           False      True [70, 169]          35.0     5 [203, 229]        85.0 [203, 229]        85.0
+08OB88_-0167           False      True [38, 231]          19.0     1 [137, 294]        52.5 [137, 294]        52.5
+08OB88_-0167           False      True [38, 231]          19.0     2 [249, 150]        75.0 [249, 150]        75.0
+08OB88_-0167           False      True [38, 231]          19.0     3 [202, 281]        59.0 [202, 281]        59.0
+08OB88_-0167           False      True [38, 231]          19.0     4  [31, 208]        15.5  [31, 208]        15.5
+08OB88_-0167           False      True [38, 231]          19.0     5 [348, 149]        25.5 [348, 149]        25.5
+08OB88_00332           False      True [45, 228]          22.5     1 [142, 207]        71.0 [142, 207]        71.0
+08OB88_00332           False      True [45, 228]          22.5     2  [38, 131]        19.0  [38, 131]        19.0
+08OB88_00332           False      True [45, 228]          22.5     3 [203, 180]        90.0 [203, 180]        90.0
+08OB88_00332           False      True [45, 228]          22.5     4 [136, 171]        68.0 [136, 171]        68.0
+08OB88_00332           False      True [45, 228]          22.5     5  [70, 116]        35.0  [70, 116]        35.0
+08OB88_01832            True      True [36, 214]          18.0     1 [392, 249]         3.5 [223, 254]        72.5
+08OB88_01832            True      True [36, 214]          18.0     2 [397, 169]         1.0 [335, 247]        32.0
+08OB88_01832            True      True [36, 214]          18.0     3 [223, 254]        72.5 [159, 229]        79.5
+08OB88_01832            True      True [36, 214]          18.0     4 [335, 247]        32.0 [264, 180]        67.5
+08OB88_01832            True      True [36, 214]          18.0     5 [159, 229]        79.5 [133, 240]        66.5
+08OB89_00152            True      True [48, 341]          24.0     1 [278, 399]         0.0 [296, 173]        51.5
+08OB89_00152            True      True [48, 341]          24.0     2 [198, 398]         0.5 [183, 372]        13.5
+08OB89_00152            True      True [48, 341]          24.0     3 [296, 173]        51.5 [207, 192]        96.0
+08OB89_00152            True      True [48, 341]          24.0     4 [183, 372]        13.5 [328, 186]        35.5
+08OB89_00152            True      True [48, 341]          24.0     5 [389, 117]         5.0 [193, 222]        88.5
+08OB89_-0347            True      True [55, 326]          27.5     1 [294, 224]        52.5 [294, 224]        52.5
+08OB89_-0347            True      True [55, 326]          27.5     2   [5, 248]         2.5 [164, 169]        82.0
+08OB89_-0347            True      True [55, 326]          27.5     3 [164, 169]        82.0 [213, 144]        72.0
+08OB89_-0347            True      True [55, 326]          27.5     4 [213, 144]        72.0 [195, 352]        23.5
+08OB89_-0347            True      True [55, 326]          27.5     5 [195, 352]        23.5 [264, 374]        12.5
+08OB89_-0847           False      True [70, 146]          35.0     1  [269, 98]        49.0  [269, 98]        49.0
+08OB89_-0847           False      True [70, 146]          35.0     2  [75, 211]        37.5  [75, 211]        37.5
+08OB89_-0847           False      True [70, 146]          35.0     3 [227, 332]        33.5 [227, 332]        33.5
+08OB89_-0847           False      True [70, 146]          35.0     4 [281, 117]        58.5 [281, 117]        58.5
+08OB89_-0847           False      True [70, 146]          35.0     5 [350, 279]        24.5 [350, 279]        24.5
+
+record_origin: reused = archived unchanged tour; rerun = new tour requested; execution states whether it ran.
+       patch   mode record_origin execution    status  goals_reached  lethal_cells  debris_cells  plan_s_median  plan_s_p95  plan_s_max  map_update_s_median  map_update_s_p95  map_update_s_max  roll_p95_deg  roll_max_deg  pitch_p95_deg  pitch_max_deg
+08OB86_00294  fixed         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB86_00294 online         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB86_00294  lidar         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB86_00294   fine         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB86_-0205  fixed        reused       再利用     stuck              1             1             1      0.0684066    0.101999      0.1069                  NaN               NaN               NaN        4.9228       9.68489         4.7532        10.4313
+08OB86_-0205 online        reused       再利用 completed              5             0             0       0.069355    0.134001    0.261372                  NaN               NaN               NaN       4.82593       11.2399        6.09306        11.2888
+08OB86_-0205  lidar        reused       再利用 completed              5             0             0      0.0602225    0.133896    0.195715            0.0886842          0.117759          0.280268       5.22368       11.6527        6.72799         15.493
+08OB86_-0205   fine        reused       再利用 completed              5             0             0      0.0567309    0.152337    0.252926             0.147879          0.217087          0.414473       4.49613       11.2052        6.61623        15.1624
+08OB87_-0706  fixed         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB87_-0706 online         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB87_-0706  lidar         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB87_-0706   fine         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB88_-1417  fixed        reused       再利用     stuck              0             0             0      0.0646924    0.122185    0.123105                  NaN               NaN               NaN       4.28389       5.30703        4.31249        4.31769
+08OB88_-1417 online        reused       再利用 completed              5             1             1      0.0593737    0.157099    0.182353                  NaN               NaN               NaN       5.09445       18.8408        4.60072        18.6673
+08OB88_-1417  lidar        reused       再利用   no_path              0             0             0      0.0703021    0.183786    0.779775            0.0849492          0.120034          0.408273       3.62647        5.5757        3.05475        7.22803
+08OB88_-1417   fine        reused       再利用   no_path              0             0             0      0.0741922      0.1293    0.655003             0.136244          0.182907          0.767768        3.3993       4.24576        2.98031        6.81253
+08OB88_-0167  fixed        reused       再利用     stuck              1             0             0       0.132403    0.223228    0.225747                  NaN               NaN               NaN       2.92837        5.2383        3.42202         5.7893
+08OB88_-0167 online        reused       再利用 completed              5            27             0      0.0785826    0.384144    0.567933                  NaN               NaN               NaN         7.394       42.9836        8.88529        52.4828
+08OB88_-0167  lidar        reused       再利用   no_path              4             0             0      0.0549699    0.262924    0.813405            0.0878073            0.1176          0.732807       4.81866       11.5023        7.53545        17.3064
+08OB88_-0167   fine        reused       再利用   no_path              1             0             0      0.0449144    0.242908    0.584193              0.14649          0.196542          0.517358       2.71611       5.62935        3.46721        6.84554
+08OB88_00332  fixed        reused       再利用     stuck              0             0             0      0.0377247   0.0866617   0.0977732                  NaN               NaN               NaN       3.51936       4.69489        10.4422        14.4091
+08OB88_00332 online        reused       再利用 completed              5             0             0      0.0452776   0.0907293    0.192564                  NaN               NaN               NaN       5.48962       9.31724          6.885        14.4478
+08OB88_00332  lidar        reused       再利用 completed              5             0             0        0.03756   0.0715036    0.166216            0.0991531          0.134696          0.309379       5.34296       8.91668        7.13067         16.348
+08OB88_00332   fine        reused       再利用 completed              5             0             0      0.0401148    0.107446    0.134721             0.165697          0.233797          0.395351       5.47627       11.2033        6.85835        14.4911
+08OB88_01832  fixed         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB88_01832 online         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB88_01832  lidar         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB88_01832   fine         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_00152  fixed         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_00152 online         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_00152  lidar         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_00152   fine         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_-0347  fixed         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_-0347 online         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_-0347  lidar         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_-0347   fine         rerun       未実行       未実行            NaN           NaN           NaN            NaN         NaN         NaN                  NaN               NaN               NaN           NaN           NaN            NaN            NaN
+08OB89_-0847  fixed        reused       再利用     stuck              1             2             2       0.110015    0.203834    0.215019                  NaN               NaN               NaN       4.60119       7.53312         3.6828        8.49752
+08OB89_-0847 online        reused       再利用 completed              5             1             1       0.112321     0.27778    0.386705                  NaN               NaN               NaN       3.33601       7.59398        3.68824        13.6144
+08OB89_-0847  lidar        reused       再利用   no_path              1             0             0      0.0982125    0.320457    0.674176             0.095285          0.129591          0.757749       4.00998       7.27667        3.56249        6.10916
+08OB89_-0847   fine        reused       再利用   no_path              1             0             0      0.0889482    0.314632    0.599566             0.145054            0.1942          0.631169       4.15796         6.919        3.31387        5.74462
+
+Counts and per-run medians among actual recordings only; partial counts do not establish disappearance of rollovers.
+  mode  scheduled  eligible  excluded  reused  rerun_requested  rerun_recorded  executed  unexecuted  completed  stuck  rollover  no_path  timeout  runtime_error  incomplete_waypoints  other_failure  goals_reached_median  lethal_cells_median  debris_cells_median  n_replans_median  elapsed_s_median  deviation_mean_m_median  deviation_max_m_median  roll_p95_deg_median  roll_max_deg_median  pitch_p95_deg_median  pitch_max_deg_median  plan_s_median_median  plan_s_p95_median  plan_s_max_median  map_update_s_median_median  map_update_s_p95_median  map_update_s_max_median
+ fixed         10        10         0       5                5               0         5           5          0      5         0        0        0              0                     0              0                     1                    0                    0                 0              64.7                0.0682241                0.574867              4.28389              5.30703               4.31249               8.49752             0.0684066           0.122185           0.123105                         NaN                      NaN                      NaN
+online         10        10         0       5                5               0         5           5          5      0         0        0        0              0                     0              0                     5                    1                    0               185            299.45                0.0591287                0.967311              5.09445              11.2399               6.09306               14.4478              0.069355           0.157099           0.261372                         NaN                      NaN                      NaN
+ lidar         10        10         0       5                5               0         5           5          2      0         0        3        0              0                     0              0                     4                    0                    0               112            236.52                 0.046327                0.943776              4.81866              8.91668               6.72799                15.493             0.0602225           0.183786           0.674176                   0.0886842                 0.120034                 0.408273
+  fine         10        10         0       5                5               0         5           5          2      0         0        3        0              0                     0              0                     1                    0                    0                79           121.051                0.0402763                0.842031              4.15796                6.919               3.46721               6.84554             0.0567309           0.152337           0.584193                     0.14649                 0.196542                 0.517358
+
+Method minus reference: paired medians only where BOTH complete the five targets and return.
+method reference              metric  paired_completed  delta_median
+online     fixed       goals_reached                 0           NaN
+online     fixed        lethal_cells                 0           NaN
+online     fixed        debris_cells                 0           NaN
+online     fixed           n_replans                 0           NaN
+online     fixed           elapsed_s                 0           NaN
+online     fixed    deviation_mean_m                 0           NaN
+online     fixed     deviation_max_m                 0           NaN
+online     fixed        roll_p95_deg                 0           NaN
+online     fixed        roll_max_deg                 0           NaN
+online     fixed       pitch_p95_deg                 0           NaN
+online     fixed       pitch_max_deg                 0           NaN
+online     fixed       plan_s_median                 0           NaN
+online     fixed          plan_s_p95                 0           NaN
+online     fixed          plan_s_max                 0           NaN
+online     fixed map_update_s_median                 0           NaN
+online     fixed    map_update_s_p95                 0           NaN
+online     fixed    map_update_s_max                 0           NaN
+ lidar     fixed       goals_reached                 0           NaN
+ lidar     fixed        lethal_cells                 0           NaN
+ lidar     fixed        debris_cells                 0           NaN
+ lidar     fixed           n_replans                 0           NaN
+ lidar     fixed           elapsed_s                 0           NaN
+ lidar     fixed    deviation_mean_m                 0           NaN
+ lidar     fixed     deviation_max_m                 0           NaN
+ lidar     fixed        roll_p95_deg                 0           NaN
+ lidar     fixed        roll_max_deg                 0           NaN
+ lidar     fixed       pitch_p95_deg                 0           NaN
+ lidar     fixed       pitch_max_deg                 0           NaN
+ lidar     fixed       plan_s_median                 0           NaN
+ lidar     fixed          plan_s_p95                 0           NaN
+ lidar     fixed          plan_s_max                 0           NaN
+ lidar     fixed map_update_s_median                 0           NaN
+ lidar     fixed    map_update_s_p95                 0           NaN
+ lidar     fixed    map_update_s_max                 0           NaN
+  fine     fixed       goals_reached                 0           NaN
+  fine     fixed        lethal_cells                 0           NaN
+  fine     fixed        debris_cells                 0           NaN
+  fine     fixed           n_replans                 0           NaN
+  fine     fixed           elapsed_s                 0           NaN
+  fine     fixed    deviation_mean_m                 0           NaN
+  fine     fixed     deviation_max_m                 0           NaN
+  fine     fixed        roll_p95_deg                 0           NaN
+  fine     fixed        roll_max_deg                 0           NaN
+  fine     fixed       pitch_p95_deg                 0           NaN
+  fine     fixed       pitch_max_deg                 0           NaN
+  fine     fixed       plan_s_median                 0           NaN
+  fine     fixed          plan_s_p95                 0           NaN
+  fine     fixed          plan_s_max                 0           NaN
+  fine     fixed map_update_s_median                 0           NaN
+  fine     fixed    map_update_s_p95                 0           NaN
+  fine     fixed    map_update_s_max                 0           NaN
+ lidar    online       goals_reached                 2             0
+ lidar    online        lethal_cells                 2             0
+ lidar    online        debris_cells                 2             0
+ lidar    online           n_replans                 2         -54.5
+ lidar    online           elapsed_s                 2       -0.2295
+ lidar    online    deviation_mean_m                 2   -0.00879547
+ lidar    online     deviation_max_m                 2    -0.0139585
+ lidar    online        roll_p95_deg                 2      0.125549
+ lidar    online        roll_max_deg                 2    0.00610705
+ lidar    online       pitch_p95_deg                 2      0.440305
+ lidar    online       pitch_max_deg                 2       3.05218
+ lidar    online       plan_s_median                 2   -0.00842511
+ lidar    online          plan_s_p95                 2   -0.00966542
+ lidar    online          plan_s_max                 2    -0.0460024
+ lidar    online map_update_s_median                 0           NaN
+ lidar    online    map_update_s_p95                 0           NaN
+ lidar    online    map_update_s_max                 0           NaN
+  fine    online       goals_reached                 2             0
+  fine    online        lethal_cells                 2             0
+  fine    online        debris_cells                 2             0
+  fine    online           n_replans                 2         -62.5
+  fine    online           elapsed_s                 2         1.916
+  fine    online    deviation_mean_m                 2    -0.0115147
+  fine    online     deviation_max_m                 2     -0.301073
+  fine    online        roll_p95_deg                 2      -0.17157
+  fine    online        roll_max_deg                 2      0.925635
+  fine    online       pitch_p95_deg                 2      0.248261
+  fine    online       pitch_max_deg                 2       1.95847
+  fine    online       plan_s_median                 2   -0.00889348
+  fine    online          plan_s_p95                 2     0.0175263
+  fine    online          plan_s_max                 2    -0.0331446
+  fine    online map_update_s_median                 0           NaN
+  fine    online    map_update_s_p95                 0           NaN
+  fine    online    map_update_s_max                 0           NaN
+  fine     lidar       goals_reached                 2             0
+  fine     lidar        lethal_cells                 2             0
+  fine     lidar        debris_cells                 2             0
+  fine     lidar           n_replans                 2            -8
+  fine     lidar           elapsed_s                 2        2.1455
+  fine     lidar    deviation_mean_m                 2   -0.00271919
+  fine     lidar     deviation_max_m                 2     -0.287114
+  fine     lidar        roll_p95_deg                 2     -0.297119
+  fine     lidar        roll_max_deg                 2      0.919528
+  fine     lidar       pitch_p95_deg                 2     -0.192043
+  fine     lidar       pitch_max_deg                 2      -1.09372
+  fine     lidar       plan_s_median                 2  -0.000468373
+  fine     lidar          plan_s_p95                 2     0.0271917
+  fine     lidar          plan_s_max                 2     0.0128578
+  fine     lidar map_update_s_median                 2     0.0628693
+  fine     lidar    map_update_s_p95                 2     0.0992145
+  fine     lidar    map_update_s_max                 2      0.110088
+Missing physical/map timings remain None/NaN. No hypothesis tests or energy columns.
+Contact is audited on centre trajectories; it does not establish clearance of the entire body.

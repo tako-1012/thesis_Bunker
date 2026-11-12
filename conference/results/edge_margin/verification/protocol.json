@@ -1,0 +1,28 @@
+{
+  "client_date": "2026-11-06",
+  "client_timezone": "Asia/Tokyo",
+  "base": "e71df0dfb92e933765a578d23f9eff5251c2d0ae",
+  "branch": "codex/024-edge-margin",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8"
+  },
+  "edge_margin_m": 10.0,
+  "margin_selection": "specified a priori; no alternative margin tried; default zero tested only for backwards compatibility",
+  "edge_definition": "outermost grid centres [0,199.5]m; inclusive threshold; never move start",
+  "new_physical_runs": 0,
+  "source_sha256": {
+    "tapp/tour.py": "5803a7a66c2cc24ae1e647b43121f7673e1d31f63113385225567edea4b7a589",
+    "ros2_jazzy/gz_checks/online_batch_checks.py": "9c100378acc52725b5e0e534f42d30c0dcd2fb4f7ace2599e1d978ff28bcc0bc",
+    "ros2_jazzy/gz_checks/lidar_checks.py": "43d2beefb8e98d98088859fc4fa2331084bd3061e1216c0adba8c64c11ad574d",
+    "ros2_jazzy/gz_checks/edge_margin_checks.py": "66d5b87d84b685c137f80a3751549dcc2873f67fadfdf3a112847beca093d22c",
+    "ros2_jazzy/gz_checks/run_edge_margin_checks.sh": "2678a6504a068c480409a64855b36dbadd213c61a13262ea7adcc139d4537e18",
+    "experiments/edge_margin_report.py": "7e4148302fa75d06ade1e0077fdbf44192cd5c0b2b6663e07485be15e78b315c",
+    "tests/test_edge_margin.py": "e74a2f7477892b195ce85a5c6fb2090e6c7e524106109ff8701c56a275673de9"
+  },
+  "verification": "all modules run; after excluded-start ordering correction, only new edge-margin module repeated; legacy code/tests unchanged during suite"
+}

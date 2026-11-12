@@ -1,0 +1,9 @@
+$ python3 -m tests.test_visibility
+visibility: all cells in the physical radius visible on flat terrain, including clipped edges
+visibility: front and wall top visible, cells behind the wall occluded
+visibility: raising the sensor 0.5 -> 0.8 -> 1.2m never loses a visible cell
+sensing: bool mask/cost/lethal tuple and explicit raw-obstacle assumed height passed
+control: radial trajectory/count parity; contact diagnostics agree with exact trajectory audit
+all visibility tests passed
+
+exit=0

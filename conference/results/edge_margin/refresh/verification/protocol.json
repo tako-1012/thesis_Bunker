@@ -1,0 +1,21 @@
+{
+  "base": "14bcae7abef57dcc4d7767993a86ef9c3252b8b4",
+  "previous_implementation": "e29320c9f94a08a066444cefe151779b3b231a36",
+  "date": "2026-11-12",
+  "editable": [
+    "conference/tapp/tour.py",
+    "conference/ros2_jazzy/gz_checks/lidar_checks.py",
+    "conference/ros2_jazzy/gz_checks/online_batch_checks.py"
+  ],
+  "untouched_sha256": "55edb60022284fd83dd54b9d52b7756ec4f9032524e19d61d12fee6a853b9433",
+  "source_sha256": {
+    "conference/tapp/tour.py": "5803a7a66c2cc24ae1e647b43121f7673e1d31f63113385225567edea4b7a589",
+    "conference/ros2_jazzy/gz_checks/lidar_checks.py": "fb83a8459aa6ccf35d61c90cdaf1b8673362a3c5863112d26d7ea913f027455a",
+    "conference/ros2_jazzy/gz_checks/online_batch_checks.py": "9c100378acc52725b5e0e534f42d30c0dcd2fb4f7ace2599e1d978ff28bcc0bc",
+    "conference/tests/test_edge_margin.py": "e74a2f7477892b195ce85a5c6fb2090e6c7e524106109ff8701c56a275673de9",
+    "conference/experiments/edge_margin_report.py": "7e4148302fa75d06ade1e0077fdbf44192cd5c0b2b6663e07485be15e78b315c",
+    "conference/ros2_jazzy/gz_checks/edge_margin_checks.py": "66d5b87d84b685c137f80a3751549dcc2873f67fadfdf3a112847beca093d22c",
+    "conference/ros2_jazzy/gz_checks/run_edge_margin_checks.sh": "2678a6504a068c480409a64855b36dbadd213c61a13262ea7adcc139d4537e18"
+  },
+  "gazebo_executed": false
+}
