@@ -7,9 +7,11 @@ from .planners import astar
 from .directional import dijkstra_dir, path_from_parent, smooth_dir, segment_cost_dir
 
 
-def sample_waypoints(sc, n, seed, min_sep_m=5.0):
+def sample_waypoints(sc, n, seed, min_sep_m=5.0, *, edge_margin_m=0.0):
     if n < 0:
         raise ValueError("n must be nonnegative")
+    if not math.isfinite(edge_margin_m) or edge_margin_m < 0:
+        raise ValueError("edge margin must be finite and nonnegative")
     if n == 0:
         return []
     tm = sc["tmap"]
@@ -17,6 +19,10 @@ def sample_waypoints(sc, n, seed, min_sep_m=5.0):
     chosen = []
     for index in rng.permutation(np.flatnonzero(~tm.lethal)):
         p = tuple(int(x) for x in np.unravel_index(index, tm.shape))
+        # Keep the same permutation, separation and reachability checks. With
+        # zero margin this branch does not alter the original candidate stream.
+        if edge_margin_m and min(p[0], p[1], tm.shape[0]-1-p[0], tm.shape[1]-1-p[1]) * RESOLUTION < edge_margin_m:
+            continue
         if any(
             math.dist(p, q) * RESOLUTION < min_sep_m for q in [sc["start"]] + chosen
         ):

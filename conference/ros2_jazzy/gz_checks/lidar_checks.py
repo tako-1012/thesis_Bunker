@@ -63,7 +63,7 @@ def verify_inputs(patch, meta, truth, prior):
 
 def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
                   noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
-                  ground_estimate='all_returns'):
+                  ground_estimate='all_returns', scenarios=None, selected_patches=None):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output/'manifest.json').exists():
@@ -99,11 +99,13 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                 or obstacle_height_m != .3 or obstacle_height_m != reference['obstacle_height_m']):
             raise ValueError('fine comparison keeps the task022 sensor and threshold unchanged')
     baseline = json.loads((BASELINE/'manifest.json').read_text())
-    scenarios = baseline['scenarios']
+    scenarios = baseline['scenarios'] if scenarios is None else scenarios
     expected = [r['name'] for r in list_patches('test', dataset='shizuoka_beach_las')[:10]]
     if [s['patch'] for s in scenarios] != expected:
         raise ValueError('baseline must contain the same first ten LAS test beaches')
     only_patch = os.environ.get('THESIS_ONLY_PATCH') if os.environ.get('THESIS_FINE_PROTOCOL') == 'rtf_check' else None
+    if selected_patches is not None and not set(selected_patches).issubset(expected):
+        raise ValueError('selected patches must belong to the ten-beach cohort')
     manifest = dict(dataset='shizuoka_beach_las', split='test', side_m=200, seed=0,
                     planner='TA*-S+inflate', sensor='lidar', patch_count=patch_count,
                     execution='not_started', world_max_pixels=4097,
@@ -113,7 +115,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                     height_definition='median of last 64 returns per hit cell, including obstacle tops',
                     baseline='results/gazebo_online/physical_run', scenarios=scenarios,
                     input_environment=dict(python=sys.version, numpy=np.__version__),
-                    cases=[dict(patch=s['patch'], mode='lidar', selected=(s['patch'] == only_patch if only_patch else i < patch_count),
+                    cases=[dict(patch=s['patch'], mode='lidar', selected=(s['patch'] == only_patch if only_patch else i < patch_count) and
+                                (selected_patches is None or s['patch'] in selected_patches),
                                 planning_status=s['planning_status'], run_folder=None, error='', termination=None)
                            for i, s in enumerate(scenarios)])
     if fine_settings is not None:
@@ -136,7 +139,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     return manifest
 
 
-def run_checks(output, **kwargs):
+def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
     import rclpy
     from rclpy.node import Node
     from rclpy.qos import qos_profile_sensor_data
@@ -148,6 +151,8 @@ def run_checks(output, **kwargs):
 
     output = Path(output).resolve()
     manifest = prepare_cases(output, **kwargs)
+    if matched_world:
+        manifest['world_input'] = 'task022 actual-run evaluation_reference.npz elevation and unchanged raw masks'
     # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
     if manifest.get('map_method') != 'fine':
         manifest['real_time_factor'] = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
@@ -242,7 +247,7 @@ def run_checks(output, **kwargs):
                     folder.mkdir()
                     truth = build_real(case['patch'], 200, 0, debris=True, dataset='shizuoka_beach_las')
                     prior = build_real(case['patch'], 200, 0, dataset='shizuoka_beach_las')
-                    if manifest.get('map_method') == 'fine':
+                    if matched_world or manifest.get('map_method') == 'fine':
                         truth, prior, case['world_reference'] = matched_task022_maps(case['patch'], truth, prior)
                     case['input_audit'] = verify_inputs(case['patch'], meta, truth, prior)
                     # Evaluation arrays, not a deployable map/world: preserve the
@@ -354,26 +359,27 @@ def run_checks(output, **kwargs):
                     save_manifest(output, manifest)
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
-        if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
-            if manifest['execution'] == 'finished_with_errors':
-                raise RuntimeError('task029 trial errors; inspect manifest')
-            print('Task029 raw results saved; evaluate ground estimates separately:', output)
-            return
-        if manifest.get('endpoint_protocol'):
-            if manifest['execution'] == 'finished_with_errors':
-                raise RuntimeError('task028 trial errors; inspect manifest')
-            print('Task028 raw results saved; evaluate stop outcomes separately:', output)
-            return
-        if manifest.get('sensors', 'legacy') != 'legacy':
-            if manifest['execution'] == 'finished_with_errors':
-                raise RuntimeError('some real sensor trials could not run; inspect manifest')
-            print('Task027 raw results saved; legacy task023 aggregation is not applicable:', output)
-            return
-        if manifest.get('map_method') == 'fine':
-            from experiments.lidar_fine_report import summarize
-        else:
-            from experiments.gz_lidar_report import summarize
-        summarize(output)
+        if finalize_report:
+            if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task029 trial errors; inspect manifest')
+                print('Task029 raw results saved; evaluate ground estimates separately:', output)
+                return
+            if manifest.get('endpoint_protocol'):
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task028 trial errors; inspect manifest')
+                print('Task028 raw results saved; evaluate stop outcomes separately:', output)
+                return
+            if manifest.get('sensors', 'legacy') != 'legacy':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('some real sensor trials could not run; inspect manifest')
+                print('Task027 raw results saved; legacy task023 aggregation is not applicable:', output)
+                return
+            if manifest.get('map_method') == 'fine':
+                from experiments.lidar_fine_report import summarize
+            else:
+                from experiments.gz_lidar_report import summarize
+            summarize(output)
         if manifest['execution'] == 'finished_with_errors':
             raise RuntimeError('some LiDAR trials could not run; inspect manifest')
     finally:
