@@ -21,6 +21,7 @@ from thesis_bunker_gz.lidar import LidarSpec
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
 from tapp.pointcloud_map_fine import GROUND_ESTIMATES
+from tapp.endpoint_policy import ENDPOINT_POLICIES
 from tapp.real_beach import build_real, list_patches
 from tapp.mapfile import scenario_to_mapfile
 from tapp.run_log import FIELDS
@@ -73,7 +74,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         raise ValueError('unknown ground estimate')
     if ground_estimate != 'all_returns' and map_method != 'fine':
         raise ValueError('non_obstacle ground estimate requires --map fine')
-    if endpoint_policy not in ('none', 'escape'):
+    if endpoint_policy not in ENDPOINT_POLICIES:
         raise ValueError('unknown endpoint policy')
     if (endpoint_policy != 'none' or diagnostics) and map_method != 'fine':
         raise ValueError('task028 requires --map fine')
@@ -390,7 +391,7 @@ def main():
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
-    parser.add_argument('--endpoint-policy', choices=['none', 'escape'], default='none')
+    parser.add_argument('--endpoint-policy', choices=ENDPOINT_POLICIES, default='none')
     parser.add_argument('--diagnostics', action='store_true')
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())

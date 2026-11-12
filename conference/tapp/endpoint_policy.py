@@ -1,11 +1,13 @@
 """Opt-in endpoint escape, immutable planning snapshots and offline safety audit.
 
-All distances are fixed before evaluation. Truth is accepted only by audit_path,
-never by the planner. Coordinates use the existing 0.5m cell-centre convention.
+Legacy distances stay fixed. The component definition was chosen after looking
+at test failures (task028b). Truth is accepted only by audit_path, never by the
+planner. Coordinates use the existing 0.5m cell-centre convention.
 """
 from pathlib import Path
 import io
 import numpy as np
+from scipy.ndimage import binary_propagation, generate_binary_structure
 from .config import RESOLUTION, Robot
 from .collision import line_of_sight_exact, segment_cells
 from .planners import astar, smooth_cost_aware
@@ -13,6 +15,7 @@ from .planners import astar, smooth_cost_aware
 START_RADIUS = Robot().footprint_radius
 GOAL_RADIUS = 1.0
 RETRY_SECONDS = 1.0
+ENDPOINT_POLICIES = ('none', 'escape', 'escape_component')
 
 
 def raw_mask(snapshot):
@@ -29,6 +32,8 @@ def classify_failure(snapshot):
         if blocked[goal]:
             return 'goal_cell'
         if blocked[start]:
+            if np.asarray(snapshot['steep'], bool)[start]:
+                return 'start_steep'
             return 'start_cell'
         for dx in (-1, 0, 1):
             for dy in (-1, 0, 1):
@@ -40,28 +45,42 @@ def classify_failure(snapshot):
         return 'other'
 
 
-def escape_maps(snapshot):
-    blocked = np.asarray(snapshot['lethal'], bool).copy() | raw_mask(snapshot)
+def escape_maps(snapshot, policy='escape'):
+    if policy not in ENDPOINT_POLICIES[1:]:
+        raise ValueError('unknown escape policy')
+    raw = raw_mask(snapshot)
+    blocked = np.asarray(snapshot['lethal'], bool).copy() | raw
     cost = np.asarray(snapshot['cost'], float).copy()
-    xy = np.asarray(snapshot['pose'][:2], float)
-    x, y = np.ogrid[:blocked.shape[0], :blocked.shape[1]]
-    relaxed = blocked & ~raw_mask(snapshot) & ((x*RESOLUTION-xy[0])**2+(y*RESOLUTION-xy[1])**2 <= START_RADIUS**2+1e-12)
+    if policy == 'escape_component':
+        inflated_only = blocked & ~raw
+        start = tuple(np.asarray(snapshot['start'], int))
+        relaxed = np.zeros(blocked.shape, bool)
+        if len(start) == 2 and all(0 <= v < n for v, n in zip(start, blocked.shape)) and inflated_only[start]:
+            relaxed[start] = True
+            # Free cells, raw obstacles and diagonal-only neighbours cannot
+            # connect two inflation components. There is no distance/area cap.
+            relaxed = binary_propagation(relaxed, mask=inflated_only,
+                                         structure=generate_binary_structure(2, 1))
+    else:
+        xy = np.asarray(snapshot['pose'][:2], float)
+        x, y = np.ogrid[:blocked.shape[0], :blocked.shape[1]]
+        relaxed = blocked & ~raw & ((x*RESOLUTION-xy[0])**2+(y*RESOLUTION-xy[1])**2 <= START_RADIUS**2+1e-12)
     maximum = float(cost[~blocked & np.isfinite(cost)].max(initial=1.0))
     cost[relaxed], blocked[relaxed] = maximum, False
     return blocked, cost, relaxed
 
 
 def plan_endpoint(snapshot, policy='none'):
-    if policy not in ('none', 'escape'):
+    if policy not in ENDPOINT_POLICIES:
         raise ValueError('unknown endpoint policy')
     blocked = np.asarray(snapshot['lethal'], bool).copy()
     cost = np.asarray(snapshot['cost'], float).copy()
     start, goal = (tuple(np.asarray(snapshot[k], int)) for k in ('start', 'goal'))
     relaxed = np.zeros(blocked.shape, bool)
     original = goal
-    if policy == 'escape':
+    if policy != 'none':
         raw = raw_mask(snapshot)
-        blocked, cost, relaxed = escape_maps(snapshot)
+        blocked, cost, relaxed = escape_maps(snapshot, policy)
         x, y = np.ogrid[:blocked.shape[0], :blocked.shape[1]]
         if not all(0 <= v < n for v, n in zip(goal, blocked.shape)) or raw[goal]:
             return dict(success=False, path=[], goal=goal, outcome='unreachable', relaxed=relaxed, lethal=blocked, cost=cost)
