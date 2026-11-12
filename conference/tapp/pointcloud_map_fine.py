@@ -5,6 +5,7 @@ fusion and its 64-return history stay on the original coarse grid; each return
 also retains its fine cell ID so only that cell's evidence can form a cluster.
 Collision uses distance to the closed fine-cell square, sampled at coarse
 cell centres; a coarse cell's area overlapping the halo does not block it.
+Task029 optionally excludes obstacle returns from the ground median only.
 """
 
 import time
@@ -18,6 +19,7 @@ from .footprint import inflate_steep
 
 FINE_RESOLUTION = .1
 RATIO = 5
+GROUND_ESTIMATES = ('all_returns', 'non_obstacle')
 
 
 def coarse_overlap(fine):
@@ -29,8 +31,11 @@ def coarse_overlap(fine):
 
 
 class PointCloudMapFine(_LegacyPointCloudMap):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, ground_estimate='all_returns', **kwargs):
+        if ground_estimate not in GROUND_ESTIMATES:
+            raise ValueError('unknown ground estimate')
         super().__init__(*args, **kwargs)
+        self.ground_estimate = ground_estimate
         if self.obstacle_height_m != .3 or self.min_obstacle_points != 3 or self.robot.footprint_radius != .5:
             raise ValueError('task023 fixes 0.1m, 0.3m, 3 returns, and 0.5m; do not tune')
         self.fine_shape = tuple(n*RATIO for n in self.prior.shape)
@@ -100,7 +105,13 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                     ids = np.r_[self._fine_ids.get(key, np.empty(0, np.int64)), fine_flat[indices]][-self.samples_per_cell:]
                     self.samples[key], self._fine_ids[key] = values, ids
                     cell = np.unravel_index(key, elev.shape)
-                    elev[cell] = float(np.median(values[:, 0]))
+                    if self.ground_estimate == 'non_obstacle':
+                        # Keep all returns/IDs for detection and the same last-64
+                        # history. Only the ground-height statistic is filtered.
+                        ground = values[values[:, 1] < self.obstacle_height_m, 0]
+                        elev[cell] = float(np.median(ground)) if len(ground) else self.prior[cell]
+                    else:
+                        elev[cell] = float(np.median(values[:, 0]))
                     seen[cell] = True
                     high_ids = ids[values[:, 1] >= self.obstacle_height_m]
                     unique, counts = np.unique(high_ids, return_counts=True)

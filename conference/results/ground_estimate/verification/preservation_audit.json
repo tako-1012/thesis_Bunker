@@ -1,0 +1,15 @@
+{
+  "base": "78ff634a9c83a39e821a0fee6832517978c724b2",
+  "original_conference_files": 3759,
+  "changed_existing_files": [
+    "conference/tapp/pointcloud_map_fine.py",
+    "conference/tapp/pointcloud_map_multi.py",
+    "conference/ros2_jazzy/gz_checks/lidar_map.py",
+    "conference/ros2_jazzy/gz_checks/lidar_checks.py",
+    "conference/ros2_jazzy/gz_checks/lidar_planner.py"
+  ],
+  "unchanged_original_files": 3754,
+  "untouched_sha256": "094dd6624a16ce95bce0dd7c8d47aceb2b6166d96327c6c80caebd0ca10f9ac6",
+  "all_existing_tests_unchanged": true,
+  "original_results_data_maps_worlds_and_protected_planning_code_unchanged": true
+}

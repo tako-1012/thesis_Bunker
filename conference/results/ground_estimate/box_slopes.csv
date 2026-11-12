@@ -1,0 +1,9 @@
+ground_estimate,x,y,slope_deg,steep,box_lethal
+all_returns,9,10,28.810793742973065,True,True
+all_returns,11,10,28.810793742973065,True,True
+all_returns,10,9,28.810793742973065,True,True
+all_returns,10,11,28.810793742973065,True,True
+non_obstacle,9,10,0.0,False,True
+non_obstacle,11,10,0.0,False,True
+non_obstacle,10,9,0.0,False,True
+non_obstacle,10,11,0.0,False,True

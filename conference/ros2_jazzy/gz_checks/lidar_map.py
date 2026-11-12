@@ -2,19 +2,24 @@
 
 import os
 from tapp.pointcloud_map import PointCloudMap
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES
 
 
-def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', **kwargs):
+def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', **kwargs):
+    if ground_estimate not in GROUND_ESTIMATES:
+        raise ValueError('unknown ground estimate')
+    if ground_estimate != 'all_returns' and map_method != 'fine':
+        raise ValueError('non_obstacle ground estimate requires --map fine')
     if sensors != 'legacy':
         if map_method != 'fine':
             raise ValueError('real sensors require --map fine')
         from tapp.pointcloud_map_multi import PointCloudMapMulti
-        return PointCloudMapMulti(*args, sensors=sensors, **kwargs)
+        return PointCloudMapMulti(*args, sensors=sensors, ground_estimate=ground_estimate, **kwargs)
     if map_method == 'coarse':
         return PointCloudMap(*args, **kwargs)
     if map_method == 'fine':
         from tapp.pointcloud_map_fine import PointCloudMapFine
-        return PointCloudMapFine(*args, **kwargs)
+        return PointCloudMapFine(*args, ground_estimate=ground_estimate, **kwargs)
     raise ValueError('map method must be coarse or fine')
 
 
