@@ -1,0 +1,9 @@
+{
+  "lidar": {
+    "received": 2135,
+    "processed": 2135,
+    "queue_drops": 0,
+    "last_stamp": 245.4,
+    "error": ""
+  }
+}
