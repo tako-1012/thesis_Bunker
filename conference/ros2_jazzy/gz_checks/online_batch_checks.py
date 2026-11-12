@@ -48,7 +48,7 @@ def prepare_cases(output, planner=PLANNERS[0], *, scenarios=None):
     return manifest, cases
 
 
-def run_checks(output, planner=PLANNERS[0]):
+def run_checks(output, planner=PLANNERS[0], *, scenarios=None, finalize_report=True):
     import rclpy
     from rclpy.node import Node
     from rclpy.qos import qos_profile_sensor_data
@@ -59,7 +59,7 @@ def run_checks(output, planner=PLANNERS[0]):
     from thesis_bunker_mission.transport import pose3d
 
     output = Path(output).resolve()
-    manifest, scenarios = prepare_cases(output, planner)
+    manifest, scenarios = prepare_cases(output, planner, scenarios=scenarios)
     manifest.update(execution='started', environment=dict(
         image=os.environ.get('THESIS_ROS_IMAGE', 'thesis/jazzy-gz:1'),
         gazebo=subprocess.check_output(['gz', 'sim', '--versions'], text=True).strip(), python=sys.version,
@@ -252,8 +252,9 @@ def run_checks(output, planner=PLANNERS[0]):
                         save_manifest(output, manifest)
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
-        from experiments.gz_online_batch_report import summarize
-        summarize(output)
+        if finalize_report:
+            from experiments.gz_online_batch_report import summarize
+            summarize(output)
         if manifest['execution'] == 'finished_with_errors':
             raise RuntimeError('some trials failed to run; inspect manifest and process logs')
     finally:

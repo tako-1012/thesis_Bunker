@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/thesis-024/conference/tests/test_edge_margin.py", line 231, in <module>
+    test_sampling()
+  File "/workspace/thesis-024/conference/tests/test_edge_margin.py", line 49, in test_sampling
+    tm = TraversabilityMap(np.zeros((11, 11)))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraversabilityMap.__init__() missing 1 required positional argument: 'rock'
