@@ -1,0 +1,72 @@
+periodic_000133.npz t=1325.25 pose_m=(140.236,58.475) pos_cell=(280.473,116.949) start=(280, 117) goal=(350, 279) EPS=1e-09
+  start cell lethal=True  3x3 lethal around start:
+[[1 1 1]
+ [0 1 1]
+ [0 0 0]]
+  astar success=True
+  smoothed path head: [(np.float64(280.0), np.float64(117.0)), (np.float64(281.0), np.float64(117.0)), (np.float64(350.0), np.float64(268.0)), (np.float64(350.0), np.float64(279.0))]
+  _join: los_to_rest0=False joined_head=[(np.float64(280.473), np.float64(116.949)), (np.float64(280.0), np.float64(117.0)), (np.float64(280.0), np.float64(117.0))]
+  _join lethal cells on joined path: [[280, 117]]  -> REJECTED (returns None)
+    segment (np.float64(280.473), np.float64(116.949)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(281.0), np.float64(117.0)) touches lethal [[280, 117]]
+periodic_000134.npz t=1335.25 pose_m=(140.236,58.475) pos_cell=(280.473,116.949) start=(280, 117) goal=(350, 279) EPS=1e-09
+  start cell lethal=True  3x3 lethal around start:
+[[1 1 1]
+ [0 1 1]
+ [0 0 0]]
+  astar success=True
+  smoothed path head: [(np.float64(280.0), np.float64(117.0)), (np.float64(281.0), np.float64(117.0)), (np.float64(350.0), np.float64(268.0)), (np.float64(350.0), np.float64(279.0))]
+  _join: los_to_rest0=False joined_head=[(np.float64(280.473), np.float64(116.949)), (np.float64(280.0), np.float64(117.0)), (np.float64(280.0), np.float64(117.0))]
+  _join lethal cells on joined path: [[280, 117]]  -> REJECTED (returns None)
+    segment (np.float64(280.473), np.float64(116.949)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(281.0), np.float64(117.0)) touches lethal [[280, 117]]
+periodic_000135.npz t=1345.25 pose_m=(140.236,58.475) pos_cell=(280.473,116.949) start=(280, 117) goal=(350, 279) EPS=1e-09
+  start cell lethal=True  3x3 lethal around start:
+[[1 1 1]
+ [0 1 1]
+ [0 0 0]]
+  astar success=True
+  smoothed path head: [(np.float64(280.0), np.float64(117.0)), (np.float64(281.0), np.float64(117.0)), (np.float64(350.0), np.float64(268.0)), (np.float64(350.0), np.float64(279.0))]
+  _join: los_to_rest0=False joined_head=[(np.float64(280.473), np.float64(116.949)), (np.float64(280.0), np.float64(117.0)), (np.float64(280.0), np.float64(117.0))]
+  _join lethal cells on joined path: [[280, 117]]  -> REJECTED (returns None)
+    segment (np.float64(280.473), np.float64(116.949)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(281.0), np.float64(117.0)) touches lethal [[280, 117]]
+periodic_000133.npz t=1325.25 pose_m=(140.225,58.493) pos_cell=(280.451,116.986) start=(280, 117) goal=(350, 279) EPS=1e-09
+  start cell lethal=True  3x3 lethal around start:
+[[1 1 1]
+ [0 1 1]
+ [0 0 0]]
+  astar success=True
+  smoothed path head: [(np.float64(280.0), np.float64(117.0)), (np.float64(281.0), np.float64(117.0)), (np.float64(288.0), np.float64(133.0)), (np.float64(312.0), np.float64(159.0))]
+  _join: los_to_rest0=False joined_head=[(np.float64(280.451), np.float64(116.986)), (np.float64(280.0), np.float64(117.0)), (np.float64(280.0), np.float64(117.0))]
+  _join lethal cells on joined path: [[280, 117]]  -> REJECTED (returns None)
+    segment (np.float64(280.451), np.float64(116.986)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(281.0), np.float64(117.0)) touches lethal [[280, 117]]
+periodic_000134.npz t=1335.25 pose_m=(140.225,58.493) pos_cell=(280.451,116.986) start=(280, 117) goal=(350, 279) EPS=1e-09
+  start cell lethal=True  3x3 lethal around start:
+[[1 1 1]
+ [0 1 1]
+ [0 0 0]]
+  astar success=True
+  smoothed path head: [(np.float64(280.0), np.float64(117.0)), (np.float64(281.0), np.float64(117.0)), (np.float64(288.0), np.float64(133.0)), (np.float64(312.0), np.float64(159.0))]
+  _join: los_to_rest0=False joined_head=[(np.float64(280.451), np.float64(116.986)), (np.float64(280.0), np.float64(117.0)), (np.float64(280.0), np.float64(117.0))]
+  _join lethal cells on joined path: [[280, 117]]  -> REJECTED (returns None)
+    segment (np.float64(280.451), np.float64(116.986)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(281.0), np.float64(117.0)) touches lethal [[280, 117]]
+periodic_000135.npz t=1345.25 pose_m=(140.225,58.493) pos_cell=(280.451,116.986) start=(280, 117) goal=(350, 279) EPS=1e-09
+  start cell lethal=True  3x3 lethal around start:
+[[1 1 1]
+ [0 1 1]
+ [0 0 0]]
+  astar success=True
+  smoothed path head: [(np.float64(280.0), np.float64(117.0)), (np.float64(281.0), np.float64(117.0)), (np.float64(288.0), np.float64(133.0)), (np.float64(312.0), np.float64(159.0))]
+  _join: los_to_rest0=False joined_head=[(np.float64(280.451), np.float64(116.986)), (np.float64(280.0), np.float64(117.0)), (np.float64(280.0), np.float64(117.0))]
+  _join lethal cells on joined path: [[280, 117]]  -> REJECTED (returns None)
+    segment (np.float64(280.451), np.float64(116.986)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(280.0), np.float64(117.0)) touches lethal [[280, 117]]
+    segment (np.float64(280.0), np.float64(117.0)) -> (np.float64(281.0), np.float64(117.0)) touches lethal [[280, 117]]

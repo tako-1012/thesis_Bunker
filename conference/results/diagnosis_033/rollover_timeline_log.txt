@@ -1,0 +1,181 @@
+== C2_r1  rollover_t=355.5
+-- masks (search/handoff) in window: t phase original_goal -> goal relaxed_cells applied
+   298.20 search  (np.int64(202), np.int64(281)) -> (np.int64(202), np.int64(281)) relaxed=0 applied=False
+   300.30 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   303.25 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   304.35 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   307.35 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   307.55 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   307.65 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   308.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   309.95 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   310.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   310.75 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   318.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   318.95 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   319.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   320.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   320.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   321.35 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   323.05 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   325.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   335.25 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   337.15 search  (np.int64(137), np.int64(294)) -> (np.int64(136), np.int64(294)) relaxed=0 applied=False
+   340.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   341.55 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   341.85 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   343.25 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   343.55 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   345.05 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   347.25 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   349.05 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   350.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   350.35 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=2 applied=False
+   350.40 handoff (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=2 applied=True
+-- path revisions in window: t, reason, end, n_points; truth max slope along path
+   335.35 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=0 truth_slope_max=20.9
+   337.25 ?          end=(np.float64(68.0), np.float64(147.0)) n=9 truth_lethal_cells=0 truth_slope_max=22.4
+   340.55 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=1 truth_slope_max=27.1
+   341.65 ?          end=(np.float64(68.5), np.float64(147.0)) n=10 truth_lethal_cells=0 truth_slope_max=23.5
+   341.95 ?          end=(np.float64(68.5), np.float64(147.0)) n=10 truth_lethal_cells=0 truth_slope_max=23.5
+   343.35 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=0 truth_slope_max=24.3
+   343.65 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=0 truth_slope_max=24.3
+   345.15 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=0 truth_slope_max=24.3
+   347.35 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=1 truth_slope_max=27.1
+   349.15 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=0 truth_slope_max=24.3
+   350.25 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=0 truth_slope_max=24.3
+   350.45 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=1 truth_slope_max=27.1
+-- robot every 2 s: t x y roll_deg pitch_deg truth_slope_here
+   325.50  78.33 140.29   -0.8   -4.6   4.7
+   327.50  76.34 140.33    0.6   -4.4   5.0
+   329.50  74.38 140.69   -0.0   -4.1   4.2
+   331.50  72.41 141.04    0.8   -4.7   5.0
+   333.50  70.45 141.38    0.6   -4.5   4.8
+   335.50  68.53 141.70    0.4   -4.8   4.1
+   337.50  66.57 141.91    0.1   -4.7   3.9
+   339.50  64.65 142.42    1.1   -5.7   5.3
+   341.50  62.68 142.73    1.2   -5.1   4.9
+   343.50  60.95 143.26   -0.5   -4.2   6.0
+   345.50  58.98 143.55    0.6   -3.3   2.6
+   347.50  57.08 143.89    0.5   -4.2   4.3
+   349.50  55.96 145.32    1.5   -9.3  10.6
+   351.50  54.89 146.05    6.7  -17.8  17.3
+   353.50  56.34 147.31   14.1  -13.0  14.0
+   355.50  60.03 145.82  116.1  -79.0  36.6
+-- periodic snapshots: lethal cells on the path being followed, split by how they became lethal
+  snap t=345.2 following rev t=345.15 path_cells=49 map_lethal_on_path=0
+  snap t=355.2 following rev t=350.45 path_cells=38 map_lethal_on_path=5 | at prev snap t=345.2: already_known=5 (of which already_lethal=1), first_seen_after=0; raw_steep_now=0 steep_infl_now=5
+  snap t=365.2 following rev t=350.45 path_cells=38 map_lethal_on_path=5 | at prev snap t=355.2: already_known=5 (of which already_lethal=3), first_seen_after=0; raw_steep_now=1 steep_infl_now=5
+== C2_r2  rollover_t=354.35
+-- masks (search/handoff) in window: t phase original_goal -> goal relaxed_cells applied
+   296.35 search  (np.int64(202), np.int64(281)) -> (np.int64(202), np.int64(281)) relaxed=0 applied=False
+   297.70 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   298.05 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   300.85 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   305.25 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   307.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   307.95 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   313.65 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   315.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   315.95 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   316.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   316.55 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   319.25 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   329.35 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(295)) relaxed=0 applied=False
+   337.05 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   339.05 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   339.75 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   339.95 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   341.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   344.85 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   345.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(295)) relaxed=0 applied=False
+   347.65 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=2 applied=False
+   347.70 handoff (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=2 applied=True
+-- path revisions in window: t, reason, end, n_points; truth max slope along path
+   329.45 ?          end=(np.float64(68.5), np.float64(147.5)) n=9 truth_lethal_cells=0 truth_slope_max=24.3
+   337.15 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=1 truth_slope_max=27.1
+   339.15 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=0 truth_slope_max=23.5
+   339.85 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=2 truth_slope_max=27.1
+   340.05 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=0 truth_slope_max=24.3
+   341.55 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=0 truth_slope_max=24.3
+   344.95 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=1 truth_slope_max=27.1
+   345.55 ?          end=(np.float64(68.5), np.float64(147.5)) n=6 truth_lethal_cells=0 truth_slope_max=24.3
+   347.75 ?          end=(np.float64(68.5), np.float64(147.0)) n=7 truth_lethal_cells=1 truth_slope_max=27.1
+-- robot every 2 s: t x y roll_deg pitch_deg truth_slope_here
+   324.35  76.22 140.41    0.4   -4.6   5.0
+   326.35  74.25 140.70   -0.2   -4.3   3.8
+   328.35  72.28 141.00    0.8   -4.8   5.0
+   330.35  70.30 141.25    0.6   -4.8   4.2
+   332.35  68.34 141.56    0.9   -4.2   4.1
+   334.35  66.38 141.91   -0.3   -3.2   3.9
+   336.35  64.41 142.27    0.9   -5.0   5.3
+   338.35  62.56 142.73    1.3   -5.3   4.9
+   340.35  60.64 143.22    0.3   -5.0   5.3
+   342.35  58.69 143.57   -0.0   -2.1   2.9
+   344.35  56.70 143.56    1.3   -4.0   4.4
+   346.35  55.85 144.75    4.6   -3.5   4.2
+   348.35  55.45 146.49   16.0  -29.9  24.3
+   350.35  56.71 147.58   10.6   -5.9  14.0
+   352.35  58.93 147.37   17.3   -7.9  14.0
+   354.35  62.66 145.53  -93.2  -79.4  23.1
+-- periodic snapshots: lethal cells on the path being followed, split by how they became lethal
+  snap t=335.2 following rev t=329.45 path_cells=79 map_lethal_on_path=0
+  snap t=345.2 following rev t=344.95 path_cells=41 map_lethal_on_path=4 | at prev snap t=335.2: already_known=4 (of which already_lethal=4), first_seen_after=0; raw_steep_now=0 steep_infl_now=4
+  snap t=355.2 following rev t=354.85 path_cells=60 map_lethal_on_path=0
+== C2_r3  rollover_t=357.2
+-- masks (search/handoff) in window: t phase original_goal -> goal relaxed_cells applied
+   299.20 search  (np.int64(202), np.int64(281)) -> (np.int64(202), np.int64(281)) relaxed=0 applied=False
+   299.65 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   302.55 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   302.75 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   305.05 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   310.05 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   310.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   315.85 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   317.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   318.75 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   319.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   319.55 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   320.35 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   322.35 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   332.45 search  (np.int64(137), np.int64(294)) -> (np.int64(136), np.int64(294)) relaxed=0 applied=False
+   339.95 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   340.45 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   342.15 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   345.25 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   345.35 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   345.95 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   347.75 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   348.85 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+   357.10 search  (np.int64(137), np.int64(294)) -> (np.int64(137), np.int64(294)) relaxed=0 applied=False
+-- path revisions in window: t, reason, end, n_points; truth max slope along path
+   332.55 ?          end=(np.float64(68.0), np.float64(147.0)) n=7 truth_lethal_cells=0 truth_slope_max=24.3
+   340.05 ?          end=(np.float64(68.5), np.float64(147.0)) n=10 truth_lethal_cells=0 truth_slope_max=23.5
+   340.55 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=0 truth_slope_max=23.5
+   342.25 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=0 truth_slope_max=24.3
+   345.35 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=1 truth_slope_max=27.1
+   345.45 ?          end=(np.float64(68.5), np.float64(147.0)) n=9 truth_lethal_cells=1 truth_slope_max=27.1
+   346.05 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=0 truth_slope_max=24.3
+   347.85 ?          end=(np.float64(68.5), np.float64(147.0)) n=7 truth_lethal_cells=0 truth_slope_max=24.3
+   348.95 ?          end=(np.float64(68.5), np.float64(147.0)) n=8 truth_lethal_cells=0 truth_slope_max=24.3
+-- robot every 2 s: t x y roll_deg pitch_deg truth_slope_here
+   327.20  75.52 140.43    0.3   -4.8   4.5
+   329.20  73.54 140.60    0.6   -4.1   3.9
+   331.20  71.55 140.77    0.7   -4.4   4.1
+   333.20  69.66 141.00    1.8   -4.8   5.0
+   335.20  67.76 141.63    1.0   -5.8   4.9
+   337.20  65.81 142.01    0.9   -3.2   2.3
+   339.20  63.86 142.42   -0.2   -4.3   4.4
+   341.20  61.90 142.79    0.7   -3.6   4.3
+   343.20  59.96 143.25    0.6   -5.8   6.3
+   345.20  58.04 143.79    1.4   -4.4   4.6
+   347.20  56.11 144.23    0.5   -3.9   4.7
+   349.20  55.10 145.37   10.2  -15.6  23.5
+   351.20  54.63 144.87  -10.3  -11.9  16.1
+   353.20  53.71 145.59    8.7  -22.4  16.4
+   355.20  56.78 146.09    4.5  -33.0  29.9
+   357.20  59.07 145.99 -119.2  -82.6  33.6
+-- periodic snapshots: lethal cells on the path being followed, split by how they became lethal
+  snap t=345.4 following rev t=345.45 path_cells=46 map_lethal_on_path=3
+  snap t=355.4 following rev t=348.95 path_cells=43 map_lethal_on_path=3 | at prev snap t=345.4: already_known=3 (of which already_lethal=2), first_seen_after=0; raw_steep_now=0 steep_infl_now=3
+  snap t=365.4 following rev t=358.2 path_cells=52 map_lethal_on_path=0
