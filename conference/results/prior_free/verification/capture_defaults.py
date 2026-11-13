@@ -26,7 +26,10 @@ def capture():
                               ('lidar_real', dict(map_method='fine', sensors='lidar_real')),
                               ('lidar_real+depth2', dict(map_method='fine', sensors='lidar_real+depth2'))]:
             prepare_cases(root/mode, **options)
-            manifests[mode] = hashlib.sha256((root/mode/'manifest.json').read_bytes()).hexdigest()
+            # Drop only the machine-specific Python/NumPy versions; every other byte of the manifest is still compared.
+            manifest = json.loads((root/mode/'manifest.json').read_text())
+            manifest.pop('input_environment', None)
+            manifests[mode] = hashlib.sha256(json.dumps(manifest, sort_keys=True).encode()).hexdigest()
         return dict(mapping=mapping, world=world, manifests=manifests)
 
 if __name__ == '__main__':

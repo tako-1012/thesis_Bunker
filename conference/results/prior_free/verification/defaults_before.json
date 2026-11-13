@@ -1,9 +1,9 @@
 {
   "manifests": {
-    "coarse": "b32d9a39293eb1017f64a4c40d429b6f0676a0a33b8d3b5af1b1508b8fea6561",
-    "fine": "b533efba56749c4e0f7ae348f042e8797445e54d92d4ec7ec50dcd4b62730dc1",
-    "lidar_real": "4613f7d18093a8f88968b4f9937dcf9dd372579a5f898d7ef189d651130b64d9",
-    "lidar_real+depth2": "412d94c95fc4560d858e5f01b342dd95e103547c5ee7b1d5ad2c6e500069e1d1"
+    "coarse": "c97ce6d6fcf1a7549f01c3e2cc63d0ee22448b9da9214e73298eb9c07cbd6a2e",
+    "fine": "3fea33bb56ef880b515e0bffc9cf75b3503de2627e5f63bd92435a1aa16c265d",
+    "lidar_real": "3fe223bef968427db62c069f5f3c0645fd119c006954f892ecd9635f12949e63",
+    "lidar_real+depth2": "f1910fca5b82fa85edafc5e29310ab8f6ef55f950f3613e4a1153d56d8656d6b"
   },
   "mapping": {
     "fine": {
