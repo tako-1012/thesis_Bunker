@@ -1,0 +1,1 @@
+[ERROR] [1794515930.077397207] [lidar_planner]: new_lethal

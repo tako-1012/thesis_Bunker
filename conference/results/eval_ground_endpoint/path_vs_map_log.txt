@@ -1,0 +1,12 @@
+runs/08OB88_-0167/C2_r1/physical_1/raw/08OB88_-0167
+  snap t=345.2 path_t=345.15 path_cells=49 map_lethal_on_path=0 truth_lethal_on_path=0
+  snap t=355.2 path_t=350.45 path_cells=38 map_lethal_on_path=5 truth_lethal_on_path=1
+  snap t=365.2 path_t=350.45 path_cells=38 map_lethal_on_path=5 truth_lethal_on_path=1
+runs/08OB88_-0167/C2_r2/physical_1/raw/08OB88_-0167
+  snap t=335.2 path_t=329.45 path_cells=79 map_lethal_on_path=0 truth_lethal_on_path=0
+  snap t=345.2 path_t=344.95 path_cells=41 map_lethal_on_path=4 truth_lethal_on_path=1
+  snap t=355.2 path_t=354.85 path_cells=60 map_lethal_on_path=0 truth_lethal_on_path=0
+runs/08OB88_-0167/C2_r3/physical_1/raw/08OB88_-0167
+  snap t=345.4 path_t=345.45 path_cells=46 map_lethal_on_path=3 truth_lethal_on_path=1
+  snap t=355.4 path_t=348.95 path_cells=43 map_lethal_on_path=3 truth_lethal_on_path=0
+  snap t=365.4 path_t=358.2 path_cells=52 map_lethal_on_path=0 truth_lethal_on_path=0

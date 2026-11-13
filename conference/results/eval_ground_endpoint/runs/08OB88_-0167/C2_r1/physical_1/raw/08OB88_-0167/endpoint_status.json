@@ -1,0 +1,44 @@
+{
+  "stops": [
+    {
+      "index": 0,
+      "target": [
+        31,
+        208
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 1,
+      "target": [
+        249,
+        150
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 2,
+      "target": [
+        348,
+        149
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 3,
+      "target": [
+        202,
+        281
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    }
+  ],
+  "start_applications": 1,
+  "goal_applications": 1,
+  "relaxed_cells": 2,
+  "retries": 0
+}

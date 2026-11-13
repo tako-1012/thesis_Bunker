@@ -1,0 +1,186 @@
+{
+  "id": 1,
+  "patch": "08OB89_-0847",
+  "mode": "lidar",
+  "planner": "TA*-S+inflate",
+  "data_source": "gazebo",
+  "map_id": "file/truth.npz",
+  "path": [
+    [
+      135.2364362764238,
+      58.62791992034304
+    ],
+    [
+      135.0,
+      58.5
+    ],
+    [
+      136.0,
+      60.0
+    ],
+    [
+      140.5,
+      60.0
+    ],
+    [
+      140.5,
+      58.5
+    ]
+  ],
+  "points": [
+    [
+      134.5,
+      49.0
+    ],
+    [
+      37.5,
+      105.5
+    ],
+    [
+      113.5,
+      166.0
+    ],
+    [
+      140.5,
+      58.5
+    ],
+    [
+      175.0,
+      139.5
+    ]
+  ],
+  "start_cells": [
+    70,
+    146
+  ],
+  "stops_cells": [
+    [
+      269,
+      98
+    ],
+    [
+      281,
+      117
+    ],
+    [
+      350,
+      279
+    ],
+    [
+      227,
+      332
+    ],
+    [
+      75,
+      211
+    ],
+    [
+      70,
+      146
+    ]
+  ],
+  "order": [
+    0,
+    1,
+    4,
+    5,
+    3,
+    2
+  ],
+  "lookahead_m": 1.0,
+  "status": "completed",
+  "started_t": 5.26,
+  "start_pose": [
+    35.004398962262115,
+    72.96776433212169,
+    1.523537732283201,
+    0.08274928039187901,
+    -0.007855818708569415,
+    0.009983310875262786
+  ],
+  "wall_started": 290146.576090601,
+  "online_generated": true,
+  "replace_path": false,
+  "reason": "start_leg",
+  "leg_index": 1,
+  "final_leg": false,
+  "n_replans": 110,
+  "plan_time_s": 0.11191472300561145,
+  "planned_at": 5.4,
+  "revision": 112,
+  "plan_history": [
+    {
+      "n_plans": 1,
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.11191472300561145
+    }
+  ],
+  "handoff_latency_s": 0.3405025930260308,
+  "sim_handoff_s": 0.10000000000000053,
+  "pose_shift_m": 0.0,
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3,
+    "stall_timeout_s": 10.0
+  },
+  "logged_plan_calls": 112,
+  "endpoint_outcomes": [
+    {
+      "index": 0,
+      "target": [
+        269,
+        98
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 1,
+      "target": [
+        281,
+        117
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 2,
+      "target": [
+        350,
+        279
+      ],
+      "outcome": "unreachable",
+      "retries": 1
+    },
+    {
+      "index": 3,
+      "target": [
+        227,
+        332
+      ],
+      "outcome": "unreachable",
+      "retries": 1
+    },
+    {
+      "index": 4,
+      "target": [
+        75,
+        211
+      ],
+      "outcome": "unreachable",
+      "retries": 1
+    },
+    {
+      "index": 5,
+      "target": [
+        70,
+        146
+      ],
+      "outcome": "unreachable",
+      "retries": 1
+    }
+  ]
+}
