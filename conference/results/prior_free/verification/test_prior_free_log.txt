@@ -1,0 +1,35 @@
+$ python3 -m tests.test_prior_free
+1 PASS: pre-change map NPZ/snapshot/history/sidecar, world and manifest SHA-256 match; explicit prior matches implicit default
+2-4 PASS: flat/20deg plane and 0.4m boxes, with exact and +/-0.4m shifted priors
+slope_deg box prior_shift_m reference false_positive_cells missed_cells
+0.0 False 0.0 prior 0 0
+0.0 False 0.0 local 0 0
+0.0 False -0.4 prior 81 0
+0.0 False -0.4 local 0 0
+0.0 False 0.4 prior 0 0
+0.0 False 0.4 local 0 0
+0.0 True 0.0 prior 0 0
+0.0 True 0.0 local 0 0
+0.0 True -0.4 prior 80 0
+0.0 True -0.4 local 0 0
+0.0 True 0.4 prior 0 1
+0.0 True 0.4 local 0 0
+20.0 False 0.0 prior 0 0
+20.0 False 0.0 local 0 0
+20.0 False -0.4 prior 81 0
+20.0 False -0.4 local 0 0
+20.0 False 0.4 prior 0 0
+20.0 False 0.4 local 0 0
+20.0 True 0.0 prior 0 0
+20.0 True 0.0 local 0 0
+20.0 True -0.4 prior 80 0
+20.0 True -0.4 local 0 0
+20.0 True 0.4 prior 0 1
+20.0 True 0.4 local 0 0
+local support PASS: fewer than 3/collinear minima remain unclassified; both real sensor modes fuse sensor-only evidence and attribution
+5 PASS: true world box tops equal component maximum; lower edges/footprints/collision-visual sizes and truth NPZ unchanged
+6 PASS: SeedSequence reproducibility, distinct patch seeds, preserved sea/nodata, flat none and immutable input arrays
+configuration PASS: factory/CLI/manifest/ROS command forwarding; invalid coarse/local rejected; Gazebo not started
+all prior-free tests passed; requirement 7 is checked by the separate complete test-module run
+
+exit=0

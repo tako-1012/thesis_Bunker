@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/workspace/venvs/thesis-032/bin/python",
+    "-m",
+    "tests.test_lab_geometry"
+  ],
+  "exit_code": 0,
+  "reason": "CSV input omitted by initial sparse checkout; expanded unchanged Git blob and retried",
+  "input_git_blob": "45608732efc4c2b6b2b6253104388e0d328006cb",
+  "input_sha256": "9209319739b0edaa2a7d8a170eac5ec964b147c9f6b131fbfe477de0054b8d3c"
+}

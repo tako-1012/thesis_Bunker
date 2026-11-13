@@ -92,9 +92,12 @@ class PointCloudMapMulti(PointCloudMapFine):
             stats['first_detected_cells'] += len(newly)
             # Bilinear reference matches task023 (counts are accepted high returns).
             if len(world):
-                from scipy.ndimage import map_coordinates
-                prior = map_coordinates(self.prior, world[:, :2].T/RESOLUTION, order=1, mode='nearest')
-                stats['high_returns'] += int(np.count_nonzero(world[:, 2]-prior >= self.obstacle_height_m))
+                if self.obstacle_reference == 'local':
+                    stats['high_returns'] += int(np.count_nonzero(self._last_local_high))
+                else:
+                    from scipy.ndimage import map_coordinates
+                    prior = map_coordinates(self.prior, world[:, :2].T/RESOLUTION, order=1, mode='nearest')
+                    stats['high_returns'] += int(np.count_nonzero(world[:, 2]-prior >= self.obstacle_height_m))
         result.update(input_points=len(points), sensor=sensor, new_obstacle_cells=len(newly),
                       update_s=time.perf_counter()-began)
         return result

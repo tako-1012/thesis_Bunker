@@ -1,0 +1,11 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/workspace/venvs/thesis-032/bin/python",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "base": "d95c41c9c34b50f27ede86d657a6dbc5faa81912",
+  "virtualenv": "--system-site-packages; existing installed dependencies, no new packages",
+  "gazebo": "not executed",
+  "validation_patches": 12
+}
