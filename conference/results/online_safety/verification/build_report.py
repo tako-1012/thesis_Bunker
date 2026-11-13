@@ -141,5 +141,5 @@ CLIの準備だけは `--prepare-only` で実行し、`prepared/manifest.json` �
 
 {readme[readme.index('## 未確認の点'):]}
 '''
-(OUT/'REPORT_ja.md').write_text(report)
+(OUT/'REPORT_ja.md').write_text(report.rstrip()+'\n')
 print('Report saved; modules:',len(modules),'failed: 0; original result files unchanged:',count)
