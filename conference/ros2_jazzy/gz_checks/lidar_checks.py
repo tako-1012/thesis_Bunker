@@ -21,6 +21,7 @@ from thesis_bunker_gz.lidar import LidarSpec
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
 from tapp.pointcloud_map_fine import GROUND_ESTIMATES
+from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
 from tapp.endpoint_policy import ENDPOINT_POLICIES
 from tapp.real_beach import build_real, list_patches
 from tapp.mapfile import scenario_to_mapfile
@@ -63,13 +64,19 @@ def verify_inputs(patch, meta, truth, prior):
 
 def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
                   noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
-                  ground_estimate='all_returns', scenarios=None, selected_patches=None):
+                  ground_estimate='all_returns', scenarios=None, selected_patches=None,
+                  obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact'):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output/'manifest.json').exists():
         raise FileExistsError('choose a new output; no existing recordings will be overwritten')
     if patch_count not in (3, 10):
         raise ValueError('run the first three beaches before extending to ten')
+    if (obstacle_reference not in OBSTACLE_REFERENCES or debris_box_height not in DEBRIS_BOX_HEIGHTS
+            or prior_variant_name not in PRIOR_VARIANTS):
+        raise ValueError('unknown task032 option')
+    if obstacle_reference == 'local' and map_method != 'fine':
+        raise ValueError('local obstacle reference requires --map fine')
     if ground_estimate not in GROUND_ESTIMATES:
         raise ValueError('unknown ground estimate')
     if ground_estimate != 'all_returns' and map_method != 'fine':
@@ -135,6 +142,22 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         manifest.update(ground_estimate=ground_estimate,
                         height_definition='median of last 64 ALL returns with height minus bilinear stale-prior height < 0.3m; '
                                           'if none remain, retain stale-prior cell height; seen unchanged')
+    if obstacle_reference != 'prior' or debris_box_height != 'plus_half' or prior_variant_name != 'exact':
+        manifest.update(prior_free_protocol='task032; independent conditions, no legacy aggregation',
+                        obstacle_reference_mode=obstacle_reference, debris_box_height=debris_box_height,
+                        prior_variant=prior_variant_name)
+        if obstacle_reference == 'local':
+            manifest.update(obstacle_reference='sensor-only local plane; closed 1.5m square; lowest return per 0.1m cell; '
+                            'least squares, trim residual >=0.15m and refit once; >=0.3m and >=3 returns; undefined fits unclassified',
+                            height_definition='median of locally classified non-obstacle returns in last-64 history; '
+                            'all excluded: local plane at coarse centre; undefined plane: retain planning context')
+        if prior_variant_name == 'perturbed':
+            manifest['prior_perturbation'] = dict(seed='SeedSequence([32, zero-based LAS patch_index])',
+                hills=20, sigma_m=5., height_uniform_m=[-.3, .3],
+                centres='uniform over grid-centre bounds, draw x then y then height for each hill',
+                mask='leave water and nodata heights unchanged')
+        elif prior_variant_name == 'none':
+            manifest['prior_definition'] = 'all heights flattened to median valid land elevation; only water/nodata raw flags retained'
     save_manifest(output, manifest)
     return manifest
 
@@ -250,6 +273,17 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     if matched_world or manifest.get('map_method') == 'fine':
                         truth, prior, case['world_reference'] = matched_task022_maps(case['patch'], truth, prior)
                     case['input_audit'] = verify_inputs(case['patch'], meta, truth, prior)
+                    if manifest.get('prior_variant', 'exact') != 'exact':
+                        prior, case['prior_variant_statistics'] = prior_variant(prior, manifest['prior_variant'])
+                        # Never seed a no-prior/perturbed run with the old exact
+                        # DEM path. Keep endpoints/order, plan on the new prior.
+                        from tapp.online_mission import run_fixed_mission
+                        from ros2_jazzy.gz_checks.online_batch_runtime import planning_map
+                        initial = run_fixed_mission(planning_map(prior, 'TA*-S+inflate'), meta['start'], meta['stops'])
+                        if not initial['success']:
+                            raise ValueError('task032 initial planning failed on selected prior')
+                        mission['path'] = (np.asarray(initial['traj'])*RESOLUTION).tolist()
+                        save_run()
                     # Evaluation arrays, not a deployable map/world: preserve the
                     # actual-run float bits for offline analysis on other CPUs.
                     np.savez_compressed(raw/'evaluation_reference.npz',
@@ -259,7 +293,9 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     truth_file, prior_file = folder/'truth.npz', folder/'prior.npz'
                     scenario_to_mapfile(dict(truth, raw_elev=truth['tmap'].elev), truth_file, case['patch']+'_debris', case['patch'], 'task022 truth; no planner access', LAS_ATTRIBUTION)
                     scenario_to_mapfile(prior, prior_file, case['patch'], case['patch'], 'task022 stale prior', LAS_ATTRIBUTION)
-                    export_gazebo(truth_file, folder/'world', max_pixels=4097)
+                    world_options = (dict(debris_box_height=manifest['debris_box_height'])
+                                     if manifest.get('debris_box_height', 'plus_half') != 'plus_half' else {})
+                    export_gazebo(truth_file, folder/'world', max_pixels=4097, **world_options)
                     world = folder/'world/world.sdf'
                     tree = ET.parse(world)
                     w = tree.find('world')
@@ -307,6 +343,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
                         commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
+                    if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
+                        commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
                     for i, command in enumerate(commands):
                         stream = (raw/f'process_{i}.txt').open('w')
                         streams.append(stream)
@@ -360,6 +398,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if manifest.get('prior_free_protocol'):
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task032 trial errors; inspect manifest')
+                print('Task032 raw results saved; evaluate prior-free conditions separately:', output)
+                return
             if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task029 trial errors; inspect manifest')
@@ -397,6 +440,9 @@ def main():
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
+    parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default='prior')
+    parser.add_argument('--debris-box-height', choices=DEBRIS_BOX_HEIGHTS, default='plus_half')
+    parser.add_argument('--prior-variant', choices=PRIOR_VARIANTS, default='exact', dest='prior_variant_name')
     parser.add_argument('--endpoint-policy', choices=ENDPOINT_POLICIES, default='none')
     parser.add_argument('--diagnostics', action='store_true')
     parser.add_argument('--prepare-only', action='store_true')
@@ -404,6 +450,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('prior_free_protocol'):
+            print('Task032 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
             print('Task029 preparation only; Gazebo not executed:', output)
             return

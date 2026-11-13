@@ -1,0 +1,32 @@
+{
+  "base": "d95c41c9c34b50f27ede86d657a6dbc5faa81912",
+  "source_sha256": {
+    "data_prep/export_gazebo.py": "e1c85be2a7e515b76e248aa14cc6b840e9c53775ce818897a50da71a50603a9e",
+    "ros2_jazzy/gz_checks/lidar_checks.py": "e3d3e391df435b9726b93a98ccd84e9bcb795b6d25c8adab26884b95e6f4fc58",
+    "ros2_jazzy/gz_checks/lidar_map.py": "2180da96e52cc32d5c405679137a8cfa5e268e15718f969b84c3d9c2e99ca917",
+    "ros2_jazzy/gz_checks/lidar_planner.py": "3f45ed7d2a87e5510a82a520a5f227308ac3b2d5717d29cd0fe71a0330f19dd2",
+    "tapp/pointcloud_map_fine.py": "b33a142bc4b89af4a63056fddf37caefda0edf8700ad503b577239da5f4bc457",
+    "tapp/pointcloud_map_multi.py": "710d81185c5a945e9c89d1d679414c6846832f779edbc6a9e9065823ba67dc96",
+    "tapp/local_ground.py": "5a57c07f09d31e0fcf7508de6ddc28e05253cca13939eeda767ffca2ef7491f5",
+    "tapp/prior_variants.py": "bf9e0b4f02c4cf7daf86918342229fce00cc063ed8182d42179f636656101af9",
+    "tests/test_prior_free.py": "cef6d12302428bd723828bf9ab6511c807e1c737638db2c826f28ad5f63b18fa"
+  },
+  "fixed": {
+    "fine_resolution_m": 0.1,
+    "obstacle_height_m": 0.3,
+    "min_obstacle_points": 3,
+    "robot_radius_m": 0.5,
+    "local_square_side_m": 1.5,
+    "trim_m": 0.15,
+    "fits": 2,
+    "hills": 20,
+    "sigma_m": 5.0,
+    "amplitude_m": [
+      -0.3,
+      0.3
+    ],
+    "seed": "SeedSequence([32, patch_index])"
+  },
+  "gazebo": "not executed",
+  "default_fixture": "captured before task032 source edits"
+}

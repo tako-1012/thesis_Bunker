@@ -5,7 +5,14 @@ from tapp.pointcloud_map import PointCloudMap
 from tapp.pointcloud_map_fine import GROUND_ESTIMATES
 
 
-def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', **kwargs):
+def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', obstacle_reference='prior', **kwargs):
+    from tapp.prior_variants import OBSTACLE_REFERENCES
+    if obstacle_reference not in OBSTACLE_REFERENCES:
+        raise ValueError('unknown obstacle reference')
+    if obstacle_reference != 'prior':
+        if map_method != 'fine':
+            raise ValueError('local obstacle reference requires --map fine')
+        kwargs['obstacle_reference'] = obstacle_reference
     if ground_estimate not in GROUND_ESTIMATES:
         raise ValueError('unknown ground estimate')
     if ground_estimate != 'all_returns' and map_method != 'fine':

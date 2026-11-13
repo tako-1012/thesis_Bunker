@@ -1,0 +1,9 @@
+$ python3 -m tests.test_online_deadend
+safeguards: unknown-only memory, known truth precedence, strict N_B threshold and per-leg reset passed
+08OB86_00294: disabled trajectory/count parity and A/B/A+B stale five-point contacts=0
+08OB86_-0205: disabled trajectory/count parity and A/B/A+B stale five-point contacts=0
+08OB87_-0706: disabled trajectory/count parity and A/B/A+B stale five-point contacts=0
+08OC99_01733 stale R10: validation-frozen B completed without contact
+all online dead-end tests passed
+
+exit=0

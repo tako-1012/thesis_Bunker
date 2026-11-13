@@ -32,13 +32,13 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 
 
 class LidarPlannerNode(OnlinePlannerNode):
-    def __init__(self, *, ground_estimate='all_returns'):
+    def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior'):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         for name, default in [('prior_map', ''), ('map_id', 'file/truth.npz'), ('run_folder', ''),
                               ('sensor_height_m', .8), ('max_range_m', 30.), ('obstacle_height_m', .3), ('range_resolution_m', .01),
                               ('stale_timeout_s', .5), ('map_method', 'coarse'), ('sensors', 'legacy'), ('endpoint_policy', 'none'), ('diagnostics', False),
-                              ('ground_estimate', ground_estimate)]:
+                              ('ground_estimate', ground_estimate), ('obstacle_reference', obstacle_reference)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -56,6 +56,7 @@ class LidarPlannerNode(OnlinePlannerNode):
         self.mapper = make_pointcloud_map(prior['tmap'].elev, raw_obstacle,
                                     map_method=self.get_parameter('map_method').value, sensors=self.sensor_mode,
                                     ground_estimate=self.get_parameter('ground_estimate').value,
+                                    obstacle_reference=self.get_parameter('obstacle_reference').value,
                                     robot=prior['tmap'].robot, weights=prior['tmap'].weights,
                                     sensor_height_m=self.get_parameter('sensor_height_m').value,
                                     max_range_m=self.get_parameter('max_range_m').value,
@@ -281,13 +282,15 @@ class LidarPlannerNode(OnlinePlannerNode):
 
 
 def main(args=None):
+    from tapp.prior_variants import OBSTACLE_REFERENCES
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default=None)
+    parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default=None)
     options, remaining = parser.parse_known_args(sys.argv[1:] if args is None else args)
     # Without the new flag, pass the exact original args object to ROS.
-    rclpy.init(args=remaining if options.ground_estimate is not None else args)
-    node = (LidarPlannerNode(ground_estimate=options.ground_estimate)
-            if options.ground_estimate is not None else LidarPlannerNode())
+    selected = {key: value for key, value in vars(options).items() if value is not None}
+    rclpy.init(args=remaining if selected else args)
+    node = LidarPlannerNode(**selected)
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:

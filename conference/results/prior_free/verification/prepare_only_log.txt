@@ -1,0 +1,1 @@
+Task032 preparation only; Gazebo not executed: results/prior_free/prepared
