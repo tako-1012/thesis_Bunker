@@ -1,0 +1,62 @@
+{
+  "stops": [
+    {
+      "index": 0,
+      "target": [
+        59,
+        119
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 1,
+      "target": [
+        347,
+        145
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 2,
+      "target": [
+        263,
+        259
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 3,
+      "target": [
+        89,
+        197
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 4,
+      "target": [
+        9,
+        255
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 5,
+      "target": [
+        50,
+        200
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    }
+  ],
+  "start_applications": 0,
+  "goal_applications": 0,
+  "relaxed_cells": 0,
+  "retries": 0
+}

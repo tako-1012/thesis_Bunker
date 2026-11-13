@@ -1,0 +1,182 @@
+{
+  "id": 1,
+  "patch": "08OB88_-1417",
+  "mode": "lidar",
+  "planner": "TA*-S+inflate",
+  "data_source": "gazebo",
+  "map_id": "file/truth.npz",
+  "path": [
+    [
+      43.22126051050911,
+      87.52795561259525
+    ],
+    [
+      43.5,
+      87.5
+    ],
+    [
+      35.5,
+      85.0
+    ],
+    [
+      35.0,
+      84.5
+    ]
+  ],
+  "points": [
+    [
+      168.5,
+      70.0
+    ],
+    [
+      156.5,
+      82.5
+    ],
+    [
+      99.5,
+      75.5
+    ],
+    [
+      132.0,
+      97.0
+    ],
+    [
+      101.5,
+      114.5
+    ]
+  ],
+  "start_cells": [
+    70,
+    169
+  ],
+  "stops_cells": [
+    [
+      199,
+      151
+    ],
+    [
+      337,
+      140
+    ],
+    [
+      313,
+      165
+    ],
+    [
+      264,
+      194
+    ],
+    [
+      203,
+      229
+    ],
+    [
+      70,
+      169
+    ]
+  ],
+  "order": [
+    0,
+    3,
+    1,
+    2,
+    4,
+    5
+  ],
+  "lookahead_m": 1.0,
+  "status": "completed",
+  "started_t": 5.28,
+  "start_pose": [
+    34.996368169820705,
+    84.50051007620911,
+    1.7050123133671575,
+    0.040794376221037314,
+    0.0504834119439222,
+    -0.005579996827468966
+  ],
+  "wall_started": 258735.925472022,
+  "online_generated": true,
+  "replace_path": false,
+  "reason": "start_leg",
+  "leg_index": 5,
+  "final_leg": false,
+  "n_replans": 107,
+  "plan_time_s": 0.046748610999202356,
+  "planned_at": 5.35,
+  "revision": 113,
+  "plan_history": [
+    {
+      "n_plans": 1,
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.046748610999202356
+    }
+  ],
+  "handoff_latency_s": 0.17065300300600938,
+  "sim_handoff_s": 0.04999999999999982,
+  "pose_shift_m": 0.0,
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3,
+    "stall_timeout_s": 10.0
+  },
+  "logged_plan_calls": 113,
+  "endpoint_outcomes": [
+    {
+      "index": 0,
+      "target": [
+        199,
+        151
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 1,
+      "target": [
+        337,
+        140
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 2,
+      "target": [
+        313,
+        165
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 3,
+      "target": [
+        264,
+        194
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 4,
+      "target": [
+        203,
+        229
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    },
+    {
+      "index": 5,
+      "target": [
+        70,
+        169
+      ],
+      "outcome": "arrived",
+      "retries": 0
+    }
+  ]
+}

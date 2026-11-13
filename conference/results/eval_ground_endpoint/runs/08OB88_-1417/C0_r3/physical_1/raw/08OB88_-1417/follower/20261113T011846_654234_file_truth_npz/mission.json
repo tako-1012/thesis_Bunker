@@ -1,0 +1,126 @@
+{
+  "id": 1,
+  "patch": "08OB88_-1417",
+  "mode": "lidar",
+  "planner": "TA*-S+inflate",
+  "data_source": "gazebo",
+  "map_id": "file/truth.npz",
+  "path": [
+    [
+      87.79071919357024,
+      72.04317378468541
+    ],
+    [
+      94.0,
+      72.5
+    ],
+    [
+      99.5,
+      75.0
+    ],
+    [
+      99.5,
+      75.5
+    ]
+  ],
+  "points": [
+    [
+      168.5,
+      70.0
+    ],
+    [
+      156.5,
+      82.5
+    ],
+    [
+      99.5,
+      75.5
+    ],
+    [
+      132.0,
+      97.0
+    ],
+    [
+      101.5,
+      114.5
+    ]
+  ],
+  "start_cells": [
+    70,
+    169
+  ],
+  "stops_cells": [
+    [
+      199,
+      151
+    ],
+    [
+      337,
+      140
+    ],
+    [
+      313,
+      165
+    ],
+    [
+      264,
+      194
+    ],
+    [
+      203,
+      229
+    ],
+    [
+      70,
+      169
+    ]
+  ],
+  "order": [
+    0,
+    3,
+    1,
+    2,
+    4,
+    5
+  ],
+  "lookahead_m": 1.0,
+  "status": "no_path",
+  "started_t": 5.28,
+  "start_pose": [
+    34.996368169820705,
+    84.50051007620911,
+    1.7050123133671575,
+    0.040794376221037314,
+    0.0504834119439222,
+    -0.005579996827468966
+  ],
+  "wall_started": 262182.771554065,
+  "online_generated": true,
+  "replace_path": false,
+  "reason": "start_leg",
+  "leg_index": 0,
+  "final_leg": false,
+  "n_replans": 48,
+  "plan_time_s": 0.03332269098609686,
+  "planned_at": 5.35,
+  "revision": 29,
+  "plan_history": [
+    {
+      "reason": "start_leg",
+      "success": true,
+      "plan_time_s": 0.03332269098609686,
+      "n_plans": 1
+    }
+  ],
+  "handoff_latency_s": 0.1699082150007598,
+  "sim_handoff_s": 0.04999999999999982,
+  "pose_shift_m": 0.0,
+  "controller": {
+    "lookahead_m": 1.0,
+    "v_max": 1.0,
+    "w_max": 1.0,
+    "goal_tol_m": 0.3,
+    "stall_timeout_s": 10.0
+  },
+  "logged_plan_calls": 50
+}

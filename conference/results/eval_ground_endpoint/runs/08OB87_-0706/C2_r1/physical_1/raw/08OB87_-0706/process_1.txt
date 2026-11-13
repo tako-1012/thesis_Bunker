@@ -1,0 +1,7 @@
+[INFO] [1794484488.047151596] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[INFO] [1794484488.050493111] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[INFO] [1794484488.051953652] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/model/bunker/pose (gz.msgs.Pose_V) -> /ground_truth (geometry_msgs/msg/PoseArray)] (Lazy 0)
+[INFO] [1794484488.052683716] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/imu (gz.msgs.IMU) -> /imu (sensor_msgs/msg/Imu)] (Lazy 0)
+[INFO] [1794484488.054207328] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/lidar/points (gz.msgs.PointCloudPacked) -> /lidar/points (sensor_msgs/msg/PointCloud2)] (Lazy 0)
+[INFO] [1794484507.603958894] [ros_gz_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[INFO] [1794486039.245041134] [rclcpp]: signal_handler(SIGINT/SIGTERM)
