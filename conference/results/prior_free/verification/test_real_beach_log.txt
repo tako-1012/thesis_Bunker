@@ -1,0 +1,17 @@
+$ python3 -m tests.test_real_beach
+all 60 patches loaded: shapes, 12/48 split, nearest-data fill passed
+all 60 patches satisfy sea-to-land orientation
+08OB86_00294: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB86_-0205: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB87_-0706: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB88_-1417: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB88_-0167: 100/200m crops, deterministic clean/debris scenarios, reachability and forbidden masks passed
+08OB86_00294: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB86_-0205: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB87_-0706: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB88_-1417: exact offline and coarse R5 c10 online safety passed, clean/debris
+08OB88_-0167: exact offline and coarse R5 c10 online safety passed, clean/debris
+real-beach test groups failed: 0
+all real-beach tests passed
+
+exit=0

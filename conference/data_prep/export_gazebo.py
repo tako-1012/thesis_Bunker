@@ -32,11 +32,13 @@ def png16(pixels):
     )
 
 
-def export_gazebo(map_path, output, *, max_pixels=2049):
+def export_gazebo(map_path, output, *, max_pixels=2049, debris_box_height='plus_half'):
     """Refine the raster up to max_pixels without changing the 0.1m error bound.
 
     The default preserves the existing exports; larger rasters require opt-in.
     """
+    if debris_box_height not in ('plus_half', 'true'):
+        raise ValueError('unknown debris box height')
     sc = load_map_file(map_path)
     z = sc["tmap"].elev
     if z.shape[0] != z.shape[1]:
@@ -146,7 +148,7 @@ def export_gazebo(map_path, output, *, max_pixels=2049):
         hi = np.array([s.stop for s in region])
         cells = z[region][labels[region] == index]
         bottom = float(cells.min()) - 0.1
-        top = float(cells.max()) + 0.5
+        top = float(cells.max()) + (0.5 if debris_box_height == 'plus_half' else 0.)
         centre = (lo + hi - 1) * res / 2
         size = (hi - lo) * res
         obstacle = node(world, "model", name=f"obstacle_{index}")
@@ -157,6 +159,8 @@ def export_gazebo(map_path, output, *, max_pixels=2049):
             item = node(link, tag, name="box_" + tag)
             box = node(node(item, "geometry"), "box")
             node(box, "size", f"{size[0]} {size[1]} {top-bottom}")
+    if debris_box_height != 'plus_half':
+        world.append(ET.Comment('task032 debris_box_height=true; box top equals maximum component elevation'))
     ET.indent(sdf)
     ET.ElementTree(sdf).write(
         output / "world.sdf", encoding="utf-8", xml_declaration=True
@@ -198,6 +202,10 @@ Harmonicの衝突地形ではheightmap.posが無視されるため、見た目�
         quantization_bound_m=span / 65535 / 2,
         obstacle_boxes=int(count),
     )
+    if debris_box_height != 'plus_half':
+        readme = output / 'README_ja.md'
+        readme.write_text(readme.read_text().replace('最大標高より0.5m上', '最大標高そのもの'))
+        result['debris_box_height'] = debris_box_height
     return result
 
 
@@ -208,8 +216,9 @@ if __name__ == "__main__":
     parser.add_argument("map", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--max-pixels", type=int, default=2049)
+    parser.add_argument('--debris-box-height', choices=['plus_half', 'true'], default='plus_half')
     args = parser.parse_args()
-    result = export_gazebo(args.map, args.output, max_pixels=args.max_pixels)
+    result = export_gazebo(args.map, args.output, max_pixels=args.max_pixels, debris_box_height=args.debris_box_height)
     print("map pixels side_m max_error_m quantization_bound_m obstacle_boxes")
     print(
         *(

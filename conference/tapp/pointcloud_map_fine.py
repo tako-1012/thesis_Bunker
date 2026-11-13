@@ -31,11 +31,16 @@ def coarse_overlap(fine):
 
 
 class PointCloudMapFine(_LegacyPointCloudMap):
-    def __init__(self, *args, ground_estimate='all_returns', **kwargs):
+    def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior', **kwargs):
+        if obstacle_reference not in ('prior', 'local'):
+            raise ValueError('unknown obstacle reference')
         if ground_estimate not in GROUND_ESTIMATES:
             raise ValueError('unknown ground estimate')
         super().__init__(*args, **kwargs)
         self.ground_estimate = ground_estimate
+        self.obstacle_reference = obstacle_reference
+        if obstacle_reference == 'local':
+            self._local_points = {}
         if self.obstacle_height_m != .3 or self.min_obstacle_points != 3 or self.robot.footprint_radius != .5:
             raise ValueError('task023 fixes 0.1m, 0.3m, 3 returns, and 0.5m; do not tune')
         self.fine_shape = tuple(n*RATIO for n in self.prior.shape)
@@ -71,6 +76,9 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self._inflated_coarse = self.fine_inflated[RATIO//2::RATIO, RATIO//2::RATIO].copy()
 
     def update(self, sensor_points, pose):
+        if self.obstacle_reference == 'local':
+            from .local_ground import update_local
+            return update_local(self, sensor_points, pose)
         began = time.perf_counter()
         points = np.asarray(sensor_points, float)
         if points.ndim != 2 or points.shape[1] != 3:

@@ -1,0 +1,12 @@
+$ python3 -m tests.test_edge_margin
+sampling: all ten frozen default/zero-margin outputs byte-identical; 12-point draws meet 10m, 5m separation and reachability
+sampling boundaries: inclusive margin, no start snapping, invalid margins and zero goals passed
+cohort: independently recomputed the five changed beaches; all other metadata exactly equals task021; archived world-height bytes retained
+synthetic start fixture: an insufficient start margin excludes the tour before sampling or planning, without moving it
+report: 40 rows mix untouched cached rows with synthetic reruns; incomplete outcomes stay unknown; descriptive pairs, no energy/tests of significance
+real adapter preparation: partial controls and both selected LiDAR cohorts accept exactly the same new metadata without ROS
+dispatch fixtures: only changed eligible beaches reach the old runners; identical tour/world inputs, matched LiDAR conditions and no legacy finalizer
+Docker fixture: normal read-only-source wrapper forwards fixed 0.3x/1s and refuses an existing manifest
+all edge-margin tests passed (ROS2/Gazebo not required; fixture records are not experimental data)
+
+exit=0

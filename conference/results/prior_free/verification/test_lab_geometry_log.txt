@@ -1,0 +1,35 @@
+$ python3 -m tests.test_lab_geometry
+1 PASS: flat terrain and physical 5/12/22/30deg planes match independent eight-neighbour formula; all six cost stages and uint8 truncation
+2 PASS: <=3 valid neighbours and absent centres stay unknown; fourth valid neighbour enables cost
+3 PASS: pinned Jazzy setCostmap integer conversion, 253/254 blockage and allowed unknown=253
+4 PASS: no raw obstacle contact/corner cuts; blocked starts and disconnected goals rejected; independent Dijkstra optimum; one 0.35m square-distance inflation
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/thesis-032/conference/tests/test_lab_geometry.py", line 86, in <module>
+    for test in (test_geometry,test_unknown,test_navfn,test_paths,test_parity):test()
+                                                                               ^^^^^^
+  File "/workspace/thesis-032/conference/tests/test_lab_geometry.py", line 81, in test_parity
+    result=run_case(case)
+           ^^^^^^^^^^^^^^
+  File "/workspace/thesis-032/conference/experiments/lab_baseline.py", line 108, in run_case
+    reference = pd.read_csv(OFFLINE, float_precision='round_trip')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/thesis-032/conference/results/real_beach_las/offline.csv'
+
+exit=1
