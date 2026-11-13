@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/thesis-034/conference/tests/test_online_safety.py", line 237, in <module>
+    for test in (test_default_bytes,test_start_join,test_saved,test_join_timeout,test_known_changed,test_follower,test_safety_recovery,test_configuration): test()
+                                                                                                                                                            ^^^^^^
+  File "/workspace/thesis-034/conference/tests/test_online_safety.py", line 76, in test_start_join
+    result=runtime.pending.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/workspace/thesis-034/conference/tests/test_endpoint_policy.py", line 28, in submit
+    future.set_result(f(*args))
+                      ^^^^^^^^
+  File "/workspace/thesis-034/conference/ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/online_safety.py", line 151, in _work
+    state['tour'] = ordered_tour(self.prior_tm, cell, points)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/thesis-034/conference/tapp/online_mission.py", line 280, in ordered_tour
+    raise ValueError("no tour on prior map")
+ValueError: no tour on prior map
+1 PASS: implicit/explicit none match pre-change runtime command JSON, plans/diagnostic bytes, follower trajectory/mission bytes and manifests

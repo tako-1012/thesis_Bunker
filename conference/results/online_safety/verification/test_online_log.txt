@@ -1,0 +1,9 @@
+$ /workspace/venvs/thesis-034/bin/python -m tests.test_online
+regression passed (ridge/100 m, seeds 0 and 7)
+perfect prior passed (all terrain kinds/50 m/seed 0)
+coarse prior passed (shape, no rocks, partial blocks, noise, robot/weights, edges)
+prior policies passed (hard/soft/ignore, sensing overrides, cell-specific triggers)
+safety passed (60 trajectories: five online variants and constrained oracle)
+all online tests passed
+
+exit=0

@@ -1,0 +1,10 @@
+$ /workspace/venvs/thesis-034/bin/python -m tests.test_gz_online_batch
+scenarios: first ten LAS test beaches; truth/prior arrays, seed-selected five points, task014 order and inflated plans agree with direct calls
+runtime: unchanged async worker uses the predeparture order; opt-in masks and blocked endpoints verified
+synthetic fixtures only: completion/stuck/rollover/timeout, five-target prefix, contact, active-path deviation, planning times and immutable originals passed
+raw CSV parts: strict file limit, repeated headers, exact numeric strings and complete record order passed
+unrun report: twenty scenarios retained, unknown physical outcomes stay blank, no energy/map/world artifacts and overwrite refused
+synthetic paired counts: incomplete tours excluded from paired medians; each outcome retains the actual-recording denominator
+all Gazebo online batch tests passed (ROS2/Gazebo not required; fixture measurements are not experimental data)
+
+exit=0

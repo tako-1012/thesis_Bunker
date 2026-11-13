@@ -15,12 +15,15 @@ from .online_runtime import replace_running_path, record_plan_history
 
 
 class PathFollower(Node):
-    def __init__(self):
+    def __init__(self, *, online_fixes='none'):
         super().__init__("path_follower")
         self.declare_parameter("map_id", "file/flat_test_100m.npz")
         self.declare_parameter("run_root", "")
         self.declare_parameter("stall_timeout_s", 10.0)
         self.declare_parameter("online", False)
+        self.declare_parameter('online_fixes', online_fixes)
+        from tapp.online_safety import validate_fixes
+        self.online_fixes = validate_fixes(self.get_parameter('online_fixes').value)
         self.online = self.get_parameter("online").value
         self.current_mission = None
         self.n_replans = 0
@@ -76,6 +79,8 @@ class PathFollower(Node):
                 return
             if self.online and mission.get("online_error"):
                 if self.log is not None and mission.get("id") == self.mission_id:
+                    if getattr(self, 'online_fixes', 'none') == 'v1':
+                        self.log.mission['online_error'] = mission['online_error']
                     record_plan_history(self.log, mission)
                 if int(mission.get("id", 0)) != self.mission_id:
                     self.current_mission = None
@@ -104,12 +109,17 @@ class PathFollower(Node):
                     settings,
                     self.get_clock().now().nanoseconds / 1e9,
                     previous=self.follower,
+                    **(dict(online_fixes='v1') if getattr(self, 'online_fixes', 'none') == 'v1' else {}),
                 )
                 self.current_mission = mission
                 self.n_replans = mission["n_replans"]
                 self.last_status = "running"
                 return
-            follower = MissionFollower(mission["path"], **settings)
+            if getattr(self, 'online_fixes', 'none') == 'v1':
+                from tapp.online_safety import make_follower
+                follower = make_follower(mission['path'], online_fixes='v1', **settings)
+            else:
+                follower = MissionFollower(mission["path"], **settings)
             self.stop("replaced")
             self.follower = follower
             self.mission_id = int(mission.get("id", 0))
@@ -141,6 +151,8 @@ class PathFollower(Node):
             payload.update(
                 current_path=self.current_mission["path"], n_replans=self.n_replans
             )
+            if getattr(self, 'online_fixes', 'none') == 'v1':
+                payload['safety_revision'] = self.current_mission.get('revision', 0)
         message.data = json.dumps(payload)
         self.state.publish(message)
 
@@ -155,9 +167,12 @@ class PathFollower(Node):
         if self.started is None:
             self.started = now
         try:
-            v, w, done = self.follower.step(
-                now, (self.pose[0], self.pose[1], self.pose[5])
-            )
+            if getattr(self, 'online_fixes', 'none') == 'v1':
+                v, w, done = self.follower.step(now, self.pose, imu_rpy=self.imu)
+            else:
+                v, w, done = self.follower.step(
+                    now, (self.pose[0], self.pose[1], self.pose[5])
+                )
         except ValueError as exc:
             self.get_logger().error(str(exc))
             self.stop("time_reset")
@@ -168,6 +183,12 @@ class PathFollower(Node):
         self.cmd.publish(command)
         self.log.write(self.follower.log_row(now, self.pose, self.imu, v, w))
         status = self.follower.status
+        if getattr(self, 'online_fixes', 'none') == 'v1' and status in ('unsafe_tilt', 'off_path'):
+            if self.last_status != status:
+                from .online_safety import append_event
+                append_event(self.log.folder/'safety_stops.csv', now, status,
+                             dict(pose=list(self.pose), revision=self.current_mission.get('revision', 0)))
+            done = False  # Retain this run/log while waiting for a new path.
         if (
             done
             and status == "completed"
@@ -196,8 +217,14 @@ class PathFollower(Node):
 
 
 def main(args=None):
-    rclpy.init(args=args)
-    node = PathFollower()
+    import argparse
+    import sys
+    from tapp.online_safety import ONLINE_FIXES
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default=None)
+    options, remaining = parser.parse_known_args(sys.argv[1:] if args is None else args)
+    rclpy.init(args=remaining if options.online_fixes is not None else args)
+    node = PathFollower(**(dict(online_fixes=options.online_fixes) if options.online_fixes is not None else {}))
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:

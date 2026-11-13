@@ -1,0 +1,48 @@
+{
+  "async": {
+    "commands": "[null, {\"final_leg\": false, \"handoff_latency_s\": 0.0, \"id\": 1, \"leg_index\": 0, \"map_id\": \"fixture\", \"n_replans\": 0, \"online_generated\": true, \"order\": [0, 1], \"path\": [[2.0, 2.0], [8.0, 2.0]], \"plan_history\": [{\"n_plans\": 1, \"plan_time_s\": 0.0, \"reason\": \"start_leg\", \"success\": true}], \"plan_time_s\": 0.0, \"planned_at\": 0.1, \"points\": [[8.0, 2.0]], \"pose_shift_m\": 0.0, \"reason\": \"start_leg\", \"replace_path\": false, \"revision\": 1, \"sim_handoff_s\": 0.1}, null, null]",
+    "files": {}
+  },
+  "coarse": "b32d9a39293eb1017f64a4c40d429b6f0676a0a33b8d3b5af1b1508b8fea6561",
+  "diagnostics": {
+    "commands": "[null, {\"final_leg\": true, \"handoff_latency_s\": 0.0, \"id\": 1, \"leg_index\": 0, \"map_id\": \"fixture\", \"n_replans\": 0, \"online_generated\": true, \"order\": [0, 1], \"path\": [[2.0, 2.0], [8.0, 2.0]], \"plan_history\": [{\"n_plans\": 1, \"plan_time_s\": 0.0, \"reason\": \"start_leg\", \"success\": true}], \"plan_time_s\": 0.0, \"planned_at\": 0.1, \"points\": [[8.0, 2.0]], \"pose_shift_m\": 0.0, \"reason\": \"start_leg\", \"replace_path\": false, \"revision\": 1, \"sim_handoff_s\": 0.1, \"start_cells\": [4, 4], \"stops_cells\": [[16, 4]]}, null, null]",
+    "files": {
+      "diag/periodic_000001.npz": "3f7bac694afa102f9e398768c168dddff1b89b558c0ec42db89c4fd2072ac488",
+      "plans.csv": "3b81f688a8fe8f834177afdb005e146849189401b96998603dbd1e4cc11c75ab"
+    }
+  },
+  "fine": "b533efba56749c4e0f7ae348f042e8797445e54d92d4ec7ec50dcd4b62730dc1",
+  "follower": {
+    "commands": [
+      [
+        1.0,
+        0.0,
+        false,
+        "running"
+      ],
+      [
+        1.0,
+        0.0,
+        false,
+        "running"
+      ],
+      [
+        1.0,
+        -0.38461538461538486,
+        false,
+        "running"
+      ]
+    ],
+    "files": {
+      "mission.json": "a575808ded20ad4d3cd0b259fbc85c2427084922e5c581c39eed63be99b65d69",
+      "trajectory.csv": "04d922c3abd14804ab4f758f89c2d8d871f64b3a3dee5c107eb4e06378f04033"
+    }
+  },
+  "lidar": {
+    "commands": "[null, {\"final_leg\": true, \"handoff_latency_s\": 0.0, \"id\": 1, \"leg_index\": 0, \"map_id\": \"fixture\", \"n_replans\": 0, \"online_generated\": true, \"order\": [0, 1], \"path\": [[2.0, 2.0], [8.0, 2.0]], \"plan_history\": [{\"n_plans\": 1, \"plan_time_s\": 0.0, \"reason\": \"start_leg\", \"success\": true}], \"plan_time_s\": 0.0, \"planned_at\": 0.1, \"points\": [[8.0, 2.0]], \"pose_shift_m\": 0.0, \"reason\": \"start_leg\", \"replace_path\": false, \"revision\": 1, \"sim_handoff_s\": 0.1, \"start_cells\": [4, 4], \"stops_cells\": [[16, 4]]}, null, null]",
+    "files": {
+      "plans.csv": "8fcc8d8e58e472ee6adf97ae858f84c793dab276a87ecbaa7dac75a0671db5b1"
+    }
+  },
+  "real": "412d94c95fc4560d858e5f01b342dd95e103547c5ee7b1d5ad2c6e500069e1d1"
+}

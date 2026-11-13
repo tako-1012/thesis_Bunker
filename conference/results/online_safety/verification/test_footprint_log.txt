@@ -1,0 +1,13 @@
+$ /workspace/venvs/thesis-034/bin/python -m tests.test_footprint
+dilation: 0.5m circle, rocks not doubled, zero radius, immutable costs/endpoints and raster rounding passed
+proximity: analytic line-circle lengths, overlapping unions and tangencies passed
+requested LAS case: inflated planner reports no_path without moving endpoints
+online: zero radius preserves exact task014 trajectory and planning count
+rollover: strict +/-90deg threshold, first time/position and immutable fake records passed
+statistics: two sizes averaged within beach, incomplete pairs excluded, one fixed Holm family passed (synthetic fixtures only)
+Gazebo selection: six fixed scenarios, inflated-only selection and explicit infeasibility passed
+comparison: unknown physical outcomes stay unknown; rollover pairs excluded; explicit executed denominator passed (fixtures only)
+three-method reports: each contrast uses its own completion cohort; third-method failure does not drop old pairs (fixtures only)
+all footprint and rollover tests passed
+
+exit=0
