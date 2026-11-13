@@ -1,0 +1,2192 @@
+{
+  "dataset": "shizuoka_beach_las",
+  "split": "test",
+  "side_m": 200,
+  "seed": 0,
+  "planner": "TA*-S+inflate",
+  "sensor": "lidar_real+depth2",
+  "patch_count": 3,
+  "execution": "finished_with_errors",
+  "world_max_pixels": 4097,
+  "lidar_spec": {
+    "vertical_samples": 16,
+    "vertical_min_deg": -15.0,
+    "vertical_max_deg": 15.0,
+    "horizontal_samples": 1800,
+    "update_hz": 10.0,
+    "min_range_m": 0.9,
+    "max_range_m": 30.0,
+    "noise_stddev_m": 0.02,
+    "range_resolution_m": 0.01
+  },
+  "sensor_height_m": 1.4,
+  "obstacle_height_m": 0.3,
+  "obstacle_reference": "sensor-only local plane; closed 1.5m square; lowest return per 0.1m cell; least squares, trim residual >=0.15m and refit once; >=0.3m and >=3 returns; undefined fits unclassified",
+  "height_definition": "median of locally classified non-obstacle returns in last-64 history; all excluded: local plane at coarse centre; undefined plane: retain planning context",
+  "baseline": "results/gazebo_online/physical_run",
+  "scenarios": [
+    {
+      "patch": "08OB86_00294",
+      "patch_index": 0,
+      "planner": "TA*-S+inflate",
+      "start": [
+        52,
+        195
+      ],
+      "points": [
+        [
+          309,
+          113
+        ],
+        [
+          6,
+          289
+        ],
+        [
+          273,
+          232
+        ],
+        [
+          104,
+          176
+        ],
+        [
+          46,
+          121
+        ]
+      ],
+      "order": [
+        0,
+        5,
+        1,
+        3,
+        4,
+        2
+      ],
+      "stops": [
+        [
+          46,
+          121
+        ],
+        [
+          309,
+          113
+        ],
+        [
+          273,
+          232
+        ],
+        [
+          104,
+          176
+        ],
+        [
+          6,
+          289
+        ],
+        [
+          52,
+          195
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "05c6ce53aff1a43a4fa4f5d062744fa9702b13d14b9a3d2d263bf72d762ff89e",
+        "lethal": "7ed14f758ece6fc21fe49419454b3e62c3f88c30d2d6052f5bbf897a7561ea62",
+        "rock": "b0b52cb5a9e764910ac8d4e69dcc4f950d853240096a466b437693facb96ba87"
+      },
+      "prior_signature": {
+        "elev": "06f417823b36cea218cf5ed2897911e772bdf63080178a788b43885321ab75bf",
+        "lethal": "955836072744a537ab22514c7fc14a73acf7a02f3575e252da1a69a042fcb6c7",
+        "rock": "8b51c5179bc998be8bb2d0b63e48a869b2c0beb9ce0c65f3adc0bbdf6e878e5b"
+      },
+      "initial_path": [
+        [
+          26.0,
+          97.5
+        ],
+        [
+          27.0,
+          82.0
+        ],
+        [
+          23.0,
+          60.5
+        ],
+        [
+          32.0,
+          55.0
+        ],
+        [
+          37.0,
+          50.0
+        ],
+        [
+          38.0,
+          50.0
+        ],
+        [
+          47.5,
+          49.5
+        ],
+        [
+          154.5,
+          56.5
+        ],
+        [
+          136.5,
+          116.0
+        ],
+        [
+          126.5,
+          109.0
+        ],
+        [
+          77.0,
+          105.0
+        ],
+        [
+          64.5,
+          99.0
+        ],
+        [
+          52.5,
+          88.5
+        ],
+        [
+          52.0,
+          88.0
+        ],
+        [
+          29.5,
+          108.0
+        ],
+        [
+          28.0,
+          108.0
+        ],
+        [
+          11.5,
+          122.5
+        ],
+        [
+          7.0,
+          128.0
+        ],
+        [
+          2.5,
+          132.5
+        ],
+        [
+          1.0,
+          137.5
+        ],
+        [
+          1.0,
+          142.5
+        ],
+        [
+          3.0,
+          144.5
+        ],
+        [
+          1.0,
+          142.5
+        ],
+        [
+          1.5,
+          135.0
+        ],
+        [
+          3.0,
+          132.0
+        ],
+        [
+          19.5,
+          106.5
+        ],
+        [
+          23.0,
+          100.5
+        ],
+        [
+          26.0,
+          97.5
+        ]
+      ],
+      "fixed_plan_times": [
+        0.047015280999971765,
+        0.2835738129999754,
+        0.0897193050000169,
+        0.1682448729999919,
+        0.17760138299996697,
+        0.09510763600002292
+      ]
+    },
+    {
+      "patch": "08OB86_-0205",
+      "patch_index": 1,
+      "planner": "TA*-S+inflate",
+      "start": [
+        49,
+        270
+      ],
+      "points": [
+        [
+          114,
+          102
+        ],
+        [
+          114,
+          214
+        ],
+        [
+          42,
+          179
+        ],
+        [
+          135,
+          255
+        ],
+        [
+          93,
+          197
+        ]
+      ],
+      "order": [
+        0,
+        3,
+        1,
+        5,
+        2,
+        4
+      ],
+      "stops": [
+        [
+          42,
+          179
+        ],
+        [
+          114,
+          102
+        ],
+        [
+          93,
+          197
+        ],
+        [
+          114,
+          214
+        ],
+        [
+          135,
+          255
+        ],
+        [
+          49,
+          270
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "9bc94ea920c8b6ebfadc933da84280226c00fd13aa505851f5621eb2eb4df321",
+        "lethal": "e46b1e845737da313eac2b893c2b750e71c919a453356fbf749cb6e2ae706bcc",
+        "rock": "221072c1cab9f2f48b7c03b74f7af552462697afe4c72881f3ce2b99bcf4b3da"
+      },
+      "prior_signature": {
+        "elev": "7692fc79e1b4099af724d33ef3eab8949539cd4735aa57077f897cf2dfbac2a8",
+        "lethal": "f1225d7397f8e3937d5664ebb7e26d2ba78b04c0d7d962bd99fca9a250c737cb",
+        "rock": "6feb83e08f8cfefae386d327f9a32481b855a6548e753f343825a4f60f4b722c"
+      },
+      "initial_path": [
+        [
+          24.5,
+          135.0
+        ],
+        [
+          25.5,
+          126.0
+        ],
+        [
+          25.5,
+          114.0
+        ],
+        [
+          21.0,
+          97.0
+        ],
+        [
+          21.0,
+          89.5
+        ],
+        [
+          34.0,
+          74.5
+        ],
+        [
+          39.5,
+          72.0
+        ],
+        [
+          55.5,
+          52.5
+        ],
+        [
+          56.5,
+          51.5
+        ],
+        [
+          57.0,
+          51.0
+        ],
+        [
+          55.0,
+          66.5
+        ],
+        [
+          46.5,
+          95.5
+        ],
+        [
+          46.5,
+          98.5
+        ],
+        [
+          56.5,
+          106.5
+        ],
+        [
+          57.0,
+          107.0
+        ],
+        [
+          67.5,
+          127.5
+        ],
+        [
+          65.0,
+          125.0
+        ],
+        [
+          64.0,
+          123.5
+        ],
+        [
+          61.0,
+          121.5
+        ],
+        [
+          42.0,
+          124.5
+        ],
+        [
+          36.5,
+          127.5
+        ],
+        [
+          31.5,
+          127.5
+        ],
+        [
+          26.0,
+          133.0
+        ],
+        [
+          24.5,
+          135.0
+        ]
+      ],
+      "fixed_plan_times": [
+        0.07152156099999729,
+        0.0872987500000022,
+        0.06529155800001263,
+        0.017403748999981872,
+        0.0294234400000164,
+        0.1068995379999933
+      ]
+    },
+    {
+      "patch": "08OB87_-0706",
+      "patch_index": 3,
+      "planner": "TA*-S+inflate",
+      "start": [
+        50,
+        200
+      ],
+      "points": [
+        [
+          9,
+          255
+        ],
+        [
+          89,
+          197
+        ],
+        [
+          263,
+          259
+        ],
+        [
+          59,
+          119
+        ],
+        [
+          347,
+          145
+        ]
+      ],
+      "order": [
+        0,
+        4,
+        5,
+        3,
+        2,
+        1
+      ],
+      "stops": [
+        [
+          59,
+          119
+        ],
+        [
+          347,
+          145
+        ],
+        [
+          263,
+          259
+        ],
+        [
+          89,
+          197
+        ],
+        [
+          9,
+          255
+        ],
+        [
+          50,
+          200
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "22d0b939656f3a75adb1b0ae21ef57801f4b8e8af1fc0b4ad21741ade7f78119",
+        "lethal": "77b9a58bec28a3f123f8cabee901a87a98be8d30b0f9c479b9efee2a5342ffb6",
+        "rock": "2c94c6c1ac6bd3ca4e50f2456d1ea65506785e1325cd58dd5ef78b2919b8acc7"
+      },
+      "prior_signature": {
+        "elev": "53c049b7e1cf1940b928740f60e7f58eba47db505cfcdf76b8bc0c18db59869a",
+        "lethal": "053b5221d06b4dcd5ccbddbd8a0943db4109a85336637f3608f132dfb1c5f179",
+        "rock": "bba4745e20744684f84c4896c52ff0f8f222650dcd0fc5774bdf3b03542e683a"
+      },
+      "initial_path": [
+        [
+          25.0,
+          100.0
+        ],
+        [
+          28.0,
+          68.5
+        ],
+        [
+          29.5,
+          59.5
+        ],
+        [
+          38.0,
+          68.5
+        ],
+        [
+          56.5,
+          72.0
+        ],
+        [
+          61.0,
+          71.0
+        ],
+        [
+          75.5,
+          71.0
+        ],
+        [
+          82.5,
+          73.5
+        ],
+        [
+          89.5,
+          73.5
+        ],
+        [
+          109.0,
+          76.5
+        ],
+        [
+          125.5,
+          73.5
+        ],
+        [
+          139.5,
+          73.0
+        ],
+        [
+          150.0,
+          74.5
+        ],
+        [
+          173.5,
+          72.5
+        ],
+        [
+          159.5,
+          100.0
+        ],
+        [
+          138.0,
+          117.0
+        ],
+        [
+          131.5,
+          125.0
+        ],
+        [
+          131.5,
+          129.5
+        ],
+        [
+          128.5,
+          126.0
+        ],
+        [
+          124.0,
+          124.0
+        ],
+        [
+          97.5,
+          122.5
+        ],
+        [
+          45.0,
+          99.0
+        ],
+        [
+          44.5,
+          98.5
+        ],
+        [
+          20.5,
+          108.0
+        ],
+        [
+          4.0,
+          119.0
+        ],
+        [
+          4.5,
+          127.5
+        ],
+        [
+          4.0,
+          119.0
+        ],
+        [
+          14.0,
+          110.0
+        ],
+        [
+          21.0,
+          103.0
+        ],
+        [
+          25.0,
+          100.0
+        ]
+      ],
+      "fixed_plan_times": [
+        0.05674657500003377,
+        0.5134107200000244,
+        0.14984785699999748,
+        0.2507064320000154,
+        0.0794463720000067,
+        0.04555728299999373
+      ]
+    },
+    {
+      "patch": "08OB88_-1417",
+      "patch_index": 4,
+      "planner": "TA*-S+inflate",
+      "start": [
+        70,
+        169
+      ],
+      "points": [
+        [
+          337,
+          140
+        ],
+        [
+          313,
+          165
+        ],
+        [
+          199,
+          151
+        ],
+        [
+          264,
+          194
+        ],
+        [
+          203,
+          229
+        ]
+      ],
+      "order": [
+        0,
+        3,
+        1,
+        2,
+        4,
+        5
+      ],
+      "stops": [
+        [
+          199,
+          151
+        ],
+        [
+          337,
+          140
+        ],
+        [
+          313,
+          165
+        ],
+        [
+          264,
+          194
+        ],
+        [
+          203,
+          229
+        ],
+        [
+          70,
+          169
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "96f92a9a3d6c0fe32e00cc977e0ce03347ecb48e21409a3801f674570c235091",
+        "lethal": "f38c6a901e4a0ffbc99ef00207abecd9e42693bdd64bf70db1b6c09a870dfbf6",
+        "rock": "9733aa5ad147ecf7fecbc03ca331fbb493be5728ff32f063cafba28cb33a9762"
+      },
+      "prior_signature": {
+        "elev": "0d68ad3e7b83d8ff2a9c31b7015a9716638cf627cf1452216c3f4feeb49c6b54",
+        "lethal": "2a4fa502deb5b40343bbffbd947c6221d87a39cf618615da804fdc887e59b14d",
+        "rock": "0110056d01ebf0cb4213f3efce21092b32c1f2c12ccaaa6ae19a6026a3efd955"
+      },
+      "initial_path": [
+        [
+          35.0,
+          84.5
+        ],
+        [
+          56.0,
+          74.0
+        ],
+        [
+          98.0,
+          74.0
+        ],
+        [
+          99.0,
+          75.0
+        ],
+        [
+          99.5,
+          75.5
+        ],
+        [
+          100.5,
+          74.5
+        ],
+        [
+          103.5,
+          72.5
+        ],
+        [
+          123.5,
+          71.5
+        ],
+        [
+          163.0,
+          71.5
+        ],
+        [
+          168.5,
+          70.0
+        ],
+        [
+          158.5,
+          76.5
+        ],
+        [
+          157.5,
+          77.5
+        ],
+        [
+          156.5,
+          82.5
+        ],
+        [
+          138.5,
+          89.0
+        ],
+        [
+          132.0,
+          96.5
+        ],
+        [
+          132.0,
+          97.0
+        ],
+        [
+          107.5,
+          108.0
+        ],
+        [
+          101.5,
+          114.5
+        ],
+        [
+          101.0,
+          113.5
+        ],
+        [
+          50.5,
+          90.0
+        ],
+        [
+          35.0,
+          84.5
+        ]
+      ],
+      "fixed_plan_times": [
+        0.08215319300001056,
+        0.11942423600004304,
+        0.026461893999965014,
+        0.039102400999979636,
+        0.04723163900001737,
+        0.1231047530000069
+      ]
+    },
+    {
+      "patch": "08OB88_-0167",
+      "patch_index": 5,
+      "planner": "TA*-S+inflate",
+      "start": [
+        38,
+        231
+      ],
+      "points": [
+        [
+          137,
+          294
+        ],
+        [
+          249,
+          150
+        ],
+        [
+          202,
+          281
+        ],
+        [
+          31,
+          208
+        ],
+        [
+          348,
+          149
+        ]
+      ],
+      "order": [
+        0,
+        4,
+        2,
+        5,
+        3,
+        1
+      ],
+      "stops": [
+        [
+          31,
+          208
+        ],
+        [
+          249,
+          150
+        ],
+        [
+          348,
+          149
+        ],
+        [
+          202,
+          281
+        ],
+        [
+          137,
+          294
+        ],
+        [
+          38,
+          231
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "41d677c87293711b20b7a1a68eee7de61617c0c9159cb19f83197c77a3681e48",
+        "lethal": "764a684bb1ff899bb2f01cd36131052e5dbf99ad993814321262a01fcc4e7b1a",
+        "rock": "b18ca235bff3c9fa4b9d6d05f3c8a463b687bb4f99c4dc6340d329b2530c8cd4"
+      },
+      "prior_signature": {
+        "elev": "23722bc88cf47c848bc9e12321d347247b75f09c27f10492985146ca14779aed",
+        "lethal": "259f3907787df5b726fefee3cf1026dbae420f1e0fccd9eb532a06b6c5326d94",
+        "rock": "71842a3c59c1ccbe171d140914a1ac4c1b3b4458171e7a718434b44b023b5d1e"
+      },
+      "initial_path": [
+        [
+          19.0,
+          115.5
+        ],
+        [
+          15.5,
+          104.0
+        ],
+        [
+          36.0,
+          104.5
+        ],
+        [
+          92.5,
+          103.0
+        ],
+        [
+          107.5,
+          92.0
+        ],
+        [
+          124.5,
+          75.0
+        ],
+        [
+          132.5,
+          69.5
+        ],
+        [
+          163.5,
+          69.5
+        ],
+        [
+          174.0,
+          74.5
+        ],
+        [
+          123.5,
+          115.0
+        ],
+        [
+          108.5,
+          131.5
+        ],
+        [
+          107.5,
+          132.5
+        ],
+        [
+          106.5,
+          133.5
+        ],
+        [
+          105.5,
+          134.5
+        ],
+        [
+          103.0,
+          137.0
+        ],
+        [
+          101.0,
+          140.5
+        ],
+        [
+          94.5,
+          141.0
+        ],
+        [
+          91.5,
+          140.5
+        ],
+        [
+          69.0,
+          140.0
+        ],
+        [
+          55.5,
+          144.5
+        ],
+        [
+          54.5,
+          146.0
+        ],
+        [
+          56.0,
+          148.0
+        ],
+        [
+          67.0,
+          148.0
+        ],
+        [
+          68.5,
+          147.5
+        ],
+        [
+          68.5,
+          147.0
+        ],
+        [
+          68.5,
+          147.5
+        ],
+        [
+          65.0,
+          148.0
+        ],
+        [
+          55.5,
+          148.0
+        ],
+        [
+          54.5,
+          146.0
+        ],
+        [
+          56.5,
+          143.5
+        ],
+        [
+          88.0,
+          135.0
+        ],
+        [
+          88.0,
+          130.0
+        ],
+        [
+          82.5,
+          124.5
+        ],
+        [
+          56.5,
+          109.0
+        ],
+        [
+          46.0,
+          108.0
+        ],
+        [
+          21.5,
+          113.5
+        ],
+        [
+          19.0,
+          115.5
+        ]
+      ],
+      "fixed_plan_times": [
+        0.017507619000014074,
+        0.22574734799997032,
+        0.07059866000003012,
+        0.21566916200004016,
+        0.12087703499997815,
+        0.14392919000005122
+      ]
+    },
+    {
+      "patch": "08OB88_00332",
+      "patch_index": 6,
+      "planner": "TA*-S+inflate",
+      "start": [
+        45,
+        228
+      ],
+      "points": [
+        [
+          142,
+          207
+        ],
+        [
+          38,
+          131
+        ],
+        [
+          203,
+          180
+        ],
+        [
+          136,
+          171
+        ],
+        [
+          70,
+          116
+        ]
+      ],
+      "order": [
+        0,
+        2,
+        5,
+        4,
+        3,
+        1
+      ],
+      "stops": [
+        [
+          38,
+          131
+        ],
+        [
+          70,
+          116
+        ],
+        [
+          136,
+          171
+        ],
+        [
+          203,
+          180
+        ],
+        [
+          142,
+          207
+        ],
+        [
+          45,
+          228
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "a9cf56a7b64ee1160c733fc01e1e3e61ec86953727a4679b3b37be06cb76c62e",
+        "lethal": "aa52077035de8a49b5cdb396c3f2c0e2c504d5fcfabcc2a2d4ef1bb9f3be2bd1",
+        "rock": "1e013680f6df39c44e88e3c8cd5b14d2539b662e3100216c0501e9cad03c0e54"
+      },
+      "prior_signature": {
+        "elev": "1f6774027103f5d3629c0e993ff7b8aa5fbb356a1e84ee5e1dee6c9d828b4928",
+        "lethal": "e908c08af69bb5ace1d25e8f3b4cc043f50f553718100511c9d57fa0b35775a1",
+        "rock": "739172300967b99e78a2cd0d5afa164e1cff83c5ba4e8893a93d40fa8763ef08"
+      },
+      "initial_path": [
+        [
+          22.5,
+          114.0
+        ],
+        [
+          19.0,
+          65.5
+        ],
+        [
+          23.0,
+          66.0
+        ],
+        [
+          27.5,
+          65.5
+        ],
+        [
+          35.0,
+          58.0
+        ],
+        [
+          68.0,
+          85.5
+        ],
+        [
+          101.5,
+          90.0
+        ],
+        [
+          71.0,
+          103.5
+        ],
+        [
+          62.5,
+          106.5
+        ],
+        [
+          58.5,
+          109.5
+        ],
+        [
+          53.5,
+          114.5
+        ],
+        [
+          25.5,
+          114.5
+        ],
+        [
+          22.5,
+          114.0
+        ]
+      ],
+      "fixed_plan_times": [
+        0.053327129999956924,
+        0.024613177999981417,
+        0.04092713800002912,
+        0.0337649699999929,
+        0.03452223499999718,
+        0.09777324399999543
+      ]
+    },
+    {
+      "patch": "08OB88_01832",
+      "patch_index": 8,
+      "planner": "TA*-S+inflate",
+      "start": [
+        36,
+        214
+      ],
+      "points": [
+        [
+          392,
+          249
+        ],
+        [
+          397,
+          169
+        ],
+        [
+          223,
+          254
+        ],
+        [
+          335,
+          247
+        ],
+        [
+          159,
+          229
+        ]
+      ],
+      "order": [
+        0,
+        5,
+        3,
+        4,
+        1,
+        2
+      ],
+      "stops": [
+        [
+          159,
+          229
+        ],
+        [
+          223,
+          254
+        ],
+        [
+          335,
+          247
+        ],
+        [
+          392,
+          249
+        ],
+        [
+          397,
+          169
+        ],
+        [
+          36,
+          214
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "1d0114bd0d05b3df16c2a4f204bbdf23e5c9c2767cbbfa6da65c7e841f982087",
+        "lethal": "0f428c5f00ed2725d62cb89cad4d476b4b83cf7f4fee2ed92ad2bf8d130a242d",
+        "rock": "9f8cb7448827d13f6c0eebbdbdf450eaccb7045ffb2129f8c50817ee93537c53"
+      },
+      "prior_signature": {
+        "elev": "23565122185b3529415815b007f6b63b5c51a859312db88a5e036b0d8bc18790",
+        "lethal": "7ec00b5a8f1d0c948d0c422a712530266fbeccf532244961c26a37212156def5",
+        "rock": "f7bd00cdfbd51194bef9aed8718d5f91053d207ae9abe954d44b4567bcbebca1"
+      },
+      "initial_path": [
+        [
+          18.0,
+          107.0
+        ],
+        [
+          31.5,
+          105.0
+        ],
+        [
+          68.5,
+          108.5
+        ],
+        [
+          79.5,
+          114.5
+        ],
+        [
+          82.5,
+          112.0
+        ],
+        [
+          90.0,
+          113.0
+        ],
+        [
+          91.0,
+          114.0
+        ],
+        [
+          94.5,
+          117.5
+        ],
+        [
+          98.0,
+          118.5
+        ],
+        [
+          108.0,
+          123.5
+        ],
+        [
+          111.5,
+          127.0
+        ],
+        [
+          114.0,
+          119.5
+        ],
+        [
+          119.5,
+          114.0
+        ],
+        [
+          131.5,
+          113.5
+        ],
+        [
+          150.0,
+          114.5
+        ],
+        [
+          167.5,
+          123.5
+        ],
+        [
+          181.0,
+          120.5
+        ],
+        [
+          191.0,
+          121.0
+        ],
+        [
+          196.0,
+          124.5
+        ],
+        [
+          198.5,
+          84.5
+        ],
+        [
+          19.5,
+          106.5
+        ],
+        [
+          18.0,
+          107.0
+        ]
+      ],
+      "fixed_plan_times": [
+        0.11058194699995738,
+        0.09380063800000471,
+        0.11375646799996275,
+        0.038212095000005775,
+        0.03397331500002565,
+        0.25385177500004374
+      ]
+    },
+    {
+      "patch": "08OB89_00152",
+      "patch_index": 9,
+      "planner": "TA*-S+inflate",
+      "start": [
+        48,
+        341
+      ],
+      "points": [
+        [
+          278,
+          399
+        ],
+        [
+          198,
+          398
+        ],
+        [
+          296,
+          173
+        ],
+        [
+          183,
+          372
+        ],
+        [
+          389,
+          117
+        ]
+      ],
+      "order": [
+        0,
+        4,
+        2,
+        1,
+        5,
+        3
+      ],
+      "stops": [
+        [
+          183,
+          372
+        ],
+        [
+          198,
+          398
+        ],
+        [
+          278,
+          399
+        ],
+        [
+          389,
+          117
+        ],
+        [
+          296,
+          173
+        ],
+        [
+          48,
+          341
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "7ac08c78f9f11957b449f1625b7a166c2d3c18975bfb6eb3db291dfb776fe4d4",
+        "lethal": "569476611522d38cb2a37dd7a31581e779de501dff490e56fe887ac74c1fb588",
+        "rock": "a39ec589d5c1e7cf1fb8f817d0e047411c8e6c7a0b3fd9559a3771bf7b65a8d4"
+      },
+      "prior_signature": {
+        "elev": "aafbb2e5214391454aa2888c6350759d726267104c65135b34b8a44a498121fd",
+        "lethal": "83ff4866c6d7474aae926d5498e2fb9289f6734ecb152d54b43b5dd785e80a60",
+        "rock": "f31bc10da7931780eda075fe9aadcad104962beb2d0ac630ed0c3470f5f009bd"
+      },
+      "initial_path": [
+        [
+          24.0,
+          170.5
+        ],
+        [
+          24.0,
+          173.0
+        ],
+        [
+          29.5,
+          178.5
+        ],
+        [
+          55.0,
+          180.0
+        ],
+        [
+          56.5,
+          180.5
+        ],
+        [
+          61.5,
+          179.0
+        ],
+        [
+          67.5,
+          179.0
+        ],
+        [
+          85.0,
+          181.5
+        ],
+        [
+          90.5,
+          186.0
+        ],
+        [
+          91.5,
+          186.0
+        ],
+        [
+          94.0,
+          192.0
+        ],
+        [
+          95.5,
+          193.5
+        ],
+        [
+          96.5,
+          194.5
+        ],
+        [
+          97.5,
+          195.5
+        ],
+        [
+          99.0,
+          199.0
+        ],
+        [
+          100.5,
+          199.5
+        ],
+        [
+          102.5,
+          199.5
+        ],
+        [
+          103.5,
+          198.5
+        ],
+        [
+          104.5,
+          198.0
+        ],
+        [
+          114.5,
+          198.5
+        ],
+        [
+          117.5,
+          198.0
+        ],
+        [
+          128.0,
+          199.0
+        ],
+        [
+          133.0,
+          198.0
+        ],
+        [
+          137.5,
+          198.0
+        ],
+        [
+          138.5,
+          199.0
+        ],
+        [
+          139.0,
+          199.5
+        ],
+        [
+          141.0,
+          198.5
+        ],
+        [
+          144.0,
+          196.0
+        ],
+        [
+          150.5,
+          189.0
+        ],
+        [
+          158.0,
+          183.0
+        ],
+        [
+          161.5,
+          180.5
+        ],
+        [
+          165.5,
+          146.0
+        ],
+        [
+          194.5,
+          82.0
+        ],
+        [
+          194.5,
+          58.5
+        ],
+        [
+          173.5,
+          77.5
+        ],
+        [
+          166.0,
+          84.5
+        ],
+        [
+          148.0,
+          86.5
+        ],
+        [
+          85.5,
+          122.5
+        ],
+        [
+          79.0,
+          127.5
+        ],
+        [
+          69.0,
+          140.5
+        ],
+        [
+          52.5,
+          154.5
+        ],
+        [
+          43.0,
+          156.0
+        ],
+        [
+          41.5,
+          157.0
+        ],
+        [
+          34.5,
+          163.5
+        ],
+        [
+          25.0,
+          169.5
+        ],
+        [
+          24.0,
+          170.5
+        ]
+      ],
+      "fixed_plan_times": [
+        0.19134659299999157,
+        0.028828523999948175,
+        0.089138939999998,
+        0.5410790139999904,
+        0.0800144800000453,
+        0.4696421429999873
+      ]
+    },
+    {
+      "patch": "08OB89_-0347",
+      "patch_index": 10,
+      "planner": "TA*-S+inflate",
+      "start": [
+        55,
+        326
+      ],
+      "points": [
+        [
+          294,
+          224
+        ],
+        [
+          5,
+          248
+        ],
+        [
+          164,
+          169
+        ],
+        [
+          213,
+          144
+        ],
+        [
+          195,
+          352
+        ]
+      ],
+      "order": [
+        0,
+        5,
+        1,
+        4,
+        3,
+        2
+      ],
+      "stops": [
+        [
+          195,
+          352
+        ],
+        [
+          294,
+          224
+        ],
+        [
+          213,
+          144
+        ],
+        [
+          164,
+          169
+        ],
+        [
+          5,
+          248
+        ],
+        [
+          55,
+          326
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "9bef14761fc310c6ee9e996432c278d3eacb2aa6810a423b14778dcd754eee0b",
+        "lethal": "604b8b1c47e6506d4fd34257ccfb4525cef5b2f0b5a99125613220dc6b3792fa",
+        "rock": "97aee29b11e415025f724ff0c227af7945f6d890b5c739586c250a9d54bdaca2"
+      },
+      "prior_signature": {
+        "elev": "ecac9095660a758f9efb52f296d0cfcf537eca082e8df4446339084989faf076",
+        "lethal": "616ec5d0c56be61768cd4ee0757e9008fce35525f7d5fbfcf38074abdd026491",
+        "rock": "bc189b89ffe4726466e714a404498fdaab2f1220dec9b7dda8ee302f10d2dfdf"
+      },
+      "initial_path": [
+        [
+          27.5,
+          163.0
+        ],
+        [
+          29.5,
+          164.0
+        ],
+        [
+          38.5,
+          163.0
+        ],
+        [
+          58.5,
+          164.0
+        ],
+        [
+          77.0,
+          163.5
+        ],
+        [
+          94.5,
+          175.5
+        ],
+        [
+          97.5,
+          176.0
+        ],
+        [
+          104.5,
+          160.5
+        ],
+        [
+          106.0,
+          155.0
+        ],
+        [
+          109.5,
+          151.0
+        ],
+        [
+          112.5,
+          146.5
+        ],
+        [
+          116.5,
+          142.5
+        ],
+        [
+          117.5,
+          142.5
+        ],
+        [
+          122.5,
+          138.5
+        ],
+        [
+          141.5,
+          114.5
+        ],
+        [
+          147.0,
+          112.0
+        ],
+        [
+          140.0,
+          105.0
+        ],
+        [
+          114.0,
+          81.0
+        ],
+        [
+          108.5,
+          75.0
+        ],
+        [
+          106.5,
+          72.0
+        ],
+        [
+          99.0,
+          80.0
+        ],
+        [
+          82.0,
+          84.5
+        ],
+        [
+          3.0,
+          123.5
+        ],
+        [
+          2.5,
+          124.0
+        ],
+        [
+          21.5,
+          159.0
+        ],
+        [
+          27.5,
+          163.0
+        ]
+      ],
+      "fixed_plan_times": [
+        0.16473986300002252,
+        0.1962867309999865,
+        0.07519342500006587,
+        0.032569372000011754,
+        0.10827681099999609,
+        0.0521531760000471
+      ]
+    },
+    {
+      "patch": "08OB89_-0847",
+      "patch_index": 11,
+      "planner": "TA*-S+inflate",
+      "start": [
+        70,
+        146
+      ],
+      "points": [
+        [
+          269,
+          98
+        ],
+        [
+          75,
+          211
+        ],
+        [
+          227,
+          332
+        ],
+        [
+          281,
+          117
+        ],
+        [
+          350,
+          279
+        ]
+      ],
+      "order": [
+        0,
+        1,
+        4,
+        5,
+        3,
+        2
+      ],
+      "stops": [
+        [
+          269,
+          98
+        ],
+        [
+          281,
+          117
+        ],
+        [
+          350,
+          279
+        ],
+        [
+          227,
+          332
+        ],
+        [
+          75,
+          211
+        ],
+        [
+          70,
+          146
+        ]
+      ],
+      "planning_status": "planned",
+      "blocked_truth": [],
+      "blocked_prior": [],
+      "truth_signature": {
+        "elev": "ec56c5970e0772b0a8a651e6aeb29ae5aedde2fdd2fd616e55fa4a8986f7e153",
+        "lethal": "a931a54c08d67cc4e953a21af7a9cc911ef0917fa3a2ec66854e98a137cb0055",
+        "rock": "6f2c0c9e9e6ebf92b8c533e5335c2f4fe778591a81eacd26aee19a4211589755"
+      },
+      "prior_signature": {
+        "elev": "b95f74dfd95d40020642542121ae54ae6726638b4d54001d2cbe7f2c5bb7320d",
+        "lethal": "3df5176470c9487cef2af37fb0084d12330d6b37c6672889351969f1809055b0",
+        "rock": "1319048c6ee1bb2f24933d31835d212ee40aad1e23ed6fec55e7bdf11b93ee2d"
+      },
+      "initial_path": [
+        [
+          35.0,
+          73.0
+        ],
+        [
+          36.0,
+          72.0
+        ],
+        [
+          43.0,
+          66.5
+        ],
+        [
+          101.0,
+          69.0
+        ],
+        [
+          134.5,
+          49.0
+        ],
+        [
+          140.5,
+          58.5
+        ],
+        [
+          175.0,
+          135.5
+        ],
+        [
+          175.0,
+          139.5
+        ],
+        [
+          135.0,
+          165.0
+        ],
+        [
+          117.5,
+          167.0
+        ],
+        [
+          113.5,
+          166.0
+        ],
+        [
+          94.0,
+          154.0
+        ],
+        [
+          76.0,
+          137.0
+        ],
+        [
+          60.0,
+          126.0
+        ],
+        [
+          54.5,
+          123.5
+        ],
+        [
+          37.5,
+          105.5
+        ],
+        [
+          35.0,
+          73.0
+        ]
+      ],
+      "fixed_plan_times": [
+        0.21501869500002613,
+        0.018038285999978143,
+        0.13189775000000736,
+        0.08813220599995475,
+        0.17027997499997127,
+        0.038415327999928195
+      ]
+    }
+  ],
+  "input_environment": {
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "numpy": "1.26.4"
+  },
+  "cases": [
+    {
+      "patch": "08OB86_00294",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    },
+    {
+      "patch": "08OB86_-0205",
+      "mode": "lidar",
+      "selected": true,
+      "planning_status": "planned",
+      "run_folder": "raw/08OB86_-0205",
+      "error": "TimeoutError: no/stalled ROS, Gazebo, or LiDAR telemetry",
+      "termination": null,
+      "world_reference": "results/gazebo_lidar/physical_10/raw/08OB86_-0205/evaluation_reference.npz",
+      "input_audit": {
+        "patch": "08OB86_-0205",
+        "las_sha256": "5a363b942c0991542b46e1e8657088b641647726fd5a2af684327cb3cdb762c9",
+        "signatures": {
+          "truth": {
+            "elev": "9bc94ea920c8b6ebfadc933da84280226c00fd13aa505851f5621eb2eb4df321",
+            "lethal": "e46b1e845737da313eac2b893c2b750e71c919a453356fbf749cb6e2ae706bcc",
+            "rock": "221072c1cab9f2f48b7c03b74f7af552462697afe4c72881f3ce2b99bcf4b3da"
+          },
+          "prior": {
+            "elev": "7692fc79e1b4099af724d33ef3eab8949539cd4735aa57077f897cf2dfbac2a8",
+            "lethal": "f1225d7397f8e3937d5664ebb7e26d2ba78b04c0d7d962bd99fca9a250c737cb",
+            "rock": "6feb83e08f8cfefae386d327f9a32481b855a6548e753f343825a4f60f4b722c"
+          }
+        },
+        "historical_truth_elevation_equal": true,
+        "note": "If historical elevation SHA differs, its magnitude is unknown without the old transient grid; masks/LAS match."
+      }
+    },
+    {
+      "patch": "08OB87_-0706",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    },
+    {
+      "patch": "08OB88_-1417",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    },
+    {
+      "patch": "08OB88_-0167",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    },
+    {
+      "patch": "08OB88_00332",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    },
+    {
+      "patch": "08OB88_01832",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    },
+    {
+      "patch": "08OB89_00152",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    },
+    {
+      "patch": "08OB89_-0347",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    },
+    {
+      "patch": "08OB89_-0847",
+      "mode": "lidar",
+      "selected": false,
+      "planning_status": "planned",
+      "run_folder": null,
+      "error": "",
+      "termination": null
+    }
+  ],
+  "map_method": "fine",
+  "obstacle_resolution_m": 0.1,
+  "min_obstacle_points": 3,
+  "obstacle_inflation_radius_m": 0.5,
+  "obstacle_inflation": "once at 0.1m before coarse overlap; never inflate pooled detections",
+  "history": "same last 64 returns per 0.5m height cell as task022; retain fine cell IDs",
+  "terrain_visual": "triangle_mesh",
+  "terrain_collision": "heightmap",
+  "world_input": "task022 actual-run evaluation_reference.npz elevation and unchanged raw masks",
+  "real_time_factor": 0.3,
+  "stale_timeout_s": 1.0,
+  "comparison_baseline": "results/gazebo_lidar/physical_10",
+  "sensors": "lidar_real+depth2",
+  "sensor_configuration": {
+    "preset": "real_bunker",
+    "combination": "lidar_real+depth2",
+    "mounts": {
+      "lidar": {
+        "xyz": [
+          -0.24,
+          0.0,
+          1.4
+        ],
+        "rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "base_link_xyz": [
+          -0.24,
+          0.0,
+          1.0499999999999998
+        ],
+        "frame": "lidar",
+        "point_axes": "x_forward_y_left_z_up"
+      },
+      "camera1": {
+        "xyz": [
+          0.4,
+          0.27,
+          0.76
+        ],
+        "rpy": [
+          0.0,
+          0.0,
+          0.345
+        ],
+        "base_link_xyz": [
+          0.4,
+          0.27,
+          0.41000000000000003
+        ],
+        "frame": "camera1",
+        "point_axes": "x_forward_y_left_z_up"
+      },
+      "camera2": {
+        "xyz": [
+          0.4,
+          -0.27,
+          0.76
+        ],
+        "rpy": [
+          0.0,
+          0.0,
+          -0.345
+        ],
+        "base_link_xyz": [
+          0.4,
+          -0.27,
+          0.41000000000000003
+        ],
+        "frame": "camera2",
+        "point_axes": "x_forward_y_left_z_up"
+      }
+    },
+    "depth_camera_spec": {
+      "horizontal_fov_deg": 87.0,
+      "vertical_fov_deg": 58.0,
+      "width": 214,
+      "height": 125,
+      "min_range_m": 0.6,
+      "max_range_m": 6.0,
+      "update_hz": 10.0,
+      "noise_stddev_m": 0.01
+    },
+    "assumptions": "D455 FOV/range/rate/noise/downsampled resolution are assumptions, not calibrated; no occlusion in coverage table"
+  },
+  "experiment": "task027 real sensors; not a matched task022/023 sensor comparison",
+  "protocol": "rtf_check",
+  "only_patch": "08OB86_-0205",
+  "software_rendering": "1",
+  "endpoint_policy": "none",
+  "diagnostics": true,
+  "endpoint_protocol": "task028; separate evaluation from task023",
+  "ground_estimate": "non_obstacle",
+  "prior_free_protocol": "task032; independent conditions, no legacy aggregation",
+  "obstacle_reference_mode": "local",
+  "debris_box_height": "plus_half",
+  "prior_variant": "exact",
+  "online_fixes": "v1",
+  "online_safety": {
+    "join_timeout_sim_s": 10.0,
+    "max_tilt_deg": 25.0,
+    "off_path_m": 0.75,
+    "endpoint_policy": "none",
+    "parameters": "fixed before evaluation; no tuning"
+  },
+  "environment": {
+    "image": "thesis/jazzy-gz:1",
+    "gazebo": "8.11.0",
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]"
+  }
+}

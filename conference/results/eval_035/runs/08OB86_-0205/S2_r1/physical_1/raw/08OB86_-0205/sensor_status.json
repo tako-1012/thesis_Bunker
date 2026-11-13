@@ -1,0 +1,9 @@
+{
+  "received_clouds": 982,
+  "queue_drops": 943,
+  "last_cloud_stamp": 34.3,
+  "error": "",
+  "sensor_height_m": 1.4,
+  "obstacle_height_m": 0.3,
+  "scan_storage": "first cloud plus SHA-256 per processed scan; complete cloud stream not stored"
+}
