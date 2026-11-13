@@ -10,6 +10,7 @@
 - **重い処理の実行先**：シミュレーション（Gazebo）・GPU の学習・重い評価は、研究 PC「hayashi」が使えるときは研究 PC で実行する
   （接続・環境・実験の決まりは `conference/RESEARCH_PC_ja.md`）。必要なら研究 PC の上でも Claude Code や Codex を起動し、
   動作の確認・実験の実行・その場での修正に使う。
+- 研究 PC の担当は、Mac の Claude Code のチャットから `ssh hayashi` で研究 PC を操作している。研究 PC 向けの依頼文は、そのチャットに貼ってもらう。
 - クラウドのセッション（claude.ai/code）からは研究 PC に届かない（Tailscale の外）。その場合は依頼文を書いて利用者に渡す。
   PC が使えない場合は報告し、代わりの実行先を相談する。
 
