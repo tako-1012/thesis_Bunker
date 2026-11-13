@@ -1,0 +1,3 @@
+[1;33mWarning [Utils.cc:132][0m [/sdf/world[@name="beach"]/model[@name="bunker"]/link[@name="base_link"]/sensor[@name="lidar"]/gz_frame_id:/tmp/thesis-lidar-worlds-fe3fallw/08OB88_-0167/world.sdf:L3732]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/world[@name="beach"]/model[@name="bunker"]/link[@name="base_link"]/sensor[@name="lidar"]/lidar/noise[@type="gaussian"]:/tmp/thesis-lidar-worlds-fe3fallw/08OB88_-0167/world.sdf:L3753]: XML Attribute[type] in element[noise] not defined in SDF.
+[1;36mDbg[0m ODE Heightfield AABB: min = {-99.9756, -99.9756, -0.0479068} max = {99.9756, 99.9756, 9.79335}

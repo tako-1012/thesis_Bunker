@@ -1,0 +1,7 @@
+started=2026-11-13T09:04:25+09:00
+commit=14bcae7abef57dcc4d7767993a86ef9c3252b8b4
+branch=claude/030-eval
+tracked_changes=0
+patch=08OB89_-0847 condition=C2 rep=2 args=--ground-estimate non_obstacle --endpoint-policy escape_component --diagnostics --map fine sensors=default rtf=default(0.3) stale=default(1.0) software_rendering=default(1) ros_domain_id=63 limit_s=4500
+image_id=sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57
+finished=2026-11-13T09:12:36+09:00 exit=0

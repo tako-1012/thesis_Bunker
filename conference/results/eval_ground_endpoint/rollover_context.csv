@@ -1,0 +1,4 @@
+patch,run,rollover_t,rollover_xy,len_last10s_m,truth_lethal_len_last10s_m,cells_last10s,truth_lethal_cells_last10s,truth_rock_cells_last10s,truth_slope_max_last10s,snapshot,map_lethal_cells_on_path,map_seen_cells_on_path,map_slope_max_on_path,relaxed_cells_on_path_last60s_masks
+08OB88_-0167,C2_r1,355.5,"60.03,145.82",11.52,2.34,30,6,0,38.2,t=355.2,14,30,40.7,1
+08OB88_-0167,C2_r2,354.35,"62.66,145.53",11.85,2.65,28,7,0,36.6,t=345.2,12,28,37.0,2
+08OB88_-0167,C2_r3,357.2,"59.07,145.99",11.7,4.27,27,10,0,35.8,t=355.4,12,27,36.0,0

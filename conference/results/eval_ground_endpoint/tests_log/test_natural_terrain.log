@@ -1,0 +1,8 @@
+natural generation determinism, distinct seeds, shape and finite values passed
+pre-erosion radial spectrum passed: [-3.5227452123825955, -3.4854938900090695, -3.5147015961346426, -3.469782545726739, -3.4636674128050786]
+rock area law: 0.4 0.02703765778384137 0.02660688949938067
+rock area law: 0.6 0.014010959187524073 0.013724330217025335
+rock area law: 1.0 0.003425544099666588 0.003651617375374042
+natural scenarios and exact online safety passed (15 trajectories)
+experiment oracle contact audit passed (both reference planners)
+all natural-terrain tests passed
