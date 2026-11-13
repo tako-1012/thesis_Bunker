@@ -1,0 +1,17 @@
+$ /workspace/venvs/thesis-034/bin/python -m tests.test_online_safety
+1 PASS: implicit/explicit none match pre-change runtime command JSON, plans/diagnostic bytes, follower trajectory/mission bytes and manifests
+2 PASS: LiDAR and perfect-radius joins exempt only the start cell; later lethal cells remain rejected
+3 PASS: actual stuck_0847_C1_r2_t1345 fixture search and handoff
+online_fixes search_success handoff path_points outside_start_lethal_cells start_lethal
+none True False 0 0 True
+v1 True True 5 0 True
+4 PASS: consecutive join rejection terminates at exactly 10 simulation seconds; acceptance resets the interval
+5 PASS: known free-to-lethal on remaining path triggers lethal_changed only in v1; off-path changes do not replan; pending changes reset on planning
+6 PASS: +/-26deg roll/pitch and 0.8m deviation stop; 24/25deg and 0.7/0.75m do not; zero linear and angular speed
+safety recovery PASS: stop invalidates old work, replans from measured position, accepts replacement, ignores stale status and ends on no-path
+ROS adapter PASS: real callbacks publish zero/status, preserve the open run, relay the stop and resume on a replanned path
+diagnostics/concurrency PASS: v1 records diagnostics without 028b relaxation; busy pre-stop work cannot hand off and recovery uses the latest pose
+configuration PASS: v1 manifest/CLI and both ROS parameter commands; 028b unchanged and excluded from v1
+all online-safety tests passed; requirement 7 is checked by the complete conference/tests run
+
+exit=0

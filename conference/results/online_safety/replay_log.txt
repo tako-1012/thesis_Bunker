@@ -1,0 +1,4 @@
+3 PASS: actual stuck_0847_C1_r2_t1345 fixture search and handoff
+online_fixes search_success handoff path_points outside_start_lethal_cells start_lethal
+none True False 0 0 True
+v1 True True 5 0 True

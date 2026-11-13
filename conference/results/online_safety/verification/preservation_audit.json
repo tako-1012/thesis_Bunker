@@ -1,0 +1,32 @@
+{
+  "base": "09cc219b10ed69589fd4b7611c1555924e11efa4",
+  "implementation_commit": "29308b2f2023f9a2df732acf11868e468e1afe53",
+  "source_sha256": {
+    "ros2_jazzy/gz_checks/lidar_checks.py": "c9d4727df930bd1bc1e3c852546557bf23d1e9012229d40b2eda2ffff35988fb",
+    "ros2_jazzy/gz_checks/lidar_planner.py": "436aecca509c0709ff78ab6f0337089a8fd58d4d77323cfefafa8e27f3391046",
+    "ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/online_planner.py": "cf9b00f8ead138a8ef864920cd30fb4ea108e05c1eedec22eb3270e4caffb72c",
+    "ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/online_runtime.py": "6fec5d689e9794c2dcbf379dd9ab3f923e98c9e3392f1b12713f91e8a39f9224",
+    "ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/path_follower.py": "e249ab1f911e8ecdb143cd7cb8b991a548d2884359c78eb72eeaa4c35fa34232",
+    "tapp/online_safety.py": "0c133b8cd385384cb562c3de31e2e572c4f57a2ee2c81b8afe9286254fe045ee",
+    "ros2_jazzy/gz_checks/safety_runtime.py": "30889d407a8c84397d7c8710a9f682054c6f1e80121a0492b3be2dbb4b495249",
+    "ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/online_safety.py": "fc5414f0c06a96b58d7d4587d831b410216358450d7afded270a03929e3047e0",
+    "tests/test_online_safety.py": "db8f079b75db7bdc7dd3ee00ac11c522f0b34624a4c3c13b66aa2022715e73d8"
+  },
+  "original_modified": [
+    "ros2_jazzy/gz_checks/lidar_checks.py",
+    "ros2_jazzy/gz_checks/lidar_planner.py",
+    "ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/online_planner.py",
+    "ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/online_runtime.py",
+    "ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/path_follower.py"
+  ],
+  "old_results_files": 9071,
+  "old_results_changed": false,
+  "old_results_tree_sha256": "2c309eb0450ef0de836d7962e0d9d88aabfa46e98e52b1a5ac281ea16d4e6cb9",
+  "endpoint_028_code_changed": false,
+  "protected_data_maps_world_paper_webui_changed": false,
+  "tests": {
+    "modules": 31,
+    "failed": 0
+  },
+  "gazebo": "not executed"
+}

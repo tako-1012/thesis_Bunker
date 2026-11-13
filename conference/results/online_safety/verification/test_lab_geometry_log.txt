@@ -1,0 +1,9 @@
+$ /workspace/venvs/thesis-034/bin/python -m tests.test_lab_geometry
+1 PASS: flat terrain and physical 5/12/22/30deg planes match independent eight-neighbour formula; all six cost stages and uint8 truncation
+2 PASS: <=3 valid neighbours and absent centres stay unknown; fourth valid neighbour enables cost
+3 PASS: pinned Jazzy setCostmap integer conversion, 253/254 blockage and allowed unknown=253
+4 PASS: no raw obstacle contact/corner cuts; blocked starts and disconnected goals rejected; independent Dijkstra optimum; one 0.35m square-distance inflation
+5 PASS: task013 A*/TA*-S all non-energy path metrics and scenario identifiers match clean/debris, 100/200m; times independently remeasured
+all lab-geometry tests passed; requirement 6 is checked by the full conference/tests suite
+
+exit=0

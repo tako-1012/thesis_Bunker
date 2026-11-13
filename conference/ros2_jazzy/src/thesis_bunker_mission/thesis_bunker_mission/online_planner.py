@@ -13,22 +13,28 @@ from .online_runtime import AsyncOnlineMission, load_online_maps
 
 
 class OnlinePlannerNode(Node):
-    def __init__(self):
+    def __init__(self, *, online_fixes='none'):
         super().__init__("online_planner")
         self.declare_parameter("truth_map", "")
         self.declare_parameter("prior_map", "")
         self.declare_parameter("sense_radius_m", 10.0)
+        self.declare_parameter('online_fixes', online_fixes)
         truth_file = self.get_parameter("truth_map").value
         truth, prior_tm, prior, mode = load_online_maps(
             truth_file, self.get_parameter("prior_map").value
         )
         self.map_id = "file/" + Path(truth_file).name
-        self.runtime = AsyncOnlineMission(
+        from .online_safety import make_async_runtime
+        from tapp.online_safety import validate_fixes
+        fixes = validate_fixes(self.get_parameter('online_fixes').value)
+        creator = make_async_runtime if fixes == 'v1' else AsyncOnlineMission
+        self.runtime = creator(
             truth["tmap"],
             prior_tm,
             prior,
             radius_m=self.get_parameter("sense_radius_m").value,
             prior_lethal_mode=mode,
+            **(dict(online_fixes='v1') if fixes == 'v1' else {}),
         )
         self.pose = None
         self.received = None
@@ -61,6 +67,9 @@ class OnlinePlannerNode(Node):
 
     def on_state(self, msg):
         state = json.loads(msg.data)
+        from .online_safety import handle_safety_state
+        if handle_safety_state(self.runtime, state):
+            return
         if (
             self.runtime.state
             and state.get("mission_id") == self.runtime.state["mission"].get("id")
@@ -106,8 +115,14 @@ class OnlinePlannerNode(Node):
 
 
 def main(args=None):
-    rclpy.init(args=args)
-    node = OnlinePlannerNode()
+    import argparse
+    import sys
+    from tapp.online_safety import ONLINE_FIXES
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default=None)
+    options, remaining = parser.parse_known_args(sys.argv[1:] if args is None else args)
+    rclpy.init(args=remaining if options.online_fixes is not None else args)
+    node = OnlinePlannerNode(**(dict(online_fixes=options.online_fixes) if options.online_fixes is not None else {}))
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:

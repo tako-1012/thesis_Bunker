@@ -21,6 +21,7 @@ from thesis_bunker_gz.lidar import LidarSpec
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
 from tapp.pointcloud_map_fine import GROUND_ESTIMATES
+from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
 from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
 from tapp.endpoint_policy import ENDPOINT_POLICIES
 from tapp.real_beach import build_real, list_patches
@@ -65,13 +66,16 @@ def verify_inputs(patch, meta, truth, prior):
 def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
                   noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
-                  obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact'):
+                  obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none'):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output/'manifest.json').exists():
         raise FileExistsError('choose a new output; no existing recordings will be overwritten')
     if patch_count not in (3, 10):
         raise ValueError('run the first three beaches before extending to ten')
+    validate_fixes(online_fixes)
+    if online_fixes == 'v1' and endpoint_policy != 'none':
+        raise ValueError('online fixes v1 requires endpoint-policy none; task028 unchanged')
     if (obstacle_reference not in OBSTACLE_REFERENCES or debris_box_height not in DEBRIS_BOX_HEIGHTS
             or prior_variant_name not in PRIOR_VARIANTS):
         raise ValueError('unknown task032 option')
@@ -158,6 +162,11 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                 mask='leave water and nodata heights unchanged')
         elif prior_variant_name == 'none':
             manifest['prior_definition'] = 'all heights flattened to median valid land elevation; only water/nodata raw flags retained'
+    if online_fixes == 'v1':
+        from tapp.config import Robot
+        manifest.update(online_fixes='v1', online_safety=dict(join_timeout_sim_s=JOIN_TIMEOUT_S,
+                        max_tilt_deg=Robot().max_slope_deg, off_path_m=OFF_PATH_M,
+                        endpoint_policy='none', parameters='fixed before evaluation; no tuning'))
     save_manifest(output, manifest)
     return manifest
 
@@ -343,6 +352,9 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
                         commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
+                    if manifest.get('online_fixes', 'none') == 'v1':
+                        for command in commands[-2:]:
+                            command.extend(['-p', 'online_fixes:=v1'])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
                         commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
                     for i, command in enumerate(commands):
@@ -398,6 +410,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if manifest.get('online_fixes') == 'v1':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task034 trial errors; inspect manifest')
+                print('Task034 raw results saved; evaluate online safety separately:', output)
+                return
             if manifest.get('prior_free_protocol'):
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task032 trial errors; inspect manifest')
@@ -440,6 +457,7 @@ def main():
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
+    parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
     parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default='prior')
     parser.add_argument('--debris-box-height', choices=DEBRIS_BOX_HEIGHTS, default='plus_half')
     parser.add_argument('--prior-variant', choices=PRIOR_VARIANTS, default='exact', dest='prior_variant_name')
@@ -450,6 +468,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('online_fixes') == 'v1':
+            print('Task034 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('prior_free_protocol'):
             print('Task032 preparation only; Gazebo not executed:', output)
             return
