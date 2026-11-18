@@ -1,0 +1,15 @@
+8.11.0
+Starting >>> thesis_bunker_mission
+Finished <<< thesis_bunker_mission [0.54s]
+Starting >>> thesis_bunker_gz
+Finished <<< thesis_bunker_gz [0.53s]
+
+Summary: 2 packages finished [1.13s]
+Traceback (most recent call last):
+  File "/conference/ros2_jazzy/gz_checks/lidar_checks.py", line 496, in <module>
+    main()
+  File "/conference/ros2_jazzy/gz_checks/lidar_checks.py", line 492, in main
+    run_checks(output, **args)
+  File "/conference/ros2_jazzy/gz_checks/lidar_checks.py", line 415, in run_checks
+    raise RuntimeError('task034 trial errors; inspect manifest')
+RuntimeError: task034 trial errors; inspect manifest

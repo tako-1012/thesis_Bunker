@@ -1,0 +1,8 @@
+S1_r1 counters first_detected_cells: {'lidar': 30910, 'camera1': 100, 'camera2': 23}
+  lidar: n=30910 distance_m min/median/max = 2.68/20.46/30.26
+  camera1: n=100 distance_m min/median/max = 1.24/5.08/6.44
+  camera2: n=23 distance_m min/median/max = 1.46/3.92/6.47
+S2_r1 counters first_detected_cells: {'lidar': 112, 'camera1': 0, 'camera2': 0}
+  lidar: n=112 distance_m min/median/max = 4.35/6.14/13.84
+  camera1: n=0
+  camera2: n=0

@@ -1,0 +1,32 @@
+(a) followed path with map-lethal cells (robot cell excluded) at saved 10 s maps
+  08OB87_-0706 P1_r3 snap t=95.20 rev t=94.15 (dt=1.05s) lethal cells=[[153, 143], [154, 143], [155, 143]] dist_from_robot_m=[4.61, 5.11, 5.61] steep_infl=0 | next replans within 3 s: [('95.3', 'new_cost'), ('96.8', 'new_cost'), ('97.7', 'new_cost')]
+  08OB88_-0167 P1_r2 snap t=85.20 rev t=84.85 (dt=0.35s) lethal cells=[[214, 184]] dist_from_robot_m=[29.54] steep_infl=0 | next replans within 3 s: [('85.8', 'new_cost'), ('85.9', 'new_cost'), ('86.9', 'new_cost')]
+  08OB88_-1417 P1_r3 snap t=115.20 rev t=111.95 (dt=3.25s) lethal cells=[[299, 140]] dist_from_robot_m=[9.95] steep_infl=0 | next replans within 3 s: [('115.5', 'new_cost'), ('118.2', 'new_cost')]
+
+(b) S1 contact with truth-lethal / debris cells
+  entered debris cell (np.int64(58), np.int64(163)) at t=58.50 pos=(28.78,81.68) left t=58.95; truth_lethal=True
+    map at t=55.4: cell seen=True lethal=True detected_5x5=9 truth_rock_5x5=7 prior_rock_5x5=0
+    followed path rev t=58.40 crosses debris cells: 0; truth-lethal cells: 0
+
+(c) 08OB89_-0847 around stop 3 (cells 281,117): robot cell lethal at join?
+  r1 114.1 off_path {"revision": 120}
+  r1 114.15 safety_replan_requested {"position": [135.0735187759259, 49.13364752722703], "reason": "off_path"}
+  r1 114.2 safety_replanned {"reason": "off_path", "revision": 121}
+  r1 135.25 join_accepted {"blocked_cells": [], "start_cell": [280, 117]}
+  r2 114.3 off_path {"revision": 121}
+  r2 114.35 safety_replan_requested {"position": [135.08448605834494, 49.16410372325195], "reason": "off_path"}
+  r2 114.4 safety_replanned {"reason": "off_path", "revision": 122}
+  r2 134.6 join_accepted {"blocked_cells": [], "start_cell": [280, 117]}
+  r2 135.3 join_accepted {"blocked_cells": [], "start_cell": [280, 117]}
+  r3 114.2 off_path {"revision": 100}
+  r3 114.25 safety_replan_requested {"position": [135.08373411059824, 49.09189412232029], "reason": "off_path"}
+  r3 114.3 safety_replanned {"reason": "off_path", "revision": 101}
+  r3 135.65 join_accepted {"blocked_cells": [], "start_cell": [280, 117]}
+
+(d) plan_fail causes
+  P1_r1 physical_1 t=319.1 class=['goal_cell'] pose=(78.6,140.2) goal=(np.int64(137), np.int64(294)) goal_lethal=True by_steep_infl=True detected_5x5=0 map_slope=8.1 truth_slope=10.8 truth_lethal=False truth_lethal_5x5=0.28 start_lethal=False
+  P1_r2 physical_1 t=321.4 class=['goal_cell'] pose=(78.3,140.2) goal=(np.int64(137), np.int64(294)) goal_lethal=True by_steep_infl=True detected_5x5=0 map_slope=9.9 truth_slope=10.8 truth_lethal=False truth_lethal_5x5=0.28 start_lethal=False
+  P1_r3 physical_1 t=323.6 class=['goal_cell'] pose=(74.1,140.4) goal=(np.int64(137), np.int64(294)) goal_lethal=True by_steep_infl=True detected_5x5=0 map_slope=8.9 truth_slope=10.8 truth_lethal=False truth_lethal_5x5=0.28 start_lethal=False
+  P1_r1 physical_1 t=201.6 class=['goal_cell'] pose=(123.6,87.2) goal=(np.int64(213), np.int64(144)) goal_lethal=True by_steep_infl=False detected_5x5=3 map_slope=11.7 truth_slope=4.5 truth_lethal=False truth_lethal_5x5=0.20 start_lethal=False
+  P1_r2 physical_1 t=200.1 class=['goal_cell'] pose=(124.9,90.6) goal=(np.int64(213), np.int64(144)) goal_lethal=True by_steep_infl=False detected_5x5=3 map_slope=10.4 truth_slope=4.5 truth_lethal=False truth_lethal_5x5=0.20 start_lethal=False
+  P1_r3 physical_1 t=195.4 class=['goal_cell'] pose=(126.7,93.0) goal=(np.int64(213), np.int64(144)) goal_lethal=True by_steep_infl=False detected_5x5=3 map_slope=13.6 truth_slope=4.5 truth_lethal=False truth_lethal_5x5=0.20 start_lethal=False

@@ -1,0 +1,7 @@
+started=2026-11-14T00:21:38+09:00
+commit=484af99fbd8b940f9de55c09e5fbdfe6f0bc9bef
+branch=claude/035-eval
+tracked_changes=0
+patch=08OB89_-0347 condition=P1 rep=3 args=--ground-estimate non_obstacle --online-fixes v1 --diagnostics --map fine rtf=default(0.3) stale=default(1.0) software_rendering=default(1) ros_domain_id=63 limit_s=4500
+image_id=sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57
+finished=2026-11-14T00:32:50+09:00 exit=0
