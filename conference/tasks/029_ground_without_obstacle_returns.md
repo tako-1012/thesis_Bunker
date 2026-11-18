@@ -1,6 +1,6 @@
 # 指示書 029：地面の高さを、障害物に当たった点を除いて推定する（障害物のまわりの「偽の急斜面」をなくす）
 
-> **状態：未着手**。実装は **Codex**。Gazebo の評価は、あとで研究 PC で別に行う（この指示書では走らせない）。
+> **状態：完了・標準の設定（結果は `results/ground_estimate/`）**。実装は **Codex**。Gazebo の評価は、あとで研究 PC で別に行う（この指示書では走らせない）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/023_lidar_fine_grid.md`・`028_endpoint_policy.md`（末尾の追記まで）、
 > `conference/results/endpoint_policy/b/REPORT_ja.md` を読むこと。
 > ブランチは `codex/029-ground-estimate`（その時点の `realtime-map` の最新から）。結果は `conference/results/ground_estimate/`、報告は同じ場所の `REPORT_ja.md`。

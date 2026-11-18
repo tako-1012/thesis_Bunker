@@ -1,6 +1,6 @@
 # 指示書 024：地図の端から離れた地点だけで走らせ直す（端での転倒を除く）
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。
+> **状態：完了（結果は `results/edge_margin/`）**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。
 > **指示書023 が `realtime-map` にマージされてから始めること**（023 の LiDAR の結果も並べるため）。
 > ブランチは `codex/024-edge-margin`（その時点の `realtime-map` の最新から）。結果は `conference/results/edge_margin/`、報告は同じ場所の `REPORT_ja.md`。
 

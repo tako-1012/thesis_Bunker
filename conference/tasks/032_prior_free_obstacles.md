@@ -1,6 +1,6 @@
 # 指示書 032：古い地図に頼らずに点群だけで障害物を見つける・漂着物を本物の高さにする・古い地図が古い場合を作る
 
-> **状態：未着手**。実装は **Codex**（クラウドまたは Mac）。Gazebo の評価は、あとで研究 PC で別に行う（この指示書では走らせない）。
+> **状態：完了（結果は `results/prior_free/`。`local` は遅すぎる → 036）**。実装は **Codex**（クラウドまたは Mac）。Gazebo の評価は、あとで研究 PC で別に行う（この指示書では走らせない）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/REAL_SENSORS_ja.md`、`conference/tasks/023_lidar_fine_grid.md`・`027_real_sensors_depth.md`・`029_ground_without_obstacle_returns.md`、
 > `conference/results/eval_ground_endpoint/REPORT_ja.md` を読むこと。
 > ブランチは `codex/032-prior-free`（その時点の `realtime-map` の最新から）。結果は `conference/results/prior_free/`、報告は同じ場所の `REPORT_ja.md`。

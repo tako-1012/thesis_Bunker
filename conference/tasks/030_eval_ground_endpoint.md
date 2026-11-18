@@ -1,6 +1,6 @@
 # 指示書 030：地面の高さの直し（029）と始点・終点の扱い（028b）を、研究 PC の Gazebo で繰り返して評価する
 
-> **状態：未着手**。実行は**研究 PC「hayashi」**（`conference/RESEARCH_PC_ja.md`）。コードは変えない（走らせて集計するだけ。集計のスクリプトは足してよい）。
+> **状態：完了（結果は `results/eval_ground_endpoint/`）**。実行は**研究 PC「hayashi」**（`conference/RESEARCH_PC_ja.md`）。コードは変えない（走らせて集計するだけ。集計のスクリプトは足してよい）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/028_endpoint_policy.md`（追記まで）・`029_ground_without_obstacle_returns.md`、
 > `conference/results/rtf_check/divergence/REPORT_ja.md`、`conference/results/ground_estimate/REPORT_ja.md`、`conference/results/endpoint_policy/b/REPORT_ja.md` を読むこと。
 > 作業は研究 PC の作業ツリー `~/thesis_Bunker_rtf` で、`origin/realtime-map` から作った作業用のブランチ `claude/030-eval` で行う。結果は `conference/results/eval_ground_endpoint/`。

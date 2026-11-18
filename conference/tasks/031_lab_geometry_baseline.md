@@ -1,6 +1,6 @@
 # 指示書 031：研究室の既存の地形コスト（GeometryLayer＋NavFn）を、比べる相手として加える
 
-> **状態：未着手**。実装は **Codex**（クラウドまたは Mac）。Gazebo は使わない（Python の実験だけ）。
+> **状態：完了（結果は `results/lab_baseline/`）**。実装は **Codex**（クラウドまたは Mac）。Gazebo は使わない（Python の実験だけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/013_real_beach_las.md`（013 の比較のしかた）、`conference/results/real_beach_las/REPORT_ja.md` を読むこと。
 > ブランチは `codex/031-lab-baseline`（その時点の `realtime-map` の最新から）。結果は `conference/results/lab_baseline/`、報告は同じ場所の `REPORT_ja.md`。
 

@@ -1,6 +1,6 @@
 # 指示書 033：030 で見つかった「地点の手前で止まったまま」と「C2 の転倒」の原因を、保存した記録で調べる（調べるだけ）
 
-> **状態：未着手**。実行は**研究 PC の担当**（Mac の Claude Code から `ssh hayashi` で操作する）。記録は研究 PC にある。
+> **状態：完了（結果は `results/diagnosis_033/`）**。実行は**研究 PC の担当**（Mac の Claude Code から `ssh hayashi` で操作する）。記録は研究 PC にある。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/results/eval_ground_endpoint/REPORT_ja.md`、`conference/tasks/028_endpoint_policy.md`・`030_eval_ground_endpoint.md` を読むこと。
 > 作業は研究 PC の作業ツリー `~/thesis_Bunker_rtf` で、`origin/realtime-map` から作った作業用のブランチ `claude/033-diagnosis` で行う。**コードは直さない**（原因の特定と、直し方の案まで）。
 > 結果は `conference/results/diagnosis_033/`、報告は同じ場所の `REPORT_ja.md`。**Gazebo は動かさない**（保存した記録と、Python での再生だけ）。

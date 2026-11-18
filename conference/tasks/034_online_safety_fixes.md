@@ -1,6 +1,6 @@
 # 指示書 034：走りながら計画し直す仕組みの不具合を直す（033 の原因調べを受けて）
 
-> **状態：未着手**。実装は **Codex**（クラウドまたは Mac）。Gazebo の評価は、あとで研究 PC で別に行う（この指示書では走らせない）。
+> **状態：完了（結果は `results/online_safety/`、レビューは `REVIEW_ja.md`）**。実装は **Codex**（クラウドまたは Mac）。Gazebo の評価は、あとで研究 PC で別に行う（この指示書では走らせない）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/diagnosis_033/REPORT_ja.md`（原因と直し方の案。**この指示書の根拠**）、`conference/results/eval_ground_endpoint/REPORT_ja.md` を読むこと。
 > ブランチは `codex/034-online-safety`（その時点の `realtime-map` の最新から）。結果は `conference/results/online_safety/`、報告は同じ場所の `REPORT_ja.md`。
 
