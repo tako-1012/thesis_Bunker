@@ -1,6 +1,6 @@
 # 指示書 038：地図の更新（既定の `prior`）を速くして、実時間 1 倍で走れるようにする
 
-> **状態：未着手**。実装は **クラウドの Codex**（研究 PC の Gazebo は使わない）。1 倍での確認は、このあと研究 PC で別に行う（指示書 039 の予定）。
+> **状態：実行中（2026-11-18 にクラウドの Codex へ依頼）**。実装は **クラウドの Codex**（研究 PC の Gazebo は使わない）。1 倍での確認は、このあと研究 PC で別に行う（指示書 039 の予定）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/rtf_check/hayashi_rtf1_check/README_ja.md`・`hayashi_rtf_repeat/README_ja.md`、
 > `conference/tasks/036_local_speed_and_edge_option.md`（036 は `local` を速くする別の作業。この 038 は既定の `prior` の側）を読むこと。
 > ブランチは `codex/038-map-speed`（その時点の `realtime-map` の最新から）。結果は `conference/results/map_speed/`、報告は同じ場所の `REPORT_ja.md`。
@@ -30,11 +30,16 @@
 3. **目標**：研究 PC と同程度の CPU で、LiDAR 1 回の更新が 95% 値で **0.03 秒以下**、カメラ 1 台の 1 回が **0.01 秒以下**
    （1 倍で LiDAR 10Hz＋カメラ 2 台が、1 周期の半分以下に収まる目安）。届かなければ、どこまで届いたかと、残りの時間の内訳を報告する。
 
+### 036 のレビューから足したもの（`results/local_speed/REVIEW_ja.md` の所見 7・8）
+4. `PointCloudMapMulti.update` で、出所の履歴を数える処理が `local` 用と `prior` 用の 2 つに分かれている（036 で足した）。1 つにまとめる（`prior` の出力はバイト単位で同じ、`local` の判定も 036 と同じ）。
+5. `local`（`tapp/local_ground.update_local`）も、更新のたびに地図全体の通りやすさを作り直している。2 で作った「変わった周りだけを計算し直す」仕組みを、`local` でもそのまま使えるなら使ってよい（`local` の判定・出力は 036 と同じにする）。
+
 ## 守ること
 - **出力はバイト単位で変えない**。地図（`elev`・`seen`・`tm` の各配列・`lethal`・`fine_obstacle`・`fine_inflated`・`detected_obstacle`）が、
   同じ入力の列に対して、今の実装と**すべての更新のあとで**完全に一致すること。近似は入れない（窓の端の扱いも含めて一致させる）。
 - 既存の結果・既存のテストは変えない。`ros2/` は変えない。結果を見て閾値を変えない。
-- 036（`local`）の作業とは別。`obstacle_reference='local'` の経路には手を入れない（入口の分岐は残す）。
+- `local` の障害物の判定（`tapp/local_ground.py` の平面のあてはめ）は変えない。上の 5 で使うのは、判定のあとの地図の作り直しの部分だけ。
+- 指示書 040（実行中、`codex/040-review-fixes`）とは触るファイルを分ける：040 は `online_safety`・`path_follower`・`lidar_checks`・テストを触る。この 038 は `pointcloud_map_fine.py`・`pointcloud_map_multi.py`・`local_ground.update_local` の地図の作り直しの部分だけ。
 
 ## テスト `conference/tests/test_map_speed.py`（ROS2・Gazebo なしで動くこと）
 1. 偽の点群の列（平らな地面、斜面、箱、地図の端、障害物が何度も増える場面）を、今の実装（テストの中に残した元の版、または保存した期待値）と新しい実装に入れ、すべての更新のあとで上の配列が完全に一致する。
