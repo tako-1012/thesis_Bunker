@@ -1,6 +1,6 @@
 # 指示書 036：点群だけの障害物の判定（`local`）を速くし、LiDAR の走行で「端から 10m の地点」を選べるようにする
 
-> **状態：未着手**。実装は **Codex**（クラウドまたは Mac）。Gazebo は走らせない。
+> **状態：完了（結果は `results/local_speed/`、レビューは `REVIEW_ja.md`。指摘は 040 で直す）**。実装は **Codex**（クラウドまたは Mac）。Gazebo は走らせない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/032_prior_free_obstacles.md`・`024_edge_margin_waypoints.md`、
 > `conference/results/eval_035/REPORT_ja.md`（段階 2 の S2）、`conference/results/prior_free/REPORT_ja.md`、`conference/results/edge_margin/REPORT_ja.md` を読むこと。
 > ブランチは `codex/036-local-speed`（その時点の `realtime-map` の最新から）。結果は `conference/results/local_speed/`、報告は同じ場所の `REPORT_ja.md`。

@@ -1,6 +1,6 @@
 # 指示書 019：Gazebo（物理シミュレーター）で、本物の砂浜の TA*-S と A* の経路を走らせて比べる
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/019-gazebo-compare`。
+> **状態：完了**（Codex が実装、Claude がまとめてレビューして `realtime-map` に取り込み済み）。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/019-gazebo-compare`。
 > Codex の環境では Gazebo を動かせない可能性が高い。その場合は、スクリプトとテスト（ROS2 なし）まで作り、実行は Claude が Docker で行う。
 
 ## 背景

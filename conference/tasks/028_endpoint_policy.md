@@ -1,6 +1,6 @@
 # 指示書 028：経路なしの直前の地図を残し、始点・終点が誤って塞がれたときの扱いを足す
 
-> **状態：未着手**。実装は **Codex**（クラウドまたは Mac）。Gazebo の評価は、あとで研究 PC で別に行う（この指示書では走らせない）。
+> **状態：完了・028b は使わない（030 で転倒。結果は `results/endpoint_policy/`）**。実装は **Codex**（クラウドまたは Mac）。Gazebo の評価は、あとで研究 PC で別に行う（この指示書では走らせない）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/rtf_check/divergence/REPORT_ja.md`、`conference/results/lidar_fine/first_attempt_partial/README_ja.md`、
 > `conference/tasks/023_lidar_fine_grid.md`・`026_divergence_check.md`・`027_real_sensors_depth.md` を読むこと。
 > ブランチは `codex/028-endpoint-policy`（その時点の `realtime-map` の最新から）。結果は `conference/results/endpoint_policy/`、報告は同じ場所の `REPORT_ja.md`。

@@ -1,6 +1,6 @@
 # 指示書 035：034 の不具合の直しを評価し、032（点群だけの障害物の判定など）を短く試す（研究 PC）
 
-> **状態：未着手**。実行は**研究 PC の担当**（Mac の Claude Code から `ssh hayashi` で操作）。コードは変えない（走らせて集計するだけ。集計のスクリプトは足してよい）。
+> **状態：完了（結果は `results/eval_035/`、レビューは `REVIEW_ja.md`）**。実行は**研究 PC の担当**（Mac の Claude Code から `ssh hayashi` で操作）。コードは変えない（走らせて集計するだけ。集計のスクリプトは足してよい）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`（記録の量の決まり）、`conference/tasks/030_eval_ground_endpoint.md`・`032_prior_free_obstacles.md`・`034_online_safety_fixes.md`、
 > `conference/results/eval_ground_endpoint/REPORT_ja.md`、`conference/results/diagnosis_033/REPORT_ja.md`、`conference/results/online_safety/REPORT_ja.md` を読むこと。
 > 作業は研究 PC の作業ツリー `~/thesis_Bunker_rtf` で、`origin/realtime-map` から作った作業用のブランチ `claude/035-eval` で行う。結果は `conference/results/eval_035/`。

@@ -1,6 +1,6 @@
 # 指示書 025：研究 PC で、LiDAR の Gazebo を実時間の 1 倍で走らせられるか確かめる（検証だけ）
 
-> **状態：未着手**。実行先は**研究 PC「hayashi」**（`conference/RESEARCH_PC_ja.md`）。最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md` を読むこと。
+> **状態：完了（結果は `results/rtf_check/`）**。実行先は**研究 PC「hayashi」**（`conference/RESEARCH_PC_ja.md`）。最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md` を読むこと。
 > **いま研究 PC で走っている実験（0.3 倍の Gazebo）は止めない**。その実験が終わるまでは、下の「段階 0」だけを行う。
 > 結果は `conference/results/rtf_check/`（新しいフォルダ）、報告は同じ場所の `REPORT_ja.md`。既存の結果・既定の設定は変えない。
 

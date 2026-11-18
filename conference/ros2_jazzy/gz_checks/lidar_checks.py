@@ -66,7 +66,12 @@ def verify_inputs(patch, meta, truth, prior):
 def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
                   noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
-                  obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none'):
+                  obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
+                  edge_margin_m=0):
+    if edge_margin_m not in (0, 10):
+        raise ValueError('edge margin must be 0 or 10m')
+    if edge_margin_m and scenarios is not None:
+        raise ValueError('edge margin requires the standard scenario cohort')
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output/'manifest.json').exists():
@@ -111,6 +116,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
             raise ValueError('fine comparison keeps the task022 sensor and threshold unchanged')
     baseline = json.loads((BASELINE/'manifest.json').read_text())
     scenarios = baseline['scenarios'] if scenarios is None else scenarios
+    if edge_margin_m:
+        from ros2_jazzy.gz_checks.edge_margin_checks import build_cohort
+        scenarios = build_cohort()['scenarios']
     expected = [r['name'] for r in list_patches('test', dataset='shizuoka_beach_las')[:10]]
     if [s['patch'] for s in scenarios] != expected:
         raise ValueError('baseline must contain the same first ten LAS test beaches')
@@ -130,6 +138,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                                 (selected_patches is None or s['patch'] in selected_patches),
                                 planning_status=s['planning_status'], run_folder=None, error='', termination=None)
                            for i, s in enumerate(scenarios)])
+    if edge_margin_m:
+        manifest.update(edge_margin_m=edge_margin_m, waypoint_protocol='task024')
     if fine_settings is not None:
         manifest.update(fine_settings)
     if configuration is not None:
@@ -151,7 +161,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                         obstacle_reference_mode=obstacle_reference, debris_box_height=debris_box_height,
                         prior_variant=prior_variant_name)
         if obstacle_reference == 'local':
-            manifest.update(obstacle_reference='sensor-only local plane; closed 1.5m square; lowest return per 0.1m cell; '
+            manifest.update(obstacle_reference='sensor-only local plane; 1.5m square aligned to 0.1m cell centres; lowest return per 0.1m cell; '
                             'least squares, trim residual >=0.15m and refit once; >=0.3m and >=3 returns; undefined fits unclassified',
                             height_definition='median of locally classified non-obstacle returns in last-64 history; '
                             'all excluded: local plane at coarse centre; undefined plane: retain planning context')
@@ -183,6 +193,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
 
     output = Path(output).resolve()
     manifest = prepare_cases(output, **kwargs)
+    matched_world = matched_world or bool(manifest.get('edge_margin_m'))
     if matched_world:
         manifest['world_input'] = 'task022 actual-run evaluation_reference.npz elevation and unchanged raw masks'
     # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
@@ -435,6 +446,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     raise RuntimeError('some real sensor trials could not run; inspect manifest')
                 print('Task027 raw results saved; legacy task023 aggregation is not applicable:', output)
                 return
+            if manifest.get('edge_margin_m'):
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task036 trial errors; inspect manifest')
+                print('Task036 raw results saved:', output)
+                return
             if manifest.get('map_method') == 'fine':
                 from experiments.lidar_fine_report import summarize
             else:
@@ -458,6 +474,7 @@ def main():
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
+    parser.add_argument('--edge-margin-m', type=int, choices=(0, 10), default=0)
     parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default='prior')
     parser.add_argument('--debris-box-height', choices=DEBRIS_BOX_HEIGHTS, default='plus_half')
     parser.add_argument('--prior-variant', choices=PRIOR_VARIANTS, default='exact', dest='prior_variant_name')
@@ -482,6 +499,9 @@ def main():
             return
         if manifest.get('sensors', 'legacy') != 'legacy':
             print('Task027 preparation only; Gazebo not executed:', output)
+            return
+        if manifest.get('edge_margin_m'):
+            print('Task036 preparation only:', output)
             return
         if manifest.get('map_method') == 'fine':
             from experiments.lidar_fine_report import summarize

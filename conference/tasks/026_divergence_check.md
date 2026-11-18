@@ -1,6 +1,6 @@
 # 指示書 026：研究 PC で 08OB87_-0706 が「経路なし」になった理由と、同じ 0.3 倍でも軌跡が分かれる理由を調べる
 
-> **状態：未着手**。実行先は**研究 PC「hayashi」**。最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、
+> **状態：完了（結果は `results/rtf_check/divergence/`）**。実行先は**研究 PC「hayashi」**。最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、
 > `conference/tasks/025_rtf1_check.md`、`conference/results/lidar_fine/first_attempt_partial/README_ja.md` を読むこと。
 > 作業は 025 と同じ作業ツリー `~/thesis_Bunker_rtf`・ブランチ `claude/025-rtf-check` で行う。**通常の実験の設定は変えない**（`realtime-map` にマージしない）。
 > 結果は `conference/results/rtf_check/divergence/`、報告は同じ場所の `REPORT_ja.md`。
