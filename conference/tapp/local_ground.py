@@ -163,8 +163,10 @@ def update_local(mapper, sensor_points, pose):
             reference = reference_all[len(world):-len(touched)]
             values = np.column_stack((history_xyz[:, 2], history_xyz[:, 2]-reference))
             fine_ids = np.ravel_multi_index(fine_cells(history_xyz).T, mapper.fine_shape)
-            mapper.samples.update(zip(map(int, touched), np.split(values, starts[1:-1])))
-            mapper._fine_ids.update(zip(map(int, touched), np.split(fine_ids, starts[1:-1])))
+            for key, start, end in zip(touched, starts[:-1], starts[1:]):
+                # Keep each cell's history independent of the whole scan batch.
+                mapper.samples[int(key)] = values[start:end].copy()
+                mapper._fine_ids[int(key)] = fine_ids[start:end].copy()
 
             # Group sorted ground heights once, then select the middle return(s)
             # in each coarse cell. Unknown references leave the prior context.
