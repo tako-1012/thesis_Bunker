@@ -53,7 +53,10 @@ def main():
         return 0
     found = problems()
     hook = {}
-    if not sys.stdin.isatty():
+    # The Stop hook passes JSON on stdin and closes it. A manual run from a
+    # non-interactive shell may leave stdin open, so never wait for it.
+    import select
+    if not sys.stdin.isatty() and select.select([sys.stdin], [], [], 1.)[0]:
         try:
             hook = json.loads(sys.stdin.read() or '{}')
         except ValueError:
