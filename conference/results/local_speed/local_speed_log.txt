@@ -1,0 +1,36 @@
+$ python -u -m tests.test_local_speed
+1 PASS: pre-change map NPZ/snapshot/history/sidecar, world and manifest SHA-256 match; explicit prior matches implicit default
+Task036 preparation only: /tmp/tmplt2ips9j/ten
+024 08OB86_00294 start=[52, 195] points=[[309, 113], [273, 232], [104, 176], [46, 121], [250, 270]] unchanged=False
+024 08OB86_-0205 start=[49, 270] points=[[114, 102], [114, 214], [42, 179], [135, 255], [93, 197]] unchanged=True
+024 08OB87_-0706 start=[50, 200] points=[[89, 197], [263, 259], [59, 119], [347, 145], [39, 236]] unchanged=False
+024 08OB88_-1417 start=[70, 169] points=[[337, 140], [313, 165], [199, 151], [264, 194], [203, 229]] unchanged=True
+024 08OB88_-0167 start=[38, 231] points=[[137, 294], [249, 150], [202, 281], [31, 208], [348, 149]] unchanged=True
+024 08OB88_00332 start=[45, 228] points=[[142, 207], [38, 131], [203, 180], [136, 171], [70, 116]] unchanged=True
+024 08OB88_01832 start=[36, 214] points=[[223, 254], [335, 247], [159, 229], [264, 180], [133, 240]] unchanged=False
+024 08OB89_00152 start=[48, 341] points=[[296, 173], [183, 372], [207, 192], [328, 186], [193, 222]] unchanged=False
+024 08OB89_-0347 start=[55, 326] points=[[294, 224], [164, 169], [213, 144], [195, 352], [264, 374]] unchanged=False
+024 08OB89_-0847 start=[70, 146] points=[[269, 98], [75, 211], [227, 332], [281, 117], [350, 279]] unchanged=True
+024 PASS: 10/10 archived waypoint lists, 5/5 unchanged scenarios, default manifest bytes and wrapper forwarding
+032 slope=0 box=False shift=0: fine/coarse=(0, 0)
+032 slope=0 box=False shift=-0.4: fine/coarse=(0, 0)
+032 slope=0 box=False shift=0.4: fine/coarse=(0, 0)
+032 slope=0 box=True shift=0: fine/coarse=(0, 0)
+032 slope=0 box=True shift=-0.4: fine/coarse=(0, 0)
+032 slope=0 box=True shift=0.4: fine/coarse=(0, 0)
+032 slope=20 box=False shift=0: fine/coarse=(0, 0)
+032 slope=20 box=False shift=-0.4: fine/coarse=(0, 0)
+032 slope=20 box=False shift=0.4: fine/coarse=(0, 0)
+032 slope=20 box=True shift=0: fine/coarse=(0, 0)
+032 slope=20 box=True shift=-0.4: fine/coarse=(0, 0)
+032 slope=20 box=True shift=0.4: fine/coarse=(0, 0)
+CPU AMD EPYC 9V74 80-Core Processor
+fixture sensor input accepted repeats before_median_s before_p95_s after_median_s after_p95_s fine_diff coarse_diff
+synthetic lidar 28800 28800 12 3.294727 3.390678 0.122767 0.128811 0 0
+synthetic camera1 26750 26750 12 4.314435 5.161466 0.046147 0.049464 0 0
+saved_b0b lidar 28800 11741 1 1.338688 1.338688 0.063439 0.063439 1 1
+saved_b0b camera1 26750 9604 1 1.913312 1.913312 0.040399 0.040399 0 0
+saved_b0b camera2 26750 9242 1 1.899579 1.899579 0.045043 0.045043 0 0
+all local speed tests passed
+
+exit=0

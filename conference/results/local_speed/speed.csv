@@ -1,0 +1,6 @@
+cpu,fixture,sensor,input,accepted,repeats,before_median_s,before_p95_s,after_median_s,after_p95_s,fine_diff,coarse_diff
+AMD EPYC 9V74 80-Core Processor,synthetic,lidar,28800,28800,12,3.294727,3.390678,0.122767,0.128811,0,0
+AMD EPYC 9V74 80-Core Processor,synthetic,camera1,26750,26750,12,4.314435,5.161466,0.046147,0.049464,0,0
+AMD EPYC 9V74 80-Core Processor,saved_b0b,lidar,28800,11741,1,1.338688,1.338688,0.063439,0.063439,1,1
+AMD EPYC 9V74 80-Core Processor,saved_b0b,camera1,26750,9604,1,1.913312,1.913312,0.040399,0.040399,0,0
+AMD EPYC 9V74 80-Core Processor,saved_b0b,camera2,26750,9242,1,1.899579,1.899579,0.045043,0.045043,0,0

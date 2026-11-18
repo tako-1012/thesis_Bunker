@@ -61,10 +61,23 @@ class PointCloudMapMulti(PointCloudMapFine):
         world, cells = world[inside], cells[inside]
         flat = np.ravel_multi_index(cells.T, self.prior.shape) if len(cells) else np.empty(0, np.int64)
         with self._fusion_lock:
-            for key, count in zip(*np.unique(flat, return_counts=True)):
-                n = int(count)
-                old = self._source_history.get(int(key), np.empty(0, dtype='U7'))
-                self._source_history[int(key)] = np.r_[old, np.full(n, sensor)][-self.samples_per_cell:]
+            keys, counts = np.unique(flat, return_counts=True)
+            if self.obstacle_reference == 'local':
+                # All incoming returns share one source. Reuse the array and
+                # concatenate only the suffix retained from previous scans.
+                sources = np.full(min(int(counts.max(initial=0)), self.samples_per_cell), sensor, dtype="U7")
+                for key, count in zip(keys, counts):
+                    n = min(int(count), self.samples_per_cell)
+                    old = self._source_history.get(int(key))
+                    current = sources[:n]
+                    if old is not None and n < self.samples_per_cell:
+                        current = np.concatenate((old[n-self.samples_per_cell:], current))
+                    self._source_history[int(key)] = current
+            else:
+                for key, count in zip(keys, counts):
+                    n = int(count)
+                    old = self._source_history.get(int(key), np.empty(0, dtype='U7'))
+                    self._source_history[int(key)] = np.r_[old, np.full(n, sensor)][-self.samples_per_cell:]
             before = self.fine_obstacle.copy()
             # The virtual sensor at (0,0,.8) plus a zero model pose reconstructs
             # exactly the already-registered world points. No filter is applied

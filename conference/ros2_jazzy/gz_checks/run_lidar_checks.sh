@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Standard Docker, headless ogre2, transient world/maps; first three then ten.
+# Usage: run_lidar_checks.sh OUTPUT [--edge-margin-m 0|10] [other lidar_checks.py options]
 set -euo pipefail
 conference_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 output_dir="${1:-${conference_dir}/results/gazebo_lidar/physical_3}"
