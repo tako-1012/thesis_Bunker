@@ -1,6 +1,6 @@
 # 指示書 038：地図の更新（既定の `prior`）を速くして、実時間 1 倍で走れるようにする
 
-> **状態：実行中（2026-11-18 にクラウドの Codex へ依頼）**。実装は **クラウドの Codex**（研究 PC の Gazebo は使わない）。1 倍での確認は、このあと研究 PC で別に行う（指示書 039 の予定）。
+> **状態：完了（結果は `results/map_speed/`、レビューは `REVIEW_ja.md`）**。実装は **クラウドの Codex**（研究 PC の Gazebo は使わない）。1 倍での確認は、このあと研究 PC で別に行う（指示書 039 の予定）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/rtf_check/hayashi_rtf1_check/README_ja.md`・`hayashi_rtf_repeat/README_ja.md`、
 > `conference/tasks/036_local_speed_and_edge_option.md`（036 は `local` を速くする別の作業。この 038 は既定の `prior` の側）を読むこと。
 > ブランチは `codex/038-map-speed`（その時点の `realtime-map` の最新から）。結果は `conference/results/map_speed/`、報告は同じ場所の `REPORT_ja.md`。

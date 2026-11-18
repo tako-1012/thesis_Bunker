@@ -52,4 +52,15 @@ Codex のテスト（合成の点群と保存した点群で 88 回の更新）�
 所見 1・2 は 039（研究 PC で 1 倍と 0.3 倍を比べる）の確かめる項目に入れる。
 
 ## テストの結果・時間
-（下に追記）
+- 040 と 038 を合わせた状態（`b9f0b83`）で、`conference/tests/` の 33 本すべてが終了コード 0（`review/all_tests_summary_with_040.txt`）。
+- Claude の環境（Intel Xeon 2.10GHz）で `benchmark.py` を走らせた（`review/benchmark_claude_env.txt`）。95% 値は次のとおりで、Codex の環境より少し遅いが同じ傾向。
+
+| 地図 | 地面の推定 | センサー | 95% 値 [ms] |
+|---|---|---|---:|
+| Multi | all_returns | LiDAR | 27.7 |
+| Multi | all_returns | カメラ 1・2 | 9.5・11.2 |
+| Multi | non_obstacle（今の標準） | LiDAR | 35.4 |
+| Multi | non_obstacle（今の標準） | カメラ 1・2 | 13.0・14.3 |
+
+  今の標準（`non_obstacle`）では LiDAR の目標 30ms・カメラの目標 10ms をわずかに超えるが、3 つとも 10Hz として 1 秒あたり約 0.63 秒で、1 倍の 1 秒に収まる見込み。
+  走行中の速さは、上の所見 1・2 のとおり 039 で確かめる。
