@@ -1,6 +1,6 @@
 # 指示書 018：本物の砂浜の地図を緯度・経度と結びつけ、Web 画面で地点を緯度・経度で扱えるようにする
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/018-latlon`。
+> **状態：完了**（Codex が実装、Claude がまとめてレビューして `realtime-map` に取り込み済み）。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/018-latlon`。
 
 ## 背景
 実機（BUNKER）では GPS（緯度・経度）で位置を扱う。研究室の Android アプリと ROS2 のサービス（`map_point` の `receive_point`、

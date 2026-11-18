@@ -1,6 +1,6 @@
 # 指示書 017：「見えない陰」を入れたセンサーの模擬で、走りながらの再計画を確かめ直す
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/017-visibility`。
+> **状態：完了**（Codex が実装、Claude がまとめてレビューして `realtime-map` に取り込み済み）。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/017-visibility`。
 
 ## 背景
 これまで、センサーは「ロボットのまわり半径 R の地形が、すべて誤差なく見える」とみなしてきた（`tapp/online_mission.virtual_sense`）。

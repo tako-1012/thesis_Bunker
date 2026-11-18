@@ -1,6 +1,6 @@
 # 指示書 015：修論の結果の章に使う図と表を、既存の結果ファイルから一括で作る
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/015-thesis-figures`。
+> **状態：完了**（Codex が実装、Claude がまとめてレビューして `realtime-map` に取り込み済み）。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/015-thesis-figures`。
 
 ## 背景
 修論の結果の章の図と表を、これまでの結果ファイルから**新しい実験なしで**作る。

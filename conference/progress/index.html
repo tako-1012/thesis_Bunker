@@ -1,0 +1,311 @@
+<meta name="dash-one-writer">
+<style>
+.pb { display: flex; flex-direction: column; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.pb-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.pb-head p { margin: var(--cds-gap-sm) 0 0; color: var(--color-fg-muted); max-width: 68ch; line-height: 1.6; }
+.pb-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--cds-gap-md); }
+.pb-tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-xs); min-width: 0; }
+.pb-tile .lab { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); letter-spacing: .04em; }
+.pb-tile .num { font-family: var(--font-anthropic-serif); font-size: 2.2rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.pb-tile .sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.pb-tile.deadline { border-color: var(--color-warn); }
+.pb h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-sm); }
+.pb .note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0 0 var(--cds-gap-md); line-height: 1.6; }
+.pb-now { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--cds-gap-md); }
+.pb-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md) var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-xs); min-width: 0; }
+.pb-card .t { font-weight: var(--cds-font-weight-medium); line-height: 1.5; }
+.pb-card .m { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.5; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: var(--cds-font-size-caption); border: 1px solid currentColor; white-space: nowrap; }
+.pill.s-done { color: var(--color-ok); }
+.pill.s-run { color: var(--color-warn); }
+.pill.s-todo { color: var(--color-fg-muted); }
+.pill.s-neg { color: var(--color-bad); }
+.pb-areas { position: relative; min-height: 220px; }
+.pb-out { position: relative; min-height: 320px; }
+.pb-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-bottom: var(--cds-gap-sm); }
+.pb-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.pb-legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.pb svg text { fill: var(--cds-text-secondary); font-size: 11px; font-family: var(--font-anthropic-sans); }
+.pb .tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: 6px 10px; font-size: var(--cds-font-size-caption); color: var(--color-fg); white-space: nowrap; z-index: 5; }
+.pb-tools { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; margin-bottom: var(--cds-gap-sm); }
+.pb-tablewrap { overflow-x: auto; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); }
+.pb table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); }
+.pb th, .pb td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border-line); vertical-align: top; line-height: 1.5; }
+.pb th { color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); background: var(--color-panel); position: sticky; top: 0; }
+.pb td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pb td.res { min-width: 18em; }
+.pb td.path { color: var(--color-fg-muted); white-space: nowrap; }
+</style>
+
+<div class="pb">
+  <header class="pb-head" id="head">
+    <h1>修論 進捗ボード</h1>
+    <p>海岸清掃ロボット（BUNKER）の地形を考えた経路計画。指示書 001〜039 の状態と、研究 PC の Gazebo での走行結果をまとめる。
+      いま <b data-draw="k-run" data-source="status_counts" data-field="件数" data-where="状態=実行中">—</b> 件が動いていて、
+      <b data-draw="k-todo" data-source="status_counts" data-field="件数" data-where="状態=未着手">—</b> 件が次に控えている。</p>
+  </header>
+
+  <section class="pb-tiles" id="tiles">
+    <div class="pb-tile deadline" id="tile-deadline">
+      <span class="lab">ICAROB 本文の締め切り（12/7）まで</span>
+      <span class="num" data-draw="deadline">—</span>
+      <span class="sub">要旨は 11/9 に提出済み</span>
+    </div>
+    <div class="pb-tile" id="tile-done">
+      <span class="lab">完了した指示書</span>
+      <span class="num" data-draw="k-done" data-source="status_counts" data-field="件数" data-where="状態=完了">—</span>
+      <span class="sub">負の結果・使わないものは別に数える</span>
+    </div>
+    <div class="pb-tile" id="tile-run">
+      <span class="lab">実行中</span>
+      <span class="num" data-draw="k-run2" data-source="status_counts" data-field="件数" data-where="状態=実行中">—</span>
+      <span class="sub">クラウドの Codex と研究 PC</span>
+    </div>
+    <div class="pb-tile" id="tile-todo">
+      <span class="lab">未着手</span>
+      <span class="num" data-draw="k-todo2" data-source="status_counts" data-field="件数" data-where="状態=未着手">—</span>
+      <span class="sub">順番待ち</span>
+    </div>
+    <div class="pb-tile" id="tile-neg">
+      <span class="lab">負の結果・使わない・保留</span>
+      <span class="num" data-draw="k-neg" data-source="status_counts" data-field="件数" data-where="状態=その他">—</span>
+      <span class="sub">記録として残してある</span>
+    </div>
+  </section>
+
+  <section id="now">
+    <h2>いま動いているもの・次に控えているもの</h2>
+    <p class="note">「実行中」と「未着手」の指示書。担当と実行先、次にやることを書いている。</p>
+    <div class="pb-now" data-draw="now" data-source="tasks"></div>
+  </section>
+
+  <section id="areas">
+    <h2>分野ごとの進み具合</h2>
+    <p class="note">指示書の数を、分野ごとに状態で色分けした。柱 1 は「人が選んだ地点を回る」、柱 2 は「走りながら地図を直して計画し直す」。</p>
+    <div class="pb-legend">
+      <span><i style="background: var(--color-ok)"></i>完了</span>
+      <span><i style="background: var(--color-warn)"></i>実行中</span>
+      <span><i style="background: var(--cds-chart-muted)"></i>未着手</span>
+      <span><i style="background: var(--color-bad)"></i>負の結果・使わない・保留</span>
+    </div>
+    <div class="pb-areas" data-draw="areas" data-source="area_counts"></div>
+  </section>
+
+  <section id="outcomes">
+    <h2>研究 PC の Gazebo での走行結果（030・035、各 3 回）</h2>
+    <p class="note">5 か所の砂浜 × 条件ごとに、3 回の走行の終わり方を並べた。C0 は直す前、C1 は地面の高さの直し（029、今の標準）、C2 は 028b（転倒したので使わない）、C1＋v1 は 034 の不具合の直しを足したもの（035）。0.3 倍、既定の LiDAR。</p>
+    <div class="pb-legend">
+      <span><i style="background: var(--color-ok)"></i>完走</span>
+      <span><i style="background: var(--color-warn)"></i>一部</span>
+      <span><i style="background: var(--cds-chart-muted)"></i>経路なし</span>
+      <span><i style="background: var(--cds-chart-reference)"></i>止まったまま</span>
+      <span><i style="background: var(--color-bad)"></i>転倒</span>
+    </div>
+    <div class="pb-out" data-draw="out" data-source="outcomes"></div>
+  </section>
+
+  <section id="list">
+    <h2>指示書の一覧</h2>
+    <div class="pb-tools">
+      <select class="dash-select" id="f-status" aria-label="状態で絞り込む">
+        <option value="">すべての状態</option>
+        <option value="完了">完了</option>
+        <option value="実行中">実行中</option>
+        <option value="未着手">未着手</option>
+        <option value="負の結果">負の結果</option>
+        <option value="使わない">使わない</option>
+        <option value="保留">保留</option>
+      </select>
+      <select class="dash-select" id="f-owner" aria-label="担当で絞り込む">
+        <option value="">すべての担当</option>
+        <option value="Codex 実装">Codex 実装（クラウド）</option>
+        <option value="研究 PC">研究 PC</option>
+      </select>
+    </div>
+    <div class="pb-tablewrap">
+      <table data-source="tasks" data-row-key="番号" id="task-table">
+        <thead><tr>
+          <th data-field="番号">番号</th>
+          <th data-field="状態">状態</th>
+          <th data-field="内容">内容</th>
+          <th data-field="区分">分野</th>
+          <th data-field="担当">担当</th>
+          <th data-field="結果の要点">結果の要点・次にやること</th>
+          <th data-field="記録">記録</th>
+        </tr></thead>
+        <tbody data-draw="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+const DEADLINE = '2026-12-07';
+const STATUS_CLASS = {'完了': 's-done', '実行中': 's-run', '未着手': 's-todo', '負の結果': 's-neg', '使わない': 's-neg', '保留': 's-neg'};
+const groupOf = (s) => (s === '完了' || s === '実行中' || s === '未着手') ? s : 'その他';
+
+dash.calc('status_counts', {
+  title: '状態ごとの指示書の数',
+  description: '指示書の一覧を状態で数えた。負の結果・使わない・保留は「その他」にまとめる。',
+  inputs: ['tasks'],
+  fn: (tasks) => {
+    const order = ['完了', '実行中', '未着手', 'その他'];
+    const counts = Object.fromEntries(order.map((k) => [k, 0]));
+    for (const t of tasks) counts[(t['状態'] === '完了' || t['状態'] === '実行中' || t['状態'] === '未着手') ? t['状態'] : 'その他'] += 1;
+    return order.map((k) => ({'状態': k, '件数': counts[k]}));
+  }
+});
+
+dash.calc('area_counts', {
+  title: '分野ごと・状態ごとの指示書の数',
+  description: '指示書の一覧を、分野と状態（完了・実行中・未着手・その他）で数えた。',
+  inputs: ['tasks'],
+  fn: (tasks) => {
+    const by = new Map();
+    for (const t of tasks) {
+      const a = t['区分'];
+      if (!by.has(a)) by.set(a, {'区分': a, '完了': 0, '実行中': 0, '未着手': 0, 'その他': 0});
+      const s = t['状態'];
+      by.get(a)[(s === '完了' || s === '実行中' || s === '未着手') ? s : 'その他'] += 1;
+    }
+    return [...by.values()];
+  }
+});
+
+function countDraw(name, key) {
+  dash.draw(name, (el) => {
+    const d = dash.data('status_counts');
+    if (d.status !== 'ok') { el.textContent = '—'; return; }
+    const r = d.data.find((x) => x['状態'] === key);
+    el.textContent = r ? String(r['件数']) : '—';
+  });
+}
+countDraw('k-done', '完了'); countDraw('k-run', '実行中'); countDraw('k-run2', '実行中');
+countDraw('k-todo', '未着手'); countDraw('k-todo2', '未着手'); countDraw('k-neg', 'その他');
+
+dash.draw('deadline', (el) => {
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  const [y, m, d] = DEADLINE.split('-').map(Number);
+  const days = Math.round((Date.UTC(y, m - 1, d) - today) / 86400000);
+  el.textContent = days >= 0 ? `あと ${days} 日` : `${-days} 日過ぎた`;
+});
+
+dash.draw('now', (el) => {
+  const d = dash.data('tasks');
+  el.replaceChildren();
+  if (d.status !== 'ok') { el.textContent = d.status === 'loading' ? '—' : '読み込めなかった'; return; }
+  const rows = d.data.filter((t) => t['状態'] === '実行中' || t['状態'] === '未着手');
+  rows.sort((a, b) => (a['状態'] === b['状態'] ? 0 : a['状態'] === '実行中' ? -1 : 1) || a['番号'].localeCompare(b['番号']));
+  for (const t of rows) {
+    const c = document.createElement('div'); c.className = 'pb-card';
+    const top = document.createElement('div');
+    const p = document.createElement('span'); p.className = 'pill ' + (STATUS_CLASS[t['状態']] || 's-todo'); p.textContent = t['状態'];
+    p.dataset.source = 'tasks'; p.dataset.field = '状態'; p.dataset.where = '番号=' + t['番号'];
+    top.append(p, document.createTextNode('  ' + t['番号'] + '　' + t['担当'] + '・' + t['実行先']));
+    top.className = 'm';
+    const ti = document.createElement('div'); ti.className = 't'; ti.textContent = t['内容'];
+    const m = document.createElement('div'); m.className = 'm'; m.textContent = t['結果の要点'];
+    c.append(top, ti, m); el.append(c);
+  }
+});
+
+function tip(el) {
+  let t = el.querySelector(':scope > .tip');
+  if (!t) { t = document.createElement('div'); t.className = 'tip'; t.hidden = true; el.append(t); }
+  return t;
+}
+
+dash.draw('areas', (el) => {
+  const d = dash.data('area_counts');
+  el.replaceChildren();
+  if (d.status !== 'ok' || !d.data) { el.textContent = '—'; return; }
+  const rows = d.data;
+  const keys = ['完了', '実行中', '未着手', 'その他'];
+  const col = {'完了': 'var(--color-ok)', '実行中': 'var(--color-warn)', '未着手': 'var(--cds-chart-muted)', 'その他': 'var(--color-bad)'};
+  const W = el.clientWidth || 600, rowH = 30;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('height', rows.length * rowH + 24)
+    .attr('role', 'img').attr('aria-label', '分野ごとの指示書の数を、状態で色分けした横棒グラフ');
+  const probe = svg.append('g');
+  const labelW = d3.max(rows, (r) => { const n = probe.append('text').text(r['区分']); const w = n.node().getComputedTextLength(); n.remove(); return w; }) + 12;
+  probe.remove();
+  const total = (r) => keys.reduce((s, k) => s + r[k], 0);
+  const x = d3.scaleLinear().domain([0, d3.max(rows, total)]).range([labelW, W - 30]);
+  const T = tip(el);
+  rows.forEach((r, i) => {
+    const g = svg.append('g').attr('transform', `translate(0,${i * rowH + 4})`);
+    g.append('text').attr('x', labelW - 8).attr('y', 15).attr('text-anchor', 'end').text(r['区分']);
+    let acc = 0;
+    for (const k of keys) {
+      if (!r[k]) continue;
+      g.append('rect').attr('x', x(acc)).attr('y', 3).attr('height', 18).attr('width', Math.max(0, x(acc + r[k]) - x(acc) - 1))
+        .style('fill', col[k])
+        .on('pointermove', (e) => { T.hidden = false; T.textContent = `${r['区分']}：${k} ${r[k]} 件`; const b = el.getBoundingClientRect(); T.style.left = Math.min(e.clientX - b.left + 10, W - 160) + 'px'; T.style.top = (e.clientY - b.top - 30) + 'px'; })
+        .on('pointerleave', () => { T.hidden = true; });
+      acc += r[k];
+    }
+    g.append('text').attr('x', x(acc) + 6).attr('y', 15).text(`${r['完了']}/${acc}`);
+  });
+});
+
+dash.draw('out', (el) => {
+  const d = dash.data('outcomes');
+  el.replaceChildren();
+  if (d.status !== 'ok') { el.textContent = d.status === 'loading' ? '—' : '読み込めなかった'; return; }
+  const rows = d.data.map((r) => ({...r, done: +r['完走'], part: +r['一部'], nop: +r['経路なし'], stuck: +r['止まったまま'], roll: +r['転倒']}));
+  const sites = [...new Set(rows.map((r) => r['砂浜']))];
+  const conds = [...new Set(rows.map((r) => r['条件']))];
+  const parts = [['done', '完走', 'var(--color-ok)'], ['part', '一部', 'var(--color-warn)'], ['nop', '経路なし', 'var(--cds-chart-muted)'], ['stuck', '止まったまま', 'var(--cds-chart-reference)'], ['roll', '転倒', 'var(--color-bad)']];
+  const W = el.clientWidth || 600;
+  const narrow = W < 560;
+  const siteW = narrow ? 0 : 110, rowH = 20, gap = 14;
+  const svg = d3.select(el).append('svg').attr('width', '100%')
+    .attr('role', 'img').attr('aria-label', '5 か所の砂浜で、条件ごとに 3 回の走行の終わり方を色で示した図');
+  const probe = svg.append('g');
+  const condW = d3.max(conds, (c) => { const n = probe.append('text').text(c); const w = n.node().getComputedTextLength(); n.remove(); return w; }) + 10;
+  probe.remove();
+  const x0 = siteW + condW, cell = Math.min(40, (W - x0 - 8) / 3);
+  const T = tip(el);
+  let y = 0;
+  for (const s of sites) {
+    if (narrow) { svg.append('text').attr('x', 0).attr('y', y + 12).style('font-weight', 600).text(s); y += 18; }
+    else svg.append('text').attr('x', 0).attr('y', y + 14).style('font-weight', 600).text(s);
+    for (const c of conds) {
+      const r = rows.find((q) => q['砂浜'] === s && q['条件'] === c);
+      if (!r) continue;
+      svg.append('text').attr('x', siteW).attr('y', y + 14).text(c);
+      let k = 0;
+      for (const [key, lab, color] of parts) for (let n = 0; n < r[key]; n++, k++) {
+        svg.append('rect').attr('x', x0 + k * cell).attr('y', y + 2).attr('width', cell - 3).attr('height', rowH - 4).attr('rx', 2).style('fill', color)
+          .on('pointermove', (e) => { T.hidden = false; T.textContent = `${s}・${c}（${r['実験']}）：完走 ${r.done}・一部 ${r.part}・経路なし ${r.nop}・止まったまま ${r.stuck}・転倒 ${r.roll}`; const b = el.getBoundingClientRect(); T.style.left = Math.max(0, Math.min(e.clientX - b.left + 10, W - 330)) + 'px'; T.style.top = (e.clientY - b.top - 34) + 'px'; })
+          .on('pointerleave', () => { T.hidden = true; });
+      }
+      y += rowH;
+    }
+    y += gap;
+  }
+  svg.attr('height', y);
+});
+
+dash.draw('rows', (tb) => {
+  const d = dash.data('tasks');
+  tb.replaceChildren();
+  if (d.status !== 'ok') return;
+  const fs = document.getElementById('f-status'), fo = document.getElementById('f-owner');
+  const s = fs ? fs.value : '', o = fo ? fo.value : '';
+  const rows = d.data.filter((t) => (!s || t['状態'] === s) && (!o || t['担当'].includes(o)));
+  rows.sort((a, b) => b['番号'].localeCompare(a['番号']));
+  for (const t of rows) {
+    const tr = document.createElement('tr'); tr.dataset.key = t['番号'];
+    const td = (txt, cls) => { const c = document.createElement('td'); if (cls) c.className = cls; c.textContent = txt; return c; };
+    const st = document.createElement('td'); const p = document.createElement('span'); p.className = 'pill ' + (STATUS_CLASS[t['状態']] || 's-todo'); p.textContent = t['状態']; st.append(p);
+    tr.append(td(t['番号'], 'num'), st, td(t['内容']), td(t['区分']), td(t['担当']), td(t['結果の要点'], 'res'), td(t['記録'], 'path'));
+    tb.append(tr);
+  }
+});
+
+for (const id of ['f-status', 'f-owner']) {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('change', () => dash.draw('rows'));
+}
+</script>

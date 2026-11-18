@@ -1,6 +1,6 @@
 # 指示書 016：走りながら計画し直すとき、砂丘の「迷路」で遠回りしすぎる問題への対策
 
-> **状態：未着手**。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/016-deadend`。
+> **状態：完了**（Codex が実装、Claude がまとめてレビューして `realtime-map` に取り込み済み）。最初に `AGENTS.md` と `conference/tasks/BATCH_RULES_ja.md` を読むこと。ブランチは `codex/016-deadend`。
 
 ## 背景
 指示書014の実験（`results/online_mission/`）で、走りながら計画し直す場合でも、48 走行中 1〜2 走行が `too_long`

@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && if [ -f conference/progress/check_board.py ]; then python3 conference/progress/check_board.py; fi"
+          }
+        ]
+      }
+    ]
+  }
+}
