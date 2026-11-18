@@ -60,4 +60,4 @@
 8. **【参考】`pointcloud_map_multi.py` で、出所の履歴を数える処理が `local` 用と `prior` 用で 2 つになった。** 038 でまとめる（`prior` の出力をバイト単位で変えない条件で）。
 
 ## テストの結果
-（下に追記）
+- `conference/tests/` の 32 本（既存 31＋`test_local_speed`）すべてが終了コード 0（`review/all_tests_summary.txt`、`0671d5e` で実行）。

@@ -1,6 +1,6 @@
 # 指示書 040：034・036 のレビューの指摘をまとめて直す
 
-> **状態：未着手**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない。
+> **状態：実行中（2026-11-18 にクラウドの Codex へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/online_safety/REVIEW_ja.md`（034 のレビュー）、`conference/results/local_speed/REVIEW_ja.md`（036 のレビュー）、
 > `conference/tasks/034_online_safety_fixes.md`・`036_local_speed_and_edge_option.md` を読むこと。
 > ブランチは `codex/040-review-fixes`（その時点の `realtime-map` の最新から）。結果は `conference/results/review_fixes/`、報告は同じ場所の `REPORT_ja.md`。
