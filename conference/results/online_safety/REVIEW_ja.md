@@ -73,4 +73,6 @@ Codex の `verification/capture_defaults.py`（ROS を使わずに、非同期�
 所見 1・2 は、Claude が書いた指示書 034 の抜けであり、Codex の実装の誤りではない。
 
 ## テストの結果
-（下に追記）
+- `conference/tests/` の 31 本すべてが終了コード 0（`review_2026-11-18/all_tests_summary.txt`、実行は `realtime-map` の e7f86d5 以降の作業ブランチ）。
+- `test_online_safety` の出力全文は `review_2026-11-18/test_online_safety_log.txt`。報告の再生の表（`none`：受け渡しなし、`v1`：5 点の経路、外の通れないマス 0）と同じ出力だった。
+- クラウドには ROS 2・Gazebo がないので、`test_ros2_gz` などの ROS を使う部分は、ROS なしで確かめられる範囲だけを確かめている（各テストの作りどおり）。
