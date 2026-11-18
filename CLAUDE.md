@@ -10,7 +10,8 @@
 - **重い処理の実行先**：シミュレーション（Gazebo）・GPU の学習・重い評価は、研究 PC「hayashi」が使えるときは研究 PC で実行する
   （接続・環境・実験の決まりは `conference/RESEARCH_PC_ja.md`）。必要なら研究 PC の上でも Claude Code や Codex を起動し、
   動作の確認・実験の実行・その場での修正に使う。
-- 研究 PC の担当は、Mac の Claude Code のチャットから `ssh hayashi` で研究 PC を操作している。研究 PC 向けの依頼文は、そのチャットに貼ってもらう。
+- 研究 PC の担当は、**Mac の Codex デスクトップアプリ**（プロジェクト `thesis_Bunker`、ローカル）から `ssh hayashi` で研究 PC を操作している（2026-11-18 に Mac の Claude Code から移した。Codex の方がトークンに余裕があるため）。研究 PC 向けの依頼文は、その Codex のチャットに貼ってもらう。
+  SSH・git fetch・push は Codex のサンドボックスの外での実行（確認）が要ることがある。長い実験は「始めて報告 → あとで『〇〇の続き』で集計して報告」の 2 回に分けて頼む。
 - クラウドのセッション（claude.ai/code）からは研究 PC に届かない（Tailscale の外）。その場合は依頼文を書いて利用者に渡す。
   PC が使えない場合は報告し、代わりの実行先を相談する。
 

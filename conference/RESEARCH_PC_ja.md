@@ -5,7 +5,7 @@
 この文書は利用者が確認した情報（2026-11-07 時点。同日、Mac からの公開鍵認証を設定）。変わったら更新すること。
 
 ## 研究 PC の位置づけ
-- **研究 PC の担当は、Mac の Claude Code のチャットから `ssh hayashi` で研究 PC を操作する**形で動いている（2026-11 時点）。研究 PC には GitHub の認証情報を置かないので、push は研究 PC のコミットを Mac に取り込んでから Mac で行う。
+- **研究 PC の担当は、Mac の Codex デスクトップアプリから `ssh hayashi` で研究 PC を操作する**形で動いている（2026-11-18 から。それまでは Mac の Claude Code）。Mac のリポジトリは `/Users/kotaro/lab/thesis_Bunker`。研究 PC には GitHub の認証情報を置かないので、push は研究 PC のコミットを Mac に取り込んでから Mac で行う。
 - 研究 PC は**重い処理の実行先**であり、Claude の作業場所を全面的に移すものではない。役割分担は `CLAUDE.md` を参照
   （窓口は Mac の Claude デスクトップアプリ、実装は主に Codex、依頼文と報告の受け渡しは利用者が手で行う）。
 - 研究 PC で行うこと：シミュレーション（Gazebo）・GPU の学習・重い評価。必要なら研究 PC の上で Claude Code や Codex を起動し、
