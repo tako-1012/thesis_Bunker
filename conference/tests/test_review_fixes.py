@@ -263,7 +263,7 @@ def test_window():
     print('B6 PASS: the box is detected with support 0.70m from its centre')
 
 
-def test_multiscan():
+def compare_scans(label, shape, scans, *, check_lethal=None):
     from tapp import local_ground
     from tapp.pointcloud_map_multi import PointCloudMapMulti
     from tapp.sensor_geometry import REAL_MOUNTS
@@ -272,27 +272,59 @@ def test_multiscan():
 
     old_update = baseline_module('local_ground').update_local
     old_mapper = baseline_module('pointcloud_map_multi').PointCloudMapMulti
-    prior = np.zeros((401, 401))
+    prior = np.zeros(shape)
     maps = [cls(prior, obstacle_reference='local') for cls in (old_mapper, PointCloudMapMulti)]
-    angle = np.tile(np.linspace(-np.pi, np.pi, 1800, endpoint=False), 16)
-    radii = np.repeat(np.linspace(4.2, 22., 16), 1800)
-    boxes = [(110, 100), (118, 103), (126, 97), (134, 101), (142, 99), (150, 104)]
-    rng = np.random.default_rng(7)
-    print('B7 scan fine_diff coarse_diff lethal_diff', flush=True)
-    for scan in range(12):
-        pose = np.array([100.+4*scan, 100., 0., 0., 0., 0.])
-        distance = radii+rng.normal(0., .08, len(angle))
-        x, y = pose[0]+distance*np.cos(angle), pose[1]+distance*np.sin(angle)
-        z = .03*x+.02*y+.15*np.sin(x/3)*np.cos(y/4)
-        for bx, by in boxes:
-            z[(abs(x-bx) < .5) & (abs(y-by) < .5)] += .4
-        points = local_cloud(np.column_stack((x, y, z)), pose, REAL_MOUNTS['lidar'])
+    print(f'B7 {label} scan fine_diff coarse_diff lethal_diff', flush=True)
+    for scan, (xyz, pose) in enumerate(scans):
+        points = local_cloud(xyz, pose, REAL_MOUNTS['lidar'])
         with patch.object(local_ground, 'update_local', old_update):
             maps[0].update(points, pose, sensor='lidar')
         maps[1].update(points, pose, sensor='lidar')
         lethal = int(np.count_nonzero(maps[0].lethal != maps[1].lethal))
         print(scan, *mask_differences(*maps), lethal, flush=True)
-        assert lethal == 0
+        if check_lethal is not None:
+            assert lethal == 0
+            check_lethal(scan, maps)
+
+
+def test_multiscan():
+    # One return per fine cell per scan. Three scans are needed to
+    # accumulate the three high returns required for obstacle detection.
+    coordinates = 3.01 + .1*np.arange(41)
+    x, y = np.meshgrid(coordinates, coordinates, indexing='ij')
+    box = (abs(x-5.) < .25) & (abs(y-5.) < .25)
+    xyz = np.column_stack((x.ravel(), y.ravel(), np.where(box, .4, 0.).ravel()))
+
+    def scans():
+        for scan in range(12):
+            yield xyz, np.array([2.+.05*scan, 5., 0., 0., 0., 0.])
+
+    def check_history(scan, maps):
+        for mapper in maps:
+            assert bool(mapper.detected_obstacle[10, 10]) == (scan >= 2)
+            assert bool(mapper.lethal[10, 10]) == (scan >= 2)
+
+    compare_scans('controlled', (24, 24), scans(), check_lethal=check_history)
+
+
+def audit_review_multiscan():
+    """Record every scan from the review fixture, including transient differences."""
+    angle = np.tile(np.linspace(-np.pi, np.pi, 1800, endpoint=False), 16)
+    radii = np.repeat(np.linspace(4.2, 22., 16), 1800)
+    boxes = [(110, 100), (118, 103), (126, 97), (134, 101), (142, 99), (150, 104)]
+    rng = np.random.default_rng(7)
+
+    def scans():
+        for scan in range(12):
+            pose = np.array([100.+4*scan, 100., 0., 0., 0., 0.])
+            distance = radii+rng.normal(0., .08, len(angle))
+            x, y = pose[0]+distance*np.cos(angle), pose[1]+distance*np.sin(angle)
+            z = .03*x+.02*y+.15*np.sin(x/3)*np.cos(y/4)
+            for bx, by in boxes:
+                z[(abs(x-bx) < .5) & (abs(y-by) < .5)] += .4
+            yield np.column_stack((x, y, z)), pose
+
+    compare_scans('review', (401, 401), scans())
 
 
 def test_sparse_planes():
@@ -418,6 +450,7 @@ def test_v2_configuration():
 
 if __name__ == '__main__':
     for test in (test_legacy_bytes, test_repeat_tilt, test_duplicate_segments, test_remaining_path,
-                 test_window, test_sparse_planes, test_reference_hashes, test_v2_configuration, test_world_and_summary, test_multiscan):
+                 test_window, test_sparse_planes, test_reference_hashes, test_v2_configuration, test_world_and_summary, test_multiscan,
+                 audit_review_multiscan):
         test()
     print('all task040 review-fix tests passed')
