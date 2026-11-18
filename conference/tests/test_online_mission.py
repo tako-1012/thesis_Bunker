@@ -295,6 +295,7 @@ def test_follower_adapter():
             states = []
             clock = [0.0]
             node.online = online
+            node.safety_enabled = False
             node.map_id = "fixture"
             node.pose = [5.0, 5.0, 0.0, 0.0, 0.0, 0.0]
             node.imu = None

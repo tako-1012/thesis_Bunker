@@ -242,7 +242,7 @@ def test_ros_follower_recovery():
             spec=importlib.util.spec_from_file_location('thesis_bunker_mission._safety_follower_fixture',path)
             module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             node=module.PathFollower.__new__(module.PathFollower)
-            node.online=True;node.online_fixes='v1';node.map_id='fixture'
+            node.online=True;node.online_fixes='v1';node.safety_enabled=True;node.map_id='fixture'
             node.pose=[2.,2.,0.,0.,0.,0.];node.imu=None;node.log=None;node.follower=None
             node.current_mission=None;node.n_replans=0;node.mission_id=0
             clock=[.1];states=[];velocities=[]

@@ -12,8 +12,6 @@ from scipy.spatial import cKDTree
 from .config import RESOLUTION
 from .pointcloud_map import transform_points
 from .pointcloud_map_fine import FINE_RESOLUTION, RATIO
-from .traversability import TraversabilityMap
-from .footprint import inflate_steep
 
 WINDOW_M = 1.5
 TRIM_M = .15
@@ -25,7 +23,7 @@ def fine_cells(points):
     return coarse*RATIO+np.clip(offset, 0, RATIO-1)
 
 
-def local_planes(support, queries):
+def local_planes(support, queries, *, max_grid_cells=5_000_000):
     """Fit at 0.1m cell centres and evaluate each plane at the actual query."""
     heights = np.full(len(queries), np.nan)
     if not len(support) or not len(queries):
@@ -46,7 +44,7 @@ def local_planes(support, queries):
     shape = tuple(upper-lower+1)
     # Bound the lookup allocation for widely separated input points.
     grid = None
-    if shape[0]*shape[1] <= 5_000_000:
+    if shape[0]*shape[1] <= max_grid_cells:
         grid = np.full(shape, -1, np.int32)
         grid[tuple((minimum_ids-lower).T)] = np.arange(len(minima))
         window = (offsets[:, None]*shape[1]+offsets).ravel()
@@ -133,11 +131,10 @@ def update_local(mapper, sensor_points, pose):
     inside = ((cells >= 0) & (cells < mapper.prior.shape)).all(axis=1)
     world, cells = world[inside], cells[inside]
     with mapper._update_lock:
-        with mapper._lock:
-            elev, seen = mapper.elev.copy(), mapper.seen.copy()
+        mapper._last_new_obstacles = []
         mapper._last_local_high = np.zeros(len(world), bool)
         if len(cells):
-            flat = np.ravel_multi_index(cells.T, elev.shape)
+            flat = np.ravel_multi_index(cells.T, mapper.prior.shape)
             order = np.argsort(flat, kind='stable')
             touched, starts = np.unique(flat[order], return_index=True)
             for key, incoming in zip(touched, np.split(world[order], starts[1:])):
@@ -146,8 +143,8 @@ def update_local(mapper, sensor_points, pose):
                 mapper._local_points[int(key)] = history[-mapper.samples_per_cell:].copy()
 
             # Off-centre queries can reach two neighbouring coarse bins.
-            coarse = np.column_stack(np.unravel_index(touched, elev.shape))
-            touched_mask = np.zeros(elev.shape, bool)
+            coarse = np.column_stack(np.unravel_index(touched, mapper.prior.shape))
+            touched_mask = np.zeros(mapper.prior.shape, bool)
             touched_mask.flat[touched] = True
             support_keys = np.flatnonzero(maximum_filter(touched_mask, size=5, mode='constant'))
             support = np.concatenate([mapper._local_points[k] for k in support_keys if k in mapper._local_points])
@@ -181,20 +178,12 @@ def update_local(mapper, sensor_points, pose):
             high = ground_z[ground_order[offsets+counts//2]]
             height[groups] = (low+high)/2
             known = np.isfinite(height)
-            elev.flat[touched[known]] = height[known]
-            seen.flat[touched] = True
 
             high_ids = fine_ids[values[:, 1] >= mapper.obstacle_height_m]
             unique, counts = np.unique(high_ids, return_counts=True)
             new = unique[(counts >= mapper.min_obstacle_points) & ~mapper.fine_obstacle.flat[unique]]
             mapper._add_obstacles(new.tolist())
-            tm = TraversabilityMap(elev, mapper.raw_obstacle, mapper.robot, mapper.weights)
-            tm.rock |= mapper._inflated_coarse
-            tm.lethal = tm.rock | tm.steep
-            lethal = inflate_steep(tm, mapper.robot.footprint_radius)
-            with mapper._lock:
-                mapper.elev, mapper.seen, mapper.tm, mapper.lethal = elev, seen, tm, lethal
-                mapper.version += 1
+            mapper._publish(touched[known], height[known], observed=touched)
         with mapper._lock:
             result = dict(version=mapper.version, input_points=len(points), accepted_points=len(cells),
                           observed_cells=int(mapper.seen.sum()))

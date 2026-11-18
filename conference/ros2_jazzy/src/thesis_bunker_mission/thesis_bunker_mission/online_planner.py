@@ -34,7 +34,7 @@ class OnlinePlannerNode(Node):
             prior,
             radius_m=self.get_parameter("sense_radius_m").value,
             prior_lethal_mode=mode,
-            **(dict(online_fixes='v1') if fixes == 'v1' else {}),
+            **(dict(online_fixes=fixes) if fixes != 'none' else {}),
         )
         self.pose = None
         self.received = None
