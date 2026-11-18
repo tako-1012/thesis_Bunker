@@ -63,4 +63,4 @@ Codex のテストにある比べ方（`capture_compatibility`：034 の `captur
 所見 1・3・5 は、041 で `online_safety` を触るときにまとめて直す。
 
 ## テストの結果
-（下に追記）
+- 040 だけの状態（`421ec31`）で、`conference/tests/` の 33 本すべてが終了コード 0（`all_tests_summary.txt`）。038 と合わせた状態の結果は `map_speed/REVIEW_ja.md` の末尾。
