@@ -71,7 +71,7 @@ class LidarPlannerNode(OnlinePlannerNode):
         self.runtime = creator(prior, self.mapper, plan_log=self.folder / 'plans.csv',
             endpoint_policy=self.get_parameter('endpoint_policy').value,
             diagnostics=self.get_parameter('diagnostics').value,
-            **(dict(online_fixes='v1') if fixes == 'v1' else {}))
+            **(dict(online_fixes=fixes) if fixes != 'none' else {}))
         self.poses = PoseBuffer()
         self.map_pool = ThreadPoolExecutor(max_workers=1)
         self.pending = self.future = None

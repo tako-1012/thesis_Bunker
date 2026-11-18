@@ -25,7 +25,7 @@ def fine_cells(points):
     return coarse*RATIO+np.clip(offset, 0, RATIO-1)
 
 
-def local_planes(support, queries):
+def local_planes(support, queries, *, max_grid_cells=5_000_000):
     """Fit at 0.1m cell centres and evaluate each plane at the actual query."""
     heights = np.full(len(queries), np.nan)
     if not len(support) or not len(queries):
@@ -46,7 +46,7 @@ def local_planes(support, queries):
     shape = tuple(upper-lower+1)
     # Bound the lookup allocation for widely separated input points.
     grid = None
-    if shape[0]*shape[1] <= 5_000_000:
+    if shape[0]*shape[1] <= max_grid_cells:
         grid = np.full(shape, -1, np.int32)
         grid[tuple((minimum_ids-lower).T)] = np.arange(len(minima))
         window = (offsets[:, None]*shape[1]+offsets).ravel()

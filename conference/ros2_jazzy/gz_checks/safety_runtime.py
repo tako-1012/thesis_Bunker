@@ -50,9 +50,9 @@ def make_safety_lidar_runtime(prior, mapper, *, online_fixes='none', **kwargs):
     if online_fixes == 'none':
         return make_lidar_runtime(prior, mapper, **kwargs)
     if kwargs.get('endpoint_policy', 'none') != 'none':
-        raise ValueError('online fixes v1 uses endpoint-policy none; task028 is unchanged')
+        raise ValueError(f'online fixes {online_fixes} uses endpoint-policy none; task028 is unchanged')
     diagnostics = kwargs.pop('diagnostics', False)
     kwargs.pop('endpoint_policy', None)
     if diagnostics:
-        return SafetyDiagnosticRuntime(prior, mapper, endpoint_policy='none', diagnostics=True, **kwargs)
-    return SafetyLidarOnlineMission(prior, mapper, **kwargs)
+        return SafetyDiagnosticRuntime(prior, mapper, endpoint_policy='none', diagnostics=True, online_fixes=online_fixes, **kwargs)
+    return SafetyLidarOnlineMission(prior, mapper, online_fixes=online_fixes, **kwargs)

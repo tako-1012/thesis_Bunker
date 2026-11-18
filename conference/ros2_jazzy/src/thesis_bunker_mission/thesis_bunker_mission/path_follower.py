@@ -24,6 +24,7 @@ class PathFollower(Node):
         self.declare_parameter('online_fixes', online_fixes)
         from tapp.online_safety import validate_fixes
         self.online_fixes = validate_fixes(self.get_parameter('online_fixes').value)
+        self.safety_enabled = self.online_fixes != 'none'
         self.online = self.get_parameter("online").value
         self.current_mission = None
         self.n_replans = 0
@@ -79,7 +80,7 @@ class PathFollower(Node):
                 return
             if self.online and mission.get("online_error"):
                 if self.log is not None and mission.get("id") == self.mission_id:
-                    if getattr(self, 'online_fixes', 'none') == 'v1':
+                    if self.safety_enabled:
                         self.log.mission['online_error'] = mission['online_error']
                     record_plan_history(self.log, mission)
                 if int(mission.get("id", 0)) != self.mission_id:
@@ -109,15 +110,15 @@ class PathFollower(Node):
                     settings,
                     self.get_clock().now().nanoseconds / 1e9,
                     previous=self.follower,
-                    **(dict(online_fixes='v1') if getattr(self, 'online_fixes', 'none') == 'v1' else {}),
+                    **(dict(online_fixes=self.online_fixes) if self.safety_enabled else {}),
                 )
                 self.current_mission = mission
                 self.n_replans = mission["n_replans"]
                 self.last_status = "running"
                 return
-            if getattr(self, 'online_fixes', 'none') == 'v1':
+            if self.safety_enabled:
                 from tapp.online_safety import make_follower
-                follower = make_follower(mission['path'], online_fixes='v1', **settings)
+                follower = make_follower(mission['path'], online_fixes=self.online_fixes, **settings)
             else:
                 follower = MissionFollower(mission["path"], **settings)
             self.stop("replaced")
@@ -151,7 +152,7 @@ class PathFollower(Node):
             payload.update(
                 current_path=self.current_mission["path"], n_replans=self.n_replans
             )
-            if getattr(self, 'online_fixes', 'none') == 'v1':
+            if self.safety_enabled:
                 payload['safety_revision'] = self.current_mission.get('revision', 0)
         message.data = json.dumps(payload)
         self.state.publish(message)
@@ -167,7 +168,7 @@ class PathFollower(Node):
         if self.started is None:
             self.started = now
         try:
-            if getattr(self, 'online_fixes', 'none') == 'v1':
+            if self.safety_enabled:
                 v, w, done = self.follower.step(now, self.pose, imu_rpy=self.imu)
             else:
                 v, w, done = self.follower.step(
@@ -183,7 +184,7 @@ class PathFollower(Node):
         self.cmd.publish(command)
         self.log.write(self.follower.log_row(now, self.pose, self.imu, v, w))
         status = self.follower.status
-        if getattr(self, 'online_fixes', 'none') == 'v1' and status in ('unsafe_tilt', 'off_path'):
+        if self.safety_enabled and status in ('unsafe_tilt', 'off_path'):
             if self.last_status != status:
                 from .online_safety import append_event
                 append_event(self.log.folder/'safety_stops.csv', now, status,
