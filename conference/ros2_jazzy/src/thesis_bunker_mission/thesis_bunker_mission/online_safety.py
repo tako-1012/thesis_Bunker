@@ -2,6 +2,7 @@
 
 import csv
 import json
+import math
 import time
 from pathlib import Path
 import numpy as np
@@ -25,8 +26,8 @@ def append_event(path, sim_time, event, detail):
 
 class SafetyRuntimeMixin:
     """Worker state is touched only after its old future has finished."""
-    def __init__(self, *args, **kwargs):
-        self.online_fixes = 'v1'
+    def __init__(self, *args, online_fixes='v1', **kwargs):
+        self.online_fixes = online_fixes
         plan_log = kwargs.get('plan_log')
         self.safety_log = Path(plan_log).parent/'safety_events.csv' if plan_log else None
         self.safety_events = []
@@ -34,6 +35,9 @@ class SafetyRuntimeMixin:
         self._safety_hold = False
         self._safety_request = None
         self._safety_now = 0.
+        self._last_tilt = None
+        self._repeat_tilt_interval = None
+        self._last_plan_history = []
         super().__init__(*args, **kwargs)
 
     def start(self, mission):
@@ -41,15 +45,19 @@ class SafetyRuntimeMixin:
         self._join_since = None
         self._safety_hold = False
         self._safety_request = None
+        self._last_tilt = None
+        self._repeat_tilt_interval = None
+        self._last_plan_history = []
         self.safety_events = []
 
-    def record_safety(self, event, **detail):
-        record = dict(sim_time=self._safety_now, event=event, detail=detail)
+    def record_safety(self, event, *, sim_time=None, **detail):
+        sim_time = self._safety_now if sim_time is None else sim_time
+        record = dict(sim_time=sim_time, event=event, detail=detail)
         self.safety_events.append(record)
         if self.safety_log is not None:
-            append_event(self.safety_log, self._safety_now, event, detail)
+            append_event(self.safety_log, sim_time, event, detail)
 
-    def safety_stop(self, status, *, revision=None):
+    def safety_stop(self, status, *, revision=None, sim_time=None):
         if status not in SAFETY_STATES or self.finished or self._safety_hold:
             return
         if revision is not None and revision != self.sent:
@@ -57,7 +65,18 @@ class SafetyRuntimeMixin:
         self._safety_hold = True
         self._safety_request = status
         self.version += 1  # Discard an in-flight pre-stop path.
-        self.record_safety(status, revision=self.sent)
+        if self.online_fixes == 'v2' and status == 'unsafe_tilt':
+            now = (float(sim_time) if isinstance(sim_time, (int, float)) and math.isfinite(sim_time)
+                   else self._safety_now)
+            if self._last_tilt is not None:
+                elapsed = now-self._last_tilt
+                if 0 <= elapsed <= JOIN_TIMEOUT_S:
+                    self._repeat_tilt_interval = elapsed
+                    self._safety_request = None
+            self._last_tilt = now
+            self.record_safety(status, sim_time=now, revision=self.sent)
+        else:
+            self.record_safety(status, revision=self.sent)
 
     def _join(self, state, result, position):
         planner = state['planner']
@@ -105,6 +124,11 @@ class SafetyRuntimeMixin:
 
     def tick(self, position, sim_time):
         self._safety_now = float(sim_time)
+        if not self.finished and self._repeat_tilt_interval is not None:
+            self.record_safety('unsafe_tilt_repeat', duration_s=self._repeat_tilt_interval)
+            self.finished = True
+            return dict(self.state['mission'], online_generated=True, online_error='unsafe_tilt',
+                        plan_history=self._last_plan_history)
         if (not self.finished and self._join_since is not None
                 and sim_time-self._join_since >= JOIN_TIMEOUT_S):
             self.record_safety('join_rejected_timeout', duration_s=sim_time-self._join_since)
@@ -127,6 +151,9 @@ class SafetyRuntimeMixin:
             self.record_safety('safety_replan_requested', reason=self._safety_request, position=list(position))
             self._safety_request = None
         command = super().tick(position, sim_time)
+        if command and 'revision' in command and self.online_fixes == 'v2':
+            # Keep the published history so termination need not read worker state.
+            self._last_plan_history = command['plan_history']
         if command and command.get('reason') in SAFETY_STATES:
             self.record_safety('safety_replanned', reason=command['reason'], revision=command['revision'])
         return command
@@ -162,14 +189,15 @@ class SafetyAsyncOnlineMission(SafetyRuntimeMixin, AsyncOnlineMission):
 
 def make_async_runtime(*args, online_fixes='none', **kwargs):
     validate_fixes(online_fixes)
-    cls = SafetyAsyncOnlineMission if online_fixes == 'v1' else AsyncOnlineMission
-    return cls(*args, **kwargs)
+    if online_fixes == 'none':
+        return AsyncOnlineMission(*args, **kwargs)
+    return SafetyAsyncOnlineMission(*args, online_fixes=online_fixes, **kwargs)
 
 
 def handle_safety_state(runtime, state):
-    if (getattr(runtime, 'online_fixes', 'none') == 'v1' and runtime.state
+    if (getattr(runtime, 'online_fixes', 'none') != 'none' and runtime.state
             and state.get('mission_id') == runtime.state['mission'].get('id')
             and state.get('status') in SAFETY_STATES):
-        runtime.safety_stop(state['status'], revision=state.get('safety_revision'))
+        runtime.safety_stop(state['status'], revision=state.get('safety_revision'), sim_time=state.get('sim_time'))
         return True
     return False

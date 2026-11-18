@@ -8,7 +8,7 @@ from .follower import MissionFollower
 from .online_mission import OnlinePlanner
 from .pure_pursuit import path_distance
 
-ONLINE_FIXES = ('none', 'v1')
+ONLINE_FIXES = ('none', 'v1', 'v2')
 JOIN_TIMEOUT_S = 10.
 OFF_PATH_M = .75
 SAFETY_STATES = ('unsafe_tilt', 'off_path')
@@ -26,13 +26,15 @@ class SafetyOnlinePlanner(OnlinePlanner):
         self.pending_changed = None
 
     def observe(self, mask, cost, lethal):
-        known = None if self.known is None else self.known.copy()
-        old = None if known is None else self.lethal.copy()
+        mask = np.asarray(mask, bool)
+        previously_free = None
+        if self.known is not None and mask.shape == self.known.shape:
+            previously_free = self.known[mask] & ~self.lethal[mask]
         new = super().observe(mask, cost, lethal)
         if self.pending_changed is None:
             self.pending_changed = np.zeros(self.known.shape, bool)
-        if known is not None:
-            self.pending_changed |= np.asarray(mask, bool) & known & ~old & self.lethal
+        if previously_free is not None:
+            self.pending_changed[mask] |= previously_free & self.lethal[mask]
         return new
 
     def _plan(self, reason, initial=False):
@@ -62,6 +64,9 @@ class SafetyOnlinePlanner(OnlinePlanner):
 
 
 class SafetyMissionFollower(MissionFollower):
+    def _path_distance(self, xy):
+        return path_distance(xy, self.controller.path)
+
     def step(self, t, pose, *, imu_rpy=None):
         pose = np.asarray(pose, float)
         if pose.shape not in ((3,), (6,)) or not np.isfinite(pose).all() or not math.isfinite(t):
@@ -80,7 +85,7 @@ class SafetyMissionFollower(MissionFollower):
         if self.status == 'running':
             if (np.abs(tilt) > math.radians(Robot().max_slope_deg)).any():
                 self.status = 'unsafe_tilt'
-            elif path_distance(xy_yaw[:2], self.controller.path) > OFF_PATH_M:
+            elif self._path_distance(xy_yaw[:2]) > OFF_PATH_M:
                 self.status = 'off_path'
         if self.status in SAFETY_STATES:
             self._last_t = t
@@ -88,7 +93,24 @@ class SafetyMissionFollower(MissionFollower):
         return super().step(t, xy_yaw)
 
 
+class RemainingPathFollower(SafetyMissionFollower):
+    def _path_distance(self, xy):
+        controller = self.controller
+        # Pure Pursuit retains forward-only arc-length progress per revision.
+        # Keep the current segment and all future segments in the distance test.
+        index = np.searchsorted(controller.arc, controller.progress, side='right') - 1
+        path = controller.path[index:]
+        delta = np.diff(path, axis=0)
+        squared = np.sum(delta**2, axis=1)
+        valid = squared > 0
+        if not valid.any():
+            return float(np.linalg.norm(xy-path[0]))
+        start, delta = path[:-1][valid], delta[valid]
+        fraction = np.clip(np.sum((xy-start)*delta, axis=1)/squared[valid], 0, 1)
+        return float(np.linalg.norm(xy-start-fraction[:, None]*delta, axis=1).min())
+
+
 def make_follower(*args, online_fixes='none', **kwargs):
     validate_fixes(online_fixes)
-    cls = SafetyMissionFollower if online_fixes == 'v1' else MissionFollower
+    cls = {'none': MissionFollower, 'v1': SafetyMissionFollower, 'v2': RemainingPathFollower}[online_fixes]
     return cls(*args, **kwargs)

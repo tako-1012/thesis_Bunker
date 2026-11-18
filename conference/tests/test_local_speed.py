@@ -2,13 +2,13 @@
 
 from collections import defaultdict
 import csv
+import importlib.util
 import json
 import os
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
-from types import ModuleType
 from unittest.mock import patch
 
 import numpy as np
@@ -20,15 +20,16 @@ from tapp.sensor_geometry import REAL_MOUNTS
 from tests.test_prior_free import ROOT, cloud, errors, mapper_for, test_default_bytes, update
 from tests.test_real_sensors import local_cloud
 
-BASE_COMMIT = '5f36770263decd3190c119cd6b2273518e8c336e'
 UNCHANGED = {'08OB86_-0205', '08OB88_-1417', '08OB88_-0167', '08OB88_00332', '08OB89_-0847'}
 
 
 def baseline_module(name):
-    source = subprocess.check_output(
-        ['git', 'show', f'{BASE_COMMIT}:conference/tapp/{name}.py'], cwd=ROOT)
-    module = ModuleType(f'tapp.{name}_032')
-    exec(compile(source, f'{name}_032.py', 'exec'), vars(module))
+    # Keep the reference files byte-identical to 5f36770; load with the
+    # original package context so their relative tapp imports resolve.
+    source = ROOT/'tests/reference'/f'{name}_032.py'
+    spec = importlib.util.spec_from_file_location(f'tapp.{name}_032', source)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
     return module
 
 

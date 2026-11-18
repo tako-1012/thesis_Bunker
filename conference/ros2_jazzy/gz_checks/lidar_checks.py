@@ -79,8 +79,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if patch_count not in (3, 10):
         raise ValueError('run the first three beaches before extending to ten')
     validate_fixes(online_fixes)
-    if online_fixes == 'v1' and endpoint_policy != 'none':
-        raise ValueError('online fixes v1 requires endpoint-policy none; task028 unchanged')
+    if online_fixes != 'none' and endpoint_policy != 'none':
+        raise ValueError(f'online fixes {online_fixes} requires endpoint-policy none; task028 unchanged')
     if (obstacle_reference not in OBSTACLE_REFERENCES or debris_box_height not in DEBRIS_BOX_HEIGHTS
             or prior_variant_name not in PRIOR_VARIANTS):
         raise ValueError('unknown task032 option')
@@ -172,13 +172,47 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                 mask='leave water and nodata heights unchanged')
         elif prior_variant_name == 'none':
             manifest['prior_definition'] = 'all heights flattened to median valid land elevation; only water/nodata raw flags retained'
-    if online_fixes == 'v1':
+    if online_fixes != 'none':
         from tapp.config import Robot
-        manifest.update(online_fixes='v1', online_safety=dict(join_timeout_sim_s=JOIN_TIMEOUT_S,
+        manifest.update(online_fixes=online_fixes, online_safety=dict(join_timeout_sim_s=JOIN_TIMEOUT_S,
                         max_tilt_deg=Robot().max_slope_deg, off_path_m=OFF_PATH_M,
                         endpoint_policy='none', parameters='fixed before evaluation; no tuning'))
+        if online_fixes == 'v2':
+            manifest['online_safety'].update(unsafe_tilt_repeat_sim_s=JOIN_TIMEOUT_S,
+                                             off_path_scope='current and remaining segments; ignore zero-length segments')
     save_manifest(output, manifest)
     return manifest
+
+
+def case_world_inputs(case, meta, manifest, *, matched_world=False):
+    """Resolve world inputs using the selected map method and explicit matching."""
+    patch = case['patch']
+    truth = build_real(patch, 200, 0, debris=True, dataset='shizuoka_beach_las')
+    prior = build_real(patch, 200, 0, dataset='shizuoka_beach_las')
+    if matched_world or manifest.get('map_method') == 'fine':
+        truth, prior, case['world_reference'] = matched_task022_maps(patch, truth, prior)
+    case['input_audit'] = verify_inputs(patch, meta, truth, prior)
+    return truth, prior
+
+
+def summarize_edge_margin(output, manifest):
+    """Use task023 aggregation only when its cached controls are comparable."""
+    if manifest.get('map_method') != 'fine':
+        reason = 'the task023 report requires --map fine'
+    elif (manifest.get('online_fixes', 'none') != 'none' or manifest.get('prior_free_protocol')
+          or manifest.get('ground_estimate', 'all_returns') != 'all_returns'
+          or manifest.get('endpoint_protocol') or manifest.get('sensors', 'legacy') != 'legacy'):
+        reason = 'opt-in conditions require separate evaluation from task023'
+    elif (manifest['real_time_factor'], manifest['stale_timeout_s'], manifest['terrain_visual']) != (.3, 1., 'triangle_mesh'):
+        reason = 'simulation settings differ from task023'
+    else:
+        from experiments.lidar_fine_report import BASELINE as fine_baseline, summarize
+        archived = json.loads((fine_baseline/'manifest.json').read_text())
+        if manifest['scenarios'] == archived['scenarios']:
+            summarize(output)
+            return
+        reason = 'the waypoint cohort differs from the cached task022 controls'
+    print(f'Task036 task023 aggregation skipped: {reason}. Manifest and available raw results: {output}')
 
 
 def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
@@ -193,7 +227,6 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
 
     output = Path(output).resolve()
     manifest = prepare_cases(output, **kwargs)
-    matched_world = matched_world or bool(manifest.get('edge_margin_m'))
     if matched_world:
         manifest['world_input'] = 'task022 actual-run evaluation_reference.npz elevation and unchanged raw masks'
     # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
@@ -288,11 +321,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 try:
                     folder = Path(temporary)/case['patch']
                     folder.mkdir()
-                    truth = build_real(case['patch'], 200, 0, debris=True, dataset='shizuoka_beach_las')
-                    prior = build_real(case['patch'], 200, 0, dataset='shizuoka_beach_las')
-                    if matched_world or manifest.get('map_method') == 'fine':
-                        truth, prior, case['world_reference'] = matched_task022_maps(case['patch'], truth, prior)
-                    case['input_audit'] = verify_inputs(case['patch'], meta, truth, prior)
+                    truth, prior = case_world_inputs(case, meta, manifest, matched_world=matched_world)
                     if manifest.get('prior_variant', 'exact') != 'exact':
                         prior, case['prior_variant_statistics'] = prior_variant(prior, manifest['prior_variant'])
                         # Never seed a no-prior/perturbed run with the old exact
@@ -363,9 +392,9 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
                         commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
-                    if manifest.get('online_fixes', 'none') == 'v1':
+                    if manifest.get('online_fixes', 'none') != 'none':
                         for command in commands[-2:]:
-                            command.extend(['-p', 'online_fixes:=v1'])
+                            command.extend(['-p', 'online_fixes:='+manifest['online_fixes']])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
                         commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
                     for i, command in enumerate(commands):
@@ -421,6 +450,16 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if manifest.get('edge_margin_m'):
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task036 trial errors; inspect manifest')
+                summarize_edge_margin(output, manifest)
+                return
+            if manifest.get('online_fixes') == 'v2':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task040 trial errors; inspect manifest')
+                print('Task040 raw results saved; evaluate online safety separately:', output)
+                return
             if manifest.get('online_fixes') == 'v1':
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task034 trial errors; inspect manifest')
@@ -445,11 +484,6 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('some real sensor trials could not run; inspect manifest')
                 print('Task027 raw results saved; legacy task023 aggregation is not applicable:', output)
-                return
-            if manifest.get('edge_margin_m'):
-                if manifest['execution'] == 'finished_with_errors':
-                    raise RuntimeError('task036 trial errors; inspect manifest')
-                print('Task036 raw results saved:', output)
                 return
             if manifest.get('map_method') == 'fine':
                 from experiments.lidar_fine_report import summarize
@@ -485,6 +519,12 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('edge_margin_m'):
+            summarize_edge_margin(output, manifest)
+            return
+        if manifest.get('online_fixes') == 'v2':
+            print('Task040 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('online_fixes') == 'v1':
             print('Task034 preparation only; Gazebo not executed:', output)
             return
@@ -499,9 +539,6 @@ def main():
             return
         if manifest.get('sensors', 'legacy') != 'legacy':
             print('Task027 preparation only; Gazebo not executed:', output)
-            return
-        if manifest.get('edge_margin_m'):
-            print('Task036 preparation only:', output)
             return
         if manifest.get('map_method') == 'fine':
             from experiments.lidar_fine_report import summarize
