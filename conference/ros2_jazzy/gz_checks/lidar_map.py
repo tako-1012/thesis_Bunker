@@ -30,15 +30,17 @@ def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_est
     raise ValueError('map method must be coarse or fine')
 
 
-def fine_protocol():
+def fine_protocol(*, real_time_factor=None):
     """Fixed task023 settings, matching task022's actual ten-beach run."""
-    factor = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '.3'))
+    factor = (float(os.environ.get('THESIS_REAL_TIME_FACTOR', '.3'))
+              if real_time_factor is None else real_time_factor)
     stale = float(os.environ.get('THESIS_STALE_TIMEOUT_S', '1.0'))
-    # Task 025/026 only: an explicit opt-in may also run 1.0; without it the task023 values stay fixed.
+    # Keep the archived environment-based protocol as well as the CLI opt-in.
     protocol = os.environ.get('THESIS_FINE_PROTOCOL')
     if protocol not in (None, 'rtf_check'):
         raise ValueError('unknown fine protocol')
-    if factor not in ((.3, 1.) if protocol else (.3,)) or stale != 1.:
+    allowed = (.3, 1.) if protocol or real_time_factor == 1. else (.3,)
+    if factor not in allowed or stale != 1.:
         raise ValueError('fine comparison fixes real_time_factor=0.3 and stale_timeout_s=1.0')
     return dict(map_method='fine', obstacle_resolution_m=.1, obstacle_height_m=.3,
                 min_obstacle_points=3, obstacle_inflation_radius_m=.5,

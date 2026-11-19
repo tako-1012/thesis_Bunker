@@ -1,0 +1,6 @@
+CPU: AMD EPYC 9V74 80-Core Processor
+seed=103 frames=120 updates=360 map=400x400 ground=non_obstacle reference=prior
+sensor updates points accepted_min accepted_max median_ms p95_ms max_ms steep_changed added removed
+lidar 120 28800 28800 28800 34.649 38.182 63.349 119 494 474
+camera1 120 26750 26750 26750 7.823 8.542 9.551 91 97 87
+camera2 120 26750 26750 26750 6.738 8.205 8.547 32 23 46
