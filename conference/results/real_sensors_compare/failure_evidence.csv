@@ -1,0 +1,9 @@
+patch,condition,rep,t,start,goal,start_map_lethal,start_inflated_steep,start_detected_5x5,start_truth_lethal,start_truth_slope,goal_map_lethal,goal_inflated_steep,goal_detected_5x5,goal_truth_lethal,goal_truth_slope
+08OB88_-0167,LC,1,316.9,"(np.int64(162), np.int64(280))","(np.int64(137), np.int64(294))",False,False,0,False,6.494966153975411,True,True,0,False,10.78716029768279
+08OB88_-0167,LC,2,304.1,"(np.int64(192), np.int64(282))","(np.int64(137), np.int64(294))",False,False,0,False,3.029101923496564,True,True,0,False,10.78716029768279
+08OB88_-0167,LC,3,300.7,"(np.int64(193), np.int64(281))","(np.int64(137), np.int64(294))",False,False,0,False,7.61381563134369,True,True,0,False,10.78716029768279
+08OB88_-0167,L,1,301.95,"(np.int64(191), np.int64(281))","(np.int64(137), np.int64(294))",False,False,0,False,10.088026770235318,True,True,0,False,10.78716029768279
+08OB88_-0167,L,2,300.45,"(np.int64(194), np.int64(281))","(np.int64(137), np.int64(294))",False,False,0,False,5.046920698532955,True,True,0,False,10.78716029768279
+08OB88_-0167,L,3,302.15,"(np.int64(194), np.int64(281))","(np.int64(137), np.int64(294))",False,False,0,False,5.046920698532955,True,True,0,False,10.78716029768279
+08OB88_-1417,L,2,200.75,"(np.int64(253), np.int64(200))","(np.int64(203), np.int64(229))",False,False,0,False,4.0375672191897936,True,True,0,False,19.212563176540645
+08OB89_-0847,LC,1,135.0,"(np.int64(281), np.int64(116))","(np.int64(281), np.int64(117))",False,False,5,False,4.3992916591929045,True,True,7,False,2.426692905278162
