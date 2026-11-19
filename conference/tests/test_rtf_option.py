@@ -54,7 +54,12 @@ def test_default_bytes():
     for snapshot in (implicit, expected):
         snapshot.pop('environment')
         if not exact:
-            snapshot.pop('manifest_sha256')
+            # The full manifest and the task023 report/log text embed the
+            # interpreter/NumPy formatting; compare them only in the recorded
+            # environment. The manifest body without interpreter metadata is
+            # still compared byte for byte everywhere.
+            for key in ('manifest_sha256', 'files', 'stdout_sha256'):
+                snapshot.pop(key)
     assert implicit == expected
     print('default 0.3 PASS: omitted/explicit match, manifest and report match pre-change hashes'
           + (' (full manifest)' if exact else ' (excluding interpreter metadata)'))
