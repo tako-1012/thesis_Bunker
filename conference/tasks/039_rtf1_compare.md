@@ -1,6 +1,6 @@
 # 指示書 039：実時間 1 倍と 0.3 倍を、研究 PC の Gazebo で比べる（038 のあと）
 
-> **状態：実行中（段階 A を 2026-11-18 にクラウドの Codex へ依頼。段階 B は 037 のあと）**。段階 A は **クラウドの Codex**（実装、Gazebo は使わない）、段階 B は **研究 PC の担当**（Mac の Codex から `ssh hayashi`）。
+> **状態：実行中（段階 A は完了・取り込み済み。段階 B は 037 のあとに研究 PC へ）**。段階 A は **クラウドの Codex**（実装、Gazebo は使わない）、段階 B は **研究 PC の担当**（Mac の Codex から `ssh hayashi`）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/results/rtf_check/hayashi_rtf1_check/README_ja.md`・`hayashi_rtf_repeat/README_ja.md`、
 > `conference/results/map_speed/REPORT_ja.md`・`REVIEW_ja.md`（038）、`conference/results/review_fixes/REPORT_ja.md`（040、`--online-fixes v2`）を読むこと。
 

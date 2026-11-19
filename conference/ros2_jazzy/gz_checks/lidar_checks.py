@@ -67,7 +67,12 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
-                  edge_margin_m=0):
+                  edge_margin_m=0, real_time_factor=None):
+    if real_time_factor is not None:
+        if real_time_factor not in (.3, 1.):
+            raise ValueError('real-time factor must be 0.3 or 1.0')
+        if map_method != 'fine':
+            raise ValueError('--real-time-factor requires --map fine')
     if edge_margin_m not in (0, 10):
         raise ValueError('edge margin must be 0 or 10m')
     if edge_margin_m and scenarios is not None:
@@ -108,7 +113,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         raise ValueError('height assumptions must be positive')
     if map_method not in ('coarse', 'fine'):
         raise ValueError('map method must be coarse or fine')
-    fine_settings = fine_protocol() if map_method == 'fine' else None
+    fine_settings = fine_protocol(real_time_factor=real_time_factor) if map_method == 'fine' else None
     if fine_settings is not None and configuration is None:
         reference = json.loads((ROOT/'results/gazebo_lidar/physical_10/manifest.json').read_text())
         if (asdict(spec) != reference['lidar_spec'] or sensor_height_m != reference['sensor_height_m']
@@ -450,6 +455,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if kwargs.get('real_time_factor') == 1.:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task039 trial errors; inspect manifest')
+                print('Task039 raw results saved; task023 aggregation requires 0.3x:', output)
+                return
             if manifest.get('edge_margin_m'):
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task036 trial errors; inspect manifest')
@@ -504,6 +514,8 @@ def main():
     parser.add_argument('--obstacle-height-m', type=float, default=.3)
     parser.add_argument('--noise-stddev-m', type=float, default=.02)
     parser.add_argument('--max-range-m', type=float, default=30.)
+    parser.add_argument('--real-time-factor', type=float, choices=(.3, 1.),
+                        help='fine map simulation speed (default: 0.3)')
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
@@ -519,6 +531,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if args['real_time_factor'] == 1.:
+            print('Task039 preparation only; task023 aggregation requires 0.3x:', output)
+            return
         if manifest.get('edge_margin_m'):
             summarize_edge_margin(output, manifest)
             return

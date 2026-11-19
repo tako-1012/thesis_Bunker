@@ -1,0 +1,15 @@
+{
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "files": {
+    "input_audit.json": "9dcbab7ba4f39305515447ae64c5dcd30c85da11ae3e65332a7bd1ab9a440d37",
+    "lidar_fine_log.txt": "48fe0fd91daf9a9ea182f1292f12b04f22922c61e678d965e63f895959221ed6",
+    "runs.csv": "76324209e4ebc12f624d6fffeef211945e48fdb866beca7ae1249137bba75636",
+    "summary.csv": "59b95da099a42d2870128dacf663e7999dac31b5e392a9c38b6de961829eac93"
+  },
+  "manifest_sha256": "b533efba56749c4e0f7ae348f042e8797445e54d92d4ec7ec50dcd4b62730dc1",
+  "manifest_without_environment_sha256": "1b6cc5323e66854e8aee09d85081dda380e3f5460cf2da77509bd8bd843c224b",
+  "stdout_sha256": "48fe0fd91daf9a9ea182f1292f12b04f22922c61e678d965e63f895959221ed6"
+}
