@@ -1,0 +1,3 @@
+patch,condition,rep,mask,t,x,y,cell,episode_start,episode_end,map_time,map_age_s,map_lethal,nearby_lethal,map_seen,nearby_seen,map_detected,nearby_detected,path_time,path_offset_m,path_crosses_mask,path_crosses_cell
+08OB86_-0205,035_S1,1,debris,58.5,28.77757081432937,81.68353869504202,"(np.int64(58), np.int64(163))",58.5,58.9,55.35,3.1499999999999986,True,9,True,25,True,9,58.4,0.12037775338712405,False,False
+08OB86_-0205,035_S1,1,truth_lethal,58.5,28.77757081432937,81.68353869504202,"(np.int64(58), np.int64(163))",58.5,58.9,55.35,3.1499999999999986,True,9,True,25,True,9,58.4,0.12037775338712405,False,False

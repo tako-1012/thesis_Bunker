@@ -1,0 +1,4 @@
+started=2026-11-18T19:22:24+09:00
+commit=e7f86d52c320c055be92e3b98770574feb8e8e07 branch=claude/037-real-sensors tracked_changes=0
+image=sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57 patch=08OB86_-0205 condition=L rep=2 rtf=0.3 software=1 domain=63
+args=--patch-count 3 --map fine --ground-estimate non_obstacle --online-fixes v1 --diagnostics --obstacle-reference prior --sensors lidar_real
