@@ -27,7 +27,7 @@ class OnlinePlannerNode(Node):
         from .online_safety import make_async_runtime
         from tapp.online_safety import validate_fixes
         fixes = validate_fixes(self.get_parameter('online_fixes').value)
-        creator = make_async_runtime if fixes == 'v1' else AsyncOnlineMission
+        creator = make_async_runtime if fixes != 'none' else AsyncOnlineMission
         self.runtime = creator(
             truth["tmap"],
             prior_tm,

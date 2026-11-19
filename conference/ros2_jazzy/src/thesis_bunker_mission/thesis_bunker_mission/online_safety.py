@@ -153,7 +153,7 @@ class SafetyRuntimeMixin:
         command = super().tick(position, sim_time)
         if command and 'revision' in command and self.online_fixes == 'v2':
             # Keep the published history so termination need not read worker state.
-            self._last_plan_history = command['plan_history']
+            self._last_plan_history = command.get('plan_history', self._last_plan_history)
         if command and command.get('reason') in SAFETY_STATES:
             self.record_safety('safety_replanned', reason=command['reason'], revision=command['revision'])
         return command

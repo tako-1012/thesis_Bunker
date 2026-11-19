@@ -15,6 +15,8 @@ from .online_runtime import replace_running_path, record_plan_history
 
 
 class PathFollower(Node):
+    safety_enabled = False
+
     def __init__(self, *, online_fixes='none'):
         super().__init__("path_follower")
         self.declare_parameter("map_id", "file/flat_test_100m.npz")

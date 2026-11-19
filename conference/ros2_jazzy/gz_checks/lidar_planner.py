@@ -32,13 +32,15 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 
 
 class LidarPlannerNode(OnlinePlannerNode):
-    def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior', online_fixes='none'):
+    def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior', online_fixes='none',
+                 obstacle_clearance='centre'):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         for name, default in [('prior_map', ''), ('map_id', 'file/truth.npz'), ('run_folder', ''),
                               ('sensor_height_m', .8), ('max_range_m', 30.), ('obstacle_height_m', .3), ('range_resolution_m', .01),
                               ('stale_timeout_s', .5), ('map_method', 'coarse'), ('sensors', 'legacy'), ('endpoint_policy', 'none'), ('diagnostics', False),
-                              ('ground_estimate', ground_estimate), ('obstacle_reference', obstacle_reference), ('online_fixes', online_fixes)]:
+                              ('ground_estimate', ground_estimate), ('obstacle_reference', obstacle_reference),
+                              ('obstacle_clearance', obstacle_clearance), ('online_fixes', online_fixes)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -57,6 +59,7 @@ class LidarPlannerNode(OnlinePlannerNode):
                                     map_method=self.get_parameter('map_method').value, sensors=self.sensor_mode,
                                     ground_estimate=self.get_parameter('ground_estimate').value,
                                     obstacle_reference=self.get_parameter('obstacle_reference').value,
+                                    obstacle_clearance=self.get_parameter('obstacle_clearance').value,
                                     robot=prior['tmap'].robot, weights=prior['tmap'].weights,
                                     sensor_height_m=self.get_parameter('sensor_height_m').value,
                                     max_range_m=self.get_parameter('max_range_m').value,
@@ -65,12 +68,14 @@ class LidarPlannerNode(OnlinePlannerNode):
         from tapp.online_safety import validate_fixes
         fixes = validate_fixes(self.get_parameter('online_fixes').value)
         creator = make_lidar_runtime
-        if fixes == 'v1':
+        if fixes != 'none':
             from ros2_jazzy.gz_checks.safety_runtime import make_safety_lidar_runtime
             creator = make_safety_lidar_runtime
+        diagnostics = self.get_parameter('diagnostics').value
         self.runtime = creator(prior, self.mapper, plan_log=self.folder / 'plans.csv',
             endpoint_policy=self.get_parameter('endpoint_policy').value,
-            diagnostics=self.get_parameter('diagnostics').value,
+            diagnostics=diagnostics,
+            **(dict(record_clearance=True) if diagnostics else {}),
             **(dict(online_fixes=fixes) if fixes != 'none' else {}))
         self.poses = PoseBuffer()
         self.map_pool = ThreadPoolExecutor(max_workers=1)
@@ -289,10 +294,12 @@ class LidarPlannerNode(OnlinePlannerNode):
 
 
 def main(args=None):
+    from tapp.pointcloud_map_fine import OBSTACLE_CLEARANCES
     from tapp.prior_variants import OBSTACLE_REFERENCES
     from tapp.online_safety import ONLINE_FIXES
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default=None)
+    parser.add_argument('--obstacle-clearance', choices=OBSTACLE_CLEARANCES, default=None)
     parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default=None)
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default=None)
     options, remaining = parser.parse_known_args(sys.argv[1:] if args is None else args)

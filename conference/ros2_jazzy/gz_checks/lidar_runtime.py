@@ -22,7 +22,8 @@ class LidarOnlineMission(BatchOnlineMission):
         self.mapper = mapper
 
     def _observe(self, planner):
-        planner.observe(*self.mapper.snapshot())
+        snapshot = getattr(self.mapper, 'planning_snapshot', self.mapper.snapshot)
+        planner.observe(*snapshot())
 
     def _plan_work(self, state, position):
         state.pop('observations', None)  # Poses cannot reveal terrain labels.
