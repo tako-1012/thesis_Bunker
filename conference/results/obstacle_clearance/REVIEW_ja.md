@@ -12,7 +12,7 @@
 `tapp/pointcloud_map_fine.py`（`overlap`）、`tapp/obstacle_clearance.py`（距離の計算）、`gz_checks` の各ファイル（引数・記録）、`online_safety`・`path_follower`（040 の小さな所見）、テスト・結果。既存のテスト・既存の結果は変えていない。
 
 ## 2. 全テスト
-末尾に追記。
+末尾のとおり、36 本すべて合格。
 
 ## 3. 既定の出力
 - 034 の `capture_defaults.py`（7 項目）を、直す前（`72253c6`）と 041 で走らせ、すべて一致。
@@ -44,4 +44,4 @@
   - 比べる厳しさは同じで、どの PC でも成り立つ。記録したハッシュと合うかどうかは参考として表示する。
 
 ## テストの結果
-（下に追記）
+- 041 と Claude のテストの直しを合わせた状態で、`conference/tests/` の 36 本すべてが終了コード 0（`review_all_tests_summary.txt`、NumPy 2.3.5・SciPy 1.17.0）。
