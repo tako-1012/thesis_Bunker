@@ -100,14 +100,18 @@ class RemainingPathFollower(SafetyMissionFollower):
         # Keep the current segment and all future segments in the distance test.
         index = np.searchsorted(controller.arc, controller.progress, side='right') - 1
         path = controller.path[index:]
-        delta = np.diff(path, axis=0)
-        squared = np.sum(delta**2, axis=1)
-        valid = squared > 0
-        if not valid.any():
-            return float(np.linalg.norm(xy-path[0]))
-        start, delta = path[:-1][valid], delta[valid]
-        fraction = np.clip(np.sum((xy-start)*delta, axis=1)/squared[valid], 0, 1)
-        return float(np.linalg.norm(xy-start-fraction[:, None]*delta, axis=1).min())
+        path = path[np.r_[True, np.any(np.diff(path, axis=0), axis=1)]]
+        distance = path_distance(xy, path)
+        # path_distance's parenthesization can round differently at exactly
+        # the stopping boundary. Preserve the old v2 comparison there.
+        if len(path) > 1:
+            rounding = 8*np.spacing(max(np.abs(path).max(), np.abs(xy).max(), 1.))
+            if abs(distance-OFF_PATH_M) <= rounding:
+                delta = np.diff(path, axis=0)
+                offset = xy-path[:-1]
+                fraction = np.clip(np.sum(offset*delta, axis=1)/np.sum(delta**2, axis=1), 0, 1)
+                distance = float(np.linalg.norm(offset-fraction[:, None]*delta, axis=1).min())
+        return distance
 
 
 def make_follower(*args, online_fixes='none', **kwargs):

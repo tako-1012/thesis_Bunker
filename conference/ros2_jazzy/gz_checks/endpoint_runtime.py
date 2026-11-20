@@ -3,6 +3,7 @@ import json
 import time
 import numpy as np
 from tapp.config import RESOLUTION
+from tapp.obstacle_clearance import cell_boxes, point_clearance
 from tapp.online_mission import OnlinePlanner
 from tapp.endpoint_policy import (plan_endpoint, classify_failure, SnapshotStore,
                                   RetryState, escape_maps, ENDPOINT_POLICIES)
@@ -15,7 +16,8 @@ def capture(mapper, planner, position, pose, sim_time, goal):
     # PointCloudMapFine publishes masks under these locks in this same order.
     with mapper._update_lock, mapper._lock:
         seen, cost, lethal = mapper.seen.copy(), mapper.tm.cost.copy(), mapper.lethal.copy()
-        planner.observe(seen, cost, lethal)
+        planning_seen = getattr(mapper, 'planning_seen', None)
+        planner.observe(planning_seen(seen) if planning_seen else seen, cost, lethal)
         planning_lethal, planning_cost = planner.planning_maps()
         return dict(lethal=planning_lethal.copy(), cost=planning_cost.copy(), seen=seen, known=planner.known.copy(),
                     detected=mapper.detected_obstacle.copy(), prior_raw=mapper.raw_obstacle.copy(),
@@ -59,13 +61,16 @@ class EndpointPlanner(OnlinePlanner):
 
 
 class EndpointRuntime(LidarOnlineMission):
-    def __init__(self, prior, mapper, *, plan_log, endpoint_policy, diagnostics, executor=None):
+    def __init__(self, prior, mapper, *, plan_log, endpoint_policy, diagnostics, executor=None, record_clearance=False):
         if not hasattr(mapper, 'fine_obstacle'):
             raise ValueError('task028 requires --map fine')
         super().__init__(prior, mapper, plan_log=plan_log, executor=executor)
         self.policy = endpoint_policy
         self.folder = plan_log.parent
         self.diagnostics = SnapshotStore(self.folder/'diag') if diagnostics else None
+        self.clearance_log = (CsvChunks(self.folder/'clearance.csv',
+                                        ['sim_time', 'map_version', 'x', 'y', 'clearance_m'])
+                              if diagnostics and record_clearance else None)
         if diagnostics:
             self.plan_log.close()
             self.plan_log = CsvChunks(plan_log, ['n_plans', 'reason', 'success', 'plan_time_s', 'failure_class'])
@@ -86,7 +91,15 @@ class EndpointRuntime(LidarOnlineMission):
         goal = planner.goal or state['mission']['stops_cells'][state['leg']]
         planner.snapshot = capture(self.mapper, planner, position, context[1], context[0], goal)
         if self.diagnostics:
+            before = self.diagnostics.periodic
             self.diagnostics.tick(planner.snapshot)
+            if self.clearance_log is not None and self.diagnostics.periodic != before:
+                snapshot = planner.snapshot
+                xy = snapshot['pose'][:2]
+                boxes = cell_boxes(snapshot['fine_obstacle'], snapshot['fine_resolution_m'],
+                                   snapshot['fine_origin_xy'])
+                self.clearance_log.write(dict(sim_time=snapshot['sim_time'], map_version=snapshot['version'],
+                                              x=xy[0], y=xy[1], clearance_m=point_clearance(xy, *boxes)))
 
     def record_relaxation(self, result, snapshot, phase):
         if self.policy == 'none':
@@ -227,15 +240,18 @@ class EndpointRuntime(LidarOnlineMission):
 
     def close(self):
         super().close()
+        if self.clearance_log is not None:
+            self.clearance_log.close()
         if self.audit_log:
             self.audit_log.close()
             self._save_status()
 
 
-def make_lidar_runtime(prior, mapper, *, plan_log, endpoint_policy='none', diagnostics=False, executor=None):
+def make_lidar_runtime(prior, mapper, *, plan_log, endpoint_policy='none', diagnostics=False, executor=None,
+                       record_clearance=False):
     if endpoint_policy not in ENDPOINT_POLICIES:
         raise ValueError('unknown endpoint policy')
     if endpoint_policy == 'none' and not diagnostics:
         return LidarOnlineMission(prior, mapper, plan_log=plan_log, executor=executor)
     return EndpointRuntime(prior, mapper, plan_log=plan_log, endpoint_policy=endpoint_policy,
-                           diagnostics=diagnostics, executor=executor)
+                           diagnostics=diagnostics, executor=executor, record_clearance=record_clearance)

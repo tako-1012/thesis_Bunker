@@ -42,12 +42,12 @@ def synthetic_cloud(sensor):
     return np.column_stack((x.ravel(), y.ravel(), z.ravel())), pose
 
 
-def replay():
+def replay(Fine=PointCloudMapFine, Multi=PointCloudMapMulti):
     rng = np.random.default_rng(103)
     x, y = np.indices((96, 102)) * .5
     terrain = .02*x + .02*np.sin(y) + .02*np.cos(x+y)
     rock = (x == 7) & (y < 8)
-    for cls in (PointCloudMapFine, PointCloudMapMulti):
+    for cls in (Fine, Multi):
         for ground in ('all_returns', 'non_obstacle'):
             for reference in ('prior', 'local'):
                 mapper = cls(terrain, rock, ground_estimate=ground, obstacle_reference=reference)
@@ -64,7 +64,7 @@ def replay():
                     if i >= 5:
                         z += .45*(xy[:, 0]-px)
                     world = np.column_stack((xy, z))
-                    if cls is PointCloudMapMulti:
+                    if cls is Multi:
                         sensor = SENSORS[i % 3]
                         if sensor != 'lidar':
                             # Generate camera returns inside the actual frustum.
@@ -85,17 +85,17 @@ def replay():
                 mapper.update(np.empty((0, 3)), pose)
                 yield f'{name}/empty', mapper
 
-    for cls in (PointCloudMapFine, PointCloudMapMulti):
+    for cls in (Fine, Multi):
         for ground in ('all_returns', 'non_obstacle'):
             for reference in ('prior', 'local'):
                 mapper = cls(np.zeros((401, 401)), ground_estimate=ground,
                              obstacle_reference=reference)
                 for i, (sensor, suffix) in enumerate(zip(SENSORS, ('', '_camera1', '_camera2'))):
-                    if cls is PointCloudMapFine and i:
+                    if cls is Fine and i:
                         break
                     with np.load(SAVED / f'first_cloud{suffix}.npz') as scan:
                         points, pose = scan['points'], scan['pose']
-                    if cls is PointCloudMapMulti:
+                    if cls is Multi:
                         mapper.update(points, pose, sensor=sensor, stamp=i*.1)
                     else:
                         finite = np.isfinite(points).all(axis=1)
@@ -121,22 +121,50 @@ def digest(mapper):
                 checksum.update(value.tobytes())
             result[name] = checksum.hexdigest()
     result['version'] = mapper.version
-    if isinstance(mapper, PointCloudMapMulti):
+    if hasattr(mapper, 'sensor_counts'):
         result['attribution'] = hashlib.sha256(json.dumps(
             [mapper.sensor_counts, mapper.first_detections], sort_keys=True).encode()).hexdigest()
     return result
 
 
+def reference_classes(tag='038base'):
+    """Load the pre-038 implementation (copied byte for byte from 9b3b1ef) as a runtime reference.
+
+    Stored hashes of float arrays (slope, cost, ...) depend on the platform's math library and
+    CPU, so the same code can produce different bits on another machine. Comparing against the
+    reference implementation run on the same machine keeps the byte-for-byte check strict and
+    portable. The relative imports are redirected so the copies use each other, not the 038 code.
+    """
+    import importlib.util
+    import sys
+    loaded = {}
+    for name in ('pointcloud_map_fine', 'local_ground', 'pointcloud_map_multi'):
+        source = (ROOT/'tests/reference'/f'{name}_{tag}.py').read_text()
+        for other in ('local_ground', 'pointcloud_map_fine'):
+            source = source.replace(f'from .{other} import', f'from .{other}_{tag} import')
+        full = f'tapp.{name}_{tag}'
+        spec = importlib.util.spec_from_loader(full, loader=None)
+        module = importlib.util.module_from_spec(spec)
+        module.__package__ = 'tapp'
+        sys.modules[full] = module
+        exec(compile(source, f'{name}_{tag}.py', 'exec'), vars(module))
+        loaded[name] = module
+    return loaded['pointcloud_map_fine'].PointCloudMapFine, loaded['pointcloud_map_multi'].PointCloudMapMulti
+
+
 def test_replay():
     expected = json.loads((ROOT / 'results/map_speed/expected.json').read_text())
-    seen = set()
-    for name, mapper in replay():
-        actual = digest(mapper)
-        assert actual == expected[name], (name, [key for key in actual
-                                                 if actual[key] != expected[name].get(key)])
+    Fine, Multi = reference_classes()
+    seen, stored_mismatch = set(), 0
+    for (name, mapper), (reference_name, reference) in zip(replay(), replay(Fine, Multi)):
+        assert name == reference_name
+        actual, wanted = digest(mapper), digest(reference)
+        assert actual == wanted, (name, [key for key in actual if actual[key] != wanted.get(key)])
+        stored_mismatch += actual != expected[name]
         seen.add(name)
     assert seen == set(expected)
-    print(f'byte-identical replay: {len(seen)} update states')
+    print(f'byte-identical replay against the pre-038 implementation: {len(seen)} update states; '
+          f'states differing from the hashes stored on the recording machine: {stored_mismatch}')
 
 
 def benchmark_cases():

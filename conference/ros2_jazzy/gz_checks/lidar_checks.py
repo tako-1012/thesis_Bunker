@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT/'ros2_jazzy/src/thesis_bunker_gz'))
 from thesis_bunker_gz.lidar import LidarSpec
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
-from tapp.pointcloud_map_fine import GROUND_ESTIMATES
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES
 from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
 from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
 from tapp.endpoint_policy import ENDPOINT_POLICIES
@@ -67,7 +67,11 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
-                  edge_margin_m=0, real_time_factor=None):
+                  edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre'):
+    if obstacle_clearance not in OBSTACLE_CLEARANCES:
+        raise ValueError('unknown obstacle clearance')
+    if obstacle_clearance == 'overlap' and map_method != 'fine':
+        raise ValueError('overlap obstacle clearance requires --map fine')
     if real_time_factor is not None:
         if real_time_factor not in (.3, 1.):
             raise ValueError('real-time factor must be 0.3 or 1.0')
@@ -147,6 +151,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         manifest.update(edge_margin_m=edge_margin_m, waypoint_protocol='task024')
     if fine_settings is not None:
         manifest.update(fine_settings)
+    if obstacle_clearance == 'overlap':
+        manifest.update(obstacle_clearance=obstacle_clearance,
+                        obstacle_inflation='closed fine squares intersecting the 0.5m halo; pool any hit')
     if configuration is not None:
         manifest.update(sensor=sensors, sensors=sensors, sensor_configuration=configuration,
                         experiment='task027 real sensors; not a matched task022/023 sensor comparison')
@@ -353,6 +360,9 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     world = folder/'world/world.sdf'
                     tree = ET.parse(world)
                     w = tree.find('world')
+                    if manifest.get('diagnostics'):
+                        from ros2_jazzy.gz_checks.clearance_log import save_debris_footprints
+                        save_debris_footprints(raw/'debris_footprints.csv', w)
                     w.find('physics/real_time_factor').text = (str(manifest['real_time_factor']) if manifest.get('map_method') == 'fine'
                                                              else os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
                     for uri in tree.findall('.//heightmap/uri'):
@@ -400,6 +410,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     if manifest.get('online_fixes', 'none') != 'none':
                         for command in commands[-2:]:
                             command.extend(['-p', 'online_fixes:='+manifest['online_fixes']])
+                    if manifest.get('obstacle_clearance') == 'overlap':
+                        commands[-1].extend(['-p', 'obstacle_clearance:=overlap'])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
                         commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
                     for i, command in enumerate(commands):
@@ -455,10 +467,15 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
-            if kwargs.get('real_time_factor') == 1.:
+            if manifest.get('map_method') == 'fine' and manifest['real_time_factor'] == 1.:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task039 trial errors; inspect manifest')
                 print('Task039 raw results saved; task023 aggregation requires 0.3x:', output)
+                return
+            if manifest.get('obstacle_clearance') == 'overlap':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task041 trial errors; inspect manifest')
+                print('Task041 raw results saved; evaluate obstacle clearance separately:', output)
                 return
             if manifest.get('edge_margin_m'):
                 if manifest['execution'] == 'finished_with_errors':
@@ -521,6 +538,7 @@ def main():
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
     parser.add_argument('--edge-margin-m', type=int, choices=(0, 10), default=0)
+    parser.add_argument('--obstacle-clearance', choices=OBSTACLE_CLEARANCES, default='centre')
     parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default='prior')
     parser.add_argument('--debris-box-height', choices=DEBRIS_BOX_HEIGHTS, default='plus_half')
     parser.add_argument('--prior-variant', choices=PRIOR_VARIANTS, default='exact', dest='prior_variant_name')
@@ -531,8 +549,11 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
-        if args['real_time_factor'] == 1.:
+        if manifest.get('map_method') == 'fine' and manifest['real_time_factor'] == 1.:
             print('Task039 preparation only; task023 aggregation requires 0.3x:', output)
+            return
+        if manifest.get('obstacle_clearance') == 'overlap':
+            print('Task041 preparation only; Gazebo not executed:', output)
             return
         if manifest.get('edge_margin_m'):
             summarize_edge_margin(output, manifest)

@@ -1,6 +1,6 @@
 # 指示書 041：計画の地図で、障害物の膨らませを「マスの中心」ではなく「マスの中のどこか」で判定する（障害物との余裕を保つ）
 
-> **状態：実行中（2026-11-19 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**（Gazebo・研究 PC は使わない）。Gazebo での評価は、あとで研究 PC で別に行う。
+> **状態：完了（結果は `results/obstacle_clearance/`、レビューは `REVIEW_ja.md`。Gazebo での評価は 044）**。実装は **クラウドの Codex**（Gazebo・研究 PC は使わない）。Gazebo での評価は、あとで研究 PC で別に行う。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/real_sensors_compare/REPORT_ja.md`・`REVIEW_ja.md`（037）、`conference/results/eval_035/REVIEW_ja.md`、
 > `conference/results/online_safety/REVIEW_ja.md`（034 の所見 1）、`conference/results/review_fixes/REVIEW_ja.md`・`conference/results/rtf_compare/REVIEW_A_ja.md`（残っている小さな所見）を読むこと。
 > ブランチは `codex/041-obstacle-clearance`（その時点の `realtime-map` の最新から）。結果は `conference/results/obstacle_clearance/`、報告は同じ場所の `REPORT_ja.md`。
