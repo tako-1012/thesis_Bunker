@@ -1,0 +1,5 @@
+run,cells,detected_fine_cells,centre_free,overlap_free,lost_free,lost_free_seen,reachable_centre_goals,reachable_overlap_goals
+results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB86_00294,160000,89707,76654,76026,628,608,6,6
+results/rtf_check/hayashi_rtf1_check/rtf_0.3/physical_1/raw/08OB86_-0205,160000,24572,73032,72503,529,508,6,6
+results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep1/physical_1/raw/08OB87_-0706,160000,10660,75150,74063,1087,1053,6,6
+results/eval_ground_endpoint/runs/08OB89_-0847/C2_r3/physical_1/raw/08OB89_-0847,160000,51725,117368,115152,2216,2097,6,5

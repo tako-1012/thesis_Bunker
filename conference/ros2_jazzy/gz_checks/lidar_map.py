@@ -2,11 +2,18 @@
 
 import os
 from tapp.pointcloud_map import PointCloudMap
-from tapp.pointcloud_map_fine import GROUND_ESTIMATES
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES
 
 
-def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', obstacle_reference='prior', **kwargs):
+def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', obstacle_reference='prior',
+                        obstacle_clearance='centre', **kwargs):
     from tapp.prior_variants import OBSTACLE_REFERENCES
+    if obstacle_clearance not in OBSTACLE_CLEARANCES:
+        raise ValueError('unknown obstacle clearance')
+    if obstacle_clearance != 'centre':
+        if map_method != 'fine':
+            raise ValueError('overlap obstacle clearance requires --map fine')
+        kwargs['obstacle_clearance'] = obstacle_clearance
     if obstacle_reference not in OBSTACLE_REFERENCES:
         raise ValueError('unknown obstacle reference')
     if obstacle_reference != 'prior':

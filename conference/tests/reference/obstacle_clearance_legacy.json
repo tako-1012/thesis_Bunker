@@ -1,0 +1,440 @@
+{
+  "maps": {
+    "legacy/local/0": {
+      "_fine_ids": "6237bd6a380640b83f1495e5e248e1f9070c77df7cd530c19f88918e83df2971",
+      "_inflated_coarse": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "detected_obstacle": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "fine_inflated": "9202e68fbe5587e30738f2f118e87e10202a6eabd7297e1299978ed53c3a8f46",
+      "fine_obstacle": "9202e68fbe5587e30738f2f118e87e10202a6eabd7297e1299978ed53c3a8f46",
+      "lethal": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "samples": "4189db94cf7413c47698d465e7e15e038192a7f4907355dc0bb2d37b9b7bbca5",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gx": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gy": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.lethal": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "tm.rock": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "tm.rough": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.slope": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.steep": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "version": 1
+    },
+    "legacy/local/1": {
+      "_fine_ids": "51ffd2b18f8e092ffcef8901c6eb91751efc378f5c87f45ef50dc9467dd1aab8",
+      "_inflated_coarse": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "detected_obstacle": "613f56b57dd83604e930d5e99ccdd4456379f2d9689e072423beac51d755c86d",
+      "elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "fine_inflated": "9765f6069cfa55e13fca67f6ffd8aa10cee6253b3199f3243523c788ac64b466",
+      "fine_obstacle": "4bee630d1734b70f6673899e8e661741cb5b9e8c48a6f13feb9e099bdf5ddf03",
+      "lethal": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "samples": "7b63b1c94b1ed0dc0ae0be126ef6e032b66ed5c33165bc06e242bc1454de4136",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gx": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gy": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.lethal": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "tm.rock": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "tm.rough": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.slope": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.steep": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "version": 2
+    },
+    "legacy/local/2": {
+      "_fine_ids": "2c56963216b7d8620908b1f2ecaa8d8ae76249cb81f711d934cab0bb7a891bcf",
+      "_inflated_coarse": "9f9b8d3841b126961902924a44bdaa1251d64619df5e4de061445d075be26eb1",
+      "detected_obstacle": "ca8e608a4595a976eb0d3b7423a1c12ad8a1e2d96089d9f02daa4d9cf140d56c",
+      "elev": "d2b3b436072510a5a2c46e2ba5ce7a2a961312376a5a8bcb245a1f9655617bbc",
+      "fine_inflated": "45818f48973bbe735e20d9b4ef05d43da66b951d16f07c36cd676f3b1d8b8452",
+      "fine_obstacle": "ae8932241a7de6bb83ca7f50ad3e04a6a776500c2901bd1625057199f1a39fea",
+      "lethal": "738376acc647ae120570b6fe811ef319eb80dc40591fdf759c1241c858abd2e6",
+      "samples": "8c93fb0cab9c23f78cb4b07890909f411c00929597103a6979ad72257899c5fa",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "14626fce45e207b88e99f886dc6d8a64af0b5dda8a129be82c7e1560b0220055",
+      "tm.elev": "d2b3b436072510a5a2c46e2ba5ce7a2a961312376a5a8bcb245a1f9655617bbc",
+      "tm.gx": "b154ddf2c647b14d5549b251f7758b7260a42e1a130b2d2dc1347b4a957068f2",
+      "tm.gy": "907d15bb1c9f2933433a316ae9973d03a28092b569b413a8a635c0d9c18347ab",
+      "tm.lethal": "e4751882579c1ae73e0649f9fa104dc1dd8edad235e49321a1fc66a821d214da",
+      "tm.rock": "9f9b8d3841b126961902924a44bdaa1251d64619df5e4de061445d075be26eb1",
+      "tm.rough": "13c7e44bc2fbce7db281dfcc31dda96f20c0bae33b61109768de1250830f2454",
+      "tm.slope": "661e77f26039cc406c4a41860941ac40de268d4d1790f1f341e6111d1dc6454b",
+      "tm.steep": "5e1bf4f1323b323b436918f505dfd6a7419cbeec3a6cb248ff98525c440e0007",
+      "version": 3
+    },
+    "legacy/prior/0": {
+      "_fine_ids": "6237bd6a380640b83f1495e5e248e1f9070c77df7cd530c19f88918e83df2971",
+      "_inflated_coarse": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "detected_obstacle": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "fine_inflated": "9202e68fbe5587e30738f2f118e87e10202a6eabd7297e1299978ed53c3a8f46",
+      "fine_obstacle": "9202e68fbe5587e30738f2f118e87e10202a6eabd7297e1299978ed53c3a8f46",
+      "lethal": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "samples": "4189db94cf7413c47698d465e7e15e038192a7f4907355dc0bb2d37b9b7bbca5",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gx": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gy": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.lethal": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "tm.rock": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "tm.rough": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.slope": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.steep": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "version": 1
+    },
+    "legacy/prior/1": {
+      "_fine_ids": "51ffd2b18f8e092ffcef8901c6eb91751efc378f5c87f45ef50dc9467dd1aab8",
+      "_inflated_coarse": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "detected_obstacle": "613f56b57dd83604e930d5e99ccdd4456379f2d9689e072423beac51d755c86d",
+      "elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "fine_inflated": "9765f6069cfa55e13fca67f6ffd8aa10cee6253b3199f3243523c788ac64b466",
+      "fine_obstacle": "4bee630d1734b70f6673899e8e661741cb5b9e8c48a6f13feb9e099bdf5ddf03",
+      "lethal": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "samples": "7b63b1c94b1ed0dc0ae0be126ef6e032b66ed5c33165bc06e242bc1454de4136",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gx": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gy": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.lethal": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "tm.rock": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "tm.rough": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.slope": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.steep": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "version": 2
+    },
+    "legacy/prior/2": {
+      "_fine_ids": "2c56963216b7d8620908b1f2ecaa8d8ae76249cb81f711d934cab0bb7a891bcf",
+      "_inflated_coarse": "7ef6f499a9a080d64d69dec191e1844920f57c5b9e635c00514399d8f0fb728f",
+      "detected_obstacle": "8ffaa1ac936a25641ebb72339d144854b4c81efa11a91ba52ae199cfd1dff587",
+      "elev": "461b2283224453ae9f8616b18065c586caac09a97ed1141fedae86ec96ba81c2",
+      "fine_inflated": "bad080e1432618e07dc18ef391cedca8127b83b5fb241263439e4031fc79d078",
+      "fine_obstacle": "f05f365d203848d5810e9a64631990cfc276dc6e86001513cd6127b4c6da7d90",
+      "lethal": "4d77f254bc3a4bc9f9c244d13059c02cba10b0e52e31582ea09c3797e628488f",
+      "samples": "7a7316897db5b2b25130dbfd4549e6532c6efeb259a6c3b8c3d07a869846c997",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "14c2103e8116d2b0e37d9b277805f45783620eceee74c08cdbaa67d43f964685",
+      "tm.elev": "461b2283224453ae9f8616b18065c586caac09a97ed1141fedae86ec96ba81c2",
+      "tm.gx": "a3c7e6cf67582955336891a32be6e911631ba1c6e18637cf8219c1c4993faf23",
+      "tm.gy": "f5e60ca35ed0e8d86fdf4b9a3a25035a7649c4e9eb976b42954e2ffb221ac641",
+      "tm.lethal": "b044114516b1480bcc28c1d3e14db6aedec668e3b72af2ef0c4187a791de774a",
+      "tm.rock": "7ef6f499a9a080d64d69dec191e1844920f57c5b9e635c00514399d8f0fb728f",
+      "tm.rough": "9203816403305a16bff6b1fa3f2667898e97b3cfefef40c5026a05f095526601",
+      "tm.slope": "55d018ce0d689ee296afa05b58c71ea33e53aa67ff00e3ad3ce1f3827fbadddd",
+      "tm.steep": "8c243564b50197ac0b688c5258a54e67cdcf71ae5073fa3ae0d019597273e158",
+      "version": 3
+    },
+    "legacy_local.npz": "9ab9a6560cd6130703bebbd124f61acf37029b6434918fb1171b5dcfbd9a31ec",
+    "legacy_prior.npz": "05356c61b0983434bce8813e857d53f396b1a7c929828d477f0ed2d4263c61d0",
+    "lidar_real+depth2/local/0": {
+      "_fine_ids": "6237bd6a380640b83f1495e5e248e1f9070c77df7cd530c19f88918e83df2971",
+      "_inflated_coarse": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "_source_history": "2464a751a73a5f97c9747a1f28983ae622bd8aafdbdd24c3ea82879280c27a24",
+      "attribution": "e1c798237dba71f15f13569a31531bed80821a73a708599c8bbcfdddfb2592ba",
+      "detected_obstacle": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "fine_inflated": "9202e68fbe5587e30738f2f118e87e10202a6eabd7297e1299978ed53c3a8f46",
+      "fine_obstacle": "9202e68fbe5587e30738f2f118e87e10202a6eabd7297e1299978ed53c3a8f46",
+      "lethal": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "samples": "4189db94cf7413c47698d465e7e15e038192a7f4907355dc0bb2d37b9b7bbca5",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gx": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gy": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.lethal": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "tm.rock": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "tm.rough": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.slope": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.steep": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "version": 1
+    },
+    "lidar_real+depth2/local/1": {
+      "_fine_ids": "51ffd2b18f8e092ffcef8901c6eb91751efc378f5c87f45ef50dc9467dd1aab8",
+      "_inflated_coarse": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "_source_history": "1824218efca937937666bd74512b3132a57f6c540b6f07d849d8f28ef7e49fd5",
+      "attribution": "630087f1f87ee1ddcb7f1771f489e8acbe9fad2721857feb83b2b52bfd13f2b0",
+      "detected_obstacle": "613f56b57dd83604e930d5e99ccdd4456379f2d9689e072423beac51d755c86d",
+      "elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "fine_inflated": "9765f6069cfa55e13fca67f6ffd8aa10cee6253b3199f3243523c788ac64b466",
+      "fine_obstacle": "4bee630d1734b70f6673899e8e661741cb5b9e8c48a6f13feb9e099bdf5ddf03",
+      "lethal": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "samples": "7b63b1c94b1ed0dc0ae0be126ef6e032b66ed5c33165bc06e242bc1454de4136",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gx": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gy": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.lethal": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "tm.rock": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "tm.rough": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.slope": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.steep": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "version": 2
+    },
+    "lidar_real+depth2/local/2": {
+      "_fine_ids": "2c56963216b7d8620908b1f2ecaa8d8ae76249cb81f711d934cab0bb7a891bcf",
+      "_inflated_coarse": "9f9b8d3841b126961902924a44bdaa1251d64619df5e4de061445d075be26eb1",
+      "_source_history": "43e74e4126258d58e98cbf4b054d33f92e706af64dcee632c7548f656291b982",
+      "attribution": "740a86a18f2b7aa42bb5c6c606856cfc6c3107cb140e40cccf6080c4c067421a",
+      "detected_obstacle": "ca8e608a4595a976eb0d3b7423a1c12ad8a1e2d96089d9f02daa4d9cf140d56c",
+      "elev": "3ef34104eac7a4fe1fb065ee00e6fbb11ee90007b320160e35d9d37c24a0edc8",
+      "fine_inflated": "45818f48973bbe735e20d9b4ef05d43da66b951d16f07c36cd676f3b1d8b8452",
+      "fine_obstacle": "ae8932241a7de6bb83ca7f50ad3e04a6a776500c2901bd1625057199f1a39fea",
+      "lethal": "738376acc647ae120570b6fe811ef319eb80dc40591fdf759c1241c858abd2e6",
+      "samples": "2c1e14ee3cf74c7402a0e542d305edd50f4f6d1e82e7cfa72bbe4134244246fe",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "1d6aabd13e18d26841efa5197654980647b4c0513d68a21db9ee1de301af56fe",
+      "tm.elev": "3ef34104eac7a4fe1fb065ee00e6fbb11ee90007b320160e35d9d37c24a0edc8",
+      "tm.gx": "8e2205be62d89875d6568f3297df2986e20055996e1fdf4b5509940b538768c9",
+      "tm.gy": "a35151d1552e02144fb56bd110882fa63f6c69a28259405b898fd812595556ac",
+      "tm.lethal": "e4751882579c1ae73e0649f9fa104dc1dd8edad235e49321a1fc66a821d214da",
+      "tm.rock": "9f9b8d3841b126961902924a44bdaa1251d64619df5e4de061445d075be26eb1",
+      "tm.rough": "f380920b656727342f37d8e86abc335d69a83b86f48629c82a9c688772059d93",
+      "tm.slope": "bbc8fcc566d3bf4e886dee217ffb2c2e5ec6f1d56adac5baf0bb17b2f94e31e4",
+      "tm.steep": "5e1bf4f1323b323b436918f505dfd6a7419cbeec3a6cb248ff98525c440e0007",
+      "version": 3
+    },
+    "lidar_real+depth2/prior/0": {
+      "_fine_ids": "6237bd6a380640b83f1495e5e248e1f9070c77df7cd530c19f88918e83df2971",
+      "_inflated_coarse": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "_source_history": "2464a751a73a5f97c9747a1f28983ae622bd8aafdbdd24c3ea82879280c27a24",
+      "attribution": "e1c798237dba71f15f13569a31531bed80821a73a708599c8bbcfdddfb2592ba",
+      "detected_obstacle": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "fine_inflated": "9202e68fbe5587e30738f2f118e87e10202a6eabd7297e1299978ed53c3a8f46",
+      "fine_obstacle": "9202e68fbe5587e30738f2f118e87e10202a6eabd7297e1299978ed53c3a8f46",
+      "lethal": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "samples": "4189db94cf7413c47698d465e7e15e038192a7f4907355dc0bb2d37b9b7bbca5",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gx": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gy": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.lethal": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "tm.rock": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "tm.rough": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.slope": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.steep": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "version": 1
+    },
+    "lidar_real+depth2/prior/1": {
+      "_fine_ids": "51ffd2b18f8e092ffcef8901c6eb91751efc378f5c87f45ef50dc9467dd1aab8",
+      "_inflated_coarse": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "_source_history": "1824218efca937937666bd74512b3132a57f6c540b6f07d849d8f28ef7e49fd5",
+      "attribution": "630087f1f87ee1ddcb7f1771f489e8acbe9fad2721857feb83b2b52bfd13f2b0",
+      "detected_obstacle": "613f56b57dd83604e930d5e99ccdd4456379f2d9689e072423beac51d755c86d",
+      "elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "fine_inflated": "9765f6069cfa55e13fca67f6ffd8aa10cee6253b3199f3243523c788ac64b466",
+      "fine_obstacle": "4bee630d1734b70f6673899e8e661741cb5b9e8c48a6f13feb9e099bdf5ddf03",
+      "lethal": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "samples": "7b63b1c94b1ed0dc0ae0be126ef6e032b66ed5c33165bc06e242bc1454de4136",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.elev": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gx": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.gy": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.lethal": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "tm.rock": "3e7df45640eb5cd228466510f8b2c1b166e28eb765aacfa83747e49f0d70356c",
+      "tm.rough": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.slope": "606f558e014930f9c1669f03c71c28945c4631568e39cd308c6c7f4077c7bfb9",
+      "tm.steep": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+      "version": 2
+    },
+    "lidar_real+depth2/prior/2": {
+      "_fine_ids": "2c56963216b7d8620908b1f2ecaa8d8ae76249cb81f711d934cab0bb7a891bcf",
+      "_inflated_coarse": "7ef6f499a9a080d64d69dec191e1844920f57c5b9e635c00514399d8f0fb728f",
+      "_source_history": "43e74e4126258d58e98cbf4b054d33f92e706af64dcee632c7548f656291b982",
+      "attribution": "05322b4c8cecbae57e78d12abf303aff2fb05bd90c24de4d05e01251807a8311",
+      "detected_obstacle": "8ffaa1ac936a25641ebb72339d144854b4c81efa11a91ba52ae199cfd1dff587",
+      "elev": "9916171ff89df3c56bafa0943ab220f8bbaec1e0579a9136ba1f8eed3fe7b7d2",
+      "fine_inflated": "bad080e1432618e07dc18ef391cedca8127b83b5fb241263439e4031fc79d078",
+      "fine_obstacle": "f05f365d203848d5810e9a64631990cfc276dc6e86001513cd6127b4c6da7d90",
+      "lethal": "4d77f254bc3a4bc9f9c244d13059c02cba10b0e52e31582ea09c3797e628488f",
+      "samples": "28f433e4f69b80acb1bd9a940db04a4427ae9a3e24fa305a03b79567467ad9d4",
+      "seen": "5ae872bee36ee5e4ddca4b74bbe3ba09b0acf22a3165e4debc9ef4978d38107a",
+      "tm.cost": "ec0cc3a54f093073df9d08653104a4e81a73cbe1d67ee8b3d1ea0e07e8db77d4",
+      "tm.elev": "9916171ff89df3c56bafa0943ab220f8bbaec1e0579a9136ba1f8eed3fe7b7d2",
+      "tm.gx": "dd57fed4b8eb19f0661c10fe6672e5a447c0b5005bc1107c034a89f6b6d4bf97",
+      "tm.gy": "d1b5782748899ef796a0c2a4ec612fb3b23ceecc006ccb4e9c22a66c32c7d74e",
+      "tm.lethal": "b044114516b1480bcc28c1d3e14db6aedec668e3b72af2ef0c4187a791de774a",
+      "tm.rock": "7ef6f499a9a080d64d69dec191e1844920f57c5b9e635c00514399d8f0fb728f",
+      "tm.rough": "eeed9c2874739632bdcc9f8ba4590749ddaa5df64d6862173383e17299bf2bc1",
+      "tm.slope": "fd08d567cf94abba58a5d68ee0b25d2525930dfd33f9870599544620fc2a7b94",
+      "tm.steep": "8c243564b50197ac0b688c5258a54e67cdcf71ae5073fa3ae0d019597273e158",
+      "version": 3
+    },
+    "lidar_real+depth2_local.npz": "9f092d2e24bed43adc22efdd1ac66d76f43f30d34ae71e4a41e47b5bde85c971",
+    "lidar_real+depth2_local.npz.sensors.json": "96dd251c2429f73f7f678a901240e5060b79a9cee55ef7bc4f2729078cadf749",
+    "lidar_real+depth2_prior.npz": "6d388c57a2f6be447b38999c1306ae88a66545a12b819cfd604e7f73b5c69692",
+    "lidar_real+depth2_prior.npz.sensors.json": "a80cd8e422d5dc659a229c291290674b696e061d946bb134410c76e39ee5e0ab"
+  },
+  "none": {
+    "commands": [
+      "null",
+      "{\"id\": 1, \"map_id\": \"fixture\", \"order\": [0, 1], \"start_cells\": [4, 4], \"stops_cells\": [[18, 4]], \"points\": [[9.0, 2.0]], \"path\": [[2.0, 2.0], [9.0, 2.0]], \"online_generated\": true, \"replace_path\": false, \"reason\": \"start_leg\", \"leg_index\": 0, \"final_leg\": true, \"n_replans\": 0, \"plan_time_s\": 0.0, \"planned_at\": 0.1, \"revision\": 1, \"plan_history\": [{\"reason\": \"start_leg\", \"success\": true, \"plan_time_s\": 0.0, \"n_plans\": 1}], \"handoff_latency_s\": 0.0, \"sim_handoff_s\": 0.1, \"pose_shift_m\": 0.0}",
+      "null",
+      "null"
+    ],
+    "environment": {
+      "numpy": "2.3.5",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+    },
+    "files": {
+      "diag/periodic_000001.npz": "97cd5b5cb70103514b5c3c11d52f7188de20e4b9f0ff40847442ef1fbc916eb1",
+      "diag/periodic_000002.npz": "d3841e0dcc3542cc86f445347b898cda2997d102fff795d0566ee5b4aad7dd89",
+      "mission.json": "2b4aeecdc80935fbfbb0995fab6943ea8404a06573f37405ade6ad60533325db",
+      "plans.csv": "3b81f688a8fe8f834177afdb005e146849189401b96998603dbd1e4cc11c75ab",
+      "replans.csv": "f8488ce1b93b277200b0c6c54c1c3b548135c165773f1240979868fbe2576ab0",
+      "trajectory.csv": "518f35056714d042679279a5dff4510657fe91b0b656714324bad0877985af17"
+    },
+    "manifest_sha256": "8a0be69a14debb14799a7b1845ff186004c57313b1bcf9c99f6942d307c87c49",
+    "manifest_without_environment_sha256": "e5b5b0206c1b1a2aa3cbe72b150fe7c5b1296bc6a9a169539654b8c38fe568a1",
+    "state": [
+      "{\"map_id\": \"fixture\", \"mission_id\": 0, \"status\": \"replaced\", \"pose\": null, \"sim_time\": 0.0}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"running\", \"pose\": [2.0, 2.0, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 0.1, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 0}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"running\", \"pose\": [3.0, 2.25, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 2.0, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 0}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"stopped\", \"pose\": [3.0, 2.25, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 2.0, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 0}"
+    ],
+    "velocities": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        -0.4705882352941178
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  "v1": {
+    "commands": [
+      "null",
+      "{\"id\": 1, \"map_id\": \"fixture\", \"order\": [0, 1], \"start_cells\": [4, 4], \"stops_cells\": [[18, 4]], \"points\": [[9.0, 2.0]], \"path\": [[2.0, 2.0], [9.0, 2.0]], \"online_generated\": true, \"replace_path\": false, \"reason\": \"start_leg\", \"leg_index\": 0, \"final_leg\": true, \"n_replans\": 0, \"plan_time_s\": 0.0, \"planned_at\": 0.1, \"revision\": 1, \"plan_history\": [{\"reason\": \"start_leg\", \"success\": true, \"plan_time_s\": 0.0, \"n_plans\": 1}], \"handoff_latency_s\": 0.0, \"sim_handoff_s\": 0.1, \"pose_shift_m\": 0.0}",
+      "null",
+      "{\"id\": 1, \"map_id\": \"fixture\", \"order\": [0, 1], \"start_cells\": [4, 4], \"stops_cells\": [[18, 4]], \"points\": [[9.0, 2.0]], \"path\": [[2.0, 2.0], [9.0, 2.0]], \"online_generated\": true, \"replace_path\": true, \"reason\": \"unsafe_tilt\", \"leg_index\": 0, \"final_leg\": true, \"n_replans\": 1, \"plan_time_s\": 0.0, \"planned_at\": 1.1, \"revision\": 2, \"plan_history\": [{\"reason\": \"start_leg\", \"success\": true, \"plan_time_s\": 0.0, \"n_plans\": 1}, {\"reason\": \"unsafe_tilt\", \"success\": true, \"plan_time_s\": 0.0, \"n_plans\": 2}], \"handoff_latency_s\": 0.0, \"sim_handoff_s\": 0.10000000000000009, \"pose_shift_m\": 0.0}",
+      "null",
+      "null"
+    ],
+    "environment": {
+      "numpy": "2.3.5",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+    },
+    "files": {
+      "diag/periodic_000001.npz": "97cd5b5cb70103514b5c3c11d52f7188de20e4b9f0ff40847442ef1fbc916eb1",
+      "diag/periodic_000002.npz": "d3841e0dcc3542cc86f445347b898cda2997d102fff795d0566ee5b4aad7dd89",
+      "mission.json": "815219accb9ac0734cb8f720df50fa4de58919200485adfd1fae831574f50b1f",
+      "plans.csv": "c0354e3ac987543fc651972e510d5a35e159ad0793cdeeb655af414f1b1a0067",
+      "replans.csv": "d109539f0901be3b5b877f2069cc864709613a13abb6b88d347ba3cb0a70edbe",
+      "safety_events.csv": "aae26c33e2446a694c00a8d2d16b48ab570ea87985feef141e1883bcab23ebe9",
+      "safety_stops.csv": "6d1e2f9f84db509bebf0fa1103926b6b35e9c321c79813ca9df5f476e865326b",
+      "trajectory.csv": "0e0d34c0af9aedfcf7b42ec93da8c8c1520a0cac01fd1648ca142d4f736b2125"
+    },
+    "manifest_sha256": "543a97c42f23f785fabd436ab2e72bf5eac637f4913784257a832a8e269f5fcd",
+    "manifest_without_environment_sha256": "a33f305804e78ea9cf99cc187c7bb7bb76a7b91ba507300dc3800b10e413f970",
+    "state": [
+      "{\"map_id\": \"fixture\", \"mission_id\": 0, \"status\": \"replaced\", \"pose\": null, \"sim_time\": 0.0}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"running\", \"pose\": [2.0, 2.0, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 0.1, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 0, \"safety_revision\": 1}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"unsafe_tilt\", \"pose\": [2.0, 2.0, 0.0, 0.4537856055185257, 0.0, 0.0], \"sim_time\": 1.0, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 0, \"safety_revision\": 1}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"running\", \"pose\": [2.0, 2.0, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 1.1, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 1, \"safety_revision\": 2}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"running\", \"pose\": [3.0, 2.25, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 2.0, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 1, \"safety_revision\": 2}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"stopped\", \"pose\": [3.0, 2.25, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 2.0, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 1, \"safety_revision\": 2}"
+    ],
+    "velocities": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        -0.4705882352941178
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  "v2": {
+    "commands": [
+      "null",
+      "{\"id\": 1, \"map_id\": \"fixture\", \"order\": [0, 1], \"start_cells\": [4, 4], \"stops_cells\": [[18, 4]], \"points\": [[9.0, 2.0]], \"path\": [[2.0, 2.0], [9.0, 2.0]], \"online_generated\": true, \"replace_path\": false, \"reason\": \"start_leg\", \"leg_index\": 0, \"final_leg\": true, \"n_replans\": 0, \"plan_time_s\": 0.0, \"planned_at\": 0.1, \"revision\": 1, \"plan_history\": [{\"reason\": \"start_leg\", \"success\": true, \"plan_time_s\": 0.0, \"n_plans\": 1}], \"handoff_latency_s\": 0.0, \"sim_handoff_s\": 0.1, \"pose_shift_m\": 0.0}",
+      "null",
+      "{\"id\": 1, \"map_id\": \"fixture\", \"order\": [0, 1], \"start_cells\": [4, 4], \"stops_cells\": [[18, 4]], \"points\": [[9.0, 2.0]], \"path\": [[2.0, 2.0], [9.0, 2.0]], \"online_generated\": true, \"replace_path\": true, \"reason\": \"unsafe_tilt\", \"leg_index\": 0, \"final_leg\": true, \"n_replans\": 1, \"plan_time_s\": 0.0, \"planned_at\": 1.1, \"revision\": 2, \"plan_history\": [{\"reason\": \"start_leg\", \"success\": true, \"plan_time_s\": 0.0, \"n_plans\": 1}, {\"reason\": \"unsafe_tilt\", \"success\": true, \"plan_time_s\": 0.0, \"n_plans\": 2}], \"handoff_latency_s\": 0.0, \"sim_handoff_s\": 0.10000000000000009, \"pose_shift_m\": 0.0}",
+      "null",
+      "null"
+    ],
+    "environment": {
+      "numpy": "2.3.5",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+    },
+    "files": {
+      "diag/periodic_000001.npz": "97cd5b5cb70103514b5c3c11d52f7188de20e4b9f0ff40847442ef1fbc916eb1",
+      "diag/periodic_000002.npz": "d3841e0dcc3542cc86f445347b898cda2997d102fff795d0566ee5b4aad7dd89",
+      "mission.json": "815219accb9ac0734cb8f720df50fa4de58919200485adfd1fae831574f50b1f",
+      "plans.csv": "c0354e3ac987543fc651972e510d5a35e159ad0793cdeeb655af414f1b1a0067",
+      "replans.csv": "d109539f0901be3b5b877f2069cc864709613a13abb6b88d347ba3cb0a70edbe",
+      "safety_events.csv": "7ac0f0924bd93e5c8cf99a31b575a9a10b0807be24f11c02a095b526ffb3cedf",
+      "safety_stops.csv": "6d1e2f9f84db509bebf0fa1103926b6b35e9c321c79813ca9df5f476e865326b",
+      "trajectory.csv": "0e0d34c0af9aedfcf7b42ec93da8c8c1520a0cac01fd1648ca142d4f736b2125"
+    },
+    "manifest_sha256": "40385e5d1d6297dbfcd5b4dc3212d7b1f24c7ac2495af09e3fd55b026a889a11",
+    "manifest_without_environment_sha256": "72a17810a2910d54929a9687b76a42d9e899d6dec8d0c278d0f0fc3a45470b37",
+    "state": [
+      "{\"map_id\": \"fixture\", \"mission_id\": 0, \"status\": \"replaced\", \"pose\": null, \"sim_time\": 0.0}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"running\", \"pose\": [2.0, 2.0, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 0.1, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 0, \"safety_revision\": 1}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"unsafe_tilt\", \"pose\": [2.0, 2.0, 0.0, 0.4537856055185257, 0.0, 0.0], \"sim_time\": 1.0, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 0, \"safety_revision\": 1}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"running\", \"pose\": [2.0, 2.0, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 1.1, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 1, \"safety_revision\": 2}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"running\", \"pose\": [3.0, 2.25, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 2.0, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 1, \"safety_revision\": 2}",
+      "{\"map_id\": \"fixture\", \"mission_id\": 1, \"status\": \"stopped\", \"pose\": [3.0, 2.25, 0.0, 0.0, 0.0, 0.0], \"sim_time\": 2.0, \"current_path\": [[2.0, 2.0], [9.0, 2.0]], \"n_replans\": 1, \"safety_revision\": 2}"
+    ],
+    "velocities": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        -0.4705882352941178
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  }
+}

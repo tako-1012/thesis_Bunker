@@ -4,7 +4,8 @@ Five 0.1m cells tile each existing 0.5m cell, sharing its boundaries. Height
 fusion and its 64-return history stay on the original coarse grid; each return
 also retains its fine cell ID so only that cell's evidence can form a cluster.
 Collision uses distance to the closed fine-cell square, sampled at coarse
-cell centres; a coarse cell's area overlapping the halo does not block it.
+cell centres by default. Task041 optionally pools fine squares intersecting
+the same radius into their containing coarse cells.
 Task029 optionally excludes obstacle returns from the ground median only.
 """
 
@@ -20,6 +21,7 @@ from .traversability import inflate
 FINE_RESOLUTION = .1
 RATIO = 5
 GROUND_ESTIMATES = ('all_returns', 'non_obstacle')
+OBSTACLE_CLEARANCES = ('centre', 'overlap')
 
 
 def _ranges(points):
@@ -38,7 +40,10 @@ def coarse_overlap(fine):
 
 
 class PointCloudMapFine(_LegacyPointCloudMap):
-    def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior', **kwargs):
+    def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior',
+                 obstacle_clearance='centre', **kwargs):
+        if obstacle_clearance not in OBSTACLE_CLEARANCES:
+            raise ValueError('unknown obstacle clearance')
         if obstacle_reference not in ('prior', 'local'):
             raise ValueError('unknown obstacle reference')
         if ground_estimate not in GROUND_ESTIMATES:
@@ -46,6 +51,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         super().__init__(*args, **kwargs)
         self.ground_estimate = ground_estimate
         self.obstacle_reference = obstacle_reference
+        self.obstacle_clearance = obstacle_clearance
         if obstacle_reference == 'local':
             self._local_points = {}
         if self.obstacle_height_m != .3 or self.min_obstacle_points != 3 or self.robot.footprint_radius != .5:
@@ -56,12 +62,15 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self._fine_ids = {}
         self._inflated_coarse = np.zeros(self.prior.shape, bool)
         radius_cells = int(np.ceil(self.robot.footprint_radius/FINE_RESOLUTION))
+        # An overlap query is a square, with an extra half cell on each axis.
+        extra = 2 if obstacle_clearance == 'overlap' else 1
+        radius_cells += int(obstacle_clearance == 'overlap')
         x, y = np.mgrid[-radius_cells:radius_cells+1, -radius_cells:radius_cells+1]
         # In half-fine-cell units, distance from a query centre to the nearest
         # point of an occupied square is max(2*abs(offset)-1, 0) on each axis.
         # Integer offsets retain the cell edges, including diagonal corners;
         # subtracting just 0.05m from a scalar centre distance would not.
-        dx, dy = np.maximum(2*np.abs(x)-1, 0), np.maximum(2*np.abs(y)-1, 0)
+        dx, dy = np.maximum(2*np.abs(x)-extra, 0), np.maximum(2*np.abs(y)-extra, 0)
         self._disk = dx*dx+dy*dy <= (2*self.robot.footprint_radius/FINE_RESOLUTION)**2
         self._radius_cells = radius_cells
         self._prior_rock = self.tm.rock.copy()
@@ -87,13 +96,21 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             halo = (cells[:, None]+self._disk_offsets).reshape(-1, 2)
             halo = halo[((halo >= 0) & (halo < self.fine_shape)).all(axis=1)]
             self.fine_inflated[tuple(halo.T)] = True
-            centres = halo[(halo % RATIO == RATIO//2).all(axis=1)]
-            self._inflated_coarse[tuple((centres//RATIO).T)] = True
+            if self.obstacle_clearance == 'centre':
+                halo = halo[(halo % RATIO == RATIO//2).all(axis=1)]
+            self._inflated_coarse[tuple((halo//RATIO).T)] = True
         else:
             seeds = np.zeros(tuple(hi-lo), bool)
             seeds[tuple((cells-lo).T)] = True
             region = tuple(slice(int(a), int(b)) for a, b in zip(lo, hi))
             self.fine_inflated[region] |= binary_dilation(seeds, structure=self._disk)
+            if self.obstacle_clearance == 'overlap':
+                # Include whole coarse cells intersecting the changed fine region.
+                coarse_lo, coarse_hi = lo//RATIO, (hi+RATIO-1)//RATIO
+                coarse = tuple(slice(a, b) for a, b in zip(coarse_lo, coarse_hi))
+                fine = tuple(slice(a*RATIO, b*RATIO) for a, b in zip(coarse_lo, coarse_hi))
+                self._inflated_coarse[coarse] = coarse_overlap(self.fine_inflated[fine])
+                return
             # Each coarse centre is the middle fine centre.
             coarse_lo = (lo+RATIO//2)//RATIO
             coarse_hi = (hi+RATIO//2)//RATIO
@@ -101,6 +118,22 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             fine = tuple(slice(a*RATIO+RATIO//2, b*RATIO+RATIO//2, RATIO)
                          for a, b in zip(coarse_lo, coarse_hi))
             self._inflated_coarse[coarse] = self.fine_inflated[fine]
+
+    def planning_seen(self, seen):
+        """Include inferred obstacle halo cells without marking terrain observed.
+
+        The caller holds the update lock so the halo matches the snapshot.
+        """
+        if self.obstacle_clearance == 'overlap':
+            return seen | self._inflated_coarse
+        return seen
+
+    def planning_snapshot(self):
+        if self.obstacle_clearance == 'centre':
+            return self.snapshot()
+        with self._update_lock:
+            seen, cost, lethal = self.snapshot()
+            return self.planning_seen(seen), cost, lethal
 
     def _update_roughness(self, elev, lo, hi):
         # scipy's sigma=1.5 Gaussian has radius 6 at its default truncate=4.
