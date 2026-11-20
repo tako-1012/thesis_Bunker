@@ -25,7 +25,15 @@ from tests.test_review_fixes import drive, follower_node, SCENARIO
 FIXTURE = ROOT/'tests/reference/obstacle_clearance_legacy.json'
 
 
-def make_mapper(sensors, reference, **options):
+def make_mapper(sensors, reference, *, classes=None, **options):
+    if classes is not None:
+        # Pre-041 implementation (tests/reference/*_041base.py, copied from 72253c6).
+        Fine, Multi = classes
+        prior = np.zeros((24, 24))
+        kwargs = {} if reference == 'prior' else dict(obstacle_reference=reference)
+        if sensors == 'legacy':
+            return Fine(prior, ground_estimate='non_obstacle', **kwargs)
+        return Multi(prior, sensors=sensors, ground_estimate='non_obstacle', **kwargs)
     return make_pointcloud_map(np.zeros((24, 24)), map_method='fine', sensors=sensors,
                                obstacle_reference=reference, ground_estimate='non_obstacle', **options)
 
@@ -37,11 +45,11 @@ def fuse(mapper, xyz, *, source=None):
     return mapper.update(local_cloud(xyz, pose, mapper.mounts[source]), pose, sensor=source, stamp=1.)
 
 
-def collect_map_bytes(root, **options):
+def collect_map_bytes(root, *, classes=None, **options):
     data = {}
     for sensors in ('legacy', 'lidar_real+depth2'):
         for reference in ('prior', 'local'):
-            mapper = make_mapper(sensors, reference, **options)
+            mapper = make_mapper(sensors, reference, classes=classes, **options)
             source = None if sensors == 'legacy' else 'lidar'
             key = sensors, reference
             for i, xyz in enumerate((cloud(), cloud(box=True), cloud(20., box=True))):
@@ -116,13 +124,25 @@ def test_default_bytes():
     expected = json.loads(FIXTURE.read_text())
     actual = capture_defaults()
     assert capture_defaults(obstacle_clearance='centre', record_clearance=True) == actual
+    # Map arrays include sloped terrain (arctan), whose last bits can differ between CPUs and
+    # math libraries. Compare them byte for byte with the pre-041 implementation run on THIS
+    # machine (reference copies of 72253c6), instead of hashes recorded on another machine.
+    from tests.test_map_speed import reference_classes
+    with tempfile.TemporaryDirectory() as tmp:
+        reference_maps = json.loads(json.dumps(collect_map_bytes(Path(tmp), classes=reference_classes('041base'))))
+    assert actual['maps'] == reference_maps
+    stored_maps_match = actual['maps'] == expected['maps']
+    for result in (actual, expected):
+        result.pop('maps')
     for mode in ('none', 'v1', 'v2'):
         if actual[mode]['environment'] != expected[mode]['environment']:
             for result in (actual, expected):
                 result[mode].pop('manifest_sha256')
                 result[mode].pop('environment')
     assert actual == expected
-    print('1 PASS: centre default/explicit, prior/local, fine/multi; map, manifest, ROS-mocked commands and existing none/v1/v2 files match baseline')
+    print('1 PASS: centre default/explicit, prior/local, fine/multi; maps match the pre-041 implementation on this machine '
+          f'(recorded hashes {"also match" if stored_maps_match else "differ on this machine"}); '
+          'manifest, ROS-mocked commands and existing none/v1/v2 files match baseline')
 
 
 def obstacle_cloud():

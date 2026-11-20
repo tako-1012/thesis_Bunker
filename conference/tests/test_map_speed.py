@@ -127,7 +127,7 @@ def digest(mapper):
     return result
 
 
-def reference_classes():
+def reference_classes(tag='038base'):
     """Load the pre-038 implementation (copied byte for byte from 9b3b1ef) as a runtime reference.
 
     Stored hashes of float arrays (slope, cost, ...) depend on the platform's math library and
@@ -139,15 +139,15 @@ def reference_classes():
     import sys
     loaded = {}
     for name in ('pointcloud_map_fine', 'local_ground', 'pointcloud_map_multi'):
-        source = (ROOT/'tests/reference'/f'{name}_038base.py').read_text()
+        source = (ROOT/'tests/reference'/f'{name}_{tag}.py').read_text()
         for other in ('local_ground', 'pointcloud_map_fine'):
-            source = source.replace(f'from .{other} import', f'from .{other}_038base import')
-        full = f'tapp.{name}_038base'
+            source = source.replace(f'from .{other} import', f'from .{other}_{tag} import')
+        full = f'tapp.{name}_{tag}'
         spec = importlib.util.spec_from_loader(full, loader=None)
         module = importlib.util.module_from_spec(spec)
         module.__package__ = 'tapp'
         sys.modules[full] = module
-        exec(compile(source, f'{name}_038base.py', 'exec'), vars(module))
+        exec(compile(source, f'{name}_{tag}.py', 'exec'), vars(module))
         loaded[name] = module
     return loaded['pointcloud_map_fine'].PointCloudMapFine, loaded['pointcloud_map_multi'].PointCloudMapMulti
 
