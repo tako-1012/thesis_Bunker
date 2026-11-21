@@ -1,6 +1,6 @@
 # 指示書 047：地形の傾きは古い地図から取り、障害物だけをセンサーで見つける（選んだときだけ）
 
-> **状態：実行中（2026-11-21 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（Gazebo での評価は、あとで研究 PC で別に行う）。
+> **状態：完了（結果は `results/terrain_from_prior/`、レビューは `REVIEW_ja.md`。Gazebo での評価は後日）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（Gazebo での評価は、あとで研究 PC で別に行う）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/waypoint_feasibility/REPORT_ja.md`・`REVIEW_ja.md`（046、**この指示書の根拠**）、
 > `conference/results/ground_estimate/`（029）、`conference/tasks/029_ground_without_obstacle_returns.md`、`tapp/pointcloud_map_fine.py`・`pointcloud_map_multi.py`・`local_ground.py`、
 > `conference/results/common_eval/REPORT_ja.md`（集計の道具）を読むこと。

@@ -7,6 +7,8 @@ Collision uses distance to the closed fine-cell square, sampled at coarse
 cell centres by default. Task041 optionally pools fine squares intersecting
 the same radius into their containing coarse cells.
 Task029 optionally excludes obstacle returns from the ground median only.
+Task047 optionally uses fixed prior terrain for planning and retains the
+fused elevation separately for diagnostics.
 """
 
 from copy import copy
@@ -22,6 +24,7 @@ FINE_RESOLUTION = .1
 RATIO = 5
 GROUND_ESTIMATES = ('all_returns', 'non_obstacle')
 OBSTACLE_CLEARANCES = ('centre', 'overlap')
+TERRAIN_SOURCES = ('sensor', 'prior')
 
 
 def _ranges(points):
@@ -41,7 +44,9 @@ def coarse_overlap(fine):
 
 class PointCloudMapFine(_LegacyPointCloudMap):
     def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior',
-                 obstacle_clearance='centre', **kwargs):
+                 obstacle_clearance='centre', terrain_source='sensor', **kwargs):
+        if terrain_source not in TERRAIN_SOURCES:
+            raise ValueError('unknown terrain source')
         if obstacle_clearance not in OBSTACLE_CLEARANCES:
             raise ValueError('unknown obstacle clearance')
         if obstacle_reference not in ('prior', 'local'):
@@ -52,6 +57,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self.ground_estimate = ground_estimate
         self.obstacle_reference = obstacle_reference
         self.obstacle_clearance = obstacle_clearance
+        self.terrain_source = terrain_source
         if obstacle_reference == 'local':
             self._local_points = {}
         if self.obstacle_height_m != .3 or self.min_obstacle_points != 3 or self.robot.footprint_radius != .5:
@@ -76,10 +82,14 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self._prior_rock = self.tm.rock.copy()
         self._last_new_obstacles = []
         self._disk_offsets = np.argwhere(self._disk) - radius_cells
+        if terrain_source == 'sensor':
+            self._residual = self.elev - gaussian_filter(self.elev, sigma=1.5)
+            self._rough_mean_x = uniform_filter1d(self._residual, 3, axis=0)
+            self._rough_square_x = uniform_filter1d(self._residual**2, 3, axis=0)
+
+    def _initial_lethal(self):
         self._dilated_steep = inflate(self.tm.steep, self.robot.footprint_radius)
-        self._residual = self.elev - gaussian_filter(self.elev, sigma=1.5)
-        self._rough_mean_x = uniform_filter1d(self._residual, 3, axis=0)
-        self._rough_square_x = uniform_filter1d(self._residual**2, 3, axis=0)
+        return self.tm.lethal | self._dilated_steep
 
     def _add_obstacles(self, keys):
         self._last_new_obstacles = keys
@@ -120,16 +130,19 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             self._inflated_coarse[coarse] = self.fine_inflated[fine]
 
     def planning_seen(self, seen):
-        """Include inferred obstacle halo cells without marking terrain observed.
+        """Give the planner inferred hazards without changing measured coverage.
 
         The caller holds the update lock so the halo matches the snapshot.
         """
+        if self.terrain_source == 'prior':
+            # The soft prior would otherwise allow unobserved steep cells.
+            seen = seen | self._dilated_steep
         if self.obstacle_clearance == 'overlap':
             return seen | self._inflated_coarse
         return seen
 
     def planning_snapshot(self):
-        if self.obstacle_clearance == 'centre':
+        if self.obstacle_clearance == 'centre' and self.terrain_source == 'sensor':
             return self.snapshot()
         with self._update_lock:
             seen, cost, lethal = self.snapshot()
@@ -175,13 +188,16 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         if not seen.flat[observed].all():
             seen = seen.copy()
             seen.flat[observed] = True
-        tm, lethal = self.tm, self.lethal
+        elev, tm, lethal = self.elev, self.tm, self.lethal
         elev_changed = changed.any()
-        if elev_changed or self._last_new_obstacles:
+        if elev_changed:
+            elev = elev.copy()
+            elev.flat[touched[changed]] = heights[changed]
+        update_terrain = elev_changed and self.terrain_source == 'sensor'
+        if update_terrain or self._last_new_obstacles:
             tm = copy(tm)
-            if elev_changed:
-                tm.elev = self.elev.copy()
-                tm.elev.flat[touched[changed]] = heights[changed]
+            if update_terrain:
+                tm.elev = elev
                 cells = np.asarray(np.unravel_index(touched[changed], self.prior.shape))
                 lo, hi = cells.min(axis=1), cells.max(axis=1)+1
                 # One cell of affected gradients plus one input cell
@@ -211,7 +227,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             tm.lethal = tm.rock | tm.steep
             lethal = tm.lethal | self._dilated_steep
         with self._lock:
-            self.elev, self.seen, self.tm, self.lethal = tm.elev, seen, tm, lethal
+            self.elev, self.seen, self.tm, self.lethal = elev, seen, tm, lethal
             self.version += 1
 
     def _update_prior(self, world, cells, input_points, reference=None):
@@ -340,9 +356,10 @@ class PointCloudMapFine(_LegacyPointCloudMap):
 
     def save(self, path):
         with self._update_lock, self._lock:
+            terrain = dict(terrain_steep=self.tm.steep) if self.terrain_source == 'prior' else {}
             np.savez_compressed(path, elev=self.elev, seen=self.seen, obstacle=self.detected_obstacle,
                                 cost=self.tm.cost, lethal=self.lethal, version=self.version,
                                 fine_shape=np.asarray(self.fine_shape), fine_resolution_m=FINE_RESOLUTION,
                                 fine_origin_xy=np.full(2, -RESOLUTION/2),
                                 fine_obstacle_bits=np.packbits(self.fine_obstacle.ravel()),
-                                fine_inflated_bits=np.packbits(self.fine_inflated.ravel()))
+                                fine_inflated_bits=np.packbits(self.fine_inflated.ravel()), **terrain)

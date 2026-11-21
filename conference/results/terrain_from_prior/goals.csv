@@ -1,0 +1,6 @@
+patch,visit_number,goal_x,goal_y,total,final_n,final_sensor_route,final_prior_route,final_recovered,failure_snapshot_n,failure_snapshot_sensor_route,failure_snapshot_prior_route,failure_snapshot_recovered,missing_n
+08OB88_-0167,5,137,294,19,4,0,4,4,3,0,3,3,12
+08OB88_-1417,1,199,151,1,1,1,1,0,0,0,0,0,0
+08OB88_-1417,5,203,229,1,0,0,0,0,0,0,0,0,1
+08OB89_-0347,3,213,144,9,6,0,2,2,3,0,0,0,0
+08OB89_-0847,2,281,117,5,3,0,3,3,0,0,0,0,2

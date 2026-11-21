@@ -76,3 +76,4 @@ docker run --rm --pull=never --network host \
 # Task041 opt-in: pass --map fine --obstacle-clearance overlap.
 # Task043 opt-in: pass --tracking corner_slow to the follower.
 # Task045 opt-in: THESIS_RENDER=gpu enables NVIDIA headless EGL rendering.
+# Task047 opt-in: pass --map fine --terrain-source prior.
