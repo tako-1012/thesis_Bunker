@@ -129,8 +129,11 @@ class PointCloudMap:
         self.detected_obstacle = np.zeros(z.shape, bool)
         self.samples, self.version = {}, 0
         self.tm = TraversabilityMap(self.elev, self.raw_obstacle, robot, weights)
-        self.lethal = inflate_steep(self.tm, robot.footprint_radius)
+        self.lethal = self._initial_lethal()
         self._lock, self._update_lock = threading.Lock(), threading.Lock()
+
+    def _initial_lethal(self):
+        return inflate_steep(self.tm, self.robot.footprint_radius)
 
     def update(self, sensor_points, pose):
         began = time.perf_counter()
