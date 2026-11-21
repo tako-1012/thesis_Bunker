@@ -69,8 +69,13 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
-                  edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default'):
+                  edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
+                  waypoint_check='none'):
     validate_tracking(tracking)
+    if waypoint_check not in ('none', 'substitute'):
+        raise ValueError('unknown waypoint check')
+    if waypoint_check == 'substitute' and endpoint_policy != 'none':
+        raise ValueError('waypoint substitution requires --endpoint-policy none')
     if obstacle_clearance not in OBSTACLE_CLEARANCES:
         raise ValueError('unknown obstacle clearance')
     if obstacle_clearance == 'overlap' and map_method != 'fine':
@@ -205,6 +210,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         raise ValueError('THESIS_RENDER must be cpu or gpu')
     if render_mode == 'gpu':
         manifest['rendering'] = dict(mode='gpu', engine='ogre2', backend='EGL')
+    if waypoint_check == 'substitute':
+        from ros2_jazzy.gz_checks.waypoint_trial import prepare_waypoints
+        prepare_waypoints(manifest, prior_variant_name)
     save_manifest(output, manifest)
     return manifest
 
@@ -494,6 +502,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     raise RuntimeError('task045 trial errors; inspect manifest and process logs')
                 print('Task045 raw results saved; evaluate GPU rendering separately:', output)
                 return
+            if manifest.get('waypoint_check') == 'substitute':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task046 trial errors; inspect manifest')
+                print('Task046 raw results saved; evaluate substituted waypoints separately:', output)
+                return
             if manifest.get('tracking') == 'corner_slow':
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task043 trial errors; inspect manifest')
@@ -568,6 +581,7 @@ def main():
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
+    parser.add_argument('--waypoint-check', choices=('none', 'substitute'), default='none')
     parser.add_argument('--tracking', choices=TRACKINGS, default='default')
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
     parser.add_argument('--edge-margin-m', type=int, choices=(0, 10), default=0)
@@ -584,6 +598,9 @@ def main():
         manifest = prepare_cases(output, **args)
         if 'rendering' in manifest:
             print('Task045 preparation only; Gazebo not executed:', output)
+            return
+        if manifest.get('waypoint_check') == 'substitute':
+            print('Task046 preparation only; Gazebo not executed:', output)
             return
         if manifest.get('tracking') == 'corner_slow':
             print('Task043 preparation only; Gazebo not executed:', output)

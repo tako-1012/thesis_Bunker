@@ -1,0 +1,36 @@
+cohort=standard patch=08OB86_00294 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB86_-0205 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB87_-0706 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB88_-1417 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB88_-0167 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB88_00332 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB88_01832 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB89_00152 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB89_-0347 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=standard patch=08OB89_-0847 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB86_00294 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB86_-0205 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB87_-0706 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB88_-1417 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB88_-0167 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB88_00332 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB88_01832 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB89_00152 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB89_-0347 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+cohort=024 patch=08OB89_-0847 waypoints=5 ok=5 blocked_cell=0 unreachable=0 substituted=0 skipped=0
+030 terminal goal_cell: 14 prior: {'ok': 14} by steep inflation: 10 final goal lethal / available: 13/14
+  08OB88_-1417 1 199 151 n= 1
+  08OB88_-0167 5 137 294 n= 4
+  08OB89_-0347 3 213 144 n= 6
+  08OB89_-0847 2 281 117 n= 3
+035 terminal goal_cell: 6 prior: {'ok': 6} by steep inflation: 3 final goal lethal / available: 0/0
+  08OB88_-0167 5 137 294 n= 3
+  08OB89_-0347 3 213 144 n= 3
+037 terminal goal_cell: 8 prior: {'ok': 8} by steep inflation: 8 final goal lethal / available: 0/0
+  08OB88_-0167 5 137 294 n= 6
+  08OB88_-1417 5 203 229 n= 1
+  08OB89_-0847 2 281 117 n= 1
+039 terminal goal_cell: 7 prior: {'ok': 7} by steep inflation: 7 final goal lethal / available: 0/0
+  08OB88_-0167 5 137 294 n= 6
+  08OB89_-0847 2 281 117 n= 1
+replacement distances (m): n= 0 min/median/max= unavailable
