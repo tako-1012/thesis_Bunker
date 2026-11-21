@@ -18,4 +18,4 @@
 - `/code-review`（low）：所見なし。
 
 ## テストの結果
-末尾に追記（045 と同じ実行）。
+- 045 と 046 を合わせた状態で、`conference/tests/` の 40 本すべてが終了コード 0（`gpu_rendering/review_all_tests_summary.txt`、NumPy 2.3.5・SciPy 1.17.0）。

@@ -1,6 +1,6 @@
 # 指示書 045：研究 PC の GPU で Gazebo のセンサーを描けるようにする（準備）
 
-> **状態：実行中（2026-11-21 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。クラウドには GPU がないので、**作るところまで**。研究 PC での確認は 044 のあとに別に行う。
+> **状態：完了（準備。研究 PC での確認は 044 のあと。結果は `results/gpu_rendering/`、レビューは `REVIEW_ja.md`）**。実装は **クラウドの Codex**。クラウドには GPU がないので、**作るところまで**。研究 PC での確認は 044 のあとに別に行う。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/ros2_jazzy/gz_checks/run_lidar_checks.sh`・`lidar_checks.py`・`terrain_mesh.py`、
 > `conference/ros2_jazzy/SETUP_AGENT_ja.md`、`conference/results/rtf_compare/REPORT_B_ja.md`・`REVIEW_B_ja.md`（039）を読むこと。
 > ブランチは `codex/045-gpu-rendering`（その時点の `realtime-map` の最新から）。結果は `conference/results/gpu_rendering/`、報告は同じ場所の `REPORT_ja.md`。
