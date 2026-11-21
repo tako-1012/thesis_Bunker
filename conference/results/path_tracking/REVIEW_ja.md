@@ -33,4 +33,4 @@
 `runs.csv`（240 走行）と `summary.csv` は、指示書どおりの条件（検証用の 12 か所 × 5 経路 × 4 条件）。表の値（遅れありで `default` 0.217m、`corner_slow` 0.210m など）は `summary.csv` と一致。
 
 ## テストの結果
-（下に追記）
+- 042 と 043 を合わせた状態で、`conference/tests/` の 38 本すべてが終了コード 0（`review_all_tests_summary.txt`、NumPy 2.3.5・SciPy 1.17.0）。
