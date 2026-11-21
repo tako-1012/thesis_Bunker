@@ -21,7 +21,7 @@ from thesis_bunker_gz.lidar import LidarSpec
 from tapp.tracking import TRACKINGS, validate_tracking
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
-from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES, TERRAIN_SOURCES
 from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
 from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
 from tapp.endpoint_policy import ENDPOINT_POLICIES
@@ -70,8 +70,12 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
-                  waypoint_check='none'):
+                  waypoint_check='none', terrain_source='sensor'):
     validate_tracking(tracking)
+    if terrain_source not in TERRAIN_SOURCES:
+        raise ValueError('unknown terrain source')
+    if terrain_source == 'prior' and map_method != 'fine':
+        raise ValueError('prior terrain source requires --map fine')
     if waypoint_check not in ('none', 'substitute'):
         raise ValueError('unknown waypoint check')
     if waypoint_check == 'substitute' and endpoint_policy != 'none':
@@ -213,6 +217,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if waypoint_check == 'substitute':
         from ros2_jazzy.gz_checks.waypoint_trial import prepare_waypoints
         prepare_waypoints(manifest, prior_variant_name)
+    if terrain_source == 'prior':
+        manifest.update(terrain_source=terrain_source,
+                        planning_terrain='fixed prior slope, roughness, cost and inflated steep mask; elev records sensor fusion')
     save_manifest(output, manifest)
     return manifest
 
@@ -429,6 +436,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
                         commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
+                    if manifest.get('terrain_source') == 'prior':
+                        commands[-1].extend(['-p', 'terrain_source:=prior'])
                     if manifest.get('tracking') == 'corner_slow':
                         commands[-2].extend(['-p', 'tracking:=corner_slow'])
                     if manifest.get('online_fixes', 'none') != 'none':
@@ -497,6 +506,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if manifest.get('terrain_source') == 'prior':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task047 trial errors; inspect manifest')
+                print('Task047 raw results saved; evaluate prior terrain separately:', output)
+                return
             if gpu:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task045 trial errors; inspect manifest and process logs')
@@ -581,6 +595,7 @@ def main():
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
+    parser.add_argument('--terrain-source', choices=TERRAIN_SOURCES, default='sensor')
     parser.add_argument('--waypoint-check', choices=('none', 'substitute'), default='none')
     parser.add_argument('--tracking', choices=TRACKINGS, default='default')
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
@@ -596,6 +611,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('terrain_source') == 'prior':
+            print('Task047 preparation only; Gazebo not executed:', output)
+            return
         if 'rendering' in manifest:
             print('Task045 preparation only; Gazebo not executed:', output)
             return

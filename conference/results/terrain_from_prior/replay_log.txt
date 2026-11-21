@@ -1,0 +1,17 @@
+goals
+patch,visit_number,goal_x,goal_y,total,final_n,final_sensor_route,final_prior_route,final_recovered,failure_snapshot_n,failure_snapshot_sensor_route,failure_snapshot_prior_route,failure_snapshot_recovered,missing_n
+08OB88_-0167,5,137,294,19,4,0,4,4,3,0,3,3,12
+08OB88_-1417,1,199,151,1,1,1,1,0,0,0,0,0,0
+08OB88_-1417,5,203,229,1,0,0,0,0,0,0,0,0,1
+08OB89_-0347,3,213,144,9,6,0,2,2,3,0,0,0,0
+08OB89_-0847,2,281,117,5,3,0,3,3,0,0,0,0,2
+map_errors
+map_source,patch,maps,seen_cells,sensor_fp_steep_023,prior_fp_steep_023,delta_fp_steep_023,sensor_fp_steep_same_clearance,prior_fp_steep_same_clearance,delta_fp_steep_same_clearance,sensor_fn_steep_cells,prior_fn_steep_cells,delta_fn_steep_cells,sensor_fn_steep_halo,prior_fn_steep_halo,delta_fn_steep_halo,new_fn_steep_cells,new_fn_steep_halo
+final,all,14,608700,5803,3750,-2053,2926,12,-2914,118,0,-118,1011,32,-979,0,13
+final,08OB88_-0167,4,231272,2942,2882,-60,700,12,-688,61,0,-61,697,8,-689,0,4
+final,08OB88_-1417,1,24106,96,0,-96,96,0,-96,0,0,0,0,0,0,0,0
+final,08OB89_-0347,6,265011,1780,868,-912,1145,0,-1145,57,0,-57,314,24,-290,0,9
+final,08OB89_-0847,3,88311,985,0,-985,985,0,-985,0,0,0,0,0,0,0,0
+failure_snapshot,all,6,307024,2217,2587,370,245,9,-236,80,0,-80,704,18,-686,0,4
+failure_snapshot,08OB88_-0167,3,173641,1812,2155,343,153,9,-144,55,0,-55,548,6,-542,0,1
+failure_snapshot,08OB89_-0347,3,133383,405,432,27,92,0,-92,25,0,-25,156,12,-144,0,3
