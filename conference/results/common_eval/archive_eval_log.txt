@@ -1,0 +1,37 @@
+030 08OB87_-0706 C0 n=3 completed=3
+030 08OB87_-0706 C1 n=3 completed=3
+030 08OB87_-0706 C2 n=3 completed=3
+030 08OB88_-0167 C0 n=3 no_path=3
+030 08OB88_-0167 C1 n=3 no_path=3
+030 08OB88_-0167 C2 n=3 rollover=3
+030 08OB88_-1417 C0 n=3 no_path=3
+030 08OB88_-1417 C1 n=3 completed=3
+030 08OB88_-1417 C2 n=3 completed=3
+030 08OB89_-0347 C0 n=3 no_path=3
+030 08OB89_-0347 C1 n=3 no_path=3
+030 08OB89_-0347 C2 n=3 partial=3
+030 08OB89_-0847 C0 n=3 no_path=3
+030 08OB89_-0847 C1 n=3 completed=1 stuck=2
+030 08OB89_-0847 C2 n=3 completed=2 partial=1
+45 runs -> /tmp/042-final/030
+
+035 08OB86_-0205 S1 n=1 completed=1
+035 08OB86_-0205 S2 n=1 other_error=1
+035 08OB87_-0706 P1 n=3 completed=3
+035 08OB88_-0167 P1 n=3 no_path=3
+035 08OB88_-1417 P1 n=3 completed=3
+035 08OB89_-0347 P1 n=3 no_path=3
+035 08OB89_-0847 P1 n=3 completed=3
+17 runs -> /tmp/042-final/035
+
+037 08OB86_-0205 L n=3 unknown=3
+037 08OB86_-0205 LC n=3 unknown=3
+037 08OB88_-0167 L n=3 unknown=3
+037 08OB88_-0167 LC n=3 unknown=3
+037 08OB88_-1417 L n=3 unknown=3
+037 08OB88_-1417 LC n=3 unknown=3
+037 08OB88_00332 L n=3 unknown=3
+037 08OB88_00332 LC n=3 unknown=3
+037 08OB89_-0847 L n=3 unknown=3
+037 08OB89_-0847 LC n=3 unknown=3
+30 runs -> /tmp/042-final/037

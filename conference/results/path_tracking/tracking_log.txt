@@ -1,0 +1,19 @@
+08OB87_-0206 planned=5/5
+08OB88_01332 planned=5/5
+08OB89_-1597 planned=5/5
+08OC90_00270 planned=5/5
+08OC91_00811 planned=5/5
+08OC93_-1519 planned=5/5
+08OC95_-0321 planned=5/5
+08OC96_-0676 planned=5/5
+08OC97_-0077 planned=5/5
+08OC98_-1101 planned=5/5
+08OC98_01898 planned=5/5
+08OC99_00983 planned=5/5
+model,tracking,runs,completed,median_completed_s,deviation_max_m,deviation_p95_m,over_05_s,over_05_episodes,over_075_s,over_075_episodes
+no_lag,default,60,60,88.225,0.19656907092270695,0.035335039243377594,0.0,0,0.0,0
+no_lag,corner_slow,60,60,91.65,0.2110369158827962,0.03769736863089902,0.0,0,0.0,0
+lagged,default,60,60,88.775,0.21702908263977647,0.05451926079696831,0.0,0,0.0,0
+lagged,corner_slow,60,60,91.825,0.20977204819745993,0.054752964833387756,0.0,0,0.0,0
+no_lag completed_pairs=60 median_delta_s=1.700 median_delta_pct=1.778
+lagged completed_pairs=60 median_delta_s=1.675 median_delta_pct=1.715

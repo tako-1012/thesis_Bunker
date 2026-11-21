@@ -1,6 +1,6 @@
 # 指示書 043：経路を追う側のずれを減らす案を作る（選んだときだけ働く）
 
-> **状態：実行中（2026-11-20 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex（研究実装1）**。Gazebo・研究 PC は使わない（Gazebo での比較は、あとで研究 PC で別に行う）。
+> **状態：完了（結果は `results/path_tracking/`、レビューは `REVIEW_ja.md`。Gazebo での比較は後日）**。実装は **クラウドの Codex（研究実装1）**。Gazebo・研究 PC は使わない（Gazebo での比較は、あとで研究 PC で別に行う）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`tapp/pure_pursuit.py`・`tapp/follower.py`・`tapp/robot_sim.py`・`tapp/online_safety.py`、
 > `conference/results/real_sensors_compare/REPORT_ja.md`・`REVIEW_ja.md`（037）、`conference/results/eval_035/REVIEW_ja.md`、`conference/results/online_safety/REVIEW_ja.md`（034 の所見 1）を読むこと。
 > ブランチは `codex/043-path-tracking`（その時点の `realtime-map` の最新から）。結果は `conference/results/path_tracking/`、報告は同じ場所の `REPORT_ja.md`。

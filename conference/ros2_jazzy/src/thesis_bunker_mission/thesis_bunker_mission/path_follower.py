@@ -16,14 +16,18 @@ from .online_runtime import replace_running_path, record_plan_history
 
 class PathFollower(Node):
     safety_enabled = False
+    tracking = 'default'
 
-    def __init__(self, *, online_fixes='none'):
+    def __init__(self, *, online_fixes='none', tracking='default'):
         super().__init__("path_follower")
         self.declare_parameter("map_id", "file/flat_test_100m.npz")
         self.declare_parameter("run_root", "")
         self.declare_parameter("stall_timeout_s", 10.0)
         self.declare_parameter("online", False)
         self.declare_parameter('online_fixes', online_fixes)
+        self.declare_parameter('tracking', tracking)
+        from tapp.tracking import validate_tracking
+        self.tracking = validate_tracking(self.get_parameter('tracking').value)
         from tapp.online_safety import validate_fixes
         self.online_fixes = validate_fixes(self.get_parameter('online_fixes').value)
         self.safety_enabled = self.online_fixes != 'none'
@@ -113,12 +117,17 @@ class PathFollower(Node):
                     self.get_clock().now().nanoseconds / 1e9,
                     previous=self.follower,
                     **(dict(online_fixes=self.online_fixes) if self.safety_enabled else {}),
+                    **(dict(tracking=self.tracking) if self.tracking != 'default' else {}),
                 )
                 self.current_mission = mission
                 self.n_replans = mission["n_replans"]
                 self.last_status = "running"
                 return
-            if self.safety_enabled:
+            if self.tracking != 'default':
+                from tapp.tracking import make_tracking_follower
+                fixes = self.online_fixes if self.safety_enabled else 'none'
+                follower = make_tracking_follower(mission['path'], online_fixes=fixes, tracking=self.tracking, **settings)
+            elif self.safety_enabled:
                 from tapp.online_safety import make_follower
                 follower = make_follower(mission['path'], online_fixes=self.online_fixes, **settings)
             else:
@@ -131,7 +140,7 @@ class PathFollower(Node):
             self.current_mission = mission
             self.n_replans = mission.get("n_replans", 0)
             self.log = RunLog(
-                dict(mission, controller=settings),
+                dict(mission, controller=settings, **(dict(tracking=self.tracking) if self.tracking != 'default' else {})),
                 self.get_parameter("run_root").value or None,
             )
             if self.online:
@@ -223,11 +232,14 @@ def main(args=None):
     import argparse
     import sys
     from tapp.online_safety import ONLINE_FIXES
+    from tapp.tracking import TRACKINGS
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default=None)
+    parser.add_argument('--tracking', choices=TRACKINGS, default=None)
     options, remaining = parser.parse_known_args(sys.argv[1:] if args is None else args)
-    rclpy.init(args=remaining if options.online_fixes is not None else args)
-    node = PathFollower(**(dict(online_fixes=options.online_fixes) if options.online_fixes is not None else {}))
+    selected = {key: value for key, value in vars(options).items() if value is not None}
+    rclpy.init(args=remaining if selected else args)
+    node = PathFollower(**selected)
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:

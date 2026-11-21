@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT/'ros2_jazzy/src/thesis_bunker_gz'))
 from thesis_bunker_gz.lidar import LidarSpec
+from tapp.tracking import TRACKINGS, validate_tracking
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
 from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES
@@ -67,7 +68,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
-                  edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre'):
+                  edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default'):
+    validate_tracking(tracking)
     if obstacle_clearance not in OBSTACLE_CLEARANCES:
         raise ValueError('unknown obstacle clearance')
     if obstacle_clearance == 'overlap' and map_method != 'fine':
@@ -149,6 +151,11 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                            for i, s in enumerate(scenarios)])
     if edge_margin_m:
         manifest.update(edge_margin_m=edge_margin_m, waypoint_protocol='task024')
+    if tracking != 'default':
+        from tapp.tracking import CORNER_LOOKAHEAD_M, MIN_SPEED_FRACTION, SPIN_ANGLE_RAD
+        manifest.update(tracking=tracking, tracking_settings=dict(
+            corner_lookahead_m=CORNER_LOOKAHEAD_M, min_speed_fraction=MIN_SPEED_FRACTION,
+            spin_heading_error_deg=float(np.rad2deg(SPIN_ANGLE_RAD))))
     if fine_settings is not None:
         manifest.update(fine_settings)
     if obstacle_clearance == 'overlap':
@@ -407,6 +414,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
                         commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
+                    if manifest.get('tracking') == 'corner_slow':
+                        commands[-2].extend(['-p', 'tracking:=corner_slow'])
                     if manifest.get('online_fixes', 'none') != 'none':
                         for command in commands[-2:]:
                             command.extend(['-p', 'online_fixes:='+manifest['online_fixes']])
@@ -467,6 +476,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if manifest.get('tracking') == 'corner_slow':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task043 trial errors; inspect manifest')
+                print('Task043 raw results saved; evaluate tracking separately:', output)
+                return
             if manifest.get('map_method') == 'fine' and manifest['real_time_factor'] == 1.:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task039 trial errors; inspect manifest')
@@ -536,6 +550,7 @@ def main():
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
+    parser.add_argument('--tracking', choices=TRACKINGS, default='default')
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
     parser.add_argument('--edge-margin-m', type=int, choices=(0, 10), default=0)
     parser.add_argument('--obstacle-clearance', choices=OBSTACLE_CLEARANCES, default='centre')
@@ -549,6 +564,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('tracking') == 'corner_slow':
+            print('Task043 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('map_method') == 'fine' and manifest['real_time_factor'] == 1.:
             print('Task039 preparation only; task023 aggregation requires 0.3x:', output)
             return

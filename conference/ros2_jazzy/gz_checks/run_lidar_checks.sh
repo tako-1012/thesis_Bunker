@@ -59,3 +59,4 @@ docker run --rm --pull=never --network host \
 # Task039 opt-in: pass --map fine --real-time-factor 1.0 (fine default: 0.3).
 # Options are forwarded unchanged; the Python CLI takes precedence over the environment.
 # Task041 opt-in: pass --map fine --obstacle-clearance overlap.
+# Task043 opt-in: pass --tracking corner_slow to the follower.

@@ -1,6 +1,6 @@
 # 指示書 042：Gazebo の走行の記録を、同じ定義で集計する共通のツールを作る
 
-> **状態：実行中（2026-11-20 にクラウドの Codex（研究実装2）へ依頼）**。実装は **クラウドの Codex（研究実装2）**。Gazebo・研究 PC は使わない。
+> **状態：完了（結果は `results/common_eval/`、レビューは `REVIEW_ja.md`）**。実装は **クラウドの Codex（研究実装2）**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、次の集計のスクリプトと報告を読むこと：
 > `experiments/eval_ground_endpoint_report.py`（030）、`experiments/eval_035_report.py`・`results/eval_035/details_035.py`（035）、
 > `results/real_sensors_compare/summarize037.py`・`audit037.py`（037）、`experiments/obstacle_clearance_report.py`・`gz_checks/clearance_log.py`（041）、

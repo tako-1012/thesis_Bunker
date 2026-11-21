@@ -285,7 +285,7 @@ def record_plan_history(log, mission):
     log._save()
 
 
-def replace_running_path(log, mission, settings, sim_time, previous=None, *, online_fixes='none'):
+def replace_running_path(log, mission, settings, sim_time, previous=None, *, online_fixes='none', tracking='default'):
     """Validate before replacement, append an event, and retain the RunLog stream."""
     if mission["map_id"] != log.mission["map_id"] or mission.get(
         "id"
@@ -293,7 +293,10 @@ def replace_running_path(log, mission, settings, sim_time, previous=None, *, onl
         raise ValueError("replacement must belong to the same run")
     if int(mission["revision"]) <= int(log.mission.get("revision", 0)):
         raise ValueError("stale path revision")
-    if online_fixes == 'none':
+    if tracking != 'default':
+        from tapp.tracking import make_tracking_follower
+        follower = make_tracking_follower(mission['path'], online_fixes=online_fixes, tracking=tracking, **settings)
+    elif online_fixes == 'none':
         follower = MissionFollower(mission["path"], **settings)
     else:
         from tapp.online_safety import make_follower
