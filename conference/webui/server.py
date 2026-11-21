@@ -12,8 +12,10 @@ from pydantic import BaseModel, Field
 from starlette.concurrency import run_in_threadpool
 
 from tapp.config import RESOLUTION
+from tapp.footprint import with_inflated_steep
 from tapp.mission import list_maps, load_map, plan_mission, render_map_png
 from tapp.robot_sim import simulate, initial_pose
+from tapp.waypoint_feasibility import check_waypoints
 from .robot_api import router as robot_router
 from .geo_api import router as geo_router, geo_for_map
 import numpy as np
@@ -26,10 +28,13 @@ app.mount("/static", StaticFiles(directory=STATIC), name="static")
 _PLANNING = threading.Lock()
 
 
-class PlanRequest(BaseModel):
+class WaypointRequest(BaseModel):
     map_id: str
     start: tuple[float, float]
     points: list[tuple[float, float]] = Field(min_length=1, max_length=12)
+
+
+class PlanRequest(WaypointRequest):
     method: str = "terrain"
 
 
@@ -89,6 +94,15 @@ def map_info(map_id: str):
     if geo is not None:
         info["geo"] = geo
     return info
+
+
+@app.post("/api/waypoint-check")
+def waypoint_check(request: WaypointRequest):
+    tm = with_inflated_steep(_map(request.map_id))["tmap"]
+    try:
+        return check_waypoints(tm.lethal, tm.cost, request.start, request.points)
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
 
 
 @app.post("/api/plan")

@@ -122,11 +122,11 @@ function clearSimulation() {
   $("simulation-result").hidden = true;
 }
 
-function waypointIcon(text) {
+function waypointIcon(text, warning = false) {
   // text is always an internally generated integer, never file/API HTML.
   return L.divIcon({
     className: "waypoint-shell",
-    html: `<div class="waypoint-icon">${text}</div>`,
+    html: `<div class="waypoint-icon${warning ? " waypoint-warning" : ""}">${text}</div>`,
     iconSize: [44, 44],
     iconAnchor: [22, 22],
   });
@@ -137,6 +137,53 @@ function syncFields() {
   $("start-y").value = state.start[1];
   $("coordinates").value = state.points.map((p) => p.join(", ")).join("\n");
   updateButtons();
+}
+
+let waypointPreview = null;
+
+async function previewWaypoints() {
+  waypointPreview?.abort();
+  const controller = new AbortController();
+  waypointPreview = controller;
+  if (!state.points.length) return;
+  try {
+    const result = await api("/api/waypoint-check", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      signal: controller.signal,
+      body: JSON.stringify({map_id: state.info.id, start: state.start, points: state.points}),
+    });
+    if (controller.signal.aborted) return;
+    if (result.start.status !== "ok") state.base.setTooltipContent("基地：事前地図では無効です");
+    const primary = state.results.find((r) => r.method === "terrain") || state.results[0];
+    result.points.forEach((point, index) => {
+      const marker = state.markers[index];
+      const message = marker.getPopup().getContent().querySelector(".waypoint-check");
+      if (point.status === "ok") {
+        message.textContent = "事前地図で到達可能です。";
+        return;
+      }
+      marker.waypointWarning = true;
+      const rank = primary ? primary.order.indexOf(index + 1) : index + 1;
+      marker.setIcon(waypointIcon(rank > 0 ? rank : "×", true));
+      const reason = {
+        prior_lethal: "通れないマス",
+        outside_map: "地図の範囲外",
+        disconnected: "基地から経路なし",
+        invalid_start: "基地が無効",
+      }[point.reason];
+      const alternative = point.replacement_m
+        ? `候補 ${point.replacement_m.join(", ")} m（${point.shift_m.toFixed(2)} m先）`
+        : "1.0 m以内に到達可能な候補なし";
+      message.textContent = `事前地図：${reason}。${alternative}。`;
+    });
+  } catch (error) {
+    if (controller.signal.aborted) return;
+    for (const marker of state.markers) {
+      marker.getPopup().getContent().querySelector(".waypoint-check").textContent =
+        "事前地図での判定を取得できませんでした。";
+    }
+  }
 }
 
 function drawMarkers() {
@@ -160,7 +207,10 @@ function drawMarkers() {
       state.points.splice(index, 1);
       edited();
     });
-    popup.append(label, remove);
+    const check = document.createElement("div");
+    check.className = "waypoint-check";
+    check.textContent = "事前地図で確認中…";
+    popup.append(label, check, remove);
     marker.bindPopup(popup);
     marker.on("dragend", () => {
       state.points[index] = xy(marker.getLatLng());
@@ -185,6 +235,7 @@ function drawMarkers() {
     state.start = xy(state.base.getLatLng());
     edited();
   });
+  previewWaypoints();
 }
 
 function edited() {
@@ -195,6 +246,7 @@ function edited() {
 }
 
 async function selectMap(id, imported = null) {
+  waypointPreview?.abort();
   clearLiveRobot();
   busy(true);
   clearResults();
@@ -294,7 +346,7 @@ function showResults(results) {
   const primary = results.find((r) => r.method === "terrain") || results[0];
   state.markers.forEach((marker, index) => {
     const rank = primary.order.indexOf(index + 1);
-    marker.setIcon(waypointIcon(rank > 0 ? rank : "×"));
+    marker.setIcon(waypointIcon(rank > 0 ? rank : "×", marker.waypointWarning));
     marker.bindTooltip(
       `入力 ${index + 1} ／ ${rank > 0 ? `巡回 ${rank}番目` : "受付外"}`,
     );

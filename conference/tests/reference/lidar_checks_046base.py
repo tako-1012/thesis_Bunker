@@ -1,0 +1,442 @@
+"""Unmodified prepare_cases and run_checks from a048057 for in-process parity."""
+
+def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_m=.3,
+                  noise_stddev_m=.02, max_range_m=30., map_method='coarse', sensors='legacy', endpoint_policy='none', diagnostics=False,
+                  ground_estimate='all_returns', scenarios=None, selected_patches=None,
+                  obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
+                  edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default'):
+    validate_tracking(tracking)
+    if obstacle_clearance not in OBSTACLE_CLEARANCES:
+        raise ValueError('unknown obstacle clearance')
+    if obstacle_clearance == 'overlap' and map_method != 'fine':
+        raise ValueError('overlap obstacle clearance requires --map fine')
+    if real_time_factor is not None:
+        if real_time_factor not in (.3, 1.):
+            raise ValueError('real-time factor must be 0.3 or 1.0')
+        if map_method != 'fine':
+            raise ValueError('--real-time-factor requires --map fine')
+    if edge_margin_m not in (0, 10):
+        raise ValueError('edge margin must be 0 or 10m')
+    if edge_margin_m and scenarios is not None:
+        raise ValueError('edge margin requires the standard scenario cohort')
+    output = Path(output).resolve()
+    output.mkdir(parents=True, exist_ok=True)
+    if (output/'manifest.json').exists():
+        raise FileExistsError('choose a new output; no existing recordings will be overwritten')
+    if patch_count not in (3, 10):
+        raise ValueError('run the first three beaches before extending to ten')
+    validate_fixes(online_fixes)
+    if online_fixes != 'none' and endpoint_policy != 'none':
+        raise ValueError(f'online fixes {online_fixes} requires endpoint-policy none; task028 unchanged')
+    if (obstacle_reference not in OBSTACLE_REFERENCES or debris_box_height not in DEBRIS_BOX_HEIGHTS
+            or prior_variant_name not in PRIOR_VARIANTS):
+        raise ValueError('unknown task032 option')
+    if obstacle_reference == 'local' and map_method != 'fine':
+        raise ValueError('local obstacle reference requires --map fine')
+    if ground_estimate not in GROUND_ESTIMATES:
+        raise ValueError('unknown ground estimate')
+    if ground_estimate != 'all_returns' and map_method != 'fine':
+        raise ValueError('non_obstacle ground estimate requires --map fine')
+    if endpoint_policy not in ENDPOINT_POLICIES:
+        raise ValueError('unknown endpoint policy')
+    if (endpoint_policy != 'none' or diagnostics) and map_method != 'fine':
+        raise ValueError('task028 requires --map fine')
+    configuration = sensor_configuration(sensors)
+    if configuration is not None:
+        if map_method != 'fine':
+            raise ValueError('real sensors require --map fine')
+        if noise_stddev_m != .02 or max_range_m != 30. or sensor_height_m not in (.8, 1.4) or obstacle_height_m != .3:
+            raise ValueError('task027 fixes the real sensor specification and threshold')
+        sensor_height_m = 1.4
+    spec = LidarSpec(noise_stddev_m=noise_stddev_m, max_range_m=max_range_m,
+                     **({'min_range_m': .9} if configuration is not None else {}))
+    spec.validate()
+    if not np.isfinite([sensor_height_m, obstacle_height_m]).all() or min(sensor_height_m, obstacle_height_m) <= 0:
+        raise ValueError('height assumptions must be positive')
+    if map_method not in ('coarse', 'fine'):
+        raise ValueError('map method must be coarse or fine')
+    fine_settings = fine_protocol(real_time_factor=real_time_factor) if map_method == 'fine' else None
+    if fine_settings is not None and configuration is None:
+        reference = json.loads((ROOT/'results/gazebo_lidar/physical_10/manifest.json').read_text())
+        if (asdict(spec) != reference['lidar_spec'] or sensor_height_m != reference['sensor_height_m']
+                or obstacle_height_m != .3 or obstacle_height_m != reference['obstacle_height_m']):
+            raise ValueError('fine comparison keeps the task022 sensor and threshold unchanged')
+    baseline = json.loads((BASELINE/'manifest.json').read_text())
+    scenarios = baseline['scenarios'] if scenarios is None else scenarios
+    if edge_margin_m:
+        from ros2_jazzy.gz_checks.edge_margin_checks import build_cohort
+        scenarios = build_cohort()['scenarios']
+    expected = [r['name'] for r in list_patches('test', dataset='shizuoka_beach_las')[:10]]
+    if [s['patch'] for s in scenarios] != expected:
+        raise ValueError('baseline must contain the same first ten LAS test beaches')
+    only_patch = os.environ.get('THESIS_ONLY_PATCH') if os.environ.get('THESIS_FINE_PROTOCOL') == 'rtf_check' else None
+    if selected_patches is not None and not set(selected_patches).issubset(expected):
+        raise ValueError('selected patches must belong to the ten-beach cohort')
+    manifest = dict(dataset='shizuoka_beach_las', split='test', side_m=200, seed=0,
+                    planner='TA*-S+inflate', sensor='lidar', patch_count=patch_count,
+                    execution='not_started', world_max_pixels=4097,
+                    lidar_spec=asdict(spec), sensor_height_m=sensor_height_m,
+                    obstacle_height_m=obstacle_height_m,
+                    obstacle_reference='stale prior DEM, bilinear; three high returns in a cell; uncalibrated assumption',
+                    height_definition='median of last 64 returns per hit cell, including obstacle tops',
+                    baseline='results/gazebo_online/physical_run', scenarios=scenarios,
+                    input_environment=dict(python=sys.version, numpy=np.__version__),
+                    cases=[dict(patch=s['patch'], mode='lidar', selected=(s['patch'] == only_patch if only_patch else i < patch_count) and
+                                (selected_patches is None or s['patch'] in selected_patches),
+                                planning_status=s['planning_status'], run_folder=None, error='', termination=None)
+                           for i, s in enumerate(scenarios)])
+    if edge_margin_m:
+        manifest.update(edge_margin_m=edge_margin_m, waypoint_protocol='task024')
+    if tracking != 'default':
+        from tapp.tracking import CORNER_LOOKAHEAD_M, MIN_SPEED_FRACTION, SPIN_ANGLE_RAD
+        manifest.update(tracking=tracking, tracking_settings=dict(
+            corner_lookahead_m=CORNER_LOOKAHEAD_M, min_speed_fraction=MIN_SPEED_FRACTION,
+            spin_heading_error_deg=float(np.rad2deg(SPIN_ANGLE_RAD))))
+    if fine_settings is not None:
+        manifest.update(fine_settings)
+    if obstacle_clearance == 'overlap':
+        manifest.update(obstacle_clearance=obstacle_clearance,
+                        obstacle_inflation='closed fine squares intersecting the 0.5m halo; pool any hit')
+    if configuration is not None:
+        manifest.update(sensor=sensors, sensors=sensors, sensor_configuration=configuration,
+                        experiment='task027 real sensors; not a matched task022/023 sensor comparison')
+    if os.environ.get('THESIS_FINE_PROTOCOL'):
+        manifest.update(protocol=os.environ['THESIS_FINE_PROTOCOL'], only_patch=only_patch,
+                        software_rendering=os.environ.get('LIBGL_ALWAYS_SOFTWARE'))
+    if endpoint_policy != 'none' or diagnostics:
+        manifest.update(endpoint_policy=endpoint_policy, diagnostics=bool(diagnostics),
+                        endpoint_protocol='task028; separate evaluation from task023')
+    if ground_estimate != 'all_returns':
+        # An absent field still means all_returns in historical/default runs.
+        manifest.update(ground_estimate=ground_estimate,
+                        height_definition='median of last 64 ALL returns with height minus bilinear stale-prior height < 0.3m; '
+                                          'if none remain, retain stale-prior cell height; seen unchanged')
+    if obstacle_reference != 'prior' or debris_box_height != 'plus_half' or prior_variant_name != 'exact':
+        manifest.update(prior_free_protocol='task032; independent conditions, no legacy aggregation',
+                        obstacle_reference_mode=obstacle_reference, debris_box_height=debris_box_height,
+                        prior_variant=prior_variant_name)
+        if obstacle_reference == 'local':
+            manifest.update(obstacle_reference='sensor-only local plane; 1.5m square aligned to 0.1m cell centres; lowest return per 0.1m cell; '
+                            'least squares, trim residual >=0.15m and refit once; >=0.3m and >=3 returns; undefined fits unclassified',
+                            height_definition='median of locally classified non-obstacle returns in last-64 history; '
+                            'all excluded: local plane at coarse centre; undefined plane: retain planning context')
+        if prior_variant_name == 'perturbed':
+            manifest['prior_perturbation'] = dict(seed='SeedSequence([32, zero-based LAS patch_index])',
+                hills=20, sigma_m=5., height_uniform_m=[-.3, .3],
+                centres='uniform over grid-centre bounds, draw x then y then height for each hill',
+                mask='leave water and nodata heights unchanged')
+        elif prior_variant_name == 'none':
+            manifest['prior_definition'] = 'all heights flattened to median valid land elevation; only water/nodata raw flags retained'
+    if online_fixes != 'none':
+        from tapp.config import Robot
+        manifest.update(online_fixes=online_fixes, online_safety=dict(join_timeout_sim_s=JOIN_TIMEOUT_S,
+                        max_tilt_deg=Robot().max_slope_deg, off_path_m=OFF_PATH_M,
+                        endpoint_policy='none', parameters='fixed before evaluation; no tuning'))
+        if online_fixes == 'v2':
+            manifest['online_safety'].update(unsafe_tilt_repeat_sim_s=JOIN_TIMEOUT_S,
+                                             off_path_scope='current and remaining segments; ignore zero-length segments')
+    save_manifest(output, manifest)
+    return manifest
+
+
+def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
+    import rclpy
+    from rclpy.node import Node
+    from rclpy.qos import qos_profile_sensor_data
+    from geometry_msgs.msg import PoseArray, Twist
+    from rosgraph_msgs.msg import Clock
+    from std_msgs.msg import String, Empty
+    from thesis_bunker_gz.model import make_model
+    from thesis_bunker_mission.transport import pose3d
+
+    output = Path(output).resolve()
+    manifest = prepare_cases(output, **kwargs)
+    if matched_world:
+        manifest['world_input'] = 'task022 actual-run evaluation_reference.npz elevation and unchanged raw masks'
+    # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
+    if manifest.get('map_method') != 'fine':
+        manifest['real_time_factor'] = float(os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
+        manifest['stale_timeout_s'] = float(os.environ.get('THESIS_STALE_TIMEOUT_S', '0.5'))
+    manifest.update(execution='started', environment=dict(
+        image=os.environ.get('THESIS_ROS_IMAGE', 'thesis/jazzy-gz:1'),
+        gazebo=subprocess.check_output(['gz', 'sim', '--versions'], text=True).strip(), python=sys.version))
+    save_manifest(output, manifest)
+
+    class Observer(Node):
+        def __init__(self, folder):
+            super().__init__('lidar_checks_observer')
+            self.t = self.pose = self.state = self.perception = None
+            self.v = self.w = 0.
+            self.recording = False
+            self.previous_path = None
+            self.trace = CsvChunks(folder/'trajectory.csv', FIELDS)
+            self.paths = CsvChunks(folder/'path_revisions.csv', ['t', 'path'])
+            self.replans = CsvChunks(folder/'replans.csv', ['t', 'reason', 'revision', 'leg_index', 'n_replans', 'plan_time_s'])
+            self.create_subscription(Clock, '/clock', self.clock, qos_profile_sensor_data)
+            self.create_subscription(PoseArray, '/ground_truth', self.ground, qos_profile_sensor_data)
+            self.create_subscription(Twist, '/cmd_vel', self.velocity, 10)
+            self.create_subscription(String, '/mission/state', self.status, 10)
+            self.create_subscription(String, '/mission/online_command', self.plan, 10)
+            self.create_subscription(String, '/lidar/state', self.sensor, 10)
+            self.command = self.create_publisher(String, '/mission/command', 10)
+            self.stop = self.create_publisher(Empty, '/mission/stop', 10)
+
+        def clock(self, msg):
+            self.t = msg.clock.sec+msg.clock.nanosec/1e9
+
+        def ground(self, msg):
+            if msg.poses:
+                self.pose = pose3d(msg.poses[0])
+                if self.recording and self.t is not None:
+                    self.trace.write(dict(zip(FIELDS, [self.t, *self.pose, self.v, self.w])))
+
+        def velocity(self, msg):
+            self.v, self.w = msg.linear.x, msg.angular.z
+
+        def status(self, msg):
+            self.state = json.loads(msg.data)
+            path = self.state.get('current_path')
+            if self.recording and path and path != self.previous_path:
+                self.paths.write(dict(t=self.state['sim_time'], path=json.dumps(path)))
+                self.previous_path = path
+
+        def sensor(self, msg):
+            self.perception = json.loads(msg.data)
+
+        def plan(self, msg):
+            command = json.loads(msg.data)
+            if self.recording and command.get('replace_path'):
+                self.replans.write(dict(t=command.get('planned_at', self.t),
+                                       **{k: command[k] for k in ['reason', 'revision', 'leg_index', 'n_replans', 'plan_time_s']}))
+
+        def wait_until(self, predicate, processes, wall_limit=120):
+            deadline = time.monotonic()+wall_limit
+            while not predicate():
+                if any(p.poll() is not None for p in processes):
+                    raise RuntimeError('a Gazebo/ROS process exited; inspect process logs')
+                if time.monotonic() > deadline:
+                    raise TimeoutError('no/stalled ROS, Gazebo, or LiDAR telemetry')
+                rclpy.spin_once(self, timeout_sec=.05)
+
+        def close(self):
+            for writer in [self.trace, self.paths, self.replans]:
+                writer.close()
+            self.destroy_node()
+
+    rclpy.init()
+    try:
+        with tempfile.TemporaryDirectory(prefix='thesis-lidar-worlds-') as temporary:
+            for case, meta in zip(manifest['cases'], manifest['scenarios']):
+                if not case['selected'] or case['planning_status'] != 'planned':
+                    continue
+                raw = output/'raw'/case['patch']
+                raw.mkdir(parents=True)
+                case['run_folder'] = str(raw.relative_to(output))
+                observer = Observer(raw)
+                processes, streams = [], []
+                mission = dict(id=1, patch=case['patch'], mode='lidar', planner='TA*-S+inflate', data_source='gazebo',
+                               map_id='file/truth.npz', path=meta['initial_path'], points=(np.asarray(meta['points'])*RESOLUTION).tolist(),
+                               start_cells=meta['start'], stops_cells=meta['stops'], order=meta['order'], lookahead_m=1., status='not_started')
+                def save_run():
+                    (raw/'mission.json').write_text(json.dumps(mission, ensure_ascii=False, indent=2)+'\n')
+                if manifest.get('sensors', 'legacy') != 'legacy':
+                    mission['sensors'] = manifest['sensors']
+                save_run()
+                try:
+                    folder = Path(temporary)/case['patch']
+                    folder.mkdir()
+                    truth, prior = case_world_inputs(case, meta, manifest, matched_world=matched_world)
+                    if manifest.get('prior_variant', 'exact') != 'exact':
+                        prior, case['prior_variant_statistics'] = prior_variant(prior, manifest['prior_variant'])
+                        # Never seed a no-prior/perturbed run with the old exact
+                        # DEM path. Keep endpoints/order, plan on the new prior.
+                        from tapp.online_mission import run_fixed_mission
+                        from ros2_jazzy.gz_checks.online_batch_runtime import planning_map
+                        initial = run_fixed_mission(planning_map(prior, 'TA*-S+inflate'), meta['start'], meta['stops'])
+                        if not initial['success']:
+                            raise ValueError('task032 initial planning failed on selected prior')
+                        mission['path'] = (np.asarray(initial['traj'])*RESOLUTION).tolist()
+                        save_run()
+                    # Evaluation arrays, not a deployable map/world: preserve the
+                    # actual-run float bits for offline analysis on other CPUs.
+                    np.savez_compressed(raw/'evaluation_reference.npz',
+                                        truth_elev=truth['tmap'].elev, truth_lethal=truth['tmap'].lethal,
+                                        truth_rock=truth['tmap'].rock, prior_elev=prior['tmap'].elev,
+                                        prior_lethal=prior['tmap'].lethal, prior_rock=prior['tmap'].rock)
+                    truth_file, prior_file = folder/'truth.npz', folder/'prior.npz'
+                    scenario_to_mapfile(dict(truth, raw_elev=truth['tmap'].elev), truth_file, case['patch']+'_debris', case['patch'], 'task022 truth; no planner access', LAS_ATTRIBUTION)
+                    scenario_to_mapfile(prior, prior_file, case['patch'], case['patch'], 'task022 stale prior', LAS_ATTRIBUTION)
+                    world_options = (dict(debris_box_height=manifest['debris_box_height'])
+                                     if manifest.get('debris_box_height', 'plus_half') != 'plus_half' else {})
+                    export_gazebo(truth_file, folder/'world', max_pixels=4097, **world_options)
+                    world = folder/'world/world.sdf'
+                    tree = ET.parse(world)
+                    w = tree.find('world')
+                    if manifest.get('diagnostics'):
+                        from ros2_jazzy.gz_checks.clearance_log import save_debris_footprints
+                        save_debris_footprints(raw/'debris_footprints.csv', w)
+                    w.find('physics/real_time_factor').text = (str(manifest['real_time_factor']) if manifest.get('map_method') == 'fine'
+                                                             else os.environ.get('THESIS_REAL_TIME_FACTOR', '1'))
+                    for uri in tree.findall('.//heightmap/uri'):
+                        uri.text = (world.parent/'heightmap.png').as_uri()
+                    # GPU LiDAR sees visuals only; the heightmap visual crashes ogre2 without a GPU.
+                    use_mesh_visual(tree, write_terrain_obj(truth['tmap'].elev, folder/'terrain.obj').resolve().as_uri())
+                    model_kwargs = dict(lidar=True, lidar_height_m=manifest['sensor_height_m'],
+                                        lidar_spec=LidarSpec(**manifest['lidar_spec']))
+                    if manifest.get('sensors', 'legacy') != 'legacy':
+                        model_kwargs = dict(sensor_preset='real_bunker', depth_cameras=manifest['sensors'].endswith('+depth2'))
+                    model = ET.parse(make_model(folder/'bunker.sdf', mass_kg=truth['tmap'].robot.mass_kg,
+                                                **model_kwargs)).find('model')
+                    x, y = np.asarray(meta['start'])*RESOLUTION
+                    z = float(truth['tmap'].elev[tuple(meta['start'])])+.1
+                    ET.SubElement(model, 'pose').text = f'{x} {y} {z} 0 0 0'
+                    w.append(model)
+                    tree.write(folder/'world.sdf', encoding='utf-8', xml_declaration=True)
+                    bridge = ROOT/'ros2_jazzy/gz_checks/lidar_bridge.yaml'
+                    if manifest.get('sensors') == 'lidar_real+depth2':
+                        bridge_text = sensor_bridge_config(bridge.read_text(), manifest['sensors'])
+                        bridge = folder/'real_sensors_bridge.yaml'
+                        bridge.write_text(bridge_text)
+                        (raw/'real_sensors_bridge.yaml').write_text(bridge_text)
+                    commands = [
+                        ['gz', 'sim', '-s', '-r', '--headless-rendering', '--seed', '0', str(folder/'world.sdf')],
+                        ['ros2', 'run', 'ros_gz_bridge', 'parameter_bridge', '--ros-args', '-p',
+                         'config_file:='+str(bridge)],
+                        ['ros2', 'run', 'thesis_bunker_mission', 'path_follower', '--ros-args', '-p', 'use_sim_time:=true',
+                         '-p', 'online:=true', '-p', 'map_id:='+mission['map_id'], '-p', 'run_root:='+str(raw/'follower')],
+                        [sys.executable, str(ROOT/'ros2_jazzy/gz_checks/lidar_planner.py'), '--ros-args', '-p', 'use_sim_time:=true',
+                         '-p', 'prior_map:='+str(prior_file), '-p', 'map_id:='+mission['map_id'], '-p', 'run_folder:='+str(raw),
+                         '-p', 'sensor_height_m:='+str(manifest['sensor_height_m']), '-p', 'obstacle_height_m:='+str(manifest['obstacle_height_m']),
+                         '-p', 'max_range_m:='+str(manifest['lidar_spec']['max_range_m']),
+                         '-p', 'range_resolution_m:='+str(manifest['lidar_spec']['range_resolution_m']),
+                         '-p', 'stale_timeout_s:='+str(manifest['stale_timeout_s'])]]
+                    if manifest.get('map_method') == 'fine':
+                        commands[-1].extend(['-p', 'map_method:=fine'])
+                    if manifest.get('endpoint_protocol'):
+                        commands[-1].extend(['-p', 'endpoint_policy:='+manifest['endpoint_policy'],
+                                             '-p', 'diagnostics:='+str(manifest['diagnostics']).lower()])
+                    if manifest.get('sensors', 'legacy') != 'legacy':
+                        commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
+                    if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
+                        commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
+                    if manifest.get('tracking') == 'corner_slow':
+                        commands[-2].extend(['-p', 'tracking:=corner_slow'])
+                    if manifest.get('online_fixes', 'none') != 'none':
+                        for command in commands[-2:]:
+                            command.extend(['-p', 'online_fixes:='+manifest['online_fixes']])
+                    if manifest.get('obstacle_clearance') == 'overlap':
+                        commands[-1].extend(['-p', 'obstacle_clearance:=overlap'])
+                    if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
+                        commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
+                    for i, command in enumerate(commands):
+                        stream = (raw/f'process_{i}.txt').open('w')
+                        streams.append(stream)
+                        processes.append(subprocess.Popen(command, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True))
+                    observer.wait_until(lambda: observer.t is not None and observer.pose is not None and observer.state is not None
+                                        and observer.command.get_subscription_count() > 0 and observer.perception is not None
+                                        and observer.perception['ready'], processes)
+                    settled = observer.t+5
+                    observer.wait_until(lambda: observer.t >= settled, processes)
+                    mission.update(started_t=observer.t, start_pose=observer.pose, wall_started=time.perf_counter(), status='running')
+                    save_run()
+                    observer.recording = True
+                    message = String()
+                    message.data = json.dumps(mission)
+                    observer.command.publish(message)
+                    distance = float(np.linalg.norm(np.diff(np.asarray(meta['initial_path']), axis=0), axis=1).sum())
+                    limit = max(120, 6*distance+60)
+                    # Wall-clock guard scales with the slowed simulation (real_time_factor 0.3 -> 10x the sim limit).
+                    observer.wait_until(lambda: (observer.state.get('mission_id') == 1 and observer.state['status'] in TERMINAL)
+                                        or observer.t-mission['started_t'] > limit, processes, wall_limit=max(180, limit*3/min(1., manifest['real_time_factor'])))
+                    case['termination'] = 'simulation_timeout' if observer.t-mission['started_t'] > limit else observer.state['status']
+                    mission.update(status=case['termination'], finished_t=observer.t, final_state=observer.state,
+                                   perception=observer.perception, wall_elapsed_s=time.perf_counter()-mission['wall_started'])
+                    save_run()
+                    observer.recording = False
+                    observer.stop.publish(Empty())
+                    ended = observer.t+.2
+                    observer.wait_until(lambda: observer.t >= ended, processes, wall_limit=10)
+                    print(case['patch'], case['termination'], flush=True)
+                except Exception as exc:
+                    case['error'] = type(exc).__name__+': '+str(exc)
+                    if mission['status'] not in TERMINAL | {'simulation_timeout'}:
+                        mission.update(status='runtime_error', finished_t=observer.t, error=case['error'])
+                    else:
+                        mission['cleanup_error'] = case['error']
+                    save_run()
+                finally:
+                    for process in reversed(processes):
+                        if process.poll() is None:
+                            os.killpg(process.pid, signal.SIGINT)
+                            try:
+                                process.wait(timeout=10)
+                            except subprocess.TimeoutExpired:
+                                os.killpg(process.pid, signal.SIGKILL)
+                                process.wait()
+                    for stream in streams:
+                        stream.close()
+                    observer.close()
+                    split_follower_logs(raw)
+                    save_manifest(output, manifest)
+        manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
+        save_manifest(output, manifest)
+        if finalize_report:
+            if manifest.get('tracking') == 'corner_slow':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task043 trial errors; inspect manifest')
+                print('Task043 raw results saved; evaluate tracking separately:', output)
+                return
+            if manifest.get('map_method') == 'fine' and manifest['real_time_factor'] == 1.:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task039 trial errors; inspect manifest')
+                print('Task039 raw results saved; task023 aggregation requires 0.3x:', output)
+                return
+            if manifest.get('obstacle_clearance') == 'overlap':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task041 trial errors; inspect manifest')
+                print('Task041 raw results saved; evaluate obstacle clearance separately:', output)
+                return
+            if manifest.get('edge_margin_m'):
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task036 trial errors; inspect manifest')
+                summarize_edge_margin(output, manifest)
+                return
+            if manifest.get('online_fixes') == 'v2':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task040 trial errors; inspect manifest')
+                print('Task040 raw results saved; evaluate online safety separately:', output)
+                return
+            if manifest.get('online_fixes') == 'v1':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task034 trial errors; inspect manifest')
+                print('Task034 raw results saved; evaluate online safety separately:', output)
+                return
+            if manifest.get('prior_free_protocol'):
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task032 trial errors; inspect manifest')
+                print('Task032 raw results saved; evaluate prior-free conditions separately:', output)
+                return
+            if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task029 trial errors; inspect manifest')
+                print('Task029 raw results saved; evaluate ground estimates separately:', output)
+                return
+            if manifest.get('endpoint_protocol'):
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task028 trial errors; inspect manifest')
+                print('Task028 raw results saved; evaluate stop outcomes separately:', output)
+                return
+            if manifest.get('sensors', 'legacy') != 'legacy':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('some real sensor trials could not run; inspect manifest')
+                print('Task027 raw results saved; legacy task023 aggregation is not applicable:', output)
+                return
+            if manifest.get('map_method') == 'fine':
+                from experiments.lidar_fine_report import summarize
+            else:
+                from experiments.gz_lidar_report import summarize
+            summarize(output)
+        if manifest['execution'] == 'finished_with_errors':
+            raise RuntimeError('some LiDAR trials could not run; inspect manifest')
+    finally:
+        rclpy.shutdown()

@@ -582,6 +582,9 @@ thead th {
   box-shadow: 0 2px 8px #183e4040;
   font-size: 13px;
 }
+.waypoint-warning {
+  background: #a82932;
+}
 .base-icon {
   width: 30px;
   height: 30px;
