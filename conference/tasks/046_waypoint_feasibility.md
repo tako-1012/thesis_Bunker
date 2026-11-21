@@ -1,6 +1,6 @@
 # 指示書 046：人が選んだ地点に行けるかを走る前に確かめ、行けない地点には近くの行ける位置を示す
 
-> **状態：実行中（2026-11-21 にクラウドの Codex（研究実装2）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない。
+> **状態：負の結果（道具は取り込み済み。goal_cell 35 回を走る前に 0 回しか見つけられず、28 回は走行中の偽の急斜面 → 047。結果は `results/waypoint_feasibility/`）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/028_endpoint_policy.md`（使わないことにした 028b の経緯）、`conference/results/eval_ground_endpoint/REPORT_ja.md`（030）、
 > `conference/results/real_sensors_compare/REPORT_ja.md`（037）・`rtf_compare/REPORT_B_ja.md`（039）、`conference/results/common_eval/REPORT_ja.md`、`tapp/online_mission.py`・`tapp/endpoint_policy.py`・`tapp/mission.py` を読むこと。
 > ブランチは `codex/046-waypoint-feasibility`（その時点の `realtime-map` の最新から）。結果は `conference/results/waypoint_feasibility/`、報告は同じ場所の `REPORT_ja.md`。
