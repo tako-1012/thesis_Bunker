@@ -1,0 +1,1 @@
+The unchanged run039.sh was launched with a Bash docker function that omits --user only for the historical passive probe docker exec. The probe runs under the same container UID as the ROS publishers. The wrapper Docker run, Gazebo options, probe program and analysis are unchanged.
