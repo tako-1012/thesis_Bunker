@@ -56,60 +56,69 @@ def main():
     ratio = totals["TA*-S"] / totals["A*"]
     print(f"font={font}  走りにくさの合計  改善前 {totals['A*']:.3f}  改善後 {totals['TA*-S']:.3f}  比 {ratio:.3f}")
 
-    # 1600×900 px（16:9）、背景は白。右下の約 25%（x>1200, y>675 px）には何も置かない。
+    # 1600×900 px（16:9）、背景は白。左に正方形の地図、右上に文字。右下の約 25%（x>1200, y>675 px）には何も置かない。
     fig = plt.figure(figsize=(16, 9), dpi=100, facecolor="white")
+    px = lambda x, y, w, h: [x / 1600, 1 - (y + h) / 900, w / 1600, h / 900]
 
-    # 地図：経路の範囲（横に長い帯）に合わせた窓。上側の全幅に置く。
+    # 正方形の地図：2 つの経路が分かれて違いが大きい区間（出発から 90m 四方）に寄せる。
+    # 窓は地図の中に収める。経路全体の比べた結果（合計）は、右のひとことに書く。
     pts = np.vstack([(p["path"] + 0.5) * RESOLUTION for p in paths.values()])
-    x0, x1 = pts[:, 0].min() - 22, pts[:, 0].max() + 22
-    ax_w_px, ax_h_px = 1500, 470
-    yc = (pts[:, 1].min() + pts[:, 1].max()) / 2
-    half_h = (x1 - x0) * ax_h_px / ax_w_px / 2
-    y0, y1 = yc - half_h, yc + half_h
-    ax = fig.add_axes([50 / 1600, 1 - (140 + ax_h_px) / 900, ax_w_px / 1600, ax_h_px / 900])
+    side = 90.0
+    n_m = tm.shape[0] * RESOLUTION
+    start_xy = (paths["A*"]["path"][0] + 0.5) * RESOLUTION
+    lo = np.array([start_xy[0] - 8, (pts[:, 1].min() + pts[:, 1].max()) / 2 - side / 2])
+    lo = np.clip(lo, 0, n_m - side)
+    hi = lo + side
+    ax = fig.add_axes(px(40, 50, 800, 800))
     n = tm.shape[0]
-    cmap = LinearSegmentedColormap.from_list("difficulty", ["#FFFFFF", "#D9DEE4", "#8A939E", "#3E4652"])
-    image = ax.imshow(np.clip(tm.cost, 0, 1).T, origin="lower", extent=[0, n * RESOLUTION, 0, n * RESOLUTION],
-                      cmap=cmap, vmin=0, vmax=1, interpolation="nearest")
+    # 走りやすい（明るい砂色）→ 走りにくい（赤）。表示は 0.6 で頭打ち（それ以上は同じ赤）。
+    cmap = LinearSegmentedColormap.from_list("difficulty", ["#FFF8E7", "#FFE08A", "#F4A259", "#D64933", "#8C1C13"])
+    image = ax.imshow(np.clip(tm.cost, 0, 0.6).T, origin="lower", extent=[0, n * RESOLUTION, 0, n * RESOLUTION],
+                      cmap=cmap, vmin=0, vmax=0.6, interpolation="bilinear")
     before = (paths["A*"]["path"] + 0.5) * RESOLUTION
     after = (paths["TA*-S"]["path"] + 0.5) * RESOLUTION
-    ax.plot(before[:, 0], before[:, 1], color=NAVY, lw=5, ls=(0, (2.2, 1.4)), solid_capstyle="round")
-    ax.plot(after[:, 0], after[:, 1], color=TEAL, lw=6, solid_capstyle="round")
-    for xy, text, align in [(before[0], "出発", "right"), (before[-1], "到着", "left")]:
-        ax.plot(*xy, marker="o", ms=16, mfc="white", mec=NAVY, mew=4, ls="none", zorder=5)
-        ax.annotate(text, xy, xytext=(-22 if align == "right" else 22, 0), textcoords="offset points",
-                    ha=align, va="center", fontsize=28, color=NAVY, weight="bold")
-    ax.set_xlim(x0, x1)
-    ax.set_ylim(y0, y1)
-    ax.set_aspect("equal")  # 窓の縦横を軸の縦横に合わせてあるので、ゆがまない
+    # 海とデータのない所は水色（走らない場所）
+    sea = np.asarray(sc["water"] | sc["nodata"], bool)
+    ax.imshow(np.ma.masked_where(~sea.T, sea.T), origin="lower", extent=[0, n * RESOLUTION, 0, n * RESOLUTION],
+              cmap=LinearSegmentedColormap.from_list("sea", ["#BFDDEB", "#BFDDEB"]), vmin=0, vmax=1,
+              interpolation="nearest")
+    for line, color in [(before, NAVY), (after, TEAL)]:
+        ax.plot(line[:, 0], line[:, 1], color="white", lw=12, solid_capstyle="round", solid_joinstyle="round")
+        ax.plot(line[:, 0], line[:, 1], color=color, lw=7, solid_capstyle="round", solid_joinstyle="round")
+    for xy, text in [(before[0], "出発")]:
+        ax.plot(*xy, marker="o", ms=22, mfc="white", mec=NAVY, mew=5, ls="none", zorder=5)
+        ax.annotate(text, xy, xytext=(0, 26), textcoords="offset points", ha="center", va="bottom",
+                    fontsize=30, color=NAVY, weight="bold",
+                    bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="none", alpha=0.85))
+    ax.set_xlim(lo[0], hi[0])
+    ax.set_ylim(lo[1], hi[1])
+    ax.set_aspect("equal")
     ax.set_xticks([])
     ax.set_yticks([])
     for spine in ax.spines.values():
-        spine.set_color("#B8C0C8")
+        spine.set_visible(False)
 
-    # 見出し（左上）
-    fig.text(50 / 1600, 1 - 70 / 900, "地形の走りにくさで、経路を比べる", fontsize=40, color=NAVY, weight="bold", va="center")
+    # 右上：見出し
+    fig.text(900 / 1600, 1 - 95 / 900, "地形の走りにくさで", fontsize=40, color=NAVY, weight="bold", va="center")
+    fig.text(900 / 1600, 1 - 160 / 900, "経路を比べる", fontsize=40, color=NAVY, weight="bold", va="center")
 
-    # 色の目盛り（地図の下、左側）
-    cax = fig.add_axes([50 / 1600, 1 - 680 / 900, 420 / 1600, 26 / 900])
-    bar = fig.colorbar(image, cax=cax, orientation="horizontal", ticks=[])
-    bar.outline.set_edgecolor("#B8C0C8")
-    fig.text(50 / 1600, 1 - 720 / 900, "走りやすい", fontsize=28, color=NAVY, va="top")
-    fig.text(470 / 1600, 1 - 720 / 900, "走りにくい", fontsize=28, color=NAVY, va="top", ha="right")
-
-    # 凡例（色の目盛りの右、中央より左）
-    lx, ly = 560, 640
-    for i, (label, color, style, lw) in enumerate([("改善前", NAVY, (0, (2.2, 1.4)), 5), ("改善後", TEAL, "-", 6)]):
-        y = 1 - (ly + i * 62) / 900
-        fig.add_artist(plt.Line2D([lx / 1600, (lx + 90) / 1600], [y, y], color=color, lw=lw, ls=style,
+    # 凡例
+    for i, (label, color) in enumerate([("改善前", NAVY), ("改善後", TEAL)]):
+        y = 1 - (260 + i * 70) / 900
+        fig.add_artist(plt.Line2D([900 / 1600, 1000 / 1600], [y, y], color=color, lw=9, solid_capstyle="round",
                                   transform=fig.transFigure))
-        fig.text((lx + 110) / 1600, y, label, fontsize=30, color=NAVY, va="center")
+        fig.text(1025 / 1600, y, label, fontsize=32, color=NAVY, va="center")
 
-    # 結果のひとこと（下の左、右下の 25% には入れない）
-    lead = fig.text(50 / 1600, 1 - 820 / 900, "走りにくさの合計が", fontsize=30, color=NAVY, va="center")
-    fig.canvas.draw()
-    lead_right = lead.get_window_extent().x1 / fig.bbox.width  # 文字の幅に合わせて、重ならないよう右に続ける
-    fig.text(lead_right + 12 / 1600, 1 - 820 / 900, "約半分に", fontsize=44, color=TEAL, weight="bold", va="center")
+    # 色の目盛り
+    cax = fig.add_axes(px(900, 440, 520, 30))
+    bar = fig.colorbar(image, cax=cax, orientation="horizontal", ticks=[])
+    bar.outline.set_edgecolor(NAVY)
+    fig.text(900 / 1600, 1 - 485 / 900, "走りやすい", fontsize=28, color=NAVY, va="top")
+    fig.text(1420 / 1600, 1 - 485 / 900, "走りにくい", fontsize=28, color=NAVY, va="top", ha="right")
+
+    # 結果のひとこと（右下の 25% より上）
+    fig.text(900 / 1600, 1 - 590 / 900, "走りにくさの合計が", fontsize=30, color=NAVY, va="center")
+    fig.text(900 / 1600, 1 - 645 / 900, "約半分に", fontsize=48, color=TEAL, weight="bold", va="center")
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(OUT, dpi=100, facecolor="white")
