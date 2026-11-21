@@ -1,0 +1,11 @@
+039 08OB86_-0205 0.3 n=3 completed=2 stuck=1
+039 08OB86_-0205 1.0 n=3 completed=3
+039 08OB88_-0167 0.3 n=3 no_path=3
+039 08OB88_-0167 1.0 n=3 no_path=3
+039 08OB88_-1417 0.3 n=3 completed=3
+039 08OB88_-1417 1.0 n=3 completed=3
+039 08OB88_00332 0.3 n=3 completed=3
+039 08OB88_00332 1.0 n=3 completed=3
+039 08OB89_-0847 0.3 n=3 completed=2 stuck=1
+039 08OB89_-0847 1.0 n=3 completed=2 no_path=1
+30 runs -> /home/kotaro/thesis_Bunker_rtf/conference/results/rtf_compare/stage_b/common_eval

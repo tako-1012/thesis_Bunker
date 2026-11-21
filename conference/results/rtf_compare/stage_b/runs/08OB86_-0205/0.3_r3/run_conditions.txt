@@ -1,0 +1,3 @@
+started=2026-11-21T01:56:19+09:00 commit=fa86d83aa72ad2eb086e8c1f448aa063971cfa9d tracked_changes=0
+image=sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57 patch=08OB86_-0205 rep=3 domain=64 rendering=software stale_sim_s=1.0
+args=--patch-count 3 --map fine --ground-estimate non_obstacle --online-fixes v2 --sensors lidar_real+depth2 --diagnostics --real-time-factor 0.3
