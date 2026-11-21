@@ -31,6 +31,7 @@ from tapp.run_log import FIELDS
 from data_prep.export_maps import LAS_ATTRIBUTION
 from data_prep.export_gazebo import export_gazebo
 from ros2_jazzy.gz_checks.terrain_mesh import write_terrain_obj, use_mesh_visual
+from ros2_jazzy.gz_checks.gpu_rendering import save_renderer
 from ros2_jazzy.gz_checks.online_batch_runtime import CsvChunks, map_signature, split_follower_logs
 from ros2_jazzy.gz_checks.online_batch_checks import TERMINAL, save_manifest
 from ros2_jazzy.gz_checks.lidar_map import fine_protocol, matched_task022_maps, sensor_bridge_config
@@ -199,6 +200,11 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         if online_fixes == 'v2':
             manifest['online_safety'].update(unsafe_tilt_repeat_sim_s=JOIN_TIMEOUT_S,
                                              off_path_scope='current and remaining segments; ignore zero-length segments')
+    render_mode = os.environ.get('THESIS_RENDER', 'cpu')
+    if render_mode not in ('cpu', 'gpu'):
+        raise ValueError('THESIS_RENDER must be cpu or gpu')
+    if render_mode == 'gpu':
+        manifest['rendering'] = dict(mode='gpu', engine='ogre2', backend='EGL')
     save_manifest(output, manifest)
     return manifest
 
@@ -246,6 +252,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
 
     output = Path(output).resolve()
     manifest = prepare_cases(output, **kwargs)
+    gpu = 'rendering' in manifest
     if matched_world:
         manifest['world_input'] = 'task022 actual-run evaluation_reference.npz elevation and unchanged raw masks'
     # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
@@ -329,6 +336,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 case['run_folder'] = str(raw.relative_to(output))
                 observer = Observer(raw)
                 processes, streams = [], []
+                folder = Path(temporary)/case['patch']
                 mission = dict(id=1, patch=case['patch'], mode='lidar', planner='TA*-S+inflate', data_source='gazebo',
                                map_id='file/truth.npz', path=meta['initial_path'], points=(np.asarray(meta['points'])*RESOLUTION).tolist(),
                                start_cells=meta['start'], stops_cells=meta['stops'], order=meta['order'], lookahead_m=1., status='not_started')
@@ -338,7 +346,6 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     mission['sensors'] = manifest['sensors']
                 save_run()
                 try:
-                    folder = Path(temporary)/case['patch']
                     folder.mkdir()
                     truth, prior = case_world_inputs(case, meta, manifest, matched_world=matched_world)
                     if manifest.get('prior_variant', 'exact') != 'exact':
@@ -423,10 +430,14 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'obstacle_clearance:=overlap'])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
                         commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
+                    if gpu:
+                        commands[0][2:2] = ['--render-engine', 'ogre2']
                     for i, command in enumerate(commands):
                         stream = (raw/f'process_{i}.txt').open('w')
                         streams.append(stream)
-                        processes.append(subprocess.Popen(command, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True))
+                        options = dict(env=dict(os.environ, HOME=str(folder))) if gpu and i == 0 else {}
+                        processes.append(subprocess.Popen(command, stdout=stream, stderr=subprocess.STDOUT,
+                                                          start_new_session=True, **options))
                     observer.wait_until(lambda: observer.t is not None and observer.pose is not None and observer.state is not None
                                         and observer.command.get_subscription_count() > 0 and observer.perception is not None
                                         and observer.perception['ready'], processes)
@@ -472,10 +483,17 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         stream.close()
                     observer.close()
                     split_follower_logs(raw)
+                    if gpu:
+                        case['rendering'] = save_renderer(folder, raw)
                     save_manifest(output, manifest)
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if gpu:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task045 trial errors; inspect manifest and process logs')
+                print('Task045 raw results saved; evaluate GPU rendering separately:', output)
+                return
             if manifest.get('tracking') == 'corner_slow':
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task043 trial errors; inspect manifest')
@@ -564,6 +582,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if 'rendering' in manifest:
+            print('Task045 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('tracking') == 'corner_slow':
             print('Task043 preparation only; Gazebo not executed:', output)
             return

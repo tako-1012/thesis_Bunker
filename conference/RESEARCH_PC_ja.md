@@ -71,3 +71,18 @@ bash ros2_jazzy/gz_checks/run_lidar_checks.sh results/<新しい保存先> --pat
 ```
 - `run_lidar_checks.sh` は Docker（`thesis/jazzy-gz:1`）を使う。研究 PC の上で直接 ROS・Gazebo を使う形に替えるかどうかは、
   最初の比較（上の「まだ確かめていないこと」）のあとで決める。GPU で描画できれば、実時間の 0.3 倍に落とす必要はなくなるかもしれない。
+
+## 045 GPU でのセンサー描画の準備
+
+`run_lidar_checks.sh` は既定で CPU 描画を使う。研究 PC で `THESIS_RENDER=gpu` を指定すると、Docker に NVIDIA GPU と描画ドライバを渡し、Gazebo は ogre2 の画面なし EGL 描画を使う。最初は 044 の終了後に1組だけ比較し、実際のレンダラ名を確認する。 [初回確認の手順](results/gpu_rendering/README_ja.md)
+
+```bash
+nvidia-smi
+command -v nvidia-ctk && nvidia-ctk --version
+docker run --rm --pull=never --gpus all -e NVIDIA_DRIVER_CAPABILITIES=all \
+    thesis/jazzy-gz:1 nvidia-smi
+```
+
+- Docker で GPU を選べない場合、ホストの **NVIDIA Container Toolkit** と Docker の NVIDIA runtime 設定を確認する。Toolkit やドライバの導入・更新、Docker の設定変更や再起動には、**利用者の確認が要る**。 [NVIDIA 公式の設定手順](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+- コンテナの `nvidia-smi` が通っても、EGL が NVIDIA を選ぶことは走行ログで確かめる。初回確認では Gazebo のケースごとの `rendering.renderer` と `ogre2.log` を見る。GPU が見えているのに EGL が起動しない場合は、コンテナで `ldconfig -p | grep -E 'libEGL|libGLX|libOpenGL'` と `ls /usr/share/glvnd/egl_vendor.d` を確認する。描画ドライバはホストから Toolkit で渡す。
+- イメージに EGL/GLVND のローダーが不足していた場合は、**利用者の確認を得てから** `FROM thesis/jazzy-gz:1` の派生 Dockerfile で Ubuntu の `libegl1`・`libglvnd0` を追加し、別タグ（例 `thesis/jazzy-gz:egl-check`）に `docker build -t thesis/jazzy-gz:egl-check -f <Dockerfile> .` でビルドする。CPU・GPU を同じ派生イメージに揃え、`THESIS_ROS_IMAGE=thesis/jazzy-gz:egl-check` で初回確認を実行する。
