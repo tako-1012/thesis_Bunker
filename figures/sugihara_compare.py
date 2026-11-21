@@ -60,14 +60,11 @@ def main():
     fig = plt.figure(figsize=(16, 9), dpi=100, facecolor="white")
     px = lambda x, y, w, h: [x / 1600, 1 - (y + h) / 900, w / 1600, h / 900]
 
-    # 正方形の地図：2 つの経路が分かれて違いが大きい区間（出発から 90m 四方）に寄せる。
-    # 窓は地図の中に収める。経路全体の比べた結果（合計）は、右のひとことに書く。
+    # 正方形の地図：出発から到着まで、経路全体が入る正方形の窓（地図の中に収める）。
     pts = np.vstack([(p["path"] + 0.5) * RESOLUTION for p in paths.values()])
-    side = 90.0
+    side = (pts.max(axis=0) - pts.min(axis=0)).max() + 20
     n_m = tm.shape[0] * RESOLUTION
-    start_xy = (paths["A*"]["path"][0] + 0.5) * RESOLUTION
-    lo = np.array([start_xy[0] - 8, (pts[:, 1].min() + pts[:, 1].max()) / 2 - side / 2])
-    lo = np.clip(lo, 0, n_m - side)
+    lo = np.clip((pts.max(axis=0) + pts.min(axis=0)) / 2 - side / 2, 0, n_m - side)
     hi = lo + side
     ax = fig.add_axes(px(40, 50, 800, 800))
     n = tm.shape[0]
@@ -85,7 +82,7 @@ def main():
     for line, color in [(before, NAVY), (after, TEAL)]:
         ax.plot(line[:, 0], line[:, 1], color="white", lw=12, solid_capstyle="round", solid_joinstyle="round")
         ax.plot(line[:, 0], line[:, 1], color=color, lw=7, solid_capstyle="round", solid_joinstyle="round")
-    for xy, text in [(before[0], "出発")]:
+    for xy, text in [(before[0], "出発"), (before[-1], "到着")]:
         ax.plot(*xy, marker="o", ms=22, mfc="white", mec=NAVY, mew=5, ls="none", zorder=5)
         ax.annotate(text, xy, xytext=(0, 26), textcoords="offset points", ha="center", va="bottom",
                     fontsize=30, color=NAVY, weight="bold",
