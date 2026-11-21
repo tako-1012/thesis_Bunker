@@ -45,4 +45,4 @@
 044,041・043 を研究 PC の Gazebo で評価（B・O・T・OT × 5 か所 × 3 回）,評価,研究 PC,研究 PC（チャット：研究PC実行）,実行中,60 回、0.3 倍。共通の集計ツール（042）で集計,tasks/044
 045,研究 PC の GPU で Gazebo のセンサーを描く準備（--render gpu）,実時間・速さ,Codex 実装,クラウド,完了,THESIS_RENDER=gpu（既定は CPU のまま、引数は不変を確認）。研究 PC での確認は 044 のあと,results/gpu_rendering
 046,人が選んだ地点に行けるかを走る前に確かめ、近くの行ける位置を示す,柱1 地点を回る,Codex 実装,クラウド,負の結果,goal_cell の経路なし 35 回を走る前に見つけられたのは 0 回。28 回は走行中の偽の急斜面 → 047 へ,results/waypoint_feasibility
-047,地形の傾きは古い地図から取り、障害物だけをセンサーで（--terrain-source prior）,柱2 走りながら更新,Codex 実装,クラウド（チャット：研究実装1）,実行中,046 で goal_cell の経路なし 35 回中 28 回が走行中の偽の急斜面と分かった。保存した記録で救える回数も出す,tasks/047
+047,地形の傾きは古い地図から取り、障害物だけをセンサーで（--terrain-source prior）,柱2 走りながら更新,Codex 実装,クラウド,完了,"--terrain-source prior。保存した記録で goal_cell の経路なし 20 回中 12 回が救える見込み。偽の急斜面 5,803→3,750 マス、本当の急斜面の見落とし 118→0。Gazebo で評価予定",results/terrain_from_prior

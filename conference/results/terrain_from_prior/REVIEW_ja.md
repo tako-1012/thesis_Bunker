@@ -18,4 +18,4 @@
 6. 数字：`replay.py` を自分で走らせ、`goals.csv`・`map_errors.csv` がバイト単位で一致。
 
 ## テストの結果
-（下に追記）
+- 047 を取り込んだ状態で、`conference/tests/` の 41 本すべてが終了コード 0（`review_all_tests_summary.txt`、NumPy 2.3.5・SciPy 1.17.0）。
