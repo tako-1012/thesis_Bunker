@@ -4,6 +4,7 @@ study,record,metric,count,n
 035,Terminal no path,goal_cell,6,6
 037,Terminal no path,goal_cell,8,8
 039,Terminal no path,goal_cell,7,7
+044,Terminal no path,goal_cell,25,25
 046,Preflight,flagged,0,35
 047,Final map,sensor_route,1,14
 047,Final map,prior_route,10,14

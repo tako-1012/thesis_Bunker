@@ -1,6 +1,6 @@
 # 指示書 048：古い地図が古くなっていた場合に、047（傾きを古い地図から取る）がどれだけ危ないかを見積もる
 
-> **状態：実行中（2026-11-22 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（保存した記録と Python だけ）。
+> **状態：完了（結果は `results/stale_prior_risk/`。prior_veto の効果は未確認）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（保存した記録と Python だけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/047_terrain_from_prior.md`、`conference/results/terrain_from_prior/REPORT_ja.md`・`REVIEW_ja.md`・`replay.py`、
 > `conference/tasks/032_prior_free_obstacles.md`、`tapp/prior_variants.py`、`tapp/pointcloud_map_fine.py` を読むこと。
 > ブランチは `codex/048-stale-prior-risk`（その時点の `realtime-map` の最新から）。結果は `conference/results/stale_prior_risk/`、報告は同じ場所の `REPORT_ja.md`。

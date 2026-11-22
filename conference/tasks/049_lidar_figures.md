@@ -1,6 +1,6 @@
 # 指示書 049：Gazebo の LiDAR の走行結果から、論文用の図と表をまとめて作る
 
-> **状態：実行中（2026-11-22 にクラウドの Codex（研究実装2）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（コミットされた結果を読むだけ）。
+> **状態：完了（出力は `thesis/out_lidar/`、044 を含めて作り直し済み）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（コミットされた結果を読むだけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/thesis/README_ja.md`・`make_figures.py`（015 の修論の図の作り方）、`conference/results/common_eval/REPORT_ja.md`（共通の集計の道具）、
 > 次の結果の `REPORT_ja.md`・`REVIEW_ja.md`：`eval_ground_endpoint`（030）、`eval_035`、`real_sensors_compare`（037）、`rtf_compare`（039）を読むこと。
 > ブランチは `codex/049-lidar-figures`（その時点の `realtime-map` の最新から）。出力は新しいフォルダ `conference/thesis/out_lidar/`、報告は `conference/results/lidar_figures/REPORT_ja.md`。
