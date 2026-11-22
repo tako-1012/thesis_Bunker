@@ -1,6 +1,6 @@
 # 指示書 051：計画し直すたびの計画の地図を残す（選んだときだけ）と、箱に近づいた・地点が塞がった場面を後から調べる道具
 
-> **状態：実行中（2026-11-22 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での確かめは、050 が終わってから別に頼む）。
+> **状態：完了（結果は `results/plan_map_snapshots/`、レビューは `REVIEW_ja.md`。研究 PC での確かめは 050 のあと）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での確かめは、050 が終わってから別に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/eval_044/REPORT_ja.md`・`REVIEW_ja.md`（この指示書の根拠）、`conference/results/common_eval/REPORT_ja.md`、
 > `conference/ros2_jazzy/gz_checks/lidar_checks.py`・`lidar_planner.py`・`lidar_map.py`・`clearance_log.py`・`run_lidar_checks.sh`、`experiments/eval_runs.py` を読むこと。
 > ブランチは `codex/051-plan-map-snapshots`（その時点の `realtime-map` の最新から）。結果は `conference/results/plan_map_snapshots/`、報告は同じ場所の `REPORT_ja.md`。
