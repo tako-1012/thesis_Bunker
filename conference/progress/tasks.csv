@@ -48,3 +48,4 @@
 047,地形の傾きは古い地図から取り、障害物だけをセンサーで（--terrain-source prior）,柱2 走りながら更新,Codex 実装,クラウド,完了,"--terrain-source prior。保存した記録で goal_cell の経路なし 20 回中 12 回が救える見込み。偽の急斜面 5,803→3,750 マス、本当の急斜面の見落とし 118→0。Gazebo で評価予定",results/terrain_from_prior
 048,古い地図が古い場合の 047 の危険を見積もる（prior_veto も試す）,柱2 走りながら更新,Codex 実装,クラウド（チャット：研究実装1）,完了,perturbed でも prior の見落としは小（33→41 マス）。none では大量に見落とす。prior_veto は点数が未保存で判定できず,tasks/048
 049,Gazebo の LiDAR の結果から論文用の図と表をまとめて作る,論文,Codex 実装,クラウド（チャット：研究実装2）,完了,make_lidar_figures.py で T4〜T6・F8・F9。044 も自動で追加済み,tasks/049
+050,047（prior）・048（prior_veto）を研究 PC の Gazebo で評価（S・P・V × 5 か所 × 3 回）,評価,研究 PC,研究 PC（チャット：研究PC実行）,実行中,段階 A：古い地図は exact、45 回、0.3 倍。段階 B（perturbed）はあとで,tasks/050
