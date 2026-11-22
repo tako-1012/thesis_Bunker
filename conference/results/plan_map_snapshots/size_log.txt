@@ -1,0 +1,7 @@
+044 runs, minimum/median/maximum searches: 60 31 106.0 255
+full first map: n=25 min/median/max bytes=526620/929888/1023921
+XOR delta: n=10 min/median/max bytes=38125/100038.5/122465
+handoff: n=35 min/median/max bytes=987/999/1021
+31 searches: median-sampled estimate 3.962 MB; max-sampled estimate 4.730 MB
+106 searches: median-sampled estimate 11.540 MB; max-sampled estimate 13.991 MB
+255 searches: median-sampled estimate 26.594 MB; max-sampled estimate 32.390 MB

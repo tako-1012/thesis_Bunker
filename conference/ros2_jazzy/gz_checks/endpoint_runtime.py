@@ -8,24 +8,41 @@ from tapp.online_mission import OnlinePlanner
 from tapp.endpoint_policy import (plan_endpoint, classify_failure, SnapshotStore,
                                   RetryState, escape_maps, ENDPOINT_POLICIES)
 from tapp.collision import path_lethal_cells, line_of_sight_exact
+from tapp.traversability import inflate
 from .lidar_runtime import LidarOnlineMission
 from .online_batch_runtime import CsvChunks
+from .plan_maps import PlanMapStore
 
 
-def capture(mapper, planner, position, pose, sim_time, goal):
+def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=False):
     # PointCloudMapFine publishes masks under these locks in this same order.
     with mapper._update_lock, mapper._lock:
         seen, cost, lethal = mapper.seen.copy(), mapper.tm.cost.copy(), mapper.lethal.copy()
         planning_seen = getattr(mapper, 'planning_seen', None)
-        planner.observe(planning_seen(seen) if planning_seen else seen, cost, lethal)
+        observed = planning_seen(seen) if planning_seen else seen
+        planner.observe(observed, cost, lethal)
         planning_lethal, planning_cost = planner.planning_maps()
-        return dict(lethal=planning_lethal.copy(), cost=planning_cost.copy(), seen=seen, known=planner.known.copy(),
+        snapshot = dict(lethal=planning_lethal.copy(), cost=planning_cost.copy(), seen=seen, known=planner.known.copy(),
                     detected=mapper.detected_obstacle.copy(), prior_raw=mapper.raw_obstacle.copy(),
                     steep=mapper.tm.steep.copy(), elev=mapper.elev.copy(),
-                    fine_obstacle=mapper.fine_obstacle.copy(), fine_resolution_m=.1,
-                    fine_origin_xy=np.array([-.25, -.25]), resolution_m=RESOLUTION, version=int(mapper.version),
+                    **(dict(fine_obstacle=mapper.fine_obstacle.copy(), fine_resolution_m=.1,
+                            fine_origin_xy=np.array([-.25, -.25])) if hasattr(mapper, 'fine_obstacle') else {}),
+                    resolution_m=RESOLUTION, version=int(mapper.version),
                     pose=np.asarray(pose, float), start=np.rint(np.asarray(position)/RESOLUTION).astype(int),
                     goal=np.asarray(goal, int), sim_time=float(sim_time))
+        if save_plan_maps:
+            snapshot['retained_lethal'] = planning_lethal & ~observed
+            radius = mapper.robot.footprint_radius
+            if hasattr(mapper, 'fine_obstacle'):
+                snapshot.update(obstacle_halo=mapper._inflated_coarse.copy(), prior_inflated=mapper._prior_rock.copy(),
+                                steep_halo=mapper._dilated_steep.copy())
+            else:
+                snapshot.update(obstacle_halo=inflate(mapper.detected_obstacle, radius),
+                                prior_inflated=inflate(mapper.raw_obstacle, radius),
+                                steep_halo=inflate(mapper.tm.steep, radius))
+            if getattr(mapper, 'terrain_source', None) == 'prior_veto':
+                snapshot['veto_supported'] = mapper._veto_supported.copy()
+        return snapshot
 
 
 class EndpointPlanner(OnlinePlanner):
@@ -49,24 +66,34 @@ class EndpointPlanner(OnlinePlanner):
             self.events.append(event)
             result = dict(event, path=[p.tolist() for p in self.path], replanned=True)
             self.owner.record_relaxation(outcome, snapshot, 'search')
-        if self.owner.diagnostics:
+        if self.owner.diagnostics or self.owner.plan_maps:
             actual = dict(snapshot)
             if self.policy != 'none':
                 actual.update(pre_policy_lethal=snapshot['lethal'], lethal=outcome['lethal'],
                               cost=outcome['cost'], original_goal=snapshot['goal'], goal=outcome['goal'])
-            self.events[-1]['failure_class'] = '' if result['success'] else classify_failure(actual)
-            if not result['success']:
-                self.owner.diagnostics.save(actual, failure=True)
+            classification = '' if result['success'] else classify_failure(actual)
+            if self.owner.diagnostics:
+                self.events[-1]['failure_class'] = classification
+                if not result['success']:
+                    self.owner.diagnostics.save(actual, failure=True)
+            if self.owner.plan_maps:
+                if self.policy != 'none':
+                    actual['relaxed'] = outcome['relaxed']
+                plan_id = self.owner.plan_maps.search(actual, result, classification)
+                if plan_id is not None:
+                    result['plan_map_id'] = plan_id
         return result
 
 
 class EndpointRuntime(LidarOnlineMission):
-    def __init__(self, prior, mapper, *, plan_log, endpoint_policy, diagnostics, executor=None, record_clearance=False):
-        if not hasattr(mapper, 'fine_obstacle'):
+    def __init__(self, prior, mapper, *, plan_log, endpoint_policy, diagnostics, executor=None, record_clearance=False,
+                 save_plan_maps=False):
+        if (endpoint_policy != 'none' or diagnostics) and not hasattr(mapper, 'fine_obstacle'):
             raise ValueError('task028 requires --map fine')
         super().__init__(prior, mapper, plan_log=plan_log, executor=executor)
         self.policy = endpoint_policy
         self.folder = plan_log.parent
+        self.plan_maps = PlanMapStore(self.folder/'plan_maps') if save_plan_maps else None
         self.diagnostics = SnapshotStore(self.folder/'diag') if diagnostics else None
         self.clearance_log = (CsvChunks(self.folder/'clearance.csv',
                                         ['sim_time', 'map_version', 'x', 'y', 'clearance_m'])
@@ -89,7 +116,8 @@ class EndpointRuntime(LidarOnlineMission):
         context = state.get('_context', (0., self.pose))
         position = state.get('_position', self.pose[:2])
         goal = planner.goal or state['mission']['stops_cells'][state['leg']]
-        planner.snapshot = capture(self.mapper, planner, position, context[1], context[0], goal)
+        options = dict(save_plan_maps=True) if self.plan_maps else {}
+        planner.snapshot = capture(self.mapper, planner, position, context[1], context[0], goal, **options)
         if self.diagnostics:
             before = self.diagnostics.periodic
             self.diagnostics.tick(planner.snapshot)
@@ -222,6 +250,7 @@ class EndpointRuntime(LidarOnlineMission):
         if self.state is not None and (self.pending is None or self.pending.done()):
             self.state['_context'] = (float(sim_time), np.array(self.pose, copy=True))
             self.state['_position'] = tuple(position)
+        previous = self.pending if self.plan_maps else None
         command = super().tick(position, sim_time)
         if self.policy != 'none' and self.state is not None:
             if self.finished:
@@ -236,6 +265,10 @@ class EndpointRuntime(LidarOnlineMission):
                 command['final_leg'] = False  # Runtime records the final outcome before completion.
         if command and 'plan_history' in command:
             command['plan_history'] = [{k: v for k, v in e.items() if k != 'failure_class'} for e in command['plan_history']]
+        if command and previous and previous.done() and not previous.cancelled() and previous.exception() is None:
+            plan_id = previous.result().get('plan_map_id')
+            if plan_id is not None:
+                self.plan_maps.application(plan_id, command, sim_time)
         return command
 
     def close(self):
@@ -248,10 +281,11 @@ class EndpointRuntime(LidarOnlineMission):
 
 
 def make_lidar_runtime(prior, mapper, *, plan_log, endpoint_policy='none', diagnostics=False, executor=None,
-                       record_clearance=False):
+                       record_clearance=False, save_plan_maps=False):
     if endpoint_policy not in ENDPOINT_POLICIES:
         raise ValueError('unknown endpoint policy')
-    if endpoint_policy == 'none' and not diagnostics:
+    if endpoint_policy == 'none' and not diagnostics and not save_plan_maps:
         return LidarOnlineMission(prior, mapper, plan_log=plan_log, executor=executor)
     return EndpointRuntime(prior, mapper, plan_log=plan_log, endpoint_policy=endpoint_policy,
-                           diagnostics=diagnostics, executor=executor, record_clearance=record_clearance)
+                           diagnostics=diagnostics, executor=executor, record_clearance=record_clearance,
+                           save_plan_maps=save_plan_maps)
