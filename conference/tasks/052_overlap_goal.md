@@ -1,6 +1,6 @@
 # 指示書 052：障害物の膨らませはマス全体で判定し、目標のマスだけは中心で判定する（`--obstacle-clearance overlap_goal`、選んだときだけ）
 
-> **状態：実行中（2026-11-22 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（Gazebo での評価は、あとで研究 PC で別に行う）。
+> **状態：完了（結果は `results/overlap_goal/`、レビューは `REVIEW_ja.md`。Gazebo での評価は 050 のあと）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（Gazebo での評価は、あとで研究 PC で別に行う）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/041_obstacle_clearance.md`、`conference/results/obstacle_clearance/REPORT_ja.md`・`REVIEW_ja.md`、
 > `conference/results/eval_044/REPORT_ja.md`・`REVIEW_ja.md`・`no_path_evidence.csv`（この指示書の根拠）、`tapp/pointcloud_map_fine.py`・`pointcloud_map_multi.py`・`tapp/online_mission.py` を読むこと。
 > ブランチは `codex/052-overlap-goal`（その時点の `realtime-map` の最新から）。結果は `conference/results/overlap_goal/`、報告は同じ場所の `REPORT_ja.md`。
