@@ -1,0 +1,49 @@
+skipped results/eval_ground_endpoint/runs/08OB89_-0847/C1_r2/physical_1/raw/08OB89_-0847: missing committed input: results/eval_ground_endpoint/runs/08OB89_-0847/C1_r2/physical_1/raw/08OB89_-0847/pointcloud_map.npz
+skipped results/eval_ground_endpoint/runs/08OB89_-0847/C1_r3/physical_1/raw/08OB89_-0847: missing committed input: results/eval_ground_endpoint/runs/08OB89_-0847/C1_r3/physical_1/raw/08OB89_-0847/pointcloud_map.npz
+skipped results/gazebo_lidar/physical_10/raw/08OB86_-0205: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB86_00294: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB87_-0706: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB88_-0167: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB88_-1417: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB88_00332: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB88_01832: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB89_-0347: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB89_-0847: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB89_00152: coarse map has no fine obstacle and halo masks
+skipped results/lidar_fine/first_attempt_partial/raw/08OB88_-1417: missing committed input: results/lidar_fine/first_attempt_partial/raw/08OB88_-1417/pointcloud_map.npz
+skipped results/rtf_check/divergence/gpu_smoke/physical_1/raw/08OB87_-0706: missing committed input: results/rtf_check/divergence/gpu_smoke/physical_1/raw/08OB87_-0706/pointcloud_map.npz
+skipped results/rtf_check/divergence/gpu_smoke1_no_render_device/physical_1/raw/08OB87_-0706: missing committed input: results/rtf_check/divergence/gpu_smoke1_no_render_device/physical_1/raw/08OB87_-0706/pointcloud_map.npz
+skipped results/eval_035/08OB88_-0167/P1_r1: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB88_-0167/P1_r2: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB88_-0167/P1_r3: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB89_-0347/P1_r1: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB89_-0347/P1_r2: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB89_-0347/P1_r3: failure snapshot only; no final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/LC_r1: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/LC_r2: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/LC_r3: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/L_r1: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/L_r2: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/L_r3: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-1417/L_r2: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB89_-0847/LC_r1: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/0.3_r1: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/0.3_r2: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/0.3_r3: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/1.0_r1: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/1.0_r2: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/1.0_r3: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB89_-0847/1.0_r3: no committed final map or first LiDAR cloud
+80 paired records used; 36 skipped
+047_048 first_lidar runs=14 false_steep=209 true_steep=973 true_nonsteep=17265 missed_steep=86
+047_048 final runs=14 false_steep=2040 true_steep=5562 true_nonsteep=561544 missed_steep=905
+eval_ground_endpoint_other:legacy first_lidar runs=29 false_steep=130 true_steep=1068 true_nonsteep=32755 missed_steep=64
+eval_ground_endpoint_other:legacy final runs=29 false_steep=10715 true_steep=16776 true_nonsteep=1637379 missed_steep=3268
+lidar_fine:legacy first_lidar runs=13 false_steep=174 true_steep=683 true_nonsteep=14553 missed_steep=60
+lidar_fine:legacy final runs=13 false_steep=3313 true_steep=2605 true_nonsteep=548345 missed_steep=459
+real_sensors:lidar_real first_lidar runs=1 false_steep=6 true_steep=0 true_nonsteep=1295 missed_steep=0
+real_sensors:lidar_real final runs=1 false_steep=150 true_steep=68 true_nonsteep=32619 missed_steep=19
+real_sensors:lidar_real+depth2 first_lidar runs=2 false_steep=13 true_steep=0 true_nonsteep=2584 missed_steep=0
+real_sensors:lidar_real+depth2 final runs=2 false_steep=326 true_steep=128 true_nonsteep=68423 missed_steep=46
+rtf_check:legacy first_lidar runs=21 false_steep=377 true_steep=0 true_nonsteep=22576 missed_steep=0
+rtf_check:legacy final runs=21 false_steep=5580 true_steep=1566 true_nonsteep=1232009 missed_steep=1095

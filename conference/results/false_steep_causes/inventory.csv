@@ -1,0 +1,117 @@
+raw,cohort,status,reason
+results/eval_ground_endpoint/runs/08OB87_-0706/C0_r1/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB87_-0706/C0_r2/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB87_-0706/C0_r3/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB87_-0706/C1_r1/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB87_-0706/C1_r2/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB87_-0706/C1_r3/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB87_-0706/C2_r1/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB87_-0706/C2_r2/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB87_-0706/C2_r3/physical_1/raw/08OB87_-0706,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C0_r1/physical_1/raw/08OB88_-0167,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167,047_048,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C0_r3/physical_1/raw/08OB88_-0167,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167,047_048,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167,047_048,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167,047_048,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C2_r1/physical_1/raw/08OB88_-0167,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C2_r2/physical_1/raw/08OB88_-0167,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-0167/C2_r3/physical_1/raw/08OB88_-0167,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C0_r1/physical_1/raw/08OB88_-1417,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C0_r2/physical_1/raw/08OB88_-1417,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C0_r3/physical_1/raw/08OB88_-1417,047_048,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C1_r1/physical_1/raw/08OB88_-1417,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C1_r2/physical_1/raw/08OB88_-1417,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C1_r3/physical_1/raw/08OB88_-1417,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C2_r1/physical_1/raw/08OB88_-1417,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C2_r2/physical_1/raw/08OB88_-1417,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB88_-1417/C2_r3/physical_1/raw/08OB88_-1417,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r1/physical_1/raw/08OB89_-0347,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r2/physical_1/raw/08OB89_-0347,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r3/physical_1/raw/08OB89_-0347,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r1/physical_1/raw/08OB89_-0347,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r2/physical_1/raw/08OB89_-0347,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r3/physical_1/raw/08OB89_-0347,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C2_r1/physical_1/raw/08OB89_-0347,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C2_r2/physical_1/raw/08OB89_-0347,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB89_-0347/C2_r3/physical_1/raw/08OB89_-0347,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r1/physical_1/raw/08OB89_-0847,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r2/physical_1/raw/08OB89_-0847,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r3/physical_1/raw/08OB89_-0847,047_048,used,
+results/eval_ground_endpoint/runs/08OB89_-0847/C1_r1/physical_1/raw/08OB89_-0847,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB89_-0847/C1_r2/physical_1/raw/08OB89_-0847,,skipped,missing committed input: results/eval_ground_endpoint/runs/08OB89_-0847/C1_r2/physical_1/raw/08OB89_-0847/pointcloud_map.npz
+results/eval_ground_endpoint/runs/08OB89_-0847/C1_r3/physical_1/raw/08OB89_-0847,,skipped,missing committed input: results/eval_ground_endpoint/runs/08OB89_-0847/C1_r3/physical_1/raw/08OB89_-0847/pointcloud_map.npz
+results/eval_ground_endpoint/runs/08OB89_-0847/C2_r1/physical_1/raw/08OB89_-0847,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB89_-0847/C2_r2/physical_1/raw/08OB89_-0847,eval_ground_endpoint_other:legacy,used,
+results/eval_ground_endpoint/runs/08OB89_-0847/C2_r3/physical_1/raw/08OB89_-0847,eval_ground_endpoint_other:legacy,used,
+results/gazebo_lidar/physical_10/raw/08OB86_-0205,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB86_00294,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB87_-0706,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB88_-0167,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB88_-1417,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB88_00332,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB88_01832,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB89_-0347,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB89_-0847,,skipped,coarse map has no fine obstacle and halo masks
+results/gazebo_lidar/physical_10/raw/08OB89_00152,,skipped,coarse map has no fine obstacle and halo masks
+results/lidar_fine/first_attempt_partial/raw/08OB86_-0205,lidar_fine:legacy,used,
+results/lidar_fine/first_attempt_partial/raw/08OB86_00294,lidar_fine:legacy,used,
+results/lidar_fine/first_attempt_partial/raw/08OB87_-0706,lidar_fine:legacy,used,
+results/lidar_fine/first_attempt_partial/raw/08OB88_-1417,,skipped,missing committed input: results/lidar_fine/first_attempt_partial/raw/08OB88_-1417/pointcloud_map.npz
+results/lidar_fine/physical_10/raw/08OB86_-0205,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB86_00294,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB87_-0706,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB88_-0167,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB88_-1417,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB88_00332,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB88_01832,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB89_-0347,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB89_-0847,lidar_fine:legacy,used,
+results/lidar_fine/physical_10/raw/08OB89_00152,lidar_fine:legacy,used,
+results/real_sensors/b0/lidar_real_depth2/physical_1/raw/08OB86_-0205,real_sensors:lidar_real+depth2,used,
+results/real_sensors/b0b/lidar_real/physical_1/raw/08OB86_-0205,real_sensors:lidar_real,used,
+results/real_sensors/b0b/lidar_real_depth2/physical_1/raw/08OB86_-0205,real_sensors:lidar_real+depth2,used,
+results/rtf_check/divergence/R1_01/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R1_02/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R1_03/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R1_04/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R2_01/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R2_02/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R2_03/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R2_04/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/R2_05/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/divergence/gpu_smoke/physical_1/raw/08OB87_-0706,,skipped,missing committed input: results/rtf_check/divergence/gpu_smoke/physical_1/raw/08OB87_-0706/pointcloud_map.npz
+results/rtf_check/divergence/gpu_smoke1_no_render_device/physical_1/raw/08OB87_-0706,,skipped,missing committed input: results/rtf_check/divergence/gpu_smoke1_no_render_device/physical_1/raw/08OB87_-0706/pointcloud_map.npz
+results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB86_-0205,rtf_check:legacy,used,
+results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB86_00294,rtf_check:legacy,used,
+results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/hayashi_rtf1_check/rtf_0.3/physical_1/raw/08OB86_-0205,rtf_check:legacy,used,
+results/rtf_check/hayashi_rtf1_check/rtf_1/physical_1/raw/08OB86_-0205,rtf_check:legacy,used,
+results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep1/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep2/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep3/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/hayashi_rtf_repeat/rtf_1_rep1/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/hayashi_rtf_repeat/rtf_1_rep2/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/rtf_check/hayashi_rtf_repeat/rtf_1_rep3/physical_1/raw/08OB87_-0706,rtf_check:legacy,used,
+results/eval_035/08OB88_-0167/P1_r1,,skipped,failure snapshot only; no final map or first LiDAR cloud
+results/eval_035/08OB88_-0167/P1_r2,,skipped,failure snapshot only; no final map or first LiDAR cloud
+results/eval_035/08OB88_-0167/P1_r3,,skipped,failure snapshot only; no final map or first LiDAR cloud
+results/eval_035/08OB89_-0347/P1_r1,,skipped,failure snapshot only; no final map or first LiDAR cloud
+results/eval_035/08OB89_-0347/P1_r2,,skipped,failure snapshot only; no final map or first LiDAR cloud
+results/eval_035/08OB89_-0347/P1_r3,,skipped,failure snapshot only; no final map or first LiDAR cloud
+results/real_sensors_compare/08OB88_-0167/LC_r1,,skipped,no committed final map or first LiDAR cloud
+results/real_sensors_compare/08OB88_-0167/LC_r2,,skipped,no committed final map or first LiDAR cloud
+results/real_sensors_compare/08OB88_-0167/LC_r3,,skipped,no committed final map or first LiDAR cloud
+results/real_sensors_compare/08OB88_-0167/L_r1,,skipped,no committed final map or first LiDAR cloud
+results/real_sensors_compare/08OB88_-0167/L_r2,,skipped,no committed final map or first LiDAR cloud
+results/real_sensors_compare/08OB88_-0167/L_r3,,skipped,no committed final map or first LiDAR cloud
+results/real_sensors_compare/08OB88_-1417/L_r2,,skipped,no committed final map or first LiDAR cloud
+results/real_sensors_compare/08OB89_-0847/LC_r1,,skipped,no committed final map or first LiDAR cloud
+results/rtf_compare/08OB88_-0167/0.3_r1,,skipped,no committed final map or first LiDAR cloud
+results/rtf_compare/08OB88_-0167/0.3_r2,,skipped,no committed final map or first LiDAR cloud
+results/rtf_compare/08OB88_-0167/0.3_r3,,skipped,no committed final map or first LiDAR cloud
+results/rtf_compare/08OB88_-0167/1.0_r1,,skipped,no committed final map or first LiDAR cloud
+results/rtf_compare/08OB88_-0167/1.0_r2,,skipped,no committed final map or first LiDAR cloud
+results/rtf_compare/08OB88_-0167/1.0_r3,,skipped,no committed final map or first LiDAR cloud
+results/rtf_compare/08OB89_-0847/1.0_r3,,skipped,no committed final map or first LiDAR cloud
