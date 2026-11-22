@@ -1,0 +1,26 @@
+patch,condition,rep,failure,reached,t_s,file,slope_deg,cell,lethal,known,seen,truth_lethal,steep,prior_rock,actual_obstacle_halo,centre_halo,overlap_halo,local_lethal_cells,local_detected_cells
+08OB88_-0167,B,1,goal_cell,4,311.9,plan_fail_000001.npz,9.670055534844767,"[137, 294]",True,True,True,False,True,False,False,False,False,11,0
+08OB88_-0167,B,2,goal_cell,4,302.6,plan_fail_000001.npz,13.84952818900413,"[137, 294]",True,True,True,False,True,False,False,False,False,8,0
+08OB88_-0167,B,3,goal_cell,4,302.3,plan_fail_000001.npz,10.90312441508589,"[137, 294]",True,True,True,False,True,False,False,False,False,6,0
+08OB88_-0167,OT,1,goal_cell,4,305.2,plan_fail_000001.npz,9.841273656428626,"[137, 294]",True,True,True,False,True,False,False,False,False,9,0
+08OB88_-0167,OT,2,goal_cell,4,314.8,plan_fail_000001.npz,9.125282063943677,"[137, 294]",True,True,True,False,True,False,False,False,False,10,0
+08OB88_-0167,OT,3,goal_cell,4,309.4,plan_fail_000001.npz,13.29954251576183,"[137, 294]",True,True,True,False,True,False,False,False,False,9,0
+08OB88_-0167,O,1,goal_cell,4,309.6,plan_fail_000001.npz,13.69991399437055,"[137, 294]",True,True,True,False,True,False,False,False,False,11,0
+08OB88_-0167,O,2,goal_cell,4,300.6,plan_fail_000001.npz,15.488532013021356,"[137, 294]",True,True,True,False,True,False,False,False,False,5,0
+08OB88_-0167,O,3,goal_cell,4,303.2,plan_fail_000001.npz,8.095608821802802,"[137, 294]",True,True,True,False,True,False,False,False,False,8,0
+08OB88_-0167,T,1,goal_cell,4,320.3,plan_fail_000001.npz,9.987768296121345,"[137, 294]",True,True,True,False,True,False,False,False,False,11,0
+08OB88_-0167,T,2,goal_cell,4,307.9,plan_fail_000001.npz,8.229982195837366,"[137, 294]",True,True,True,False,True,False,False,False,False,10,0
+08OB88_-0167,T,3,goal_cell,4,309.8,plan_fail_000001.npz,10.817655484233347,"[137, 294]",True,True,True,False,True,False,False,False,False,11,0
+08OB88_-1417,OT,1,goal_cell,0,45.1,plan_fail_000001.npz,2.2718005656717137,"[199, 151]",True,True,False,False,False,False,True,False,True,10,1
+08OB88_-1417,OT,2,goal_cell,0,46.9,plan_fail_000001.npz,1.3333219940872716,"[199, 151]",True,True,True,False,False,False,True,False,True,10,1
+08OB88_-1417,OT,3,goal_cell,0,45.9,plan_fail_000001.npz,4.192674725605441,"[199, 151]",True,True,True,False,False,False,True,False,True,10,2
+08OB88_-1417,O,1,goal_cell,0,44.7,plan_fail_000001.npz,2.2354383122767736,"[199, 151]",True,True,False,False,False,False,True,False,True,10,2
+08OB88_-1417,O,2,goal_cell,0,45.7,plan_fail_000001.npz,2.2851054068110317,"[199, 151]",True,True,False,False,False,False,True,False,True,10,2
+08OB88_-1417,O,3,goal_cell,0,45.1,plan_fail_000001.npz,2.2718005656717137,"[199, 151]",True,True,False,False,False,False,True,False,True,10,1
+08OB89_-0847,B,2,goal_cell,1,133.7,plan_fail_000001.npz,3.4091128695344812,"[281, 117]",True,True,True,False,True,False,False,False,True,9,6
+08OB89_-0847,OT,1,goal_cell,1,113.4,plan_fail_000001.npz,4.0272182781790695,"[281, 117]",True,True,True,False,False,False,True,False,True,15,3
+08OB89_-0847,OT,2,goal_cell,1,115.4,plan_fail_000001.npz,2.5795756122397284,"[281, 117]",True,True,True,False,False,False,True,False,True,14,4
+08OB89_-0847,OT,3,goal_cell,1,114.65,plan_fail_000001.npz,3.6027130901914783,"[281, 117]",True,True,True,False,False,False,True,False,True,14,4
+08OB89_-0847,O,1,goal_cell,1,113.3,plan_fail_000001.npz,3.6693748852847987,"[281, 117]",True,True,True,False,False,False,True,False,True,14,2
+08OB89_-0847,O,2,goal_cell,1,113.05,plan_fail_000001.npz,2.705678246115349,"[281, 117]",True,True,True,False,False,False,True,False,True,14,3
+08OB89_-0847,O,3,goal_cell,1,113.3,plan_fail_000001.npz,2.871898806478599,"[281, 117]",True,True,True,False,False,False,True,False,True,14,3
