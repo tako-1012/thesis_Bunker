@@ -9,6 +9,7 @@ the same radius into their containing coarse cells.
 Task029 optionally excludes obstacle returns from the ground median only.
 Task047 optionally uses fixed prior terrain for planning and retains the
 fused elevation separately for diagnostics.
+Task048 can add well-supported sensor steep cells to the prior steep mask.
 """
 
 from copy import copy
@@ -18,13 +19,18 @@ from scipy.ndimage import binary_dilation, gaussian_filter, map_coordinates, uni
 
 from .config import RESOLUTION
 from .pointcloud_map import PointCloudMap as _LegacyPointCloudMap, transform_points
-from .traversability import inflate
+from .traversability import inflate, slope_deg
 
 FINE_RESOLUTION = .1
 RATIO = 5
 GROUND_ESTIMATES = ('all_returns', 'non_obstacle')
 OBSTACLE_CLEARANCES = ('centre', 'overlap')
-TERRAIN_SOURCES = ('sensor', 'prior')
+TERRAIN_SOURCES = ('sensor', 'prior', 'prior_veto')
+
+
+def veto_steep(prior_steep, elev, supported, max_slope_deg):
+    """Add sensor slopes at cells with enough returns, never clear prior slopes."""
+    return prior_steep | (supported & (slope_deg(elev) > max_slope_deg))
 
 
 def _ranges(points):
@@ -86,6 +92,9 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             self._residual = self.elev - gaussian_filter(self.elev, sigma=1.5)
             self._rough_mean_x = uniform_filter1d(self._residual, 3, axis=0)
             self._rough_square_x = uniform_filter1d(self._residual**2, 3, axis=0)
+        elif terrain_source == 'prior_veto':
+            self._prior_steep = self.tm.steep
+            self._veto_supported = np.zeros(self.prior.shape, bool)
 
     def _initial_lethal(self):
         self._dilated_steep = inflate(self.tm.steep, self.robot.footprint_radius)
@@ -134,7 +143,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
 
         The caller holds the update lock so the halo matches the snapshot.
         """
-        if self.terrain_source == 'prior':
+        if self.terrain_source != 'sensor':
             # The soft prior would otherwise allow unobserved steep cells.
             seen = seen | self._dilated_steep
         if self.obstacle_clearance == 'overlap':
@@ -194,7 +203,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             elev = elev.copy()
             elev.flat[touched[changed]] = heights[changed]
         update_terrain = elev_changed and self.terrain_source == 'sensor'
-        if update_terrain or self._last_new_obstacles:
+        steep = self._updated_veto(elev, observed, elev_changed) if self.terrain_source == 'prior_veto' else None
+        if update_terrain or steep is not None or self._last_new_obstacles:
             tm = copy(tm)
             if update_terrain:
                 tm.elev = elev
@@ -222,6 +232,9 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 np.clip(slope, 0, 1, out=slope)
                 np.clip(rough, 0, 1, out=rough)
                 tm.cost = self.weights.alpha * slope + self.weights.beta * rough
+            if steep is not None:
+                tm.steep = steep
+                self._dilated_steep = inflate(steep, self.robot.footprint_radius)
             if self._last_new_obstacles:
                 tm.rock = self._prior_rock | self._inflated_coarse
             tm.lethal = tm.rock | tm.steep
@@ -229,6 +242,19 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         with self._lock:
             self.elev, self.seen, self.tm, self.lethal = elev, seen, tm, lethal
             self.version += 1
+
+    def _updated_veto(self, elev, observed, elev_changed):
+        # Histories only append and trim to the cap. A cell that reached the
+        # support threshold cannot fall below it during this mapper's life.
+        pending = observed[~self._veto_supported.flat[observed]]
+        half = (self.samples_per_cell+1)//2
+        newly_supported = [cell for cell in pending if len(self.samples[int(cell)]) >= half]
+        self._veto_supported.flat[newly_supported] = True
+        if elev_changed or newly_supported:
+            steep = veto_steep(self._prior_steep, elev, self._veto_supported, self.robot.max_slope_deg)
+            if not np.array_equal(steep, self.tm.steep):
+                return steep
+        return None
 
     def _update_prior(self, world, cells, input_points, reference=None):
         with self._update_lock:
@@ -356,7 +382,9 @@ class PointCloudMapFine(_LegacyPointCloudMap):
 
     def save(self, path):
         with self._update_lock, self._lock:
-            terrain = dict(terrain_steep=self.tm.steep) if self.terrain_source == 'prior' else {}
+            terrain = dict(terrain_steep=self.tm.steep) if self.terrain_source != 'sensor' else {}
+            if self.terrain_source == 'prior_veto':
+                terrain['veto_supported'] = self._veto_supported
             np.savez_compressed(path, elev=self.elev, seen=self.seen, obstacle=self.detected_obstacle,
                                 cost=self.tm.cost, lethal=self.lethal, version=self.version,
                                 fine_shape=np.asarray(self.fine_shape), fine_resolution_m=FINE_RESOLUTION,
