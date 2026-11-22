@@ -11,6 +11,7 @@ from tapp.prior import PriorMap
 from tapp.online_mission import OnlinePlanner
 from tapp.collision import line_of_sight_exact, path_lethal_cells
 from ros2_jazzy.gz_checks.online_batch_runtime import BatchOnlineMission, planning_map
+from ros2_jazzy.gz_checks.overlap_goal import OverlapGoalPlanner, handoff_lethal
 
 
 class LidarOnlineMission(BatchOnlineMission):
@@ -21,7 +22,24 @@ class LidarOnlineMission(BatchOnlineMission):
                          prior_lethal_mode='soft', plan_log=plan_log, executor=executor)
         self.mapper = mapper
 
+    def _new_planner(self, cls, stops):
+        if getattr(self.mapper, 'obstacle_clearance', 'centre') == 'overlap_goal':
+            class GoalPlanner(OverlapGoalPlanner, cls):
+                pass
+
+            planner = GoalPlanner(self.prior.cost, self.prior.lethal,
+                                  self.prior_tm.weights, prior_lethal_mode=self.mode)
+            planner.goal_cells = frozenset(stops)
+            planner.goal_overrides = {}
+            return planner
+        return cls(self.prior.cost, self.prior.lethal, self.prior_tm.weights, prior_lethal_mode=self.mode)
+
     def _observe(self, planner):
+        if isinstance(planner, OverlapGoalPlanner):
+            snapshot, overrides = self.mapper.planning_goal_snapshot(planner.goals_to_check())
+            planner.observe(*snapshot)
+            planner.set_goal_overrides(overrides)
+            return
         snapshot = getattr(self.mapper, 'planning_snapshot', self.mapper.snapshot)
         planner.observe(*snapshot())
 
@@ -31,8 +49,7 @@ class LidarOnlineMission(BatchOnlineMission):
         if state['planner'] is None:
             mission = state['mission']
             state['tour'] = dict(order=mission['order'], stops=[tuple(p) for p in mission['stops_cells']])
-            state['planner'] = OnlinePlanner(self.prior.cost, self.prior.lethal,
-                                             self.prior_tm.weights, prior_lethal_mode=self.mode)
+            state['planner'] = self._new_planner(OnlinePlanner, state['tour']['stops'])
         planner = state['planner']
         self._observe(planner)
         if planner.goal is not None and np.linalg.norm(np.asarray(position)-np.asarray(planner.goal)*RESOLUTION) <= .3:
@@ -61,7 +78,7 @@ class LidarOnlineMission(BatchOnlineMission):
             if best is None or distance < best[0]:
                 best = distance, i
         rest = path[best[1]+1:] if best is not None else [path[-1]]
-        known_lethal = planner.known & planner.lethal
+        known_lethal = handoff_lethal(planner)
         if rest and line_of_sight_exact(known_lethal, tuple(pos), tuple(rest[0])):
             joined = [pos]+rest
         else:

@@ -11,6 +11,7 @@ from tapp.collision import path_lethal_cells, line_of_sight_exact
 from tapp.traversability import inflate
 from .lidar_runtime import LidarOnlineMission
 from .online_batch_runtime import CsvChunks
+from .overlap_goal import OverlapGoalPlanner, goal_snapshot
 from .plan_maps import PlanMapStore
 
 
@@ -21,6 +22,8 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
         planning_seen = getattr(mapper, 'planning_seen', None)
         observed = planning_seen(seen) if planning_seen else seen
         planner.observe(observed, cost, lethal)
+        if isinstance(planner, OverlapGoalPlanner):
+            planner.set_goal_overrides(mapper.goal_obstacle_overrides(planner.goals_to_check()))
         planning_lethal, planning_cost = planner.planning_maps()
         snapshot = dict(lethal=planning_lethal.copy(), cost=planning_cost.copy(), seen=seen, known=planner.known.copy(),
                     detected=mapper.detected_obstacle.copy(), prior_raw=mapper.raw_obstacle.copy(),
@@ -49,7 +52,9 @@ class EndpointPlanner(OnlinePlanner):
     def _plan(self, reason, initial=False):
         snapshot = self.snapshot
         snapshot['start'] = np.rint(self.pos).astype(int)
-        snapshot['goal'] = np.asarray(self.target if self.policy != 'none' else self.goal, int)
+        goal = self.target if self.policy != 'none' else self.goal
+        snapshot['goal'] = np.asarray(goal, int)
+        snapshot = goal_snapshot(self, snapshot, goal)
         if self.policy == 'none':
             result = super()._plan(reason, initial=initial)
         else:
@@ -120,7 +125,7 @@ class EndpointRuntime(LidarOnlineMission):
         planner.snapshot = capture(self.mapper, planner, position, context[1], context[0], goal, **options)
         if self.diagnostics:
             before = self.diagnostics.periodic
-            self.diagnostics.tick(planner.snapshot)
+            self.diagnostics.tick(goal_snapshot(planner, planner.snapshot, tuple(goal)))
             if self.clearance_log is not None and self.diagnostics.periodic != before:
                 snapshot = planner.snapshot
                 xy = snapshot['pose'][:2]
@@ -148,7 +153,7 @@ class EndpointRuntime(LidarOnlineMission):
     def _plan_work(self, state, position):
         if state['planner'] is None:
             state['tour'] = dict(order=state['mission']['order'], stops=[tuple(p) for p in state['mission']['stops_cells']])
-            planner = EndpointPlanner(self.prior.cost, self.prior.lethal, self.prior_tm.weights, prior_lethal_mode=self.mode)
+            planner = self._new_planner(EndpointPlanner, state['tour']['stops'])
             planner.owner, planner.policy = self, self.policy
             state['planner'] = planner
             state['retry'] = RetryState()
@@ -199,7 +204,7 @@ class EndpointRuntime(LidarOnlineMission):
             return super()._join(state, result, position)
         planner = state['planner']
         self._observe(planner)
-        snapshot = planner.snapshot
+        snapshot = goal_snapshot(planner, planner.snapshot, planner.goal)
         snapshot['pose'] = np.asarray(self.pose)
         snapshot['start'] = np.rint(np.asarray(position)/RESOLUTION).astype(int)
         # Revalidate at the latest map/pose, never blindly apply an old clearance.

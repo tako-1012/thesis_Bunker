@@ -74,6 +74,7 @@ docker run --rm --pull=never --network host \
 # Task039 opt-in: pass --map fine --real-time-factor 1.0 (fine default: 0.3).
 # Options are forwarded unchanged; the Python CLI takes precedence over the environment.
 # Task041 opt-in: pass --map fine --obstacle-clearance overlap.
+# Task052 opt-in: pass --map fine --obstacle-clearance overlap_goal.
 # Task043 opt-in: pass --tracking corner_slow to the follower.
 # Task045 opt-in: THESIS_RENDER=gpu enables NVIDIA headless EGL rendering.
 # Task047 opt-in: pass --map fine --terrain-source prior.

@@ -1,0 +1,22 @@
+archived_goals.csv
+patch,condition,rep,cell,seen,centre_halo,overlap_halo,steep,prior_rock,overlap_goal_open
+08OB88_-1417,OT,1,"[199, 151]",False,False,True,False,False,True
+08OB88_-1417,OT,2,"[199, 151]",True,False,True,False,False,True
+08OB88_-1417,OT,3,"[199, 151]",True,False,True,False,False,True
+08OB88_-1417,O,1,"[199, 151]",False,False,True,False,False,True
+08OB88_-1417,O,2,"[199, 151]",False,False,True,False,False,True
+08OB88_-1417,O,3,"[199, 151]",False,False,True,False,False,True
+08OB89_-0847,OT,1,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,OT,2,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,OT,3,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,O,1,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,O,2,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,O,3,"[281, 117]",True,False,True,False,False,True
+synthetic_paths.csv
+case,mode,success,goal_clearance_m,path_clearance_m,path_cells
+box_near_goal,centre,True,0.6964194138592062,0.6964194138592062,"[[10.0,15.0],[9.0,11.0]]"
+box_near_goal,overlap,False,0.6964194138592062,,[]
+box_near_goal,overlap_goal,True,0.6964194138592062,0.6964194138592062,"[[10.0,15.0],[9.0,11.0]]"
+box_near_intermediate,centre,True,1.4089002803605373,0.47753372816845296,"[[10.0,15.0],[11.0,7.0]]"
+box_near_intermediate,overlap,True,1.4089002803605373,1.123456795971164,"[[10.0,15.0],[12.0,10.0],[12.0,8.0],[11.0,7.0]]"
+box_near_intermediate,overlap_goal,True,1.4089002803605373,1.123456795971164,"[[10.0,15.0],[12.0,10.0],[12.0,8.0],[11.0,7.0]]"

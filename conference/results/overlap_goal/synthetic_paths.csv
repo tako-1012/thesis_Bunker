@@ -1,0 +1,7 @@
+case,mode,success,goal_clearance_m,path_clearance_m,path_cells
+box_near_goal,centre,True,0.6964194138592062,0.6964194138592062,"[[10.0,15.0],[9.0,11.0]]"
+box_near_goal,overlap,False,0.6964194138592062,,[]
+box_near_goal,overlap_goal,True,0.6964194138592062,0.6964194138592062,"[[10.0,15.0],[9.0,11.0]]"
+box_near_intermediate,centre,True,1.4089002803605373,0.47753372816845296,"[[10.0,15.0],[11.0,7.0]]"
+box_near_intermediate,overlap,True,1.4089002803605373,1.123456795971164,"[[10.0,15.0],[12.0,10.0],[12.0,8.0],[11.0,7.0]]"
+box_near_intermediate,overlap_goal,True,1.4089002803605373,1.123456795971164,"[[10.0,15.0],[12.0,10.0],[12.0,8.0],[11.0,7.0]]"

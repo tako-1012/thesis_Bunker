@@ -1,6 +1,6 @@
 # 指示書 053：走りながらの地図の「偽の急斜面」が、どこで・なぜできるかを、保存した記録で分ける
 
-> **状態：実行中（2026-11-22 にクラウドの Codex（研究実装2）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（コミットされた記録と Python だけ）。
+> **状態：完了（結果は `results/false_steep_causes/`、レビューは `REVIEW_ja.md`）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（コミットされた記録と Python だけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/047_terrain_from_prior.md`、`conference/results/terrain_from_prior/REPORT_ja.md`・`REVIEW_ja.md`・`replay.py`・`map_errors.csv`、
 > `conference/results/stale_prior_risk/REPORT_ja.md`・`replay.py`、`conference/results/waypoint_feasibility/REPORT_ja.md`、`conference/results/ground_estimate/`（029）、
 > `tapp/pointcloud_map_fine.py`・`local_ground.py`・`traversability.py` を読むこと。

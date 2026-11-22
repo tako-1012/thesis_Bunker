@@ -1,0 +1,13 @@
+patch,condition,rep,cell,seen,centre_halo,overlap_halo,steep,prior_rock,overlap_goal_open
+08OB88_-1417,OT,1,"[199, 151]",False,False,True,False,False,True
+08OB88_-1417,OT,2,"[199, 151]",True,False,True,False,False,True
+08OB88_-1417,OT,3,"[199, 151]",True,False,True,False,False,True
+08OB88_-1417,O,1,"[199, 151]",False,False,True,False,False,True
+08OB88_-1417,O,2,"[199, 151]",False,False,True,False,False,True
+08OB88_-1417,O,3,"[199, 151]",False,False,True,False,False,True
+08OB89_-0847,OT,1,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,OT,2,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,OT,3,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,O,1,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,O,2,"[281, 117]",True,False,True,False,False,True
+08OB89_-0847,O,3,"[281, 117]",True,False,True,False,False,True
