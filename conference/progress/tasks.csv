@@ -46,3 +46,5 @@
 045,研究 PC の GPU で Gazebo のセンサーを描く準備（--render gpu）,実時間・速さ,Codex 実装,クラウド,完了,THESIS_RENDER=gpu（既定は CPU のまま、引数は不変を確認）。研究 PC での確認は 044 のあと,results/gpu_rendering
 046,人が選んだ地点に行けるかを走る前に確かめ、近くの行ける位置を示す,柱1 地点を回る,Codex 実装,クラウド,負の結果,goal_cell の経路なし 35 回を走る前に見つけられたのは 0 回。28 回は走行中の偽の急斜面 → 047 へ,results/waypoint_feasibility
 047,地形の傾きは古い地図から取り、障害物だけをセンサーで（--terrain-source prior）,柱2 走りながら更新,Codex 実装,クラウド,完了,"--terrain-source prior。保存した記録で goal_cell の経路なし 20 回中 12 回が救える見込み。偽の急斜面 5,803→3,750 マス、本当の急斜面の見落とし 118→0。Gazebo で評価予定",results/terrain_from_prior
+048,古い地図が古い場合の 047 の危険を見積もる（prior_veto も試す）,柱2 走りながら更新,Codex 実装,クラウド（チャット：研究実装1）,実行中,perturbed・none の古い地図で、sensor・prior・prior_veto の見落とし・偽の急斜面を数える,tasks/048
+049,Gazebo の LiDAR の結果から論文用の図と表をまとめて作る,論文,Codex 実装,クラウド（チャット：研究実装2）,実行中,030〜039 の結果から（044 は入ったら足す）。ICAROB 本文（11/28 から）用,tasks/049
