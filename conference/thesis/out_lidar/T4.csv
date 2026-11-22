@@ -1,0 +1,9 @@
+study,condition,condition_label,n,completed,partial,no_path,stuck,rollover,other,unknown
+030,C0,C0,15,3,0,12,0,0,0,0
+030,C1,C1,15,7,0,6,2,0,0,0
+030,C2,C2,15,8,4,0,0,3,0,0
+035,P1,C1 + v1,15,9,0,6,0,0,0,0
+037,L,L,15,11,0,4,0,0,0,0
+037,LC,LC,15,11,0,4,0,0,0,0
+039,0.3,0.3x target,15,10,0,3,2,0,0,0
+039,1.0,1.0x target,15,11,0,4,0,0,0,0

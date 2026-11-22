@@ -1,0 +1,14 @@
+study,record,metric,count,n
+030,Terminal no path,goal_cell,14,18
+030,Terminal no path,start_steep,4,18
+035,Terminal no path,goal_cell,6,6
+037,Terminal no path,goal_cell,8,8
+039,Terminal no path,goal_cell,7,7
+046,Preflight,flagged,0,35
+047,Final map,sensor_route,1,14
+047,Final map,prior_route,10,14
+047,Final map,gained_route,9,14
+047,Failure snapshot,sensor_route,0,6
+047,Failure snapshot,prior_route,3,6
+047,Failure snapshot,gained_route,3,6
+047,Replay coverage,missing_map,15,35
