@@ -70,7 +70,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
-                  waypoint_check='none', terrain_source='sensor'):
+                  waypoint_check='none', terrain_source='sensor', save_plan_maps=False):
     validate_tracking(tracking)
     if terrain_source not in TERRAIN_SOURCES:
         raise ValueError('unknown terrain source')
@@ -224,6 +224,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         manifest.update(terrain_source=terrain_source,
                         planning_terrain='prior cost and steep mask plus supported sensor steep cells, inflated together; elev records sensor fusion',
                         terrain_veto_support='retained returns per observed coarse cell >= ceil(samples_per_cell / 2)')
+    if save_plan_maps:
+        from ros2_jazzy.gz_checks.plan_maps import LIMIT_BYTES
+        manifest.update(save_plan_maps=True, plan_map_limit_bytes=LIMIT_BYTES)
     save_manifest(output, manifest)
     return manifest
 
@@ -393,7 +396,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     world = folder/'world/world.sdf'
                     tree = ET.parse(world)
                     w = tree.find('world')
-                    if manifest.get('diagnostics'):
+                    if manifest.get('diagnostics') or manifest.get('save_plan_maps'):
                         from ros2_jazzy.gz_checks.clearance_log import save_debris_footprints
                         save_debris_footprints(raw/'debris_footprints.csv', w)
                     w.find('physics/real_time_factor').text = (str(manifest['real_time_factor']) if manifest.get('map_method') == 'fine'
@@ -436,6 +439,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     if manifest.get('endpoint_protocol'):
                         commands[-1].extend(['-p', 'endpoint_policy:='+manifest['endpoint_policy'],
                                              '-p', 'diagnostics:='+str(manifest['diagnostics']).lower()])
+                    if manifest.get('save_plan_maps'):
+                        commands[-1].extend(['-p', 'save_plan_maps:=true'])
                     if manifest.get('sensors', 'legacy') != 'legacy':
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
@@ -611,11 +616,15 @@ def main():
     parser.add_argument('--prior-variant', choices=PRIOR_VARIANTS, default='exact', dest='prior_variant_name')
     parser.add_argument('--endpoint-policy', choices=ENDPOINT_POLICIES, default='none')
     parser.add_argument('--diagnostics', action='store_true')
+    parser.add_argument('--save-plan-maps', action='store_true')
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('save_plan_maps'):
+            print('Task051 preparation only; Gazebo not executed:', output)
+            return
         if 'terrain_source' in manifest:
             task = '047' if manifest['terrain_source'] == 'prior' else '048'
             print(f'Task{task} preparation only; Gazebo not executed:', output)

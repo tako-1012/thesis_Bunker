@@ -33,7 +33,7 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 
 class LidarPlannerNode(OnlinePlannerNode):
     def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior', online_fixes='none',
-                 obstacle_clearance='centre', terrain_source='sensor'):
+                 obstacle_clearance='centre', terrain_source='sensor', save_plan_maps=False):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         for name, default in [('prior_map', ''), ('map_id', 'file/truth.npz'), ('run_folder', ''),
@@ -41,7 +41,7 @@ class LidarPlannerNode(OnlinePlannerNode):
                               ('stale_timeout_s', .5), ('map_method', 'coarse'), ('sensors', 'legacy'), ('endpoint_policy', 'none'), ('diagnostics', False),
                               ('ground_estimate', ground_estimate), ('obstacle_reference', obstacle_reference),
                               ('obstacle_clearance', obstacle_clearance), ('online_fixes', online_fixes),
-                              ('terrain_source', terrain_source)]:
+                              ('terrain_source', terrain_source), ('save_plan_maps', save_plan_maps)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -74,10 +74,12 @@ class LidarPlannerNode(OnlinePlannerNode):
             from ros2_jazzy.gz_checks.safety_runtime import make_safety_lidar_runtime
             creator = make_safety_lidar_runtime
         diagnostics = self.get_parameter('diagnostics').value
+        save_plan_maps = self.get_parameter('save_plan_maps').value
         self.runtime = creator(prior, self.mapper, plan_log=self.folder / 'plans.csv',
             endpoint_policy=self.get_parameter('endpoint_policy').value,
             diagnostics=diagnostics,
             **(dict(record_clearance=True) if diagnostics else {}),
+            **(dict(save_plan_maps=True) if save_plan_maps else {}),
             **(dict(online_fixes=fixes) if fixes != 'none' else {}))
         self.poses = PoseBuffer()
         self.map_pool = ThreadPoolExecutor(max_workers=1)
@@ -305,6 +307,7 @@ def main(args=None):
     parser.add_argument('--obstacle-clearance', choices=OBSTACLE_CLEARANCES, default=None)
     parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default=None)
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default=None)
+    parser.add_argument('--save-plan-maps', action='store_true', default=None)
     options, remaining = parser.parse_known_args(sys.argv[1:] if args is None else args)
     # Without the new flag, pass the exact original args object to ROS.
     selected = {key: value for key, value in vars(options).items() if value is not None}

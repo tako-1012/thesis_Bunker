@@ -1,6 +1,6 @@
 # 指示書 050：047（傾きを古い地図から取る）と 048（prior_veto）を、研究 PC の Gazebo で評価する
 
-> **状態：実行中（2026-11-22 に研究 PC（チャット：研究PC実行）へ依頼。段階 A から）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ）。
+> **状態：実行中（2026-11-22 に研究 PC（チャット：研究PC実行）へ依頼。段階 A を 11/22 17:48 に開始、tmux `eval-050`）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/tasks/047_terrain_from_prior.md`・`048_stale_prior_risk.md`、
 > `conference/results/terrain_from_prior/REPORT_ja.md`・`REVIEW_ja.md`、`conference/results/stale_prior_risk/REPORT_ja.md`・`REVIEW_ja.md`（「研究 PC での比較案」）、
 > `conference/results/eval_044/REPORT_ja.md`・`REVIEW_ja.md`・`run044.sh`（同じやり方で走らせる見本）、`conference/results/common_eval/REPORT_ja.md`（集計の道具）を読むこと。
