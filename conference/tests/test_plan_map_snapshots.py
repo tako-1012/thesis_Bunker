@@ -152,6 +152,10 @@ def test_codec_and_inspector(root):
     assert box['nearby_blocked_halo_cells'] == '1' and box['path_halo_cells'] == '0'
     assert goal['first_blocked_plan'] == '2' and goal['first_blocked_cause'] == 'detected_obstacle_inflation'
     assert goal['failure_plan'] == '3' and goal['failure_cause'] == 'steep_inflation'
+    repeated = [dict(sim_time=t, failed=False, path_m=[[0., 1.], [4., 1.]], plan_id=i)
+                for i, t in enumerate((1., 1.5), 1)]
+    active, _ = plan_map_inspect.active_handoff(raw, repeated, 1.6)
+    assert active['plan_id'] == 2  # Identical geometry does not emit a new follower revision row.
     missing = []
     plan_map_inspect.inspect(root/'absent', [], [], missing)
     assert missing and 'no saved search maps' in missing[0]['reason']

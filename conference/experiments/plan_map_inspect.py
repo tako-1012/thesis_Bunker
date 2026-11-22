@@ -98,8 +98,10 @@ def active_handoff(raw, applications, time):
             return None, 'follower_revision'
         row = observed[1]
         path = np.asarray(json.loads(row['path']), float)
+        # The observer only logs geometry changes. A later handoff of an
+        # identical path can still refer to a newer search map.
         return next((a for a in reversed(applications) if not a['failed']
-                     and float(a['sim_time']) <= float(row['t'])
+                     and float(a['sim_time']) <= time
                      and np.array_equal(a['path_m'], path)), None), 'follower_revision'
     return next((a for a in reversed(applications) if not a['failed'] and float(a['sim_time']) <= time),
                 None), 'planner_handoff'
