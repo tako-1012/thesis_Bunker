@@ -1,0 +1,11 @@
+{
+  "results/eval_035/runs.csv": "8c1031503481e7489b34843e9f13902dbecf2b0ca0909539be7a2e0571bbe67f",
+  "results/eval_044/common_eval/runs.csv": "687587ba0ca1d4a5ad298c263669b8a1ae3b43470a312a3e41f09e2d2ea4575c",
+  "results/eval_ground_endpoint/runs.csv": "9650b47c765b81881beb343f766006f0ddaf3e85664ffbb20e55bde793c7c8de",
+  "results/map_speed/timing.csv": "06340585f0e8664b4e98f2a0309373ecba253b14f289504bc1c51d1a692029f3",
+  "results/real_sensors_compare/runs.csv": "773ed70ea8eb54c715dde5574a2978247ccb2797c381ac4d67adaf9436fcefd6",
+  "results/rtf_compare/stage_b/common_eval/runs.csv": "da1b86e6d49d430605cc40945e306d70a6339f44687b34115dae5baeaf8aac4a",
+  "results/rtf_compare/stage_b/sensor_updates.csv": "c3190c9a2004b74cf77dd46e63dab26dbee791953e813eb59f5d9fbc5e7411fd",
+  "results/terrain_from_prior/goals.csv": "a77fdbd3da412b9d18def9bf812503713b458f0f2522f508ed843e1a238f7b6a",
+  "results/waypoint_feasibility/goal_cell.csv": "f44efb7f1227a7683d789698a58815459202eb55851d89c332a28e91c8901d2e"
+}

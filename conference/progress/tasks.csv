@@ -42,9 +42,9 @@
 041,障害物の膨らませをマスの中心ではなくマス全体で判定（経路の余裕を保つ）,柱2 走りながら更新,Codex 実装,クラウド,完了,overlap で経路と障害物の最短距離 0.48→1.12m。通れるマスは 0.7〜1.9% 減。既定の centre の穴（見ていないマスの膨らませを無視）も見つけた。Gazebo での評価は後日,results/obstacle_clearance
 042,走行の記録を同じ定義で集計する共通のツール,評価,Codex 実装,クラウド,完了,experiments/eval_runs.py。035 の結果・off_path の回数が今までと一致。記録がない列は理由つきで空欄,results/common_eval
 043,経路を追う側のずれを減らす（曲がり角で減速・45° でその場で回る）,柱2 走りながら更新,Codex 実装,クラウド,完了,--tracking corner_slow。既定は不変。模型ではずれが 0.2m 程度しか出ず効果は言えない → Gazebo で比べる,results/path_tracking
-044,041・043 を研究 PC の Gazebo で評価（B・O・T・OT × 5 か所 × 3 回）,評価,研究 PC,研究 PC（チャット：研究PC実行）,実行中,60 回、0.3 倍。共通の集計ツール（042）で集計,tasks/044
+044,041・043 を研究 PC の Gazebo で評価（B・O・T・OT × 5 か所 × 3 回）,評価,研究 PC,研究 PC（チャット：研究PC実行）,完了,完走 B10・O6・T11・OT6/15。overlap は goal_cell を増やし標準にしない。箱 0.5m 未満 2 回（B・T）,tasks/044
 045,研究 PC の GPU で Gazebo のセンサーを描く準備（--render gpu）,実時間・速さ,Codex 実装,クラウド,完了,THESIS_RENDER=gpu（既定は CPU のまま、引数は不変を確認）。研究 PC での確認は 044 のあと,results/gpu_rendering
 046,人が選んだ地点に行けるかを走る前に確かめ、近くの行ける位置を示す,柱1 地点を回る,Codex 実装,クラウド,負の結果,goal_cell の経路なし 35 回を走る前に見つけられたのは 0 回。28 回は走行中の偽の急斜面 → 047 へ,results/waypoint_feasibility
 047,地形の傾きは古い地図から取り、障害物だけをセンサーで（--terrain-source prior）,柱2 走りながら更新,Codex 実装,クラウド,完了,"--terrain-source prior。保存した記録で goal_cell の経路なし 20 回中 12 回が救える見込み。偽の急斜面 5,803→3,750 マス、本当の急斜面の見落とし 118→0。Gazebo で評価予定",results/terrain_from_prior
-048,古い地図が古い場合の 047 の危険を見積もる（prior_veto も試す）,柱2 走りながら更新,Codex 実装,クラウド（チャット：研究実装1）,実行中,perturbed・none の古い地図で、sensor・prior・prior_veto の見落とし・偽の急斜面を数える,tasks/048
-049,Gazebo の LiDAR の結果から論文用の図と表をまとめて作る,論文,Codex 実装,クラウド（チャット：研究実装2）,実行中,030〜039 の結果から（044 は入ったら足す）。ICAROB 本文（11/28 から）用,tasks/049
+048,古い地図が古い場合の 047 の危険を見積もる（prior_veto も試す）,柱2 走りながら更新,Codex 実装,クラウド（チャット：研究実装1）,完了,perturbed でも prior の見落としは小（33→41 マス）。none では大量に見落とす。prior_veto は点数が未保存で判定できず,tasks/048
+049,Gazebo の LiDAR の結果から論文用の図と表をまとめて作る,論文,Codex 実装,クラウド（チャット：研究実装2）,完了,make_lidar_figures.py で T4〜T6・F8・F9。044 も自動で追加済み,tasks/049

@@ -1,6 +1,6 @@
 # 指示書 044：041（障害物の膨らませをマス全体で判定）と 043（曲がり角で減速）を、研究 PC の Gazebo で評価する
 
-> **状態：実行中（2026-11-21 に研究 PC（研究PC実行）へ依頼）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ）。
+> **状態：完了（結果は `results/eval_044/`、レビューは `REVIEW_ja.md`。overlap は標準にしない）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/tasks/041_obstacle_clearance.md`・`043_path_tracking.md`、
 > `conference/results/obstacle_clearance/REVIEW_ja.md`・`path_tracking/REVIEW_ja.md`・`rtf_compare/REPORT_B_ja.md`・`REVIEW_B_ja.md`、`conference/results/common_eval/REPORT_ja.md`（集計の道具）を読むこと。
 > 作業ツリー `~/thesis_Bunker_rtf`、ブランチ `claude/044-eval`（`origin/realtime-map` から）。結果は `conference/results/eval_044/`。

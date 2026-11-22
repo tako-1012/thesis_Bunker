@@ -9,9 +9,9 @@ def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_est
                         obstacle_clearance='centre', terrain_source='sensor', **kwargs):
     if terrain_source not in TERRAIN_SOURCES:
         raise ValueError('unknown terrain source')
-    if terrain_source == 'prior':
+    if terrain_source != 'sensor':
         if map_method != 'fine':
-            raise ValueError('prior terrain source requires --map fine')
+            raise ValueError(f'{terrain_source} terrain source requires --map fine')
         kwargs['terrain_source'] = terrain_source
     from tapp.prior_variants import OBSTACLE_REFERENCES
     if obstacle_clearance not in OBSTACLE_CLEARANCES:
