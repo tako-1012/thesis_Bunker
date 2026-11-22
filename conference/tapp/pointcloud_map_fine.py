@@ -24,7 +24,7 @@ from .traversability import inflate, slope_deg
 FINE_RESOLUTION = .1
 RATIO = 5
 GROUND_ESTIMATES = ('all_returns', 'non_obstacle')
-OBSTACLE_CLEARANCES = ('centre', 'overlap')
+OBSTACLE_CLEARANCES = ('centre', 'overlap', 'overlap_goal')
 TERRAIN_SOURCES = ('sensor', 'prior', 'prior_veto')
 
 
@@ -46,6 +46,14 @@ def coarse_overlap(fine):
     if nx % RATIO or ny % RATIO:
         raise ValueError('fine dimensions must tile the coarse map')
     return fine.reshape(nx//RATIO, RATIO, ny//RATIO, RATIO).any(axis=(1, 3))
+
+
+def _obstacle_disk(radius_m, radius_cells, extra):
+    x, y = np.mgrid[-radius_cells:radius_cells+1, -radius_cells:radius_cells+1]
+    # In half-fine-cell units, measure to the edge of the occupied square,
+    # and for overlap also to the edge of the query square.
+    dx, dy = np.maximum(2*np.abs(x)-extra, 0), np.maximum(2*np.abs(y)-extra, 0)
+    return dx*dx+dy*dy <= (2*radius_m/FINE_RESOLUTION)**2
 
 
 class PointCloudMapFine(_LegacyPointCloudMap):
@@ -75,19 +83,15 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self._inflated_coarse = np.zeros(self.prior.shape, bool)
         radius_cells = int(np.ceil(self.robot.footprint_radius/FINE_RESOLUTION))
         # An overlap query is a square, with an extra half cell on each axis.
-        extra = 2 if obstacle_clearance == 'overlap' else 1
-        radius_cells += int(obstacle_clearance == 'overlap')
-        x, y = np.mgrid[-radius_cells:radius_cells+1, -radius_cells:radius_cells+1]
-        # In half-fine-cell units, distance from a query centre to the nearest
-        # point of an occupied square is max(2*abs(offset)-1, 0) on each axis.
-        # Integer offsets retain the cell edges, including diagonal corners;
-        # subtracting just 0.05m from a scalar centre distance would not.
-        dx, dy = np.maximum(2*np.abs(x)-extra, 0), np.maximum(2*np.abs(y)-extra, 0)
-        self._disk = dx*dx+dy*dy <= (2*self.robot.footprint_radius/FINE_RESOLUTION)**2
-        self._radius_cells = radius_cells
+        overlap = obstacle_clearance != 'centre'
+        self._radius_cells = radius_cells + int(overlap)
+        self._disk = _obstacle_disk(self.robot.footprint_radius, self._radius_cells, 2 if overlap else 1)
+        if obstacle_clearance == 'overlap_goal':
+            centre_disk = _obstacle_disk(self.robot.footprint_radius, radius_cells, 1)
+            self._centre_offsets = np.argwhere(centre_disk) - radius_cells
         self._prior_rock = self.tm.rock.copy()
         self._last_new_obstacles = []
-        self._disk_offsets = np.argwhere(self._disk) - radius_cells
+        self._disk_offsets = np.argwhere(self._disk) - self._radius_cells
         if terrain_source == 'sensor':
             self._residual = self.elev - gaussian_filter(self.elev, sigma=1.5)
             self._rough_mean_x = uniform_filter1d(self._residual, 3, axis=0)
@@ -123,7 +127,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             seeds[tuple((cells-lo).T)] = True
             region = tuple(slice(int(a), int(b)) for a, b in zip(lo, hi))
             self.fine_inflated[region] |= binary_dilation(seeds, structure=self._disk)
-            if self.obstacle_clearance == 'overlap':
+            if self.obstacle_clearance != 'centre':
                 # Include whole coarse cells intersecting the changed fine region.
                 coarse_lo, coarse_hi = lo//RATIO, (hi+RATIO-1)//RATIO
                 coarse = tuple(slice(a, b) for a, b in zip(coarse_lo, coarse_hi))
@@ -146,7 +150,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         if self.terrain_source != 'sensor':
             # The soft prior would otherwise allow unobserved steep cells.
             seen = seen | self._dilated_steep
-        if self.obstacle_clearance == 'overlap':
+        if self.obstacle_clearance != 'centre':
             return seen | self._inflated_coarse
         return seen
 
@@ -154,8 +158,32 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         if self.obstacle_clearance == 'centre' and self.terrain_source == 'sensor':
             return self.snapshot()
         with self._update_lock:
-            seen, cost, lethal = self.snapshot()
-            return self.planning_seen(seen), cost, lethal
+            return self._planning_snapshot_locked()
+
+    def _planning_snapshot_locked(self):
+        seen, cost, lethal = self.snapshot()
+        return self.planning_seen(seen), cost, lethal
+
+    def planning_goal_snapshot(self, cells):
+        with self._update_lock:
+            return self._planning_snapshot_locked(), self.goal_obstacle_overrides(cells)
+
+    def goal_obstacle_overrides(self, cells):
+        """For each affected endpoint, return whether rock or steepness still blocks it.
+
+        The caller holds the update lock. Probe only the fine cells around the
+        requested centres with the same disk as the centre mapper.
+        """
+        overrides = {}
+        for cell in cells:
+            if (not all(0 <= v < n for v, n in zip(cell, self.prior.shape))
+                    or not self._inflated_coarse[cell]):
+                continue
+            fine = np.asarray(cell)*RATIO + RATIO//2 + self._centre_offsets
+            fine = fine[((fine >= 0) & (fine < self.fine_shape)).all(axis=1)]
+            if not self.fine_obstacle[tuple(fine.T)].any():
+                overrides[cell] = bool(self._prior_rock[cell] or self.tm.steep[cell] or self._dilated_steep[cell])
+        return overrides
 
     def _update_roughness(self, elev, lo, hi):
         # scipy's sigma=1.5 Gaussian has radius 6 at its default truncate=4.

@@ -82,8 +82,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         raise ValueError('waypoint substitution requires --endpoint-policy none')
     if obstacle_clearance not in OBSTACLE_CLEARANCES:
         raise ValueError('unknown obstacle clearance')
-    if obstacle_clearance == 'overlap' and map_method != 'fine':
-        raise ValueError('overlap obstacle clearance requires --map fine')
+    if obstacle_clearance != 'centre' and map_method != 'fine':
+        raise ValueError(f'{obstacle_clearance} obstacle clearance requires --map fine')
     if real_time_factor is not None:
         if real_time_factor not in (.3, 1.):
             raise ValueError('real-time factor must be 0.3 or 1.0')
@@ -168,9 +168,11 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
             spin_heading_error_deg=float(np.rad2deg(SPIN_ANGLE_RAD))))
     if fine_settings is not None:
         manifest.update(fine_settings)
-    if obstacle_clearance == 'overlap':
+    if obstacle_clearance != 'centre':
         manifest.update(obstacle_clearance=obstacle_clearance,
                         obstacle_inflation='closed fine squares intersecting the 0.5m halo; pool any hit')
+    if obstacle_clearance == 'overlap_goal':
+        manifest['obstacle_inflation'] += '; active goal uses its coarse centre'
     if configuration is not None:
         manifest.update(sensor=sensors, sensors=sensors, sensor_configuration=configuration,
                         experiment='task027 real sensors; not a matched task022/023 sensor comparison')
@@ -452,8 +454,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     if manifest.get('online_fixes', 'none') != 'none':
                         for command in commands[-2:]:
                             command.extend(['-p', 'online_fixes:='+manifest['online_fixes']])
-                    if manifest.get('obstacle_clearance') == 'overlap':
-                        commands[-1].extend(['-p', 'obstacle_clearance:=overlap'])
+                    if manifest.get('obstacle_clearance', 'centre') != 'centre':
+                        commands[-1].extend(['-p', 'obstacle_clearance:='+manifest['obstacle_clearance']])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
                         commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
                     if gpu:
@@ -541,10 +543,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     raise RuntimeError('task039 trial errors; inspect manifest')
                 print('Task039 raw results saved; task023 aggregation requires 0.3x:', output)
                 return
-            if manifest.get('obstacle_clearance') == 'overlap':
+            if manifest.get('obstacle_clearance', 'centre') != 'centre':
+                task = '041' if manifest['obstacle_clearance'] == 'overlap' else '052'
                 if manifest['execution'] == 'finished_with_errors':
-                    raise RuntimeError('task041 trial errors; inspect manifest')
-                print('Task041 raw results saved; evaluate obstacle clearance separately:', output)
+                    raise RuntimeError(f'task{task} trial errors; inspect manifest')
+                print(f'Task{task} raw results saved; evaluate obstacle clearance separately:', output)
                 return
             if manifest.get('edge_margin_m'):
                 if manifest['execution'] == 'finished_with_errors':
@@ -641,8 +644,9 @@ def main():
         if manifest.get('map_method') == 'fine' and manifest['real_time_factor'] == 1.:
             print('Task039 preparation only; task023 aggregation requires 0.3x:', output)
             return
-        if manifest.get('obstacle_clearance') == 'overlap':
-            print('Task041 preparation only; Gazebo not executed:', output)
+        if manifest.get('obstacle_clearance', 'centre') != 'centre':
+            task = '041' if manifest['obstacle_clearance'] == 'overlap' else '052'
+            print(f'Task{task} preparation only; Gazebo not executed:', output)
             return
         if manifest.get('edge_margin_m'):
             summarize_edge_margin(output, manifest)

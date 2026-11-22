@@ -304,7 +304,8 @@ def main(args=None):
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default=None)
     parser.add_argument('--terrain-source', choices=TERRAIN_SOURCES, default=None)
-    parser.add_argument('--obstacle-clearance', choices=OBSTACLE_CLEARANCES, default=None)
+    parser.add_argument('--obstacle-clearance', choices=OBSTACLE_CLEARANCES, default=None,
+                        help='fine-map obstacle inflation (overlap_goal uses centre at the active goal)')
     parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default=None)
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default=None)
     parser.add_argument('--save-plan-maps', action='store_true', default=None)

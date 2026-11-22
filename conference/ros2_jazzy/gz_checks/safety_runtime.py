@@ -7,6 +7,7 @@ from tapp.online_safety import SafetyOnlinePlanner, validate_fixes
 from thesis_bunker_mission.online_safety import SafetyRuntimeMixin
 from .lidar_runtime import LidarOnlineMission
 from .endpoint_runtime import EndpointRuntime, EndpointPlanner, make_lidar_runtime, RetryState
+from .overlap_goal import handoff_lethal
 
 
 class SafetyLidarMixin(SafetyRuntimeMixin):
@@ -14,12 +15,14 @@ class SafetyLidarMixin(SafetyRuntimeMixin):
         self.observations = []
         self._observe(planner)
 
+    def _join_blocked(self, planner):
+        return handoff_lethal(planner)
+
     def _plan_work(self, state, position):
         if state['planner'] is None:
             mission = state['mission']
             state['tour'] = dict(order=mission['order'], stops=[tuple(p) for p in mission['stops_cells']])
-            state['planner'] = SafetyOnlinePlanner(self.prior.cost, self.prior.lethal,
-                                                    self.prior_tm.weights, prior_lethal_mode=self.mode)
+            state['planner'] = self._new_planner(SafetyOnlinePlanner, state['tour']['stops'])
         result = self._force_safety_plan(state, position, self._observe)
         return result if result is not None else super()._plan_work(state, position)
 
@@ -38,8 +41,7 @@ class SafetyDiagnosticRuntime(SafetyLidarMixin, EndpointRuntime):
         if state['planner'] is None:
             mission = state['mission']
             state['tour'] = dict(order=mission['order'], stops=[tuple(p) for p in mission['stops_cells']])
-            planner = SafetyEndpointPlanner(self.prior.cost, self.prior.lethal,
-                                           self.prior_tm.weights, prior_lethal_mode=self.mode)
+            planner = self._new_planner(SafetyEndpointPlanner, state['tour']['stops'])
             planner.owner, planner.policy = self, 'none'
             state['planner'], state['retry'] = planner, RetryState()
         return super()._plan_work(state, position)

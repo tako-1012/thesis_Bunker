@@ -18,7 +18,7 @@ def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_est
         raise ValueError('unknown obstacle clearance')
     if obstacle_clearance != 'centre':
         if map_method != 'fine':
-            raise ValueError('overlap obstacle clearance requires --map fine')
+            raise ValueError(f'{obstacle_clearance} obstacle clearance requires --map fine')
         kwargs['obstacle_clearance'] = obstacle_clearance
     if obstacle_reference not in OBSTACLE_REFERENCES:
         raise ValueError('unknown obstacle reference')
