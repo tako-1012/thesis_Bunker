@@ -74,8 +74,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     validate_tracking(tracking)
     if terrain_source not in TERRAIN_SOURCES:
         raise ValueError('unknown terrain source')
-    if terrain_source == 'prior' and map_method != 'fine':
-        raise ValueError('prior terrain source requires --map fine')
+    if terrain_source != 'sensor' and map_method != 'fine':
+        raise ValueError(f'{terrain_source} terrain source requires --map fine')
     if waypoint_check not in ('none', 'substitute'):
         raise ValueError('unknown waypoint check')
     if waypoint_check == 'substitute' and endpoint_policy != 'none':
@@ -220,6 +220,10 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if terrain_source == 'prior':
         manifest.update(terrain_source=terrain_source,
                         planning_terrain='fixed prior slope, roughness, cost and inflated steep mask; elev records sensor fusion')
+    elif terrain_source == 'prior_veto':
+        manifest.update(terrain_source=terrain_source,
+                        planning_terrain='prior cost and steep mask plus supported sensor steep cells, inflated together; elev records sensor fusion',
+                        terrain_veto_support='retained returns per observed coarse cell >= ceil(samples_per_cell / 2)')
     save_manifest(output, manifest)
     return manifest
 
@@ -436,8 +440,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
                         commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
-                    if manifest.get('terrain_source') == 'prior':
-                        commands[-1].extend(['-p', 'terrain_source:=prior'])
+                    if 'terrain_source' in manifest:
+                        commands[-1].extend(['-p', 'terrain_source:='+manifest['terrain_source']])
                     if manifest.get('tracking') == 'corner_slow':
                         commands[-2].extend(['-p', 'tracking:=corner_slow'])
                     if manifest.get('online_fixes', 'none') != 'none':
@@ -506,10 +510,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
-            if manifest.get('terrain_source') == 'prior':
+            if 'terrain_source' in manifest:
+                task = '047' if manifest['terrain_source'] == 'prior' else '048'
                 if manifest['execution'] == 'finished_with_errors':
-                    raise RuntimeError('task047 trial errors; inspect manifest')
-                print('Task047 raw results saved; evaluate prior terrain separately:', output)
+                    raise RuntimeError(f'task{task} trial errors; inspect manifest')
+                print(f'Task{task} raw results saved; evaluate prior terrain separately:', output)
                 return
             if gpu:
                 if manifest['execution'] == 'finished_with_errors':
@@ -611,8 +616,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
-        if manifest.get('terrain_source') == 'prior':
-            print('Task047 preparation only; Gazebo not executed:', output)
+        if 'terrain_source' in manifest:
+            task = '047' if manifest['terrain_source'] == 'prior' else '048'
+            print(f'Task{task} preparation only; Gazebo not executed:', output)
             return
         if 'rendering' in manifest:
             print('Task045 preparation only; Gazebo not executed:', output)
