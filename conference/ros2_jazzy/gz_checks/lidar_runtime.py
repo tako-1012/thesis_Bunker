@@ -23,7 +23,7 @@ class LidarOnlineMission(BatchOnlineMission):
                          prior_lethal_mode='soft', plan_log=plan_log, executor=executor)
         self.mapper = mapper
 
-    def _new_planner(self, cls, stops):
+    def _new_planner(self, cls, stops, *, mixin=None):
         if getattr(self.mapper, 'obstacle_clearance', 'centre') == 'distance':
             from .distance_runtime import DistancePlanner
             if cls is OnlinePlanner:
@@ -34,16 +34,22 @@ class LidarOnlineMission(BatchOnlineMission):
                     pass
 
                 cls = DistanceVariant
-        if getattr(self.mapper, 'obstacle_clearance', 'centre') == 'overlap_goal':
+        overlap_goal = getattr(self.mapper, 'obstacle_clearance', 'centre') == 'overlap_goal'
+        if overlap_goal:
             class GoalPlanner(OverlapGoalPlanner, cls):
                 pass
 
-            planner = GoalPlanner(self.prior.cost, self.prior.lethal,
-                                  self.prior_tm.weights, prior_lethal_mode=self.mode)
+            cls = GoalPlanner
+        if mixin is not None:
+            class Variant(mixin, cls):
+                pass
+
+            cls = Variant
+        planner = cls(self.prior.cost, self.prior.lethal, self.prior_tm.weights, prior_lethal_mode=self.mode)
+        if overlap_goal:
             planner.goal_cells = frozenset(stops)
             planner.goal_overrides = {}
-            return planner
-        return cls(self.prior.cost, self.prior.lethal, self.prior_tm.weights, prior_lethal_mode=self.mode)
+        return planner
 
     def _observe(self, planner):
         options = (dict(known=planner.known)
@@ -69,6 +75,10 @@ class LidarOnlineMission(BatchOnlineMission):
             state['planner'] = self._new_planner(OnlinePlanner, state['tour']['stops'])
         planner = state['planner']
         self._observe(planner)
+        return self._plan_leg(state, position, cell)
+
+    def _plan_leg(self, state, position, cell):
+        planner = state['planner']
         if planner.goal is not None and np.linalg.norm(np.asarray(position)-np.asarray(planner.goal)*RESOLUTION) <= .3:
             state['leg'] += 1
             if state['leg'] >= len(state['tour']['stops']):
@@ -78,12 +88,15 @@ class LidarOnlineMission(BatchOnlineMission):
             return planner.start_leg(cell, state['tour']['stops'][state['leg']])
         return planner.update(position)
 
+    def _observe_join(self, planner, position):
+        self.observations = []
+        self._observe(planner)
+
     def _join(self, state, result, position):
         planner = state['planner']
         pos = np.asarray(position, float)/RESOLUTION
         cell = tuple(int(round(v)) for v in pos)
-        self.observations = []
-        self._observe(planner)
+        self._observe_join(planner, position)
         path = [np.asarray(p, float) for p in result['path']]
         if not path:
             return None
