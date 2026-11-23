@@ -20,7 +20,8 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
     with mapper._update_lock, mapper._lock:
         seen, cost, lethal = mapper.seen.copy(), mapper.tm.cost.copy(), mapper.lethal.copy()
         planning_seen = getattr(mapper, 'planning_seen', None)
-        observed = planning_seen(seen) if planning_seen else seen
+        options = dict(known=planner.known) if getattr(mapper, 'steep_near_obstacle', 'keep') == 'no_inflate' else {}
+        observed = planning_seen(seen, **options) if planning_seen else seen
         planner.observe(observed, cost, lethal)
         if isinstance(planner, OverlapGoalPlanner):
             planner.set_goal_overrides(mapper.goal_obstacle_overrides(planner.goals_to_check()))
