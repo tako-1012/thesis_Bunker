@@ -40,7 +40,7 @@
 <div class="pb">
   <header class="pb-head" id="head">
     <h1>修論 進捗ボード</h1>
-    <p>海岸清掃ロボット（BUNKER）の地形を考えた経路計画。指示書 001〜039 の状態と、研究 PC の Gazebo での走行結果をまとめる。
+    <p>海岸清掃ロボット（BUNKER）の地形を考えた経路計画。今後の方針、指示書の状態、研究 PC の Gazebo での走行結果をまとめる。
       いま <b data-draw="k-run" data-source="status_counts" data-field="件数" data-where="状態=実行中">—</b> 件が動いていて、
       <b data-draw="k-todo" data-source="status_counts" data-field="件数" data-where="状態=未着手">—</b> 件が次に控えている。</p>
   </header>
@@ -73,6 +73,21 @@
     </div>
   </section>
 
+  <section id="policy">
+    <h2>今後の方針</h2>
+    <p class="note">修論の筋と、これから進める順番。方針が変わったら、Claude がこの表を差し替える。</p>
+    <div class="pb-tablewrap">
+      <table data-source="policy" data-row-key="順番" id="policy-table">
+        <thead><tr>
+          <th data-field="順番">順</th>
+          <th data-field="項目">項目</th>
+          <th data-field="方針">方針</th>
+          <th data-field="根拠・決めた日">根拠・決めた日</th>
+        </tr></thead>
+        <tbody data-draw="policy"></tbody>
+      </table>
+    </div>
+  </section>
   <section id="now">
     <h2>いま動いているもの・次に控えているもの</h2>
     <p class="note">「実行中」と「未着手」の指示書。担当と実行先、次にやることを書いている。</p>
@@ -92,8 +107,8 @@
   </section>
 
   <section id="outcomes">
-    <h2>研究 PC の Gazebo での走行結果（030・035・037・039、各 3 回）</h2>
-    <p class="note">砂浜 × 条件ごとに、3 回の走行の終わり方を並べた。030・035 は既定の LiDAR：C0 は直す前、C1 は地面の高さの直し（029、今の標準）、C2 は 028b（転倒したので使わない）、C1＋v1 は 034 の不具合の直しを足したもの。037 は実機と同じ位置のセンサー（C1＋v1）：L は LiDAR だけ、LC は＋深度カメラ 2 台。すべて 0.3 倍（039 は 0.3 倍と 1.0 倍設定〔実測 0.6 倍〕、v2）。</p>
+    <h2>研究 PC の Gazebo での走行結果（各 3 回）</h2>
+    <p class="note">砂浜 × 条件ごとに、3 回の走行の終わり方を並べた。030・035 は既定の LiDAR：C0 は直す前、C1 は地面の高さの直し（029、今の標準）、C2 は 028b（転倒したので使わない）、C1＋v1 は 034 の不具合の直しを足したもの。037 は実機と同じ位置のセンサー（C1＋v1）：L は LiDAR だけ、LC は＋深度カメラ 2 台。044 は B 標準・O overlap・T corner_slow・OT 両方。050 は S 標準・P 傾きを古い地図から・V prior_veto。すべて 0.3 倍（039 は 0.3 倍と 1.0 倍設定〔実測 0.6 倍〕）。</p>
     <div class="pb-legend">
       <span><i style="background: var(--color-ok)"></i>完走</span>
       <span><i style="background: var(--color-warn)"></i>一部</span>
@@ -285,6 +300,19 @@ dash.draw('out', (el) => {
     y += gap;
   }
   svg.attr('height', y);
+});
+
+dash.draw('policy', (tb) => {
+  const d = dash.data('policy');
+  tb.replaceChildren();
+  if (d.status !== 'ok') return;
+  const rows = d.data.slice().sort((a, b) => Number(a['順番']) - Number(b['順番']));
+  for (const t of rows) {
+    const tr = document.createElement('tr'); tr.dataset.key = t['順番'];
+    const td = (txt, cls) => { const c = document.createElement('td'); if (cls) c.className = cls; c.textContent = txt; return c; };
+    tr.append(td(t['順番'], 'num'), td(t['項目']), td(t['方針'], 'res'), td(t['根拠・決めた日']));
+    tb.append(tr);
+  }
 });
 
 dash.draw('rows', (tb) => {
