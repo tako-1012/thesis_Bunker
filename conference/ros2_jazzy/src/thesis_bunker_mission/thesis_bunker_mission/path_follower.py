@@ -26,6 +26,7 @@ class PathFollower(Node):
         self.declare_parameter("online", False)
         self.declare_parameter('online_fixes', online_fixes)
         self.declare_parameter('tracking', tracking)
+        self.declare_parameter('pose_trace_dir', '')
         from tapp.tracking import validate_tracking
         self.tracking = validate_tracking(self.get_parameter('tracking').value)
         from tapp.online_safety import validate_fixes
@@ -45,8 +46,17 @@ class PathFollower(Node):
         self.last_status = "idle"
         self.cmd = self.create_publisher(Twist, "/cmd_vel", 10)
         self.state = self.create_publisher(String, "/mission/state", 10)
+        on_pose, on_tick = self.on_pose, self.tick
+        self.pose_trace_logs = ()
+        trace_dir = self.get_parameter('pose_trace_dir').value
+        if trace_dir:
+            from tapp.pose_trace import trace_pose, trace_tick
+            on_pose, pose_log = trace_pose(trace_dir, 'follower', on_pose,
+                                           lambda: self.get_clock().now().nanoseconds)
+            on_tick, tick_log = trace_tick(trace_dir, self, pose_log)
+            self.pose_trace_logs = pose_log, tick_log
         self.create_subscription(
-            PoseArray, "/ground_truth", self.on_pose, qos_profile_sensor_data
+            PoseArray, "/ground_truth", on_pose, qos_profile_sensor_data
         )
         self.create_subscription(Imu, "/imu", self.on_imu, qos_profile_sensor_data)
         self.create_subscription(
@@ -56,7 +66,7 @@ class PathFollower(Node):
             10,
         )
         self.create_subscription(Empty, "/mission/stop", lambda _: self.stop(), 10)
-        self.create_timer(0.05, self.tick)
+        self.create_timer(0.05, on_tick)
 
     def on_pose(self, msg):
         if msg.poses:
@@ -246,6 +256,8 @@ def main(args=None):
         pass
     finally:
         node.stop()
+        for log in node.pose_trace_logs:
+            log.close()
         node.destroy_node()
         if rclpy.ok():
             rclpy.shutdown()
