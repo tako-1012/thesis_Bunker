@@ -1,6 +1,6 @@
 # 指示書 056：GPU で描くときに、コンテナから NVIDIA の EGL を選べるようにする（`THESIS_RENDER=gpu` のときだけ）
 
-> **状態：実行中（2026-11-23 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での確かめは、057 の走行のあとに 054 をやり直す）。
+> **状態：完了（レビューは `results/gpu_egl_vendor/REVIEW_ja.md`。研究 PC での再確認は 057 のあと）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での確かめは、057 の走行のあとに 054 をやり直す）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/gpu_check_054/REPORT_ja.md`・`REVIEW_ja.md`（**この指示書の根拠**）・`gpu/egl_diagnostics.txt`・`host_egl_diagnostics.txt`・`gpu/ogre2_live.log`、
 > `conference/results/gpu_rendering/README_ja.md`・`run_smoke.sh`・`cloud_pair.py`、`conference/ros2_jazzy/gz_checks/run_lidar_checks.sh`・`gpu_rendering.py`、`conference/tests/test_gpu_rendering.py`（あれば）を読むこと。
 > ブランチは `codex/056-gpu-egl-vendor`（その時点の `realtime-map` の最新から）。報告は `conference/results/gpu_egl_vendor/REPORT_ja.md`。
