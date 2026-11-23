@@ -1,0 +1,5 @@
+Docker PASS: absent/explicit cpu byte-identical to base; gpu forwarding, toolkit error and invalid selection
+manifest PASS: cpu byte parity, also with historical protocol; gpu records mode without changing other fields
+renderer/cloud PASS: actual Ogre device extraction and fallback; earliest pre-motion common stamp and matched pose range statistics
+summary PASS: valid renderer/RTF/GPU usage kept when a cloud pair is unavailable
+all task045 GPU rendering tests passed
