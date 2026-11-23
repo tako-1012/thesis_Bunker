@@ -496,7 +496,8 @@ def make_all(output=ROOT/"thesis/out_lidar", results=ROOT/"results"):
         staging = Path(temporary)
         write_table(staging, "T4", t4, T4_FIELDS, [(None, t4, [c for c in T4_FIELDS if c != "condition"])])
         safety_visible = ["study", "condition_label", "n", *(key for _, _, key in SAFETY)]
-        safety_sections = [(None, t5, safety_visible), ("Debris and box clearance", t5, T5_CLEARANCE_FIELDS)]
+        safety_sections = [(None, t5, safety_visible),
+                           ("Debris and box proximity under 0.5 m", t5, T5_CLEARANCE_FIELDS)]
         if focused:
             safety_sections.append((FOCUS_BEACH + " only", focused, T5_CLEARANCE_FIELDS))
         write_table(staging, "T5", t5+focused, T5_FIELDS, safety_sections)
