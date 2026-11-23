@@ -11,3 +11,6 @@ study,condition,condition_label,n,completed,partial,no_path,stuck,rollover,other
 044,O,O,15,6,0,9,0,0,0,0
 044,OT,OT,15,6,0,9,0,0,0,0
 044,T,T,15,11,0,3,0,0,1,0
+050,S,050 S,15,10,0,3,0,0,2,0
+050,P,050 P,15,10,0,1,1,0,3,0
+050,V,050 V,15,11,0,4,0,0,0,0

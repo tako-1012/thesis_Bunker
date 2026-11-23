@@ -42,7 +42,7 @@ class LidarPlannerNode(OnlinePlannerNode):
                               ('ground_estimate', ground_estimate), ('obstacle_reference', obstacle_reference),
                               ('obstacle_clearance', obstacle_clearance), ('online_fixes', online_fixes),
                               ('terrain_source', terrain_source), ('save_plan_maps', save_plan_maps),
-                              ('steep_near_obstacle', steep_near_obstacle)]:
+                              ('steep_near_obstacle', steep_near_obstacle), ('pose_trace_dir', '')]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -102,7 +102,14 @@ class LidarPlannerNode(OnlinePlannerNode):
         self.command = self.create_publisher(String, '/mission/online_command', 10)
         self.path = self.create_publisher(ROSPath, '/mission/path', 10)
         self.sensor_state = self.create_publisher(String, '/lidar/state', 10)
-        self.create_subscription(PoseArray, '/ground_truth', self.on_pose, qos_profile_sensor_data)
+        on_pose = self.on_pose
+        self.pose_trace_log = None
+        trace_dir = self.get_parameter('pose_trace_dir').value
+        if trace_dir:
+            from tapp.pose_trace import trace_pose
+            on_pose, self.pose_trace_log = trace_pose(trace_dir, 'planner', on_pose,
+                                                      lambda: self.get_clock().now().nanoseconds)
+        self.create_subscription(PoseArray, '/ground_truth', on_pose, qos_profile_sensor_data)
         self.create_subscription(PointCloud2, '/lidar/points', self.on_cloud, qos_profile_sensor_data)
         if self.multi:
             for name in self.mapper.mounts:
@@ -283,6 +290,8 @@ class LidarPlannerNode(OnlinePlannerNode):
         super().tick()
 
     def close(self):
+        if self.pose_trace_log is not None:
+            self.pose_trace_log.close()
         self.mapping_finished = True
         self.map_pool.shutdown(wait=True)
         self._collect()

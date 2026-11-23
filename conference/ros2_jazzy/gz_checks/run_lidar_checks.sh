@@ -87,3 +87,4 @@ docker run --rm --pull=never --network host \
 # Task047 opt-in: pass --map fine --terrain-source prior.
 # Task048 opt-in: pass --map fine --terrain-source prior_veto.
 # Task051 opt-in: pass --save-plan-maps to record the maps used for online searches.
+# Task058 opt-in: pass --pose-trace to record pose receipts, follower ticks and CPU load.

@@ -38,6 +38,13 @@ SAFETY = (
     ("ev_off_path", "Off-path", "off_path"),
     ("ev_unsafe_tilt", "Unsafe tilt", "unsafe_tilt"),
 )
+DEBRIS_CLEARANCE = (
+    ("debris_entries", "Debris entries", "debris_entries"),
+    ("truth_below_radius_entries", "Box intervals", "box_intervals"),
+    ("truth_below_radius_s", "Box [sim s]", "box_s"),
+)
+FOCUS_BEACH = "08OB88_00332"
+TERRAIN_STUDIES = ("050", "057")
 
 
 @dataclass(frozen=True)
@@ -53,6 +60,8 @@ STUDIES = (
     Study("037", "real_sensors_compare/runs.csv", {"L": "L", "LC": "LC"}),
     Study("039", "rtf_compare/stage_b/common_eval/runs.csv", {"0.3": "0.3x target", "1.0": "1.0x target"}),
     Study("044", "eval_044/common_eval/runs.csv", None),
+    Study("050", "eval_050/common_eval/runs.csv", {"S": "050 S", "P": "050 P", "V": "050 V"}),
+    Study("057", "eval_057/common_eval/runs.csv", {"S": "057 S", "PG": "057 PG", "SGN": "057 SGN"}),
 )
 
 
@@ -155,14 +164,20 @@ def observed(group, column):
     return list(pd.to_numeric(values))
 
 
-def safety_rows(runs):
+def safety_rows(runs, *, patch=None):
+    if patch is not None:
+        runs = [row for row in runs if row["study"] in TERRAIN_STUDIES and row["patch"] == patch]
     rows = []
     for (study, condition), group in grouped(runs):
-        row = dict(study=study, condition=condition, condition_label=group[0]["condition_label"], n=len(group))
-        for source, _, key in SAFETY:
+        row = dict(study=study, condition=condition, condition_label=group[0]["condition_label"],
+                   n=len(group), patch=patch)
+        for source, _, key in (*SAFETY, *DEBRIS_CLEARANCE):
             values = observed(group, source)
             row[key] = (min(values) if key == "min_box_m" else sum(values)) if values else None
             row[key+"_n"] = len(values)
+        lengths = observed(group, "debris_len_m")
+        row["debris_runs"] = sum(length > 0 for length in lengths) if lengths else None
+        row["debris_runs_n"] = len(lengths)
         rows.append(row)
     return rows
 
@@ -260,7 +275,7 @@ def save_figure(fig, output, name):
     plt.close(fig)
 
 
-def plot_outcomes(runs, totals, output):
+def plot_outcomes(runs, totals, output, *, name="F8"):
     """One tile per run, left to right in recorded repetition order."""
     beaches = sorted({r["patch"] for r in runs})
     columns = [(r["study"], r["condition"]) for r in totals]
@@ -268,7 +283,7 @@ def plot_outcomes(runs, totals, output):
     ax.set_axis_off()
     if not runs:
         ax.text(.5, .5, "No outcome records", ha="center", va="center", transform=ax.transAxes)
-        save_figure(fig, output, "F8")
+        save_figure(fig, output, name)
         return
     cells = {}
     for row in runs:
@@ -303,7 +318,7 @@ def plot_outcomes(runs, totals, output):
     fig.text(.094, .93, "LiDAR trial outcomes by beach", fontsize=15, fontweight="semibold")
     fig.text(.094, .03, "Tiles follow the recorded repetition numbers, from left to right.", fontsize=8, color="#475467")
     fig.subplots_adjust(left=.20, right=.985, top=.87, bottom=.22)
-    save_figure(fig, output, "F8")
+    save_figure(fig, output, name)
 
 
 def plot_timings(rows, runs, output):
@@ -357,7 +372,8 @@ def plot_timings(rows, runs, output):
 TABLE_HEADERS = {
     "study": "Task", "condition_label": "Condition", "n": "Runs",
     **{key: label for key, (label, _) in OUTCOMES.items()},
-    **{key: label for _, label, key in SAFETY},
+    **{key: label for _, label, key in (*SAFETY, *DEBRIS_CLEARANCE)},
+    "debris_runs": "Runs in debris",
     "other": "Other", "unknown": "Unknown",
     "record": "Record", "metric": "Measure", "count": "Count",
 }
@@ -374,13 +390,18 @@ NOTES = {
     "T4": "Counts of archived repetitions. 039 conditions are target settings. 035 includes the replicated P1 cohort.",
     "T5": ("Lengths and event counts are sums over available runs. Min. box is the minimum of recorded "
            "centre-to-box clearances. A dash denotes missing measurements. The CSV gives the number of "
-           "observations per metric. 035 pilot rows represent single runs."),
+           "observations per metric. 035 pilot rows represent single runs. Runs in debris have a positive "
+           "debris length. Debris entries count consecutive visits to debris cells. Box intervals and "
+           "duration use a centre-to-box distance strictly below 0.5 m."),
     "T6": ("Terminal failure types count runs ending in no path. N is the number of eligible records. "
            "047 uses archived map replay, with final and failure-time maps kept separate."),
 }
 T4_FIELDS = ["study", "condition", "condition_label", "n", *OUTCOMES]
 T5_FIELDS = ["study", "condition", "condition_label", "n",
-             *(field for _, _, key in SAFETY for field in (key, key+"_n"))]
+             *(field for _, _, key in (*SAFETY, *DEBRIS_CLEARANCE) for field in (key, key+"_n")),
+             "debris_runs", "debris_runs_n", "patch"]
+T5_CLEARANCE_FIELDS = ["study", "condition_label", "n", "debris_entries", "debris_runs", "debris_m",
+                       "box_intervals", "box_s"]
 T6_FIELDS = ["study", "record", "metric", "count", "n"]
 F9_FIELDS = ["study", "setup", "sensor", "n", "median_ms", "p95_ms"]
 
@@ -402,29 +423,35 @@ def latex(value):
     return "".join(escapes.get(c, c) for c in value)
 
 
-def write_table(output, name, rows, fields, visible):
+def write_table(output, name, rows, fields, sections):
     frame = pd.DataFrame(rows, columns=fields)
     frame.to_csv(output/f"{name}.csv", index=False, float_format="%.12g")
-    labels = [TABLE_HEADERS[c] if name != "T6" or c != "n" else "N" for c in visible]
-    values = [[display(FAILURE_LABELS.get(r[c], r[c]) if c == "metric" else r[c])
-               for c in visible] for r in rows]
-    if not values:
-        values = [["No records", *(["—"]*(len(labels)-1))]]
     md_line = lambda row: "| " + " | ".join(s.replace("|", r"\|") for s in row) + " |"
-    md = [md_line(labels), md_line(["---"]*len(labels)), *(md_line(r) for r in values), "", NOTES[name]]
-    (output/f"{name}.md").write_text("\n".join(md)+"\n")
     tex_line = lambda row: " & ".join(map(latex, row)) + " " + r"\\"
-    alignment = "".join("l" if c in ("study", "condition_label", "record", "metric") else "r" for c in visible)
-    lines = [f"% {NOTES[name]}", r"\begin{tabular}{" + alignment + "}", r"\hline", tex_line(labels),
-             r"\hline", *(tex_line(r) for r in values), r"\hline", r"\end{tabular}"]
-    (output/f"{name}.tex").write_text("\n".join(lines)+"\n")
+    md, tex = [], [f"% {NOTES[name]}"]
+    for title, subset, visible in sections:
+        if title:
+            md.extend(("", f"**{title}**", ""))
+            tex.extend((r"\par\medskip", r"\textbf{" + latex(title) + r"}\par\smallskip"))
+        labels = [TABLE_HEADERS[c] if name != "T6" or c != "n" else "N" for c in visible]
+        values = [[display(FAILURE_LABELS.get(r[c], r[c]) if c == "metric" else r[c])
+                   for c in visible] for r in subset]
+        if not values:
+            values = [["No records", *(["—"]*(len(labels)-1))]]
+        md.extend((md_line(labels), md_line(["---"]*len(labels)), *(md_line(r) for r in values)))
+        alignment = "".join("l" if c in ("study", "condition_label", "record", "metric") else "r" for c in visible)
+        tex.extend((r"\begin{tabular}{" + alignment + "}", r"\hline", tex_line(labels),
+                    r"\hline", *(tex_line(r) for r in values), r"\hline", r"\end{tabular}"))
+    md.extend(("", NOTES[name]))
+    (output/f"{name}.md").write_text("\n".join(md)+"\n")
+    (output/f"{name}.tex").write_text("\n".join(tex)+"\n")
     print(f"{name}: {len(rows)} rows")
 
 
 DIGITS = ("Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine")
 MACRO_FIELDS = {
     "TFour": ("study", "condition"),
-    "TFive": ("study", "condition"),
+    "TFive": ("study", "condition", "patch"),
     "TSix": ("study", "record", "metric"),
     "FNine": ("study", "setup", "sensor"),
 }
@@ -441,7 +468,7 @@ def write_numbers(output, tables):
     for table, rows in tables.items():
         keys = MACRO_FIELDS[table]
         for row in rows:
-            prefix = "Lidar"+table+"Task"+"".join(macro_part(row[key]) for key in keys)
+            prefix = "Lidar"+table+"Task"+"".join(macro_part(row[key]) for key in keys if row[key] is not None)
             for field, value in row.items():
                 if field in keys or not numeric(value):
                     continue
@@ -454,7 +481,7 @@ def write_numbers(output, tables):
 
 
 def make_all(output=ROOT/"thesis/out_lidar", results=ROOT/"results"):
-    """Generate only the published task049 artifacts in a separate output directory."""
+    """Generate the LiDAR artifacts in a separate output directory."""
     output, results = Path(output).resolve(), Path(results).resolve()
     protected = (ROOT/"results", ROOT/"paper", ROOT/"thesis/out", results)
     if any(output.is_relative_to(path) for path in protected):
@@ -462,21 +489,31 @@ def make_all(output=ROOT/"thesis/out_lidar", results=ROOT/"results"):
     sources = Sources(results)
     runs, safety = load_runs(sources)
     t4, t5 = count_outcomes(runs), safety_rows(safety)
+    focused = safety_rows(safety, patch=FOCUS_BEACH)
     t6, f9 = failure_rows(runs, sources), timing_rows(sources)
     output.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=output) as temporary:
         staging = Path(temporary)
-        write_table(staging, "T4", t4, T4_FIELDS, [c for c in T4_FIELDS if c != "condition"])
-        write_table(staging, "T5", t5, T5_FIELDS, ["study", "condition_label", "n", *(key for _, _, key in SAFETY)])
-        write_table(staging, "T6", t6, T6_FIELDS, T6_FIELDS)
+        write_table(staging, "T4", t4, T4_FIELDS, [(None, t4, [c for c in T4_FIELDS if c != "condition"])])
+        safety_visible = ["study", "condition_label", "n", *(key for _, _, key in SAFETY)]
+        safety_sections = [(None, t5, safety_visible),
+                           ("Debris and box proximity under 0.5 m", t5, T5_CLEARANCE_FIELDS)]
+        if focused:
+            safety_sections.append((FOCUS_BEACH + " only", focused, T5_CLEARANCE_FIELDS))
+        write_table(staging, "T5", t5+focused, T5_FIELDS, safety_sections)
+        write_table(staging, "T6", t6, T6_FIELDS, [(None, t6, T6_FIELDS)])
         pd.DataFrame(f9, columns=F9_FIELDS).to_csv(staging/"F9_statistics.csv", index=False, float_format="%.12g")
-        plot_outcomes(runs, t4, staging)
+        plot_outcomes([r for r in runs if r["study"] not in TERRAIN_STUDIES],
+                      [r for r in t4 if r["study"] not in TERRAIN_STUDIES], staging)
+        plot_outcomes([r for r in runs if r["study"] in TERRAIN_STUDIES],
+                      [r for r in t4 if r["study"] in TERRAIN_STUDIES], staging,
+                      name="F10")
         plot_timings(f9, runs, staging)
-        write_numbers(staging, {"TFour": t4, "TFive": t5, "TSix": t6, "FNine": f9})
+        write_numbers(staging, {"TFour": t4, "TFive": t5+focused, "TSix": t6, "FNine": f9})
         (staging/"sources.json").write_text(json.dumps(sources.hashes, sort_keys=True, indent=2)+"\n")
         for file in staging.iterdir():
             file.replace(output/file.name)
-    print(f"F8, F9, T4–T6, numbers_lidar.tex and sources.json: {output}")
+    print(f"F8–F10, T4–T6, numbers_lidar.tex and sources.json: {output}")
 
 
 if __name__ == "__main__":

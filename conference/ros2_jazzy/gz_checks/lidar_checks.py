@@ -70,7 +70,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
-                  waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep'):
+                  waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
+                  pose_trace=False):
     validate_tracking(tracking)
     if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
         raise ValueError('unknown steep-near-obstacle policy')
@@ -240,6 +241,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if save_plan_maps:
         from ros2_jazzy.gz_checks.plan_maps import LIMIT_BYTES
         manifest.update(save_plan_maps=True, plan_map_limit_bytes=LIMIT_BYTES)
+    if pose_trace:
+        from tapp.pose_trace import TRACE_LIMIT_BYTES
+        manifest.update(pose_trace=True, pose_trace_limit_bytes=TRACE_LIMIT_BYTES)
     save_manifest(output, manifest)
     return manifest
 
@@ -288,6 +292,9 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
     output = Path(output).resolve()
     manifest = prepare_cases(output, **kwargs)
     gpu = 'rendering' in manifest
+    trace_enabled = manifest.get('pose_trace', False)
+    if trace_enabled:
+        from tapp.pose_trace import CpuSampler, NS, trace_pose
     if matched_world:
         manifest['world_input'] = 'task022 actual-run evaluation_reference.npz elevation and unchanged raw masks'
     # Slower simulation gives CPU-only GPU-LiDAR rendering time to keep up; physics is unchanged.
@@ -309,8 +316,15 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
             self.trace = CsvChunks(folder/'trajectory.csv', FIELDS)
             self.paths = CsvChunks(folder/'path_revisions.csv', ['t', 'path'])
             self.replans = CsvChunks(folder/'replans.csv', ['t', 'reason', 'revision', 'leg_index', 'n_replans', 'plan_time_s'])
+            ground = self.ground
+            self.pose_trace_log = self.cpu_sampler = None
+            if trace_enabled:
+                trace_dir = folder/'pose_trace'
+                ground, self.pose_trace_log = trace_pose(
+                    trace_dir, 'observer', ground, lambda: round(self.t*NS) if self.t is not None else None)
+                self.cpu_sampler = CpuSampler(trace_dir)
             self.create_subscription(Clock, '/clock', self.clock, qos_profile_sensor_data)
-            self.create_subscription(PoseArray, '/ground_truth', self.ground, qos_profile_sensor_data)
+            self.create_subscription(PoseArray, '/ground_truth', ground, qos_profile_sensor_data)
             self.create_subscription(Twist, '/cmd_vel', self.velocity, 10)
             self.create_subscription(String, '/mission/state', self.status, 10)
             self.create_subscription(String, '/mission/online_command', self.plan, 10)
@@ -356,6 +370,9 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 rclpy.spin_once(self, timeout_sec=.05)
 
         def close(self):
+            if self.cpu_sampler is not None:
+                self.cpu_sampler.close()
+                self.pose_trace_log.close()
             for writer in [self.trace, self.paths, self.replans]:
                 writer.close()
             self.destroy_node()
@@ -380,7 +397,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 if manifest.get('sensors', 'legacy') != 'legacy':
                     mission['sensors'] = manifest['sensors']
                 save_run()
-                if gpu:
+                if gpu or trace_enabled:
                     save_manifest(output, manifest)
                 try:
                     folder.mkdir()
@@ -456,6 +473,10 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                                              '-p', 'diagnostics:='+str(manifest['diagnostics']).lower()])
                     if manifest.get('save_plan_maps'):
                         commands[-1].extend(['-p', 'save_plan_maps:=true'])
+                    if trace_enabled:
+                        parameter = 'pose_trace_dir:='+str(raw/'pose_trace')
+                        for command in commands[-2:]:
+                            command.extend(['-p', parameter])
                     if manifest.get('sensors', 'legacy') != 'legacy':
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
@@ -535,6 +556,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if trace_enabled:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task058 trial errors; inspect manifest')
+                print('Task058 raw results saved; inspect pose timing separately:', output)
+                return
             if 'steep_near_obstacle' in manifest:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task055 trial errors; inspect manifest')
@@ -644,11 +670,15 @@ def main():
     parser.add_argument('--endpoint-policy', choices=ENDPOINT_POLICIES, default='none')
     parser.add_argument('--diagnostics', action='store_true')
     parser.add_argument('--save-plan-maps', action='store_true')
+    parser.add_argument('--pose-trace', action='store_true')
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('pose_trace'):
+            print('Task058 preparation only; Gazebo not executed:', output)
+            return
         if 'steep_near_obstacle' in manifest:
             print('Task055 preparation only; Gazebo not executed:', output)
             return
