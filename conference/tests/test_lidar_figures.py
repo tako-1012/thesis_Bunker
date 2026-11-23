@@ -1,4 +1,4 @@
-"""Check task049 archives, numeric macros, missing inputs and the 044 extension."""
+"""Check archived LiDAR figures, numeric macros and optional study inputs."""
 
 from contextlib import redirect_stdout
 import hashlib
@@ -7,6 +7,8 @@ import json
 import math
 from pathlib import Path
 import re
+import subprocess
+import sys
 import tempfile
 
 import pandas as pd
@@ -15,7 +17,8 @@ from thesis import make_lidar_figures as figures
 
 
 RESULTS = figures.ROOT/"results"
-FILES = {"F8.pdf", "F8.png", "F9.pdf", "F9.png", "F9_statistics.csv", "numbers_lidar.tex", "sources.json",
+FILES = {"F8.pdf", "F8.png", "F9.pdf", "F9.png", "F10.pdf", "F10.png",
+         "F9_statistics.csv", "numbers_lidar.tex", "sources.json",
          *(f"T{n}.{suffix}" for n in (4, 5, 6) for suffix in ("csv", "md", "tex"))}
 
 
@@ -32,7 +35,7 @@ def macros(output):
 
 def assert_outputs(output):
     assert {file.name for file in output.iterdir()} == FILES
-    for name in ("F8", "F9"):
+    for name in ("F8", "F9", "F10"):
         assert (output/f"{name}.png").read_bytes().startswith(b"\x89PNG\r\n\x1a\n")
         assert (output/f"{name}.pdf").read_bytes().startswith(b"%PDF-")
     for name in ("T4", "T5", "T6"):
@@ -140,9 +143,107 @@ def test_missing_and_extension(root):
     print("output guard PASS: existing results, pillar-one output and paper paths rejected")
 
 
+def test_050(output):
+    archived = read(RESULTS/"eval_050/common_eval/runs.csv")
+    t4 = read(output/"T4.csv").query("study == '050'").set_index("condition")
+    t5 = read(output/"T5.csv").query("study == '050'")
+    assert list(t4.index) == ["S", "P", "V"]
+    assert list(t4["condition_label"]) == ["050 S", "050 P", "050 V"]
+    assert len(t5) == 6
+    commands = macros(output)
+    for condition, rows in archived.groupby("condition"):
+        completed = rows["board_outcome"].eq("completed").sum()
+        assert t4.loc[condition, "completed"] == completed
+        assert commands[f"LidarTFourTaskZeroFiveZero{condition}Completed"] == completed
+        for patch, group in [(None, rows), ("08OB88_00332", rows[rows["patch"] == "08OB88_00332"])]:
+            subset = t5[t5["patch"].eq(patch) if patch else t5["patch"].isna()]
+            actual = subset[subset["condition"] == condition].iloc[0]
+            assert actual["n"] == len(group)
+            expected = {
+                "debris_entries": group["debris_entries"].sum(),
+                "debris_runs": group["debris_len_m"].gt(0).sum(),
+                "debris_m": group["debris_len_m"].sum(),
+                "box_intervals": group["truth_below_radius_entries"].sum(),
+                "box_s": group["truth_below_radius_s"].sum(),
+            }
+            tag = "ZeroEightOBEightEightZeroZeroThreeThreeTwo" if patch else ""
+            prefix = f"LidarTFiveTaskZeroFiveZero{condition}{tag}"
+            for field, value in expected.items():
+                assert math.isclose(actual[field], value, rel_tol=1e-8)
+                suffix = "".join(word.capitalize() for word in field.split("_"))
+                assert math.isclose(commands[prefix+suffix], value, rel_tol=1e-8)
+            assert actual["debris_runs_n"] == group["debris_len_m"].notna().sum()
+    assert "08OB88_00332 only" in (output/"T5.md").read_text()
+    print("050 PASS: completion and both T5 scopes are recalculated from the committed CSV")
+
+
+def test_057(root):
+    root.mkdir()
+    results, output = root/"results", root/"out"
+    results.mkdir()
+    for directory in ("eval_050", "eval_044"):
+        (results/directory).symlink_to(RESULTS/directory, target_is_directory=True)
+    log = StringIO()
+    with redirect_stdout(log):
+        figures.make_all(output, results)
+    assert "Skipped missing results file:" in log.getvalue() and "eval_057/common_eval/runs.csv" in log.getvalue()
+    assert set(read(output/"T4.csv")["study"]) == {"044", "050"}
+    assert_outputs(output)
+    before = (output/"F10.png").read_bytes()
+
+    csv = results/"eval_057/common_eval/runs.csv"
+    csv.parent.mkdir(parents=True)
+    csv.write_text("condition,patch,rep,board_outcome,no_path_type,debris_len_m,debris_entries,"
+                   "truth_below_radius_entries,truth_below_radius_s\n"
+                   "S,08OB88_00332,1,completed,,0,0,0,0\n"
+                   "PG,08OB88_00332,1,no_path,goal_cell,0.25,1,2,1.5\n"
+                   "SGN,example,1,partial,,,,,\n")
+    figures.make_all(output, results)
+    assert_outputs(output)
+    t4 = read(output/"T4.csv").query("study == '057'").set_index("condition")
+    assert list(t4.index) == ["S", "PG", "SGN"]
+    assert list(t4["condition_label"]) == ["057 S", "057 PG", "057 SGN"]
+    assert list(t4["completed"]) == [1, 0, 0]
+    t5 = read(output/"T5.csv").query("study == '057'").set_index("condition")
+    assert t5.loc["PG", "box_intervals"].tolist() == [2, 2]
+    assert t5.loc["SGN", "box_s_n"] == 0 and pd.isna(t5.loc["SGN", "box_s"])
+    t6 = read(output/"T6.csv").query("study == '057' and metric == 'goal_cell'")
+    assert list(t6["count"]) == [1]
+    assert before != (output/"F10.png").read_bytes()
+    assert macros(output)["LidarTFourTaskZeroFiveSevenPGNoPath"] == 1
+    assert json.loads((output/"sources.json").read_text())[str(csv)] == hashlib.sha256(csv.read_bytes()).hexdigest()
+    print("057 PASS: missing input is reported and an added CSV updates F10, the tables and input hashes")
+
+
+def test_legacy_rows(root, current):
+    # Use the unmodified generator on the same archives and library versions.
+    base = "150c27a"
+    source = subprocess.check_output(
+        ["git", "show", f"{base}:conference/thesis/make_lidar_figures.py"], cwd=figures.ROOT)
+    previous, output = root/"original_figures.py", root/"before"
+    previous.write_bytes(source)
+    subprocess.run([sys.executable, str(previous), "--results", str(RESULTS), "--output", str(output)],
+                   check=True, capture_output=True, text=True)
+    tasks = ("030", "035", "037", "039", "044")
+    for table in ("T4", "T5", "T6"):
+        before = read(output/f"{table}.csv")
+        after = read(current/f"{table}.csv")
+        before = before[before["study"].isin(tasks)].reset_index(drop=True)
+        after = after.loc[after["study"].isin(tasks), before.columns].reset_index(drop=True)
+        pd.testing.assert_frame_equal(before, after, check_exact=True)
+    assert (output/"F9_statistics.csv").read_bytes() == (current/"F9_statistics.csv").read_bytes()
+    old_commands = macros(output)
+    new_commands = macros(current)
+    assert {name: new_commands[name] for name in old_commands} == old_commands
+    print("legacy PASS: same-environment 030–044 tables, F9 statistics and all prior numeric macros match")
+
+
 if __name__ == "__main__":
     with tempfile.TemporaryDirectory() as temporary:
         root = Path(temporary)
         test_archive(root/"archive")
         test_missing_and_extension(root)
+        test_050(root/"archive")
+        test_057(root/"terrain")
+        test_legacy_rows(root, root/"archive")
     print("all LiDAR figure tests passed")
