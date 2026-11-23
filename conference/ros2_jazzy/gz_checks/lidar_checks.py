@@ -221,7 +221,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if render_mode not in ('cpu', 'gpu'):
         raise ValueError('THESIS_RENDER must be cpu or gpu')
     if render_mode == 'gpu':
-        manifest['rendering'] = dict(mode='gpu', engine='ogre2', backend='EGL')
+        manifest['rendering'] = dict(mode='gpu', engine='ogre2', backend='EGL',
+                                     egl_vendor_file=os.environ.get('__EGL_VENDOR_LIBRARY_FILENAMES'))
     if waypoint_check == 'substitute':
         from ros2_jazzy.gz_checks.waypoint_trial import prepare_waypoints
         prepare_waypoints(manifest, prior_variant_name)
@@ -379,6 +380,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 if manifest.get('sensors', 'legacy') != 'legacy':
                     mission['sensors'] = manifest['sensors']
                 save_run()
+                if gpu:
+                    save_manifest(output, manifest)
                 try:
                     folder.mkdir()
                     truth, prior = case_world_inputs(case, meta, manifest, matched_world=matched_world)
@@ -481,6 +484,9 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     observer.wait_until(lambda: observer.t is not None and observer.pose is not None and observer.state is not None
                                         and observer.command.get_subscription_count() > 0 and observer.perception is not None
                                         and observer.perception['ready'], processes)
+                    if gpu:
+                        case['rendering'] = save_renderer(folder, raw)
+                        save_manifest(output, manifest)
                     settled = observer.t+5
                     observer.wait_until(lambda: observer.t >= settled, processes)
                     mission.update(started_t=observer.t, start_pose=observer.pose, wall_started=time.perf_counter(), status='running')

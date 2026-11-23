@@ -36,7 +36,13 @@ lidar_render_setup=
 case "${THESIS_RENDER-cpu}" in
   cpu) lidar_render_args=(-e "LIBGL_ALWAYS_SOFTWARE=${THESIS_SOFTWARE_RENDERING:-1}") ;;
   gpu)
-    lidar_render_args=(--gpus all -e NVIDIA_DRIVER_CAPABILITIES=all -e THESIS_RENDER=gpu)
+    lidar_egl_vendor=/usr/share/glvnd/egl_vendor.d/10_nvidia.json
+    if [[ ! -f "$lidar_egl_vendor" || ! -r "$lidar_egl_vendor" ]]; then
+      printf 'THESIS_RENDER=gpu requires a readable NVIDIA EGL vendor file on the host: %s\n' "$lidar_egl_vendor" >&2
+      exit 2
+    fi
+    lidar_render_args=(--gpus all -e NVIDIA_DRIVER_CAPABILITIES=all -e THESIS_RENDER=gpu
+      -v "$lidar_egl_vendor:$lidar_egl_vendor:ro" -e "__EGL_VENDOR_LIBRARY_FILENAMES=$lidar_egl_vendor")
     lidar_render_setup=$'    unset LIBGL_ALWAYS_SOFTWARE DISPLAY WAYLAND_DISPLAY\n'
     ;;
   *) printf '%s\n' 'THESIS_RENDER must be cpu or gpu.' >&2; exit 2 ;;

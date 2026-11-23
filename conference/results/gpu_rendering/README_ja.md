@@ -16,3 +16,27 @@ bash results/gpu_rendering/run_smoke.sh "$HOME/thesis_checks/gpu_rendering_045" 
 5. 元の配列形状とフレーム名が揃った点群で同じレイ位置を比較する。スロット数、有限な XYZ の数、片方だけ有限な数、両方有効なレイのセンサー原点からの距離差（GPU−CPU の最小・5%値・中央値・95%値・最大と、絶対差の中央値・95%値・最大）を記録する。`xyz_array_equal` は XYZ 配列の一致で、RGB・強度などの判定は含まない。姿勢の組や配列の対応が取れないときは `clouds` に理由を記録し、距離差の数値は出さない。
 
 `summary.json`、両 manifest、`conditions.txt`、`console.txt`、`probe.txt`、`probe_exit.txt` を持ち帰る。点群の NPZ と走行の生記録は研究 PC に置き、必要なファイルのパスと SHA-256 を残す。比較だけやり直すときは `cloud_pair.py compare <出力先>` を venv で実行する。1組の結果は初回確認として扱い、倍率やセンサーの一致を広い条件へ外挿しない。
+
+## 056 での再確認
+
+054では両方の `nvidia-smi` がRTX 5060を認識した。CPU試行の実測は0.613倍で、GPU指定側のOgre2は `GL_VENDOR = Mesa`、`GL_RENDERER = llvmpipe (LLVM 20.1.2, 256 bits)` だったため試行を停止した。GPU指定側では `libEGL_nvidia.so.0` が見えていたが、EGLのベンダー定義は `50_mesa.json` だけだった。NVIDIA描画での倍率と点群差は未測定。 [054の報告](../gpu_check_054/REPORT_ja.md) · [コンテナのEGL診断](../gpu_check_054/gpu/egl_diagnostics.txt)
+
+056では `THESIS_RENDER=gpu` の場合だけ、ホストの `/usr/share/glvnd/egl_vendor.d/10_nvidia.json` をコンテナの同じ場所へ読み取り専用でマウントし、`__EGL_VENDOR_LIBRARY_FILENAMES` で指定する。ファイルがなければGPUの走行起動前にエラーを出す。manifest の `rendering.egl_vendor_file` と、選択ケースの `rendering.gl_vendor`・`gl_renderer`・`gpu_rendered` を確認する。 `true` はNVIDIAのGLベンダーとレンダラがそろった場合、`false` はMesaなどのソフトウェア描画を示す。 `null` は描画を確認できる記録が不足している。ヘッドレス起動と実測の手順には引き続き `run_smoke.sh` を使う。
+
+実測倍率と点群差をNVIDIA描画の結果に使う条件は、GPU側の `gpu_rendered` が `true` であること。
+
+057の走行後に研究PCのtmux内で、056を含むコミットと既存のイメージで再確認する。054と同じ砂浜・機材・倍率で、保存先は新しくする。
+
+```bash
+cd ~/thesis_Bunker_rtf/conference
+mkdir -p "$HOME/thesis_checks"
+out="$HOME/thesis_checks/gpu_rendering_056"
+py="$HOME/.venvs/thesis-python/bin/python"
+bash results/gpu_rendering/run_smoke.sh "$out" "$py"
+```
+
+途中で停止したときは、比較コマンドから別名のJSONを作成できる。停止理由と残った走行の実測は残り、比較できない倍率・点群の統計は空欄になる。終了コード2は部分結果を示す。
+
+```bash
+"$py" results/gpu_rendering/cloud_pair.py compare "$out" > "$out/summary_after_stop.json"
+```
