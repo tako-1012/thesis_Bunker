@@ -1,0 +1,316 @@
+study,run,status,reason
+035,results/eval_035/runs/08OB86_-0205/S1_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed
+035,results/eval_035/runs/08OB86_-0205/S2_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed
+035,results/eval_035/runs/08OB87_-0706/P1_r1/physical_1/raw/08OB87_-0706,skipped,trajectory not committed
+035,results/eval_035/runs/08OB87_-0706/P1_r2/physical_1/raw/08OB87_-0706,skipped,trajectory not committed
+035,results/eval_035/runs/08OB87_-0706/P1_r3/physical_1/raw/08OB87_-0706,skipped,trajectory not committed
+035,results/eval_035/runs/08OB88_-0167/P1_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed
+035,results/eval_035/runs/08OB88_-0167/P1_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed
+035,results/eval_035/runs/08OB88_-0167/P1_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed
+035,results/eval_035/runs/08OB88_-1417/P1_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed
+035,results/eval_035/runs/08OB88_-1417/P1_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed
+035,results/eval_035/runs/08OB88_-1417/P1_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed
+035,results/eval_035/runs/08OB89_-0347/P1_r1/physical_1/raw/08OB89_-0347,skipped,trajectory not committed
+035,results/eval_035/runs/08OB89_-0347/P1_r2/physical_1/raw/08OB89_-0347,skipped,trajectory not committed
+035,results/eval_035/runs/08OB89_-0347/P1_r3/physical_1/raw/08OB89_-0347,skipped,trajectory not committed
+035,results/eval_035/runs/08OB89_-0847/P1_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed
+035,results/eval_035/runs/08OB89_-0847/P1_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed
+035,results/eval_035/runs/08OB89_-0847/P1_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed
+044,results/eval_044/runs/08OB86_-0205/B_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/B_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/B_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/OT_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/OT_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/OT_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/O_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/O_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/O_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/T_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/T_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB86_-0205/T_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/B_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/B_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/B_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/OT_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/OT_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/OT_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/O_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/O_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/O_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/T_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/T_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-0167/T_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/B_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/B_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/B_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/OT_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/OT_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/OT_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/O_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/O_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/O_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/T_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/T_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_-1417/T_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/B_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/B_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/B_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/OT_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/OT_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/OT_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/O_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/O_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/O_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/T_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/T_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB88_00332/T_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/B_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/B_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/B_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/OT_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/OT_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/OT_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/O_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/O_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/O_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/T_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/T_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+044,results/eval_044/runs/08OB89_-0847/T_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/P_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/P_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/P_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/S_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/S_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/S_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/V_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/V_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB86_-0205/V_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/P_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/P_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/P_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/S_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/S_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/S_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/V_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/V_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-0167/V_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/P_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/P_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/P_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/S_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/S_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/S_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/V_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/V_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_-1417/V_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/P_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/P_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/P_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/S_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/S_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/S_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/V_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/V_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB88_00332/V_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/P_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/P_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/P_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/S_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/S_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/S_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/V_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/V_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+050,results/eval_050/runs/08OB89_-0847/V_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C0_r1/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C0_r2/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C0_r3/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C1_r1/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C1_r2/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C1_r3/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C2_r1/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C2_r2/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB87_-0706/C2_r3/physical_1/raw/08OB87_-0706,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r1/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r3/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C2_r1/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C2_r2/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-0167/C2_r3/physical_1/raw/08OB88_-0167,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C0_r1/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C0_r2/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C0_r3/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C1_r1/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C1_r2/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C1_r3/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C2_r1/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C2_r2/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB88_-1417/C2_r3/physical_1/raw/08OB88_-1417,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r1/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r2/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r3/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r1/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r2/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r3/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C2_r1/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C2_r2/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0347/C2_r3/physical_1/raw/08OB89_-0347,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r1/physical_1/raw/08OB89_-0847,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r2/physical_1/raw/08OB89_-0847,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r3/physical_1/raw/08OB89_-0847,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C1_r1/physical_1/raw/08OB89_-0847,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C1_r2/physical_1/raw/08OB89_-0847,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C1_r3/physical_1/raw/08OB89_-0847,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C2_r1/physical_1/raw/08OB89_-0847,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C2_r2/physical_1/raw/08OB89_-0847,used,
+030,results/eval_ground_endpoint/runs/08OB89_-0847/C2_r3/physical_1/raw/08OB89_-0847,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB86_-0205_Astar/runs/20261103T015631_761023_file_real_las_08OB86_-0205_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB86_-0205_TAstar-S/runs/20261103T015921_202775_file_real_las_08OB86_-0205_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB86_00294_Astar/runs/20261103T015041_310441_file_real_las_08OB86_00294_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB86_00294_TAstar-S/runs/20261103T015338_462198_file_real_las_08OB86_00294_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB87_-0706_Astar/runs/20261103T020216_963337_file_real_las_08OB87_-0706_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB87_-0706_TAstar-S/runs/20261103T020513_700111_file_real_las_08OB87_-0706_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB88_-0167_Astar/runs/20261103T021340_015434_file_real_las_08OB88_-0167_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB88_-0167_TAstar-S/runs/20261103T021821_357115_file_real_las_08OB88_-0167_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB88_-1417_Astar/runs/20261103T020807_910128_file_real_las_08OB88_-1417_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB88_-1417_TAstar-S/runs/20261103T021053_705544_file_real_las_08OB88_-1417_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB88_00332_Astar/runs/20261103T022410_663181_file_real_las_08OB88_00332_200m_0_npz,used,
+gazebo_compare,results/gazebo_compare/physical_run/raw/08OB88_00332_TAstar-S/runs/20261103T022717_239390_file_real_las_08OB88_00332_200m_0_npz,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB86_-0205,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB86_00294,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB87_-0706,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB88_-0167,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB88_-1417,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB88_00332,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB88_01832,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB89_-0347,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB89_-0847,used,
+gazebo_lidar,results/gazebo_lidar/physical_10/raw/08OB89_00152,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB86_-0205_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB86_-0205_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB86_00294_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB86_00294_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB87_-0706_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB87_-0706_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB88_-0167_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB88_-0167_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB88_-1417_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB88_-1417_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB88_00332_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB88_00332_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB88_01832_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB88_01832_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB89_-0347_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB89_-0347_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB89_-0847_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB89_-0847_online,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB89_00152_fixed,used,
+gazebo_online,results/gazebo_online/physical_run/raw/08OB89_00152_online,used,
+gpu_check_054,results/gpu_check_054/cpu/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+gpu_check_054,results/gpu_check_054/gpu/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+lidar_fine,results/lidar_fine/first_attempt_partial/raw/08OB86_-0205,used,
+lidar_fine,results/lidar_fine/first_attempt_partial/raw/08OB86_00294,used,
+lidar_fine,results/lidar_fine/first_attempt_partial/raw/08OB87_-0706,used,
+lidar_fine,results/lidar_fine/first_attempt_partial/raw/08OB88_-1417,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB86_-0205,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB86_00294,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB87_-0706,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB88_-0167,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB88_-1417,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB88_00332,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB88_01832,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB89_-0347,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB89_-0847,used,
+lidar_fine,results/lidar_fine/physical_10/raw/08OB89_00152,used,
+online_mission,results/online_mission/gazebo_claude/fixed/runs/20261030T194546_945152_file_real_las_08OB87_-0206_200m_0_debris_npz,used,
+online_mission,results/online_mission/gazebo_claude/online/runs/20261030T194845_360341_file_real_las_08OB87_-0206_200m_0_debris_npz,skipped,timed path revisions not committed
+real_sensors,results/real_sensors/b0/lidar_real_depth2/physical_1/raw/08OB86_-0205,used,
+real_sensors,results/real_sensors/b0b/lidar_real/physical_1/raw/08OB86_-0205,used,
+real_sensors,results/real_sensors/b0b/lidar_real_depth2/physical_1/raw/08OB86_-0205,used,
+037,results/real_sensors_compare/runs/08OB86_-0205/LC_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB86_-0205/LC_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB86_-0205/LC_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB86_-0205/L_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB86_-0205/L_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB86_-0205/L_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-0167/LC_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-0167/LC_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-0167/LC_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-0167/L_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-0167/L_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-0167/L_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-1417/LC_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-1417/LC_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-1417/LC_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-1417/L_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-1417/L_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_-1417/L_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_00332/LC_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_00332/LC_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_00332/LC_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_00332/L_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_00332/L_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB88_00332/L_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB89_-0847/LC_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB89_-0847/LC_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB89_-0847/LC_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB89_-0847/L_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB89_-0847/L_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+037,results/real_sensors_compare/runs/08OB89_-0847/L_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+ros2_gz,results/ros2_gz/synthetic_fixture,skipped,synthetic fixture
+rtf_check/divergence,results/rtf_check/divergence/R1_01/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R1_02/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R1_03/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R1_04/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R1_05/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R2_01/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R2_02/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R2_03/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R2_04/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/R2_05/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/gpu_smoke/physical_1/raw/08OB87_-0706,used,
+rtf_check/divergence,results/rtf_check/divergence/gpu_smoke1_no_render_device/physical_1/raw/08OB87_-0706,used,
+rtf_check/hayashi_first_gazebo_check,results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB86_-0205,used,
+rtf_check/hayashi_first_gazebo_check,results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB86_00294,used,
+rtf_check/hayashi_first_gazebo_check,results/rtf_check/hayashi_first_gazebo_check/physical_3/raw/08OB87_-0706,used,
+rtf_check/hayashi_rtf1_check,results/rtf_check/hayashi_rtf1_check/rtf_0.3/physical_1/raw/08OB86_-0205,used,
+rtf_check/hayashi_rtf1_check,results/rtf_check/hayashi_rtf1_check/rtf_1/physical_1/raw/08OB86_-0205,used,
+rtf_check/hayashi_rtf_repeat,results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep1/physical_1/raw/08OB87_-0706,used,
+rtf_check/hayashi_rtf_repeat,results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep2/physical_1/raw/08OB87_-0706,used,
+rtf_check/hayashi_rtf_repeat,results/rtf_check/hayashi_rtf_repeat/rtf_0.3_rep3/physical_1/raw/08OB87_-0706,used,
+rtf_check/hayashi_rtf_repeat,results/rtf_check/hayashi_rtf_repeat/rtf_1_rep1/physical_1/raw/08OB87_-0706,used,
+rtf_check/hayashi_rtf_repeat,results/rtf_check/hayashi_rtf_repeat/rtf_1_rep2/physical_1/raw/08OB87_-0706,used,
+rtf_check/hayashi_rtf_repeat,results/rtf_check/hayashi_rtf_repeat/rtf_1_rep3/physical_1/raw/08OB87_-0706,used,
+rtf_compare,results/rtf_compare/stage_b/probe_startup_attempt_20261121_012356/runs/08OB86_-0205/0.3_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB86_-0205/0.3_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB86_-0205/0.3_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB86_-0205/0.3_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB86_-0205/1.0_r1/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB86_-0205/1.0_r2/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB86_-0205/1.0_r3/physical_1/raw/08OB86_-0205,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-0167/0.3_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-0167/0.3_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-0167/0.3_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-0167/1.0_r1/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-0167/1.0_r2/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-0167/1.0_r3/physical_1/raw/08OB88_-0167,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-1417/0.3_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-1417/0.3_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-1417/0.3_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-1417/1.0_r1/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-1417/1.0_r2/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_-1417/1.0_r3/physical_1/raw/08OB88_-1417,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_00332/0.3_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_00332/0.3_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_00332/0.3_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_00332/1.0_r1/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_00332/1.0_r2/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB88_00332/1.0_r3/physical_1/raw/08OB88_00332,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB89_-0847/0.3_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB89_-0847/0.3_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB89_-0847/0.3_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB89_-0847/1.0_r1/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB89_-0847/1.0_r2/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed
+039,results/rtf_compare/stage_b/runs/08OB89_-0847/1.0_r3/physical_1/raw/08OB89_-0847,skipped,trajectory not committed; path revisions not committed

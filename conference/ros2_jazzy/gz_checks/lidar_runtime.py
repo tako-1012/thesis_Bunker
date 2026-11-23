@@ -8,8 +8,9 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from tapp.config import RESOLUTION
 from tapp.prior import PriorMap
+from tapp.distance_clearance import connector_clear
 from tapp.online_mission import OnlinePlanner
-from tapp.collision import line_of_sight_exact, path_lethal_cells
+from tapp.collision import path_lethal_cells
 from ros2_jazzy.gz_checks.online_batch_runtime import BatchOnlineMission, planning_map
 from ros2_jazzy.gz_checks.overlap_goal import OverlapGoalPlanner, handoff_lethal
 
@@ -23,6 +24,16 @@ class LidarOnlineMission(BatchOnlineMission):
         self.mapper = mapper
 
     def _new_planner(self, cls, stops):
+        if getattr(self.mapper, 'obstacle_clearance', 'centre') == 'distance':
+            from .distance_runtime import DistancePlanner
+            if cls is OnlinePlanner:
+                cls = DistancePlanner
+            else:
+                # Retain the safety and diagnostic layers above the search.
+                class DistanceVariant(cls, DistancePlanner):
+                    pass
+
+                cls = DistanceVariant
         if getattr(self.mapper, 'obstacle_clearance', 'centre') == 'overlap_goal':
             class GoalPlanner(OverlapGoalPlanner, cls):
                 pass
@@ -37,6 +48,10 @@ class LidarOnlineMission(BatchOnlineMission):
     def _observe(self, planner):
         options = (dict(known=planner.known)
                    if getattr(self.mapper, 'steep_near_obstacle', 'keep') == 'no_inflate' else {})
+        if getattr(self.mapper, 'obstacle_clearance', 'centre') == 'distance':
+            snapshot, planner.distance_geometry = self.mapper.planning_distance_snapshot(**options)
+            planner.observe(*snapshot)
+            return
         if isinstance(planner, OverlapGoalPlanner):
             snapshot, overrides = self.mapper.planning_goal_snapshot(planner.goals_to_check(), **options)
             planner.observe(*snapshot)
@@ -81,7 +96,7 @@ class LidarOnlineMission(BatchOnlineMission):
                 best = distance, i
         rest = path[best[1]+1:] if best is not None else [path[-1]]
         known_lethal = handoff_lethal(planner)
-        if rest and line_of_sight_exact(known_lethal, tuple(pos), tuple(rest[0])):
+        if rest and connector_clear(planner, known_lethal, tuple(pos), cell, tuple(rest[0])):
             joined = [pos]+rest
         else:
             joined = [pos, np.asarray(cell, float)]+rest

@@ -3,11 +3,12 @@ import json
 import time
 import numpy as np
 from tapp.config import RESOLUTION
+from tapp.distance_clearance import connector_clear
 from tapp.obstacle_clearance import cell_boxes, point_clearance
 from tapp.online_mission import OnlinePlanner
 from tapp.endpoint_policy import (plan_endpoint, classify_failure, SnapshotStore,
                                   RetryState, escape_maps, ENDPOINT_POLICIES)
-from tapp.collision import path_lethal_cells, line_of_sight_exact
+from tapp.collision import path_lethal_cells
 from tapp.traversability import inflate
 from .lidar_runtime import LidarOnlineMission
 from .online_batch_runtime import CsvChunks
@@ -22,6 +23,10 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
         planning_seen = getattr(mapper, 'planning_seen', None)
         options = dict(known=planner.known) if getattr(mapper, 'steep_near_obstacle', 'keep') == 'no_inflate' else {}
         observed = planning_seen(seen, **options) if planning_seen else seen
+        field = getattr(mapper, 'distance_field', None)
+        if field is not None:
+            cost += field.cost
+            planner.distance_geometry = field.geometry()
         planner.observe(observed, cost, lethal)
         if isinstance(planner, OverlapGoalPlanner):
             planner.set_goal_overrides(mapper.goal_obstacle_overrides(planner.goals_to_check()))
@@ -34,6 +39,10 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
                     resolution_m=RESOLUTION, version=int(mapper.version),
                     pose=np.asarray(pose, float), start=np.rint(np.asarray(position)/RESOLUTION).astype(int),
                     goal=np.asarray(goal, int), sim_time=float(sim_time))
+        if field is not None:
+            snapshot['distance_hard'] = mapper._inflated_coarse.copy()
+            if save_plan_maps:
+                snapshot['obstacle_cost'] = field.cost.copy()
         if save_plan_maps:
             snapshot['retained_lethal'] = planning_lethal & ~observed
             radius = mapper.robot.footprint_radius
@@ -60,7 +69,9 @@ class EndpointPlanner(OnlinePlanner):
             result = super()._plan(reason, initial=initial)
         else:
             began = time.perf_counter()
-            outcome = plan_endpoint(snapshot, self.policy)
+            geometry = getattr(self, 'distance_geometry', None)
+            options = dict(smooth=geometry.smooth) if geometry is not None else {}
+            outcome = plan_endpoint(snapshot, self.policy, **options)
             self.endpoint_result = outcome
             self.goal = tuple(outcome['goal'])
             self.path = [np.asarray(p, float) for p in outcome['path']]
@@ -225,7 +236,7 @@ class EndpointRuntime(LidarOnlineMission):
         if not rest:
             joined = None
         else:
-            joined = ([pos]+rest if line_of_sight_exact(lethal, pos, rest[0]) else [pos, cell]+rest)
+            joined = ([pos]+rest if connector_clear(planner, lethal, pos, cell, rest[0]) else [pos, cell]+rest)
             if len(path_lethal_cells(joined, lethal)):
                 joined = None
         if joined is not None:
