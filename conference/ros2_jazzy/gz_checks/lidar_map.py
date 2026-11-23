@@ -2,11 +2,17 @@
 
 import os
 from tapp.pointcloud_map import PointCloudMap
-from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES, TERRAIN_SOURCES
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
 
 
 def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', obstacle_reference='prior',
-                        obstacle_clearance='centre', terrain_source='sensor', **kwargs):
+                        obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep', **kwargs):
+    if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
+        raise ValueError('unknown steep-near-obstacle policy')
+    if steep_near_obstacle != 'keep':
+        if map_method != 'fine':
+            raise ValueError('--steep-near-obstacle no_inflate requires --map fine')
+        kwargs['steep_near_obstacle'] = steep_near_obstacle
     if terrain_source not in TERRAIN_SOURCES:
         raise ValueError('unknown terrain source')
     if terrain_source != 'sensor':

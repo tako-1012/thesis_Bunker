@@ -1,0 +1,7 @@
+static agreement passed (20 random grids, tolerance 1e-9)
+dynamic agreement passed (5 seeds x 20 updates, tolerance 1e-9)
+corner constraints, cost decreases, unreachable/reopened routes and ties passed
+task 001 regression passed (ridge soft and hills hard, search omitted)
+D* Lite safety passed (20 trajectories, normal and every-step replanning)
+error handling and fixed/adaptive-with-map prior handling passed
+all D* Lite tests passed

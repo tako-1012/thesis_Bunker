@@ -33,7 +33,7 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 
 class LidarPlannerNode(OnlinePlannerNode):
     def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior', online_fixes='none',
-                 obstacle_clearance='centre', terrain_source='sensor', save_plan_maps=False):
+                 obstacle_clearance='centre', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep'):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         for name, default in [('prior_map', ''), ('map_id', 'file/truth.npz'), ('run_folder', ''),
@@ -41,7 +41,8 @@ class LidarPlannerNode(OnlinePlannerNode):
                               ('stale_timeout_s', .5), ('map_method', 'coarse'), ('sensors', 'legacy'), ('endpoint_policy', 'none'), ('diagnostics', False),
                               ('ground_estimate', ground_estimate), ('obstacle_reference', obstacle_reference),
                               ('obstacle_clearance', obstacle_clearance), ('online_fixes', online_fixes),
-                              ('terrain_source', terrain_source), ('save_plan_maps', save_plan_maps)]:
+                              ('terrain_source', terrain_source), ('save_plan_maps', save_plan_maps),
+                              ('steep_near_obstacle', steep_near_obstacle)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -62,6 +63,7 @@ class LidarPlannerNode(OnlinePlannerNode):
                                     obstacle_reference=self.get_parameter('obstacle_reference').value,
                                     obstacle_clearance=self.get_parameter('obstacle_clearance').value,
                                     terrain_source=self.get_parameter('terrain_source').value,
+                                    steep_near_obstacle=self.get_parameter('steep_near_obstacle').value,
                                     robot=prior['tmap'].robot, weights=prior['tmap'].weights,
                                     sensor_height_m=self.get_parameter('sensor_height_m').value,
                                     max_range_m=self.get_parameter('max_range_m').value,
@@ -298,12 +300,13 @@ class LidarPlannerNode(OnlinePlannerNode):
 
 
 def main(args=None):
-    from tapp.pointcloud_map_fine import OBSTACLE_CLEARANCES, TERRAIN_SOURCES
+    from tapp.pointcloud_map_fine import OBSTACLE_CLEARANCES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
     from tapp.prior_variants import OBSTACLE_REFERENCES
     from tapp.online_safety import ONLINE_FIXES
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default=None)
     parser.add_argument('--terrain-source', choices=TERRAIN_SOURCES, default=None)
+    parser.add_argument('--steep-near-obstacle', choices=STEEP_NEAR_OBSTACLE, default=None)
     parser.add_argument('--obstacle-clearance', choices=OBSTACLE_CLEARANCES, default=None,
                         help='fine-map obstacle inflation (overlap_goal uses centre at the active goal)')
     parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default=None)

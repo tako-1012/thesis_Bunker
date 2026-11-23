@@ -1,0 +1,139 @@
+{
+  "note": "Software CPU trial versus GPU-requested trial which rendered with llvmpipe; not a hardware comparison.",
+  "modes": [
+    "cpu",
+    "gpu"
+  ],
+  "clouds": {
+    "lidar": {
+      "stamp_ns": 100000000,
+      "pose_stamp_ns": 100000000,
+      "position_difference_m": 0.0,
+      "orientation_difference_deg": 0.0,
+      "cpu_shape": [
+        16,
+        1800
+      ],
+      "gpu_shape": [
+        16,
+        1800
+      ],
+      "cpu_frame": "lidar",
+      "gpu_frame": "lidar",
+      "cpu_slots": 28800,
+      "gpu_slots": 28800,
+      "cpu_finite": 12173,
+      "gpu_finite": 12173,
+      "paired_finite": 12173,
+      "cpu_only": 0,
+      "gpu_only": 0,
+      "both_invalid": 16627,
+      "xyz_array_equal": false,
+      "status": "compared",
+      "range_gpu_minus_cpu_m": {
+        "min": -0.12357944305886104,
+        "p05": -0.04602829123999079,
+        "median": 0.000308882410163136,
+        "p95": 0.046895875615273384,
+        "max": 0.10168037684791642
+      },
+      "abs_range_difference_m": {
+        "median": 0.018885287682451235,
+        "p95": 0.05496850056679178,
+        "max": 0.12357944305886104
+      }
+    },
+    "camera1": {
+      "stamp_ns": 100000000,
+      "pose_stamp_ns": 100000000,
+      "position_difference_m": 0.0,
+      "orientation_difference_deg": 0.0,
+      "cpu_shape": [
+        125,
+        214
+      ],
+      "gpu_shape": [
+        125,
+        214
+      ],
+      "cpu_frame": "camera1",
+      "gpu_frame": "camera1",
+      "cpu_slots": 26750,
+      "gpu_slots": 26750,
+      "cpu_finite": 10554,
+      "gpu_finite": 10554,
+      "paired_finite": 10554,
+      "cpu_only": 0,
+      "gpu_only": 0,
+      "both_invalid": 16196,
+      "xyz_array_equal": false,
+      "status": "compared",
+      "range_gpu_minus_cpu_m": {
+        "min": -0.05784404786830999,
+        "p05": -0.018319320196087775,
+        "median": -5.750230513634769e-06,
+        "p95": 0.01736697805423589,
+        "max": 0.05823000642162146
+      },
+      "abs_range_difference_m": {
+        "median": 0.004085615871015635,
+        "p95": 0.023191795460214836,
+        "max": 0.05823000642162146
+      }
+    },
+    "camera2": {
+      "stamp_ns": 100000000,
+      "pose_stamp_ns": 100000000,
+      "position_difference_m": 0.0,
+      "orientation_difference_deg": 0.0,
+      "cpu_shape": [
+        125,
+        214
+      ],
+      "gpu_shape": [
+        125,
+        214
+      ],
+      "cpu_frame": "camera2",
+      "gpu_frame": "camera2",
+      "cpu_slots": 26750,
+      "gpu_slots": 26750,
+      "cpu_finite": 9328,
+      "gpu_finite": 9328,
+      "paired_finite": 9328,
+      "cpu_only": 0,
+      "gpu_only": 0,
+      "both_invalid": 17422,
+      "xyz_array_equal": false,
+      "status": "compared",
+      "range_gpu_minus_cpu_m": {
+        "min": -0.05660179403949295,
+        "p05": -0.018205622005492493,
+        "median": 3.081630951484726e-05,
+        "p95": 0.017303038653301957,
+        "max": 0.0563682166338233
+      },
+      "abs_range_difference_m": {
+        "median": 0.004526660041275887,
+        "p95": 0.023018843850206912,
+        "max": 0.05660179403949295
+      }
+    }
+  },
+  "gpu_utilization": {
+    "cpu": {
+      "0 NVIDIA GeForce RTX 5060 Laptop GPU": {
+        "samples": 448,
+        "median_pct": 0.0,
+        "max_pct": 8.0
+      }
+    },
+    "gpu": {
+      "0 NVIDIA GeForce RTX 5060 Laptop GPU": {
+        "samples": 71,
+        "median_pct": 0.0,
+        "max_pct": 8.0
+      }
+    }
+  }
+}

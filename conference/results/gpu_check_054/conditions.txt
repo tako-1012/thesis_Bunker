@@ -1,0 +1,5 @@
+2026-11-23T12:58:05+09:00
+bbaa7c7a8b5f13152d66c0bf26e7552a1deaa7d2
+sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57
+patch=08OB88_-1417 domain=65 image=thesis/jazzy-gz:1
+args=--map fine --real-time-factor 1.0 --ground-estimate non_obstacle --online-fixes v2 --sensors lidar_real+depth2 --diagnostics

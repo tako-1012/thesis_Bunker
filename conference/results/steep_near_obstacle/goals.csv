@@ -1,0 +1,11 @@
+stage,patch,records,keep_goal_open,no_inflate_goal_open,keep_route,no_inflate_route,recovered_route
+final,all,14,1,4,1,4,3
+final,08OB88_-0167,4,0,0,0,0,0
+final,08OB88_-1417,1,1,1,1,1,0
+final,08OB89_-0347,6,0,0,0,0,0
+final,08OB89_-0847,3,0,3,0,3,3
+failure_snapshot,all,20,0,4,0,4,4
+failure_snapshot,08OB88_-0167,7,0,0,0,0,0
+failure_snapshot,08OB88_-1417,1,0,1,0,1,1
+failure_snapshot,08OB89_-0347,9,0,0,0,0,0
+failure_snapshot,08OB89_-0847,3,0,3,0,3,3

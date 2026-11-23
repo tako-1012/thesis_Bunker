@@ -75,6 +75,7 @@ docker run --rm --pull=never --network host \
 # Options are forwarded unchanged; the Python CLI takes precedence over the environment.
 # Task041 opt-in: pass --map fine --obstacle-clearance overlap.
 # Task052 opt-in: pass --map fine --obstacle-clearance overlap_goal.
+# Task055 opt-in: pass --map fine --steep-near-obstacle no_inflate.
 # Task043 opt-in: pass --tracking corner_slow to the follower.
 # Task045 opt-in: THESIS_RENDER=gpu enables NVIDIA headless EGL rendering.
 # Task047 opt-in: pass --map fine --terrain-source prior.

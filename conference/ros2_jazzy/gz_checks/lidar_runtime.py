@@ -35,13 +35,15 @@ class LidarOnlineMission(BatchOnlineMission):
         return cls(self.prior.cost, self.prior.lethal, self.prior_tm.weights, prior_lethal_mode=self.mode)
 
     def _observe(self, planner):
+        options = (dict(known=planner.known)
+                   if getattr(self.mapper, 'steep_near_obstacle', 'keep') == 'no_inflate' else {})
         if isinstance(planner, OverlapGoalPlanner):
-            snapshot, overrides = self.mapper.planning_goal_snapshot(planner.goals_to_check())
+            snapshot, overrides = self.mapper.planning_goal_snapshot(planner.goals_to_check(), **options)
             planner.observe(*snapshot)
             planner.set_goal_overrides(overrides)
             return
         snapshot = getattr(self.mapper, 'planning_snapshot', self.mapper.snapshot)
-        planner.observe(*snapshot())
+        planner.observe(*snapshot(**options))
 
     def _plan_work(self, state, position):
         state.pop('observations', None)  # Poses cannot reveal terrain labels.

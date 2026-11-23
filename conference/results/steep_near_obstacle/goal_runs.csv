@@ -1,0 +1,50 @@
+experiment,patch,condition,rep,visit_number,goal_x,goal_y,stage,record,version,reason,start_x,start_y,obstacle_halo_at_goal,steep_at_goal,keep_goal_open,keep_start_blocked,keep_route,keep_steep_halo_at_goal,no_inflate_goal_open,no_inflate_start_blocked,no_inflate_route,no_inflate_steep_halo_at_goal,opened_goal,recovered_route
+030,08OB88_-1417,C0,3,1,199,151,final,results/eval_ground_endpoint/runs/08OB88_-1417/C0_r3/physical_1/raw/08OB88_-1417/pointcloud_map.npz,621,,195,148,False,False,True,False,True,False,True,False,True,False,False,False
+030,08OB88_-1417,C0,3,1,199,151,failure_snapshot,results/eval_ground_endpoint/runs/08OB88_-1417/C0_r3/physical_1/raw/08OB88_-1417/diag/plan_fail_000001.npz,620,,195,148,False,False,False,False,False,True,True,False,True,False,True,True
+030,08OB88_-0167,C0,2,5,137,294,final,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167/pointcloud_map.npz,2870,,146,281,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB88_-0167,C0,2,5,137,294,failure_snapshot,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,2869,,146,281,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB88_-0167,C1,1,5,137,294,final,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167/pointcloud_map.npz,2763,,158,280,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB88_-0167,C1,1,5,137,294,failure_snapshot,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,2762,,158,280,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB88_-0167,C1,2,5,137,294,final,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167/pointcloud_map.npz,2822,,142,282,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB88_-0167,C1,2,5,137,294,failure_snapshot,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,2821,,142,282,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB88_-0167,C1,3,5,137,294,final,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167/pointcloud_map.npz,2761,,159,280,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB88_-0167,C1,3,5,137,294,failure_snapshot,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,2760,,159,280,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB89_-0347,C0,1,3,213,144,final,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r1/physical_1/raw/08OB89_-0347/pointcloud_map.npz,1729,,258,183,False,True,False,False,False,True,False,False,False,True,False,False
+030,08OB89_-0347,C0,1,3,213,144,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r1/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1728,,258,183,False,True,False,False,False,True,False,False,False,True,False,False
+030,08OB89_-0347,C0,2,3,213,144,final,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r2/physical_1/raw/08OB89_-0347/pointcloud_map.npz,1751,,251,181,True,False,False,False,False,False,False,False,False,False,False,False
+030,08OB89_-0347,C0,2,3,213,144,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r2/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1750,,251,181,True,False,False,False,False,False,False,False,False,False,False,False
+030,08OB89_-0347,C0,3,3,213,144,final,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r3/physical_1/raw/08OB89_-0347/pointcloud_map.npz,1694,,256,185,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB89_-0347,C0,3,3,213,144,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0347/C0_r3/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1694,,256,185,False,False,False,False,False,True,False,False,False,True,False,False
+030,08OB89_-0347,C1,1,3,213,144,final,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r1/physical_1/raw/08OB89_-0347/pointcloud_map.npz,1823,,244,177,True,False,False,False,False,False,False,False,False,False,False,False
+030,08OB89_-0347,C1,1,3,213,144,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r1/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1822,,244,177,True,False,False,False,False,False,False,False,False,False,False,False
+030,08OB89_-0347,C1,2,3,213,144,final,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r2/physical_1/raw/08OB89_-0347/pointcloud_map.npz,1741,,254,181,True,False,False,False,False,False,False,False,False,False,False,False
+030,08OB89_-0347,C1,2,3,213,144,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r2/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1740,,254,181,True,False,False,False,False,False,False,False,False,False,False,False
+030,08OB89_-0347,C1,3,3,213,144,final,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r3/physical_1/raw/08OB89_-0347/pointcloud_map.npz,1767,,248,178,True,False,False,False,False,False,False,False,False,False,False,False
+030,08OB89_-0347,C1,3,3,213,144,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0347/C1_r3/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1766,,248,178,True,False,False,False,False,False,False,False,False,False,False,False
+030,08OB89_-0847,C0,1,2,281,117,final,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r1/physical_1/raw/08OB89_-0847/pointcloud_map.npz,971,,269,98,False,False,False,False,False,True,True,False,True,False,True,True
+030,08OB89_-0847,C0,1,2,281,117,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r1/physical_1/raw/08OB89_-0847/diag/plan_fail_000001.npz,970,,269,98,False,False,False,False,False,True,True,False,True,False,True,True
+030,08OB89_-0847,C0,2,2,281,117,final,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r2/physical_1/raw/08OB89_-0847/pointcloud_map.npz,995,,268,98,False,False,False,False,False,True,True,False,True,False,True,True
+030,08OB89_-0847,C0,2,2,281,117,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r2/physical_1/raw/08OB89_-0847/diag/plan_fail_000001.npz,995,,268,98,False,False,False,False,False,True,True,False,True,False,True,True
+030,08OB89_-0847,C0,3,2,281,117,final,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r3/physical_1/raw/08OB89_-0847/pointcloud_map.npz,1006,,268,98,False,False,False,False,False,True,True,False,True,False,True,True
+030,08OB89_-0847,C0,3,2,281,117,failure_snapshot,results/eval_ground_endpoint/runs/08OB89_-0847/C0_r3/physical_1/raw/08OB89_-0847/diag/plan_fail_000001.npz,1004,,268,98,False,False,False,False,False,True,True,False,True,False,True,True
+035,08OB88_-0167,P1,1,5,137,294,failure_snapshot,results/eval_035/runs/08OB88_-0167/P1_r1/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,2766,,157,280,False,False,False,False,False,True,False,False,False,True,False,False
+035,08OB88_-0167,P1,2,5,137,294,failure_snapshot,results/eval_035/runs/08OB88_-0167/P1_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,2812,,157,280,False,False,False,False,False,True,False,False,False,True,False,False
+035,08OB88_-0167,P1,3,5,137,294,failure_snapshot,results/eval_035/runs/08OB88_-0167/P1_r3/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,2740,,148,281,False,False,False,False,False,True,False,False,False,True,False,False
+035,08OB89_-0347,P1,1,3,213,144,failure_snapshot,results/eval_035/runs/08OB89_-0347/P1_r1/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1761,,247,174,True,False,False,False,False,False,False,False,False,False,False,False
+035,08OB89_-0347,P1,2,3,213,144,failure_snapshot,results/eval_035/runs/08OB89_-0347/P1_r2/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1763,,250,181,True,False,False,False,False,False,False,False,False,False,False,False
+035,08OB89_-0347,P1,3,3,213,144,failure_snapshot,results/eval_035/runs/08OB89_-0347/P1_r3/physical_1/raw/08OB89_-0347/diag/plan_fail_000001.npz,1723,,253,186,True,False,False,False,False,False,False,False,False,False,False,False
+037,08OB88_-0167,LC,1,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+037,08OB88_-0167,LC,2,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+037,08OB88_-0167,LC,3,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+037,08OB88_-0167,L,1,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+037,08OB88_-0167,L,2,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+037,08OB88_-0167,L,3,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+037,08OB88_-1417,L,2,5,203,229,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+037,08OB89_-0847,LC,1,2,281,117,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+039,08OB88_-0167,0.3,1,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+039,08OB88_-0167,0.3,2,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+039,08OB88_-0167,0.3,3,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+039,08OB88_-0167,1.0,1,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+039,08OB88_-0167,1.0,2,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+039,08OB88_-0167,1.0,3,5,137,294,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
+039,08OB89_-0847,1.0,3,2,281,117,missing,,,final map omitted from repository; no committed failure grid for this run,,,,,,,,,,,,,,
