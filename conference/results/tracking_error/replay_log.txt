@@ -1,0 +1,264 @@
+skipped results/eval_035/runs/08OB86_-0205/S1_r1/physical_1/raw/08OB86_-0205: trajectory not committed
+skipped results/eval_035/runs/08OB86_-0205/S2_r1/physical_1/raw/08OB86_-0205: trajectory not committed
+skipped results/eval_035/runs/08OB87_-0706/P1_r1/physical_1/raw/08OB87_-0706: trajectory not committed
+skipped results/eval_035/runs/08OB87_-0706/P1_r2/physical_1/raw/08OB87_-0706: trajectory not committed
+skipped results/eval_035/runs/08OB87_-0706/P1_r3/physical_1/raw/08OB87_-0706: trajectory not committed
+skipped results/eval_035/runs/08OB88_-0167/P1_r1/physical_1/raw/08OB88_-0167: trajectory not committed
+skipped results/eval_035/runs/08OB88_-0167/P1_r2/physical_1/raw/08OB88_-0167: trajectory not committed
+skipped results/eval_035/runs/08OB88_-0167/P1_r3/physical_1/raw/08OB88_-0167: trajectory not committed
+skipped results/eval_035/runs/08OB88_-1417/P1_r1/physical_1/raw/08OB88_-1417: trajectory not committed
+skipped results/eval_035/runs/08OB88_-1417/P1_r2/physical_1/raw/08OB88_-1417: trajectory not committed
+skipped results/eval_035/runs/08OB88_-1417/P1_r3/physical_1/raw/08OB88_-1417: trajectory not committed
+skipped results/eval_035/runs/08OB89_-0347/P1_r1/physical_1/raw/08OB89_-0347: trajectory not committed
+skipped results/eval_035/runs/08OB89_-0347/P1_r2/physical_1/raw/08OB89_-0347: trajectory not committed
+skipped results/eval_035/runs/08OB89_-0347/P1_r3/physical_1/raw/08OB89_-0347: trajectory not committed
+skipped results/eval_035/runs/08OB89_-0847/P1_r1/physical_1/raw/08OB89_-0847: trajectory not committed
+skipped results/eval_035/runs/08OB89_-0847/P1_r2/physical_1/raw/08OB89_-0847: trajectory not committed
+skipped results/eval_035/runs/08OB89_-0847/P1_r3/physical_1/raw/08OB89_-0847: trajectory not committed
+skipped results/eval_044/runs/08OB86_-0205/B_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/B_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/B_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/OT_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/OT_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/OT_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/O_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/O_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/O_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/T_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/T_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB86_-0205/T_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/B_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/B_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/B_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/OT_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/OT_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/OT_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/O_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/O_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/O_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/T_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/T_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-0167/T_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/B_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/B_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/B_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/OT_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/OT_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/OT_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/O_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/O_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/O_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/T_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/T_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_-1417/T_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/B_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/B_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/B_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/OT_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/OT_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/OT_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/O_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/O_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/O_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/T_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/T_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB88_00332/T_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/B_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/B_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/B_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/OT_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/OT_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/OT_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/O_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/O_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/O_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/T_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/T_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_044/runs/08OB89_-0847/T_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/P_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/P_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/P_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/S_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/S_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/S_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/V_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/V_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB86_-0205/V_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/P_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/P_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/P_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/S_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/S_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/S_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/V_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/V_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-0167/V_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/P_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/P_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/P_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/S_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/S_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/S_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/V_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/V_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_-1417/V_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/P_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/P_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/P_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/S_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/S_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/S_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/V_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/V_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB88_00332/V_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/P_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/P_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/P_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/S_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/S_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/S_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/V_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/V_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/eval_050/runs/08OB89_-0847/V_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/gpu_check_054/cpu/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/gpu_check_054/gpu/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/online_mission/gazebo_claude/online/runs/20261030T194845_360341_file_real_las_08OB87_-0206_200m_0_debris_npz: timed path revisions not committed
+skipped results/real_sensors_compare/runs/08OB86_-0205/LC_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB86_-0205/LC_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB86_-0205/LC_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB86_-0205/L_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB86_-0205/L_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB86_-0205/L_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-0167/LC_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-0167/LC_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-0167/LC_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-0167/L_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-0167/L_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-0167/L_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-1417/LC_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-1417/LC_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-1417/LC_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-1417/L_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-1417/L_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_-1417/L_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_00332/LC_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_00332/LC_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_00332/LC_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_00332/L_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_00332/L_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB88_00332/L_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB89_-0847/LC_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB89_-0847/LC_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB89_-0847/LC_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB89_-0847/L_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB89_-0847/L_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/real_sensors_compare/runs/08OB89_-0847/L_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/ros2_gz/synthetic_fixture: synthetic fixture
+skipped results/rtf_compare/stage_b/probe_startup_attempt_20261121_012356/runs/08OB86_-0205/0.3_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB86_-0205/0.3_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB86_-0205/0.3_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB86_-0205/0.3_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB86_-0205/1.0_r1/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB86_-0205/1.0_r2/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB86_-0205/1.0_r3/physical_1/raw/08OB86_-0205: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-0167/0.3_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-0167/0.3_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-0167/0.3_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-0167/1.0_r1/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-0167/1.0_r2/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-0167/1.0_r3/physical_1/raw/08OB88_-0167: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-1417/0.3_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-1417/0.3_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-1417/0.3_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-1417/1.0_r1/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-1417/1.0_r2/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_-1417/1.0_r3/physical_1/raw/08OB88_-1417: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_00332/0.3_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_00332/0.3_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_00332/0.3_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_00332/1.0_r1/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_00332/1.0_r2/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB88_00332/1.0_r3/physical_1/raw/08OB88_00332: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB89_-0847/0.3_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB89_-0847/0.3_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB89_-0847/0.3_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB89_-0847/1.0_r1/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB89_-0847/1.0_r2/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+skipped results/rtf_compare/stage_b/runs/08OB89_-0847/1.0_r3/physical_1/raw/08OB89_-0847: trajectory not committed; path revisions not committed
+128 runs analysed; 187 skipped; 22 near-box intervals with event records; 22 aggregate-only intervals
+035: 0/17 runs analysed
+044: 0/60 runs analysed
+050: 0/45 runs analysed
+030: 45/45 runs analysed
+gazebo_compare: 12/12 runs analysed
+gazebo_lidar: 10/10 runs analysed
+gazebo_online: 20/20 runs analysed
+gpu_check_054: 0/2 runs analysed
+lidar_fine: 14/14 runs analysed
+online_mission: 1/2 runs analysed
+real_sensors: 3/3 runs analysed
+037: 0/30 runs analysed
+ros2_gz: 0/1 runs analysed
+rtf_check/divergence: 12/12 runs analysed
+rtf_check/hayashi_first_gazebo_check: 3/3 runs analysed
+rtf_check/hayashi_rtf1_check: 2/2 runs analysed
+rtf_check/hayashi_rtf_repeat: 6/6 runs analysed
+rtf_compare: 0/1 runs analysed
+039: 0/30 runs analysed
+feature,bin,samples,runs,p50_m,p90_m,p95_m,p99_m,max_m,hard_plus_p95_m
+curvature,straight,294625,128,0.004548498563238468,0.05832212464684083,0.13426761587427785,0.6086390680769062,6.191381660121408,0.6342676158742778
+curvature,gentle,318377,118,0.009909824839633726,0.10840906021642552,0.21149078724730405,0.7610514204004936,4.03871000826075,0.7114907872473041
+curvature,sharp,156582,115,0.07985592842886263,0.2744951309096098,0.2746620497017453,0.596974813832386,3.4571076449434655,0.7746620497017453
+curvature,unknown,0,0,,,,,,
+slope,0-10,759247,128,0.010152036614400117,0.23832101207787057,0.27437280800874897,0.611627189990156,6.191381660121408,0.774372808008749
+slope,10-20,8355,92,0.07853632867526186,0.4605842997848936,0.6140197137643808,2.4226823362839998,5.2174010996018865,1.1140197137643808
+slope,20-25,675,12,0.7205544692310184,5.057699063705513,5.057699063705513,5.057748993530067,5.191869680564537,5.557699063705513
+slope,>25,1068,6,1.275359759479912,2.1555869397753553,2.6129160678164327,3.21387494818396,4.205740836723322,3.1129160678164327
+slope,unknown,239,4,0.40057119769714883,0.5993446208757021,0.6175103515422083,0.6897117802932233,1.106987765551021,1.1175103515422085
+direction,uphill,149646,127,0.00875848413175882,0.12333784371646145,0.23611371169240408,0.9293278571607827,6.18125217359389,0.7361137116924041
+direction,downhill,156809,127,0.008381167640319351,0.10949748248548577,0.20877906809066096,0.5652794244266031,6.107140306690866,0.7087790680906609
+direction,cross_slope,385167,128,0.007549853959742025,0.10034388421964073,0.19341880391185637,0.6321814565712882,6.191381660121408,0.6934188039118564
+direction,unknown,77962,128,0.2645797284562671,0.27456148129400904,0.2746454604908787,0.6184346238459124,5.061493572651699,0.7746454604908787
+command,near_zero,75109,128,0.2645928365374651,0.2745500769125617,0.27463094522609155,0.3167239495298592,5.057699063705513,0.7746309452260915
+command,slow,785,28,0.33626508697521007,0.4308922633664541,0.4353772579693844,0.4444210680148013,0.46125522431588567,0.9353772579693844
+command,medium,7464,110,0.1818020075546272,0.39655052449558315,0.48840066386398123,0.6166210465486289,0.8133477345391077,0.9884006638639813
+command,fast,686226,128,0.0077595065280185,0.10041528633996868,0.1906060295819371,0.6907060037278995,6.191381660121408,0.6906060295819371
+command,unknown,0,0,,,,,,
+switch,first_path,62010,128,0.004837296828249293,0.14363892564998937,0.37335445110831944,1.9334371254349572,6.191381660121408,0.8733544511083194
+switch,under_2s,252109,105,0.022473215025627453,0.16307222402786484,0.2532131471302319,0.5580595546843327,3.4571076449434655,0.7532131471302319
+switch,at_least_2s,455465,105,0.00722513481794684,0.26465838265737845,0.2744557380949211,0.719461537360919,4.03871000826075,0.7744557380949211
+box,within_1.5m,99260,110,0.26437001552778955,0.27452623193579945,0.27463198202178857,0.4563472231597432,1.314051865116577,0.7746319820217886
+box,beyond_1.5m,629666,116,0.008267196396288918,0.10729332230342624,0.20300807200191678,0.6671248004678066,4.03871000826075,0.7030080720019167
+box,no_boxes,40658,12,0.0033617633120982216,0.07554672160320308,0.2693947386800293,3.403520080502146,6.191381660121408,0.7693947386800293
+box,unknown,0,0,,,,,,
+all,all,769584,128,0.01046936969004644,0.2568427014257597,0.2744329321698974,0.6739801484058446,6.191381660121408,0.7744329321698974
+study,030,309844,45,0.017164348791695316,0.2742308054386369,0.27456148129400904,0.5493941636345997,3.741615731902357,0.774561481294009
+path_source,revisions,727002,115,0.011220720469163798,0.26437001552778955,0.2744329321698974,0.625898930641639,4.03871000826075,0.7744329321698974
+slope_direction,0-10/uphill,146842,127,0.00850423770790065,0.12037740571071574,0.2271795708126012,0.8912342925168817,6.18125217359389,0.7271795708126012
+slope_direction,0-10/downhill,154265,127,0.008108111715895943,0.10249409435965824,0.1890839022797217,0.5369762625059781,6.107140306690866,0.6890839022797217
+slope_direction,0-10/cross_slope,381296,128,0.007374079091809723,0.09510972476400661,0.17835438291089079,0.5652827979877942,6.191381660121408,0.6783543829108908
+slope_direction,0-10/unknown,76844,128,0.26457863618203653,0.2745500769125617,0.2746330188189434,0.5901622156637263,4.944772377470062,0.7746330188189434
+slope_direction,10-20/uphill,2484,74,0.031068343901154566,0.24774911165437327,0.43558685074113584,2.4158772429070576,3.4571076449434655,0.9355868507411358
+slope_direction,10-20/downhill,2430,86,0.10595016033394031,0.5318543218315859,0.6025235601107662,2.6795799207959243,5.040485059438282,1.1025235601107664
+slope_direction,10-20/cross_slope,2953,74,0.13854119814806665,0.5277987336313127,0.8473696953374771,3.0283906119787574,5.2174010996018865,1.347369695337477
+slope_direction,10-20/unknown,488,48,0.03829062933974968,0.1069273862250907,0.12183988211834049,0.2164963450244987,0.3693603805068335,0.6218398821183405
+slope_direction,20-25/uphill,160,10,0.10449576485619796,0.36330278843198205,0.4362547435212175,5.125828786691599,5.191869680564537,0.9362547435212175
+slope_direction,20-25/downhill,55,5,0.8385189346138304,2.8091475894887443,3.0868028138239647,4.1049935794367824,5.059857130485142,3.5868028138239647
+slope_direction,20-25/cross_slope,263,10,0.4498885834190915,1.877364236907857,2.297049938937192,3.391995932127752,3.6975144336576578,2.797049938937192
+slope_direction,>25/uphill,160,5,1.1547176518580535,2.5562327534791778,2.870914567188614,3.1404051892432556,3.2078806035213847,3.370914567188614
+slope_direction,>25/downhill,59,6,2.1410645866454274,3.1046509980284442,4.029594117873679,4.176853258811251,4.205740836723322,4.529594117873679
+slope_direction,>25/cross_slope,655,6,1.2751070032339398,2.1208616784339744,2.2372364928936683,3.215447270141235,3.9519615085686155,2.7372364928936683
+slope_direction,>25/unknown,194,3,1.275359759479912,1.275442685586958,1.2764999688720036,1.280041660780412,1.2842565532440837,1.7764999688720036
+study,gazebo_compare,40658,12,0.0033617633120982216,0.07554672160320308,0.2693947386800293,3.403520080502146,6.191381660121408,0.7693947386800293
+path_source,fixed_mission,42582,13,0.0036562176458474482,0.0870160014540602,0.268741243833843,3.2817736793399774,6.191381660121408,0.768741243833843
+slope_direction,20-25/unknown,197,1,5.057699063705513,5.057699063705513,5.057699063705513,5.058001926003149,5.061493572651699,5.557699063705513
+study,gazebo_lidar,50298,10,0.00906717524589503,0.09412034896452312,0.1870779009422665,0.6237164916107913,1.697414559783965,0.6870779009422665
+slope_direction,unknown/unknown,239,4,0.40057119769714883,0.5993446208757021,0.6175103515422083,0.6897117802932233,1.106987765551021,1.1175103515422085
+study,gazebo_online,90328,20,0.0077615995357729365,0.13055644399717956,0.26741121024094044,0.7861152825037171,4.03871000826075,0.7674112102409405
+study,lidar_fine,92251,14,0.015058323426283684,0.07176123898725473,0.1464837583205401,0.5806270434471987,1.6187845104111611,0.6464837583205401
+study,online_mission,1924,1,0.017898649543142433,0.14151840858081333,0.2604929201790131,0.6913500431747788,0.854071896540836,0.7604929201790132
+study,real_sensors,14427,3,0.012002386085000684,0.12341912859641,0.2274528555260683,0.6336372145364101,0.9152078715687306,0.7274528555260683
+study,rtf_check/divergence,89126,12,0.0062420184013615276,0.09206760348240178,0.19294114509375657,0.7278341591446413,2.1055890183364516,0.6929411450937566
+study,rtf_check/hayashi_first_gazebo_check,16105,3,0.010402926341036386,0.0995837146457997,0.2017553734764069,0.7429748207173944,1.5787244197749313,0.7017553734764069
+study,rtf_check/hayashi_rtf1_check,9637,2,0.012471922843973004,0.10969774312829922,0.24358641434047884,0.6210777772002585,0.8864663738657388,0.7435864143404789
+study,rtf_check/hayashi_rtf_repeat,54986,6,0.006262983496378069,0.08694545626899719,0.16692209346527348,0.6679595223309521,1.8220971879522574,0.6669220934652735
