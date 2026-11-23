@@ -1,0 +1,36 @@
+{
+  "trials": {
+    "cpu": {
+      "patch": "08OB88_-1417",
+      "execution": "finished",
+      "termination": "completed",
+      "renderer": null,
+      "sim_s": 297.03000000000003,
+      "wall_s": 484.58257659804076,
+      "measured_rtf": 0.6129605444860746,
+      "wall_run_gpu_usage": {
+        "0 NVIDIA GeForce RTX 5060 Laptop GPU": {
+          "samples": 448,
+          "median_pct": 0.0,
+          "max_pct": 8.0
+        }
+      }
+    },
+    "gpu": {
+      "error": "unsupported operand type(s) for /: 'PosixPath' and 'NoneType'"
+    }
+  },
+  "nvidia_renderer_confirmed": false,
+  "gpu_over_cpu_rtf": null,
+  "clouds": {
+    "lidar": {
+      "status": "no_paired_trial"
+    },
+    "camera1": {
+      "status": "no_paired_trial"
+    },
+    "camera2": {
+      "status": "no_paired_trial"
+    }
+  }
+}

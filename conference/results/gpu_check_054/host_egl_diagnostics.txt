@@ -1,0 +1,30 @@
+Host GLVND EGL vendor manifests
+/etc/glvnd/egl_vendor.d:
+total 0
+
+/usr/share/glvnd/egl_vendor.d:
+total 8
+-rw-r--r-- 1 root root 107 Aug 25 01:50 10_nvidia.json
+-rw-r--r-- 1 root root 105 Apr 21  2026 50_mesa.json
+/usr/share/glvnd/egl_vendor.d/10_nvidia.json
+{
+    "file_format_version" : "1.0.0",
+    "ICD" : {
+        "library_path" : "libEGL_nvidia.so.0"
+    }
+}
+/usr/share/glvnd/egl_vendor.d/50_mesa.json
+{
+    "file_format_version" : "1.0.0",
+    "ICD" : {
+        "library_path" : "libEGL_mesa.so.0"
+    }
+}
+Toolkit
+/usr/bin/nvidia-ctk
+NVIDIA Container Toolkit CLI version 1.19.1
+commit: 09ceee5dde66ba9ce25c7cc69b1ebd5e6e3266fa
+libnvidia-container1 install ok installed 1.19.1-1
+nvidia-container-toolkit install ok installed 1.19.1-1
+nvidia-container-toolkit-base install ok installed 1.19.1-1
+NVIDIA GeForce RTX 5060 Laptop GPU, 595.99.02

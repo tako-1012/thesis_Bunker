@@ -1,0 +1,8 @@
+T4: 12 rows
+T5: 14 rows
+T6: 14 rows
+F8, F9, T4–T6, numbers_lidar.tex and sources.json: /tmp/tmpzujs92an/archive
+archive PASS: all figures/tables, macros recalculated from source CSVs and exact input hashes
+missing/044 PASS: remaining outputs and missing-input message; common schema extends the figures
+output guard PASS: existing results, pillar-one output and paper paths rejected
+all LiDAR figure tests passed

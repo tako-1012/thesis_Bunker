@@ -1,0 +1,3 @@
+lidar: captured 8 frames
+camera1: captured 8 frames
+camera2: captured 8 frames

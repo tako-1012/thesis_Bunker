@@ -1,0 +1,1 @@
+Stopped 2026-11-23T13:07:53+09:00: selected Ogre2 renderer is llvmpipe; user approval is required for environment changes.
