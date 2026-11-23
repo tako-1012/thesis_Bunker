@@ -7,7 +7,8 @@ import time
 from pathlib import Path
 import numpy as np
 from tapp.config import RESOLUTION
-from tapp.collision import path_lethal_cells, line_of_sight_exact
+from tapp.distance_clearance import connector_clear
+from tapp.collision import path_lethal_cells
 from tapp.online_mission import ordered_tour, virtual_sense
 from tapp.online_safety import SafetyOnlinePlanner, JOIN_TIMEOUT_S, SAFETY_STATES, validate_fixes
 from .online_runtime import AsyncOnlineMission
@@ -98,7 +99,7 @@ class SafetyRuntimeMixin:
             if best is None or distance < best[0]:
                 best = distance, i
         rest = path[best[1]+1:] if best is not None else path[-1:]
-        joined = ([pos]+rest if rest and line_of_sight_exact(blocked, pos, rest[0])
+        joined = ([pos]+rest if rest and connector_clear(planner, blocked, pos, cell, rest[0])
                   else [pos, np.asarray(cell, float)]+rest)
         hits = path_lethal_cells(joined, blocked) if rest else np.empty((0, 2), int)
         if not rest or len(hits):

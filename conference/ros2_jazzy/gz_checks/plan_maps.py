@@ -79,7 +79,7 @@ class PlanMapStore:
                 'lethal', 'known', 'seen', 'detected', 'obstacle_halo', 'prior_raw', 'prior_inflated',
                 'steep', 'steep_halo', 'resolution_m', 'start', 'goal', 'pose', 'version', 'sim_time')}
             for key in ('fine_obstacle', 'fine_resolution_m', 'fine_origin_xy', 'veto_supported', 'relaxed',
-                        'original_goal', 'retained_lethal'):
+                        'original_goal', 'retained_lethal', 'obstacle_cost'):
                 if key in snapshot:
                     record[key] = snapshot[key]
             cost = np.array(snapshot['cost'], dtype=np.float64, copy=True, order='C')

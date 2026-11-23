@@ -21,7 +21,10 @@ from thesis_bunker_gz.lidar import LidarSpec
 from tapp.tracking import TRACKINGS, validate_tracking
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
-from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
+from tapp.pointcloud_map_fine import (
+    FINE_CLEARANCE_MODES, GROUND_ESTIMATES, OBSTACLE_CLEARANCES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES,
+)
+from tapp.distance_clearance import R_HARD, R_SOFT, W_OBS, validate_clearance
 from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
 from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
 from tapp.endpoint_policy import ENDPOINT_POLICIES
@@ -71,7 +74,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
                   waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
-                  pose_trace=False):
+                  pose_trace=False, clearance_soft_m=R_SOFT):
     validate_tracking(tracking)
     if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
         raise ValueError('unknown steep-near-obstacle policy')
@@ -85,10 +88,11 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         raise ValueError('unknown waypoint check')
     if waypoint_check == 'substitute' and endpoint_policy != 'none':
         raise ValueError('waypoint substitution requires --endpoint-policy none')
-    if obstacle_clearance not in OBSTACLE_CLEARANCES:
+    if obstacle_clearance not in FINE_CLEARANCE_MODES:
         raise ValueError('unknown obstacle clearance')
     if obstacle_clearance != 'centre' and map_method != 'fine':
         raise ValueError(f'{obstacle_clearance} obstacle clearance requires --map fine')
+    validate_clearance(obstacle_clearance, clearance_soft_m)
     if real_time_factor is not None:
         if real_time_factor not in (.3, 1.):
             raise ValueError('real-time factor must be 0.3 or 1.0')
@@ -173,7 +177,10 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
             spin_heading_error_deg=float(np.rad2deg(SPIN_ANGLE_RAD))))
     if fine_settings is not None:
         manifest.update(fine_settings)
-    if obstacle_clearance != 'centre':
+    if obstacle_clearance == 'distance':
+        manifest.update(obstacle_clearance=obstacle_clearance, obstacle_inflation='centre hard mask and quadratic distance cost',
+                        distance_clearance=dict(R_hard=R_HARD, R_soft=clearance_soft_m, w_obs=W_OBS))
+    elif obstacle_clearance != 'centre':
         manifest.update(obstacle_clearance=obstacle_clearance,
                         obstacle_inflation='closed fine squares intersecting the 0.5m halo; pool any hit')
     if obstacle_clearance == 'overlap_goal':
@@ -490,6 +497,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                             command.extend(['-p', 'online_fixes:='+manifest['online_fixes']])
                     if manifest.get('obstacle_clearance', 'centre') != 'centre':
                         commands[-1].extend(['-p', 'obstacle_clearance:='+manifest['obstacle_clearance']])
+                    if 'distance_clearance' in manifest:
+                        commands[-1].extend(['-p', 'clearance_soft_m:='+str(manifest['distance_clearance']['R_soft'])])
                     if 'steep_near_obstacle' in manifest:
                         commands[-1].extend(['-p', 'steep_near_obstacle:='+manifest['steep_near_obstacle']])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
@@ -593,7 +602,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 print('Task039 raw results saved; task023 aggregation requires 0.3x:', output)
                 return
             if manifest.get('obstacle_clearance', 'centre') != 'centre':
-                task = '041' if manifest['obstacle_clearance'] == 'overlap' else '052'
+                task = {'overlap': '041', 'overlap_goal': '052', 'distance': '060'}[manifest['obstacle_clearance']]
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError(f'task{task} trial errors; inspect manifest')
                 print(f'Task{task} raw results saved; evaluate obstacle clearance separately:', output)
@@ -663,7 +672,8 @@ def main():
     parser.add_argument('--tracking', choices=TRACKINGS, default='default')
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
     parser.add_argument('--edge-margin-m', type=int, choices=(0, 10), default=0)
-    parser.add_argument('--obstacle-clearance', choices=OBSTACLE_CLEARANCES, default='centre')
+    parser.add_argument('--obstacle-clearance', choices=FINE_CLEARANCE_MODES, default='centre')
+    parser.add_argument('--clearance-soft-m', type=float, default=R_SOFT)
     parser.add_argument('--obstacle-reference', choices=OBSTACLE_REFERENCES, default='prior')
     parser.add_argument('--debris-box-height', choices=DEBRIS_BOX_HEIGHTS, default='plus_half')
     parser.add_argument('--prior-variant', choices=PRIOR_VARIANTS, default='exact', dest='prior_variant_name')
@@ -702,7 +712,7 @@ def main():
             print('Task039 preparation only; task023 aggregation requires 0.3x:', output)
             return
         if manifest.get('obstacle_clearance', 'centre') != 'centre':
-            task = '041' if manifest['obstacle_clearance'] == 'overlap' else '052'
+            task = {'overlap': '041', 'overlap_goal': '052', 'distance': '060'}[manifest['obstacle_clearance']]
             print(f'Task{task} preparation only; Gazebo not executed:', output)
             return
         if manifest.get('edge_margin_m'):

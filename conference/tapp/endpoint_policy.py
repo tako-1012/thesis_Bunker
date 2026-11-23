@@ -51,8 +51,10 @@ def escape_maps(snapshot, policy='escape'):
     raw = raw_mask(snapshot)
     blocked = np.asarray(snapshot['lethal'], bool).copy() | raw
     cost = np.asarray(snapshot['cost'], float).copy()
+    inflated_only = blocked & ~raw
+    if 'distance_hard' in snapshot:
+        inflated_only &= ~snapshot['distance_hard']
     if policy == 'escape_component':
-        inflated_only = blocked & ~raw
         start = tuple(np.asarray(snapshot['start'], int))
         relaxed = np.zeros(blocked.shape, bool)
         if len(start) == 2 and all(0 <= v < n for v, n in zip(start, blocked.shape)) and inflated_only[start]:
@@ -64,13 +66,13 @@ def escape_maps(snapshot, policy='escape'):
     else:
         xy = np.asarray(snapshot['pose'][:2], float)
         x, y = np.ogrid[:blocked.shape[0], :blocked.shape[1]]
-        relaxed = blocked & ~raw & ((x*RESOLUTION-xy[0])**2+(y*RESOLUTION-xy[1])**2 <= START_RADIUS**2+1e-12)
+        relaxed = inflated_only & ((x*RESOLUTION-xy[0])**2+(y*RESOLUTION-xy[1])**2 <= START_RADIUS**2+1e-12)
     maximum = float(cost[~blocked & np.isfinite(cost)].max(initial=1.0))
     cost[relaxed], blocked[relaxed] = maximum, False
     return blocked, cost, relaxed
 
 
-def plan_endpoint(snapshot, policy='none'):
+def plan_endpoint(snapshot, policy='none', *, smooth=smooth_cost_aware):
     if policy not in ENDPOINT_POLICIES:
         raise ValueError('unknown endpoint policy')
     blocked = np.asarray(snapshot['lethal'], bool).copy()
@@ -92,9 +94,11 @@ def plan_endpoint(snapshot, policy='none'):
     else:
         candidates = [goal]
     for candidate in candidates:
+        if 'distance_hard' in snapshot and blocked[candidate]:
+            continue
         result = astar(blocked, start, candidate, cost)
         if result['success']:
-            path, _ = smooth_cost_aware(result['path'], blocked, cost, los=line_of_sight_exact)
+            path, _ = smooth(result['path'], blocked, cost, los=line_of_sight_exact)
             # A rounded start must also have a safe continuous connector.
             pos = np.asarray(snapshot['pose'][:2])/RESOLUTION
             joined = [pos.tolist()]+[list(p) for p in path]
