@@ -1,6 +1,6 @@
 # 指示書 054：研究 PC で、GPU でセンサーを描けるか・1.0 倍が出るかを確かめる（045 の初回確認）
 
-> **状態：実行中（2026-11-23 に研究 PC（チャット：研究PC実行）へ依頼。050 の集計のあとに行う）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない。
+> **状態：保留（GPU 指定でも Mesa で描画。コンテナに NVIDIA の EGL の定義がない。`results/gpu_check_054/REVIEW_ja.md`）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/tasks/045_gpu_rendering.md`（あれば）、
 > `conference/results/gpu_rendering/README_ja.md`（**手順の正本**）・`REPORT_ja.md`・`REVIEW_ja.md`、`conference/results/rtf_compare/REVIEW_B_ja.md` を読むこと。
 > 作業ツリー `~/thesis_Bunker_rtf`、ブランチ `claude/054-gpu-check`（`origin/realtime-map` から）。持ち帰る結果は `conference/results/gpu_check_054/`。

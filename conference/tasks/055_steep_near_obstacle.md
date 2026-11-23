@@ -1,6 +1,6 @@
 # 指示書 055：見つけた障害物の膨らませの中にできた急斜面には、急斜面の膨らませを足さない（`--steep-near-obstacle no_inflate`、選んだときだけ）
 
-> **状態：実行中（2026-11-23 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（Gazebo での評価は、050・054 の結果を見てから別に頼む）。
+> **状態：完了（結果は `results/steep_near_obstacle/`、レビューは `REVIEW_ja.md`。箱への余白が減る心配あり）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（Gazebo での評価は、050・054 の結果を見てから別に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/false_steep_causes/REPORT_ja.md`・`REVIEW_ja.md`・`PROTOCOL_ja.md`・`replay.py`（053、**この指示書の根拠**）、
 > `conference/results/terrain_from_prior/replay.py`（047）、`conference/results/waypoint_feasibility/REPORT_ja.md`（046）、`conference/results/overlap_goal/REVIEW_ja.md`（052）、
 > `tapp/pointcloud_map_fine.py`・`pointcloud_map_multi.py`・`traversability.py` を読むこと。
