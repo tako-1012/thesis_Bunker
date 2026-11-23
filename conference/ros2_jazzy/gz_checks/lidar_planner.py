@@ -34,7 +34,7 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 class LidarPlannerNode(OnlinePlannerNode):
     def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior', online_fixes='none',
                  obstacle_clearance='centre', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
-                 clearance_soft_m=None):
+                 clearance_soft_m=None, ground_near_obstacle='keep'):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         from tapp.distance_clearance import R_SOFT
@@ -45,7 +45,8 @@ class LidarPlannerNode(OnlinePlannerNode):
                               ('obstacle_clearance', obstacle_clearance), ('online_fixes', online_fixes),
                               ('terrain_source', terrain_source), ('save_plan_maps', save_plan_maps),
                               ('steep_near_obstacle', steep_near_obstacle), ('pose_trace_dir', ''),
-                              ('clearance_soft_m', R_SOFT if clearance_soft_m is None else clearance_soft_m)]:
+                              ('clearance_soft_m', R_SOFT if clearance_soft_m is None else clearance_soft_m),
+                              ('ground_near_obstacle', ground_near_obstacle)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -63,6 +64,7 @@ class LidarPlannerNode(OnlinePlannerNode):
         self.mapper = make_pointcloud_map(prior['tmap'].elev, raw_obstacle,
                                     map_method=self.get_parameter('map_method').value, sensors=self.sensor_mode,
                                     ground_estimate=self.get_parameter('ground_estimate').value,
+                                    ground_near_obstacle=self.get_parameter('ground_near_obstacle').value,
                                     obstacle_reference=self.get_parameter('obstacle_reference').value,
                                     obstacle_clearance=self.get_parameter('obstacle_clearance').value,
                                     clearance_soft_m=self.get_parameter('clearance_soft_m').value,
@@ -313,11 +315,12 @@ class LidarPlannerNode(OnlinePlannerNode):
 
 
 def main(args=None):
-    from tapp.pointcloud_map_fine import FINE_CLEARANCE_MODES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
+    from tapp.pointcloud_map_fine import FINE_CLEARANCE_MODES, GROUND_NEAR_OBSTACLE, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
     from tapp.prior_variants import OBSTACLE_REFERENCES
     from tapp.online_safety import ONLINE_FIXES
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default=None)
+    parser.add_argument('--ground-near-obstacle', choices=GROUND_NEAR_OBSTACLE, default=None)
     parser.add_argument('--terrain-source', choices=TERRAIN_SOURCES, default=None)
     parser.add_argument('--steep-near-obstacle', choices=STEEP_NEAR_OBSTACLE, default=None)
     parser.add_argument('--obstacle-clearance', choices=FINE_CLEARANCE_MODES, default=None,

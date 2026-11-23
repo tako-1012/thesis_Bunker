@@ -7,6 +7,7 @@ Collision uses distance to the closed fine-cell square, sampled at coarse
 cell centres by default. Task041 optionally pools fine squares intersecting
 the same radius into their containing coarse cells.
 Task029 optionally excludes obstacle returns from the ground median only.
+Task062 optionally also excludes nearby returns from that median.
 Task047 optionally uses fixed prior terrain for planning and retains the
 fused elevation separately for diagnostics.
 Task048 can add well-supported sensor steep cells to the prior steep mask.
@@ -25,10 +26,19 @@ from .traversability import inflate, slope_deg
 FINE_RESOLUTION = .1
 RATIO = 5
 GROUND_ESTIMATES = ('all_returns', 'non_obstacle')
+GROUND_NEAR_OBSTACLE = ('keep', 'exclude')
+GROUND_EXCLUSION_M = .2
 OBSTACLE_CLEARANCES = ('centre', 'overlap', 'overlap_goal')  # Cohort retained by the 052 replay.
 FINE_CLEARANCE_MODES = (*OBSTACLE_CLEARANCES, 'distance')
 TERRAIN_SOURCES = ('sensor', 'prior', 'prior_veto')
 STEEP_NEAR_OBSTACLE = ('keep', 'no_inflate')
+
+
+def validate_ground_near_obstacle(mode, ground_estimate, *, map_method='fine'):
+    if mode not in GROUND_NEAR_OBSTACLE:
+        raise ValueError('unknown ground-near-obstacle policy')
+    if mode == 'exclude' and (map_method != 'fine' or ground_estimate != 'non_obstacle'):
+        raise ValueError('--ground-near-obstacle exclude requires --map fine and --ground-estimate non_obstacle')
 
 
 def steep_inflation_sources(steep, obstacle_halo, prior_steep=None):
@@ -70,8 +80,9 @@ def _obstacle_disk(radius_m, radius_cells, extra):
 class PointCloudMapFine(_LegacyPointCloudMap):
     def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior',
                  obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep',
-                 clearance_soft_m=R_SOFT, **kwargs):
+                 clearance_soft_m=R_SOFT, ground_near_obstacle='keep', **kwargs):
         validate_clearance(obstacle_clearance, clearance_soft_m)
+        validate_ground_near_obstacle(ground_near_obstacle, ground_estimate)
         if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
             raise ValueError('unknown steep-near-obstacle policy')
         if terrain_source not in TERRAIN_SOURCES:
@@ -84,6 +95,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             raise ValueError('unknown ground estimate')
         super().__init__(*args, **kwargs)
         self.ground_estimate = ground_estimate
+        self.ground_near_obstacle = ground_near_obstacle
         self.obstacle_reference = obstacle_reference
         self.obstacle_clearance = obstacle_clearance
         self.terrain_source = terrain_source
@@ -98,6 +110,10 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self.fine_obstacle = np.zeros(self.fine_shape, bool)
         self.fine_inflated = np.zeros(self.fine_shape, bool)
         self._fine_ids = {}
+        if ground_near_obstacle == 'exclude':
+            self._ground_excluded = np.zeros(self.fine_shape, bool)
+            radius = int(round(GROUND_EXCLUSION_M/FINE_RESOLUTION))
+            self._ground_offsets = np.argwhere(_obstacle_disk(GROUND_EXCLUSION_M, radius, 0))-radius
         self._inflated_coarse = np.zeros(self.prior.shape, bool)
         radius_cells = int(np.ceil(self.robot.footprint_radius/FINE_RESOLUTION))
         # An overlap query is a square, with an extra half cell on each axis.
@@ -338,6 +354,32 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 return steep
         return None
 
+    def _publish_excluded_ground(self, touched):
+        # Detection consumed the unfiltered history. Dirty coarse cells include
+        # those whose old returns are newly covered, even without new samples.
+        dirty = touched
+        if self._last_new_obstacles:
+            new = np.column_stack(np.unravel_index(self._last_new_obstacles, self.fine_shape))
+            halo = (new[:, None]+self._ground_offsets).reshape(-1, 2)
+            halo = halo[((halo >= 0) & (halo < self.fine_shape)).all(axis=1)]
+            halo = halo[~self._ground_excluded[tuple(halo.T)]]
+            self._ground_excluded[tuple(halo.T)] = True
+            affected = np.ravel_multi_index((halo//RATIO).T, self.prior.shape)
+            dirty = np.union1d(touched, affected)
+        updated, heights = [], []
+        for key in dirty.tolist():
+            samples = self.samples.get(key)
+            if samples is None:
+                continue
+            ground = ((samples[:, 1] < self.obstacle_height_m)
+                      & ~self._ground_excluded.flat[self._fine_ids[key]])
+            # As in the existing median, one eligible return suffices.
+            # With none, preserve the previous estimate (initially the prior).
+            if ground.any():
+                updated.append(key)
+                heights.append(np.median(samples[ground, 0]))
+        self._publish(np.asarray(updated, dtype=np.intp), np.asarray(heights), observed=touched)
+
     def _update_prior(self, world, cells, input_points, reference=None):
         with self._update_lock:
             self._last_new_obstacles = []
@@ -401,6 +443,14 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 part = slice(start-base, stop-base)
                 self.samples[key], self._fine_ids[key] = value_batch[part], id_batch[part]
 
+        high_ids = ids[history[:, 1] >= self.obstacle_height_m]
+        unique, totals = np.unique(high_ids, return_counts=True)
+        new = unique[(totals >= self.min_obstacle_points) & ~self.fine_obstacle.flat[unique]].tolist()
+        if self.ground_near_obstacle == 'exclude':
+            self._add_obstacles(new)
+            self._publish_excluded_ground(touched)
+            return
+
         z = history[:, 0]
         lengths = incoming+retained
         groups = np.repeat(np.arange(len(touched)), lengths)
@@ -437,10 +487,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             for key in np.unique(groups[nan_mask]):
                 low[np.searchsorted(occupied, key)] = np.median(z[offsets[key]:offsets[key]+lengths[key]])
         heights[occupied] = low
-        high_ids = ids[history[:, 1] >= self.obstacle_height_m]
-        unique, totals = np.unique(high_ids, return_counts=True)
-        new = unique[(totals >= self.min_obstacle_points) & ~self.fine_obstacle.flat[unique]]
-        self._add_obstacles(new.tolist())
+        self._add_obstacles(new)
         self._publish(touched, heights)
 
     def update(self, sensor_points, pose):

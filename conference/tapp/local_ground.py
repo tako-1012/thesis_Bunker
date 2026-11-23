@@ -88,6 +88,21 @@ def local_planes(support, queries, *, max_grid_cells=5_000_000):
     return np.einsum('ij,ij->i', planes[inverse, :2], displacement)+planes[inverse, 2]
 
 
+def _ground_height(reference, values, centres, lengths, obstacle_height_m):
+    # Group sorted ground heights once, then select the middle return(s)
+    # in each coarse cell. Unknown references leave the prior context.
+    history_groups = np.repeat(np.arange(len(centres)), lengths)
+    ground = np.isfinite(reference) & (values[:, 1] < obstacle_height_m)
+    ground_z, ground_groups = values[ground, 0], history_groups[ground]
+    ground_order = np.lexsort((ground_z, ground_groups))
+    groups, offsets, counts = np.unique(ground_groups[ground_order], return_index=True, return_counts=True)
+    height = centres.copy()
+    low = ground_z[ground_order[offsets+(counts-1)//2]]
+    high = ground_z[ground_order[offsets+counts//2]]
+    height[groups] = (low+high)/2
+    return height
+
+
 def _fit_planes(points, row, n):
     """Batched centred least squares, with SVD for ill-conditioned windows."""
     def total(values):
@@ -165,25 +180,17 @@ def update_local(mapper, sensor_points, pose):
                 mapper.samples[int(key)] = values[start:end].copy()
                 mapper._fine_ids[int(key)] = fine_ids[start:end].copy()
 
-            # Group sorted ground heights once, then select the middle return(s)
-            # in each coarse cell. Unknown references leave the prior context.
-            history_groups = np.repeat(np.arange(len(touched)), np.diff(starts))
-            ground = np.isfinite(reference) & (values[:, 1] < mapper.obstacle_height_m)
-            ground_z, ground_groups = values[ground, 0], history_groups[ground]
-            ground_order = np.lexsort((ground_z, ground_groups))
-            groups, offsets, counts = np.unique(ground_groups[ground_order],
-                                                return_index=True, return_counts=True)
-            height = reference_all[-len(touched):].copy()
-            low = ground_z[ground_order[offsets+(counts-1)//2]]
-            high = ground_z[ground_order[offsets+counts//2]]
-            height[groups] = (low+high)/2
-            known = np.isfinite(height)
-
             high_ids = fine_ids[values[:, 1] >= mapper.obstacle_height_m]
             unique, counts = np.unique(high_ids, return_counts=True)
             new = unique[(counts >= mapper.min_obstacle_points) & ~mapper.fine_obstacle.flat[unique]]
             mapper._add_obstacles(new.tolist())
-            mapper._publish(touched[known], height[known], observed=touched)
+            if getattr(mapper, 'ground_near_obstacle', 'keep') == 'exclude':
+                mapper._publish_excluded_ground(touched)
+            else:
+                height = _ground_height(reference, values, reference_all[-len(touched):], np.diff(starts),
+                                        mapper.obstacle_height_m)
+                known = np.isfinite(height)
+                mapper._publish(touched[known], height[known], observed=touched)
         with mapper._lock:
             result = dict(version=mapper.version, input_points=len(points), accepted_points=len(cells),
                           observed_cells=int(mapper.seen.sum()))

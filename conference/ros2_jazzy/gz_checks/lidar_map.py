@@ -3,13 +3,18 @@
 import os
 from tapp.pointcloud_map import PointCloudMap
 from tapp.distance_clearance import R_SOFT, validate_clearance
-from tapp.pointcloud_map_fine import GROUND_ESTIMATES, FINE_CLEARANCE_MODES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
+from tapp.pointcloud_map_fine import (
+    FINE_CLEARANCE_MODES, GROUND_ESTIMATES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES, validate_ground_near_obstacle,
+)
 
 
 def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', obstacle_reference='prior',
                         obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep',
-                        clearance_soft_m=R_SOFT, **kwargs):
+                        clearance_soft_m=R_SOFT, ground_near_obstacle='keep', **kwargs):
     validate_clearance(obstacle_clearance, clearance_soft_m)
+    validate_ground_near_obstacle(ground_near_obstacle, ground_estimate, map_method=map_method)
+    if ground_near_obstacle == 'exclude':
+        kwargs['ground_near_obstacle'] = ground_near_obstacle
     if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
         raise ValueError('unknown steep-near-obstacle policy')
     if steep_near_obstacle != 'keep':
