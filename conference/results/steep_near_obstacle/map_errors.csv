@@ -1,0 +1,6 @@
+patch,maps,observed,suppressed_steep_sources,keep_miss_steep,no_inflate_miss_steep,delta_miss_steep,keep_miss_halo_only,no_inflate_miss_halo_only,delta_miss_halo_only,keep_miss_steep_or_halo,no_inflate_miss_steep_or_halo,delta_miss_steep_or_halo,keep_miss_steep_map,no_inflate_miss_steep_map,delta_miss_steep_map,keep_miss_steep_or_halo_map,no_inflate_miss_steep_or_halo_map,delta_miss_steep_or_halo_map,keep_fp_steep_023,no_inflate_fp_steep_023,delta_fp_steep_023,keep_fp_blocked_023,no_inflate_fp_blocked_023,delta_fp_blocked_023,keep_fp_steep_same_clearance,no_inflate_fp_steep_same_clearance,delta_fp_steep_same_clearance,keep_fp_blocked_same_clearance,no_inflate_fp_blocked_same_clearance,delta_fp_blocked_same_clearance
+all,14,608700,1686,118,118,0,893,893,0,1011,1011,0,151,151,0,1176,1176,0,5803,4468,-1335,9561,8640,-921,2926,1591,-1335,6684,5763,-921
+08OB88_-0167,4,231272,332,61,61,0,636,636,0,697,697,0,73,73,0,764,764,0,2942,2637,-305,4487,4271,-216,700,395,-305,2245,2029,-216
+08OB88_-1417,1,24106,56,0,0,0,0,0,0,0,0,0,3,3,0,17,17,0,96,43,-53,243,207,-36,96,43,-53,243,207,-36
+08OB89_-0347,6,265011,606,57,57,0,257,257,0,314,314,0,69,69,0,368,368,0,1780,1273,-507,3181,2842,-339,1145,638,-507,2546,2207,-339
+08OB89_-0847,3,88311,692,0,0,0,0,0,0,0,0,0,6,6,0,27,27,0,985,515,-470,1650,1320,-330,985,515,-470,1650,1320,-330

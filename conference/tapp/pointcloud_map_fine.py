@@ -26,6 +26,15 @@ RATIO = 5
 GROUND_ESTIMATES = ('all_returns', 'non_obstacle')
 OBSTACLE_CLEARANCES = ('centre', 'overlap', 'overlap_goal')
 TERRAIN_SOURCES = ('sensor', 'prior', 'prior_veto')
+STEEP_NEAR_OBSTACLE = ('keep', 'no_inflate')
+
+
+def steep_inflation_sources(steep, obstacle_halo, prior_steep=None):
+    """Exclude covered sensor slopes from inflation while retaining prior seeds."""
+    sources = steep & ~obstacle_halo
+    if prior_steep is not None:
+        sources |= prior_steep
+    return sources
 
 
 def veto_steep(prior_steep, elev, supported, max_slope_deg):
@@ -58,7 +67,9 @@ def _obstacle_disk(radius_m, radius_cells, extra):
 
 class PointCloudMapFine(_LegacyPointCloudMap):
     def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior',
-                 obstacle_clearance='centre', terrain_source='sensor', **kwargs):
+                 obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep', **kwargs):
+        if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
+            raise ValueError('unknown steep-near-obstacle policy')
         if terrain_source not in TERRAIN_SOURCES:
             raise ValueError('unknown terrain source')
         if obstacle_clearance not in OBSTACLE_CLEARANCES:
@@ -72,6 +83,9 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self.obstacle_reference = obstacle_reference
         self.obstacle_clearance = obstacle_clearance
         self.terrain_source = terrain_source
+        self.steep_near_obstacle = steep_near_obstacle
+        if steep_near_obstacle == 'no_inflate' and terrain_source != 'prior':
+            self._steep_sources = self.tm.steep
         if obstacle_reference == 'local':
             self._local_points = {}
         if self.obstacle_height_m != .3 or self.min_obstacle_points != 3 or self.robot.footprint_radius != .5:
@@ -142,7 +156,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                          for a, b in zip(coarse_lo, coarse_hi))
             self._inflated_coarse[coarse] = self.fine_inflated[fine]
 
-    def planning_seen(self, seen):
+    def planning_seen(self, seen, *, known=None):
         """Give the planner inferred hazards without changing measured coverage.
 
         The caller holds the update lock so the halo matches the snapshot.
@@ -150,23 +164,26 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         if self.terrain_source != 'sensor':
             # The soft prior would otherwise allow unobserved steep cells.
             seen = seen | self._dilated_steep
+            if self.steep_near_obstacle == 'no_inflate' and self.terrain_source == 'prior_veto' and known is not None:
+                # Overwrite earlier inferred halo cells if the sensor veto retracts.
+                seen |= known
         if self.obstacle_clearance != 'centre':
             return seen | self._inflated_coarse
         return seen
 
-    def planning_snapshot(self):
+    def planning_snapshot(self, *, known=None):
         if self.obstacle_clearance == 'centre' and self.terrain_source == 'sensor':
             return self.snapshot()
         with self._update_lock:
-            return self._planning_snapshot_locked()
+            return self._planning_snapshot_locked(known)
 
-    def _planning_snapshot_locked(self):
+    def _planning_snapshot_locked(self, known):
         seen, cost, lethal = self.snapshot()
-        return self.planning_seen(seen), cost, lethal
+        return self.planning_seen(seen, known=known), cost, lethal
 
-    def planning_goal_snapshot(self, cells):
+    def planning_goal_snapshot(self, cells, *, known=None):
         with self._update_lock:
-            return self._planning_snapshot_locked(), self.goal_obstacle_overrides(cells)
+            return self._planning_snapshot_locked(known), self.goal_obstacle_overrides(cells)
 
     def goal_obstacle_overrides(self, cells):
         """For each affected endpoint, return whether rock or steepness still blocks it.
@@ -215,6 +232,28 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         np.sqrt(square, out=rough[rows])
         return rough
 
+    def _refresh_steep_halo(self, steep):
+        # overlap_goal stores the overlap map here; its endpoint exception
+        # is applied to the obstacle layer by the planner.
+        sources = steep_inflation_sources(steep, self._inflated_coarse, getattr(self, '_prior_steep', None))
+        changed = np.asarray(np.nonzero(sources ^ self._steep_sources))
+        if not changed.size:
+            return
+        # One radius bounds affected outputs. A second supplies the unchanged
+        # sources that can still reach those outputs, including at map edges.
+        radius = self.robot.footprint_radius
+        cells = int(np.ceil(radius/RESOLUTION))
+        lo = np.maximum(changed.min(axis=1)-cells, 0)
+        hi = np.minimum(changed.max(axis=1)+1+cells, sources.shape)
+        start = np.maximum(lo-cells, 0)
+        stop = np.minimum(hi+cells, sources.shape)
+        region = tuple(slice(a, b) for a, b in zip(lo, hi))
+        inputs = tuple(slice(a, b) for a, b in zip(start, stop))
+        core = tuple(slice(a, b) for a, b in zip(lo-start, hi-start))
+        halo = self._dilated_steep.copy()
+        halo[region] = inflate(sources[inputs], radius)[core]
+        self._dilated_steep, self._steep_sources = halo, sources
+
     def _publish(self, touched, heights, *, observed=None):
         # Keep old snapshots valid. Reuse the elevation and its derived
         # fields when the written heights have identical bits (including -0).
@@ -253,8 +292,6 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 tm.slope[region] = np.degrees(np.arctan(np.hypot(gx[core], gy[core])))
                 tm.rough = self._update_roughness(tm.elev, lo, hi)
                 tm.steep = tm.slope > self.robot.max_slope_deg
-                if not np.array_equal(tm.steep, self.tm.steep):
-                    self._dilated_steep = inflate(tm.steep, self.robot.footprint_radius)
                 slope = tm.slope / self.robot.max_slope_deg
                 rough = tm.rough / self.robot.rough_sat
                 np.clip(slope, 0, 1, out=slope)
@@ -262,7 +299,10 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 tm.cost = self.weights.alpha * slope + self.weights.beta * rough
             if steep is not None:
                 tm.steep = steep
-                self._dilated_steep = inflate(steep, self.robot.footprint_radius)
+            if self.steep_near_obstacle == 'no_inflate' and self.terrain_source != 'prior':
+                self._refresh_steep_halo(tm.steep)
+            elif steep is not None or (update_terrain and not np.array_equal(tm.steep, self.tm.steep)):
+                self._dilated_steep = inflate(tm.steep, self.robot.footprint_radius)
             if self._last_new_obstacles:
                 tm.rock = self._prior_rock | self._inflated_coarse
             tm.lethal = tm.rock | tm.steep

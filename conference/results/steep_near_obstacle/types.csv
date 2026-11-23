@@ -1,0 +1,10 @@
+type,raw_false_steep,suppressed_false_sources,lost_fp_steep_in_source_halo,freed_fp_in_source_halo
+box_near,1633,1435,1319,913
+sparse_first_lidar,206,159,147,99
+near_slope_limit,368,17,6,2
+high_truth_relief,372,2,1,0
+sea_or_nodata_near,1,0,0,0
+any_053_type,2007,1435,1319,913
+no_053_type,33,0,0,0
+any_false_source,2040,1435,1319,913
+outside_053_false_sources_only,,,16,8

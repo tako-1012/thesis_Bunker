@@ -21,7 +21,7 @@ from thesis_bunker_gz.lidar import LidarSpec
 from tapp.tracking import TRACKINGS, validate_tracking
 from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
-from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES, TERRAIN_SOURCES
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
 from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
 from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
 from tapp.endpoint_policy import ENDPOINT_POLICIES
@@ -70,8 +70,12 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   ground_estimate='all_returns', scenarios=None, selected_patches=None,
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
-                  waypoint_check='none', terrain_source='sensor', save_plan_maps=False):
+                  waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep'):
     validate_tracking(tracking)
+    if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
+        raise ValueError('unknown steep-near-obstacle policy')
+    if steep_near_obstacle != 'keep' and map_method != 'fine':
+        raise ValueError('--steep-near-obstacle no_inflate requires --map fine')
     if terrain_source not in TERRAIN_SOURCES:
         raise ValueError('unknown terrain source')
     if terrain_source != 'sensor' and map_method != 'fine':
@@ -173,6 +177,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                         obstacle_inflation='closed fine squares intersecting the 0.5m halo; pool any hit')
     if obstacle_clearance == 'overlap_goal':
         manifest['obstacle_inflation'] += '; active goal uses its coarse centre'
+    if steep_near_obstacle != 'keep':
+        manifest['steep_near_obstacle'] = steep_near_obstacle
     if configuration is not None:
         manifest.update(sensor=sensors, sensors=sensors, sensor_configuration=configuration,
                         experiment='task027 real sensors; not a matched task022/023 sensor comparison')
@@ -226,6 +232,10 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         manifest.update(terrain_source=terrain_source,
                         planning_terrain='prior cost and steep mask plus supported sensor steep cells, inflated together; elev records sensor fusion',
                         terrain_veto_support='retained returns per observed coarse cell >= ceil(samples_per_cell / 2)')
+        if steep_near_obstacle == 'no_inflate':
+            manifest['planning_terrain'] = ('prior cost and steep mask plus supported sensor steep cells. '
+                                            'Sensor-only steep cells inside obstacle inflation do not seed slope inflation. '
+                                            'Elev records sensor fusion.')
     if save_plan_maps:
         from ros2_jazzy.gz_checks.plan_maps import LIMIT_BYTES
         manifest.update(save_plan_maps=True, plan_map_limit_bytes=LIMIT_BYTES)
@@ -456,6 +466,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                             command.extend(['-p', 'online_fixes:='+manifest['online_fixes']])
                     if manifest.get('obstacle_clearance', 'centre') != 'centre':
                         commands[-1].extend(['-p', 'obstacle_clearance:='+manifest['obstacle_clearance']])
+                    if 'steep_near_obstacle' in manifest:
+                        commands[-1].extend(['-p', 'steep_near_obstacle:='+manifest['steep_near_obstacle']])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
                         commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
                     if gpu:
@@ -517,6 +529,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if 'steep_near_obstacle' in manifest:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task055 trial errors; inspect manifest')
+                print('Task055 raw results saved; evaluate steep inflation separately:', output)
+                return
             if 'terrain_source' in manifest:
                 task = '047' if manifest['terrain_source'] == 'prior' else '048'
                 if manifest['execution'] == 'finished_with_errors':
@@ -609,6 +626,7 @@ def main():
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
     parser.add_argument('--terrain-source', choices=TERRAIN_SOURCES, default='sensor')
+    parser.add_argument('--steep-near-obstacle', choices=STEEP_NEAR_OBSTACLE, default='keep')
     parser.add_argument('--waypoint-check', choices=('none', 'substitute'), default='none')
     parser.add_argument('--tracking', choices=TRACKINGS, default='default')
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
@@ -625,6 +643,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if 'steep_near_obstacle' in manifest:
+            print('Task055 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('save_plan_maps'):
             print('Task051 preparation only; Gazebo not executed:', output)
             return
