@@ -1,0 +1,14 @@
+study,run,intervals,total_near_duration_s,run_min_box_m,reason
+050,results/eval_050/runs/08OB86_-0205/S_r2/physical_1/raw/08OB86_-0205,1,0.318545369576723,0.4378443321333525,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB86_-0205/S_r3/physical_1/raw/08OB86_-0205,1,0.4000862915467271,0.43373892788114854,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB88_00332/P_r1/physical_1/raw/08OB88_00332,1,0.6526174936733381,0.4200124546323991,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB88_00332/P_r2/physical_1/raw/08OB88_00332,10,3.0668432370523755,0.4108194812538031,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB88_00332/P_r3/physical_1/raw/08OB88_00332,1,0.6761271609601505,0.4533571384061865,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB88_00332/V_r1/physical_1/raw/08OB88_00332,1,0.4962644419574308,0.46946562540111714,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB88_00332/V_r2/physical_1/raw/08OB88_00332,1,0.7504837733895305,0.42275128034544807,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB88_00332/V_r3/physical_1/raw/08OB88_00332,1,0.6645250065607217,0.4393068159974014,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB89_-0847/P_r2/physical_1/raw/08OB89_-0847,1,0.21030592379394916,0.4945126393104832,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB89_-0847/P_r3/physical_1/raw/08OB89_-0847,1,0.2822357199000089,0.46368719816392256,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB89_-0847/S_r1/physical_1/raw/08OB89_-0847,1,0.4400681254692599,0.4797316500701984,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB89_-0847/S_r2/physical_1/raw/08OB89_-0847,1,0.5992529951889912,0.41797652178462386,event trajectory or active polyline not committed
+050,results/eval_050/runs/08OB89_-0847/S_r3/physical_1/raw/08OB89_-0847,1,0.5384423578738868,0.46061036939221883,event trajectory or active polyline not committed
