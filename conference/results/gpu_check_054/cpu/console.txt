@@ -1,0 +1,9 @@
+8.11.0
+Starting >>> thesis_bunker_mission
+Finished <<< thesis_bunker_mission [0.54s]
+Starting >>> thesis_bunker_gz
+Finished <<< thesis_bunker_gz [0.53s]
+
+Summary: 2 packages finished [1.13s]
+08OB88_-1417 completed
+Task039 raw results saved; task023 aggregation requires 0.3x: /output

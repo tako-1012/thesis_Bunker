@@ -1,0 +1,58 @@
+Dynamic loader
+	libnvidia-tls.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-tls.so.595.99.02
+	libnvidia-tileiras.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-tileiras.so.595.99.02
+	libnvidia-rtcore.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-rtcore.so.595.99.02
+	libnvidia-ptxjitcompiler.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.1
+	libnvidia-pkcs11.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11.so.595.99.02
+	libnvidia-pkcs11-openssl3.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11-openssl3.so.595.99.02
+	libnvidia-opticalflow.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-opticalflow.so.1
+	libnvidia-opencl.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-opencl.so.1
+	libnvidia-nvvm.so.4 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-nvvm.so.4
+	libnvidia-ngx.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-ngx.so.1
+	libnvidia-ml.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1
+	libnvidia-gpucomp.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-gpucomp.so.595.99.02
+	libnvidia-glvkspirv.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-glvkspirv.so.595.99.02
+	libnvidia-glsi.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-glsi.so.595.99.02
+	libnvidia-glcore.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-glcore.so.595.99.02
+	libnvidia-fbc.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-fbc.so.1
+	libnvidia-encode.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.1
+	libnvidia-eglcore.so.595.99.02 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-eglcore.so.595.99.02
+	libnvidia-cfg.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-cfg.so.1
+	libnvidia-allocator.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libnvidia-allocator.so.1
+	libOpenGL.so.0 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libOpenGL.so.0
+	libOpenGL.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libOpenGL.so
+	libGLX_nvidia.so.0 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libGLX_nvidia.so.0
+	libGLX_mesa.so.0 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0
+	libGLX.so.0 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libGLX.so.0
+	libGLX.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libGLX.so
+	libEGL_nvidia.so.0 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libEGL_nvidia.so.0
+	libEGL_mesa.so.0 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0
+	libEGL.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libEGL.so.1
+	libEGL.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libEGL.so
+GLVND EGL vendor manifests
+/etc/glvnd/egl_vendor.d:
+total 0
+
+/usr/share/glvnd/egl_vendor.d:
+total 4
+-rw-r--r-- 1 root root 105 Apr 21  2026 50_mesa.json
+/usr/share/glvnd/egl_vendor.d/50_mesa.json
+{
+    "file_format_version" : "1.0.0",
+    "ICD" : {
+        "library_path" : "libEGL_mesa.so.0"
+    }
+}
+EGL and GLVND package status
+libegl-mesa0 install ok installed 25.2.8-0ubuntu0.24.04.2
+libegl1 install ok installed 1.7.0-1build1
+libglvnd0 install ok installed 1.7.0-1build1
+libglx0 install ok installed 1.7.0-1build1
+libopengl0 install ok installed 1.7.0-1build1
+GPU devices
+ls: cannot access '/dev/dri': No such file or directory
+crw-rw-rw- 1 root root 195, 254 Nov  9 15:28 /dev/nvidia-modeset
+crw-rw-rw- 1 root root 506,   0 Nov  9 15:28 /dev/nvidia-uvm
+crw-rw-rw- 1 root root 506,   1 Nov  9 15:28 /dev/nvidia-uvm-tools
+crw-rw-rw- 1 root root 195,   0 Nov  9 15:28 /dev/nvidia0
+crw-rw-rw- 1 root root 195, 255 Nov  9 15:28 /dev/nvidiactl
