@@ -1,6 +1,6 @@
 # 指示書 061：経路の追従のずれを、直進・曲がる所・斜面・箱の近くに分けて数え、余白の幅の根拠にする（分析だけ）
 
-> **状態：実行中（2026-11-23 にクラウドの Codex（研究実装2）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（コミットされた記録と Python だけ）。
+> **状態：完了（レビューは結果のフォルダの `REVIEW_ja.md`）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（コミットされた記録と Python だけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/research/literature_check_ja.md`、`conference/tasks/043_path_tracking.md`・`results/path_tracking/REVIEW_ja.md`（043）、
 > `conference/results/eval_044/REPORT_ja.md`・`results/eval_050/REPORT_ja.md`、`conference/results/common_eval/REPORT_ja.md`・`experiments/eval_runs.py`（ずれの計算）、`conference/tasks/060_distance_clearance.md` を読むこと。
 > ブランチは `codex/061-tracking-error`（その時点の `realtime-map` の最新から）。結果は `conference/results/tracking_error/`、報告は同じ場所の `REPORT_ja.md`。

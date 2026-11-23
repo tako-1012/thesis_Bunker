@@ -1,6 +1,6 @@
 # 指示書 060：障害物の余白を「障害物までの距離」で作り、地形とは切り離す（`--obstacle-clearance distance`、選んだときだけ）
 
-> **状態：実行中（2026-11-23 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで別に頼む）。
+> **状態：完了（レビューは結果のフォルダの `REVIEW_ja.md`）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで別に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/research/literature_check_ja.md`（文献の確かめ）、
 > `conference/results/eval_050/REVIEW_ja.md`・`results/false_steep_causes/REVIEW_ja.md`（053）・`results/steep_near_obstacle/REVIEW_ja.md`（055）・`results/overlap_goal/REVIEW_ja.md`（052）・`results/obstacle_clearance/REPORT_ja.md`（041）、
 > `tapp/pointcloud_map_fine.py`・`pointcloud_map_multi.py`・`tapp/online_mission.py`・`tapp/collision.py`・`tapp/endpoint_policy.py`（`smooth_cost_aware`）・`tapp/obstacle_clearance.py` を読むこと。
