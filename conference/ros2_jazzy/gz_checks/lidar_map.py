@@ -2,11 +2,14 @@
 
 import os
 from tapp.pointcloud_map import PointCloudMap
-from tapp.pointcloud_map_fine import GROUND_ESTIMATES, OBSTACLE_CLEARANCES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
+from tapp.distance_clearance import R_SOFT, validate_clearance
+from tapp.pointcloud_map_fine import GROUND_ESTIMATES, FINE_CLEARANCE_MODES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
 
 
 def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', obstacle_reference='prior',
-                        obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep', **kwargs):
+                        obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep',
+                        clearance_soft_m=R_SOFT, **kwargs):
+    validate_clearance(obstacle_clearance, clearance_soft_m)
     if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
         raise ValueError('unknown steep-near-obstacle policy')
     if steep_near_obstacle != 'keep':
@@ -20,12 +23,14 @@ def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_est
             raise ValueError(f'{terrain_source} terrain source requires --map fine')
         kwargs['terrain_source'] = terrain_source
     from tapp.prior_variants import OBSTACLE_REFERENCES
-    if obstacle_clearance not in OBSTACLE_CLEARANCES:
+    if obstacle_clearance not in FINE_CLEARANCE_MODES:
         raise ValueError('unknown obstacle clearance')
     if obstacle_clearance != 'centre':
         if map_method != 'fine':
             raise ValueError(f'{obstacle_clearance} obstacle clearance requires --map fine')
         kwargs['obstacle_clearance'] = obstacle_clearance
+    if obstacle_clearance == 'distance':
+        kwargs['clearance_soft_m'] = clearance_soft_m
     if obstacle_reference not in OBSTACLE_REFERENCES:
         raise ValueError('unknown obstacle reference')
     if obstacle_reference != 'prior':

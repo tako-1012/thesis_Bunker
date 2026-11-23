@@ -18,13 +18,15 @@ import numpy as np
 from scipy.ndimage import binary_dilation, gaussian_filter, map_coordinates, uniform_filter1d
 
 from .config import RESOLUTION
+from .distance_clearance import DistanceField, R_SOFT, validate_clearance
 from .pointcloud_map import PointCloudMap as _LegacyPointCloudMap, transform_points
 from .traversability import inflate, slope_deg
 
 FINE_RESOLUTION = .1
 RATIO = 5
 GROUND_ESTIMATES = ('all_returns', 'non_obstacle')
-OBSTACLE_CLEARANCES = ('centre', 'overlap', 'overlap_goal')
+OBSTACLE_CLEARANCES = ('centre', 'overlap', 'overlap_goal')  # Cohort retained by the 052 replay.
+FINE_CLEARANCE_MODES = (*OBSTACLE_CLEARANCES, 'distance')
 TERRAIN_SOURCES = ('sensor', 'prior', 'prior_veto')
 STEEP_NEAR_OBSTACLE = ('keep', 'no_inflate')
 
@@ -67,12 +69,14 @@ def _obstacle_disk(radius_m, radius_cells, extra):
 
 class PointCloudMapFine(_LegacyPointCloudMap):
     def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior',
-                 obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep', **kwargs):
+                 obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep',
+                 clearance_soft_m=R_SOFT, **kwargs):
+        validate_clearance(obstacle_clearance, clearance_soft_m)
         if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
             raise ValueError('unknown steep-near-obstacle policy')
         if terrain_source not in TERRAIN_SOURCES:
             raise ValueError('unknown terrain source')
-        if obstacle_clearance not in OBSTACLE_CLEARANCES:
+        if obstacle_clearance not in FINE_CLEARANCE_MODES:
             raise ValueError('unknown obstacle clearance')
         if obstacle_reference not in ('prior', 'local'):
             raise ValueError('unknown obstacle reference')
@@ -97,7 +101,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self._inflated_coarse = np.zeros(self.prior.shape, bool)
         radius_cells = int(np.ceil(self.robot.footprint_radius/FINE_RESOLUTION))
         # An overlap query is a square, with an extra half cell on each axis.
-        overlap = obstacle_clearance != 'centre'
+        overlap = obstacle_clearance in ('overlap', 'overlap_goal')
         self._radius_cells = radius_cells + int(overlap)
         self._disk = _obstacle_disk(self.robot.footprint_radius, self._radius_cells, 2 if overlap else 1)
         if obstacle_clearance == 'overlap_goal':
@@ -106,6 +110,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self._prior_rock = self.tm.rock.copy()
         self._last_new_obstacles = []
         self._disk_offsets = np.argwhere(self._disk) - self._radius_cells
+        if obstacle_clearance == 'distance':
+            self.distance_field = DistanceField(self.prior.shape, FINE_RESOLUTION, RATIO, clearance_soft_m)
         if terrain_source == 'sensor':
             self._residual = self.elev - gaussian_filter(self.elev, sigma=1.5)
             self._rough_mean_x = uniform_filter1d(self._residual, 3, axis=0)
@@ -125,6 +131,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         cells = np.column_stack(np.unravel_index(keys, self.fine_shape))
         self.fine_obstacle[tuple(cells.T)] = True
         self.detected_obstacle[tuple((cells//RATIO).T)] = True
+        if self.obstacle_clearance == 'distance':
+            self.distance_field.add(cells)
         lo = np.maximum(cells.min(axis=0)-self._radius_cells, 0)
         hi = np.minimum(cells.max(axis=0)+self._radius_cells+1, self.fine_shape)
         if len(cells)*len(self._disk_offsets) < np.prod(hi-lo):
@@ -133,7 +141,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             halo = (cells[:, None]+self._disk_offsets).reshape(-1, 2)
             halo = halo[((halo >= 0) & (halo < self.fine_shape)).all(axis=1)]
             self.fine_inflated[tuple(halo.T)] = True
-            if self.obstacle_clearance == 'centre':
+            if self.obstacle_clearance in ('centre', 'distance'):
                 halo = halo[(halo % RATIO == RATIO//2).all(axis=1)]
             self._inflated_coarse[tuple((halo//RATIO).T)] = True
         else:
@@ -141,7 +149,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             seeds[tuple((cells-lo).T)] = True
             region = tuple(slice(int(a), int(b)) for a, b in zip(lo, hi))
             self.fine_inflated[region] |= binary_dilation(seeds, structure=self._disk)
-            if self.obstacle_clearance != 'centre':
+            if self.obstacle_clearance in ('overlap', 'overlap_goal'):
                 # Include whole coarse cells intersecting the changed fine region.
                 coarse_lo, coarse_hi = lo//RATIO, (hi+RATIO-1)//RATIO
                 coarse = tuple(slice(a, b) for a, b in zip(coarse_lo, coarse_hi))
@@ -167,7 +175,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             if self.steep_near_obstacle == 'no_inflate' and self.terrain_source == 'prior_veto' and known is not None:
                 # Overwrite earlier inferred halo cells if the sensor veto retracts.
                 seen |= known
-        if self.obstacle_clearance != 'centre':
+        if self.obstacle_clearance in ('overlap', 'overlap_goal'):
             return seen | self._inflated_coarse
         return seen
 
@@ -179,7 +187,13 @@ class PointCloudMapFine(_LegacyPointCloudMap):
 
     def _planning_snapshot_locked(self, known):
         seen, cost, lethal = self.snapshot()
+        if self.obstacle_clearance == 'distance':
+            cost = cost+self.distance_field.cost
         return self.planning_seen(seen, known=known), cost, lethal
+
+    def planning_distance_snapshot(self, *, known=None):
+        with self._update_lock:
+            return self._planning_snapshot_locked(known), self.distance_field.geometry()
 
     def planning_goal_snapshot(self, cells, *, known=None):
         with self._update_lock:
