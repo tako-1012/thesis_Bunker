@@ -74,7 +74,10 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
                   waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
-                  pose_trace=False, clearance_soft_m=R_SOFT):
+                  pose_trace=False, clearance_soft_m=R_SOFT, goal_region='none'):
+    from tapp.goal_region import RING_RADIUS_M, validate_goal_region
+
+    validate_goal_region(goal_region, endpoint_policy)
     validate_tracking(tracking)
     if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
         raise ValueError('unknown steep-near-obstacle policy')
@@ -251,6 +254,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if pose_trace:
         from tapp.pose_trace import TRACE_LIMIT_BYTES
         manifest.update(pose_trace=True, pose_trace_limit_bytes=TRACE_LIMIT_BYTES)
+    if goal_region != 'none':
+        manifest.update(goal_region=goal_region, goal_region_radius_m=RING_RADIUS_M)
     save_manifest(output, manifest)
     return manifest
 
@@ -480,6 +485,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                                              '-p', 'diagnostics:='+str(manifest['diagnostics']).lower()])
                     if manifest.get('save_plan_maps'):
                         commands[-1].extend(['-p', 'save_plan_maps:=true'])
+                    if manifest.get('goal_region') == 'ring':
+                        commands[-1].extend(['-p', 'goal_region:=ring'])
                     if trace_enabled:
                         parameter = 'pose_trace_dir:='+str(raw/'pose_trace')
                         for command in commands[-2:]:
@@ -565,6 +572,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if manifest.get('goal_region') == 'ring':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task063 trial errors; inspect manifest')
+                print('Task063 raw results saved; evaluate goal-region outcomes separately:', output)
+                return
             if trace_enabled:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task058 trial errors; inspect manifest')
@@ -654,6 +666,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
 
 
 def main():
+    from tapp.goal_region import GOAL_REGIONS
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT/'results/gazebo_lidar/physical_3')
     parser.add_argument('--patch-count', type=int, choices=[3, 10], default=3)
@@ -678,6 +692,7 @@ def main():
     parser.add_argument('--debris-box-height', choices=DEBRIS_BOX_HEIGHTS, default='plus_half')
     parser.add_argument('--prior-variant', choices=PRIOR_VARIANTS, default='exact', dest='prior_variant_name')
     parser.add_argument('--endpoint-policy', choices=ENDPOINT_POLICIES, default='none')
+    parser.add_argument('--goal-region', choices=GOAL_REGIONS, default='none')
     parser.add_argument('--diagnostics', action='store_true')
     parser.add_argument('--save-plan-maps', action='store_true')
     parser.add_argument('--pose-trace', action='store_true')
@@ -686,6 +701,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if manifest.get('goal_region') == 'ring':
+            print('Task063 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('pose_trace'):
             print('Task058 preparation only; Gazebo not executed:', output)
             return

@@ -47,14 +47,26 @@ class SafetyDiagnosticRuntime(SafetyLidarMixin, EndpointRuntime):
         return super()._plan_work(state, position)
 
 
-def make_safety_lidar_runtime(prior, mapper, *, online_fixes='none', **kwargs):
+def make_safety_lidar_runtime(prior, mapper, *, online_fixes='none', goal_region='none', **kwargs):
+    from tapp.goal_region import validate_goal_region
+
+    validate_goal_region(goal_region, kwargs.get('endpoint_policy', 'none'))
     validate_fixes(online_fixes)
     if online_fixes == 'none':
-        return make_lidar_runtime(prior, mapper, **kwargs)
+        options = dict(goal_region=goal_region) if goal_region != 'none' else {}
+        return make_lidar_runtime(prior, mapper, **kwargs, **options)
     if kwargs.get('endpoint_policy', 'none') != 'none':
         raise ValueError(f'online fixes {online_fixes} uses endpoint-policy none; task028 is unchanged')
     diagnostics = kwargs.pop('diagnostics', False)
     kwargs.pop('endpoint_policy', None)
+    if goal_region == 'ring':
+        from .goal_region_runtime import RingRuntimeMixin
+
+        class SafetyRingRuntime(RingRuntimeMixin, SafetyDiagnosticRuntime):
+            pass
+
+        return SafetyRingRuntime(prior, mapper, endpoint_policy='none', diagnostics=diagnostics,
+                                 online_fixes=online_fixes, **kwargs)
     if diagnostics or kwargs.get('save_plan_maps'):
         return SafetyDiagnosticRuntime(prior, mapper, endpoint_policy='none', diagnostics=diagnostics, online_fixes=online_fixes, **kwargs)
     return SafetyLidarOnlineMission(prior, mapper, online_fixes=online_fixes, **kwargs)

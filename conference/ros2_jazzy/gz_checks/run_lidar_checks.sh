@@ -89,3 +89,4 @@ docker run --rm --pull=never --network host \
 # Task051 opt-in: pass --save-plan-maps to record the maps used for online searches.
 # Task058 opt-in: pass --pose-trace to record pose receipts, follower ticks and CPU load.
 # Task060 opt-in: --map fine --obstacle-clearance distance [--clearance-soft-m 1.5].
+# Task063 opt-in: --goal-region ring with --endpoint-policy none (the defaults are none).
