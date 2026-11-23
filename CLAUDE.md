@@ -45,7 +45,7 @@
 - **進捗ボード**（https://claude.ai/artifact/T627sMmE9VFZQFwaamScrV、2026-11-18 に作成）：指示書の状態と走行結果をまとめた画面。**次のたびに必ず更新する**（利用者の依頼、2026-11-18）：新しい指示書を作ったとき（未着手）、Codex・研究 PC に送ったとき（実行中）、報告を取り込んだとき（完了・負の結果など、結果の要点も）、走行の結果が出たとき（`outcomes.csv` に足す）。Claude が `tasks.csv`・`outcomes.csv` を差し替える。
   - 表の正本は `conference/progress/tasks.csv`・`outcomes.csv`（ボードの画面は `index.html`）。指示書の冒頭の「状態」の行と、表の状態の語（完了・実行中・未着手・保留・使わない・負の結果）を必ずそろえる。
   - **依頼文を出すときは、その指示書の「状態」の行を「実行中」に書き換える**（これが更新のきっかけになる）。報告を取り込んだら「完了」などに書き換える。
-  - ボードに上げたら `python3 conference/progress/check_board.py --mark-synced` で記録する。
+  - ボードに上げたら、上げたときに出た sha256 と `/_blob/<id>` を渡して記録する：`python3 conference/progress/check_board.py --mark-synced tasks.csv=<sha256>@/_blob/<id> ...`（変わったファイルの分を渡さないと記録できない。2026-11-23 に強めた）。
   - **上げ方（2026-11-23 に分かった。それまでの上げ方は反映されていなかった）**：ボードは Dashboard 型で、ページはボードの保管場所の `datasets/*` が指すファイルを読む。
     CSV を `Artifact` の `asset: true` で上げ、返ってきた `/_blob/<id>` を `ArtifactData` で `datasets/tasks`・`datasets/outcomes`・`datasets/policy` の `source.url` と `updated` に書く。
     `file_path` や `files` で CSV を公開しても、ページには反映されない。今後の方針は `conference/progress/policy.csv`（ボードの「今後の方針」）。

@@ -3,8 +3,14 @@
 調べること：
 1. conference/tasks/NNN_*.md の指示書ごとに、tasks.csv に同じ番号の行がある。
 2. 指示書の冒頭の「状態」の行に、tasks.csv のその行の状態の語（完了・実行中・未着手・保留・使わない・負の結果）が含まれている。
-3. tasks.csv・outcomes.csv の中身が、最後にボードに上げたもの（board_synced.json の sha256）と同じ。
-   ボードに上げたら `python3 conference/progress/check_board.py --mark-synced` で記録する。
+3. tasks.csv・outcomes.csv・policy.csv の中身が、最後にボードに上げたもの（board_synced.json の sha256）と同じ。
+   ボードは Dashboard 型で、ページは保管場所の datasets/* が指すファイルを読む。上げ方：
+   (a) CSV を Artifact の asset: true で上げる（結果に sha256 と /_blob/<id> が出る）、
+   (b) ArtifactData で datasets/<名前> の source.url をその /_blob/<id> に書き換える、
+   (c) 変わったファイルごとに、上げたときの sha256 と /_blob を渡して記録する：
+       python3 conference/progress/check_board.py --mark-synced tasks.csv=<sha256>@/_blob/<id> ...
+   渡した sha256 が手元のファイルと違う・変わったファイルの分が渡されていない場合は記録しない
+   （2026-11-23、上げたつもりでページに反映されていなかったことへの対策）。
 食い違いがあれば内容を表示して終了コード 2（Stop フックでは、Claude が返答を終える前に直すよう求められる）。
 """
 import csv
@@ -16,7 +22,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 TASKS = HERE.parent/'tasks'
-FILES = ('tasks.csv', 'outcomes.csv')
+FILES = ('tasks.csv', 'outcomes.csv', 'policy.csv')
 SYNCED = HERE/'board_synced.json'
 STATUS_WORDS = ('未着手', '実行中', '完了', '保留', '使わない', '負の結果')
 
@@ -41,16 +47,46 @@ def problems():
             found.append(f'指示書 {number} の状態「{match.group(1)[:40]}」と tasks.csv の「{status}」が食い違う')
     synced = json.loads(SYNCED.read_text()) if SYNCED.exists() else {}
     for name, digest in digests().items():
-        if synced.get(name) != digest:
+        entry = synced.get(name)
+        if (entry.get('sha256') if isinstance(entry, dict) else entry) != digest:
             found.append(f'{name} がボードに上がっていない（上げたら --mark-synced で記録する）')
     return found
 
 
+def mark_synced(args):
+    synced = json.loads(SYNCED.read_text()) if SYNCED.exists() else {}
+    given = {}
+    for arg in args:
+        name, _, rest = arg.partition('=')
+        sha, _, blob = rest.partition('@')
+        if name not in FILES or not re.fullmatch(r'[0-9a-f]{64}', sha) or not re.fullmatch(r'/_blob/[0-9a-f]{32}', blob):
+            print(f'形が違う：{arg}（例 tasks.csv=<sha256>@/_blob/<id>）', file=sys.stderr)
+            return 1
+        given[name] = dict(sha256=sha, blob=blob)
+    errors = []
+    for name, digest in digests().items():
+        entry = synced.get(name)
+        old = entry.get('sha256') if isinstance(entry, dict) else entry
+        if name in given:
+            if given[name]['sha256'] != digest:
+                errors.append(f'{name}：渡した sha256 が手元のファイルと違う（上げ直す）')
+            else:
+                synced[name] = given[name]
+        elif old != digest:
+            errors.append(f'{name}：変わっているのに、上げた記録（sha256@/_blob）が渡されていない')
+    if errors:
+        for line in errors:
+            print(line, file=sys.stderr)
+        print('記録しなかった。datasets/* の source.url を上げたファイルに書き換えたかも確かめること。', file=sys.stderr)
+        return 1
+    SYNCED.write_text(json.dumps(synced, indent=2, ensure_ascii=False)+'\n')
+    print('board_synced.json を更新した（datasets/* の source.url が同じ /_blob を指していること）')
+    return 0
+
+
 def main():
     if '--mark-synced' in sys.argv:
-        SYNCED.write_text(json.dumps(digests(), indent=2, ensure_ascii=False)+'\n')
-        print('board_synced.json を更新した')
-        return 0
+        return mark_synced(sys.argv[sys.argv.index('--mark-synced')+1:])
     found = problems()
     hook = {}
     # The Stop hook passes JSON on stdin and closes it. A manual run from a
