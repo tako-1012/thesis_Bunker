@@ -1,6 +1,6 @@
 # 指示書 058：位置の途切れ（`pose_timeout`）がどこで起きるかを分けるための記録（`--pose-trace`、選んだときだけ）
 
-> **状態：実行中（2026-11-23 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での確かめは、あとで別に頼む）。
+> **状態：完了（結果は `results/pose_trace/`、レビューは `REVIEW_ja.md`。研究 PC での確かめは 057 のあと）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での確かめは、あとで別に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/results/eval_050/REPORT_ja.md`・`REVIEW_ja.md`、`conference/results/eval_044/REPORT_ja.md`（`pose_timeout` の調べ）、
 > `ros2_jazzy/src/thesis_bunker_mission/thesis_bunker_mission/path_follower.py`（`tick` の `pose_timeout` の判定）、`ros2_jazzy/gz_checks/lidar_checks.py`・`lidar_planner.py`・`run_lidar_checks.sh`・`lidar_bridge.yaml`、`experiments/eval_runs.py` を読むこと。
 > ブランチは `codex/058-pose-trace`（その時点の `realtime-map` の最新から）。結果は `conference/results/pose_trace/`、報告は同じ場所の `REPORT_ja.md`。
