@@ -1,6 +1,6 @@
 # 指示書 057：偽の急斜面を減らす方法と、障害物の余白を広げる方法の組み合わせを、研究 PC の Gazebo で評価する
 
-> **状態：実行中（2026-11-23 に研究 PC（チャット：研究PC実行）へ依頼）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ）。
+> **状態：実行中（2026-11-23 に研究 PC（チャット：研究PC実行）へ依頼。11/23 に開始、tmux `eval-057`）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/results/eval_050/REPORT_ja.md`・`REVIEW_ja.md`（**この指示書の根拠**）・`run050.sh`（同じやり方で走らせる見本）、
 > `conference/results/overlap_goal/REVIEW_ja.md`（052）、`conference/results/steep_near_obstacle/REVIEW_ja.md`（055）、`conference/results/plan_map_snapshots/REPORT_ja.md`（051）、`conference/results/common_eval/REPORT_ja.md`（集計の道具）を読むこと。
 > 作業ツリー `~/thesis_Bunker_rtf`、ブランチ `claude/057-eval`（`origin/realtime-map` から）。結果は `conference/results/eval_057/`。

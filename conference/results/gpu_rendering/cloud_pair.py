@@ -5,6 +5,7 @@ import csv
 import json
 from pathlib import Path
 import time
+from zipfile import BadZipFile
 
 import numpy as np
 
@@ -13,6 +14,7 @@ N_FRAMES = 8
 POSE_SPAN_NS = 30_000_000  # ground-truth poses are published at 20 Hz
 POSITION_TOL_M = .001
 ANGLE_TOL_DEG = .1
+RECORD_ERRORS = (OSError, ValueError, KeyError, TypeError, EOFError, BadZipFile)
 
 
 def stamp_ns(msg):
@@ -156,45 +158,85 @@ def gpu_utilization(path):
 
 def trial(folder, mode):
     physical = folder/'physical_1'
-    manifest = json.loads((physical/'manifest.json').read_text())
-    case, = [row for row in manifest['cases'] if row['selected']]
-    if manifest['real_time_factor'] != 1. or manifest.get('sensors') != 'lidar_real+depth2':
-        raise ValueError(f'{mode}: unexpected experiment settings')
-    render = case.get('rendering', {})
-    name = render.get('renderer')
-    if mode == 'cpu' and (manifest.get('software_rendering') != '1' or 'rendering' in manifest):
-        raise ValueError('the CPU trial did not request software rendering')
-    if mode == 'gpu' and manifest.get('rendering', {}).get('mode') != 'gpu':
-        raise ValueError('GPU rendering was not requested in manifest')
-    mission = json.loads((physical/case['run_folder']/'mission.json').read_text())
-    start = float(mission['started_t'])
-    sim = float(mission['finished_t'])-start
-    wall = float(mission['wall_elapsed_s'])
-    if not np.isfinite(sim+wall) or min(sim, wall) <= 0.:
-        raise ValueError('invalid mission timing')
-    return dict(patch=case['patch'], execution=manifest['execution'], termination=case['termination'],
-                renderer=name, sim_s=sim, wall_s=wall, measured_rtf=sim/wall,
-                wall_run_gpu_usage=gpu_utilization(folder/'gpu_usage.csv')), round(start*1e9)
+    result = dict(patch=None, execution=None, termination=None, renderer=None, sim_s=None, wall_s=None,
+                  measured_rtf=None, wall_run_gpu_usage=None)
+    try:
+        result['wall_run_gpu_usage'] = gpu_utilization(folder/'gpu_usage.csv')
+    except FileNotFoundError:
+        pass
+    except RECORD_ERRORS as error:
+        result['gpu_usage_error'] = str(error)
+
+    try:
+        manifest = json.loads((physical/'manifest.json').read_text())
+        result['execution'] = manifest.get('execution')
+        case, = [row for row in manifest['cases'] if row['selected']]
+        result.update(patch=case['patch'], termination=case.get('termination'))
+        render = case.get('rendering', {})
+        for key in ('renderer', 'gl_vendor', 'gl_renderer', 'gpu_rendered'):
+            if key in render:
+                result[key] = render[key]
+        if manifest['real_time_factor'] != 1. or manifest.get('sensors') != 'lidar_real+depth2':
+            raise ValueError(f'{mode}: unexpected experiment settings')
+        if mode == 'cpu' and (manifest.get('software_rendering') != '1' or 'rendering' in manifest):
+            raise ValueError('the CPU trial did not request software rendering')
+        if mode == 'gpu' and manifest.get('rendering', {}).get('mode') != 'gpu':
+            raise ValueError('GPU rendering was not requested in manifest')
+
+        if case.get('error'):
+            raise ValueError(case['error'])
+        exit_file = folder/'exit.txt'
+        if exit_file.is_file():
+            exit_code = int(exit_file.read_text())
+            if exit_code != 0:
+                raise ValueError(f'trial stopped with exit code {exit_code}; see console.txt')
+        run_folder = case.get('run_folder')
+        if not isinstance(run_folder, str) or not run_folder:
+            raise ValueError(f"run_folder was not recorded (execution={result['execution']}); see console.txt")
+        mission = json.loads((physical/run_folder/'mission.json').read_text())
+        timing = [mission.get(key) for key in ('started_t', 'finished_t', 'wall_elapsed_s')]
+        if any(value is None for value in timing):
+            raise ValueError(f"mission timing is incomplete (status={mission.get('status')}); see console.txt")
+        start, end, wall = map(float, timing)
+        sim = end-start
+        if not np.isfinite(start+sim+wall) or min(sim, wall) <= 0.:
+            raise ValueError('invalid mission timing')
+    except RECORD_ERRORS as error:
+        result['error'] = str(error)
+        try:
+            result['stop_reason'] = (folder/'stopped.txt').read_text(errors='replace').strip()
+        except OSError:
+            pass
+        return result, None
+    return dict(result, sim_s=sim, wall_s=wall, measured_rtf=sim/wall), round(start*1e9)
 
 
 def compare(root):
     modes = ('cpu', 'gpu')
     trials, stops = {}, {}
     for mode in modes:
-        try:
-            trials[mode], stops[mode] = trial(root/mode, mode)
-        except (OSError, ValueError, KeyError, TypeError) as error:
-            trials[mode] = dict(error=str(error))
+        trials[mode], stop = trial(root/mode, mode)
+        if stop is not None:
+            stops[mode] = stop
     clouds = {sensor: dict(status='no_paired_trial') for sensor in SENSORS}
     ratio = None
     if len(stops) == 2 and trials['cpu']['patch'] == trials['gpu']['patch']:
         ratio = trials['gpu']['measured_rtf']/trials['cpu']['measured_rtf']
         folders = tuple(root/mode/'physical_1/clouds' for mode in modes)
         endings = tuple(stops[mode] for mode in modes)
-        poses = [load_poses(path, stop) for path, stop in zip(folders, endings, strict=True)]
-        clouds = {sensor: compare_sensor(sensor, folders, endings, poses) for sensor in SENSORS}
-    name = trials['gpu'].get('renderer') or ''
-    nvidia = 'nvidia' in name.lower()
+        try:
+            poses = [load_poses(path, stop) for path, stop in zip(folders, endings, strict=True)]
+        except RECORD_ERRORS as error:
+            clouds = {sensor: dict(status='pose_record_error', error=str(error)) for sensor in SENSORS}
+        else:
+            for sensor in SENSORS:
+                try:
+                    clouds[sensor] = compare_sensor(sensor, folders, endings, poses)
+                except RECORD_ERRORS as error:
+                    clouds[sensor] = dict(status='cloud_record_error', error=str(error))
+    gpu = trials['gpu']
+    nvidia = (gpu['gpu_rendered'] is True if 'gpu_rendered' in gpu else
+              'nvidia' in (gpu['renderer'] or '').lower())
     result = dict(trials=trials, nvidia_renderer_confirmed=nvidia,
                   gpu_over_cpu_rtf=ratio, clouds=clouds)
     print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
