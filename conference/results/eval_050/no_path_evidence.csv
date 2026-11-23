@@ -1,0 +1,9 @@
+patch,condition,rep,failure_type,failure_snapshot,failure_t_s,goal,goal_blocked,goal_seen,goal_known,estimated_steep_halo,prior_steep_halo,additional_steep_halo,true_steep_halo,prior_rock_halo,detected_obstacle_halo,terrain_slope_at_goal_deg,true_lethal
+08OB88_-0167,P,1,,,,,,,,,,,,,,,
+08OB88_-0167,S,1,goal_cell,plan_fail_000001.npz,301.4,"[137, 294]",True,True,True,True,False,True,False,False,False,11.299356067473854,False
+08OB88_-0167,S,2,goal_cell,plan_fail_000001.npz,300.9,"[137, 294]",True,True,True,True,False,True,False,False,False,10.873852908170099,False
+08OB88_-0167,S,3,goal_cell,plan_fail_000001.npz,324.7,"[137, 294]",True,True,True,True,False,True,False,False,False,8.07967113973412,False
+08OB88_-0167,V,1,goal_cell,plan_fail_000001.npz,313.6,"[137, 294]",True,True,True,True,False,True,False,False,False,9.63274953360604,False
+08OB88_-0167,V,2,goal_cell,plan_fail_000001.npz,313.3,"[137, 294]",True,True,True,True,False,True,False,False,False,8.980663439479416,False
+08OB88_-0167,V,3,goal_cell,plan_fail_000001.npz,319.8,"[137, 294]",True,True,True,True,False,True,False,False,False,9.228076141156304,False
+08OB89_-0847,V,3,goal_cell,plan_fail_000001.npz,132.8,"[281, 117]",True,True,True,True,False,True,False,False,False,3.719315286515752,False
