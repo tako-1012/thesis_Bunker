@@ -58,3 +58,24 @@ ChatGPT の調査（2 回分）に出てきた文献を、Crossref の API（`ap
 - 「地形の誤判定が、障害物の安全の余白として偶然働き、誤判定を直すと余白が減る」ことを直接分析した論文。
 - 「砂浜・漂着物の回収・装軌式・航空 LiDAR の事前の地図・走行中の更新」の組み合わせの論文。
 （2 つの調査で見つからなかっただけで、ないとは言えない。修論では「調べた範囲では見当たらない」と書く。）
+
+## Gemini の調査（2 回分）にだけ出てきた文献（Crossref で確かめた）
+| 文献 | DOI | 結果 |
+|---|---|---|
+| Miki 2022, Elevation Mapping for Locomotion and Navigation using GPU, IROS | 10.1109/iros47612.2022.9981507 | 実在 |
+| Inotsume 2020, Robust Path Planning for Slope Traversing Under Uncertainty in Slip Prediction, RA-L | 10.1109/LRA.2020.2975756 | 実在 |
+| Frey 2023, Fast Traversability Estimation for Wild Visual Navigation, RSS | 10.15607/RSS.2023.XIX.054 | 実在 |
+| Oleynikova 2017, Voxblox, IROS | 10.1109/IROS.2017.8202315 | 実在 |
+| Macenski 2020, The Marathon 2: A Navigation System, IROS | 10.1109/iros45743.2020.9341207 | 実在 |
+| Feng 2026, Safe and Fast Motion Planning for UGV on Unknown Uneven Terrain… CBF Constraints, Drones | 10.3390/drones10060440 | 実在（MDPI の雑誌。主要な場ではない） |
+| Knuth 2021, Planning with Learned Dynamics…, RA-L | 10.1109/lra.2021.3068889 | 実在 |
+| Pomerleau 2014, Long-term 3D map maintenance in dynamic environments, ICRA | 10.1109/icra.2014.6907397 | 実在 |
+| Mentasti 2021, Two algorithms for vehicular obstacle detection in sparse pointcloud | 10.23919/aeitautomotive52815.2021.9662780 | 実在（AEIT Automotive 2021。報告では arXiv のみ） |
+| Zhu 2019, Chance-constrained Collision Avoidance for MAVs in Dynamic Environments, RA-L | 10.1109/lra.2019.2893494 | 実在 |
+| Takemura 2021, Traversability-based Trajectory Planning with Quasi-Dynamic Vehicle Model in Loose Soil, IROS | 10.1109/iros51168.2021.9635891 | 実在 |
+| Ishigami 2007, Terramechanics-based model for steering maneuver… loose soil, JFR | 10.1002/rob.20187 | 実在 |
+| Majumdar 2017, Funnel libraries…, IJRR | 10.1177/0278364917712421 | 実在 |
+| Dixit 2024, STEP… DARPA SubT, Field Robotics | 10.55417/fr.2024006 | **Crossref で見つからない**（DOI が違う可能性。引用前に確かめる） |
+
+Gemini の 2 回目は、要旨まで確かめられた文献だけを本文に挙げ、ほかを「未確認」に分けていた。そこに挙がった arXiv の番号（2606・2608・2610・2611 で始まるものなど）は、ここでは確かめていない。
+「CMU の著者名なしの資料」「Jinno（年不明）」は書誌が不完全なので、使わない。
