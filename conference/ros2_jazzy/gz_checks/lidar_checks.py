@@ -23,6 +23,7 @@ from tapp.sensor_geometry import SENSOR_MODES, sensor_configuration
 from tapp.config import RESOLUTION
 from tapp.pointcloud_map_fine import (
     FINE_CLEARANCE_MODES, GROUND_ESTIMATES, OBSTACLE_CLEARANCES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES,
+    GROUND_EXCLUSION_M, GROUND_NEAR_OBSTACLE, validate_ground_near_obstacle,
 )
 from tapp.distance_clearance import R_HARD, R_SOFT, W_OBS, validate_clearance
 from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
@@ -74,8 +75,12 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
                   waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
-                  pose_trace=False, clearance_soft_m=R_SOFT):
+                  pose_trace=False, clearance_soft_m=R_SOFT, ground_near_obstacle='keep', goal_region='none'):
+    from tapp.goal_region import RING_RADIUS_M, validate_goal_region
+
+    validate_goal_region(goal_region, endpoint_policy)
     validate_tracking(tracking)
+    validate_ground_near_obstacle(ground_near_obstacle, ground_estimate, map_method=map_method)
     if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
         raise ValueError('unknown steep-near-obstacle policy')
     if steep_near_obstacle != 'keep' and map_method != 'fine':
@@ -217,6 +222,14 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                 mask='leave water and nodata heights unchanged')
         elif prior_variant_name == 'none':
             manifest['prior_definition'] = 'all heights flattened to median valid land elevation; only water/nodata raw flags retained'
+    if ground_near_obstacle == 'exclude':
+        effect = {'sensor': 'sensor elevation used for planning terrain',
+                  'prior': 'recorded sensor elevation only',
+                  'prior_veto': 'sensor elevation used for supported steep veto'}[terrain_source]
+        manifest.update(ground_near_obstacle=ground_near_obstacle, ground_exclusion_radius_m=GROUND_EXCLUSION_M,
+                        height_definition='median of non-obstacle returns in last-64 history outside the inclusive '
+                                          'fine-cell centre exclusion radius; if none remain, keep previous elevation',
+                        ground_near_obstacle_effect=effect)
     if online_fixes != 'none':
         from tapp.config import Robot
         manifest.update(online_fixes=online_fixes, online_safety=dict(join_timeout_sim_s=JOIN_TIMEOUT_S,
@@ -251,6 +264,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if pose_trace:
         from tapp.pose_trace import TRACE_LIMIT_BYTES
         manifest.update(pose_trace=True, pose_trace_limit_bytes=TRACE_LIMIT_BYTES)
+    if goal_region != 'none':
+        manifest.update(goal_region=goal_region, goal_region_radius_m=RING_RADIUS_M)
     save_manifest(output, manifest)
     return manifest
 
@@ -480,6 +495,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                                              '-p', 'diagnostics:='+str(manifest['diagnostics']).lower()])
                     if manifest.get('save_plan_maps'):
                         commands[-1].extend(['-p', 'save_plan_maps:=true'])
+                    if manifest.get('goal_region') == 'ring':
+                        commands[-1].extend(['-p', 'goal_region:=ring'])
                     if trace_enabled:
                         parameter = 'pose_trace_dir:='+str(raw/'pose_trace')
                         for command in commands[-2:]:
@@ -488,6 +505,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'sensors:='+manifest['sensors']])
                     if manifest.get('ground_estimate', 'all_returns') != 'all_returns':
                         commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
+                    if 'ground_near_obstacle' in manifest:
+                        commands[-1].extend(['-p', 'ground_near_obstacle:='+manifest['ground_near_obstacle']])
                     if 'terrain_source' in manifest:
                         commands[-1].extend(['-p', 'terrain_source:='+manifest['terrain_source']])
                     if manifest.get('tracking') == 'corner_slow':
@@ -565,6 +584,16 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if 'ground_near_obstacle' in manifest:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task062 trial errors; inspect manifest')
+                print('Task062 raw results saved; evaluate ground exclusion separately:', output)
+                return
+            if manifest.get('goal_region') == 'ring':
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task063 trial errors; inspect manifest')
+                print('Task063 raw results saved; evaluate goal-region outcomes separately:', output)
+                return
             if trace_enabled:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task058 trial errors; inspect manifest')
@@ -654,6 +683,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
 
 
 def main():
+    from tapp.goal_region import GOAL_REGIONS
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT/'results/gazebo_lidar/physical_3')
     parser.add_argument('--patch-count', type=int, choices=[3, 10], default=3)
@@ -666,6 +697,7 @@ def main():
     parser.add_argument('--map', choices=['coarse', 'fine'], default='coarse', dest='map_method')
     parser.add_argument('--sensors', choices=SENSOR_MODES, default='legacy')
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
+    parser.add_argument('--ground-near-obstacle', choices=GROUND_NEAR_OBSTACLE, default='keep')
     parser.add_argument('--terrain-source', choices=TERRAIN_SOURCES, default='sensor')
     parser.add_argument('--steep-near-obstacle', choices=STEEP_NEAR_OBSTACLE, default='keep')
     parser.add_argument('--waypoint-check', choices=('none', 'substitute'), default='none')
@@ -678,6 +710,7 @@ def main():
     parser.add_argument('--debris-box-height', choices=DEBRIS_BOX_HEIGHTS, default='plus_half')
     parser.add_argument('--prior-variant', choices=PRIOR_VARIANTS, default='exact', dest='prior_variant_name')
     parser.add_argument('--endpoint-policy', choices=ENDPOINT_POLICIES, default='none')
+    parser.add_argument('--goal-region', choices=GOAL_REGIONS, default='none')
     parser.add_argument('--diagnostics', action='store_true')
     parser.add_argument('--save-plan-maps', action='store_true')
     parser.add_argument('--pose-trace', action='store_true')
@@ -686,6 +719,12 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if 'ground_near_obstacle' in manifest:
+            print('Task062 preparation only; Gazebo not executed:', output)
+            return
+        if manifest.get('goal_region') == 'ring':
+            print('Task063 preparation only; Gazebo not executed:', output)
+            return
         if manifest.get('pose_trace'):
             print('Task058 preparation only; Gazebo not executed:', output)
             return

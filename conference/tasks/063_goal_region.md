@@ -1,6 +1,6 @@
 # 指示書 063：目標のマスが塞がったとき、走る前の計画で「回収できる範囲」の中の行ける位置を目標にする（`--goal-region ring`、選んだときだけ）
 
-> **状態：実行中（2026-11-23 にクラウドの Codex（研究実装2）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで別に頼む）。
+> **状態：完了（レビューは結果のフォルダの `REVIEW_ja.md`）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで別に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/research/literature_check_ja.md`、`conference/progress/policy.csv`、
 > **`conference/results/eval_ground_endpoint/REPORT_ja.md`（030。028b で `0167` が 3/3 転倒した経緯）**、`conference/tasks/028_endpoint_policy.md`、`tapp/endpoint_policy.py`、
 > `conference/results/waypoint_feasibility/REPORT_ja.md`（046）、`conference/results/overlap_goal/REVIEW_ja.md`（052）、`conference/results/distance_clearance/REPORT_ja.md`・`REVIEW_ja.md`（060）、

@@ -59,6 +59,9 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
 
 
 class EndpointPlanner(OnlinePlanner):
+    def _unrelaxed_plan(self, reason, initial):
+        return super()._plan(reason, initial=initial)
+
     def _plan(self, reason, initial=False):
         snapshot = self.snapshot
         snapshot['start'] = np.rint(self.pos).astype(int)
@@ -66,7 +69,7 @@ class EndpointPlanner(OnlinePlanner):
         snapshot['goal'] = np.asarray(goal, int)
         snapshot = goal_snapshot(self, snapshot, goal)
         if self.policy == 'none':
-            result = super()._plan(reason, initial=initial)
+            result = self._unrelaxed_plan(reason, initial)
         else:
             began = time.perf_counter()
             geometry = getattr(self, 'distance_geometry', None)
@@ -133,7 +136,7 @@ class EndpointRuntime(LidarOnlineMission):
         context = state.get('_context', (0., self.pose))
         position = state.get('_position', self.pose[:2])
         goal = planner.goal or state['mission']['stops_cells'][state['leg']]
-        options = dict(save_plan_maps=True) if self.plan_maps else {}
+        options = dict(save_plan_maps=True) if self.plan_maps or getattr(self, 'goal_region', 'none') == 'ring' else {}
         planner.snapshot = capture(self.mapper, planner, position, context[1], context[0], goal, **options)
         if self.diagnostics:
             before = self.diagnostics.periodic
@@ -298,9 +301,21 @@ class EndpointRuntime(LidarOnlineMission):
 
 
 def make_lidar_runtime(prior, mapper, *, plan_log, endpoint_policy='none', diagnostics=False, executor=None,
-                       record_clearance=False, save_plan_maps=False):
+                       record_clearance=False, save_plan_maps=False, goal_region='none'):
+    from tapp.goal_region import validate_goal_region
+
+    validate_goal_region(goal_region, endpoint_policy)
     if endpoint_policy not in ENDPOINT_POLICIES:
         raise ValueError('unknown endpoint policy')
+    if goal_region == 'ring':
+        from .goal_region_runtime import RingRuntimeMixin
+
+        class RingRuntime(RingRuntimeMixin, EndpointRuntime):
+            pass
+
+        return RingRuntime(prior, mapper, plan_log=plan_log, endpoint_policy='none',
+                           diagnostics=diagnostics, executor=executor, record_clearance=record_clearance,
+                           save_plan_maps=save_plan_maps)
     if endpoint_policy == 'none' and not diagnostics and not save_plan_maps:
         return LidarOnlineMission(prior, mapper, plan_log=plan_log, executor=executor)
     return EndpointRuntime(prior, mapper, plan_log=plan_log, endpoint_policy=endpoint_policy,

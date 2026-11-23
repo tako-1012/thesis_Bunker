@@ -1,6 +1,6 @@
 # 指示書 062：見つけた障害物の近くの点を、地面の高さの推定から外す（`--ground-near-obstacle exclude`、選んだときだけ）
 
-> **状態：実行中（2026-11-23 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで 064 に足す）。
+> **状態：完了（レビューは結果のフォルダの `REVIEW_ja.md`）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで 064 に足す）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/research/literature_check_ja.md`、`conference/progress/policy.csv`（今後の方針）、
 > `conference/results/false_steep_causes/REPORT_ja.md`・`REVIEW_ja.md`・`PROTOCOL_ja.md`・`replay.py`（053、**この指示書の根拠**）、`conference/results/steep_near_obstacle/REPORT_ja.md`・`REVIEW_ja.md`・`replay.py`（055）、
 > `conference/results/ground_estimate/`（029）、`tapp/pointcloud_map_fine.py`（特に地面の高さを推定する所と `_fine_ids`）・`pointcloud_map_multi.py` を読むこと。
