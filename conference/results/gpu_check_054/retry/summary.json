@@ -1,0 +1,157 @@
+{
+  "trials": {
+    "cpu": {
+      "patch": "08OB88_-1417",
+      "execution": "finished",
+      "termination": "completed",
+      "renderer": null,
+      "sim_s": 299.53000000000003,
+      "wall_s": 487.86547452188097,
+      "measured_rtf": 0.6139602321593798,
+      "wall_run_gpu_usage": {
+        "0 NVIDIA GeForce RTX 5060 Laptop GPU": {
+          "samples": 451,
+          "median_pct": 0.0,
+          "max_pct": 8.0
+        }
+      }
+    },
+    "gpu": {
+      "patch": "08OB88_-1417",
+      "execution": "finished",
+      "termination": "completed",
+      "renderer": "NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2",
+      "sim_s": 297.31,
+      "wall_s": 298.21284577599727,
+      "measured_rtf": 0.9969724785877419,
+      "wall_run_gpu_usage": {
+        "0 NVIDIA GeForce RTX 5060 Laptop GPU": {
+          "samples": 315,
+          "median_pct": 8.0,
+          "max_pct": 12.0
+        }
+      },
+      "gl_vendor": "NVIDIA Corporation",
+      "gl_renderer": "NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2",
+      "gpu_rendered": true
+    }
+  },
+  "nvidia_renderer_confirmed": true,
+  "gpu_over_cpu_rtf": 1.6238388520397438,
+  "clouds": {
+    "lidar": {
+      "stamp_ns": 100000000,
+      "pose_stamp_ns": 100000000,
+      "position_difference_m": 0.0,
+      "orientation_difference_deg": 0.0,
+      "cpu_shape": [
+        16,
+        1800
+      ],
+      "gpu_shape": [
+        16,
+        1800
+      ],
+      "cpu_frame": "lidar",
+      "gpu_frame": "lidar",
+      "cpu_slots": 28800,
+      "gpu_slots": 28800,
+      "cpu_finite": 12173,
+      "gpu_finite": 12173,
+      "paired_finite": 12173,
+      "cpu_only": 0,
+      "gpu_only": 0,
+      "both_invalid": 16627,
+      "xyz_array_equal": false,
+      "status": "compared",
+      "range_gpu_minus_cpu_m": {
+        "min": -0.11605264456937014,
+        "p05": -0.04651907859865787,
+        "median": -0.0005245941215674677,
+        "p95": 0.045933725347505915,
+        "max": 0.11751345670681879
+      },
+      "abs_range_difference_m": {
+        "median": 0.019032418642377813,
+        "p95": 0.055681507062792686,
+        "max": 0.11751345670681879
+      }
+    },
+    "camera1": {
+      "stamp_ns": 200000000,
+      "pose_stamp_ns": 200000000,
+      "position_difference_m": 0.0,
+      "orientation_difference_deg": 0.0,
+      "cpu_shape": [
+        125,
+        214
+      ],
+      "gpu_shape": [
+        125,
+        214
+      ],
+      "cpu_frame": "camera1",
+      "gpu_frame": "camera1",
+      "cpu_slots": 26750,
+      "gpu_slots": 26750,
+      "cpu_finite": 11812,
+      "gpu_finite": 11811,
+      "paired_finite": 11811,
+      "cpu_only": 1,
+      "gpu_only": 0,
+      "both_invalid": 14938,
+      "xyz_array_equal": false,
+      "status": "compared",
+      "range_gpu_minus_cpu_m": {
+        "min": -0.0503816719114929,
+        "p05": -0.017420681624743972,
+        "median": 1.2452902540927013e-05,
+        "p95": 0.017198296447772043,
+        "max": 0.0536426422364924
+      },
+      "abs_range_difference_m": {
+        "median": 0.003953293588538909,
+        "p95": 0.022925878847947168,
+        "max": 0.0536426422364924
+      }
+    },
+    "camera2": {
+      "stamp_ns": 100000000,
+      "pose_stamp_ns": 100000000,
+      "position_difference_m": 0.0,
+      "orientation_difference_deg": 0.0,
+      "cpu_shape": [
+        125,
+        214
+      ],
+      "gpu_shape": [
+        125,
+        214
+      ],
+      "cpu_frame": "camera2",
+      "gpu_frame": "camera2",
+      "cpu_slots": 26750,
+      "gpu_slots": 26750,
+      "cpu_finite": 9328,
+      "gpu_finite": 9328,
+      "paired_finite": 9328,
+      "cpu_only": 0,
+      "gpu_only": 0,
+      "both_invalid": 17422,
+      "xyz_array_equal": false,
+      "status": "compared",
+      "range_gpu_minus_cpu_m": {
+        "min": -0.05343898352714049,
+        "p05": -0.017945808777172865,
+        "median": -4.2563662735028984e-05,
+        "p95": 0.018186297439495465,
+        "max": 0.0535183637051313
+      },
+      "abs_range_difference_m": {
+        "median": 0.004403499444171954,
+        "p95": 0.022854726469067183,
+        "max": 0.0535183637051313
+      }
+    }
+  }
+}

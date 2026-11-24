@@ -1,0 +1,1 @@
+cloud_pair.py compare exit=0; summary.json byte-identical
