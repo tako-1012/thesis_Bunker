@@ -1,0 +1,7 @@
+run,goal_x,goal_y,failure_plan,failure_time,failure_cause,first_blocked_plan,first_blocked_time,first_blocked_cause,blocked_on_first_plan
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/SGN_r1/physical_1/raw/08OB88_-0167,137,294,161,304.6,steep_inflation,161,304.6,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/SGN_r2/physical_1/raw/08OB88_-0167,137,294,174,306.3,steep_inflation,174,306.3,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/SGN_r3/physical_1/raw/08OB88_-0167,137,294,149,305.1,steep_inflation,149,305.1,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/S_r1/physical_1/raw/08OB88_-0167,137,294,164,301.5,steep_inflation,164,301.5,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/S_r2/physical_1/raw/08OB88_-0167,137,294,172,314.8,steep_inflation,172,314.8,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/S_r3/physical_1/raw/08OB88_-0167,137,294,172,313.7,steep_inflation,172,313.7,steep_inflation,False

@@ -1,0 +1,6 @@
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/PG_r1/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/PG_r2/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/PG_r3/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+approach: 45 rows
+goal_cell: 6 rows
+skipped: 3 rows

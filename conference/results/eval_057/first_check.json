@@ -1,0 +1,36 @@
+{
+  "patch": "08OB86_-0205",
+  "condition": "S",
+  "rep": 1,
+  "plan_map_limit_bytes": 100000000,
+  "timing_factor": 1.5,
+  "errors": [],
+  "plan_map_bytes": 7218359,
+  "plan_map_count": 55,
+  "trial_bytes": 26833917,
+  "incomplete": false,
+  "successful_map_updates": 6760,
+  "timing": {
+    "map_update_s_median": {
+      "actual_s": 0.006997262011282146,
+      "baseline_trials_s": [
+        0.007026873994618654,
+        0.007026234990917146,
+        0.00704314059112221
+      ],
+      "baseline_median_s": 0.007026873994618654,
+      "ratio": 0.9957858952132647
+    },
+    "map_update_s_p95": {
+      "actual_s": 0.021802360902074724,
+      "baseline_trials_s": [
+        0.021832556976005432,
+        0.022090288868639615,
+        0.021558259171433745
+      ],
+      "baseline_median_s": 0.021832556976005432,
+      "ratio": 0.9986169245332146
+    }
+  },
+  "passed": true
+}
