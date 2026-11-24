@@ -1,0 +1,25 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_lidar_figures
+Skipped missing results file: /tmp/054b-tests.62irc1/conference/results/eval_057/common_eval/runs.csv
+T4: 15 rows
+T5: 20 rows
+T6: 16 rows
+F8–F10, T4–T6, numbers_lidar.tex and sources.json: /tmp/tmpktl4m0z6/archive
+archive PASS: all figures/tables, macros recalculated from source CSVs and exact input hashes
+missing/044 PASS: remaining outputs and missing-input message; common schema extends the figures
+output guard PASS: existing results, pillar-one output and paper paths rejected
+050 PASS: completion and both T5 scopes are recalculated from the committed CSV
+Skipped missing results file: /tmp/tmpktl4m0z6/terrain/results/eval_ground_endpoint/runs.csv
+Skipped missing results file: /tmp/tmpktl4m0z6/terrain/results/eval_035/runs.csv
+Skipped missing results file: /tmp/tmpktl4m0z6/terrain/results/real_sensors_compare/runs.csv
+Skipped missing results file: /tmp/tmpktl4m0z6/terrain/results/rtf_compare/stage_b/common_eval/runs.csv
+Skipped missing results file: /tmp/tmpktl4m0z6/terrain/results/waypoint_feasibility/goal_cell.csv
+Skipped missing results file: /tmp/tmpktl4m0z6/terrain/results/terrain_from_prior/goals.csv
+Skipped missing results file: /tmp/tmpktl4m0z6/terrain/results/map_speed/timing.csv
+Skipped missing results file: /tmp/tmpktl4m0z6/terrain/results/rtf_compare/stage_b/sensor_updates.csv
+T4: 10 rows
+T5: 15 rows
+T6: 4 rows
+F8–F10, T4–T6, numbers_lidar.tex and sources.json: /tmp/tmpktl4m0z6/terrain/out
+057 PASS: missing input is reported and an added CSV updates F10, the tables and input hashes
+legacy PASS: same-environment 030–044 tables, F9 statistics and all prior numeric macros match
+all LiDAR figure tests passed
