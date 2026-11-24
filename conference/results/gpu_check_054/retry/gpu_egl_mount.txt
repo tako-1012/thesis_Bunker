@@ -1,0 +1,4 @@
+/usr/share/glvnd/egl_vendor.d/10_nvidia.json -> /usr/share/glvnd/egl_vendor.d/10_nvidia.json RW=false
+NVIDIA_DRIVER_CAPABILITIES=all
+THESIS_RENDER=gpu
+__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json
