@@ -1,0 +1,5 @@
+terrain_and_storage.csv: 45 rows
+box_approach_evidence.csv: 9 rows
+no_path_evidence.csv: 14 rows
+0167_goals.csv: 9 rows
+tilt_evidence.csv: 6 rows

@@ -1,0 +1,15 @@
+patch,condition,rep,failure_type,plan,plan_time_s,handoff_s,x,y,cause,blocked,truth_steep,truth_steep_halo,prior_steep_halo,detected,obstacle_halo,prior_raw,prior_inflated,steep,steep_halo,retained_lethal
+08OB88_-0167,SGN,1,goal_cell,161,304.6,304.75,137,294,steep_inflation,True,False,False,False,False,False,False,False,False,True,False
+08OB88_-0167,SGN,2,goal_cell,174,306.3,306.45,137,294,steep_inflation,True,False,False,False,False,False,False,False,False,True,False
+08OB88_-0167,SGN,3,goal_cell,149,305.1,305.25,137,294,steep_inflation,True,False,False,False,False,False,False,False,False,True,False
+08OB88_-0167,S,1,goal_cell,164,301.5,301.65,137,294,steep_inflation,True,False,False,False,False,False,False,False,False,True,False
+08OB88_-0167,S,2,goal_cell,172,314.8,314.95,137,294,steep_inflation,True,False,False,False,False,False,False,False,False,True,False
+08OB88_-0167,S,3,goal_cell,172,313.7,313.85,137,294,steep_inflation,True,False,False,False,False,False,False,False,False,True,False
+08OB88_-1417,PG,2,start_cell,10,76.1,76.15,199,152,detected_obstacle,True,False,False,False,True,True,False,False,False,False,False
+08OB88_-1417,SGN,1,start_cell,42,76.6,76.65,199,152,detected_obstacle,True,False,False,False,True,True,False,False,False,False,False
+08OB89_-0847,PG,1,start_cell,22,136.5,136.55,280,117,detected_obstacle,True,False,False,False,True,True,False,False,False,False,False
+08OB89_-0847,PG,2,start_cell,20,136.2,136.25,280,117,detected_obstacle,True,False,False,False,True,True,False,False,False,False,False
+08OB89_-0847,PG,3,start_cell,20,136.45,136.5,280,117,detected_obstacle,True,False,False,False,True,True,False,False,False,False,False
+08OB89_-0847,SGN,1,start_cell,120,136.8,136.85,280,117,detected_obstacle,True,False,False,False,True,True,False,False,False,False,False
+08OB89_-0847,SGN,2,start_cell,105,136.85,136.9,280,117,detected_obstacle,True,False,False,False,True,True,False,False,False,False,False
+08OB89_-0847,SGN,3,start_cell,109,137.05,137.1,280,117,detected_obstacle,True,False,False,False,True,True,False,False,False,False,False

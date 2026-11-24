@@ -1,0 +1,23 @@
+057 08OB86_-0205 PG n=3 completed=3
+057 08OB86_-0205 S n=3 completed=3
+057 08OB86_-0205 SGN n=3 completed=3
+057 08OB88_-0167 PG n=3 other_error=3
+057 08OB88_-0167 S n=3 no_path=3
+057 08OB88_-0167 SGN n=3 no_path=3
+057 08OB88_-1417 PG n=3 completed=2 no_path=1
+057 08OB88_-1417 S n=3 completed=3
+057 08OB88_-1417 SGN n=3 completed=2 no_path=1
+057 08OB88_00332 PG n=3 completed=3
+057 08OB88_00332 S n=3 completed=3
+057 08OB88_00332 SGN n=3 completed=3
+057 08OB89_-0847 PG n=3 no_path=3
+057 08OB89_-0847 S n=3 completed=3
+057 08OB89_-0847 SGN n=3 no_path=3
+45 runs -> /tmp/057-common-verify.WTN3wV/common_eval
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/PG_r1/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/PG_r2/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/runs/08OB88_-0167/PG_r3/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+approach: 45 rows
+goal_cell: 6 rows
+skipped: 3 rows
+45 runs and all 7 CSV/document outputs verified byte for byte.
