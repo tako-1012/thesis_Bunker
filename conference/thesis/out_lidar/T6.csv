@@ -7,6 +7,8 @@ study,record,metric,count,n
 044,Terminal no path,goal_cell,25,25
 050,Terminal no path,goal_cell,7,8
 050,Terminal no path,unknown,1,8
+057,Terminal no path,goal_cell,6,14
+057,Terminal no path,start_cell,8,14
 046,Preflight,flagged,0,35
 047,Final map,sensor_route,1,14
 047,Final map,prior_route,10,14
