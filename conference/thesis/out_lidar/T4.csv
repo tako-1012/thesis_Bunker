@@ -14,3 +14,6 @@ study,condition,condition_label,n,completed,partial,no_path,stuck,rollover,other
 050,S,050 S,15,10,0,3,0,0,2,0
 050,P,050 P,15,10,0,1,1,0,3,0
 050,V,050 V,15,11,0,4,0,0,0,0
+057,S,057 S,15,12,0,3,0,0,0,0
+057,PG,057 PG,15,8,0,4,0,0,3,0
+057,SGN,057 SGN,15,8,0,7,0,0,0,0

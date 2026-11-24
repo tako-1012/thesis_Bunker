@@ -1,0 +1,10 @@
+patch,condition,rep,outcome,reached,searches_to_goal,revisions_to_goal,final_blocked,first_block_plan,first_block_s,first_block_cause
+08OB88_-0167,PG,1,unsafe_tilt_repeat,4,6,6,False,,,
+08OB88_-0167,PG,2,unsafe_tilt_repeat,4,6,6,False,,,
+08OB88_-0167,PG,3,unsafe_tilt_repeat,4,6,6,False,,,
+08OB88_-0167,SGN,1,no_path,4,6,5,True,161,304.6,steep_inflation
+08OB88_-0167,SGN,2,no_path,4,10,9,True,174,306.3,steep_inflation
+08OB88_-0167,SGN,3,no_path,4,17,16,True,149,305.1,steep_inflation
+08OB88_-0167,S,1,no_path,4,13,12,True,164,301.5,steep_inflation
+08OB88_-0167,S,2,no_path,4,56,55,True,172,314.8,steep_inflation
+08OB88_-0167,S,3,no_path,4,50,49,True,172,313.7,steep_inflation

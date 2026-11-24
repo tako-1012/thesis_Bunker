@@ -1,0 +1,16 @@
+057 08OB86_-0205 PG n=3 completed=3
+057 08OB86_-0205 S n=3 completed=3
+057 08OB86_-0205 SGN n=3 completed=3
+057 08OB88_-0167 PG n=3 other_error=3
+057 08OB88_-0167 S n=3 no_path=3
+057 08OB88_-0167 SGN n=3 no_path=3
+057 08OB88_-1417 PG n=3 completed=2 no_path=1
+057 08OB88_-1417 S n=3 completed=3
+057 08OB88_-1417 SGN n=3 completed=2 no_path=1
+057 08OB88_00332 PG n=3 completed=3
+057 08OB88_00332 S n=3 completed=3
+057 08OB88_00332 SGN n=3 completed=3
+057 08OB89_-0847 PG n=3 no_path=3
+057 08OB89_-0847 S n=3 completed=3
+057 08OB89_-0847 SGN n=3 no_path=3
+45 runs -> /home/kotaro/thesis_Bunker_rtf/conference/results/eval_057/common_eval

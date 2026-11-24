@@ -1,0 +1,42 @@
+beach beach centre n=1 no_path=1
+1 runs -> /tmp/tmpsvve7je_/output
+synthetic: geometry, revision boundaries, stops, timing, gzip, omissions and overwrite protection passed
+030 08OB87_-0706 C0 n=3 completed=3
+030 08OB87_-0706 C1 n=3 completed=3
+030 08OB87_-0706 C2 n=3 completed=3
+030 08OB88_-0167 C0 n=3 no_path=3
+030 08OB88_-0167 C1 n=3 no_path=3
+030 08OB88_-0167 C2 n=3 rollover=3
+030 08OB88_-1417 C0 n=3 no_path=3
+030 08OB88_-1417 C1 n=3 completed=3
+030 08OB88_-1417 C2 n=3 completed=3
+030 08OB89_-0347 C0 n=3 no_path=3
+030 08OB89_-0347 C1 n=3 no_path=3
+030 08OB89_-0347 C2 n=3 partial=3
+030 08OB89_-0847 C0 n=3 no_path=3
+030 08OB89_-0847 C1 n=3 completed=1 stuck=2
+030 08OB89_-0847 C2 n=3 completed=2 partial=1
+45 runs -> /tmp/tmpsvve7je_/030
+030 compared per-field counts: {'exit_code': 45, 'outcome': 45, 'status': 45, 'recorded_status': 45, 'goals_reached': 45, 'returned_to_start': 45, 'truth_lethal_len_m': 45, 'truth_lethal_entries': 45, 'debris_len_m': 45, 'debris_entries': 45, 'lethal_cells': 45, 'debris_cells': 45, 'rolled_over': 45, 'deviation_mean_m': 45, 'deviation_max_m': 45, 'n_plans': 45, 'failed_plans': 45, 'fail_goal_cell': 45, 'fail_start_cell': 45, 'fail_start_steep': 45, 'map_fp_cells': 43, 'map_fn_cells': 43, 'map_fp_steep_cells': 43, 'map_fp_obstacle_only_cells': 43, 'detector_fp_cells': 43, 'detector_fn_cells': 43, 'map_updates': 45, 'map_update_s_p95': 45, 'stops_unreachable': 15, 'relaxed_len_m': 15, 'relaxed_truth_lethal_len_m': 15, 'rollover_t_s': 3}
+035 08OB86_-0205 S1 n=1 completed=1
+035 08OB86_-0205 S2 n=1 other_error=1
+035 08OB87_-0706 P1 n=3 completed=3
+035 08OB88_-0167 P1 n=3 no_path=3
+035 08OB88_-1417 P1 n=3 completed=3
+035 08OB89_-0347 P1 n=3 no_path=3
+035 08OB89_-0847 P1 n=3 completed=3
+17 runs -> /tmp/tmpsvve7je_/035
+035 compared per-field counts: {'exit_code': 17, 'outcome': 17, 'status': 17, 'n_plans': 16, 'n_replans': 16, 'failed_plans': 16, 'fail_goal_cell': 16, 'ev_off_path': 16, 'ev_unsafe_tilt': 16, 'ev_safety_replanned': 16, 'map_updates': 16, 'map_update_s_median': 16, 'map_update_s_p95': 16, 'map_update_s_max': 16, 'queue_drops': 16} plus 6 sensor rows
+037 08OB86_-0205 L n=3 unknown=3
+037 08OB86_-0205 LC n=3 unknown=3
+037 08OB88_-0167 L n=3 unknown=3
+037 08OB88_-0167 LC n=3 unknown=3
+037 08OB88_-1417 L n=3 unknown=3
+037 08OB88_-1417 LC n=3 unknown=3
+037 08OB88_00332 L n=3 unknown=3
+037 08OB88_00332 LC n=3 unknown=3
+037 08OB89_-0847 L n=3 unknown=3
+037 08OB89_-0847 LC n=3 unknown=3
+30 runs -> /tmp/tmpsvve7je_/037
+037 matched 30 metadata/exit records; absent raw outcome, geometry, events and updates stayed blank
+all common evaluation tests passed

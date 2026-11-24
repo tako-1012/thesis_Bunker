@@ -1,0 +1,10 @@
+/tmp/057-tests-after.ew8AKT/conference/experiments/lidar_fine_report.py:168: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  data = pd.concat([old, pd.DataFrame(rows)], ignore_index=True)
+/tmp/057-tests-after.ew8AKT/conference/experiments/lidar_fine_report.py:168: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  data = pd.concat([old, pd.DataFrame(rows)], ignore_index=True)
+default 0.3 PASS: omitted/explicit match, manifest and report match pre-change hashes (excluding interpreter metadata)
+1.0 PASS: historical overlay manifest settings and world target match; stale=1.0, step=0.001, LiDAR=10Hz
+validation PASS: explicit 0.3 overrides environment; legacy rtf_check still works; invalid factor, stale and coarse rejected
+wrapper PASS: split and equals options forward unchanged, with identical Docker setup
+run finalization PASS: explicit 1.0 preserves manifest and skips incompatible task023 summary
+all task039 RTF option tests passed
