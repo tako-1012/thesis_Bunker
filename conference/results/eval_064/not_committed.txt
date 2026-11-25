@@ -1,0 +1,13 @@
+研究 PC hayashi に保管した 064 段階 1 の全 90 走行の生記録
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/
+
+各走行の条件（run_conditions.txt）と終了コード（exit.txt）は Git に収録。
+Gazebo の出力、軌跡、点群、地図、計画地図、位置受信と追従側の生記録は上記の場所に保管。
+
+runs 以下の相対パスと SHA-256 は同梱の runs_sha256.txt に収録（23,307 ファイル）。
+runs_sha256.txt 自体の SHA-256
+5295ab8b304ae26f206bfadf278ece2d8c5d29984bf9b03a27ba0a1ef8c6177a
+
+研究 PC 上で確認
+cd /home/kotaro/thesis_Bunker_rtf/conference/results/eval_064
+sha256sum -c --quiet runs_sha256.txt

@@ -1,0 +1,47 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_review_fixes
+1 PASS: none/v1 commands, ROS follower state and log bytes unchanged; full manifest hashes 0/8
+A1 v1 second tilt after 9s: replanned
+A1 v2 second tilt after 9s: terminal unsafe_tilt
+A1 v2 second tilt after 10s: terminal unsafe_tilt
+A1 v2 second tilt after 10.1s: replanned
+A2 v1 duplicate segment, 0.8m: running
+A2 v2 duplicate segment, 0.8m: off_path
+A3 v1 near passed segment and 0.8m from remaining route: running
+A3 v2 near passed segment and 0.8m from remaining route: off_path
+B6 PASS: the box is detected with support 0.70m from its centre
+B9 PASS: dense/cKDTree agree on 298 heights, including unknown support
+B8 5f36770 local_ground_032.py SHA-256 5a57c07f09d31e0fcf7508de6ddc28e05253cca13939eeda767ffca2ef7491f5
+B8 5f36770 pointcloud_map_multi_032.py SHA-256 710d81185c5a945e9c89d1d679414c6846832f779edbc6a9e9065823ba67dc96
+v2 configuration PASS: manifest, CLI, both ROS parameters and async factory
+B10 PASS: fine world input NPZ, world SDF and heightmap match byte for byte; coarse matching remains explicit
+Task036 task023 aggregation skipped: the waypoint cohort differs from the cached task022 controls. Manifest and available raw results: /tmp/tmpreckxk2j/edge
+Task036 task023 aggregation skipped: the task023 report requires --map fine. Manifest and available raw results: /tmp/tmpreckxk2j/coarse
+Task036 task023 aggregation skipped: opt-in conditions require separate evaluation from task023. Manifest and available raw results: /tmp/tmpreckxk2j/opt-in
+B11 PASS: standard aggregation selected only for a comparable fine cohort
+B7 controlled scan fine_diff coarse_diff lethal_diff
+0 0 0 0
+1 0 0 0
+2 0 0 0
+3 0 0 0
+4 0 0 0
+5 0 0 0
+6 0 0 0
+7 0 0 0
+8 0 0 0
+9 0 0 0
+10 0 0 0
+11 0 0 0
+B7 review scan fine_diff coarse_diff lethal_diff
+0 0 0 0
+1 0 0 0
+2 0 0 0
+3 0 0 0
+4 0 0 0
+5 0 0 2
+6 2 2 1
+7 4 2 0
+8 8 2 0
+9 10 3 5
+10 13 3 0
+11 11 2 0
+all task040 review-fix tests passed

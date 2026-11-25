@@ -1,0 +1,9 @@
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r1/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r2/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r3/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r1/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r2/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r3/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+approach: 90 rows
+goal_cell: 12 rows
+skipped: 6 rows
