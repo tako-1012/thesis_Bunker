@@ -1,0 +1,14 @@
+patch,condition,rep,no_path_type,last_online_error,plan,stamp_s,failure_class,plan_reason,goal,start,cause,blocked,true_steep,true_halo,prior_steep_halo,detected,obstacle_halo,prior_raw,prior_inflated,steep,steep_halo,retained_lethal,map_issue
+08OB88_-0167,D,1,goal_cell,,195,318.3,goal_cell,new_lethal,"(137, 294)","(175, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,D,2,goal_cell,,212,318.2,goal_cell,lethal_changed,"(137, 294)","(169, 280)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,D,3,goal_cell,,190,309.1,goal_cell,new_lethal,"(137, 294)","(191, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,1,goal_cell,,164,310.7,goal_cell,lethal_changed,"(137, 294)","(187, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,2,goal_cell,,173,312.75,goal_cell,lethal_changed,"(137, 294)","(186, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,3,goal_cell,,194,314.2,goal_cell,lethal_changed,"(137, 294)","(172, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,G,1,goal_cell,,168,326.1,goal_cell,lethal_changed,"(137, 294)","(149, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,G,2,goal_cell,,211,316.6,goal_cell,lethal_changed,"(137, 294)","(167, 280)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,G,3,goal_cell,,169,314.5,goal_cell,lethal_changed,"(137, 294)","(169, 280)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,P,3,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB88_-0167,S,1,goal_cell,,160,302.6,goal_cell,distance,"(137, 294)","(190, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,S,2,goal_cell,,138,305.0,goal_cell,lethal_changed,"(137, 294)","(190, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,S,3,goal_cell,,171,302.7,goal_cell,new_lethal,"(137, 294)","(189, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
