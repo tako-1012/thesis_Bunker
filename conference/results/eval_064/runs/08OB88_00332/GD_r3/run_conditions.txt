@@ -1,0 +1,3 @@
+started=2026-11-25T06:33:28+09:00 commit=7f946a3c5a01e1a73de9c33986fab21fe0fe7785 branch=claude/064-eval tracked_changes=0
+image=sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57 stage=1 patch=08OB88_00332 condition=GD rep=3 rtf=1.0 domain=68 rendering=gpu stale_sim_s=1.0 seed=0 prior_variant=exact
+args=--patch-count 3 --map fine --ground-estimate non_obstacle --online-fixes v2 --sensors lidar_real+depth2 --diagnostics --real-time-factor 1.0 --save-plan-maps --pose-trace --ground-near-obstacle exclude --obstacle-clearance distance

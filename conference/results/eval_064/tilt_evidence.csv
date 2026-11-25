@@ -1,0 +1,12 @@
+patch,condition,rep,outcome,t,kind,replanned_30s,moved_30s_m,moved_until_end_m,seconds_to_end
+08OB88_-0167,PD,1,unsafe_tilt_repeat,344.25,unsafe_tilt,True,0.12,0.12,0.3
+08OB88_-0167,PD,1,unsafe_tilt_repeat,344.55,unsafe_tilt,False,0.0,0.0,0.0
+08OB88_-0167,PD,2,unsafe_tilt_repeat,345.0,unsafe_tilt,True,0.12,0.12,0.3
+08OB88_-0167,PD,2,unsafe_tilt_repeat,345.3,unsafe_tilt,False,0.0,0.0,0.0
+08OB88_-0167,PD,3,unsafe_tilt_repeat,347.6,unsafe_tilt,True,0.23,0.23,0.4
+08OB88_-0167,PD,3,unsafe_tilt_repeat,347.9,unsafe_tilt,False,0.03,0.03,0.1
+08OB88_-0167,P,1,unsafe_tilt_repeat,340.85,unsafe_tilt,True,0.22,0.22,0.3
+08OB88_-0167,P,1,unsafe_tilt_repeat,341.15,unsafe_tilt,False,0.04,0.04,0.1
+08OB88_-0167,P,2,unsafe_tilt_repeat,339.6,unsafe_tilt,True,0.11,0.11,0.3
+08OB88_-0167,P,2,unsafe_tilt_repeat,339.9,unsafe_tilt,False,0.0,0.0,0.0
+08OB88_-0167,P,3,no_path,341.9,unsafe_tilt,True,0.04,0.04,0.2

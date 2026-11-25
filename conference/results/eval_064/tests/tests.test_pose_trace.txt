@@ -1,0 +1,15 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_pose_trace
+/home/kotaro/.venvs/thesis-python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+1 PASS: same-host default manifest, run files, ROS arguments, commands, timeout boundary and control bytes for none/v1/v2
+2 PASS: shared upstream, follower receipt, follower processing, missing data, stamp fallback and CPU evidence
+Task058 preparation only; Gazebo not executed: /tmp/tmpei04mioi/prepared
+08OB86_00294 completed
+3 PASS: CLI/manifest, ROS trace destinations, fake Docker, bounded CSV rollover and CPU sample
+all task058 pose trace tests passed

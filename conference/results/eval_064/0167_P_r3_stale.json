@@ -1,0 +1,37 @@
+{
+  "status": "no_path",
+  "finished_t": 342.051,
+  "online_error": "lidar_unavailable_or_stale",
+  "mission_end_minus_last_sensor_stamp_s": {
+    "lidar": 0.15100000000001046,
+    "camera1": 1.0509999999999877,
+    "camera2": 0.05099999999998772
+  },
+  "sensor_last_stamps_s": {
+    "lidar": 341.9,
+    "camera1": 341.0,
+    "camera2": 342.0
+  },
+  "events": [
+    {
+      "sim_time": "341.9",
+      "event": "unsafe_tilt",
+      "detail": "{\"revision\": 40}"
+    },
+    {
+      "sim_time": "341.95",
+      "event": "safety_replan_requested",
+      "detail": "{\"position\": [55.51169482264005, 147.05562704537505], \"reason\": \"unsafe_tilt\"}"
+    },
+    {
+      "sim_time": "342.0",
+      "event": "join_accepted",
+      "detail": "{\"blocked_cells\": [], \"start_cell\": [111, 294]}"
+    },
+    {
+      "sim_time": "342.0",
+      "event": "safety_replanned",
+      "detail": "{\"reason\": \"unsafe_tilt\", \"revision\": 41}"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+064 08OB86_-0205 D n=3 completed=3
+064 08OB86_-0205 G n=3 completed=3
+064 08OB86_-0205 GD n=3 completed=3
+064 08OB86_-0205 P n=3 completed=3
+064 08OB86_-0205 PD n=3 completed=3
+064 08OB86_-0205 S n=3 completed=3
+064 08OB88_-0167 D n=3 no_path=3
+064 08OB88_-0167 G n=3 no_path=3
+064 08OB88_-0167 GD n=3 no_path=3
+064 08OB88_-0167 P n=3 no_path=1 other_error=2
+064 08OB88_-0167 PD n=3 other_error=3
+064 08OB88_-0167 S n=3 no_path=3
+064 08OB88_-1417 D n=3 completed=3
+064 08OB88_-1417 G n=3 completed=3
+064 08OB88_-1417 GD n=3 completed=3
+064 08OB88_-1417 P n=3 completed=3
+064 08OB88_-1417 PD n=3 completed=3
+064 08OB88_-1417 S n=3 completed=3
+064 08OB88_00332 D n=3 completed=3
+064 08OB88_00332 G n=3 completed=3
+064 08OB88_00332 GD n=3 completed=3
+064 08OB88_00332 P n=3 completed=3
+064 08OB88_00332 PD n=3 completed=3
+064 08OB88_00332 S n=3 completed=3
+064 08OB89_-0847 D n=3 completed=3
+064 08OB89_-0847 G n=3 completed=3
+064 08OB89_-0847 GD n=3 completed=3
+064 08OB89_-0847 P n=3 completed=3
+064 08OB89_-0847 PD n=3 completed=3
+064 08OB89_-0847 S n=3 completed=3
+90 runs -> /home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/common_eval

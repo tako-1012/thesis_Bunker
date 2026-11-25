@@ -1,0 +1,34 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_local_speed
+Task036 task023 aggregation skipped: the task023 report requires --map fine. Manifest and available raw results: /tmp/tmpfa21an00/ten
+1 PASS: pre-change map NPZ/snapshot/history/sidecar, world and manifest SHA-256 match; explicit prior matches implicit default
+024 08OB86_00294 start=[52, 195] points=[[309, 113], [273, 232], [104, 176], [46, 121], [250, 270]] unchanged=False
+024 08OB86_-0205 start=[49, 270] points=[[114, 102], [114, 214], [42, 179], [135, 255], [93, 197]] unchanged=True
+024 08OB87_-0706 start=[50, 200] points=[[89, 197], [263, 259], [59, 119], [347, 145], [39, 236]] unchanged=False
+024 08OB88_-1417 start=[70, 169] points=[[337, 140], [313, 165], [199, 151], [264, 194], [203, 229]] unchanged=True
+024 08OB88_-0167 start=[38, 231] points=[[137, 294], [249, 150], [202, 281], [31, 208], [348, 149]] unchanged=True
+024 08OB88_00332 start=[45, 228] points=[[142, 207], [38, 131], [203, 180], [136, 171], [70, 116]] unchanged=True
+024 08OB88_01832 start=[36, 214] points=[[223, 254], [335, 247], [159, 229], [264, 180], [133, 240]] unchanged=False
+024 08OB89_00152 start=[48, 341] points=[[296, 173], [183, 372], [207, 192], [328, 186], [193, 222]] unchanged=False
+024 08OB89_-0347 start=[55, 326] points=[[294, 224], [164, 169], [213, 144], [195, 352], [264, 374]] unchanged=False
+024 08OB89_-0847 start=[70, 146] points=[[269, 98], [75, 211], [227, 332], [281, 117], [350, 279]] unchanged=True
+024 PASS: 10/10 archived waypoint lists, 5/5 unchanged scenarios, default manifest bytes and wrapper forwarding
+032 slope=0 box=False shift=0: fine/coarse=(0, 0)
+032 slope=0 box=False shift=-0.4: fine/coarse=(0, 0)
+032 slope=0 box=False shift=0.4: fine/coarse=(0, 0)
+032 slope=0 box=True shift=0: fine/coarse=(0, 0)
+032 slope=0 box=True shift=-0.4: fine/coarse=(0, 0)
+032 slope=0 box=True shift=0.4: fine/coarse=(0, 0)
+032 slope=20 box=False shift=0: fine/coarse=(0, 0)
+032 slope=20 box=False shift=-0.4: fine/coarse=(0, 0)
+032 slope=20 box=False shift=0.4: fine/coarse=(0, 0)
+032 slope=20 box=True shift=0: fine/coarse=(0, 0)
+032 slope=20 box=True shift=-0.4: fine/coarse=(0, 0)
+032 slope=20 box=True shift=0.4: fine/coarse=(0, 0)
+CPU Intel(R) Core(TM) Ultra 7 255HX
+fixture sensor input accepted repeats before_median_s before_p95_s after_median_s after_p95_s fine_diff coarse_diff
+synthetic lidar 28800 28800 12 2.063520 2.113072 0.069341 0.070385 0 0
+synthetic camera1 26750 26750 12 2.819100 2.884954 0.011430 0.011617 0 0
+saved_b0b lidar 28800 11741 1 0.780080 0.780080 0.026105 0.026105 1 1
+saved_b0b camera1 26750 9604 1 1.168618 1.168618 0.018438 0.018438 0 0
+saved_b0b camera2 26750 9242 1 1.165635 1.165635 0.020208 0.020208 0 0
+all local speed tests passed
