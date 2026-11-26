@@ -1,6 +1,6 @@
 # 指示書 070：追従のずれを、通れない余白に足す（`--tracking-margin none|fixed|slope`、選んだときだけ）
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装2）**。Gazebo・研究 PC は使わない（研究 PC での評価は、結果を見てから別に頼む）。
+> **状態：保留（実装は `codex/070-tracking-margin` にあり、取り込んでいない。11/26 に修論の範囲を決め直したので評価しない。問題点は `progress/tasks.csv` の 070 の行）**。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針の 3・5）、
 > `conference/tasks/060_distance_clearance.md`・`065_steep_clearance.md`、`conference/results/distance_clearance/REPORT_ja.md`・`REVIEW_ja.md`・`replay.py`、
 > `conference/results/steep_clearance/REPORT_ja.md`・`REVIEW_ja.md`・`replay.py`、`conference/results/tracking_error/REPORT_ja.md`・`PROTOCOL_ja.md`・`distribution.csv`（061、**この指示書の値の出どころ**）、
