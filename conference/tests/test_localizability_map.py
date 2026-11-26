@@ -99,6 +99,17 @@ class LocalizabilityTests(unittest.TestCase):
         row = loc.summary('test', 'test', RADIUS, classes, gaps)
         self.assertEqual((row['gap_median_m'], row['gap_max_m']), (7.5, 10.))
 
+    def test_matching_ignores_samples_shifted_outside_the_patch(self):
+        matcher = loc.HeightMatcher(np.full((140, 140), 2.), RADIUS)
+        cell = np.array([0, 70])
+        visible = loc.visible_land(matcher.filled, matcher.land, cell, RADIUS)
+        costs, overlaps = matcher.profile(cell, visible, (RADIUS,))
+        trial = loc.TRIAL_INDEX[(-6, 0, 0)]
+        expected_count = np.count_nonzero(matcher.offsets[visible, 0] >= 6)
+        self.assertLess(expected_count, len(visible))
+        self.assertEqual(overlaps[0, trial], expected_count)
+        self.assertEqual(costs[0, trial], 0.)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

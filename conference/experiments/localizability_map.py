@@ -124,7 +124,7 @@ class HeightMatcher:
         self.land = np.isfinite(raw) & (raw >= 0.)
         self.filled = fill_nodata(raw)
         self.pad = int(np.ceil(max_radius/RESOLUTION))+max(TRANSLATION_CELLS)+2
-        self.reference = np.pad(np.where(self.land, raw, np.nan), self.pad)
+        self.reference = np.pad(np.where(self.land, raw, np.nan), self.pad, constant_values=np.nan)
         self.stride = self.reference.shape[1]
         self.rotations = rotated_offsets(max_radius, self.stride)
         self.offsets = ray_geometry(max_radius, raw.shape[1])[0]
@@ -318,7 +318,6 @@ def write_csv(path, rows):
         writer = csv.DictWriter(stream, list(rows[0]), lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
-        return rows
 
 
 def aggregate(results):
