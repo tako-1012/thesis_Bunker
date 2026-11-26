@@ -1,0 +1,31 @@
+064 08OB86_-0205 D n=6 completed=6
+064 08OB86_-0205 G n=6 completed=6
+064 08OB86_-0205 GD n=6 completed=6
+064 08OB86_-0205 P n=6 completed=6
+064 08OB86_-0205 PD n=6 completed=6
+064 08OB86_-0205 S n=6 completed=6
+064 08OB88_-0167 D n=6 no_path=6
+064 08OB88_-0167 G n=6 no_path=6
+064 08OB88_-0167 GD n=6 no_path=6
+064 08OB88_-0167 P n=6 no_path=2 other_error=4
+064 08OB88_-0167 PD n=6 other_error=6
+064 08OB88_-0167 S n=6 no_path=6
+064 08OB88_-1417 D n=6 completed=6
+064 08OB88_-1417 G n=6 completed=6
+064 08OB88_-1417 GD n=6 completed=5 no_path=1
+064 08OB88_-1417 P n=6 completed=6
+064 08OB88_-1417 PD n=6 completed=6
+064 08OB88_-1417 S n=6 completed=6
+064 08OB88_00332 D n=6 completed=6
+064 08OB88_00332 G n=6 completed=6
+064 08OB88_00332 GD n=6 completed=6
+064 08OB88_00332 P n=6 completed=6
+064 08OB88_00332 PD n=6 completed=6
+064 08OB88_00332 S n=6 completed=6
+064 08OB89_-0847 D n=6 completed=5 other_error=1
+064 08OB89_-0847 G n=6 completed=6
+064 08OB89_-0847 GD n=6 completed=4 no_path=2
+064 08OB89_-0847 P n=6 completed=6
+064 08OB89_-0847 PD n=6 completed=6
+064 08OB89_-0847 S n=6 completed=5 stuck=1
+180 runs -> /home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/common_eval_all
