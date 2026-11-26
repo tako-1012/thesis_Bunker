@@ -1,0 +1,7 @@
+n 2040
+hi_obs 1509
+hi_w02 1400
+hi_w05 1613
+lo_w02 105
+cen_w02 726
+hi err median: endpoint has fine obstacle 0.4303409504148368 1509  / none 0.06839781438587522 531

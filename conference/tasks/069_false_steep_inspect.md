@@ -1,6 +1,6 @@
 # 指示書 069：062（障害物の近くの点を地面の高さから外す）が研究 PC の評価で効かなかった理由を、記録から切り分ける
 
-> **状態：実行中（段階 1：クラウドの Codex、チャット：研究実装1）**。段階 2 は研究 PC（チャット：研究PC実行）で、067 が終わってから別に頼む。
+> **状態：保留（段階 1 は完了、レビューは `results/false_steep_inspect/REVIEW_ja.md`。段階 2 の研究 PC は、シミュレーションに頼りすぎていないかの方針を決めてから）**。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針の 4）、
 > `conference/tasks/062_ground_near_obstacle.md`・`conference/results/ground_near_obstacle/REPORT_ja.md`・`REVIEW_ja.md`・`replay.py`、
 > `conference/results/false_steep_causes/REPORT_ja.md`・`REVIEW_ja.md`・`PROTOCOL_ja.md`・`replay.py`（053）、
