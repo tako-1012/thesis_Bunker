@@ -1,0 +1,9 @@
+cohort,config,maps,observed_cells,uncertainty_seeds_all,reclassified_true_steep_seen,true_steep_seen,none_passable_true_steep_seen,soft_passable_true_steep_seen,released_true_steep_seen,released_true_steep_all,true_halo_only_seen,none_passable_true_halo_only_seen,soft_passable_true_halo_only_seen,released_true_halo_only_seen,released_true_halo_only_all
+047_048,062_exclude,14,18533,229,69,1059,1,7,6,6,216,37,58,21,69
+047_048,062_keep,14,18533,229,69,1059,1,7,6,6,216,37,58,21,69
+047_048,recorded,14,18533,420,69,1059,1,7,6,6,216,37,58,21,69
+eval_ground_endpoint_other:legacy,recorded,29,34017,269,70,1132,0,3,3,3,141,20,30,10,45
+lidar_fine:legacy,recorded,13,15558,265,43,743,8,10,2,2,107,12,27,15,34
+real_sensors:lidar_real,recorded,1,1436,4,0,0,0,0,0,0,0,0,0,0,0
+real_sensors:lidar_real+depth2,recorded,2,2871,6,0,0,0,0,0,0,0,0,0,0,0
+rtf_check:legacy,recorded,21,23100,348,0,0,0,0,0,0,0,0,0,0,0

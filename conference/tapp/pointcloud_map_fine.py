@@ -11,6 +11,7 @@ Task062 optionally also excludes nearby returns from that median.
 Task047 optionally uses fixed prior terrain for planning and retains the
 fused elevation separately for diagnostics.
 Task048 can add well-supported sensor steep cells to the prior steep mask.
+Task066 optionally propagates ground height uncertainty to sensor slopes.
 """
 
 from copy import copy
@@ -22,6 +23,7 @@ from .config import RESOLUTION
 from .distance_clearance import CombinedClearance, DistanceField, R_SOFT, validate_clearance
 from .pointcloud_map import PointCloudMap as _LegacyPointCloudMap, transform_points
 from .steep_clearance import SteepDistanceField, validate_steep_clearance
+from .slope_uncertainty import SINGLE_HEIGHT_ERROR_M, ground_standard_errors, uncertain_steep, validate_slope_uncertainty
 from .traversability import inflate, slope_deg
 
 FINE_RESOLUTION = .1
@@ -81,10 +83,11 @@ def _obstacle_disk(radius_m, radius_cells, extra):
 class PointCloudMapFine(_LegacyPointCloudMap):
     def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior',
                  obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep',
-                 clearance_soft_m=R_SOFT, ground_near_obstacle='keep', steep_clearance='centre', **kwargs):
+                 clearance_soft_m=R_SOFT, ground_near_obstacle='keep', steep_clearance='centre', slope_uncertainty='none', **kwargs):
         validate_clearance(obstacle_clearance, clearance_soft_m)
         validate_steep_clearance(steep_clearance)
         validate_ground_near_obstacle(ground_near_obstacle, ground_estimate)
+        validate_slope_uncertainty(slope_uncertainty, terrain_source)
         if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
             raise ValueError('unknown steep-near-obstacle policy')
         if terrain_source not in TERRAIN_SOURCES:
@@ -102,6 +105,11 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self.obstacle_clearance = obstacle_clearance
         self.terrain_source = terrain_source
         self.steep_near_obstacle = steep_near_obstacle
+        self.slope_uncertainty = slope_uncertainty
+        if slope_uncertainty == 'soft':
+            self.sigma_h = np.zeros_like(self.elev)
+            self.uncertain_steep = np.zeros_like(self.seen)
+            self._sensor_height = np.zeros_like(self.seen)
         if steep_near_obstacle == 'no_inflate' and terrain_source != 'prior':
             self._steep_sources = self.tm.steep
         if obstacle_reference == 'local':
@@ -301,7 +309,7 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         halo[region] = inflate(sources[inputs], radius)[core]
         self._dilated_steep, self._steep_sources = halo, sources
 
-    def _publish(self, touched, heights, *, observed=None):
+    def _publish(self, touched, heights, *, observed=None, height_error=None):
         # Keep old snapshots valid. Reuse the elevation and its derived
         # fields when the written heights have identical bits (including -0).
         observed = touched if observed is None else observed
@@ -317,8 +325,16 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             elev = elev.copy()
             elev.flat[touched[changed]] = heights[changed]
         update_terrain = elev_changed and self.terrain_source == 'sensor'
+        uncertainty_changed = False
+        if height_error is not None:
+            sigma_h, uncertain = self.sigma_h, self.uncertain_steep
+            uncertainty_changed = np.any(sigma_h.flat[touched] != height_error)
+            if uncertainty_changed:
+                sigma_h = sigma_h.copy()
+                sigma_h.flat[touched] = height_error
+        refresh_terrain = update_terrain or uncertainty_changed
         steep = self._updated_veto(elev, observed, elev_changed) if self.terrain_source == 'prior_veto' else None
-        if update_terrain or steep is not None or self._last_new_obstacles:
+        if refresh_terrain or steep is not None or self._last_new_obstacles:
             tm = copy(tm)
             if update_terrain:
                 tm.elev = elev
@@ -338,17 +354,22 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 tm.gx[region], tm.gy[region] = gx[core], gy[core]
                 tm.slope[region] = np.degrees(np.arctan(np.hypot(gx[core], gy[core])))
                 tm.rough = self._update_roughness(tm.elev, lo, hi)
+            if refresh_terrain:
                 tm.steep = tm.slope > self.robot.max_slope_deg
                 slope = tm.slope / self.robot.max_slope_deg
                 rough = tm.rough / self.robot.rough_sat
                 np.clip(slope, 0, 1, out=slope)
                 np.clip(rough, 0, 1, out=rough)
                 tm.cost = self.weights.alpha * slope + self.weights.beta * rough
+                if height_error is not None:
+                    uncertain = uncertain_steep(tm.gx, tm.gy, tm.steep, sigma_h, self.robot.max_slope_deg)
+                    tm.steep &= ~uncertain
+                    tm.cost[uncertain] = 1.
             if steep is not None:
                 tm.steep = steep
             if self.steep_near_obstacle == 'no_inflate' and self.terrain_source != 'prior':
                 self._refresh_steep_halo(tm.steep)
-            elif steep is not None or (update_terrain and not np.array_equal(tm.steep, self.tm.steep)):
+            elif steep is not None or (refresh_terrain and not np.array_equal(tm.steep, self.tm.steep)):
                 self._dilated_steep = inflate(tm.steep, self.robot.footprint_radius)
             if self._last_new_obstacles:
                 tm.rock = self._prior_rock | self._inflated_coarse
@@ -358,6 +379,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 self.steep_distance_field.refresh(tm.steep)
         with self._lock:
             self.elev, self.seen, self.tm, self.lethal = elev, seen, tm, lethal
+            if height_error is not None:
+                self.sigma_h, self.uncertain_steep = sigma_h, uncertain
             self.version += 1
 
     def _updated_veto(self, elev, observed, elev_changed):
@@ -373,6 +396,16 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 return steep
         return None
 
+    def _publish_soft_ground(self, touched, heights, errors, *, observed):
+        # An excluded or unsupported estimate leaves its previous height.
+        # A held sensor height now has at most one supporting ground return.
+        estimated = np.isfinite(heights)
+        self._sensor_height.flat[touched[estimated]] = True
+        held = touched[~estimated]
+        heights[~estimated] = self.elev.flat[held]
+        errors[~estimated] = np.where(self._sensor_height.flat[held], SINGLE_HEIGHT_ERROR_M, 0.)
+        self._publish(touched, heights, observed=observed, height_error=errors)
+
     def _publish_excluded_ground(self, touched):
         # Detection consumed the unfiltered history. Dirty coarse cells include
         # those whose old returns are newly covered, even without new samples.
@@ -385,7 +418,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             self._ground_excluded[tuple(halo.T)] = True
             affected = np.ravel_multi_index((halo//RATIO).T, self.prior.shape)
             dirty = np.union1d(touched, affected)
-        updated, heights = [], []
+        updated, heights, errors = [], [], []
+        soft = self.slope_uncertainty == 'soft'
         for key in dirty.tolist():
             samples = self.samples.get(key)
             if samples is None:
@@ -395,9 +429,20 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             # As in the existing median, one eligible return suffices.
             # With none, preserve the previous estimate (initially the prior).
             if ground.any():
+                z = samples[ground, 0]
                 updated.append(key)
-                heights.append(np.median(samples[ground, 0]))
-        self._publish(np.asarray(updated, dtype=np.intp), np.asarray(heights), observed=touched)
+                heights.append(np.median(z))
+                if soft:
+                    errors.append(np.std(z-z[0], ddof=1)/np.sqrt(len(z)) if len(z) > 1 else SINGLE_HEIGHT_ERROR_M)
+            elif soft:
+                updated.append(key)
+                heights.append(np.nan)
+                errors.append(SINGLE_HEIGHT_ERROR_M)
+        keys, values = np.asarray(updated, dtype=np.intp), np.asarray(heights)
+        if soft:
+            self._publish_soft_ground(keys, values, np.asarray(errors), observed=touched)
+        else:
+            self._publish(keys, values, observed=touched)
 
     def _update_prior(self, world, cells, input_points, reference=None):
         with self._update_lock:
@@ -507,7 +552,12 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 low[np.searchsorted(occupied, key)] = np.median(z[offsets[key]:offsets[key]+lengths[key]])
         heights[occupied] = low
         self._add_obstacles(new)
-        self._publish(touched, heights)
+        options = {}
+        if self.slope_uncertainty == 'soft':
+            errors = ground_standard_errors(z, groups, lengths)
+            errors[lengths == 0] = 0.  # This branch falls back to the prior height.
+            options['height_error'] = errors
+        self._publish(touched, heights, **options)
 
     def update(self, sensor_points, pose):
         if self.obstacle_reference == 'local':
@@ -533,6 +583,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
             terrain = dict(terrain_steep=self.tm.steep) if self.terrain_source != 'sensor' else {}
             if self.terrain_source == 'prior_veto':
                 terrain['veto_supported'] = self._veto_supported
+            if self.slope_uncertainty == 'soft':
+                terrain.update(sigma_h=self.sigma_h, uncertain_steep=self.uncertain_steep)
             np.savez_compressed(path, elev=self.elev, seen=self.seen, obstacle=self.detected_obstacle,
                                 cost=self.tm.cost, lethal=self.lethal, version=self.version,
                                 fine_shape=np.asarray(self.fine_shape), fine_resolution_m=FINE_RESOLUTION,

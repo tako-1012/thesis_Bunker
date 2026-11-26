@@ -1,0 +1,10 @@
+stage,config,mode,records,goal_open,route,true_steep_m,true_steep_routes,true_halo_only_m,true_halo_only_routes,released_true_steep_seen_m,released_true_steep_seen_routes,released_true_halo_only_seen_m,released_true_halo_only_seen_routes,released_true_steep_all_m,released_true_steep_all_routes,released_true_halo_only_all_m,released_true_halo_only_all_routes
+failure_snapshot,recorded,none,20,0,0,,,,,,,,,,,,
+final,recorded,none,14,1,1,,,,,,,,,,,,
+first_lidar,062_exclude,none,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,062_exclude,soft,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,062_keep,none,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,062_keep,soft,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,recorded,none,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,recorded,soft,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+missing,recorded,none,15,,,,,,,,,,,,,,

@@ -1,0 +1,149 @@
+skipped results/eval_ground_endpoint/runs/08OB89_-0847/C1_r2/physical_1/raw/08OB89_-0847: missing committed input: results/eval_ground_endpoint/runs/08OB89_-0847/C1_r2/physical_1/raw/08OB89_-0847/pointcloud_map.npz
+skipped results/eval_ground_endpoint/runs/08OB89_-0847/C1_r3/physical_1/raw/08OB89_-0847: missing committed input: results/eval_ground_endpoint/runs/08OB89_-0847/C1_r3/physical_1/raw/08OB89_-0847/pointcloud_map.npz
+skipped results/gazebo_lidar/physical_10/raw/08OB86_-0205: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB86_00294: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB87_-0706: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB88_-0167: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB88_-1417: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB88_00332: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB88_01832: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB89_-0347: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB89_-0847: coarse map has no fine obstacle and halo masks
+skipped results/gazebo_lidar/physical_10/raw/08OB89_00152: coarse map has no fine obstacle and halo masks
+skipped results/lidar_fine/first_attempt_partial/raw/08OB88_-1417: missing committed input: results/lidar_fine/first_attempt_partial/raw/08OB88_-1417/pointcloud_map.npz
+skipped results/rtf_check/divergence/gpu_smoke/physical_1/raw/08OB87_-0706: missing committed input: results/rtf_check/divergence/gpu_smoke/physical_1/raw/08OB87_-0706/pointcloud_map.npz
+skipped results/rtf_check/divergence/gpu_smoke1_no_render_device/physical_1/raw/08OB87_-0706: missing committed input: results/rtf_check/divergence/gpu_smoke1_no_render_device/physical_1/raw/08OB87_-0706/pointcloud_map.npz
+skipped results/eval_035/08OB88_-0167/P1_r1: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB88_-0167/P1_r2: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB88_-0167/P1_r3: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB89_-0347/P1_r1: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB89_-0347/P1_r2: failure snapshot only; no final map or first LiDAR cloud
+skipped results/eval_035/08OB89_-0347/P1_r3: failure snapshot only; no final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/LC_r1: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/LC_r2: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/LC_r3: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/L_r1: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/L_r2: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-0167/L_r3: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB88_-1417/L_r2: no committed final map or first LiDAR cloud
+skipped results/real_sensors_compare/08OB89_-0847/LC_r1: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/0.3_r1: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/0.3_r2: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/0.3_r3: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/1.0_r1: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/1.0_r2: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB88_-0167/1.0_r3: no committed final map or first LiDAR cloud
+skipped results/rtf_compare/08OB89_-0847/1.0_r3: no committed final map or first LiDAR cloud
+80 first LiDAR archives reprocessed; 36 previously excluded archives
+Final and failure snapshots lack adopted ground point histories; soft is uncalculated.
+safety
+cohort,config,maps,observed_cells,uncertainty_seeds_all,reclassified_true_steep_seen,true_steep_seen,none_passable_true_steep_seen,soft_passable_true_steep_seen,released_true_steep_seen,released_true_steep_all,true_halo_only_seen,none_passable_true_halo_only_seen,soft_passable_true_halo_only_seen,released_true_halo_only_seen,released_true_halo_only_all
+047_048,062_exclude,14,18533,229,69,1059,1,7,6,6,216,37,58,21,69
+047_048,062_keep,14,18533,229,69,1059,1,7,6,6,216,37,58,21,69
+047_048,recorded,14,18533,420,69,1059,1,7,6,6,216,37,58,21,69
+eval_ground_endpoint_other:legacy,recorded,29,34017,269,70,1132,0,3,3,3,141,20,30,10,45
+lidar_fine:legacy,recorded,13,15558,265,43,743,8,10,2,2,107,12,27,15,34
+real_sensors:lidar_real,recorded,1,1436,4,0,0,0,0,0,0,0,0,0,0,0
+real_sensors:lidar_real+depth2,recorded,2,2871,6,0,0,0,0,0,0,0,0,0,0,0
+rtf_check:legacy,recorded,21,23100,348,0,0,0,0,0,0,0,0,0,0,0
+types
+cohort,config,kind,maps,false_steep,reclassified,reclassified_percent
+047_048,062_exclude,all,14,22,2,9.0909
+047_048,062_exclude,box_near,14,0,0,
+047_048,062_exclude,high_truth_relief,14,20,0,0.0
+047_048,062_exclude,near_slope_limit,14,20,0,0.0
+047_048,062_exclude,no_type,14,2,2,100.0
+047_048,062_exclude,sea_or_nodata_near,14,0,0,
+047_048,062_exclude,sparse_first_lidar,14,0,0,
+047_048,062_keep,all,14,22,2,9.0909
+047_048,062_keep,box_near,14,0,0,
+047_048,062_keep,high_truth_relief,14,20,0,0.0
+047_048,062_keep,near_slope_limit,14,20,0,0.0
+047_048,062_keep,no_type,14,2,2,100.0
+047_048,062_keep,sea_or_nodata_near,14,0,0,
+047_048,062_keep,sparse_first_lidar,14,0,0,
+047_048,recorded,all,14,209,80,38.2775
+047_048,recorded,box_near,14,50,30,60.0
+047_048,recorded,high_truth_relief,14,20,0,0.0
+047_048,recorded,near_slope_limit,14,21,0,0.0
+047_048,recorded,no_type,14,107,39,36.4486
+047_048,recorded,sea_or_nodata_near,14,0,0,
+047_048,recorded,sparse_first_lidar,14,32,11,34.375
+eval_ground_endpoint_other:legacy,recorded,all,29,130,44,33.8462
+eval_ground_endpoint_other:legacy,recorded,box_near,29,30,17,56.6667
+eval_ground_endpoint_other:legacy,recorded,high_truth_relief,29,9,0,0.0
+eval_ground_endpoint_other:legacy,recorded,near_slope_limit,29,10,1,10.0
+eval_ground_endpoint_other:legacy,recorded,no_type,29,82,21,25.6098
+eval_ground_endpoint_other:legacy,recorded,sea_or_nodata_near,29,0,0,
+eval_ground_endpoint_other:legacy,recorded,sparse_first_lidar,29,9,6,66.6667
+lidar_fine:legacy,recorded,all,13,174,69,39.6552
+lidar_fine:legacy,recorded,box_near,13,54,31,57.4074
+lidar_fine:legacy,recorded,high_truth_relief,13,15,1,6.6667
+lidar_fine:legacy,recorded,near_slope_limit,13,13,1,7.6923
+lidar_fine:legacy,recorded,no_type,13,82,24,29.2683
+lidar_fine:legacy,recorded,sea_or_nodata_near,13,0,0,
+lidar_fine:legacy,recorded,sparse_first_lidar,13,23,13,56.5217
+real_sensors:lidar_real,recorded,all,1,6,2,33.3333
+real_sensors:lidar_real,recorded,box_near,1,6,2,33.3333
+real_sensors:lidar_real,recorded,high_truth_relief,1,0,0,
+real_sensors:lidar_real,recorded,near_slope_limit,1,0,0,
+real_sensors:lidar_real,recorded,no_type,1,0,0,
+real_sensors:lidar_real,recorded,sea_or_nodata_near,1,0,0,
+real_sensors:lidar_real,recorded,sparse_first_lidar,1,0,0,
+real_sensors:lidar_real+depth2,recorded,all,2,13,3,23.0769
+real_sensors:lidar_real+depth2,recorded,box_near,2,13,3,23.0769
+real_sensors:lidar_real+depth2,recorded,high_truth_relief,2,0,0,
+real_sensors:lidar_real+depth2,recorded,near_slope_limit,2,0,0,
+real_sensors:lidar_real+depth2,recorded,no_type,2,0,0,
+real_sensors:lidar_real+depth2,recorded,sea_or_nodata_near,2,0,0,
+real_sensors:lidar_real+depth2,recorded,sparse_first_lidar,2,0,0,
+rtf_check:legacy,recorded,all,21,377,156,41.3793
+rtf_check:legacy,recorded,box_near,21,108,64,59.2593
+rtf_check:legacy,recorded,high_truth_relief,21,0,0,
+rtf_check:legacy,recorded,near_slope_limit,21,0,0,
+rtf_check:legacy,recorded,no_type,21,266,91,34.2105
+rtf_check:legacy,recorded,sea_or_nodata_near,21,0,0,
+rtf_check:legacy,recorded,sparse_first_lidar,21,3,1,33.3333
+goals
+stage,config,mode,records,goal_open,route,true_steep_m,true_steep_routes,true_halo_only_m,true_halo_only_routes,released_true_steep_seen_m,released_true_steep_seen_routes,released_true_halo_only_seen_m,released_true_halo_only_seen_routes,released_true_steep_all_m,released_true_steep_all_routes,released_true_halo_only_all_m,released_true_halo_only_all_routes
+failure_snapshot,recorded,none,20,0,0,,,,,,,,,,,,
+final,recorded,none,14,1,1,,,,,,,,,,,,
+first_lidar,062_exclude,none,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,062_exclude,soft,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,062_keep,none,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,062_keep,soft,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,recorded,none,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+first_lidar,recorded,soft,14,14,14,10.012468905280222,4,4.004987562112088,4,0.0,0,0.0,0,0.0,0,0.0,0
+missing,recorded,none,15,,,,,,,,,,,,,,
+goal_cells
+patch,condition,rep,stage,x,y,seen,angle_deg,truth_angle_deg,sigma_h_m,sigma_s,none_steep,soft_steep,uncertain_steep,record,experiment,sigma_s_needed_for_soft,soft_missing
+08OB88_-0167,C0,2,first_lidar,137,293,False,20.961480924384684,20.865692501556314,0.0,0.0,False,False,False,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167/first_cloud.npz,,,
+08OB88_-0167,C0,2,first_lidar,137,294,False,10.787240663069785,10.78716029768279,0.0,0.0,False,False,False,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167/first_cloud.npz,,,
+08OB88_-0167,C1,1,first_lidar,137,293,False,20.961480924384684,20.865692501556314,0.0,0.0,False,False,False,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167/first_cloud.npz,,,
+08OB88_-0167,C1,1,first_lidar,137,294,False,10.787240663069785,10.78716029768279,0.0,0.0,False,False,False,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167/first_cloud.npz,,,
+08OB88_-0167,C1,2,first_lidar,137,293,False,20.961480924384684,20.865692501556314,0.0,0.0,False,False,False,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167/first_cloud.npz,,,
+08OB88_-0167,C1,2,first_lidar,137,294,False,10.787240663069785,10.78716029768279,0.0,0.0,False,False,False,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167/first_cloud.npz,,,
+08OB88_-0167,C1,3,first_lidar,137,293,False,20.961480924384684,20.865692501556314,0.0,0.0,False,False,False,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167/first_cloud.npz,,,
+08OB88_-0167,C1,3,first_lidar,137,294,False,10.787240663069785,10.78716029768279,0.0,0.0,False,False,False,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167/first_cloud.npz,,,
+08OB88_-0167,C0,2,final,137,293,True,27.010793854315327,,,,True,,,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167/pointcloud_map.npz,030,0.0264164808934214,no retained ground point history
+08OB88_-0167,C0,2,final,137,294,True,10.530876957911032,,,,False,,,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167/pointcloud_map.npz,030,,no retained ground point history
+08OB88_-0167,C0,2,failure_snapshot,137,293,True,26.820807013289244,,,,True,,,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,030,0.023881207930997374,no retained ground point history
+08OB88_-0167,C0,2,failure_snapshot,137,294,True,10.541843246685314,,,,False,,,results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,030,,no retained ground point history
+08OB88_-0167,C1,1,final,137,293,True,26.763860240827917,,,,True,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167/pointcloud_map.npz,030,0.0231229412359055,no retained ground point history
+08OB88_-0167,C1,1,final,137,294,True,7.018140107373743,,,,False,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167/pointcloud_map.npz,030,,no retained ground point history
+08OB88_-0167,C1,1,failure_snapshot,137,293,True,26.11052238890008,,,,True,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,030,0.014477223848522165,no retained ground point history
+08OB88_-0167,C1,1,failure_snapshot,137,294,True,7.018140107373743,,,,False,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,030,,no retained ground point history
+08OB88_-0167,C1,2,final,137,293,True,26.345395387508905,,,,True,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167/pointcloud_map.npz,030,0.01757406736274747,no retained ground point history
+08OB88_-0167,C1,2,final,137,294,True,12.47773038765185,,,,False,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167/pointcloud_map.npz,030,,no retained ground point history
+08OB88_-0167,C1,2,failure_snapshot,137,293,True,26.31403187564115,,,,True,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,030,0.01715980879281252,no retained ground point history
+08OB88_-0167,C1,2,failure_snapshot,137,294,True,11.986134110346407,,,,False,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,030,,no retained ground point history
+08OB88_-0167,C1,3,final,137,293,True,25.27594650359031,,,,True,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167/pointcloud_map.npz,030,0.0035724383863158142,no retained ground point history
+08OB88_-0167,C1,3,final,137,294,True,8.67646132227415,,,,False,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167/pointcloud_map.npz,030,,no retained ground point history
+08OB88_-0167,C1,3,failure_snapshot,137,293,True,25.27594650359031,,,,True,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,030,0.0035724383863158142,no retained ground point history
+08OB88_-0167,C1,3,failure_snapshot,137,294,True,8.67646132227415,,,,False,,,results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,030,,no retained ground point history
+08OB88_-0167,P1,1,failure_snapshot,137,293,True,25.268343505046055,,,,True,,,results/eval_035/runs/08OB88_-0167/P1_r1/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,035,0.0034737921051282337,no retained ground point history
+08OB88_-0167,P1,1,failure_snapshot,137,294,True,8.072073254011206,,,,False,,,results/eval_035/runs/08OB88_-0167/P1_r1/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,035,,no retained ground point history
+08OB88_-0167,P1,2,failure_snapshot,137,293,True,25.042739882022726,,,,True,,,results/eval_035/runs/08OB88_-0167/P1_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,035,0.0005522612028769562,no retained ground point history
+08OB88_-0167,P1,2,failure_snapshot,137,294,True,9.92959739747871,,,,False,,,results/eval_035/runs/08OB88_-0167/P1_r2/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,035,,no retained ground point history
+08OB88_-0167,P1,3,failure_snapshot,137,293,True,25.54542629644441,,,,True,,,results/eval_035/runs/08OB88_-0167/P1_r3/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,035,0.007076873308753531,no retained ground point history
+08OB88_-0167,P1,3,failure_snapshot,137,294,True,8.854307150623002,,,,False,,,results/eval_035/runs/08OB88_-0167/P1_r3/physical_1/raw/08OB88_-0167/diag/plan_fail_000001.npz,035,,no retained ground point history

@@ -34,7 +34,7 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 class LidarPlannerNode(OnlinePlannerNode):
     def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior', online_fixes='none',
                  obstacle_clearance='centre', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
-                 clearance_soft_m=None, ground_near_obstacle='keep', goal_region='none', steep_clearance='centre'):
+                 clearance_soft_m=None, ground_near_obstacle='keep', goal_region='none', steep_clearance='centre', slope_uncertainty='none'):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         from tapp.distance_clearance import R_SOFT
@@ -47,7 +47,7 @@ class LidarPlannerNode(OnlinePlannerNode):
                               ('steep_near_obstacle', steep_near_obstacle), ('pose_trace_dir', ''),
                               ('clearance_soft_m', R_SOFT if clearance_soft_m is None else clearance_soft_m),
                               ('ground_near_obstacle', ground_near_obstacle), ('goal_region', goal_region),
-                              ('steep_clearance', steep_clearance)]:
+                              ('steep_clearance', steep_clearance), ('slope_uncertainty', slope_uncertainty)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -72,6 +72,7 @@ class LidarPlannerNode(OnlinePlannerNode):
                                     clearance_soft_m=self.get_parameter('clearance_soft_m').value,
                                     terrain_source=self.get_parameter('terrain_source').value,
                                     steep_near_obstacle=self.get_parameter('steep_near_obstacle').value,
+                                    slope_uncertainty=self.get_parameter('slope_uncertainty').value,
                                     robot=prior['tmap'].robot, weights=prior['tmap'].weights,
                                     sensor_height_m=self.get_parameter('sensor_height_m').value,
                                     max_range_m=self.get_parameter('max_range_m').value,
@@ -324,10 +325,12 @@ def main(args=None):
     from tapp.pointcloud_map_fine import FINE_CLEARANCE_MODES, GROUND_NEAR_OBSTACLE, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
     from tapp.prior_variants import OBSTACLE_REFERENCES
     from tapp.online_safety import ONLINE_FIXES
+    from tapp.slope_uncertainty import SLOPE_UNCERTAINTY_MODES
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default=None)
     parser.add_argument('--ground-near-obstacle', choices=GROUND_NEAR_OBSTACLE, default=None)
     parser.add_argument('--terrain-source', choices=TERRAIN_SOURCES, default=None)
+    parser.add_argument('--slope-uncertainty', choices=SLOPE_UNCERTAINTY_MODES, default=None)
     parser.add_argument('--steep-near-obstacle', choices=STEEP_NEAR_OBSTACLE, default=None)
     parser.add_argument('--steep-clearance', choices=STEEP_CLEARANCES, default=None)
     parser.add_argument('--obstacle-clearance', choices=FINE_CLEARANCE_MODES, default=None,
