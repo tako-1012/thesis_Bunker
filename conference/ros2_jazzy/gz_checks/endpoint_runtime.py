@@ -55,6 +55,8 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
                                 steep_halo=inflate(mapper.tm.steep, radius))
             if getattr(mapper, 'terrain_source', None) == 'prior_veto':
                 snapshot['veto_supported'] = mapper._veto_supported.copy()
+            if getattr(mapper, 'slope_uncertainty', 'none') == 'soft':
+                snapshot.update(sigma_h=mapper.sigma_h.copy(), uncertain_steep=mapper.uncertain_steep.copy())
         return snapshot
 
 

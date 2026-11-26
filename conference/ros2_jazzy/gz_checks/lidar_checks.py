@@ -25,6 +25,7 @@ from tapp.pointcloud_map_fine import (
     FINE_CLEARANCE_MODES, GROUND_ESTIMATES, OBSTACLE_CLEARANCES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES,
     GROUND_EXCLUSION_M, GROUND_NEAR_OBSTACLE, validate_ground_near_obstacle,
 )
+from tapp.slope_uncertainty import LOWER_95_Z, SINGLE_HEIGHT_ERROR_M, SLOPE_UNCERTAINTY_MODES, validate_slope_uncertainty
 from tapp.distance_clearance import R_HARD, R_SOFT, W_OBS, validate_clearance
 from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
 from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
@@ -75,12 +76,14 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   obstacle_reference='prior', debris_box_height='plus_half', prior_variant_name='exact', online_fixes='none',
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
                   waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
-                  pose_trace=False, clearance_soft_m=R_SOFT, ground_near_obstacle='keep', goal_region='none'):
+                  pose_trace=False, clearance_soft_m=R_SOFT, ground_near_obstacle='keep', goal_region='none',
+                  slope_uncertainty='none'):
     from tapp.goal_region import RING_RADIUS_M, validate_goal_region
 
     validate_goal_region(goal_region, endpoint_policy)
     validate_tracking(tracking)
     validate_ground_near_obstacle(ground_near_obstacle, ground_estimate, map_method=map_method)
+    validate_slope_uncertainty(slope_uncertainty, terrain_source, map_method=map_method)
     if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
         raise ValueError('unknown steep-near-obstacle policy')
     if steep_near_obstacle != 'keep' and map_method != 'fine':
@@ -266,6 +269,9 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
         manifest.update(pose_trace=True, pose_trace_limit_bytes=TRACE_LIMIT_BYTES)
     if goal_region != 'none':
         manifest.update(goal_region=goal_region, goal_region_radius_m=RING_RADIUS_M)
+    if slope_uncertainty == 'soft':
+        manifest.update(slope_uncertainty=slope_uncertainty, slope_uncertainty_lower_z=LOWER_95_Z,
+                        slope_uncertainty_single_height_error_m=SINGLE_HEIGHT_ERROR_M)
     save_manifest(output, manifest)
     return manifest
 
@@ -507,6 +513,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'ground_estimate:='+manifest['ground_estimate']])
                     if 'ground_near_obstacle' in manifest:
                         commands[-1].extend(['-p', 'ground_near_obstacle:='+manifest['ground_near_obstacle']])
+                    if 'slope_uncertainty' in manifest:
+                        commands[-1].extend(['-p', 'slope_uncertainty:='+manifest['slope_uncertainty']])
                     if 'terrain_source' in manifest:
                         commands[-1].extend(['-p', 'terrain_source:='+manifest['terrain_source']])
                     if manifest.get('tracking') == 'corner_slow':
@@ -584,6 +592,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if 'slope_uncertainty' in manifest:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task066 trial errors; inspect manifest')
+                print('Task066 raw results saved; evaluate slope uncertainty separately:', output)
+                return
             if 'ground_near_obstacle' in manifest:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task062 trial errors; inspect manifest')
@@ -699,6 +712,7 @@ def main():
     parser.add_argument('--ground-estimate', choices=GROUND_ESTIMATES, default='all_returns')
     parser.add_argument('--ground-near-obstacle', choices=GROUND_NEAR_OBSTACLE, default='keep')
     parser.add_argument('--terrain-source', choices=TERRAIN_SOURCES, default='sensor')
+    parser.add_argument('--slope-uncertainty', choices=SLOPE_UNCERTAINTY_MODES, default='none')
     parser.add_argument('--steep-near-obstacle', choices=STEEP_NEAR_OBSTACLE, default='keep')
     parser.add_argument('--waypoint-check', choices=('none', 'substitute'), default='none')
     parser.add_argument('--tracking', choices=TRACKINGS, default='default')
@@ -719,6 +733,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if 'slope_uncertainty' in manifest:
+            print('Task066 preparation only; Gazebo not executed:', output)
+            return
         if 'ground_near_obstacle' in manifest:
             print('Task062 preparation only; Gazebo not executed:', output)
             return
