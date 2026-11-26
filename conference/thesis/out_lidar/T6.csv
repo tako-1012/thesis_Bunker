@@ -17,3 +17,5 @@ study,record,metric,count,n
 047,Failure snapshot,prior_route,3,6
 047,Failure snapshot,gained_route,3,6
 047,Replay coverage,missing_map,15,35
+064,"Terminal no path (GPU, 1.0x)",goal_cell,25,29
+064,"Terminal no path (GPU, 1.0x)",pointcloud_unavailable_or_stale,4,29
