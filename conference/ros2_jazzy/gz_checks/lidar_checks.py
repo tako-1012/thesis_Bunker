@@ -28,6 +28,10 @@ from tapp.pointcloud_map_fine import (
 from tapp.slope_uncertainty import LOWER_95_Z, SINGLE_HEIGHT_ERROR_M, SLOPE_UNCERTAINTY_MODES, validate_slope_uncertainty
 from tapp.distance_clearance import R_HARD, R_SOFT, W_OBS, validate_clearance
 from tapp.steep_clearance import STEEP_CLEARANCES, validate_steep_clearance
+from tapp.tracking_margin import (
+    FIXED_ERROR_M, SLOPE_ERROR_M, FIXED_HARD_M, SLOPE_HARD_M, SLOPE_CUTOFF_DEG,
+    TRACKING_MARGINS, validate_tracking_margin,
+)
 from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
 from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
 from tapp.endpoint_policy import ENDPOINT_POLICIES
@@ -78,7 +82,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
                   waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
                   pose_trace=False, clearance_soft_m=R_SOFT, ground_near_obstacle='keep', goal_region='none',
-                  steep_clearance='centre', slope_uncertainty='none'):
+                  steep_clearance='centre', slope_uncertainty='none', tracking_margin='none'):
     validate_steep_clearance(steep_clearance, map_method=map_method)
     from tapp.goal_region import RING_RADIUS_M, validate_goal_region
 
@@ -103,6 +107,7 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if obstacle_clearance != 'centre' and map_method != 'fine':
         raise ValueError(f'{obstacle_clearance} obstacle clearance requires --map fine')
     validate_clearance(obstacle_clearance, clearance_soft_m)
+    validate_tracking_margin(tracking_margin, obstacle_clearance, steep_clearance, clearance_soft_m)
     if real_time_factor is not None:
         if real_time_factor not in (.3, 1.):
             raise ValueError('real-time factor must be 0.3 or 1.0')
@@ -277,6 +282,14 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if slope_uncertainty == 'soft':
         manifest.update(slope_uncertainty=slope_uncertainty, slope_uncertainty_lower_z=LOWER_95_Z,
                         slope_uncertainty_single_height_error_m=SINGLE_HEIGHT_ERROR_M)
+    if tracking_margin != 'none':
+        manifest.update(tracking_margin=tracking_margin, tracking_margin_settings={
+            'fixed_error_m': FIXED_ERROR_M, 'slope_error_m': SLOPE_ERROR_M,
+            'slope_cutoff_deg': SLOPE_CUTOFF_DEG, 'base_hard_m': R_HARD, 'fixed_hard_m': FIXED_HARD_M,
+            'high_slope_hard_m': SLOPE_HARD_M, 'soft_m': R_SOFT, 'weight': W_OBS,
+            'distance_layers': [name for name, mode in (('obstacle', obstacle_clearance), ('steep', steep_clearance))
+                                if mode == 'distance'],
+        })
     save_manifest(output, manifest)
     return manifest
 
@@ -533,6 +546,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'clearance_soft_m:='+str(manifest['distance_clearance']['R_soft'])])
                     if 'steep_clearance' in manifest:
                         commands[-1].extend(['-p', 'steep_clearance:='+manifest['steep_clearance']])
+                    if 'tracking_margin' in manifest:
+                        commands[-1].extend(['-p', 'tracking_margin:='+manifest['tracking_margin']])
                     if 'steep_near_obstacle' in manifest:
                         commands[-1].extend(['-p', 'steep_near_obstacle:='+manifest['steep_near_obstacle']])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
@@ -599,6 +614,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if 'tracking_margin' in manifest:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task070 trial errors; inspect manifest')
+                print('Task070 raw results saved; evaluate tracking margin separately:', output)
+                return
             if 'steep_clearance' in manifest:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task065 trial errors; inspect manifest')
@@ -727,6 +747,7 @@ def main():
     parser.add_argument('--slope-uncertainty', choices=SLOPE_UNCERTAINTY_MODES, default='none')
     parser.add_argument('--steep-near-obstacle', choices=STEEP_NEAR_OBSTACLE, default='keep')
     parser.add_argument('--steep-clearance', choices=STEEP_CLEARANCES, default='centre')
+    parser.add_argument('--tracking-margin', choices=TRACKING_MARGINS, default='none')
     parser.add_argument('--waypoint-check', choices=('none', 'substitute'), default='none')
     parser.add_argument('--tracking', choices=TRACKINGS, default='default')
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default='none')
@@ -746,6 +767,9 @@ def main():
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if 'tracking_margin' in manifest:
+            print('Task070 preparation only; Gazebo not executed:', output)
+            return
         if 'steep_clearance' in manifest:
             print('Task065 preparation only; Gazebo not executed:', output)
             return

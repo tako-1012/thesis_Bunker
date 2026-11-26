@@ -24,12 +24,16 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
         options = dict(known=planner.known) if getattr(mapper, 'steep_near_obstacle', 'keep') == 'no_inflate' else {}
         observed = planning_seen(seen, **options) if planning_seen else seen
         field = getattr(mapper, 'distance_field', None)
+        tracking = getattr(mapper, 'tracking_margin', 'none') != 'none'
         if field is not None:
-            cost += field.cost
+            if not tracking:
+                cost += field.cost
             planner.distance_geometry = field.geometry()
         steep_distance = hasattr(mapper, 'steep_distance_field')
         if steep_distance:
             planner.distance_geometry, planner.steep_cost = mapper.steep_distance_snapshot()
+        if tracking:
+            planner.tracking_clearance = mapper.tracking_clearance_snapshot()
         planner.observe(observed, cost, lethal)
         if isinstance(planner, OverlapGoalPlanner):
             planner.set_goal_overrides(mapper.goal_obstacle_overrides(planner.goals_to_check()))
@@ -75,6 +79,17 @@ class EndpointPlanner(OnlinePlanner):
         goal = self.target if self.policy != 'none' else self.goal
         snapshot['goal'] = np.asarray(goal, int)
         snapshot = goal_snapshot(self, snapshot, goal)
+        tracking = getattr(self, 'tracking_clearance', None)
+        if tracking is not None:
+            blocked, mult, labels, layers, protected = tracking.project(
+                snapshot['lethal'], snapshot['cost'], tuple(snapshot['start']), goal, self.w)
+            protected = protected | snapshot.get('distance_hard', False)
+            snapshot = dict(snapshot, lethal=blocked, cost=mult, distance_hard=protected,
+                            tracking_hard_radius_m=tracking.radius, tracking_margin_relaxed=labels,
+                            tracking_margin_relaxed_layers='|'.join(sorted(layers)))
+            for name, cost in tracking.costs.items():
+                if name+'_cost' in snapshot:
+                    snapshot[name+'_cost'] = tracking.relaxed_costs[name] if name in layers else cost
         if self.policy == 'none':
             result = self._unrelaxed_plan(reason, initial)
         else:
@@ -90,11 +105,16 @@ class EndpointPlanner(OnlinePlanner):
             self.plan_times.append(time.perf_counter()-began)
             event = dict(n_plans=len(self.plan_times), reason=reason,
                          success=bool(outcome['success']), plan_time_s=self.plan_times[-1])
+            if tracking is not None:
+                self.tracking_relaxed_layers = layers
+                event['tracking_margin_relaxed'] = labels
             self.events.append(event)
             result = dict(event, path=[p.tolist() for p in self.path], replanned=True)
             self.owner.record_relaxation(outcome, snapshot, 'search')
         if self.owner.diagnostics or self.owner.plan_maps:
             actual = dict(snapshot)
+            if tracking is not None:
+                actual['tracking_margin_relaxed'] = result['tracking_margin_relaxed']
             if self.policy != 'none':
                 actual.update(pre_policy_lethal=snapshot['lethal'], lethal=outcome['lethal'],
                               cost=outcome['cost'], original_goal=snapshot['goal'], goal=outcome['goal'])
@@ -126,8 +146,9 @@ class EndpointRuntime(LidarOnlineMission):
                                         ['sim_time', 'map_version', 'x', 'y', 'clearance_m'])
                               if diagnostics and record_clearance else None)
         if diagnostics:
+            fields = self.plan_log.fields+['failure_class']
             self.plan_log.close()
-            self.plan_log = CsvChunks(plan_log, ['n_plans', 'reason', 'success', 'plan_time_s', 'failure_class'])
+            self.plan_log = CsvChunks(plan_log, fields)
         self.pose = None
         self.relax_index = 0
         self.hold = False
@@ -229,6 +250,10 @@ class EndpointRuntime(LidarOnlineMission):
         snapshot = goal_snapshot(planner, planner.snapshot, planner.goal)
         snapshot['pose'] = np.asarray(self.pose)
         snapshot['start'] = np.rint(np.asarray(position)/RESOLUTION).astype(int)
+        tracking = getattr(planner, 'tracking_clearance', None)
+        if tracking is not None:
+            protected = tracking.protected(planner.tracking_relaxed_layers) | snapshot.get('distance_hard', False)
+            snapshot = dict(snapshot, distance_hard=protected, lethal=snapshot['lethal'] | protected)
         # Revalidate at the latest map/pose, never blindly apply an old clearance.
         lethal, cost, relaxed = escape_maps(snapshot, self.policy)
         clearance = dict(lethal=lethal, cost=cost, relaxed=relaxed, goal=snapshot['goal'], success=True)

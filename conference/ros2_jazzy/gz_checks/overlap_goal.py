@@ -42,6 +42,9 @@ def handoff_lethal(planner):
     blocked = planner.known & planner.lethal
     if not getattr(planner, 'goal_overrides', {}).get(planner.goal, True):
         blocked[planner.goal] = False
+    margin = getattr(planner, 'tracking_clearance', None)
+    if margin is not None:
+        blocked |= margin.protected(planner.tracking_relaxed_layers)
     return blocked
 
 

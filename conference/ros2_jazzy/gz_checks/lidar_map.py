@@ -4,6 +4,7 @@ import os
 from tapp.pointcloud_map import PointCloudMap
 from tapp.distance_clearance import R_SOFT, validate_clearance
 from tapp.steep_clearance import validate_steep_clearance
+from tapp.tracking_margin import validate_tracking_margin
 from tapp.pointcloud_map_fine import (
     FINE_CLEARANCE_MODES, GROUND_ESTIMATES, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES, validate_ground_near_obstacle,
 )
@@ -12,9 +13,13 @@ from tapp.slope_uncertainty import validate_slope_uncertainty
 
 def make_pointcloud_map(*args, map_method='coarse', sensors='legacy', ground_estimate='all_returns', obstacle_reference='prior',
                         obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep',
-                        clearance_soft_m=R_SOFT, ground_near_obstacle='keep', steep_clearance='centre', slope_uncertainty='none', **kwargs):
+                        clearance_soft_m=R_SOFT, ground_near_obstacle='keep', steep_clearance='centre',
+                        slope_uncertainty='none', tracking_margin='none', **kwargs):
     validate_clearance(obstacle_clearance, clearance_soft_m)
     validate_steep_clearance(steep_clearance, map_method=map_method)
+    validate_tracking_margin(tracking_margin, obstacle_clearance, steep_clearance, clearance_soft_m)
+    if tracking_margin != 'none':
+        kwargs['tracking_margin'] = tracking_margin
     if steep_clearance == 'distance':
         kwargs['steep_clearance'] = steep_clearance
     validate_ground_near_obstacle(ground_near_obstacle, ground_estimate, map_method=map_method)

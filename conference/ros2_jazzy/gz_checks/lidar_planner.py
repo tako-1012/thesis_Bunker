@@ -34,7 +34,8 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 class LidarPlannerNode(OnlinePlannerNode):
     def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior', online_fixes='none',
                  obstacle_clearance='centre', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
-                 clearance_soft_m=None, ground_near_obstacle='keep', goal_region='none', steep_clearance='centre', slope_uncertainty='none'):
+                 clearance_soft_m=None, ground_near_obstacle='keep', goal_region='none', steep_clearance='centre',
+                 slope_uncertainty='none', tracking_margin='none'):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         from tapp.distance_clearance import R_SOFT
@@ -47,7 +48,8 @@ class LidarPlannerNode(OnlinePlannerNode):
                               ('steep_near_obstacle', steep_near_obstacle), ('pose_trace_dir', ''),
                               ('clearance_soft_m', R_SOFT if clearance_soft_m is None else clearance_soft_m),
                               ('ground_near_obstacle', ground_near_obstacle), ('goal_region', goal_region),
-                              ('steep_clearance', steep_clearance), ('slope_uncertainty', slope_uncertainty)]:
+                              ('steep_clearance', steep_clearance), ('slope_uncertainty', slope_uncertainty),
+                              ('tracking_margin', tracking_margin)]:
             self.declare_parameter(name, default)
         # Cloud age that stops the mission; 0.5s by default, raised only for slow CPU rendering.
         self.stale_timeout_s = float(self.get_parameter('stale_timeout_s').value)
@@ -67,6 +69,7 @@ class LidarPlannerNode(OnlinePlannerNode):
                                     ground_estimate=self.get_parameter('ground_estimate').value,
                                     ground_near_obstacle=self.get_parameter('ground_near_obstacle').value,
                                     steep_clearance=self.get_parameter('steep_clearance').value,
+                                    tracking_margin=self.get_parameter('tracking_margin').value,
                                     obstacle_reference=self.get_parameter('obstacle_reference').value,
                                     obstacle_clearance=self.get_parameter('obstacle_clearance').value,
                                     clearance_soft_m=self.get_parameter('clearance_soft_m').value,
@@ -321,6 +324,7 @@ class LidarPlannerNode(OnlinePlannerNode):
 
 def main(args=None):
     from tapp.steep_clearance import STEEP_CLEARANCES
+    from tapp.tracking_margin import TRACKING_MARGINS
     from tapp.goal_region import GOAL_REGIONS
     from tapp.pointcloud_map_fine import FINE_CLEARANCE_MODES, GROUND_NEAR_OBSTACLE, STEEP_NEAR_OBSTACLE, TERRAIN_SOURCES
     from tapp.prior_variants import OBSTACLE_REFERENCES
@@ -333,6 +337,7 @@ def main(args=None):
     parser.add_argument('--slope-uncertainty', choices=SLOPE_UNCERTAINTY_MODES, default=None)
     parser.add_argument('--steep-near-obstacle', choices=STEEP_NEAR_OBSTACLE, default=None)
     parser.add_argument('--steep-clearance', choices=STEEP_CLEARANCES, default=None)
+    parser.add_argument('--tracking-margin', choices=TRACKING_MARGINS, default=None)
     parser.add_argument('--obstacle-clearance', choices=FINE_CLEARANCE_MODES, default=None,
                         help='fine-map obstacle inflation (overlap_goal uses centre at the active goal)')
     parser.add_argument('--clearance-soft-m', type=float, default=None)

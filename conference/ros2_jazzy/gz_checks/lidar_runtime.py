@@ -11,7 +11,7 @@ from tapp.prior import PriorMap
 from tapp.distance_clearance import connector_clear
 from tapp.online_mission import OnlinePlanner
 from tapp.collision import path_lethal_cells
-from ros2_jazzy.gz_checks.online_batch_runtime import BatchOnlineMission, planning_map
+from ros2_jazzy.gz_checks.online_batch_runtime import BatchOnlineMission, CsvChunks, planning_map
 from ros2_jazzy.gz_checks.overlap_goal import OverlapGoalPlanner, handoff_lethal
 
 
@@ -22,6 +22,10 @@ class LidarOnlineMission(BatchOnlineMission):
         super().__init__(None, prior['tmap'], PriorMap(tm.cost, tm.lethal, RESOLUTION),
                          prior_lethal_mode='soft', plan_log=plan_log, executor=executor)
         self.mapper = mapper
+        if self.plan_log is not None and getattr(mapper, 'tracking_margin', 'none') != 'none':
+            fields = self.plan_log.fields + ['tracking_margin_relaxed']
+            self.plan_log.close()
+            self.plan_log = CsvChunks(plan_log, fields)
 
     def _new_planner(self, cls, stops, *, mixin=None):
         if (getattr(self.mapper, 'obstacle_clearance', 'centre') == 'distance'
@@ -56,6 +60,18 @@ class LidarOnlineMission(BatchOnlineMission):
         options = (dict(known=planner.known)
                    if getattr(self.mapper, 'steep_near_obstacle', 'keep') == 'no_inflate' else {})
         goal_clearance = isinstance(planner, OverlapGoalPlanner)
+        if getattr(self.mapper, 'tracking_margin', 'none') != 'none':
+            mapper = self.mapper
+            with mapper._update_lock:
+                planner.tracking_clearance = mapper.tracking_clearance_snapshot()
+                if hasattr(mapper, 'steep_distance_field'):
+                    planner.distance_geometry, planner.steep_cost = mapper.steep_distance_snapshot()
+                else:
+                    planner.distance_geometry = mapper.distance_field.geometry()
+                planner.observe(*mapper._planning_snapshot_locked(options.get('known')))
+                if goal_clearance:
+                    planner.set_goal_overrides(mapper.goal_obstacle_overrides(planner.goals_to_check()))
+            return
         if hasattr(self.mapper, 'steep_distance_field'):
             goals = planner.goals_to_check() if goal_clearance else None
             snapshot, clearance, overrides = self.mapper.planning_steep_snapshot(goals=goals, **options)

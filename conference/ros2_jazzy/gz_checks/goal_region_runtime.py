@@ -15,13 +15,20 @@ from .online_batch_runtime import CsvChunks
 class RingPlanner:
     def _original_open(self):
         original = self.original_goal
+        tracking = getattr(self, 'tracking_clearance', None)
+        if tracking is not None and in_grid(original, tracking.base_hard.shape) and tracking.base_hard[original]:
+            return False
         return (in_grid(original, self.snapshot['lethal'].shape)
                 and (not self.snapshot['lethal'][original]
                      or not getattr(self, 'goal_overrides', {}).get(original, True)))
 
     def _ring_eligible(self, cell):
         snapshot = self.snapshot
-        return eligible(cell, snapshot['lethal'], snapshot['seen'], self.ring_steep_halo)
+        blocked = snapshot['lethal']
+        tracking = getattr(self, 'tracking_clearance', None)
+        if tracking is not None:
+            blocked = blocked | tracking.protected(self.tracking_relaxed_layers)
+        return eligible(cell, blocked, snapshot['seen'], self.ring_steep_halo)
 
     def _plan(self, reason, initial=False):
         self.goal = self.original_goal
@@ -32,7 +39,15 @@ class RingPlanner:
             self.ring_began = time.perf_counter()
             snapshot = self.snapshot
             start = tuple(np.rint(self.pos).astype(int))
-            choice = choose_goal(start, self.original_goal, snapshot['lethal'], snapshot['cost'],
+            blocked, mult = snapshot['lethal'], snapshot['cost']
+            tracking = getattr(self, 'tracking_clearance', None)
+            if tracking is not None:
+                # A substitute has to be reachable under the start's
+                # exception. It cannot itself ask to open another layer.
+                blocked, mult, labels, self.tracking_relaxed_layers, _ = tracking.project(
+                    blocked, mult, start, None, self.w)
+                self.ring_tracking = blocked, mult, labels
+            choice = choose_goal(start, self.original_goal, blocked, mult,
                                  snapshot['seen'], self.ring_steep_halo)
             self.ring_route = choice[1]['path'] if choice else None
             if choice:
@@ -48,6 +63,9 @@ class RingPlanner:
             return super()._unrelaxed_plan(reason, initial)
         snapshot = self.snapshot
         blocked, mult = snapshot['lethal'], snapshot['cost']
+        tracking = getattr(self, 'tracking_clearance', None)
+        if tracking is not None:
+            blocked, mult, labels = self.ring_tracking
         route = self.ring_route
         if route is not None:
             geometry = getattr(self, 'distance_geometry', None)
@@ -66,6 +84,8 @@ class RingPlanner:
         self.pending_new.fill(False)
         event = dict(reason=reason, success=route is not None, plan_time_s=self.plan_times[-1],
                      n_plans=len(self.plan_times))
+        if tracking is not None:
+            event['tracking_margin_relaxed'] = labels
         self.events.append(event)
         return dict(event, path=[p.tolist() for p in self.path] if route is not None else [], replanned=True)
 

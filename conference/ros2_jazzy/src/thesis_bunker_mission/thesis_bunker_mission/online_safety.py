@@ -82,6 +82,9 @@ class SafetyRuntimeMixin:
     def _join_blocked(self, planner):
         return (planner.known & planner.lethal).copy()
 
+    def _exempt_join_start(self, planner):
+        return True
+
     def _join(self, state, result, position):
         planner = state['planner']
         pos = np.asarray(position, float)/RESOLUTION
@@ -89,7 +92,7 @@ class SafetyRuntimeMixin:
         self._observe_join(planner, position)
         path = [np.asarray(p, float) for p in result['path']]
         blocked = self._join_blocked(planner)
-        if all(0 <= v < n for v, n in zip(cell, blocked.shape)):
+        if self._exempt_join_start(planner) and all(0 <= v < n for v, n in zip(cell, blocked.shape)):
             blocked[cell] = False  # Only the robot's actual cell is exempt.
         best = None
         for i, (a, b) in enumerate(zip(path[:-1], path[1:])):

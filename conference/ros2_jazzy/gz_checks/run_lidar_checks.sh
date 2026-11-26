@@ -93,3 +93,4 @@ docker run --rm --pull=never --network host \
 # Task060 opt-in: --map fine --obstacle-clearance distance [--clearance-soft-m 1.5].
 # Task063 opt-in: --goal-region ring with --endpoint-policy none (the defaults are none).
 # Task066 opt-in: --map fine --terrain-source sensor --slope-uncertainty soft.
+# Task070 opt-in: --tracking-margin fixed|slope with at least one distance clearance layer.

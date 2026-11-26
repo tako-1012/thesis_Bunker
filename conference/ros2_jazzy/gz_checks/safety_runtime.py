@@ -18,6 +18,9 @@ class SafetyLidarMixin(SafetyRuntimeMixin):
     def _join_blocked(self, planner):
         return handoff_lethal(planner)
 
+    def _exempt_join_start(self, planner):
+        return getattr(planner, 'tracking_clearance', None) is None
+
     def _plan_work(self, state, position):
         if state['planner'] is None:
             mission = state['mission']

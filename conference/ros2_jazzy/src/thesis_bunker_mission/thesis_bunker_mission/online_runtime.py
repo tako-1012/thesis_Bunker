@@ -279,7 +279,7 @@ def record_plan_history(log, mission):
             writer.writeheader()
         for event in mission.get("plan_history", []):
             if event["n_plans"] > previous:
-                writer.writerow(event)
+                writer.writerow({key: val for key, val in event.items() if key != 'tracking_margin_relaxed'})
                 previous = event["n_plans"]
     log.mission["logged_plan_calls"] = previous
     log._save()
