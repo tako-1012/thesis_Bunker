@@ -1,6 +1,6 @@
 # 指示書 065：急斜面からも「距離」で余白を作る（`--steep-clearance distance`、選んだときだけ）
 
-> **状態：実行中（2026-11-25 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで 064 の次に頼む）。
+> **状態：完了（レビューは `results/steep_clearance/REVIEW_ja.md`。研究 PC での評価はこれから）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで 064 の次に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針）、`conference/research/literature_check_ja.md`、
 > `conference/tasks/060_distance_clearance.md`・`conference/results/distance_clearance/REPORT_ja.md`・`REVIEW_ja.md`・`replay.py`（060、**同じ考え方を急斜面に使う**）、`tapp/distance_clearance.py`、
 > `conference/results/eval_064/REPORT_ja.md`・`REVIEW_ja.md`、`conference/results/eval_057/REVIEW_ja.md`、`conference/results/eval_050/REVIEW_ja.md`（`0167` の傾き停止）、
