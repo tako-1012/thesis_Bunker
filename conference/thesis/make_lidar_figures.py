@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Patch, Rectangle
 import numpy as np
 import pandas as pd
+from scipy.stats import fisher_exact
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,6 +46,13 @@ DEBRIS_CLEARANCE = (
 )
 FOCUS_BEACH = "08OB88_00332"
 TERRAIN_STUDIES = ("050", "057")
+STUDY_064 = "064"
+CONDITIONS_064 = ("S", "P", "D", "PD", "G", "GD")
+TERRAIN_PAIRS_064 = (("Sensor terrain", ("S", "D")), ("Prior terrain", ("P", "PD")),
+                     ("Ground-only points", ("G", "GD")))
+COMPARISONS_064 = (("PD", "S"), ("GD", "S"), ("PD", "P"), ("GD", "G"))
+METRICS_064 = {"box_runs": "Box clearance < 0.5 m", "debris_runs": "Debris cell traversal",
+               "completed": "Completed"}
 
 
 @dataclass(frozen=True)
@@ -62,6 +70,8 @@ STUDIES = (
     Study("044", "eval_044/common_eval/runs.csv", None),
     Study("050", "eval_050/common_eval/runs.csv", {"S": "050 S", "P": "050 P", "V": "050 V"}),
     Study("057", "eval_057/common_eval/runs.csv", {"S": "057 S", "PG": "057 PG", "SGN": "057 SGN"}),
+    Study(STUDY_064, "eval_064/common_eval_all/runs.csv",
+          {condition: f"064 {condition} (GPU, 1.0x)" for condition in CONDITIONS_064}),
 )
 
 
@@ -166,7 +176,7 @@ def observed(group, column):
 
 def safety_rows(runs, *, patch=None):
     if patch is not None:
-        runs = [row for row in runs if row["study"] in TERRAIN_STUDIES and row["patch"] == patch]
+        runs = [row for row in runs if row["study"] in (*TERRAIN_STUDIES, STUDY_064) and row["patch"] == patch]
     rows = []
     for (study, condition), group in grouped(runs):
         row = dict(study=study, condition=condition, condition_label=group[0]["condition_label"],
@@ -179,6 +189,53 @@ def safety_rows(runs, *, patch=None):
         row["debris_runs"] = sum(length > 0 for length in lengths) if lengths else None
         row["debris_runs_n"] = len(lengths)
         rows.append(row)
+    return rows
+
+
+def outcomes_064(runs):
+    """Count the three prespecified binary outcomes over the complete 064 cohort."""
+    groups = {condition: group for (study, condition), group in grouped(runs) if study == STUDY_064}
+    if not groups:
+        return []
+    beaches = {row["patch"] for group in groups.values() for row in group}
+    expected = {(patch, rep) for patch in beaches for rep in range(1, 7)}
+    if len(beaches) != 5 or any({(r["patch"], r["rep"]) for r in groups.get(condition, [])} != expected
+                               for condition in CONDITIONS_064):
+        raise ValueError("064 requires six repetitions at the same five beaches per condition")
+    counts = []
+    for condition, group in groups.items():
+        debris = observed(group, "debris_len_m")
+        box = observed(group, "min_truth_clearance_m")
+        if any(len(values) != len(group) or not np.isfinite(values).all() for values in (debris, box)):
+            raise ValueError(f"064 {condition}: missing debris lengths or box clearances")
+        if any(row["ending"] == "unknown" for row in group):
+            raise ValueError(f"064 {condition}: missing run outcomes")
+        counts.append(dict(study=STUDY_064, condition=condition, n=len(group),
+                           box_runs=sum(distance < .5 for distance in box),
+                           debris_runs=sum(length > 0 for length in debris),
+                           completed=sum(row["ending"] == "completed" for row in group)))
+    return counts
+
+
+def fisher_holm_064(counts):
+    if not counts:
+        return []
+    groups = {row["condition"]: row for row in counts}
+    rows = []
+    for metric in METRICS_064:
+        family = []
+        for a, b in COMPARISONS_064:
+            left, right = groups[a], groups[b]
+            x, y, n, m = left[metric], right[metric], left["n"], right["n"]
+            p = fisher_exact([[x, n-x], [y, m-y]], alternative="two-sided").pvalue
+            family.append(dict(study=STUDY_064, metric=metric, condition_a=a, condition_b=b,
+                               events_a=x, n_a=n, events_b=y, n_b=m, p_raw=p,
+                               comparison=f"{a} vs {b}", a_rate=f"{x}/{n}", b_rate=f"{y}/{m}"))
+        ordered = sorted(family, key=lambda row: row["p_raw"])
+        adjusted = np.maximum.accumulate([row["p_raw"]*(len(ordered)-rank) for rank, row in enumerate(ordered)])
+        for row, p in zip(ordered, np.minimum(adjusted, 1.)):
+            row["p_holm"] = p
+        rows.extend(family)
     return rows
 
 
@@ -200,7 +257,7 @@ def failure_type(row):
 
 def failure_rows(runs, sources):
     rows = []
-    for study in dict.fromkeys(row["study"] for row in runs):
+    for study in dict.fromkeys(row["study"] for row in runs if row["study"] != STUDY_064):
         labels = [failure_type(row) for row in runs if row["study"] == study and row["ending"] == "no_path"]
         for kind in FAILURE_TYPES:
             if kind in labels:
@@ -233,6 +290,14 @@ def failure_rows(runs, sources):
         require(replay, ["missing_n", "total"], "047 goals.csv")
         rows.append(dict(study="047", record="Replay coverage", metric="missing_map",
                          count=int(replay["missing_n"].sum()), n=int(replay["total"].sum())))
+    if any(row["study"] == STUDY_064 for row in runs):
+        labels = ["pointcloud_unavailable_or_stale" if row.get("sensor_error") == "lidar_unavailable_or_stale"
+                  else failure_type(row)
+                  for row in runs if row["study"] == STUDY_064 and row["ending"] == "no_path"]
+        for kind in (*FAILURE_TYPES, "pointcloud_unavailable_or_stale") if labels else ("all",):
+            if kind in labels or not labels:
+                rows.append(dict(study=STUDY_064, record="Terminal no path (GPU, 1.0x)", metric=kind,
+                                 count=labels.count(kind), n=len(labels)))
     return rows
 
 
@@ -369,6 +434,45 @@ def plot_timings(rows, runs, output):
     save_figure(fig, output, "F9")
 
 
+def plot_064(counts, output):
+    fig, axes = plt.subplots(1, 3, sharey=True, figsize=(10.3, 3.65))
+    if not counts:
+        for ax in axes:
+            ax.set_axis_off()
+        axes[1].text(.5, .5, "No 064 records", ha="center", va="center", transform=axes[1].transAxes)
+        save_figure(fig, output, "F11")
+        return
+    by_condition = {row["condition"]: row for row in counts}
+    colors = ("#4f6283", "#007b69")
+    positions = np.arange(len(TERRAIN_PAIRS_064))*1.23
+    n = counts[0]["n"]
+    for ax, (metric, title) in zip(axes, METRICS_064.items()):
+        ax.set_title(title, loc="left", fontweight="semibold", fontsize=11, pad=11)
+        ax.set_axisbelow(True)
+        ax.grid(axis="x", color="#dde2e8", linewidth=.7)
+        ax.spines[["left", "right", "top"]].set_visible(False)
+        ax.spines["bottom"].set_color("#a4adba")
+        ax.set_xlim(0, n)
+        ax.set_xticks(np.linspace(0, n, 4))
+        ax.tick_params(axis="both", labelsize=9, length=0)
+        for y, (_, pair) in zip(positions, TERRAIN_PAIRS_064):
+            for dy, condition, color in zip((-.22, .22), pair, colors):
+                count = by_condition[condition][metric]
+                ax.barh(y+dy, count, color=color, height=.30)
+                ax.text(count+.65 if count < n-5 else count-.65, y+dy, f"{condition}  {count}",
+                        ha="left" if count < n-5 else "right", va="center", fontsize=8.5,
+                        color="#1c2939" if count < n-5 else "white")
+    axes[0].set_yticks(positions, [name for name, _ in TERRAIN_PAIRS_064])
+    axes[0].set_ylim(positions[-1]+.54, -.54)
+    fig.text(.05, .92, "064 · GPU rendering at 1.0×", fontsize=16, fontweight="semibold", color="#1c2939")
+    fig.supxlabel(f"Runs (out of {n} per condition)", y=.14, fontsize=10)
+    fig.legend(handles=[Patch(facecolor=color, label=label)
+                        for color, label in zip(colors, ("Centre clearance", "Distance clearance"))],
+               loc="lower center", bbox_to_anchor=(.56, .026), ncols=2, fontsize=9, frameon=False)
+    fig.subplots_adjust(left=.203, right=.972, top=.759, bottom=.255, wspace=.20)
+    save_figure(fig, output, "F11")
+
+
 TABLE_HEADERS = {
     "study": "Task", "condition_label": "Condition", "n": "Runs",
     **{key: label for key, (label, _) in OUTCOMES.items()},
@@ -376,6 +480,8 @@ TABLE_HEADERS = {
     "debris_runs": "Runs in debris",
     "other": "Other", "unknown": "Unknown",
     "record": "Record", "metric": "Measure", "count": "Count",
+    "comparison": "Comparison", "a_rate": "First", "b_rate": "Second",
+    "p_raw": "Raw p", "p_holm": "Holm p",
 }
 FAILURE_LABELS = {
     "sensor_route": "Route with sensor terrain",
@@ -385,6 +491,7 @@ FAILURE_LABELS = {
     "flagged": "Goal flagged before travel",
     "unclassified": "Unclassified checks",
     "all": "No no-path endings",
+    "pointcloud_unavailable_or_stale": "Point cloud unavailable or stale",
 }
 NOTES = {
     "T4": "Counts of archived repetitions. 039 conditions are target settings. 035 includes the replicated P1 cohort.",
@@ -395,6 +502,8 @@ NOTES = {
            "duration use a centre-to-box distance strictly below 0.5 m."),
     "T6": ("Terminal failure types count runs ending in no path. N is the number of eligible records. "
            "047 uses archived map replay, with final and failure-time maps kept separate."),
+    "T7": ("064 trials (GPU, 1.0x). Counts are runs per condition. "
+           "Two-sided Fisher exact tests with Holm adjustment across the four comparisons within each measure."),
 }
 T4_FIELDS = ["study", "condition", "condition_label", "n", *OUTCOMES]
 T5_FIELDS = ["study", "condition", "condition_label", "n",
@@ -403,6 +512,8 @@ T5_FIELDS = ["study", "condition", "condition_label", "n",
 T5_CLEARANCE_FIELDS = ["study", "condition_label", "n", "debris_entries", "debris_runs", "debris_m",
                        "box_intervals", "box_s"]
 T6_FIELDS = ["study", "record", "metric", "count", "n"]
+T7_FIELDS = ["study", "metric", "condition_a", "condition_b", "events_a", "n_a",
+             "events_b", "n_b", "p_raw", "p_holm"]
 F9_FIELDS = ["study", "setup", "sensor", "n", "median_ms", "p95_ms"]
 
 
@@ -419,6 +530,7 @@ def display(value):
 def latex(value):
     escapes = {"\\": r"\textbackslash{}", "&": r"\&", "%": r"\%", "$": r"\$",
                "#": r"\#", "_": r"\_", "{": r"\{", "}": r"\}",
+               "<": r"\textless{}",
                "~": r"\textasciitilde{}", "^": r"\textasciicircum{}", "—": r"\textemdash{}"}
     return "".join(escapes.get(c, c) for c in value)
 
@@ -434,12 +546,15 @@ def write_table(output, name, rows, fields, sections):
             md.extend(("", f"**{title}**", ""))
             tex.extend((r"\par\medskip", r"\textbf{" + latex(title) + r"}\par\smallskip"))
         labels = [TABLE_HEADERS[c] if name != "T6" or c != "n" else "N" for c in visible]
-        values = [[display(FAILURE_LABELS.get(r[c], r[c]) if c == "metric" else r[c])
+        metric_labels = METRICS_064 if name == "T7" else FAILURE_LABELS
+        values = [[f"{r[c]:.6f}" if c in ("p_raw", "p_holm")
+                   else display(metric_labels.get(r[c], r[c]) if c == "metric" else r[c])
                    for c in visible] for r in subset]
         if not values:
             values = [["No records", *(["—"]*(len(labels)-1))]]
         md.extend((md_line(labels), md_line(["---"]*len(labels)), *(md_line(r) for r in values)))
-        alignment = "".join("l" if c in ("study", "condition_label", "record", "metric") else "r" for c in visible)
+        alignment = "".join("l" if c in ("study", "condition_label", "record", "metric", "comparison") else "r"
+                            for c in visible)
         tex.extend((r"\begin{tabular}{" + alignment + "}", r"\hline", tex_line(labels),
                     r"\hline", *(tex_line(r) for r in values), r"\hline", r"\end{tabular}"))
     md.extend(("", NOTES[name]))
@@ -453,6 +568,8 @@ MACRO_FIELDS = {
     "TFour": ("study", "condition"),
     "TFive": ("study", "condition", "patch"),
     "TSix": ("study", "record", "metric"),
+    "TSeven": ("study", "metric", "condition_a", "condition_b"),
+    "FEleven": ("study", "condition"),
     "FNine": ("study", "setup", "sensor"),
 }
 
@@ -491,6 +608,8 @@ def make_all(output=ROOT/"thesis/out_lidar", results=ROOT/"results"):
     t4, t5 = count_outcomes(runs), safety_rows(safety)
     focused = safety_rows(safety, patch=FOCUS_BEACH)
     t6, f9 = failure_rows(runs, sources), timing_rows(sources)
+    f11 = outcomes_064(runs)
+    t7 = fisher_holm_064(f11)
     output.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=output) as temporary:
         staging = Path(temporary)
@@ -502,18 +621,23 @@ def make_all(output=ROOT/"thesis/out_lidar", results=ROOT/"results"):
             safety_sections.append((FOCUS_BEACH + " only", focused, T5_CLEARANCE_FIELDS))
         write_table(staging, "T5", t5+focused, T5_FIELDS, safety_sections)
         write_table(staging, "T6", t6, T6_FIELDS, [(None, t6, T6_FIELDS)])
+        write_table(staging, "T7", t7, T7_FIELDS,
+                    [(None, t7, ["metric", "comparison", "a_rate", "b_rate", "p_raw", "p_holm"])])
         pd.DataFrame(f9, columns=F9_FIELDS).to_csv(staging/"F9_statistics.csv", index=False, float_format="%.12g")
-        plot_outcomes([r for r in runs if r["study"] not in TERRAIN_STUDIES],
-                      [r for r in t4 if r["study"] not in TERRAIN_STUDIES], staging)
+        other_figures = (*TERRAIN_STUDIES, STUDY_064)
+        plot_outcomes([r for r in runs if r["study"] not in other_figures],
+                      [r for r in t4 if r["study"] not in other_figures], staging)
         plot_outcomes([r for r in runs if r["study"] in TERRAIN_STUDIES],
                       [r for r in t4 if r["study"] in TERRAIN_STUDIES], staging,
                       name="F10")
         plot_timings(f9, runs, staging)
-        write_numbers(staging, {"TFour": t4, "TFive": t5+focused, "TSix": t6, "FNine": f9})
+        plot_064(f11, staging)
+        write_numbers(staging, {"TFour": t4, "TFive": t5+focused, "TSix": t6,
+                                "FNine": f9, "FEleven": f11, "TSeven": t7})
         (staging/"sources.json").write_text(json.dumps(sources.hashes, sort_keys=True, indent=2)+"\n")
         for file in staging.iterdir():
             file.replace(output/file.name)
-    print(f"F8–F10, T4–T6, numbers_lidar.tex and sources.json: {output}")
+    print(f"F8–F11, T4–T7, numbers_lidar.tex and sources.json: {output}")
 
 
 if __name__ == "__main__":

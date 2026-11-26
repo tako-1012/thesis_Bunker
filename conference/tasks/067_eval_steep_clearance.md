@@ -1,6 +1,6 @@
 # 指示書 067：急斜面の距離の余白（065）を、研究 PC の Gazebo で評価する（GPU 描画・1.0 倍）
 
-> **状態：実行中（2026-11-26 に研究 PC（チャット：研究PC実行）へ依頼）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ）。
+> **状態：実行中（2026-11-26 に研究 PC（チャット：研究PC実行）へ依頼。11/26 20:00 に開始、tmux `eval-067`）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/progress/policy.csv`（今後の方針）、
 > `conference/tasks/064_eval_2x2.md`・`conference/results/eval_064/REPORT_stage2_ja.md`・`REVIEW_stage2_ja.md`・`run064.sh`（同じやり方の見本）、
 > `conference/results/steep_clearance/REPORT_ja.md`・`REVIEW_ja.md`（065）、`conference/results/common_eval/REPORT_ja.md` を読むこと。

@@ -12,14 +12,15 @@ import sys
 import tempfile
 
 import pandas as pd
+from scipy.stats import fisher_exact
 
 from thesis import make_lidar_figures as figures
 
 
 RESULTS = figures.ROOT/"results"
-FILES = {"F8.pdf", "F8.png", "F9.pdf", "F9.png", "F10.pdf", "F10.png",
+FILES = {"F8.pdf", "F8.png", "F9.pdf", "F9.png", "F10.pdf", "F10.png", "F11.pdf", "F11.png",
          "F9_statistics.csv", "numbers_lidar.tex", "sources.json",
-         *(f"T{n}.{suffix}" for n in (4, 5, 6) for suffix in ("csv", "md", "tex"))}
+         *(f"T{n}.{suffix}" for n in (4, 5, 6, 7) for suffix in ("csv", "md", "tex"))}
 
 
 def read(path):
@@ -35,12 +36,14 @@ def macros(output):
 
 def assert_outputs(output):
     assert {file.name for file in output.iterdir()} == FILES
-    for name in ("F8", "F9", "F10"):
+    for name in ("F8", "F9", "F10", "F11"):
         assert (output/f"{name}.png").read_bytes().startswith(b"\x89PNG\r\n\x1a\n")
         assert (output/f"{name}.pdf").read_bytes().startswith(b"%PDF-")
     for name in ("T4", "T5", "T6"):
         assert r"\begin{tabular}" in (output/f"{name}.tex").read_text()
         assert "| Task |" in (output/f"{name}.md").read_text()
+    assert r"\begin{tabular}" in (output/"T7.tex").read_text()
+    assert "| Measure | Comparison | First | Second | Raw p | Holm p |" in (output/"T7.md").read_text()
 
 
 def test_archive(output):
@@ -125,6 +128,7 @@ def test_missing_and_extension(root):
     assert "Skipped missing results file" in log.getvalue() and "eval_035/runs.csv" in log.getvalue()
     assert_outputs(output)
     t4 = read(output/"T4.csv")
+    assert read(output/"T7.csv").empty
     assert "035" not in set(t4["study"])
     assert "039" in set(t4["study"])
     d = t4.loc[t4["study"] == "044"].iloc[0]
@@ -238,6 +242,87 @@ def test_legacy_rows(root, current):
     print("legacy PASS: same-environment 030–044 tables, F9 statistics and all prior numeric macros match")
 
 
+def test_064(output):
+    archived = read(RESULTS/"eval_064/common_eval_all/runs.csv")
+    conditions = ("S", "P", "D", "PD", "G", "GD")
+    assert len(archived) == 180 and set(archived["condition"]) == set(conditions)
+    assert (archived.groupby(["condition", "patch"]).size() == 6).all()
+    t4 = read(output/"T4.csv").query("study == '064'").set_index("condition")
+    t5 = read(output/"T5.csv").query("study == '064' and patch.isna()").set_index("condition")
+    t6 = read(output/"T6.csv").query("study == '064'").set_index("metric")
+    assert tuple(t4.index) == tuple(t5.index) == conditions
+    assert list(t4["condition_label"]) == [f"064 {c} (GPU, 1.0x)" for c in conditions]
+    no_path = archived[archived["board_outcome"].eq("no_path")]
+    assert t6["count"].to_dict() == dict(goal_cell=no_path["no_path_type"].eq("goal_cell").sum(),
+                                      pointcloud_unavailable_or_stale=no_path["sensor_error"].eq(
+                                          "lidar_unavailable_or_stale").sum())
+    assert (t6["n"] == len(no_path)).all() and t6["count"].sum() == len(no_path)
+    macros_064 = macros(output)
+    tally = {}
+    for condition, group in archived.groupby("condition"):
+        n = len(group)
+        assert t4.loc[condition, "n"] == t5.loc[condition, "n"] == n == 30
+        assert group[["debris_len_m", "min_truth_clearance_m"]].notna().all().all()
+        completed = group["board_outcome"].eq("completed").sum()
+        debris = group["debris_len_m"].gt(0).sum()
+        box = group["min_truth_clearance_m"].lt(.5).sum()
+        tally[condition] = dict(box_runs=box, debris_runs=debris, completed=completed)
+        assert t4.loc[condition, "completed"] == completed
+        assert t5.loc[condition, "debris_runs"] == debris
+        assert t5.loc[condition, "box_intervals"] == group["truth_below_radius_entries"].sum()
+        prefix = "TaskZeroSixFour"+condition
+        expected = {"TFour"+prefix+"Completed": completed,
+                    "TFive"+prefix+"DebrisRuns": debris,
+                    "FEleven"+prefix+"N": n, "FEleven"+prefix+"Completed": completed,
+                    "FEleven"+prefix+"DebrisRuns": debris, "FEleven"+prefix+"BoxRuns": box}
+        for key, value in expected.items():
+            assert macros_064["Lidar"+key] == value
+    print("064 PASS: 180 committed runs, six GPU cohorts and T4–T6/count macros match the CSV")
+
+    t7 = read(output/"T7.csv")
+    comparisons = [("PD", "S"), ("GD", "S"), ("PD", "P"), ("GD", "G")]
+    assert len(t7) == 12 and set(t7["study"]) == {"064"}
+    assert set(t7["metric"]) == {"completed", "debris_runs", "box_runs"}
+    for metric, family in t7.groupby("metric"):
+        assert list(zip(family["condition_a"], family["condition_b"])) == comparisons
+        counts = [(tally[a][metric], tally[b][metric]) for a, b in comparisons]
+        probabilities = [fisher_exact([[x, 30-x], [y, 30-y]], alternative="two-sided").pvalue
+                         for x, y in counts]
+        order = sorted(range(len(probabilities)), key=probabilities.__getitem__)
+        for index, ((a, b), (x, y), (_, row)) in enumerate(zip(comparisons, counts, family.iterrows())):
+            assert (row["events_a"], row["n_a"], row["events_b"], row["n_b"]) == (x, 30, y, 30)
+            through_rank = order[:order.index(index)+1]
+            adjusted = min(1., max((4-rank)*probabilities[j] for rank, j in enumerate(through_rank)))
+            assert math.isclose(row["p_raw"], probabilities[index], rel_tol=1e-11)
+            assert math.isclose(row["p_holm"], adjusted, rel_tol=1e-11)
+            metric_prefix = {"completed": "Completed", "debris_runs": "DebrisRuns", "box_runs": "BoxRuns"}[metric]
+            macro = f"LidarTSevenTaskZeroSixFour{metric_prefix}{a}{b}PHolm"
+            assert math.isclose(macros_064[macro], adjusted, rel_tol=1e-8)
+    key = t7.query("metric == 'box_runs' and condition_a == 'PD' and condition_b == 'S'").iloc[0]
+    assert f"{key['p_holm']:.6f}" == "0.042170"
+    print("T7 PASS: exactly 4 comparisons × 3 measures, two-sided Fisher and within-measure Holm p values")
+
+
+def test_pre_068(root, current):
+    base = "98ddbde"
+    source = subprocess.check_output(
+        ["git", "show", f"{base}:conference/thesis/make_lidar_figures.py"], cwd=figures.ROOT)
+    previous, output = root/"pre_068.py", root/"pre_068"
+    previous.write_bytes(source)
+    subprocess.run([sys.executable, str(previous), "--results", str(RESULTS), "--output", str(output)],
+                   check=True, capture_output=True, text=True)
+    for name in ("T4.csv", "T5.csv", "T6.csv"):
+        before = (output/name).read_bytes().splitlines()
+        after = (current/name).read_bytes().splitlines()
+        assert before == [line for line in after if not line.startswith(b"064,")]
+    for name in ("F8.png", "F8.pdf", "F9.png", "F9.pdf", "F10.png", "F10.pdf", "F9_statistics.csv"):
+        assert (output/name).read_bytes() == (current/name).read_bytes()
+    before = (output/"numbers_lidar.tex").read_bytes().splitlines()
+    after = (current/"numbers_lidar.tex").read_bytes().splitlines()
+    assert before == [line for line in after if b"TaskZeroSixFour" not in line]
+    print("pre-068 PASS: T4–T6 rows for 030–057, old macros and F8–F10 match same-host baseline bytes")
+
+
 if __name__ == "__main__":
     with tempfile.TemporaryDirectory() as temporary:
         root = Path(temporary)
@@ -246,4 +331,6 @@ if __name__ == "__main__":
         test_050(root/"archive")
         test_057(root/"terrain")
         test_legacy_rows(root, root/"archive")
+        test_064(root/"archive")
+        test_pre_068(root, root/"archive")
     print("all LiDAR figure tests passed")
