@@ -1,0 +1,13 @@
+研究 PC hayashi に保管した 064 段階 2 の全 90 走行の生記録
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/
+r4〜r6 の走行ディレクトリ。各走行の条件と終了コードは Git に収録。
+Gazebo の出力、軌跡、点群、地図、計画地図、位置受信と追従ログの生記録は上記に保管。
+
+相対パスと SHA-256 は stage2/runs_sha256.txt に収録（21,557 ファイル）。
+この一覧自体の SHA-256
+628b5ae0eee94afb55b8845ce04a088d58e3763f468893cbe92a9e996e5b1b63
+
+研究 PC 上で両段階を確認
+cd /home/kotaro/thesis_Bunker_rtf/conference/results/eval_064
+sha256sum -c --quiet runs_sha256.txt
+sha256sum -c --quiet stage2/runs_sha256.txt

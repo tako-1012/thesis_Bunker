@@ -24,7 +24,8 @@ class LidarOnlineMission(BatchOnlineMission):
         self.mapper = mapper
 
     def _new_planner(self, cls, stops, *, mixin=None):
-        if getattr(self.mapper, 'obstacle_clearance', 'centre') == 'distance':
+        if (getattr(self.mapper, 'obstacle_clearance', 'centre') == 'distance'
+                or hasattr(self.mapper, 'steep_distance_field')):
             from .distance_runtime import DistancePlanner
             if cls is OnlinePlanner:
                 cls = DistancePlanner
@@ -54,11 +55,20 @@ class LidarOnlineMission(BatchOnlineMission):
     def _observe(self, planner):
         options = (dict(known=planner.known)
                    if getattr(self.mapper, 'steep_near_obstacle', 'keep') == 'no_inflate' else {})
+        goal_clearance = isinstance(planner, OverlapGoalPlanner)
+        if hasattr(self.mapper, 'steep_distance_field'):
+            goals = planner.goals_to_check() if goal_clearance else None
+            snapshot, clearance, overrides = self.mapper.planning_steep_snapshot(goals=goals, **options)
+            planner.distance_geometry, planner.steep_cost = clearance
+            planner.observe(*snapshot)
+            if goal_clearance:
+                planner.set_goal_overrides(overrides)
+            return
         if getattr(self.mapper, 'obstacle_clearance', 'centre') == 'distance':
             snapshot, planner.distance_geometry = self.mapper.planning_distance_snapshot(**options)
             planner.observe(*snapshot)
             return
-        if isinstance(planner, OverlapGoalPlanner):
+        if goal_clearance:
             snapshot, overrides = self.mapper.planning_goal_snapshot(planner.goals_to_check(), **options)
             planner.observe(*snapshot)
             planner.set_goal_overrides(overrides)

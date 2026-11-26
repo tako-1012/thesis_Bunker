@@ -1,0 +1,17 @@
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r1/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r2/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r3/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r4/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r5/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/PD_r6/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r1/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r2/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r3/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r4/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r5/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB88_-0167/P_r6/physical_1/raw/08OB88_-0167 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB89_-0847/GD_r5/physical_1/raw/08OB89_-0847 [goal_cell] skipped: no terminal search application recorded
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_064/runs/08OB89_-0847/GD_r6/physical_1/raw/08OB89_-0847 [goal_cell] skipped: no terminal search application recorded
+approach: 180 rows
+goal_cell: 25 rows
+skipped: 14 rows

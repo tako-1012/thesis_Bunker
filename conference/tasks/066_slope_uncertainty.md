@@ -1,6 +1,6 @@
 # 指示書 066：高さの推定の確かさを持たせ、確かでない 25° 超を、すぐには通れないにしない（`--slope-uncertainty soft`、選んだときだけ）
 
-> **状態：実行中（2026-11-25 にクラウドの Codex（研究実装2）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで頼む）。
+> **状態：負の結果（道具は取り込み済み。本当の急斜面を見落とすので評価に使わない。`results/slope_uncertainty/REVIEW_ja.md`）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（研究 PC での評価は、あとで頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`、`conference/research/literature_check_ja.md`（Fankhauser ら 2018・STEP の確かめ）、
 > `conference/results/false_steep_causes/REPORT_ja.md`・`REVIEW_ja.md`・`PROTOCOL_ja.md`・`replay.py`・`goal_cells.csv`（053、**この指示書の根拠**）、
 > `conference/results/ground_near_obstacle/REPORT_ja.md`・`REVIEW_ja.md`（062）、`conference/results/eval_064/REVIEW_ja.md`、

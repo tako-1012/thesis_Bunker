@@ -2,6 +2,7 @@
 # Standard Docker, headless ogre2, transient world/maps; first three then ten.
 # Usage: run_lidar_checks.sh OUTPUT [--edge-margin-m 0|10] [--waypoint-check none|substitute] [other options]
 # For --ground-near-obstacle exclude also pass --map fine --ground-estimate non_obstacle.
+# --steep-clearance distance requires --map fine.
 set -euo pipefail
 conference_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 output_dir="${1:-${conference_dir}/results/gazebo_lidar/physical_3}"
@@ -91,3 +92,4 @@ docker run --rm --pull=never --network host \
 # Task058 opt-in: pass --pose-trace to record pose receipts, follower ticks and CPU load.
 # Task060 opt-in: --map fine --obstacle-clearance distance [--clearance-soft-m 1.5].
 # Task063 opt-in: --goal-region ring with --endpoint-policy none (the defaults are none).
+# Task066 opt-in: --map fine --terrain-source sensor --slope-uncertainty soft.

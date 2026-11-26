@@ -10,6 +10,15 @@ from tapp.planners import astar
 
 
 class DistancePlanner(OnlinePlanner):
+    def planning_maps(self):
+        blocked, mult = super().planning_maps()
+        steep_cost = getattr(self, 'steep_cost', None)
+        if steep_cost is not None:
+            # The current steep layer contributes around inferred hazards as
+            # well, without turning those unobserved cells into observations.
+            mult += self.w*steep_cost
+        return blocked, mult
+
     def _plan(self, reason, initial=False):
         blocked, mult = self.planning_maps()
         start = tuple(int(round(v)) for v in self.pos)

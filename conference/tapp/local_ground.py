@@ -12,6 +12,7 @@ from scipy.spatial import cKDTree
 from .config import RESOLUTION
 from .pointcloud_map import transform_points
 from .pointcloud_map_fine import FINE_RESOLUTION, RATIO
+from .slope_uncertainty import ground_standard_errors
 
 WINDOW_M = 1.5
 TRIM_M = .15
@@ -88,7 +89,7 @@ def local_planes(support, queries, *, max_grid_cells=5_000_000):
     return np.einsum('ij,ij->i', planes[inverse, :2], displacement)+planes[inverse, 2]
 
 
-def _ground_height(reference, values, centres, lengths, obstacle_height_m):
+def _ground_height(reference, values, centres, lengths, obstacle_height_m, *, with_uncertainty=False):
     # Group sorted ground heights once, then select the middle return(s)
     # in each coarse cell. Unknown references leave the prior context.
     history_groups = np.repeat(np.arange(len(centres)), lengths)
@@ -100,6 +101,11 @@ def _ground_height(reference, values, centres, lengths, obstacle_height_m):
     low = ground_z[ground_order[offsets+(counts-1)//2]]
     high = ground_z[ground_order[offsets+counts//2]]
     height[groups] = (low+high)/2
+    if with_uncertainty:
+        # Where the local plane supplies the height without a ground return,
+        # it is sensor-derived and uses the small-sample fallback.
+        counts_by_cell = np.bincount(ground_groups, minlength=len(centres))
+        return height, ground_standard_errors(ground_z, ground_groups, counts_by_cell)
     return height
 
 
@@ -187,10 +193,14 @@ def update_local(mapper, sensor_points, pose):
             if getattr(mapper, 'ground_near_obstacle', 'keep') == 'exclude':
                 mapper._publish_excluded_ground(touched)
             else:
-                height = _ground_height(reference, values, reference_all[-len(touched):], np.diff(starts),
-                                        mapper.obstacle_height_m)
-                known = np.isfinite(height)
-                mapper._publish(touched[known], height[known], observed=touched)
+                soft = getattr(mapper, 'slope_uncertainty', 'none') == 'soft'
+                estimated = _ground_height(reference, values, reference_all[-len(touched):], np.diff(starts),
+                                           mapper.obstacle_height_m, with_uncertainty=soft)
+                if soft:
+                    mapper._publish_soft_ground(touched, *estimated, observed=touched)
+                else:
+                    known = np.isfinite(estimated)
+                    mapper._publish(touched[known], estimated[known], observed=touched)
         with mapper._lock:
             result = dict(version=mapper.version, input_points=len(points), accepted_points=len(cells),
                           observed_cells=int(mapper.seen.sum()))
