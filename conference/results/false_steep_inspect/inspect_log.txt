@@ -1,0 +1,85 @@
+results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB88_-0167/C0_r2/physical_1/raw/08OB88_-0167 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r1/physical_1/raw/08OB88_-0167 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r2/physical_1/raw/08OB88_-0167 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB88_-0167/C1_r3/physical_1/raw/08OB88_-0167 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB88_-1417/C0_r3/physical_1/raw/08OB88_-1417 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB88_-1417/C0_r3/physical_1/raw/08OB88_-1417 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r1/physical_1/raw/08OB89_-0347 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r1/physical_1/raw/08OB89_-0347 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r2/physical_1/raw/08OB89_-0347 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r2/physical_1/raw/08OB89_-0347 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r3/physical_1/raw/08OB89_-0347 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0347/C0_r3/physical_1/raw/08OB89_-0347 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r1/physical_1/raw/08OB89_-0347 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r1/physical_1/raw/08OB89_-0347 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r2/physical_1/raw/08OB89_-0347 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r2/physical_1/raw/08OB89_-0347 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r3/physical_1/raw/08OB89_-0347 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0347/C1_r3/physical_1/raw/08OB89_-0347 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r1/physical_1/raw/08OB89_-0847 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r1/physical_1/raw/08OB89_-0847 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r2/physical_1/raw/08OB89_-0847 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r2/physical_1/raw/08OB89_-0847 [H3] skipped: none: final map does not store point_counts
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r3/physical_1/raw/08OB89_-0847 [H0] skipped: no saved search sequence in the 053/062 cohort
+results/eval_ground_endpoint/runs/08OB89_-0847/C0_r3/physical_1/raw/08OB89_-0847 [H3] skipped: none: final map does not store point_counts
+runs: 14 rows
+plans: 0 rows
+features: 28 rows
+cells: 16 rows
+hypotheses: 450 rows
+skipped: 28 rows
+legacy_metrics: 37 rows
+H0 all plan_first n=0 total=None min/median/max=None/None/None
+H0 all plan_middle n=0 total=None min/median/max=None/None/None
+H0 all plan_last n=0 total=None min/median/max=None/None/None
+H0 all plan_max n=0 total=None min/median/max=None/None/None
+H0 all legacy_final n=14 total=5803 min/median/max=96.0/396.5/1088.0
+H0 all final_steep_only_proxy n=14 total=2041 min/median/max=29.0/137.0/384.0
+H1 false_steep cells n=14 total=2040 min/median/max=20.0/127.0/389.0
+H1 false_steep distance_n n=14 total=2040 min/median/max=20.0/127.0/389.0
+H1 false_steep within_02 n=14 total=726 min/median/max=0.0/54.5/155.0
+H1 false_steep over_02_within_05 n=14 total=707 min/median/max=1.0/51.0/121.0
+H1 false_steep over_05 n=14 total=607 min/median/max=13.0/38.0/113.0
+H1 false_steep no_detections n=14 total=0 min/median/max=0.0/0.0/0.0
+H1 false_steep unknown n=14 total=0 min/median/max=0.0/0.0/0.0
+H1 false_steep outside_02 n=14 total=1314 min/median/max=20.0/87.0/234.0
+H1 false_steep outside_02_share n=14 total=None min/median/max=0.5362318840579711/0.6198412698412699/1.0
+H1 false_steep near_053 n=14 total=1633 min/median/max=1.0/126.5/307.0
+H2 false_steep dominant_pairs n=14 total=1675 min/median/max=16.0/109.0/346.0
+H2 false_steep dominant_high_over n=14 total=1587 min/median/max=15.0/107.5/327.0
+H2 false_steep dominant_low_under n=14 total=894 min/median/max=13.0/56.0/172.0
+H2 false_steep dominant_high_dominates n=14 total=1516 min/median/max=9.0/107.5/313.0
+H2 false_steep dominant_low_dominates n=14 total=158 min/median/max=0.0/9.5/33.0
+H2 false_steep dominant_tie n=14 total=0 min/median/max=0.0/0.0/0.0
+H2 false_steep dominant_neither n=14 total=1 min/median/max=0.0/0.0/1.0
+H2 false_steep dominant_high_error_m_median n=14 total=None min/median/max=0.032291240455938564/0.40739882580759135/0.47399677640863347
+H2 false_steep dominant_low_error_m_median n=14 total=None min/median/max=-0.04839326394147925/-0.0026802208064528044/0.003371405715800413
+H3 false_steep points_median n=0 total=None min/median/max=None/None/None
+H3 false_steep sparse_first_053 n=14 total=206 min/median/max=1.0/8.0/42.0
+H3 false_steep first_3x3_zero_053 n=14 total=1627 min/median/max=8.0/101.5/377.0
+H1 true_nonsteep cells n=14 total=561544 min/median/max=19635.0/43762.0/53840.0
+H1 true_nonsteep distance_n n=14 total=561544 min/median/max=19635.0/43762.0/53840.0
+H1 true_nonsteep within_02 n=14 total=6673 min/median/max=273.0/450.0/690.0
+H1 true_nonsteep over_02_within_05 n=14 total=5650 min/median/max=246.0/399.0/562.0
+H1 true_nonsteep over_05 n=14 total=549221 min/median/max=18893.0/42961.0/52595.0
+H1 true_nonsteep no_detections n=14 total=0 min/median/max=0.0/0.0/0.0
+H1 true_nonsteep unknown n=14 total=0 min/median/max=0.0/0.0/0.0
+H1 true_nonsteep outside_02 n=14 total=554871 min/median/max=19252.0/43332.5/53150.0
+H1 true_nonsteep outside_02_share n=14 total=None min/median/max=0.9791749109616146/0.9886639038968161/0.9913419913419913
+H1 true_nonsteep near_053 n=14 total=28793 min/median/max=1148.0/1958.5/2839.0
+H2 true_nonsteep dominant_pairs n=14 total=529677 min/median/max=17887.0/41624.0/51076.0
+H2 true_nonsteep dominant_high_over n=14 total=271123 min/median/max=9331.0/21456.0/25807.0
+H2 true_nonsteep dominant_low_under n=14 total=285859 min/median/max=8915.0/23607.0/26621.0
+H2 true_nonsteep dominant_high_dominates n=14 total=202940 min/median/max=7355.0/15677.0/19725.0
+H2 true_nonsteep dominant_low_dominates n=14 total=213441 min/median/max=6458.0/17751.5/19846.0
+H2 true_nonsteep dominant_tie n=14 total=2 min/median/max=0.0/0.0/2.0
+H2 true_nonsteep dominant_neither n=14 total=113294 min/median/max=4074.0/8372.5/11616.0
+H2 true_nonsteep dominant_high_error_m_median n=14 total=None min/median/max=-0.00032964123476086904/0.0003133574891580615/0.0009461327602087455
+H2 true_nonsteep dominant_low_error_m_median n=14 total=None min/median/max=-0.0017988721256603224/-0.001010081478926117/0.00042557795360671086
+H3 true_nonsteep points_median n=0 total=None min/median/max=None/None/None
+H3 true_nonsteep sparse_first_053 n=14 total=11823 min/median/max=606.0/854.5/1214.0
+H3 true_nonsteep first_3x3_zero_053 n=14 total=517229 min/median/max=17165.0/39897.0/51209.0
