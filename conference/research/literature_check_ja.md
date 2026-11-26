@@ -94,3 +94,9 @@ Gemini の 2 回目は、要旨まで確かめられた文献だけを本文に�
   - Chen 2025（GEODE）・COIN-LIO の ENWIDE：特徴の少ない環境での LIO のずれ。
   - Kondo 2023・Chai 2024（LF-3PM）・Kim 2023・Zhang 2019：地図から前もって「位置の決まりやすさ」を出し、経路の計画に使う。071 の考え方の先行研究。
   - Giordano 2025：海岸での UAV 点群どうしの位置合わせ（特徴のない面の限界）。
+
+### Katwijk beach dataset の入手の調べ（2026-11-26）
+- 配布のページ `robotics.estec.esa.int/datasets/katwijk-beach-11-2015/` は 404（Wayback の 2023-11-21 の保存で中身を確かめた）。
+- ファイルは ESA の ownCloud の共有 `m1txHE9lmvwvx8G` にあった（走行 1：Part1〜8.tar、走行 2：Part1〜6.tar、走行 3：Part1〜5.tar、地図：Maps/traverse1+2・traverse3 の dsm.tif と mosaic.tif、校正の .mat と MATLAB の道具）。**共有は今は「File not found」**。サーバの証明書もホスト名と合っていない。
+- 中身（保存されたページより）：岩は **212 個の作り物を、わざと「岩の畑」として置いた**（走行 3 はその 2 倍の密度）。ロボットは 6 輪のロッカーボギー（HDPR）で、履帯ではない。VLP-16 は固定で、首振りするのはカメラ（PanCam）だけ。正解の位置は RTK の GNSS。ドローンの画像は約 2cm／画素、DEM の高さの精度は約 20cm。データは画像と CSV（rosbag ではない。LiDAR と IMU を rosbag にする道具 `mpkuse/katwijk_dataset_to_rosbag` がある）。関連の論文によると、センサーどうしの時刻が合っていない。
+- 手に入れるには、著者（Hewitt・Boukas）か ESA の Planetary Robotics Lab に問い合わせる必要がある。修論の本番は研究室のドローンの点群の地図と BUNKER の記録なので、深追いしない。
