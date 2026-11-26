@@ -50,21 +50,33 @@ class DistanceField:
     def add(self, cells):
         self.cells = np.concatenate((self.cells, cells))
         self._geometry = None
+        tree = self._tree(cells)
+        self._update_tiles(tree, self._affected_tiles(tree), merge=True)
+
+    def _tree(self, cells):
         # Both coarse centres and the projection of such a centre onto a
         # closed fine square lie on the half-fine lattice. A square's nine
         # lattice points therefore give its exact distance at every query.
         points = 2*cells[:, None]+self._offsets
-        tree = cKDTree(points.reshape(-1, 2))
+        return cKDTree(points.reshape(-1, 2))
+
+    def _affected_tiles(self, tree):
         scale = self.fine_resolution/2
         offset = 2*(self.ratio//2)
         tile_distance = tree.query(self._centres*(2*self.ratio)+offset)[0]*scale
         upper = np.maximum.reduceat(np.maximum.reduceat(self.distance_m, self._x, axis=0), self._y, axis=1)
-        for i, j in np.argwhere(tile_distance-self._radius < upper+1e-10):
+        return np.argwhere(tile_distance-self._radius < upper+1e-10)
+
+    def _update_tiles(self, tree, affected, *, merge):
+        scale = self.fine_resolution/2
+        offset = 2*(self.ratio//2)
+        for i, j in affected:
             x, y = self._x[i], self._y[j]
             region = np.s_[x:x+16, y:y+16]
             tile = self.distance_m[region]
             centres = (np.indices(tile.shape).transpose(1, 2, 0)+(x, y))*(2*self.ratio)+offset
-            np.minimum(tile, tree.query(centres)[0]*scale, out=tile)
+            distances = tree.query(centres)[0]*scale
+            tile[:] = np.minimum(tile, distances) if merge else distances
             self.cost[region] = obstacle_cost(tile, self.soft_m)
 
     def geometry(self):
@@ -116,16 +128,37 @@ class SegmentClearance:
 
     def smooth(self, path, blocked, mult, *, los=line_of_sight_exact):
         """Reuse cost-aware smoothing, accepting only clearance-preserving shortcuts."""
-        indices = {tuple(point): i for i, point in enumerate(path)}
-        edges = [self.segment(a, b) for a, b in zip(path, path[1:])]
+        return smooth_clearance((self,), path, blocked, mult, los=los)
 
-        def safe_los(grid, a, b):
-            if not los(grid, a, b):
+
+class CombinedClearance:
+    """Require shortcuts to preserve each layer's clearance independently."""
+
+    def __init__(self, *layers):
+        self.layers = layers
+
+    def preserves(self, a, via, b):
+        return all(layer.preserves(a, via, b) for layer in self.layers)
+
+    def smooth(self, path, blocked, mult, *, los=line_of_sight_exact):
+        return smooth_clearance(self.layers, path, blocked, mult, los=los)
+
+
+def smooth_clearance(layers, path, blocked, mult, *, los):
+    indices = {tuple(point): i for i, point in enumerate(path)}
+    edges = [[layer.segment(a, b) for a, b in zip(path, path[1:])] for layer in layers]
+
+    def safe_los(grid, a, b):
+        if not los(grid, a, b):
+            return False
+        start, stop = indices[tuple(a)], indices[tuple(b)]
+        for layer, lengths in zip(layers, edges):
+            minimum = min(lengths[start:stop])
+            if layer.segment(a, b, minimum) < minimum-1e-10:
                 return False
-            minimum = min(edges[indices[tuple(a)]:indices[tuple(b)]])
-            return self.segment(a, b, minimum) >= minimum-1e-10
+        return True
 
-        return smooth_cost_aware(path, blocked, mult, los=safe_los)
+    return smooth_cost_aware(path, blocked, mult, los=safe_los)
 
 
 def connector_clear(planner, blocked, start, via, end):

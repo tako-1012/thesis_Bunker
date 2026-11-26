@@ -27,6 +27,9 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
         if field is not None:
             cost += field.cost
             planner.distance_geometry = field.geometry()
+        steep_distance = hasattr(mapper, 'steep_distance_field')
+        if steep_distance:
+            planner.distance_geometry, planner.steep_cost = mapper.steep_distance_snapshot()
         planner.observe(observed, cost, lethal)
         if isinstance(planner, OverlapGoalPlanner):
             planner.set_goal_overrides(mapper.goal_obstacle_overrides(planner.goals_to_check()))
@@ -44,6 +47,8 @@ def capture(mapper, planner, position, pose, sim_time, goal, *, save_plan_maps=F
             if save_plan_maps:
                 snapshot['obstacle_cost'] = field.cost.copy()
         if save_plan_maps:
+            if steep_distance:
+                snapshot['steep_cost'] = planner.steep_cost
             snapshot['retained_lethal'] = planning_lethal & ~observed
             radius = mapper.robot.footprint_radius
             if hasattr(mapper, 'fine_obstacle'):

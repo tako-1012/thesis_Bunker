@@ -19,8 +19,9 @@ import numpy as np
 from scipy.ndimage import binary_dilation, gaussian_filter, map_coordinates, uniform_filter1d
 
 from .config import RESOLUTION
-from .distance_clearance import DistanceField, R_SOFT, validate_clearance
+from .distance_clearance import CombinedClearance, DistanceField, R_SOFT, validate_clearance
 from .pointcloud_map import PointCloudMap as _LegacyPointCloudMap, transform_points
+from .steep_clearance import SteepDistanceField, validate_steep_clearance
 from .traversability import inflate, slope_deg
 
 FINE_RESOLUTION = .1
@@ -80,8 +81,9 @@ def _obstacle_disk(radius_m, radius_cells, extra):
 class PointCloudMapFine(_LegacyPointCloudMap):
     def __init__(self, *args, ground_estimate='all_returns', obstacle_reference='prior',
                  obstacle_clearance='centre', terrain_source='sensor', steep_near_obstacle='keep',
-                 clearance_soft_m=R_SOFT, ground_near_obstacle='keep', **kwargs):
+                 clearance_soft_m=R_SOFT, ground_near_obstacle='keep', steep_clearance='centre', **kwargs):
         validate_clearance(obstacle_clearance, clearance_soft_m)
+        validate_steep_clearance(steep_clearance)
         validate_ground_near_obstacle(ground_near_obstacle, ground_estimate)
         if steep_near_obstacle not in STEEP_NEAR_OBSTACLE:
             raise ValueError('unknown steep-near-obstacle policy')
@@ -128,6 +130,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
         self._disk_offsets = np.argwhere(self._disk) - self._radius_cells
         if obstacle_clearance == 'distance':
             self.distance_field = DistanceField(self.prior.shape, FINE_RESOLUTION, RATIO, clearance_soft_m)
+        if steep_clearance == 'distance':
+            self.steep_distance_field = SteepDistanceField(self.tm.steep)
         if terrain_source == 'sensor':
             self._residual = self.elev - gaussian_filter(self.elev, sigma=1.5)
             self._rough_mean_x = uniform_filter1d(self._residual, 3, axis=0)
@@ -210,6 +214,19 @@ class PointCloudMapFine(_LegacyPointCloudMap):
     def planning_distance_snapshot(self, *, known=None):
         with self._update_lock:
             return self._planning_snapshot_locked(known), self.distance_field.geometry()
+
+    def steep_distance_snapshot(self):
+        """Capture both guards and steep cost while the caller holds the update lock."""
+        field = self.steep_distance_field
+        geometry = field.geometry()
+        if self.obstacle_clearance == 'distance':
+            geometry = CombinedClearance(self.distance_field.geometry(), geometry)
+        return geometry, field.cost.copy()
+
+    def planning_steep_snapshot(self, *, known=None, goals=None):
+        with self._update_lock:
+            return (self._planning_snapshot_locked(known), self.steep_distance_snapshot(),
+                    self.goal_obstacle_overrides(goals) if goals is not None else None)
 
     def planning_goal_snapshot(self, cells, *, known=None):
         with self._update_lock:
@@ -337,6 +354,8 @@ class PointCloudMapFine(_LegacyPointCloudMap):
                 tm.rock = self._prior_rock | self._inflated_coarse
             tm.lethal = tm.rock | tm.steep
             lethal = tm.lethal | self._dilated_steep
+            if hasattr(self, 'steep_distance_field') and tm.steep is not self.tm.steep:
+                self.steep_distance_field.refresh(tm.steep)
         with self._lock:
             self.elev, self.seen, self.tm, self.lethal = elev, seen, tm, lethal
             self.version += 1
