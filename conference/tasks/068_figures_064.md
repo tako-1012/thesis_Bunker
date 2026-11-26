@@ -1,6 +1,6 @@
 # 指示書 068：論文用の図と表に、064（180 回）と前もって決めた検定の結果を足す
 
-> **状態：実行中（2026-11-26 にクラウドの Codex（研究実装1）へ依頼）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（コミットされた結果を読むだけ）。
+> **状態：完了（出力は `thesis/out_lidar/`、レビューは `results/lidar_figures/REVIEW_068_ja.md`）**。実装は **クラウドの Codex**。Gazebo・研究 PC は使わない（コミットされた結果を読むだけ）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/thesis/make_lidar_figures.py`、`conference/results/lidar_figures/REPORT_ja.md`・`REVIEW_ja.md`・`REPORT_059_ja.md`・`REVIEW_059_ja.md`（049・059）、
 > `conference/tasks/064_eval_2x2.md`、`conference/results/eval_064/REPORT_stage2_ja.md`・`REVIEW_stage2_ja.md`、`conference/results/common_eval/REPORT_ja.md` を読むこと。
 > ブランチは `codex/068-figures-064`（その時点の `realtime-map` の最新から）。出力は `conference/thesis/out_lidar/`、報告は `conference/results/lidar_figures/REPORT_068_ja.md`。
