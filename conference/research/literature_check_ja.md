@@ -79,3 +79,18 @@ ChatGPT の調査（2 回分）に出てきた文献を、Crossref の API（`ap
 
 Gemini の 2 回目は、要旨まで確かめられた文献だけを本文に挙げ、ほかを「未確認」に分けていた。そこに挙がった arXiv の番号（2606・2608・2610・2611 で始まるものなど）は、ここでは確かめていない。
 「CMU の著者名なしの資料」「Jinno（年不明）」は書誌が不完全なので、使わない。
+
+## 自己位置推定（GNSS なし・砂浜）のディープリサーチ（2026-11-26、利用者が貼ったレポート 1 本目、Claude が Crossref で確かめた）
+- DOI のある 26 本は、すべて Crossref で実在を確かめた（題名が一致）。
+- **筆頭著者の誤り**（レポートの書き方 → 本当の筆頭著者）：
+  - 「Barsi 系, 2022」（10.1016/j.jag.2022.102767）→ **Zováthi**
+  - 「Hara / Nakamura et al., 2023」（10.1186/s40648-023-00256-w）→ **Kondo**
+  - 「Wong 系を踏襲した tracked vehicle 研究, 2010」（10.1016/j.jterra.2010.02.001）→ **Al-Milli**
+- 年のずれ（オンライン公開と巻号の差で、問題なし）：Katwijk 2017/2018、Nourizadeh 2022/2023、Pavlov 2024/2023。
+- DOI がなく確かめていないもの：COIN-LIO（ICRA 2024）、AdaLIO（arXiv 2304.12577）、X-ICP（arXiv 2211.16335）、Fisher Information Field（arXiv 2008.03324）、Pretto 2018（IROS ワークショップ）。
+- **レポートの数値（ENWIDE・GEODE の誤差の表など）は確かめていない**。使うときは原著の表で確かめる。
+- 特に使えそうなもの：
+  - Hewitt 2017（Katwijk beach dataset）：本物の砂浜、VLP-16＋IMU＋RTK-GPS（正解）＋走る前の UAV の DEM（約 20cm の高さの精度）。今回の問題に一番近い公開データ。
+  - Chen 2025（GEODE）・COIN-LIO の ENWIDE：特徴の少ない環境での LIO のずれ。
+  - Kondo 2023・Chai 2024（LF-3PM）・Kim 2023・Zhang 2019：地図から前もって「位置の決まりやすさ」を出し、経路の計画に使う。071 の考え方の先行研究。
+  - Giordano 2025：海岸での UAV 点群どうしの位置合わせ（特徴のない面の限界）。
