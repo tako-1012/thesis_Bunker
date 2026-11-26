@@ -1,0 +1,216 @@
+{
+  "run": "runs/08OB89_-0847/GD_r6/physical_1/raw/08OB89_-0847",
+  "status": "no_path",
+  "follower_error": "lidar_unavailable_or_stale",
+  "started_sim_s": 5.44,
+  "finished_sim_s": 7.552,
+  "recorder_terminal_state_sim_s": 7.55,
+  "stale_timeout_sim_s": 1.0,
+  "perception_ready": false,
+  "oldest_accepted_stamp": 6.5,
+  "sensors": {
+    "lidar": {
+      "at_mission_end": {
+        "received": 58,
+        "processed": 43,
+        "queue_drops": 13,
+        "last_stamp": 6.9,
+        "error": ""
+      },
+      "at_shutdown": {
+        "received": 58,
+        "processed": 44,
+        "queue_drops": 13,
+        "last_stamp": 7.2,
+        "error": ""
+      },
+      "age_at_mission_end_s": 0.6519999999999992,
+      "successful_updates_by_message_stamp": 9,
+      "max_update_s": 0.2848932750057429,
+      "median_update_s": 0.15366065804846585,
+      "over_pointcloud_period_0_1_s": 5,
+      "latest_accepted_in_update_log_s": 7.2
+    },
+    "camera1": {
+      "at_mission_end": {
+        "received": 70,
+        "processed": 49,
+        "queue_drops": 20,
+        "last_stamp": 7.2,
+        "error": ""
+      },
+      "at_shutdown": {
+        "received": 70,
+        "processed": 49,
+        "queue_drops": 20,
+        "last_stamp": 7.2,
+        "error": ""
+      },
+      "age_at_mission_end_s": 0.3519999999999994,
+      "successful_updates_by_message_stamp": 9,
+      "max_update_s": 0.07347286306321621,
+      "median_update_s": 0.013723575044423342,
+      "over_pointcloud_period_0_1_s": 0,
+      "latest_accepted_in_update_log_s": 7.2
+    },
+    "camera2": {
+      "at_mission_end": {
+        "received": 62,
+        "processed": 43,
+        "queue_drops": 18,
+        "last_stamp": 6.5,
+        "error": ""
+      },
+      "at_shutdown": {
+        "received": 62,
+        "processed": 43,
+        "queue_drops": 18,
+        "last_stamp": 6.5,
+        "error": ""
+      },
+      "age_at_mission_end_s": 1.0519999999999996,
+      "successful_updates_by_message_stamp": 8,
+      "max_update_s": 0.0299196548294276,
+      "median_update_s": 0.009910171967931092,
+      "over_pointcloud_period_0_1_s": 0,
+      "latest_accepted_in_update_log_s": 6.5
+    }
+  },
+  "poses": {
+    "follower": {
+      "window_samples": 43,
+      "max_receive_gap_s": 0.050726861,
+      "last_header_stamp_s": 8.05
+    },
+    "planner": {
+      "window_samples": 43,
+      "max_receive_gap_s": 0.069451122,
+      "last_header_stamp_s": 7.75
+    },
+    "observer": {
+      "window_samples": 43,
+      "max_receive_gap_s": 0.05075662,
+      "last_header_stamp_s": 7.75
+    }
+  },
+  "pose_timeouts": 0,
+  "tick_samples": 42,
+  "max_tick_interval_s": 0.050582447,
+  "max_tick_duration_s": 0.000559131,
+  "total_cpu_pct_samples_in_mission": [
+    11.91,
+    13.01
+  ],
+  "plan_successes": 6,
+  "plan_failures": 0,
+  "safety_events": [
+    {
+      "sim_time": "5.9",
+      "event": "join_accepted",
+      "detail": "{\"blocked_cells\": [], \"start_cell\": [70, 146]}"
+    },
+    {
+      "sim_time": "6.45",
+      "event": "join_accepted",
+      "detail": "{\"blocked_cells\": [], \"start_cell\": [71, 146]}"
+    },
+    {
+      "sim_time": "6.75",
+      "event": "join_accepted",
+      "detail": "{\"blocked_cells\": [], \"start_cell\": [71, 146]}"
+    },
+    {
+      "sim_time": "7.05",
+      "event": "join_accepted",
+      "detail": "{\"blocked_cells\": [], \"start_cell\": [72, 146]}"
+    },
+    {
+      "sim_time": "7.3",
+      "event": "join_rejected",
+      "detail": "{\"blocked_cells\": [[113, 136]]}"
+    }
+  ],
+  "last_map_updates": [
+    {
+      "stamp": "6.3",
+      "sensor": "camera1",
+      "status": "ok",
+      "update_s": "0.023153421003371477",
+      "queue_drops": "28",
+      "accepted_points": "9048"
+    },
+    {
+      "stamp": "6.3",
+      "sensor": "camera2",
+      "status": "ok",
+      "update_s": "0.025982808088883758",
+      "queue_drops": "28",
+      "accepted_points": "9579"
+    },
+    {
+      "stamp": "6.3",
+      "sensor": "lidar",
+      "status": "ok",
+      "update_s": "0.06409758795052767",
+      "queue_drops": "28",
+      "accepted_points": "12071"
+    },
+    {
+      "stamp": "6.4",
+      "sensor": "camera1",
+      "status": "ok",
+      "update_s": "0.07347286306321621",
+      "queue_drops": "30",
+      "accepted_points": "8971"
+    },
+    {
+      "stamp": "6.5",
+      "sensor": "camera2",
+      "status": "ok",
+      "update_s": "0.0299196548294276",
+      "queue_drops": "30",
+      "accepted_points": "9675"
+    },
+    {
+      "stamp": "6.5",
+      "sensor": "lidar",
+      "status": "ok",
+      "update_s": "0.15366065804846585",
+      "queue_drops": "33",
+      "accepted_points": "12063"
+    },
+    {
+      "stamp": "6.6",
+      "sensor": "lidar",
+      "status": "ok",
+      "update_s": "0.2848932750057429",
+      "queue_drops": "40",
+      "accepted_points": "12114"
+    },
+    {
+      "stamp": "6.9",
+      "sensor": "lidar",
+      "status": "ok",
+      "update_s": "0.23287930991500616",
+      "queue_drops": "44",
+      "accepted_points": "12076"
+    },
+    {
+      "stamp": "7.2",
+      "sensor": "camera1",
+      "status": "ok",
+      "update_s": "0.013060759985819459",
+      "queue_drops": "45",
+      "accepted_points": "10064"
+    },
+    {
+      "stamp": "7.2",
+      "sensor": "lidar",
+      "status": "ok",
+      "update_s": "0.22535427194088697",
+      "queue_drops": "51",
+      "accepted_points": "12049"
+    }
+  ],
+  "map_update_errors": []
+}
