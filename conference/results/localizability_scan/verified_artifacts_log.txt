@@ -1,0 +1,3 @@
+24 cases, CSV metrics and independent 1 m arc intervals agree
+grid samples: 16186 route samples: 6400
+artifact sizes: {'grid_08OB86_-0205.csv': 2132065, 'grid_08OB88_-1417.csv': 1929573, 'map_seed0.png': 1307271, 'route_08OB86_-0205.csv': 783321, 'route_08OB88_-1417.csv': 980491, 'routes.png': 286157, 'summary_by_density.csv': 2182, 'summary_by_seed.csv': 8043, 'worlds.json': 847647}

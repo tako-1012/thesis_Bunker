@@ -1,0 +1,3 @@
+Independently checked 240 matrices, 720 cases, all 5,040 tour sums and orders, and 12 summary rows.
+results/tour_real_beach/tours.csv: OK
+results/tour_real_beach/matrix_times.csv: OK

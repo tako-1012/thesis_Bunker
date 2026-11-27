@@ -1,6 +1,6 @@
 # 指示書 079：「ドローンの地図」の点群から仮の LiDAR のスキャンを作り、場所ごとの位置の決まりやすさ（情報行列の固有値）を前もって出す
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装2）**。Gazebo・研究 PC は使わない。
+> **状態：完了（結果は `results/localizability_scan/`、レビューは `REVIEW_ja.md`。078 との照らし合わせは 078 のあと）**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針）、`conference/research/literature_check_ja.md`（自己位置推定の文献の節。Kondo 2023・LF-3PM・X-ICP）、
 > `conference/results/localizability_map/REVIEW_ja.md`（**071 の判定がなぜ使えなかったか**）、`conference/tasks/075_landmark_world.md`・`076_offline_localization.md`・`078_landmark_localization_eval.md`、
 > `conference/tapp/landmark_world.py`、`conference/experiments/offline_localization.py`（`information`・`MapRegistration`・`MIN_INFORMATION`）、`conference/ros2_jazzy/gz_checks/lidar_checks.py`（目印の置き方の入口・初めの経路）、
