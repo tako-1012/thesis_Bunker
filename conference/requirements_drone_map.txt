@@ -1,0 +1,3 @@
+# Additional LAZ support for the dedicated localization venv (task 081).
+laspy==2.6.1
+lazrs==0.7.0

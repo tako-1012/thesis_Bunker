@@ -1,0 +1,4 @@
+synthetic LAZ: voxel boundaries, cross-chunk means and mean RGB, exact even median, empty cells PASS
+all six original SHA-256 values still match
+original LAZ replay: both bounds, counts of all 164,010 cells, and height statistics in 11 cells PASS
+NPZ: 649,172 voxels, both sums are 43,539,562 points, size/CRS/float32 PASS
