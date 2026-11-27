@@ -1,0 +1,276 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "kiss-icp": "1.3.0",
+    "small_gicp": "1.0.1"
+  },
+  "lidar": {
+    "vertical_samples": 16,
+    "vertical_min_deg": -15.0,
+    "vertical_max_deg": 15.0,
+    "horizontal_samples": 1800,
+    "update_hz": 10.0,
+    "min_range_m": 0.9,
+    "max_range_m": 30.0,
+    "noise_stddev_m": 0.02,
+    "range_resolution_m": 0.01
+  },
+  "minimum_information": 1.0,
+  "lidar_pose": "079 (level, +x)",
+  "sample_step_m": 1.0,
+  "sample_phase_xy_m": [
+    0.75,
+    0.75
+  ],
+  "las_crop_seed": 0,
+  "edge_bands_m": [
+    0.0,
+    5.0,
+    10.0
+  ],
+  "scenes": [
+    {
+      "condition": "a",
+      "scene": "a",
+      "patch": "Kyutech",
+      "shape_xy": [
+        385,
+        426
+      ],
+      "size_xy_m": [
+        38.5,
+        42.6
+      ],
+      "offset_xy_m": [
+        0.0,
+        0.0
+      ],
+      "spacing_m": 0.1,
+      "reference_points": 649172,
+      "missing_cells": 18190
+    },
+    {
+      "condition": "b",
+      "scene": "b",
+      "patch": "Kyutech",
+      "shape_xy": [
+        77,
+        85
+      ],
+      "size_xy_m": [
+        38.5,
+        42.5
+      ],
+      "offset_xy_m": [
+        0.0,
+        0.0
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 151461,
+      "missing_cells": 342
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB88_-1417_1",
+      "patch": "08OB88_-1417",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        100.0,
+        72.0
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB88_-1417_2",
+      "patch": "08OB88_-1417",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        80.5,
+        81.0
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB88_-1417_3",
+      "patch": "08OB88_-1417",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        45.0,
+        68.0
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB88_-1417_4",
+      "patch": "08OB88_-1417",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        50.5,
+        84.0
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB88_-1417_5",
+      "patch": "08OB88_-1417",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        136.0,
+        78.5
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB86_-0205_1",
+      "patch": "08OB86_-0205",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        97.0,
+        85.5
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB86_-0205_2",
+      "patch": "08OB86_-0205",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        75.5,
+        66.0
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB86_-0205_3",
+      "patch": "08OB86_-0205",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        39.0,
+        95.5
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB86_-0205_4",
+      "patch": "08OB86_-0205",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        45.0,
+        51.5
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    },
+    {
+      "condition": "c",
+      "scene": "c_08OB86_-0205_5",
+      "patch": "08OB86_-0205",
+      "shape_xy": [
+        76,
+        86
+      ],
+      "size_xy_m": [
+        38.0,
+        43.0
+      ],
+      "offset_xy_m": [
+        137.0,
+        72.5
+      ],
+      "spacing_m": 0.5,
+      "reference_points": 160176,
+      "missing_cells": 0
+    }
+  ]
+}
