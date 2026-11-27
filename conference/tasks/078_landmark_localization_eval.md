@@ -1,6 +1,6 @@
 # 指示書 078：目印の数を変えた Gazebo の世界で記録を取り、記録から出した位置のずれを測る（研究 PC）
 
-> **状態：実行中（研究 PC、チャット：研究PC実行。073 が終わってから始める）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ。集計のスクリプトは足してよい）。
+> **状態：保留（11/28 0:57 に全 24 回が終わったが、全回が「点群が古い」で経路なし。集計は 082 で原因を調べてから）**。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/progress/policy.csv`（今後の方針）、
 > `conference/tasks/075_landmark_world.md`・`076_offline_localization.md`・`077_recording_bridge.md` と、それぞれの `results/` の `REPORT_ja.md`・`REVIEW_ja.md`（**研究 PC での引数とコマンドの案**）、
 > `conference/results/eval_073/`（同じやり方で走らせる見本。073 の `run073.sh` など）を読むこと。
