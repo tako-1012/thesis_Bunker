@@ -1,6 +1,6 @@
 # 指示書 082：078 の記録で、位置の誤差が 12〜34m にもなった原因を調べる（座標の合い方の確かめ）
 
-> **状態：実行中（研究 PC、チャット：研究PC実行。078 は 11/28 0:57 に終わった）**。コードは変えない。調べるためのスクリプトは `conference/results/eval_078/diag/` に足してよい。
+> **状態：完了（結果とレビューは `results/eval_078/diag/`）**。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/tasks/075_landmark_world.md`・`076_offline_localization.md`・`077_recording_bridge.md`・`078_landmark_localization_eval.md`、
 > それぞれの `results/` の `REPORT_ja.md`・`REVIEW_ja.md`、`conference/tapp/sensor_recording.py`、`conference/experiments/recording_bridge.py`・`offline_localization.py`、
 > `conference/ros2_jazzy/gz_checks/sensor_recorder.py`・`landmark_sdf.py`、`conference/tapp/landmark_world.py`（`reference_cloud.npz` の作り方）、`conference/ros2_jazzy/src/thesis_bunker_gz/thesis_bunker_gz/lidar.py`・`model.py` を読むこと。

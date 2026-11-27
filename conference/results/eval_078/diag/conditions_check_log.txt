@@ -1,0 +1,5 @@
+078 and 082 Gazebo, recorder and offline estimation source identical
+Common 078 and 082 configuration: {'image': 'sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57', 'patch': '08OB88_-1417', 'density_per_ha': '0', 'seed': '0', 'rtf': '1.0', 'domain': '78', 'rendering': 'gpu', 'stale_sim_s': '1.0', 'protocol': 'rtf_check'}
+082 on matches 078 d0_s0 arguments exactly
+082 off subtracts only --record-sensors --record-sensors-seconds 120
+Two confirmation exit records
