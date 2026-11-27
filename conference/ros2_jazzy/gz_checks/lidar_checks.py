@@ -81,8 +81,14 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   pose_trace=False, clearance_soft_m=R_SOFT, ground_near_obstacle='keep', goal_region='none',
                   steep_clearance='centre', slope_uncertainty='none',
                   pose_error='none', pose_error_seed=0, pose_error_rep=1, pose_error_bias=None,
-                  pose_error_drift_pct=None):
+                  pose_error_drift_pct=None, landmarks=0, landmark_seed=0,
+                  record_sensors=False, record_sensors_seconds=None):
     pose_settings = PoseErrorSettings(pose_error, pose_error_seed, pose_error_rep, pose_error_bias, pose_error_drift_pct)
+    if not isinstance(landmarks, int) or landmarks < 0:
+        raise ValueError('--landmarks must be a nonnegative integer density')
+    if record_sensors_seconds is not None and (not record_sensors or not np.isfinite(record_sensors_seconds)
+                                              or record_sensors_seconds <= 0):
+        raise ValueError('--record-sensors-seconds requires --record-sensors and a positive finite duration')
     validate_steep_clearance(steep_clearance, map_method=map_method)
     from tapp.goal_region import RING_RADIUS_M, validate_goal_region
 
@@ -294,6 +300,12 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if slope_uncertainty == 'soft':
         manifest.update(slope_uncertainty=slope_uncertainty, slope_uncertainty_lower_z=LOWER_95_Z,
                         slope_uncertainty_single_height_error_m=SINGLE_HEIGHT_ERROR_M)
+    if landmarks or record_sensors:
+        manifest['landmark_world'] = dict(density_per_ha=landmarks, seed=landmark_seed,
+                                          density_area='finite dry land before placement exclusions')
+    if record_sensors:
+        from tapp.sensor_recording import LIMIT_BYTES
+        manifest['sensor_recording'] = dict(duration_limit_s=record_sensors_seconds, limit_bytes=LIMIT_BYTES)
     save_manifest(output, manifest)
     return manifest
 
@@ -307,6 +319,22 @@ def case_world_inputs(case, meta, manifest, *, matched_world=False):
         truth, prior, case['world_reference'] = matched_task022_maps(patch, truth, prior)
     case['input_audit'] = verify_inputs(patch, meta, truth, prior)
     return truth, prior
+
+
+def add_landmark_world(raw, case, meta, settings, truth, prior):
+    """Create the reference and evaluation maps, keeping world debris separate."""
+    from tapp.landmark_world import landmark_mask, place_landmarks, save_reference_cloud, with_landmarks
+
+    area, objects = place_landmarks(truth, case['patch'], settings['density_per_ha'], settings['seed'],
+                                   [meta['start'], *meta['points'], *meta['stops']])
+    cloud = raw/'reference_cloud.npz'
+    ground_n, landmark_n = save_reference_cloud(cloud, truth['tmap'].elev, objects)
+    case.update(landmarks=[asdict(item) for item in objects], landmark_land_area_m2=area,
+                reference_cloud=dict(file=cloud.name, terrain_points=ground_n, landmark_points=landmark_n))
+    if objects:
+        mask = landmark_mask(truth['tmap'].shape, objects)
+        truth, prior = with_landmarks(truth, mask), with_landmarks(prior, mask)
+    return truth, prior, objects
 
 
 def summarize_edge_margin(output, manifest):
@@ -344,6 +372,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
     gpu = 'rendering' in manifest
     trace_enabled = manifest.get('pose_trace', False)
     pose_error_enabled = 'pose_error' in manifest
+    landmark_settings = manifest.get('landmark_world')
+    recording_settings = manifest.get('sensor_recording')
     if trace_enabled:
         from tapp.pose_trace import CpuSampler, NS, trace_pose
     if matched_world:
@@ -453,14 +483,22 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 try:
                     folder.mkdir()
                     truth, prior = case_world_inputs(case, meta, manifest, matched_world=matched_world)
+                    physical_truth = truth
+                    objects = []
                     if manifest.get('prior_variant', 'exact') != 'exact':
                         prior, case['prior_variant_statistics'] = prior_variant(prior, manifest['prior_variant'])
+                    if landmark_settings is not None:
+                        truth, prior, objects = add_landmark_world(raw, case, meta, landmark_settings, truth, prior)
+                        save_manifest(output, manifest)
+                    if objects or manifest.get('prior_variant', 'exact') != 'exact':
                         # Never seed a no-prior/perturbed run with the old exact
                         # DEM path. Keep endpoints/order, plan on the new prior.
                         from tapp.online_mission import run_fixed_mission
                         from ros2_jazzy.gz_checks.online_batch_runtime import planning_map
                         initial = run_fixed_mission(planning_map(prior, 'TA*-S+inflate'), meta['start'], meta['stops'])
                         if not initial['success']:
+                            if objects:
+                                raise ValueError('task075 initial planning failed on landmark prior')
                             raise ValueError('task032 initial planning failed on selected prior')
                         mission['path'] = (np.asarray(initial['traj'])*RESOLUTION).tolist()
                         save_run()
@@ -471,7 +509,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                                         truth_rock=truth['tmap'].rock, prior_elev=prior['tmap'].elev,
                                         prior_lethal=prior['tmap'].lethal, prior_rock=prior['tmap'].rock)
                     truth_file, prior_file = folder/'truth.npz', folder/'prior.npz'
-                    scenario_to_mapfile(dict(truth, raw_elev=truth['tmap'].elev), truth_file, case['patch']+'_debris', case['patch'], 'task022 truth; no planner access', LAS_ATTRIBUTION)
+                    scenario_to_mapfile(dict(physical_truth, raw_elev=physical_truth['tmap'].elev), truth_file, case['patch']+'_debris', case['patch'], 'task022 truth; no planner access', LAS_ATTRIBUTION)
                     scenario_to_mapfile(prior, prior_file, case['patch'], case['patch'], 'task022 stale prior', LAS_ATTRIBUTION)
                     world_options = (dict(debris_box_height=manifest['debris_box_height'])
                                      if manifest.get('debris_box_height', 'plus_half') != 'plus_half' else {})
@@ -479,7 +517,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     world = folder/'world/world.sdf'
                     tree = ET.parse(world)
                     w = tree.find('world')
-                    if manifest.get('diagnostics') or manifest.get('save_plan_maps'):
+                    if manifest.get('diagnostics') or manifest.get('save_plan_maps') or landmark_settings is not None:
                         from ros2_jazzy.gz_checks.clearance_log import save_debris_footprints
                         save_debris_footprints(raw/'debris_footprints.csv', w)
                     w.find('physics/real_time_factor').text = (str(manifest['real_time_factor']) if manifest.get('map_method') == 'fine'
@@ -488,6 +526,9 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         uri.text = (world.parent/'heightmap.png').as_uri()
                     # GPU LiDAR sees visuals only; the heightmap visual crashes ogre2 without a GPU.
                     use_mesh_visual(tree, write_terrain_obj(truth['tmap'].elev, folder/'terrain.obj').resolve().as_uri())
+                    if objects:
+                        from ros2_jazzy.gz_checks.landmark_sdf import add_landmark_models
+                        add_landmark_models(w, objects)
                     model_kwargs = dict(lidar=True, lidar_height_m=manifest['sensor_height_m'],
                                         lidar_spec=LidarSpec(**manifest['lidar_spec']))
                     if manifest.get('sensors', 'legacy') != 'legacy':
@@ -564,6 +605,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                             trace_dir=str(raw/'pose_trace') if trace_enabled else None)))
                         commands.append([sys.executable, str(ROOT/'ros2_jazzy/gz_checks/pose_error_relay.py'),
                                          str(relay_config)])
+                    if recording_settings is not None:
+                        recorder = [sys.executable, str(ROOT/'ros2_jazzy/gz_checks/sensor_recorder.py'), str(raw/'sensors')]
+                        if recording_settings['duration_limit_s'] is not None:
+                            recorder.extend(['--seconds', str(recording_settings['duration_limit_s'])])
+                        commands.append(recorder)
                     if gpu:
                         commands[0][2:2] = ['--render-engine', 'ogre2']
                     for i, command in enumerate(commands):
@@ -587,7 +633,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     payload = {k: v for k, v in mission.items() if k != 'start_pose'} if pose_error_enabled else mission
                     message.data = json.dumps(payload)
                     observer.command.publish(message)
-                    distance = float(np.linalg.norm(np.diff(np.asarray(meta['initial_path']), axis=0), axis=1).sum())
+                    limit_path = mission['path'] if objects else meta['initial_path']
+                    distance = float(np.linalg.norm(np.diff(np.asarray(limit_path), axis=0), axis=1).sum())
                     limit = max(120, 6*distance+60)
                     # Wall-clock guard scales with the slowed simulation (real_time_factor 0.3 -> 10x the sim limit).
                     observer.wait_until(lambda: (observer.state.get('mission_id') == 1 and observer.state['status'] in TERMINAL)
@@ -619,6 +666,16 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                                 process.wait()
                     for stream in streams:
                         stream.close()
+                    if recording_settings is not None:
+                        sensor_status = raw/'sensors/metadata.json'
+                        try:
+                            recorded = json.loads(sensor_status.read_text())
+                            case['sensor_recording'] = dict(metadata=str(sensor_status.relative_to(raw)), **recorded)
+                            if recorded['status'] in ('recording', 'error') or not all(recorded['saved'].values()):
+                                raise ValueError('recorder did not finalize all three streams')
+                        except (OSError, ValueError, KeyError) as exc:
+                            if not case['error']:
+                                case['error'] = f'task075 sensor recording: {exc}'
                     observer.close()
                     split_follower_logs(raw)
                     if gpu:
@@ -627,6 +684,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if landmark_settings is not None:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task075 trial errors; inspect manifest and process logs')
+                print('Task075 raw results saved; inspect landmark and sensor metadata:', output)
+                return
             if pose_error_enabled:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task072 trial errors; inspect manifest')
@@ -779,11 +841,18 @@ def main():
     parser.add_argument('--pose-error-rep', type=int, default=1)
     parser.add_argument('--pose-error-bias', type=parse_bias, metavar='ALONG_M,SEAWARD_M,YAW_DEG')
     parser.add_argument('--pose-error-drift-pct', type=float)
+    parser.add_argument('--landmarks', type=int, default=0, metavar='PER_HA')
+    parser.add_argument('--landmark-seed', type=int, default=0)
+    parser.add_argument('--record-sensors', action='store_true')
+    parser.add_argument('--record-sensors-seconds', type=float, metavar='SIM_SECONDS')
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if 'landmark_world' in manifest:
+            print('Task075 preparation only; Gazebo not executed:', output)
+            return
         if 'pose_error' in manifest:
             print('Task072 preparation only; Gazebo not executed:', output)
             return
