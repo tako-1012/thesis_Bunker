@@ -1,0 +1,1 @@
+Initial checkout had untracked historical results. test_common_eval expected 43 030 map_fp_cells rows and read 45. The preflight was interrupted before any Gazebo trial.

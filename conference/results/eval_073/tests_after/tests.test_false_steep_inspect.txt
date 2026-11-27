@@ -1,0 +1,5 @@
+1 PASS: actual lethal and steep layers, true halo and independent obstacles; first/middle/last/max
+2 PASS: signed high/low endpoint errors and central/edge stencil, with optional point counts
+3 PASS: fine-cell centres, inclusive 0.2 and 0.5 m, empty and absent obstacle maps
+4 PASS: missing records have explicit skip reasons; independent final evidence and optional counts retained
+all task069 false-steep inspection tests passed

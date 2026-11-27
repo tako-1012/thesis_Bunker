@@ -1,0 +1,17 @@
+/home/kotaro/.venvs/thesis-python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+1 PASS: same-host pre-change versus none manifest, ROS dispatch, command and runtime log bytes
+selection PASS: nearest feasible ring, strict visibility/steep filters, blocked start and cost tie
+2 PASS: box halo unmodified; centre/overlap_goal/distance, v1/v2, plan snapshots and no reachable candidate
+3 PASS: steep halo, restore before arrival, stale substitution rejected by the preserved safety handoff
+08OB86_00294 completed
+configuration PASS: manifest, ROS options, direct CLI, Docker forwarding and incompatible mode
+all task063 goal-region tests passed

@@ -1,0 +1,6 @@
+run_inventory.csv: 160 rows
+run_metrics.csv: 160 rows
+arrivals.csv: 869 rows
+abnormal_runs.csv: 98 rows
+box_approaches.csv: 3 rows
+fisher_holm.csv: 21 rows
