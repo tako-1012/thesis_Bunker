@@ -5,6 +5,7 @@ from collections.abc import Iterable
 import csv
 from dataclasses import dataclass
 from importlib.metadata import version
+from itertools import islice
 import json
 from pathlib import Path
 
@@ -59,6 +60,8 @@ class Recording:
     base_from_lidar: np.ndarray
     imu_samples: int = 0
     discarded_scans: int = 0
+    imu_stamp_ns: np.ndarray | None = None
+    imu_values: np.ndarray | None = None
 
 
 @dataclass
@@ -246,8 +249,42 @@ def range_scan(ranges_mm, directions):
     return directions[valid]*(ranges_mm[valid, None]*.001)
 
 
+def load_run_directory(path, reference=None):
+    from experiments.recording_bridge import open_archive
+    from tapp.sensor_recording import iter_lidar
+
+    archive = open_archive(path)
+    reference_path = archive.folder/'reference_cloud.npz'
+    if reference is not None and Path(reference).resolve() != reference_path.resolve():
+        raise ValueError('075の入力には同じ走行フォルダの reference_cloud.npz を使ってください')
+    if not reference_path.is_file():
+        raise FileNotFoundError(f'{reference_path}: 同じ走行の参照点群が見つかりません')
+
+    lidar_ns = timestamps(archive.lidar_stamp_ns, 'lidar_stamp_ns')
+    truth_ns = timestamps(archive.truth_stamp_ns, 'ground_truth_stamp_ns')
+    imu_ns = timestamps(archive.imu_stamp_ns, 'imu_stamp_ns')
+    selected, truth = synchronized_truth(lidar_ns, truth_ns, poses_from_xyz_quat(archive.truth_values))
+    selected_ns = lidar_ns[selected]
+
+    def scans():
+        decoded = islice(iter_lidar(archive.folder/'sensors'), int(selected[0]), int(selected[-1])+1)
+        for scan, expected in zip(decoded, selected_ns, strict=True):
+            if scan.stamp_ns != expected:
+                raise ValueError('075の復元スキャンとチャンクの時刻が一致しません')
+            yield scan.xyz.reshape(-1, 3)
+
+    recording = Recording(selected_ns, truth, scans(), archive.base_from_lidar, len(imu_ns),
+                          len(lidar_ns)-len(selected), imu_stamp_ns=imu_ns, imu_values=archive.imu_values)
+    source = dict(recording=str(archive.folder), reference=str(reference_path),
+                  recording_format='sensor_archive_v1', archive_status=archive.status,
+                  extrinsic_source=archive.extrinsic_source)
+    return recording, reference_path, source
+
+
 def load_recording(path):
-    """Read the standalone packed NPZ interchange format (see the 076 report)."""
+    """Read task075 run directories or the standalone packed NPZ format."""
+    if Path(path).is_dir():
+        return load_run_directory(path)[0]
     with np.load(path, allow_pickle=False) as data:
         lidar_ns = timestamps(data['lidar_stamp_ns'], 'lidar_stamp_ns')
         truth_ns = timestamps(data['truth_stamp_ns'], 'truth_stamp_ns')
@@ -421,6 +458,9 @@ def main(argv=None):
 
             recording, reference = synthetic_recording(args.synthetic)
             source = dict(scene=args.synthetic, seed=SYNTHETIC_SEED)
+        elif args.recording.is_dir():
+            recording, reference_path, source = load_run_directory(args.recording, args.reference)
+            reference = load_reference(reference_path)
         else:
             reference_path = args.reference or args.recording.with_name('reference_cloud.npz')
             recording, reference = load_recording(args.recording), load_reference(reference_path)
