@@ -27,3 +27,12 @@
 1. Hokuto の点群（`.laz`／`.las`／`.ply`）と標高の地図（`dsm.tif`・`dtm.tif`）。座標系と細かさ。
 2. Gazebo の世界のファイル（`Munakata_Beach.world` など）。
 3. ゴミを見つけた結果の記録（データベースの形、緯度経度の一覧）。
+
+## NAS で見つけたデータ（2026-11-27、利用者が研究室の NAS で確かめた）
+- つなぎ方：NAS は `172.26.6.2`（共有 `w301Synology`）。大学の VPN からは届かないが、研究 PC（研究室の中）からは届く。Mac から `ssh -N -L 4445:172.26.6.2:445 hayashi` で研究 PC を中継にし、Finder で `smb://localhost:4445` を開く（研究 PC には何も入れていない）。
+- 場所：`w301Synology/.../M2/Titan/ODM/-4-24-2024-all (1)/`（M2 の Titan さんのフォルダ。WebODM の「全部まとめて書き出す」の形）。中身は `cameras.json`・`entwine_pointcloud/`・`images.json`・`log.json`・`odm_georeferencing/`（`odm_georeferenced_model.laz` など）・`odm_orthophoto/`・`odm_report/`・`odm_texturing/`・`task_output.txt`。**標高の地図（`odm_dem/`）はない**（点群から作れる）。
+- `odm_report/report.pdf`（ODM 3.1.2）より：
+  - 撮影 2024-04-24 12:30〜12:44、写真 390 枚、範囲 **0.001120km²（約 33m × 42m）**。
+  - 点群（dense）**43,539,562 点**、地上の画素の大きさ **0.2cm**。
+  - 位置の基準はドローンの GPS だけ。正しさ：**絶対** 水平 CE90 0.609m・高さ LE90 0.081m、**相対** 水平 0.004m・高さ 0.006m。
+- 読み方：地図の中の形はとても正確（相対 mm 単位）だが、地球上の位置は 60cm 程度ずれうる。範囲は狭い（LiDAR の 30m で全体が見える大きさ）。
