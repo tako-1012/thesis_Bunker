@@ -1,6 +1,6 @@
 # 指示書 077：075 のセンサーの記録を、076 の位置を出す道具で読めるようにする
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装1）**。Gazebo・研究 PC は使わない。
+> **状態：完了（結果は `results/recording_bridge/`、レビューは `REVIEW_ja.md`）**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/075_landmark_world.md`・`076_offline_localization.md`、
 > `conference/results/landmark_world/REPORT_ja.md`・`REVIEW_ja.md`（**つながっていない所の表**）、`conference/results/offline_localization/REPORT_ja.md`・`REVIEW_ja.md`、
 > `conference/tapp/sensor_recording.py`、`conference/ros2_jazzy/gz_checks/sensor_recorder.py`・`lidar_checks.py`（LiDAR の取り付け位置が世界にどう書かれるか）、`conference/tapp/sensor_geometry.py`、`conference/experiments/offline_localization.py` を読むこと。

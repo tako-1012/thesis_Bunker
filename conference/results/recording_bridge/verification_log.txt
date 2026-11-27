@@ -1,0 +1,15 @@
+Generated BUNKER real SDF and manifest describe the same model-relative mount: [-0.24  0.    1.4 ]
+Generated BUNKER legacy SDF used configured model-relative Z=1.23 m.
+
+Synthetic 075 input files after replay:
+/tmp/077-native-run/manifest.json: OK
+/tmp/077-native-run/raw/08OB86_00294/reference_cloud.npz: OK
+/tmp/077-native-run/raw/08OB86_00294/sensors/chunk_00000.npz: OK
+/tmp/077-native-run/raw/08OB86_00294/sensors/chunk_00001.npz: OK
+/tmp/077-native-run/raw/08OB86_00294/sensors/chunk_00002.npz: OK
+/tmp/077-native-run/raw/08OB86_00294/sensors/chunk_00003.npz: OK
+/tmp/077-native-run/raw/08OB86_00294/sensors/metadata.json: OK
+
+076 output comparison:
+synthetic: all 5 output files and stdout are byte-identical
+legacy: all 5 output files and stdout are byte-identical
