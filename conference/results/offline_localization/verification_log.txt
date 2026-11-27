@@ -1,0 +1,21 @@
+landmarks map lambda range 13.201621587742084 24.05544605135594 weak axes {'cross_shore': 22, 'alongshore': 43}
+landmarks odometry distance 16.604202734591073 combined events: [('20', '5.0', '17.1388077538843', 'accepted'), ('39', '10.0', '21.402160233205617', 'accepted'), ('58', '15.0', '19.79301836817951', 'accepted')]
+landmarks validated timestamp, trajectory-derived errors and support for gate
+plane map lambda range 0.5001085968911062 0.5003169405205175 weak axes {'alongshore': 30, 'cross_shore': 35}
+plane odometry distance 3.543917022921963 combined events: []
+plane validated timestamp, trajectory-derived errors and support for gate
+
+Plane gate with known relative motion replacing KISS-ICP:
+scheduled=5m travelled=5.022m converged=True lambda=0.50023366 weak_axis=cross_shore status=weak_information
+scheduled=10m travelled=10.131m converged=True lambda=0.50019819 weak_axis=alongshore status=weak_information
+scheduled=15m travelled=15.204m converged=True lambda=0.50023084 weak_axis=cross_shore status=weak_information
+
+End-to-end packed range replay:
+method,frames,mean_error_m,p95_error_m,max_error_m,final_error_m,travelled_m,relative_drift_m_per_m
+odometry,65,0.6285406009174037,0.796090427986915,0.8236226298291752,0.8236226298291752,16.605803015161076,0.039993833343532896
+map_only,65,0.027094939046924595,0.037860507374621974,0.03901486287593478,0.03458959999058823,16.605803015161076,0.0015137368634309397
+combined,65,0.17280998075710707,0.5190727526892605,0.52851119215649,0.029919723329268046,16.605803015161076,0.03048618215517449
+map_only: 65/65 accepted
+combined: 3/3 accepted
+
+Repeated runs produced identical trajectories, alignments, summaries and metadata in both scenes.
