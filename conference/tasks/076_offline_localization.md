@@ -1,6 +1,6 @@
 # 指示書 076：走行の記録から、あとで自分の位置を出す道具（LiDAR の積み上げ ＋ 「ドローンの地図」への重ね合わせ）
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装1）**。Gazebo・研究 PC は使わない。
+> **状態：完了（結果は `results/offline_localization/`、レビューは `REVIEW_ja.md`。075 の記録とつなぐのは 077）**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針）、`conference/research/literature_check_ja.md`（自己位置推定の文献の節）、
 > `conference/tasks/075_landmark_world.md`（記録と地図の点群の形。075 は並行して作っている）、`conference/results/localizability_map/REVIEW_ja.md` を読むこと。
 > ブランチは `codex/076-offline-localization`（その時点の `realtime-map` の最新から）。結果は `conference/results/offline_localization/`、報告は同じ場所の `REPORT_ja.md`。

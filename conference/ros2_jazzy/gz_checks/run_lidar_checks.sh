@@ -94,3 +94,4 @@ docker run --rm --pull=never --network host \
 # Task063 opt-in: --goal-region ring with --endpoint-policy none (the defaults are none).
 # Task066 opt-in: --map fine --terrain-source sensor --slope-uncertainty soft.
 # Task072 opt-in: --pose-error bias|drift and its corresponding magnitude, seed and repetition options.
+# Task075 opt-in: --landmarks PER_HA --landmark-seed SEED --record-sensors [--record-sensors-seconds SECONDS].
