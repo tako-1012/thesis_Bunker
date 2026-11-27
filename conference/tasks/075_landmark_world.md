@@ -1,6 +1,6 @@
 # 指示書 075：目印（岩）を置いた Gazebo の世界と、その「ドローンの地図」の代わりの点群、センサーの記録（選んだときだけ）
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装2）**。Gazebo・研究 PC は使わない（研究 PC での記録は、取り込んでから別に頼む）。
+> **状態：完了（結果は `results/landmark_world/`、レビューは `REVIEW_ja.md`。記録の形を 076 とつなぐのは 077）**。Gazebo・研究 PC は使わない（研究 PC での記録は、取り込んでから別に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針）、`conference/RESEARCH_PC_ja.md`（記録の量の決まり）、
 > `conference/research/literature_check_ja.md`（自己位置推定の文献の節）、`conference/results/localizability_map/REVIEW_ja.md`、
 > `conference/ros2_jazzy/gz_checks/lidar_checks.py`（世界の作り方・箱の置き方）・`run_lidar_checks.sh`、`conference/ros2_jazzy/src/thesis_bunker_gz/thesis_bunker_gz/lidar.py`（LiDAR の設定）、
