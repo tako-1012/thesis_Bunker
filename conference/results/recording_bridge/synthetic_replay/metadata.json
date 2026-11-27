@@ -1,0 +1,53 @@
+{
+  "source": {
+    "recording": "/tmp/077-native-run/raw/08OB86_00294",
+    "reference": "/tmp/077-native-run/raw/08OB86_00294/reference_cloud.npz",
+    "recording_format": "sensor_archive_v1",
+    "archive_status": "finished",
+    "extrinsic_source": "/tmp/077-native-run/manifest.json#sensor_configuration.mounts.lidar.xyz/rpy"
+  },
+  "correction_interval_m": 5.0,
+  "minimum_information": 1.0,
+  "rotation_lever_m": 1.0,
+  "initial_alongshore_m": 0.5,
+  "initial_yaw_deg": 2.0,
+  "base_from_lidar": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      -0.24
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      1.4
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "voxel_m": 0.25,
+  "gicp_max_correspondence_m": 1.5,
+  "gicp_iterations": 40,
+  "normal_neighbors": 20,
+  "imu_samples": 65,
+  "discarded_scans": 0,
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "kiss-icp": "1.3.0",
+    "small_gicp": "1.0.1"
+  }
+}
