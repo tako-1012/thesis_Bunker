@@ -304,7 +304,8 @@ def plots(output, patches, grid_rows, path_rows):
             ax.set(title=f'{patch} · {density}/ha', aspect='equal', xlim=(-5, 205), ylim=(-5, 205))
             ax.set_xlabel('Alongshore x (m)')
         row[0].set_ylabel('Cross-shore y (m)')
-    fig.colorbar(dot, ax=axes, label='Minimum scaled eigenvalue', shrink=.8)
+    ticks = [value for value in (0., .5, 1., 2., 5., 10., 20., 50.) if value <= norm.vmax]
+    fig.colorbar(dot, ax=axes, label='Minimum scaled eigenvalue', shrink=.8, ticks=ticks, format='%g')
     fig.suptitle('Seed 0 · red square: ≤ 1 · line: horizontal projection of weakest mode')
     fig.savefig(output/'map_seed0.png', dpi=175)
     plt.close(fig)
