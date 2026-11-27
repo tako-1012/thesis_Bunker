@@ -1,0 +1,123 @@
+{
+  "original_point_count": 43539562,
+  "utm_min_xyz_m": [
+    655194.349,
+    3725159.72,
+    77.771
+  ],
+  "utm_max_xyz_m": [
+    655232.826,
+    3725202.245,
+    78.161
+  ],
+  "local_min_xyz_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "local_max_xyz_m": [
+    38.477000000000004,
+    42.525,
+    0.39
+  ],
+  "las_header_min_xyz_m": [
+    655194.3488082886,
+    3725159.72032547,
+    77.7708740234375
+  ],
+  "las_header_max_xyz_m": [
+    655232.8258991241,
+    3725202.2450675964,
+    78.16059112548828
+  ],
+  "las_projected_epsg": 32652,
+  "las_version": "1.2",
+  "las_point_format": 3,
+  "las_scale_xyz_m": [
+    0.001,
+    0.001,
+    0.001
+  ],
+  "las_offset_xyz_m": [
+    655213.0,
+    3725181.0,
+    0.0
+  ],
+  "voxel_size_m": 0.05,
+  "voxel_count": 649172,
+  "rgb_present": true,
+  "elevation_cell_size_m": 0.1,
+  "elevation_shape_yx": [
+    426,
+    385
+  ],
+  "empty_elevation_cells": 18190,
+  "empty_elevation_fraction": 0.11090787147125175,
+  "epsg": 32652,
+  "crs": "WGS 84 / UTM zone 52N",
+  "coords_crs": "WGS84 UTM 52N",
+  "odm_xy_offset_m": [
+    655213.0,
+    3725181.0
+  ],
+  "proj": "+proj=utm +zone=52 +datum=WGS84 +units=m +no_defs +type=crs",
+  "source_files": {
+    "odm_georeferenced_model.laz": {
+      "sha256": "fb00d07f8fe9a7ca8502108dda0dd7dc1c53a7d6b7b2c23aaaef48844b234187",
+      "bytes": 136294985
+    },
+    "coords.txt": {
+      "sha256": "6687ddcfc2b3ff89c693f39ef700b2e6ff67ba4d900b3706561516e487127cbf",
+      "bytes": 16745
+    },
+    "proj.txt": {
+      "sha256": "fbceeda239eb013d77467fdc90203c449aa740648bc95628a7f52b4656611e44",
+      "bytes": 59
+    },
+    "odm_georeferenced_model.info.json": {
+      "sha256": "f2ce7088ee676332f8718a6874d22005a3cf50b6fd847e52530372b0beb3807c",
+      "bytes": 2229
+    },
+    "odm_orthophoto.tif": {
+      "sha256": "98ecc25179d4335b2aff75321a313ed31f4734ffca25f6c8b0ce06c43e017076",
+      "bytes": 2180641
+    },
+    "report.pdf": {
+      "sha256": "c9def1b89255242b450f254fc7f18e3a5bf4bf3ecf22bc88d601547bef67a471",
+      "bytes": 7473246
+    }
+  },
+  "packages": {
+    "numpy": "2.3.5",
+    "laspy": "2.6.1",
+    "lazrs": "0.7.0"
+  },
+  "point_cloud_parts": [
+    {
+      "name": "point_cloud_5cm_000.npz",
+      "bytes": 3226384,
+      "points": 160000
+    },
+    {
+      "name": "point_cloud_5cm_001.npz",
+      "bytes": 3340481,
+      "points": 160000
+    },
+    {
+      "name": "point_cloud_5cm_002.npz",
+      "bytes": 3335127,
+      "points": 160000
+    },
+    {
+      "name": "point_cloud_5cm_003.npz",
+      "bytes": 3254645,
+      "points": 160000
+    },
+    {
+      "name": "point_cloud_5cm_004.npz",
+      "bytes": 163145,
+      "points": 9172
+    }
+  ],
+  "elevation_bytes": 645692
+}
