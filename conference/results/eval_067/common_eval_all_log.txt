@@ -1,0 +1,21 @@
+067 08OB86_-0205 GD n=6 completed=6
+067 08OB86_-0205 GDS n=6 completed=6
+067 08OB86_-0205 PD n=6 completed=6
+067 08OB86_-0205 PDS n=6 completed=6
+067 08OB88_-0167 GD n=6 no_path=6
+067 08OB88_-0167 GDS n=6 no_path=6
+067 08OB88_-0167 PD n=6 no_path=1 other_error=5
+067 08OB88_-0167 PDS n=6 other_error=6
+067 08OB88_-1417 GD n=6 completed=4 no_path=2
+067 08OB88_-1417 GDS n=6 completed=6
+067 08OB88_-1417 PD n=6 completed=6
+067 08OB88_-1417 PDS n=6 completed=6
+067 08OB88_00332 GD n=6 completed=6
+067 08OB88_00332 GDS n=6 completed=2 no_path=4
+067 08OB88_00332 PD n=6 completed=6
+067 08OB88_00332 PDS n=6 completed=6
+067 08OB89_-0847 GD n=6 completed=5 other_error=1
+067 08OB89_-0847 GDS n=6 completed=2 no_path=4
+067 08OB89_-0847 PD n=6 completed=6
+067 08OB89_-0847 PDS n=6 completed=6
+120 runs -> /home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/common_eval_all

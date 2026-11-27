@@ -1,0 +1,12 @@
+研究 PC hayashi に保管した 067 の全 120 走行の生記録
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/
+走行条件（run_conditions.txt）と終了コード（exit.txt）は Git に収録。
+Gazebo の出力、軌跡、点群、地図、計画地図、位置受信ログの生記録は上記に保管。
+
+各ファイルの相対パスと SHA-256 は同梱の runs_sha256.txt に収録（23,996 ファイル）。
+runs_sha256.txt 自体の SHA-256
+71f9c203777e45b67f4c365be7164fa1d10764c5b0f6a5214295891d4b916043
+
+研究 PC 上で確認
+cd /home/kotaro/thesis_Bunker_rtf/conference/results/eval_067
+sha256sum -c --quiet runs_sha256.txt

@@ -1,0 +1,3 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_planners
+all planner tests passed
+roll-aware tests passed

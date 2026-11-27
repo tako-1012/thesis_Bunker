@@ -1,0 +1,46 @@
+{
+  "patch": "08OB86_-0205",
+  "condition": "PD",
+  "rep": 1,
+  "rtf_min": 0.9,
+  "errors": [],
+  "execution": "finished",
+  "termination": "completed",
+  "gpu_rendered": true,
+  "gl_vendor": "NVIDIA Corporation",
+  "gl_renderer": "NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2",
+  "sim_s": 241.411,
+  "wall_s": 241.4615302120801,
+  "measured_rtf": 0.999790731831958,
+  "plan_map_bytes": 1687342,
+  "pose_trace_bytes": 951908,
+  "trial_bytes": 20272537,
+  "plan_map_count": 32,
+  "plan_map_limit_bytes": 100000000,
+  "pose_trace_limit_bytes": 19800000,
+  "plan_maps_incomplete": false,
+  "previous_pose_trace_segments": [],
+  "pose_trace_streams": {
+    "follower_pose.csv": {
+      "samples": 4951,
+      "bytes": 253062
+    },
+    "planner_pose.csv": {
+      "samples": 4941,
+      "bytes": 252542
+    },
+    "observer_pose.csv": {
+      "samples": 4941,
+      "bytes": 252542
+    },
+    "follower_tick.csv": {
+      "samples": 4951,
+      "bytes": 178186
+    },
+    "cpu.csv": {
+      "samples": 252,
+      "bytes": 15576
+    }
+  },
+  "passed": true
+}
