@@ -1,6 +1,6 @@
 # 指示書 082：078 の記録で、位置の誤差が 12〜34m にもなった原因を調べる（座標の合い方の確かめ）
 
-> **状態：実行中（研究 PC、チャット：研究PC実行。078 の走行は止めずに）**。コードは変えない。調べるためのスクリプトは `conference/results/eval_078/diag/` に足してよい。
+> **状態：実行中（研究 PC、チャット：研究PC実行。078 は 11/28 0:57 に終わった）**。コードは変えない。調べるためのスクリプトは `conference/results/eval_078/diag/` に足してよい。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/tasks/075_landmark_world.md`・`076_offline_localization.md`・`077_recording_bridge.md`・`078_landmark_localization_eval.md`、
 > それぞれの `results/` の `REPORT_ja.md`・`REVIEW_ja.md`、`conference/tapp/sensor_recording.py`、`conference/experiments/recording_bridge.py`・`offline_localization.py`、
 > `conference/ros2_jazzy/gz_checks/sensor_recorder.py`・`landmark_sdf.py`、`conference/tapp/landmark_world.py`（`reference_cloud.npz` の作り方）、`conference/ros2_jazzy/src/thesis_bunker_gz/thesis_bunker_gz/lidar.py`・`model.py` を読むこと。
@@ -23,8 +23,16 @@
 4. あわせて、正解の位置の軌跡（記録の `truth_values`）と、その回の `pose_trace` の正解の位置が同じかも確かめる。
 5. 1 回目の走行が LiDAR の点群が古くなって止まった（実測 0.952 倍）ことについて、目印 160 個/ha の回の実測の倍率と、点群が古くなった回の数を、終わった回の分だけ一覧にする（走らせ直さない）。
 
+
+## 追加（11/28、078 が終わってから）：なぜ全 24 回で点群が古くなったか
+- 078 は、**全 24 回が「点群が古い」で経路なしになった**（目印 0 個の回も含む）。同じ設定の 073 の「ずれなし」は 20/20 完走していて、違いは目印と `--record-sensors`（075 の記録の仕組み、Gazebo で使うのは初めて）だけ。
+- そのため、**センサーの記録が重くて、計画が使う点群の受け取りが遅れた**疑いが強い。
+6. 078 の各回の、止まるまでの時間（シミュレーションの秒）、実測の倍率、どの点群（LiDAR・カメラ 1・カメラ 2）がどれだけ古くなったか、センサーの記録の量と枚数を表にする。目印の数ごとに分ける。
+7. 記録を取る仕組み（`sensor_recorder.py`）の CPU・メモリの使い方が分かる記録（プロセスのログなど）が残っていれば、見る。残っていなければ、そう書く。
+8. **確かめの走行を 2 回だけ**してよい（コードは変えない）：`08OB88_-1417`・目印 0 個・シード 0 で、(i) `--record-sensors` なし、(ii) あり、を 1 回ずつ。どちらが止まるかと、実測の倍率・点群の古さを比べる（`--landmarks 0` の有無も 078 と同じにする）。これ以上は走らせない。
+
 ## 守ること
-- コードは変えない。値も変えない。078 の走行を止めない・遅くしない。
+- コードは変えない。値も変えない。確かめの走行は 8 の 2 回だけ。
 - 生の記録は研究 PC に置く。Git には、調べたスクリプトと、結果の表・ログだけを入れる（`conference/results/eval_078/diag/`）。push は Mac を経由する。
 
 ## Mac の Claude に持ち帰る報告
@@ -32,4 +40,5 @@
 2. 3 回分の、そのままの最近傍の距離（中央値・90% 値）と、取り違えを試した表（いちばん合ったもの）。
 3. 正解の位置どうしの一致の確かめ。
 4. 160 個/ha の回の実測の倍率と、点群が古くなった回の一覧。
-5. できなかったこと、自信がないこと。
+5. 078 の各回の止まり方の表（6）、記録の仕組みの重さ（7）、確かめの走行 2 回の比べ（8）。
+6. できなかったこと、自信がないこと。
