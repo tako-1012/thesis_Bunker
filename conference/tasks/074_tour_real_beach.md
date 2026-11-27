@@ -1,6 +1,6 @@
 # 指示書 074：回る順番の効き目を、本物の砂浜の地形（LAS）と、ゴミのように固まった地点で確かめる
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装1）**。Gazebo・研究 PC は使わない。
+> **状態：完了（結果は `results/tour_real_beach/`、レビューは `REVIEW_ja.md`。固まりの「選んだ順のまま」の数字は使わない）**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針。11/26 に範囲を決め直した）、
 > `conference/tasks/008_multi_goal_tour.md`・`conference/results/multi_goal_tour/REPORT_ja.md`、`conference/results/tour_order_baselines/README_ja.md`・`recompute.py`（**この指示書の根拠**）、
 > `conference/tapp/tour.py`・`directional.py`・`real_beach.py`（`build_real`・`list_patches`）・`tracking.py`（`CornerSlowPursuit` の曲がり角での減速）・`metrics.py` を読むこと。
