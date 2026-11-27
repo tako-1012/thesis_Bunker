@@ -485,23 +485,24 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     truth, prior = case_world_inputs(case, meta, manifest, matched_world=matched_world)
                     physical_truth = truth
                     objects = []
-                    if manifest.get('prior_variant', 'exact') != 'exact':
-                        prior, case['prior_variant_statistics'] = prior_variant(prior, manifest['prior_variant'])
-                    if landmark_settings is not None:
-                        truth, prior, objects = add_landmark_world(raw, case, meta, landmark_settings, truth, prior)
-                        save_manifest(output, manifest)
-                    if objects or manifest.get('prior_variant', 'exact') != 'exact':
-                        # Never seed a no-prior/perturbed run with the old exact
-                        # DEM path. Keep endpoints/order, plan on the new prior.
-                        from tapp.online_mission import run_fixed_mission
-                        from ros2_jazzy.gz_checks.online_batch_runtime import planning_map
-                        initial = run_fixed_mission(planning_map(prior, 'TA*-S+inflate'), meta['start'], meta['stops'])
-                        if not initial['success']:
-                            if objects:
-                                raise ValueError('task075 initial planning failed on landmark prior')
-                            raise ValueError('task032 initial planning failed on selected prior')
-                        mission['path'] = (np.asarray(initial['traj'])*RESOLUTION).tolist()
-                        save_run()
+                    if manifest.get('prior_variant', 'exact') != 'exact' or 'landmark_world' in manifest:
+                        if manifest.get('prior_variant', 'exact') != 'exact':
+                            prior, case['prior_variant_statistics'] = prior_variant(prior, manifest['prior_variant'])
+                        if 'landmark_world' in manifest:
+                            truth, prior, objects = add_landmark_world(
+                                raw, case, meta, manifest['landmark_world'], truth, prior)
+                            save_manifest(output, manifest)
+                        if manifest.get('prior_variant', 'exact') != 'exact' or objects:
+                            # Keep endpoints/order and plan on the modified prior.
+                            from tapp.online_mission import run_fixed_mission
+                            from ros2_jazzy.gz_checks.online_batch_runtime import planning_map
+                            initial = run_fixed_mission(planning_map(prior, 'TA*-S+inflate'), meta['start'], meta['stops'])
+                            if not initial['success']:
+                                if 'landmark_world' in manifest and objects:
+                                    raise ValueError('task075 initial planning failed on landmark prior')
+                                raise ValueError('task032 initial planning failed on selected prior')
+                            mission['path'] = (np.asarray(initial['traj'])*RESOLUTION).tolist()
+                            save_run()
                     # Evaluation arrays, not a deployable map/world: preserve the
                     # actual-run float bits for offline analysis on other CPUs.
                     np.savez_compressed(raw/'evaluation_reference.npz',
