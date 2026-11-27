@@ -1,0 +1,8 @@
+研究 PC hayashi の生の記録
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_078/runs/
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_078/diag/confirmations/
+
+確認走行 2 回のファイルは confirmation_sha256.txt に相対パスと SHA-256 を保存。
+研究 PC の diag ディレクトリで sha256sum -c --quiet confirmation_sha256.txt により全件照合した。
+c6a64444b592320a1d17da8dcd66a44c7a1d52d3b8af8e57564b5e935a5a07ff  confirmation_sha256.txt
+181 confirmation_sha256.txt

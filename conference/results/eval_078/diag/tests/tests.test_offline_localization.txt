@@ -1,0 +1,12 @@
+test_packed_recording_decodes_range_interpolates_pose_and_keeps_ns (__main__.OfflineInputTests.test_packed_recording_decodes_range_interpolates_pose_and_keeps_ns) ... ok
+test_weakest_direction_is_reported_in_world_axes (__main__.OfflineInputTests.test_weakest_direction_is_reported_in_world_axes) ... ok
+test_combined_corrects_at_odometry_multiples_in_landmark_scene (__main__.OfflineLocalizationTests.test_combined_corrects_at_odometry_multiples_in_landmark_scene) ... ok
+test_combined_rejects_low_information_even_when_registration_converges (__main__.OfflineLocalizationTests.test_combined_rejects_low_information_even_when_registration_converges) ... ok
+test_flat_plane_has_weak_translation_parallel_to_surface (__main__.OfflineLocalizationTests.test_flat_plane_has_weak_translation_parallel_to_surface) ... ok
+test_kiss_icp_tracks_relative_motion_and_keeps_fixed_initial_offset (__main__.OfflineLocalizationTests.test_kiss_icp_tracks_relative_motion_and_keeps_fixed_initial_offset) ... ok
+test_scan_to_map_recovers_position_and_yaw_from_initial_offset (__main__.OfflineLocalizationTests.test_scan_to_map_recovers_position_and_yaw_from_initial_offset) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.950s
+
+OK

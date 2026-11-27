@@ -1,0 +1,9 @@
+078_timing.csv 24
+082_comparison.csv 2
+082_process_usage_summary.csv 7
+08OB88_-1417/d160_s0: 0.038887/0.059885 m; best baseline 0.038887; pose matches 866
+08OB88_-1417/d0_s0: 0.042627/0.060824 m; best baseline 0.042627; pose matches 1898
+08OB86_-0205/d40_s1: 0.042534/0.061412 m; best baseline 0.042534; pose matches 1505
+frame_hypotheses.csv 51
+frame_baseline_scans.csv 60
+truth_pose_comparison.csv 3

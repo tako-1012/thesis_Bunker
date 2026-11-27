@@ -1,0 +1,5 @@
+1 PASS: full-path distance, Menger curvature, slope, motion direction and command bins
+2 PASS: pre-path samples, same-time revisions, causal switches and task042 percentile parity
+approaches PASS: interpolated strict clearance and same-box attribution
+3 PASS: committed archive tables, explicit skipped input and published event-evidence coverage
+all task061 tracking-error tests passed
