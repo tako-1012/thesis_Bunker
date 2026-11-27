@@ -1,6 +1,6 @@
 # 指示書 081：研究室のドローンの地図（ODM の点群）を取り込み、本物の地図での位置の決まりやすさを調べる
 
-> **状態：実行中（段階 A は完了、レビューは `results/drone_map_081/REVIEW_ja.md`。段階 B：クラウドの Codex、チャット：研究実装1。データは砂浜ではなく九工大の広場だが、11/27 に利用者と、このデータで進めると決めた）**。
+> **状態：完了（段階 A のレビューは `results/drone_map_081/REVIEW_ja.md`、段階 B のレビューは `results/drone_map_localizability/REVIEW_ja.md`）**。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/progress/policy.csv`、
 > `conference/research/drone_sim_ja.md`（**研究室のドローンの地図の調べ。NAS の場所・レポートの数字**）、
 > `conference/tasks/079_localizability_scan.md`・`conference/results/localizability_scan/REPORT_ja.md`・`REVIEW_ja.md`（同じやり方の見本）を読むこと。
