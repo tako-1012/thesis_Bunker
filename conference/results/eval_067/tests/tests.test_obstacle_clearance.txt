@@ -1,0 +1,12 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_obstacle_clearance
+1 PASS: centre default/explicit, prior/local, fine/multi; maps match the pre-041 implementation on this machine (recorded hashes differ on this machine); manifest, ROS-mocked commands and existing none/v1/v2 files match baseline
+2 mode min_path_clearance_m lethal_cells path_grid
+centre 0.477533728 4 [(10, 15), (11, 7)]
+overlap 1.123456796 12 [(10, 15), (12, 10), (12, 8), (11, 7)]
+3 PASS: full recompute after 20 updates across prior/local and fine/multi, plus dense/sparse edge cases
+3 planning PASS: inferred overlap halo blocks unseen cells in normal and diagnostic planner snapshots
+4 B PASS: periodic observed data incl. empty map, exact trajectory-to-box distance, CSV parts and truth-mask fallback
+4 C1-C3 PASS: missing plan_history, shared path_distance (300 decisions, 23 rounding cases), class default
+4 C4 and routing PASS: env-selected 1.0 honoured, overlap manifest, ROS command and wrapper
+4 ROS constructor PASS: v2 runtime, overlap mapper and diagnostics selected together
+all task041 obstacle clearance tests passed

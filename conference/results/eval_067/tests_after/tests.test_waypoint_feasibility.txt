@@ -1,0 +1,13 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_waypoint_feasibility
+/home/kotaro/.venvs/thesis-python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+geometry PASS: statuses, 1 m boundary, closest A* cell/tie, no-corner-cut, off-grid and invalid start
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+none PASS: three same-environment manifests, and command/mission bytes at a mocked live dispatch
+08OB86_00294 completed
+Task046 preparation only; Gazebo not executed: /tmp/tmponc7x2wz/cli
+substitute PASS: replanned closed tour, skips and stable order in manifest and published command
+CLI/wrapper/API PASS: prepare-only, 028b conflict, forwarding and read-only preview
+all waypoint feasibility tests passed

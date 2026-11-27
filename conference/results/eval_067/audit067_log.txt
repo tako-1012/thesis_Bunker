@@ -1,0 +1,7 @@
+run_inventory.csv: 120 rows
+run_evidence.csv: 120 rows
+approach_intervals.csv: 2 rows
+no_path_evidence.csv: 23 rows
+0167_leg5.csv: 24 rows
+abnormal_runs.csv: 35 rows
+fisher_holm.csv: 6 rows

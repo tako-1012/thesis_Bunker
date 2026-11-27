@@ -1,0 +1,24 @@
+patch,condition,rep,follower_error,no_path_type,last_online_error,plan,stamp_s,failure_class,plan_reason,goal,start,cause,blocked,true_steep,true_halo,prior_steep_halo,detected,obstacle_halo,prior_raw,prior_inflated,steep,steep_halo,retained_lethal,map_issue
+08OB88_-0167,GDS,1,lethal_changed,goal_cell,,133,307.45,goal_cell,lethal_changed,"(137, 294)","(190, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GDS,2,distance,goal_cell,,163,309.25,goal_cell,distance,"(137, 294)","(194, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GDS,3,new_lethal,goal_cell,,158,308.55,goal_cell,new_lethal,"(137, 294)","(188, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GDS,4,new_lethal,goal_cell,,186,306.15,goal_cell,new_lethal,"(137, 294)","(191, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GDS,5,lethal_changed,goal_cell,,194,331.2,goal_cell,lethal_changed,"(137, 294)","(147, 280)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GDS,6,lethal_changed,goal_cell,,146,308.45,goal_cell,lethal_changed,"(137, 294)","(191, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,1,lethal_changed,goal_cell,,180,313.6,goal_cell,lethal_changed,"(137, 294)","(184, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,2,lethal_changed,goal_cell,,139,308.2,goal_cell,lethal_changed,"(137, 294)","(191, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,3,distance,goal_cell,,163,311.1,goal_cell,distance,"(137, 294)","(191, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,4,lethal_changed,goal_cell,,188,315.4,goal_cell,lethal_changed,"(137, 294)","(177, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,5,new_lethal,goal_cell,,168,306.6,goal_cell,new_lethal,"(137, 294)","(193, 281)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,GD,6,lethal_changed,goal_cell,,181,309.25,goal_cell,lethal_changed,"(137, 294)","(190, 282)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-0167,PD,5,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB88_-1417,GD,1,lethal_changed,goal_cell,,97,205.45,goal_cell,lethal_changed,"(203, 229)","(253, 199)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_-1417,GD,2,lethal_changed,goal_cell,,103,206.65,goal_cell,lethal_changed,"(203, 229)","(252, 200)",steep_inflation,True,False,False,False,False,False,False,False,False,True,False,
+08OB88_00332,GDS,1,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB88_00332,GDS,3,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB88_00332,GDS,4,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB88_00332,GDS,5,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB89_-0847,GDS,1,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB89_-0847,GDS,3,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB89_-0847,GDS,4,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff
+08OB89_-0847,GDS,6,lidar_unavailable_or_stale,,,,,,,,,,,,,,,,,,,,,no terminal search handoff

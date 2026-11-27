@@ -27,6 +27,7 @@ class PathFollower(Node):
         self.declare_parameter('online_fixes', online_fixes)
         self.declare_parameter('tracking', tracking)
         self.declare_parameter('pose_trace_dir', '')
+        self.declare_parameter('pose_topic', '/ground_truth')
         from tapp.tracking import validate_tracking
         self.tracking = validate_tracking(self.get_parameter('tracking').value)
         from tapp.online_safety import validate_fixes
@@ -56,7 +57,7 @@ class PathFollower(Node):
             on_tick, tick_log = trace_tick(trace_dir, self, pose_log)
             self.pose_trace_logs = pose_log, tick_log
         self.create_subscription(
-            PoseArray, "/ground_truth", on_pose, qos_profile_sensor_data
+            PoseArray, self.get_parameter('pose_topic').value, on_pose, qos_profile_sensor_data
         )
         self.create_subscription(Imu, "/imu", self.on_imu, qos_profile_sensor_data)
         self.create_subscription(

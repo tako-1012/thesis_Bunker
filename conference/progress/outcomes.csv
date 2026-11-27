@@ -119,3 +119,23 @@
 064,08OB89_-0847,P prior,6,0,0,0,0
 064,08OB89_-0847,PD prior＋distance,6,0,0,0,0
 064,08OB89_-0847,S 標準・GPU 1 倍,5,0,0,1,0
+067,08OB86_-0205,PD prior＋distance,6,0,0,0,0
+067,08OB86_-0205,PDS PD＋急斜面の distance,6,0,0,0,0
+067,08OB86_-0205,GD 地面の点だけ＋distance,6,0,0,0,0
+067,08OB86_-0205,GDS GD＋急斜面の distance,6,0,0,0,0
+067,08OB88_-0167,PD prior＋distance,0,0,1,0,0
+067,08OB88_-0167,PDS PD＋急斜面の distance,0,0,0,0,0
+067,08OB88_-0167,GD 地面の点だけ＋distance,0,0,6,0,0
+067,08OB88_-0167,GDS GD＋急斜面の distance,0,0,6,0,0
+067,08OB88_-1417,PD prior＋distance,6,0,0,0,0
+067,08OB88_-1417,PDS PD＋急斜面の distance,6,0,0,0,0
+067,08OB88_-1417,GD 地面の点だけ＋distance,4,0,2,0,0
+067,08OB88_-1417,GDS GD＋急斜面の distance,6,0,0,0,0
+067,08OB88_00332,PD prior＋distance,6,0,0,0,0
+067,08OB88_00332,PDS PD＋急斜面の distance,6,0,0,0,0
+067,08OB88_00332,GD 地面の点だけ＋distance,6,0,0,0,0
+067,08OB88_00332,GDS GD＋急斜面の distance,2,0,4,0,0
+067,08OB89_-0847,PD prior＋distance,6,0,0,0,0
+067,08OB89_-0847,PDS PD＋急斜面の distance,6,0,0,0,0
+067,08OB89_-0847,GD 地面の点だけ＋distance,5,0,0,0,0
+067,08OB89_-0847,GDS GD＋急斜面の distance,2,0,4,0,0

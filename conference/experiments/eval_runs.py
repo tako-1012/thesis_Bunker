@@ -822,8 +822,18 @@ def evaluate_run(raw, experiment, conditions=None, reference_root=None):
     if 'stops' in endpoint:
         row.update({'stops_'+kind: outcomes.count(kind) for kind in ('arrived', 'nearby', 'unreachable')})
     if (raw/'endpoint_masks').is_dir():
+        def evaluate_relaxed():
+            if manifest.get('pose_error') in ('bias', 'drift'):
+                # The controller's endpoint trace follows its estimate. Align
+                # mask applications with the observer's ground-truth samples.
+                if trace is None:
+                    raise ValueError(trajectory_error)
+                truth_rows = [dict(sim_time=r['t'], x=r['x'], y=r['y']) for r in poses]
+                return relaxed_metrics(raw, ('sim_time', 'x', 'y'), truth_rows, ref)
+            return table('endpoint_trajectory', lambda h, r: relaxed_metrics(raw, h, r, ref))
+
         collect(('relaxed_len_m', 'relaxed_truth_lethal_len_m', 'relaxed_applied_plans'),
-                lambda: table('endpoint_trajectory', lambda h, r: relaxed_metrics(raw, h, r, ref)), reference_error)
+                evaluate_relaxed, reference_error)
 
     def saved_map():
         fmap, source = final_map(raw)

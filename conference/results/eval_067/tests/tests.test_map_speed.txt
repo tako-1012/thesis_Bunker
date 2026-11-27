@@ -1,0 +1,2 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_map_speed
+byte-identical replay against the pre-038 implementation: 88 update states; states differing from the hashes stored on the recording machine: 87

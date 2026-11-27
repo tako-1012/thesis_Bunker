@@ -1,6 +1,6 @@
 # 指示書 071：本物の砂浜の標高で、場所ごとの「地図に重ねて位置が決まりやすいか」を調べる
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装1）**。Gazebo・研究 PC は使わない。
+> **状態：完了（結果は `results/localizability_map/`、レビューは `REVIEW_ja.md`。「決まらない点」の割合は判定のしかたで決まるので使わない）**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針。11/26 に範囲を決め直した）、
 > `conference/tapp/real_beach.py`（`load_patch`・`list_patches`・`fill_nodata`）、`conference/data/shizuoka_beach_las/` の README などの説明、
 > `conference/tapp/visibility.py`・`sensor_geometry.py`（見える範囲の計算があれば使う）を読むこと。
