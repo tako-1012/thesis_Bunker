@@ -1,0 +1,3 @@
+patch,split,radius_m,positions,tested,insufficient,ambiguous,tangent_only,determined,ambiguous_pct,tangent_only_pct,gap_n,gap_median_m,gap_max_m
+all,all,20.0,58644,58644,0,42903,8106,15741,73.15837937384899,13.822385921833435,2066,5.0,110.0
+all,all,40.0,58644,58644,0,43324,10131,15320,73.87627037719119,17.275424595866586,1856,5.0,115.0
