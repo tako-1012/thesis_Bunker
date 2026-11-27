@@ -1,0 +1,12 @@
+08OB88_-1417 source results/lidar_fine/physical_10/raw/08OB88_-1417
+  observed ranges: 13222 angle deviations (p50/p95/max degrees): [0.00027213 0.00046864 0.00050035]
+  flipped diagonal: common returns: 13195 extra/missing relative to OBJ: 1 range difference p50/p95/max m: [0.01103917 0.09205579 1.96625672]
+  observed minimum eigenvalue: 0.5958638631071873 weak_information
+  map terrain common/missing/extra: 13166 56 30 absolute radial discrepancy p50/p95/max m: [0.03549115 1.96809647 9.72646917] minimum eigenvalue: 0.569001660508676 weak_information
+  with recorded world debris models common/missing/extra: 13213 9 33 absolute radial discrepancy p50/p95/max m: [0.02828506 0.32033931 8.68877956] minimum eigenvalue: 0.5819282703120089 weak_information
+08OB86_-0205 source results/real_sensors/b0b/lidar_real_depth2/physical_1/raw/08OB86_-0205
+  observed ranges: 11742 angle deviations (p50/p95/max degrees): [0.00024494 0.00046078 0.0004967 ]
+  flipped diagonal: common returns: 11752 extra/missing relative to OBJ: 8 range difference p50/p95/max m: [0.01341113 0.11285911 4.14802376]
+  observed minimum eigenvalue: 0.7124673986643264 weak_information
+  map terrain common/missing/extra: 11718 24 40 absolute radial discrepancy p50/p95/max m: [0.04024617 0.33507729 6.64023623] minimum eigenvalue: 0.7289764653201612 weak_information
+  with recorded world debris models common/missing/extra: 11718 24 40 absolute radial discrepancy p50/p95/max m: [0.03880679 0.28668117 4.87377778] minimum eigenvalue: 0.7257934750075663 weak_information
