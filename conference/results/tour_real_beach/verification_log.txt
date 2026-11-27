@@ -1,0 +1,6 @@
+48 test patches; 480 layout matrices; 1440 paired cases; 7200 tours.
+Verified unique goals, base consistency, cluster geometry, penalties, optimum order counts and top 10.
+Negative energy differences versus directed-cost optimum among the three baselines: 627
+Largest result file: 1372431 bytes
+Placement check: 240/240 08PD00_-1730 seed=4: both layouts valid
+008 baseline CSV and text log are byte-identical
