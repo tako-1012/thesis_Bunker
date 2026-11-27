@@ -1,0 +1,15 @@
+研究 PC hayashi の生記録
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_073/runs/
+
+計画地図、軌跡、点群、時刻付き位置診断、ミッションの生ログ、コンソールは上記に保管。
+各回の run_conditions.txt と exit.txt をコミットに収録した。
+raw_sha256/ の各一覧は、元の runs/ 全ファイル 18,593 件の SHA-256 と相対パスを収録する。
+研究 PC の /home/kotaro/thesis_Bunker_rtf/conference/results/eval_073 で
+sha256sum -c --quiet raw_sha256/<砂浜>.txt を実行して照合できる。
+集計時に、全件の SHA-256 を書き出した後に再照合した。
+
+SHA-256 一覧ファイル自体の SHA-256
+0c9f30172149c00c659450912e5466b9deca3c4189b4e150d48c30d41a643153  raw_sha256/08OB86_-0205.txt
+cef14fed1aa8f40a0f52c604a34053a241515aa698cc8dade1904b4f9d45dafc  raw_sha256/08OB88_00332.txt
+91bce973b86f515868658973f754820f3e1be946f0fa966a2fed5b7c23d79bf0  raw_sha256/08OB88_-1417.txt
+c9583707cf38491afd4958ec0db448fe69c3212dcba281698d77642752215252  raw_sha256/08OB89_-0847.txt

@@ -1,6 +1,6 @@
 # 指示書 073：位置のずれ（072）を入れて、研究 PC の Gazebo で「どれくらいの位置の精度があれば回り切れるか」を測る
 
-> **状態：実行中（研究 PC、チャット：研究PC実行）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ。集計のスクリプトは足してよい）。
+> **状態：完了（結果は `results/eval_073/`、レビューは `REVIEW_ja.md`）**。実行は**研究 PC の担当**（Mac の Codex から `ssh hayashi`）。コードは変えない（走らせて集計するだけ。集計のスクリプトは足してよい）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/progress/policy.csv`（今後の方針。11/26 に範囲を決め直した）、
 > `conference/tasks/072_pose_error.md`・`conference/results/pose_error/REPORT_ja.md`・`REVIEW_ja.md`（**研究 PC での比較案のスクリプト**）、
 > `conference/results/eval_067/REPORT_ja.md`・`REVIEW_ja.md`・`run067.sh`・`audit067.py`（同じやり方で走らせて集計する見本）を読むこと。
