@@ -44,7 +44,7 @@ class LidarPlannerNode(OnlinePlannerNode):
                               ('ground_estimate', ground_estimate), ('obstacle_reference', obstacle_reference),
                               ('obstacle_clearance', obstacle_clearance), ('online_fixes', online_fixes),
                               ('terrain_source', terrain_source), ('save_plan_maps', save_plan_maps),
-                              ('steep_near_obstacle', steep_near_obstacle), ('pose_trace_dir', ''),
+                              ('steep_near_obstacle', steep_near_obstacle), ('pose_trace_dir', ''), ('pose_topic', '/ground_truth'),
                               ('clearance_soft_m', R_SOFT if clearance_soft_m is None else clearance_soft_m),
                               ('ground_near_obstacle', ground_near_obstacle), ('goal_region', goal_region),
                               ('steep_clearance', steep_clearance), ('slope_uncertainty', slope_uncertainty)]:
@@ -120,7 +120,7 @@ class LidarPlannerNode(OnlinePlannerNode):
             from tapp.pose_trace import trace_pose
             on_pose, self.pose_trace_log = trace_pose(trace_dir, 'planner', on_pose,
                                                       lambda: self.get_clock().now().nanoseconds)
-        self.create_subscription(PoseArray, '/ground_truth', on_pose, qos_profile_sensor_data)
+        self.create_subscription(PoseArray, self.get_parameter('pose_topic').value, on_pose, qos_profile_sensor_data)
         self.create_subscription(PointCloud2, '/lidar/points', self.on_cloud, qos_profile_sensor_data)
         if self.multi:
             for name in self.mapper.mounts:

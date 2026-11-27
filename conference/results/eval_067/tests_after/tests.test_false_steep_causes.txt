@@ -1,0 +1,4 @@
+$ /home/kotaro/.venvs/thesis-python/bin/python -m tests.test_false_steep_causes
+1 PASS: geometry, exact slope labels, box halo, point counts, missing stencil, relief, sea/nodata and view angles
+2 PASS: committed final/first/failure data produce CSVs and a missing run is explicitly skipped
+all task053 false-steep-cause tests passed

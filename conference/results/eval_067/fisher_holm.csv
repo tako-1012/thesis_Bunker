@@ -1,0 +1,7 @@
+metric,condition_a,condition_b,count_a,total_a,count_b,total_b,p_raw,p_holm
+tilt,PDS,PD,6,30,6,30,1.0,1
+tilt,GDS,GD,0,30,0,30,1.0,1
+true_halo,PDS,PD,5,30,3,30,0.7064691994252865,1
+true_halo,GDS,GD,0,30,0,30,1.0,1
+completed,PDS,PD,24,30,24,30,1.0,1
+completed,GDS,GD,16,30,21,30,0.28817964270091767,0.5763592854018353

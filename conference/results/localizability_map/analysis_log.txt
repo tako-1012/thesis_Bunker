@@ -1,0 +1,67 @@
+08OB86_00294: 797 positions
+08OB86_-0205: 751 positions
+08OB87_-0206: 789 positions
+08OB87_-0706: 790 positions
+08OB88_-1417: 686 positions
+08OB88_-0167: 876 positions
+08OB88_00332: 725 positions
+08OB88_01332: 1098 positions
+08OB88_01832: 1014 positions
+08OB89_00152: 1185 positions
+08OB89_-0347: 1184 positions
+08OB89_-0847: 1190 positions
+08OB89_-1597: 1189 positions
+08OC80_-1089: 1188 positions
+08OC80_-0589: 1194 positions
+08OC80_00160: 1172 positions
+08OC80_00660: 1174 positions
+08OC90_00270: 1164 positions
+08OC91_-1688: 1192 positions
+08OC91_-0938: 1066 positions
+08OC91_-0438: 986 positions
+08OC91_00061: 983 positions
+08OC91_00811: 1058 positions
+08OC91_01311: 870 positions
+08OC92_-0891: 777 positions
+08OC92_-0141: 733 positions
+08OC92_00608: 750 positions
+08OC93_-1519: 795 positions
+08OC94_-0954: 688 positions
+08OC95_01428: 668 positions
+08OC95_00928: 887 positions
+08OC95_00428: 1017 positions
+08OC95_-0321: 1059 positions
+08OC95_-0821: 1172 positions
+08OC95_-1321: 1150 positions
+08OC95_-2071: 1197 positions
+08OC96_00073: 1157 positions
+08OC96_-0676: 1140 positions
+08OC96_-1426: 934 positions
+08OC97_01672: 1142 positions
+08OC97_01172: 1138 positions
+08OC97_00422: 1150 positions
+08OC97_-0077: 1171 positions
+08OC97_-0577: 1172 positions
+08OC97_-1077: 1164 positions
+08OC97_-1827: 1079 positions
+08OC98_-1601: 907 positions
+08OC98_-1101: 754 positions
+08OC98_-0351: 922 positions
+08OC98_00148: 1115 positions
+08OC98_00648: 811 positions
+08OC98_01398: 884 positions
+08OC98_01898: 746 positions
+08OC99_-1516: 882 positions
+08OC99_-1016: 831 positions
+08OC99_-0016: 969 positions
+08OC99_00483: 807 positions
+08OC99_00983: 830 positions
+08OC99_01733: 877 positions
+08PD00_-1730: 848 positions
+Patches: 60
+patch,split,radius_m,positions,tested,insufficient,ambiguous,tangent_only,determined,ambiguous_pct,tangent_only_pct,gap_n,gap_median_m,gap_max_m
+all,all,20.0,58644,58644,0,42903,8106,15741,73.15837937384899,13.822385921833435,2066,5.0,110.0
+all,all,40.0,58644,58644,0,43324,10131,15320,73.87627037719119,17.275424595866586,1856,5.0,115.0
+real 582.19
+user 1103.94
+sys 1.37

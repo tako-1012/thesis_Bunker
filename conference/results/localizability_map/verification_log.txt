@@ -1,0 +1,33 @@
+08OB86_-0205: 751 positions
+Patches: 1
+patch,split,radius_m,positions,tested,insufficient,ambiguous,tangent_only,determined,ambiguous_pct,tangent_only_pct,gap_n,gap_median_m,gap_max_m
+all,all,20.0,751,751,0,674,63,77,89.74700399467376,8.388814913448735,28,5.0,5.0
+all,all,40.0,751,751,0,741,64,10,98.66844207723035,8.5219707057257,6,5.0,5.0
+real 30.18
+user 18.04
+sys 0.64
+NPZ and PNG are byte-identical
+$ PYTHONPATH=. /tmp/thesis036-venv/bin/python /tmp/071-check-oracle.py 08OB86_-0205
+08OB86_-0205: cell=(np.int64(0), np.int64(100)), R=20 m, 47 MSE and overlap checks passed
+08OB86_-0205: cell=(np.int64(0), np.int64(100)), R=40 m, 47 MSE and overlap checks passed
+08OB86_-0205: cell=(np.int64(190), np.int64(150)), R=20 m, 47 MSE and overlap checks passed
+08OB86_-0205: cell=(np.int64(190), np.int64(150)), R=40 m, 47 MSE and overlap checks passed
+08OB86_-0205: cell=(np.int64(390), np.int64(270)), R=20 m, 47 MSE and overlap checks passed
+08OB86_-0205: cell=(np.int64(390), np.int64(270)), R=40 m, 47 MSE and overlap checks passed
+$ PYTHONPATH=. /tmp/thesis036-venv/bin/python /tmp/071-check-oracle.py 08OB88_00332
+08OB88_00332: cell=(np.int64(0), np.int64(110)), R=20 m, 47 MSE and overlap checks passed
+08OB88_00332: cell=(np.int64(0), np.int64(110)), R=40 m, 47 MSE and overlap checks passed
+08OB88_00332: cell=(np.int64(200), np.int64(230)), R=20 m, 47 MSE and overlap checks passed
+08OB88_00332: cell=(np.int64(200), np.int64(230)), R=40 m, 47 MSE and overlap checks passed
+08OB88_00332: cell=(np.int64(390), np.int64(300)), R=20 m, 47 MSE and overlap checks passed
+08OB88_00332: cell=(np.int64(390), np.int64(300)), R=40 m, 47 MSE and overlap checks passed
+$ PYTHONPATH=. /tmp/thesis036-venv/bin/python /tmp/071-check-artifacts.py
+Indexed patches match Git dataset and both artifact sets: Counter({'test': 48, 'validation': 12})
+120 per-patch rows and 2 pooled rows reproduced from NPZ
+R | Hessian unavailable | negative eigenvalue | any insufficient axis | tied weakest eigenvalues
+20 0 21 0 0
+40 0 1 0 0
+Determined at R20 vs R40, rows/columns are false/true:
+[[40150  2753]
+ [ 3174 12567]]
+Largest result file in bytes: 1172027

@@ -1,0 +1,15 @@
+run,goal_x,goal_y,failure_plan,failure_time,failure_cause,first_blocked_plan,first_blocked_time,first_blocked_cause,blocked_on_first_plan
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GDS_r1/physical_1/raw/08OB88_-0167,137,294,133,307.45,steep_inflation,133,307.45,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GDS_r2/physical_1/raw/08OB88_-0167,137,294,163,309.25,steep_inflation,163,309.25,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GDS_r3/physical_1/raw/08OB88_-0167,137,294,158,308.55,steep_inflation,158,308.55,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GDS_r4/physical_1/raw/08OB88_-0167,137,294,186,306.15,steep_inflation,186,306.15,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GDS_r5/physical_1/raw/08OB88_-0167,137,294,194,331.2,steep_inflation,194,331.2,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GDS_r6/physical_1/raw/08OB88_-0167,137,294,146,308.45,steep_inflation,146,308.45,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GD_r1/physical_1/raw/08OB88_-0167,137,294,180,313.6,steep_inflation,180,313.6,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GD_r2/physical_1/raw/08OB88_-0167,137,294,139,308.2,steep_inflation,139,308.2,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GD_r3/physical_1/raw/08OB88_-0167,137,294,163,311.1,steep_inflation,163,311.1,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GD_r4/physical_1/raw/08OB88_-0167,137,294,188,315.4,steep_inflation,188,315.4,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GD_r5/physical_1/raw/08OB88_-0167,137,294,168,306.6,steep_inflation,168,306.6,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-0167/GD_r6/physical_1/raw/08OB88_-0167,137,294,181,309.25,steep_inflation,181,309.25,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-1417/GD_r1/physical_1/raw/08OB88_-1417,203,229,97,205.45,steep_inflation,97,205.45,steep_inflation,False
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_067/runs/08OB88_-1417/GD_r2/physical_1/raw/08OB88_-1417,203,229,103,206.65,steep_inflation,103,206.65,steep_inflation,False

@@ -31,6 +31,7 @@ from tapp.steep_clearance import STEEP_CLEARANCES, validate_steep_clearance
 from tapp.online_safety import ONLINE_FIXES, validate_fixes, JOIN_TIMEOUT_S, OFF_PATH_M
 from tapp.prior_variants import OBSTACLE_REFERENCES, PRIOR_VARIANTS, DEBRIS_BOX_HEIGHTS, prior_variant
 from tapp.endpoint_policy import ENDPOINT_POLICIES
+from tapp.pose_error import ESTIMATED_POSE_TOPIC, POSE_ERRORS, PoseErrorSettings, parse_bias
 from tapp.real_beach import build_real, list_patches
 from tapp.mapfile import scenario_to_mapfile
 from tapp.run_log import FIELDS
@@ -78,7 +79,10 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                   edge_margin_m=0, real_time_factor=None, obstacle_clearance='centre', tracking='default',
                   waypoint_check='none', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
                   pose_trace=False, clearance_soft_m=R_SOFT, ground_near_obstacle='keep', goal_region='none',
-                  steep_clearance='centre', slope_uncertainty='none'):
+                  steep_clearance='centre', slope_uncertainty='none',
+                  pose_error='none', pose_error_seed=0, pose_error_rep=1, pose_error_bias=None,
+                  pose_error_drift_pct=None):
+    pose_settings = PoseErrorSettings(pose_error, pose_error_seed, pose_error_rep, pose_error_bias, pose_error_drift_pct)
     validate_steep_clearance(steep_clearance, map_method=map_method)
     from tapp.goal_region import RING_RADIUS_M, validate_goal_region
 
@@ -272,6 +276,19 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
     if pose_trace:
         from tapp.pose_trace import TRACE_LIMIT_BYTES
         manifest.update(pose_trace=True, pose_trace_limit_bytes=TRACE_LIMIT_BYTES)
+    if pose_error != 'none':
+        manifest.update(pose_error=pose_error, pose_error_settings=asdict(pose_settings),
+                        estimated_pose_topic=ESTIMATED_POSE_TOPIC)
+        for case in manifest['cases']:
+            if not case['selected']:
+                continue
+            patch = case['patch']
+            with np.load(ROOT/'data/shizuoka_beach_las'/(patch+'.npz'), allow_pickle=False) as data:
+                case['pose_error'] = dict(tangent=data['tangent'].tolist(), normal=data['normal'].tolist(),
+                                          run_seed=pose_settings.run_seed(patch))
+        if pose_trace:
+            from ros2_jazzy.gz_checks.pose_error_relay import POSE_PAIR_FILE_BYTES
+            manifest['pose_trace_limit_bytes'] += 2*POSE_PAIR_FILE_BYTES
     if goal_region != 'none':
         manifest.update(goal_region=goal_region, goal_region_radius_m=RING_RADIUS_M)
     if slope_uncertainty == 'soft':
@@ -326,6 +343,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
     manifest = prepare_cases(output, **kwargs)
     gpu = 'rendering' in manifest
     trace_enabled = manifest.get('pose_trace', False)
+    pose_error_enabled = 'pose_error' in manifest
     if trace_enabled:
         from tapp.pose_trace import CpuSampler, NS, trace_pose
     if matched_world:
@@ -537,6 +555,15 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands[-1].extend(['-p', 'steep_near_obstacle:='+manifest['steep_near_obstacle']])
                     if manifest.get('obstacle_reference_mode', 'prior') != 'prior':
                         commands[-1].extend(['-p', 'obstacle_reference:='+manifest['obstacle_reference_mode']])
+                    if pose_error_enabled:
+                        for command in commands[-2:]:
+                            command.extend(['-p', 'pose_topic:='+ESTIMATED_POSE_TOPIC])
+                        relay_config = folder/'pose_error.json'
+                        relay_config.write_text(json.dumps(dict(
+                            case['pose_error'], settings=manifest['pose_error_settings'],
+                            trace_dir=str(raw/'pose_trace') if trace_enabled else None)))
+                        commands.append([sys.executable, str(ROOT/'ros2_jazzy/gz_checks/pose_error_relay.py'),
+                                         str(relay_config)])
                     if gpu:
                         commands[0][2:2] = ['--render-engine', 'ogre2']
                     for i, command in enumerate(commands):
@@ -557,7 +584,8 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     save_run()
                     observer.recording = True
                     message = String()
-                    message.data = json.dumps(mission)
+                    payload = {k: v for k, v in mission.items() if k != 'start_pose'} if pose_error_enabled else mission
+                    message.data = json.dumps(payload)
                     observer.command.publish(message)
                     distance = float(np.linalg.norm(np.diff(np.asarray(meta['initial_path']), axis=0), axis=1).sum())
                     limit = max(120, 6*distance+60)
@@ -599,6 +627,11 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
         manifest['execution'] = 'finished_with_errors' if any(c['error'] for c in manifest['cases']) else 'finished'
         save_manifest(output, manifest)
         if finalize_report:
+            if pose_error_enabled:
+                if manifest['execution'] == 'finished_with_errors':
+                    raise RuntimeError('task072 trial errors; inspect manifest')
+                print('Task072 raw results saved; evaluate with eval_runs:', output)
+                return
             if 'steep_clearance' in manifest:
                 if manifest['execution'] == 'finished_with_errors':
                     raise RuntimeError('task065 trial errors; inspect manifest')
@@ -741,11 +774,19 @@ def main():
     parser.add_argument('--diagnostics', action='store_true')
     parser.add_argument('--save-plan-maps', action='store_true')
     parser.add_argument('--pose-trace', action='store_true')
+    parser.add_argument('--pose-error', choices=POSE_ERRORS, default='none')
+    parser.add_argument('--pose-error-seed', type=int, default=0)
+    parser.add_argument('--pose-error-rep', type=int, default=1)
+    parser.add_argument('--pose-error-bias', type=parse_bias, metavar='ALONG_M,SEAWARD_M,YAW_DEG')
+    parser.add_argument('--pose-error-drift-pct', type=float)
     parser.add_argument('--prepare-only', action='store_true')
     args = vars(parser.parse_args())
     output, prepare = args.pop('output'), args.pop('prepare_only')
     if prepare:
         manifest = prepare_cases(output, **args)
+        if 'pose_error' in manifest:
+            print('Task072 preparation only; Gazebo not executed:', output)
+            return
         if 'steep_clearance' in manifest:
             print('Task065 preparation only; Gazebo not executed:', output)
             return
