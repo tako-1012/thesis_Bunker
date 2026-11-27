@@ -1,6 +1,6 @@
 # 指示書 080：回る順番の比べに「人らしい順」を足す（固まりごとにまとめて回る順）
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装1）**。Gazebo・研究 PC は使わない。
+> **状態：完了（結果は `results/tour_human_order/`、レビューは `REVIEW_ja.md`）**。Gazebo・研究 PC は使わない。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針）、`conference/tasks/074_tour_real_beach.md`、
 > `conference/results/tour_real_beach/REPORT_ja.md`・`REVIEW_ja.md`（**この指示書の根拠**）、`conference/experiments/tour_real_beach.py`、`conference/tapp/tour.py` を読むこと。
 > ブランチは `codex/080-tour-human-order`（その時点の `realtime-map` の最新から）。結果は `conference/results/tour_human_order/`、報告は同じ場所の `REPORT_ja.md`。
