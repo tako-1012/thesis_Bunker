@@ -1,6 +1,6 @@
 # 指示書 072：Gazebo の走行で、ロボットが使う自分の位置にずれを入れる（`--pose-error`、選んだときだけ）
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装2）**。Gazebo・研究 PC は使わない（研究 PC での評価は、実装を取り込んでから別に頼む）。
+> **状態：完了（結果は `results/pose_error/`、レビューは `REVIEW_ja.md`。研究 PC での評価は別に頼む）**。Gazebo・研究 PC は使わない（研究 PC での評価は、実装を取り込んでから別に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/progress/policy.csv`（今後の方針。11/26 に範囲を決め直した）、
 > `conference/tasks/058_pose_trace.md`・`conference/results/pose_trace/REPORT_ja.md`・`REVIEW_ja.md`、`conference/tapp/pose_trace.py`、
 > `conference/ros2_jazzy/gz_checks/lidar_checks.py`・`lidar_runtime.py`・`lidar_map.py`・`run_lidar_checks.sh`、
