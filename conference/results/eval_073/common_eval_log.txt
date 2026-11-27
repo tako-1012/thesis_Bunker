@@ -1,0 +1,33 @@
+073 08OB86_-0205 bias025 n=5 completed=4 partial=1
+073 08OB86_-0205 bias050 n=5 partial=5
+073 08OB86_-0205 bias100 n=5 partial=5
+073 08OB86_-0205 drift05 n=5 completed=3 partial=2
+073 08OB86_-0205 drift1 n=5 completed=1 partial=4
+073 08OB86_-0205 drift2 n=5 partial=5
+073 08OB86_-0205 none n=5 completed=5
+073 08OB86_-0205 yaw2 n=5 completed=5
+073 08OB88_-1417 bias025 n=5 partial=4 other_error=1
+073 08OB88_-1417 bias050 n=5 partial=5
+073 08OB88_-1417 bias100 n=5 partial=5
+073 08OB88_-1417 drift05 n=5 completed=2 partial=3
+073 08OB88_-1417 drift1 n=5 partial=4 other_error=1
+073 08OB88_-1417 drift2 n=5 partial=3 no_path=2
+073 08OB88_-1417 none n=5 completed=5
+073 08OB88_-1417 yaw2 n=5 completed=5
+073 08OB88_00332 bias025 n=5 partial=5
+073 08OB88_00332 bias050 n=5 partial=5
+073 08OB88_00332 bias100 n=5 partial=5
+073 08OB88_00332 drift05 n=5 completed=3 partial=2
+073 08OB88_00332 drift1 n=5 completed=2 partial=3
+073 08OB88_00332 drift2 n=5 completed=1 partial=4
+073 08OB88_00332 none n=5 completed=5
+073 08OB88_00332 yaw2 n=5 completed=5
+073 08OB89_-0847 bias025 n=5 no_path=5
+073 08OB89_-0847 bias050 n=5 no_path=5
+073 08OB89_-0847 bias100 n=5 no_path=5
+073 08OB89_-0847 drift05 n=5 completed=4 partial=1
+073 08OB89_-0847 drift1 n=5 completed=2 partial=3
+073 08OB89_-0847 drift2 n=5 partial=5
+073 08OB89_-0847 none n=5 completed=5
+073 08OB89_-0847 yaw2 n=5 completed=5
+160 runs -> /home/kotaro/thesis_Bunker_rtf/conference/results/eval_073/common_eval

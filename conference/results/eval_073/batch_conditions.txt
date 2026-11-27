@@ -1,0 +1,4 @@
+commit=e0066a5ec29bbd10ed98fe7441d146289b64a1d7 branch=claude/073-eval image=sha256:e1cbc1bb388dac70a89312d3a9118bcf6593f56d75e7aef447e4ac2eccd1ac57 domain=73
+patches=08OB86_-0205 08OB88_-1417 08OB88_00332 08OB89_-0847
+condition_order=bias025 none bias050 bias100 yaw2 drift05 drift1 drift2
+repetitions=1 2 3 4 5
