@@ -157,8 +157,10 @@ class LidarPlannerNode(OnlinePlannerNode):
             self.last_error = str(exc)
 
     def on_cloud(self, message, sensor='lidar'):
-        if self.lidar_recording is not None and sensor == 'lidar':
-            self.lidar_recording.offer(message)
+        if sensor == 'lidar':
+            recording = getattr(self, 'lidar_recording', None)
+            if recording is not None:
+                recording.offer(message)
         if self.mapping_finished:
             return
         self.received_clouds += 1

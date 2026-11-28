@@ -293,7 +293,7 @@ def test_backpressure(root):
     assert meta['status'] == 'finished'
     assert meta['lidar_queue_drops'] > 0
     assert meta['received']['lidar'] == meta['saved']['lidar'] == frames+1-meta['lidar_queue_drops']
-    print(f'3 PASS: {frames+1} map updates while recording was blocked, '
+    print(f'3 PASS: {frames} further map updates while recording was blocked, '
           f'{meta["lidar_queue_drops"]} recording-only drops counted exactly')
 
 
