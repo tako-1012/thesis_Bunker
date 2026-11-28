@@ -1,0 +1,7 @@
+trial,band,stationary_frames,moving_frames,cells_in_both,cells_in_at_least_half_of_both,strongest_shared_bin_xyz_m,strongest_stationary_frames,strongest_moving_frames
+1417_d160_s0,0.1–1m,42,272,0,0,,,
+1417_d160_s0,1–2m,42,272,0,0,,,
+1417_d0_s0,0.1–1m,35,582,0,0,,,
+1417_d0_s0,1–2m,35,582,0,0,,,
+0205_d40_s1,0.1–1m,0,593,0,0,,,
+0205_d40_s1,1–2m,0,593,0,0,,,

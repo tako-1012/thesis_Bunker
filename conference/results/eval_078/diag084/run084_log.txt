@@ -1,0 +1,21 @@
+1417_d160_s0 328 body box 0 removed from 076 0
+1417_d0_s0 627 body box 0 removed from 076 0
+0205_d40_s1 596 body box 0 removed from 076 0
+body_geometry.csv: 3 rows
+near_points_by_scan.csv: 1551 rows
+near_points_by_band.csv: 6 rows
+near_point_recurrence.csv: 6 rows
+2026-11-28T09:09:35+09:00 START 1417_d160_s0 raw
+2026-11-28T09:09:35+09:00 START 1417_d160_s0 filtered
+2026-11-28T09:10:35+09:00 END 1417_d160_s0 raw 0
+2026-11-28T09:10:35+09:00 START 1417_d0_s0 raw
+2026-11-28T09:10:39+09:00 END 1417_d160_s0 filtered 0
+2026-11-28T09:10:39+09:00 START 1417_d0_s0 filtered
+2026-11-28T09:12:37+09:00 END 1417_d0_s0 raw 0
+2026-11-28T09:12:37+09:00 START 0205_d40_s1 raw
+2026-11-28T09:12:44+09:00 END 1417_d0_s0 filtered 0
+2026-11-28T09:12:44+09:00 START 0205_d40_s1 filtered
+2026-11-28T09:14:35+09:00 END 0205_d40_s1 raw 0
+2026-11-28T09:14:49+09:00 END 0205_d40_s1 filtered 0
+Six replays completed and original sensor files still match SHA-256
+2026-11-28T09:14:49+09:00

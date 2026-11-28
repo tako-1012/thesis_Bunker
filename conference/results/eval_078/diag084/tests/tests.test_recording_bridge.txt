@@ -1,0 +1,12 @@
+test_localization_cli_runs_all_three_methods_on_native_chunks (__main__.RecordingBridgeLocalizationTests.test_localization_cli_runs_all_three_methods_on_native_chunks) ... ok
+test_manifest_for_another_case_cannot_supply_mount (__main__.RecordingBridgeTests.test_manifest_for_another_case_cannot_supply_mount) ... ok
+test_manifest_uses_model_origin_and_full_orientation (__main__.RecordingBridgeTests.test_manifest_uses_model_origin_and_full_orientation) ... ok
+test_missing_mount_and_foreign_reference_fail (__main__.RecordingBridgeTests.test_missing_mount_and_foreign_reference_fail) ... ok
+test_native_rows_and_decoded_lidar_match_writer (__main__.RecordingBridgeTests.test_native_rows_and_decoded_lidar_match_writer) ... ok
+test_sdf_composes_lidar_and_parent_link_poses (__main__.RecordingBridgeTests.test_sdf_composes_lidar_and_parent_link_poses) ... ok
+test_truth_alias_described_in_review (__main__.RecordingBridgeTests.test_truth_alias_described_in_review) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.265s
+
+OK

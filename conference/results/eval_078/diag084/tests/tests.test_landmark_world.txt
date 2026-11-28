@@ -1,0 +1,19 @@
+/home/kotaro/.venvs/thesis-python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+1 PASS: same-host previous/default bytes for full mocked output trees, launch and dispatch
+2 PASS: 161 landmarks over 10045 m², density, seed, nested positions and gaps
+3 PASS: serialized prior blocks landmarks, evaluation counts debris but excludes known landmarks
+4 PASS: terrain triangles and both static surfaces agree with XYZ within 5e-05 m
+5 PASS: 0.500712 mm maximum Euclidean error, exceptions and empty scan preserved
+capture PASS: original ROS topics/stamps, endian/row padding, cutoff and strict byte cap
+08OB86_00294 completed
+dispatch PASS: world, reference, manifest and separate truth-only recorder alongside pose error
+all landmark world tests passed
