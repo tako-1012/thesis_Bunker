@@ -34,7 +34,8 @@ UPDATE_FIELDS = ['stamp', 'status', 'error', 'version', 'input_points', 'accepte
 class LidarPlannerNode(OnlinePlannerNode):
     def __init__(self, *, ground_estimate='all_returns', obstacle_reference='prior', online_fixes='none',
                  obstacle_clearance='centre', terrain_source='sensor', save_plan_maps=False, steep_near_obstacle='keep',
-                 clearance_soft_m=None, ground_near_obstacle='keep', goal_region='none', steep_clearance='centre', slope_uncertainty='none'):
+                 clearance_soft_m=None, ground_near_obstacle='keep', goal_region='none', steep_clearance='centre',
+                 slope_uncertainty='none', record_lidar_fd=None):
         # Deliberately do not load truth_map or construct a perfect-sensor runtime.
         Node.__init__(self, 'lidar_planner')
         from tapp.distance_clearance import R_SOFT
@@ -132,6 +133,13 @@ class LidarPlannerNode(OnlinePlannerNode):
         self.create_subscription(Empty, '/mission/stop', self.on_stop, 10)
         self.create_timer(.02, self.map_tick)
         self.create_timer(.05, self.tick)
+        self.lidar_recording = None
+        if record_lidar_fd is not None:
+            import socket
+            from rclpy.serialization import serialize_message
+            from ros2_jazzy.gz_checks.lidar_recording_link import CloudForwarder
+
+            self.lidar_recording = CloudForwarder(socket.socket(fileno=record_lidar_fd), serialize_message)
 
     @staticmethod
     def stamp(message):
@@ -149,6 +157,10 @@ class LidarPlannerNode(OnlinePlannerNode):
             self.last_error = str(exc)
 
     def on_cloud(self, message, sensor='lidar'):
+        if sensor == 'lidar':
+            recording = getattr(self, 'lidar_recording', None)
+            if recording is not None:
+                recording.offer(message)
         if self.mapping_finished:
             return
         self.received_clouds += 1
@@ -304,6 +316,8 @@ class LidarPlannerNode(OnlinePlannerNode):
         if self.pose_trace_log is not None:
             self.pose_trace_log.close()
         self.mapping_finished = True
+        if self.lidar_recording is not None:
+            self.lidar_recording.close()
         self.map_pool.shutdown(wait=True)
         self._collect()
         self.runtime.close()
@@ -340,6 +354,7 @@ def main(args=None):
     parser.add_argument('--online-fixes', choices=ONLINE_FIXES, default=None)
     parser.add_argument('--save-plan-maps', action='store_true', default=None)
     parser.add_argument('--goal-region', choices=GOAL_REGIONS, default=None)
+    parser.add_argument('--record-lidar-fd', type=int)
     options, remaining = parser.parse_known_args(sys.argv[1:] if args is None else args)
     # Without the new flag, pass the exact original args object to ROS.
     selected = {key: value for key, value in vars(options).items() if value is not None}

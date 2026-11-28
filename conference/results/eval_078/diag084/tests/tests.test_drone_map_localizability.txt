@@ -1,0 +1,7 @@
+1 PASS: variable grid agrees with 079 at 0.5 m, including entry from outside
+2 PASS: no hits in holes or outside; finite triangles past holes remain visible
+3 PASS: plane at 0.1 m, minimum eigenvalue 0.501216, status=weak_information
+3 PASS: rough at 0.1 m, minimum eigenvalue 15.950748, status=accepted
+4 PASS: medians of finite 5 × 5 blocks, all-empty stays empty, incomplete block omitted
+crop PASS: five deterministic distinct land-only origins
+all drone map localizability tests passed (optional backend skip shown above if absent)

@@ -1,0 +1,8 @@
+生データの保管場所
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_078/runs/08OB88_-1417/d160_s0/physical_1/
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_078/runs/08OB88_-1417/d0_s0/physical_1/
+/home/kotaro/thesis_Bunker_rtf/conference/results/eval_078/runs/08OB86_-0205/d40_s1/physical_1/
+
+今回使用した記録と参照点群のファイルごとのパス・SHA-256 は、同じフォルダの input_sha256.txt に記載した。
+パスの基準は /home/kotaro/thesis_Bunker_rtf/conference/results/eval_078/。再生後に同じハッシュであることを確認した。
+除外後の点群は再生時に生成し、ファイルとして保存していない。

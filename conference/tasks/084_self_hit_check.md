@@ -1,6 +1,6 @@
 # 指示書 084：LiDAR がロボット自身の車体を見ていて、位置の出し方が狂っていないかを確かめる
 
-> **状態：実行中（研究 PC、チャット：研究PC実行）**。コードは変えない。調べるスクリプトは `conference/results/eval_078/diag084/` に足してよい。Gazebo は走らせない（078 の記録を使う）。
+> **状態：負の結果（車体の点は 0。結果とレビューは `results/eval_078/diag084/`）**。コードは変えない。調べるスクリプトは `conference/results/eval_078/diag084/` に足してよい。Gazebo は走らせない（078 の記録を使う）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/RESEARCH_PC_ja.md`、`conference/tasks/076_offline_localization.md`・`082_localization_frame_check.md`、
 > `conference/results/eval_078/diag/REPORT_ja.md`・`REVIEW_ja.md`、`conference/experiments/offline_localization.py`・`recording_bridge.py`、
 > `conference/ros2_jazzy/src/thesis_bunker_gz/thesis_bunker_gz/model.py`（BUNKER の車体の大きさ）・`conference/tapp/sensor_geometry.py`（センサーの取り付け位置）を読むこと。

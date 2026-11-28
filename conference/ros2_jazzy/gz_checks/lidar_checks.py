@@ -305,7 +305,8 @@ def prepare_cases(output, *, patch_count=3, sensor_height_m=.8, obstacle_height_
                                           density_area='finite dry land before placement exclusions')
     if record_sensors:
         from tapp.sensor_recording import LIMIT_BYTES
-        manifest['sensor_recording'] = dict(duration_limit_s=record_sensors_seconds, limit_bytes=LIMIT_BYTES)
+        manifest['sensor_recording'] = dict(duration_limit_s=record_sensors_seconds, limit_bytes=LIMIT_BYTES,
+                                            lidar_source='lidar_planner.on_cloud')
     save_manifest(output, manifest)
     return manifest
 
@@ -469,6 +470,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                 case['run_folder'] = str(raw.relative_to(output))
                 observer = Observer(raw)
                 processes, streams = [], []
+                recording_links = {}
                 folder = Path(temporary)/case['patch']
                 mission = dict(id=1, patch=case['patch'], mode='lidar', planner='TA*-S+inflate', data_source='gazebo',
                                map_id='file/truth.npz', path=meta['initial_path'], points=(np.asarray(meta['points'])*RESOLUTION).tolist(),
@@ -559,6 +561,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                          '-p', 'max_range_m:='+str(manifest['lidar_spec']['max_range_m']),
                          '-p', 'range_resolution_m:='+str(manifest['lidar_spec']['range_resolution_m']),
                          '-p', 'stale_timeout_s:='+str(manifest['stale_timeout_s'])]]
+                    planner_index = len(commands)-1
                     if manifest.get('map_method') == 'fine':
                         commands[-1].extend(['-p', 'map_method:=fine'])
                     if manifest.get('endpoint_protocol'):
@@ -607,7 +610,13 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         commands.append([sys.executable, str(ROOT/'ros2_jazzy/gz_checks/pose_error_relay.py'),
                                          str(relay_config)])
                     if recording_settings is not None:
-                        recorder = [sys.executable, str(ROOT/'ros2_jazzy/gz_checks/sensor_recorder.py'), str(raw/'sensors')]
+                        import socket
+
+                        planner_link, recorder_link = socket.socketpair()
+                        recording_links = {planner_index: planner_link, len(commands): recorder_link}
+                        commands[planner_index][2:2] = ['--record-lidar-fd', str(planner_link.fileno())]
+                        recorder = [sys.executable, str(ROOT/'ros2_jazzy/gz_checks/sensor_recorder.py'), str(raw/'sensors'),
+                                    '--lidar-fd', str(recorder_link.fileno())]
                         if recording_settings['duration_limit_s'] is not None:
                             recorder.extend(['--seconds', str(recording_settings['duration_limit_s'])])
                         commands.append(recorder)
@@ -617,16 +626,22 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         stream = (raw/f'process_{i}.txt').open('w')
                         streams.append(stream)
                         options = dict(env=dict(os.environ, HOME=str(folder))) if gpu and i == 0 else {}
+                        if i in recording_links:
+                            options['pass_fds'] = (recording_links[i].fileno(),)
                         processes.append(subprocess.Popen(command, stdout=stream, stderr=subprocess.STDOUT,
                                                           start_new_session=True, **options))
+                    for link in recording_links.values():
+                        link.close()
+                    # A recorder failure should be reported with the archive, independently of the mission.
+                    runtime_processes = processes[:-1] if recording_links else processes
                     observer.wait_until(lambda: observer.t is not None and observer.pose is not None and observer.state is not None
                                         and observer.command.get_subscription_count() > 0 and observer.perception is not None
-                                        and observer.perception['ready'], processes)
+                                        and observer.perception['ready'], runtime_processes)
                     if gpu:
                         case['rendering'] = save_renderer(folder, raw)
                         save_manifest(output, manifest)
                     settled = observer.t+5
-                    observer.wait_until(lambda: observer.t >= settled, processes)
+                    observer.wait_until(lambda: observer.t >= settled, runtime_processes)
                     mission.update(started_t=observer.t, start_pose=observer.pose, wall_started=time.perf_counter(), status='running')
                     save_run()
                     observer.recording = True
@@ -639,7 +654,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     limit = max(120, 6*distance+60)
                     # Wall-clock guard scales with the slowed simulation (real_time_factor 0.3 -> 10x the sim limit).
                     observer.wait_until(lambda: (observer.state.get('mission_id') == 1 and observer.state['status'] in TERMINAL)
-                                        or observer.t-mission['started_t'] > limit, processes, wall_limit=max(180, limit*3/min(1., manifest['real_time_factor'])))
+                                        or observer.t-mission['started_t'] > limit, runtime_processes, wall_limit=max(180, limit*3/min(1., manifest['real_time_factor'])))
                     case['termination'] = 'simulation_timeout' if observer.t-mission['started_t'] > limit else observer.state['status']
                     mission.update(status=case['termination'], finished_t=observer.t, final_state=observer.state,
                                    perception=observer.perception, wall_elapsed_s=time.perf_counter()-mission['wall_started'])
@@ -647,7 +662,7 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                     observer.recording = False
                     observer.stop.publish(Empty())
                     ended = observer.t+.2
-                    observer.wait_until(lambda: observer.t >= ended, processes, wall_limit=10)
+                    observer.wait_until(lambda: observer.t >= ended, runtime_processes, wall_limit=10)
                     print(case['patch'], case['termination'], flush=True)
                 except Exception as exc:
                     case['error'] = type(exc).__name__+': '+str(exc)
@@ -657,7 +672,14 @@ def run_checks(output, *, finalize_report=True, matched_world=False, **kwargs):
                         mission['cleanup_error'] = case['error']
                     save_run()
                 finally:
-                    for process in reversed(processes):
+                    for link in recording_links.values():
+                        link.close()
+                    stopping = processes[::-1]
+                    if recording_links and max(recording_links) < len(processes):
+                        # Keep the reader alive until the producer has sent its final counter.
+                        recorder_process = stopping.pop(0)
+                        stopping.insert(len(processes)-1-planner_index, recorder_process)
+                    for process in stopping:
                         if process.poll() is None:
                             os.killpg(process.pid, signal.SIGINT)
                             try:

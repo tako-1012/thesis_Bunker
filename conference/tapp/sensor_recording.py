@@ -106,6 +106,7 @@ class SensorArchive:
         self.kept = dict(lidar=0, imu=0, ground_truth=0)
         self.received = dict(self.kept)
         self.skipped_empty = 0
+        self.lidar_queue_drops = None
         self.stopped = None
         self.pending = {key: [] for key in self.kept}
         self._write_metadata()
@@ -118,10 +119,16 @@ class SensorArchive:
                     timestamp='ROS message header stamp in simulator nanoseconds',
                     lidar='/lidar/points', imu='/imu', ground_truth='/ground_truth (pose index 0)',
                     imu_columns=IMU_COLUMNS, ground_truth_columns=TRUTH_COLUMNS)
+        if self.lidar_queue_drops is not None:
+            data['lidar_queue_drops'] = self.lidar_queue_drops
         encoded = (json.dumps(data, indent=2) + '\n').encode()
         if len(encoded) > META_BYTES:
             raise ValueError('sensor archive metadata exceeds the reserved space')
         (self.folder / 'metadata.json').write_bytes(encoded)
+
+    def set_lidar_queue_drops(self, count):
+        self.lidar_queue_drops = count
+        self._write_metadata()
 
     def accepting(self, stamp_ns):
         if self.stopped:
@@ -187,4 +194,7 @@ class SensorArchive:
             self.flush()
             if not self.stopped:
                 self.stopped = reason
+            self._write_metadata()
+        elif reason == 'error' and self.stopped != 'error':
+            self.stopped = reason
             self._write_metadata()
