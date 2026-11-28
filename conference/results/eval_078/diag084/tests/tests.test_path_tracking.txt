@@ -1,0 +1,5 @@
+1 PASS: before/current same-host manifest, ROS states, commands, trajectory, replan and stop bytes for none/v1/v2
+2 PASS: straight speed, 2m corner window, 60-degree 0.5 m/s cap and strict 45-degree spin
+3 PASS: 0.3 s rise/decay, 80% steady turn response, no-lag trace equals robot_sim
+wiring PASS: opt-in initial/replacement paths with none/v1/v2, manifest, ROS args and Docker stub
+all task043 tracking tests passed

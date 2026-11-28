@@ -1,0 +1,7 @@
+1 PASS: 16 × 1800 rays, ±15°, mount, 0.9–30 m span, 0.02 m radial noise and box/cylinder shadows
+1 PASS: first mesh hit agrees with independent triangle oracle, including outside origin and multiple surfaces
+2 PASS: plane λmin=0.501997, weak=cross_shore, status=weak_information
+2 PASS: landmarks λmin=36.257700, weak=alongshore, status=accepted
+3 PASS: 078 prepare-only inputs, 19 placements and full reference XYZ match the 075 world builder
+route PASS: exact end retained; a missing sample breaks weak intervals
+all localizability scan tests passed (optional backend skip shown above if absent)

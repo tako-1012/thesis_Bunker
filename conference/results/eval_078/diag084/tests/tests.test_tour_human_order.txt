@@ -1,0 +1,9 @@
+test_numerical_difference_rejects_the_replay (__main__.ArchivedTourTests.test_numerical_difference_rejects_the_replay) ... ok
+test_recomputed_matrices_reproduce_all_five_archived_methods (__main__.ArchivedTourTests.test_recomputed_matrices_reproduce_all_five_archived_methods) ... ok
+test_clusters_are_chosen_from_the_preceding_center_and_stay_together (__main__.HumanOrderTests.test_clusters_are_chosen_from_the_preceding_center_and_stay_together) ... ok
+test_nearest_within_cluster_enters_from_last_waypoint (__main__.HumanOrderTests.test_nearest_within_cluster_enters_from_last_waypoint) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 5.676s
+
+OK

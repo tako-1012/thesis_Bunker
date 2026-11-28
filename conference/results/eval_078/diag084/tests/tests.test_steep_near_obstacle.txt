@@ -1,0 +1,18 @@
+/home/kotaro/.venvs/thesis-python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+1 PASS: same-host implicit and explicit keep, Fine/Multi, all terrain sources, manifests, ROS args and plan logs
+2 PASS: covered slope stays lethal, external slope keeps inflation, obstacle/height/cost bytes agree
+3 PASS: obstacle-only local update and later height changes match full rebuild for Fine/Multi and all clearances
+prior/veto PASS: prior seeds and rocks kept, former inferred halo refreshed, overlap_goal and plan maps work with none/v1/v2
+08OB86_00294 completed
+CLI PASS: fine-only opt-in, manifest, ROS args and fake Docker forwarding
+all task055 steep-near-obstacle tests passed

@@ -1,7 +1,8 @@
-"""Capture unmodified ROS sensor streams in a separate process for task075."""
+"""Record the planner's LiDAR feed, and subscribe to IMU and ground truth."""
 
 import argparse
 from pathlib import Path
+import socket
 
 from tapp.pointcloud_map import decode_xyz
 from tapp.sensor_recording import SensorArchive
@@ -52,6 +53,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('folder', type=Path)
     parser.add_argument('--seconds', type=float)
+    parser.add_argument('--lidar-fd', type=int)
     args = parser.parse_args()
 
     import rclpy
@@ -65,8 +67,19 @@ def main():
     rclpy.init(args=[])
     node = Node('thesis_sensor_recorder')
     qos = QoSProfile(depth=100, reliability=ReliabilityPolicy.BEST_EFFORT)
-    for message, topic, callback in ((PointCloud2, '/lidar/points', record_lidar),
-                                     (Imu, '/imu', record_imu),
+    receiver = None
+    if args.lidar_fd is None:
+        # Preserve the standalone 075 invocation when there is no planner.
+        node.create_subscription(PointCloud2, '/lidar/points', lambda msg: record_lidar(archive, msg), qos)
+    else:
+        from rclpy.serialization import deserialize_message
+        from ros2_jazzy.gz_checks.lidar_recording_link import CloudReceiver
+
+        receiver = CloudReceiver(socket.socket(fileno=args.lidar_fd),
+                                 lambda payload: record_lidar(archive, deserialize_message(payload, PointCloud2)),
+                                 lambda: archive.stopped is not None, archive.set_lidar_queue_drops)
+        node.create_timer(.01, receiver.poll)
+    for message, topic, callback in ((Imu, '/imu', record_imu),
                                      (PoseArray, '/ground_truth', record_truth)):
         node.create_subscription(message, topic, lambda msg, cb=callback: cb(archive, msg), qos)
     reason = 'finished'
@@ -78,6 +91,17 @@ def main():
         reason = 'error'
         raise
     finally:
+        if receiver is not None:
+            try:
+                if reason != 'error':
+                    receiver.poll(max_frames=None)
+                    if not receiver.finished:
+                        raise EOFError('planner LiDAR drop counter was not received at shutdown')
+            except Exception as exc:
+                print(f'LiDAR recording transfer failed: {exc}', flush=True)
+                reason = 'error'
+            finally:
+                receiver.stream.close()
         archive.close(reason)
         node.destroy_node()
         rclpy.try_shutdown()

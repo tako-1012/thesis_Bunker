@@ -1,0 +1,20 @@
+/home/kotaro/.venvs/thesis-python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+08OB86_00294 completed
+1 PASS: same-host old/default/none manifest, commands, run files and follower bytes
+2 PASS (legacy): oblique coast, yaw, same stamped pose for cloud registration, planning, control and arrival
+2 PASS (lidar_real+depth2): oblique coast, yaw, same stamped pose for cloud registration, planning, control and arrival
+drift L=  1 m theory=0.010000 sample_xy=0.009762,0.009542
+drift L= 10 m theory=0.031623 sample_xy=0.030688,0.031450
+drift L=100 m theory=0.100000 sample_xy=0.098146,0.096925
+3 PASS: 1,000 drift walks, ±10% sample standard-deviation limit, mission start and no yaw drift
+4 PASS: eval_runs measures truth clearance, rollover and endpoint-mask travel without estimated fallback
+08OB86_00294 completed
+Task072 preparation only; Gazebo not executed: /tmp/tmpxostqcr5/prepared
+wiring PASS: selected patch axes and seed, shared topic, CLI parameters and shell forwarding
+all task072 pose-error tests passed
