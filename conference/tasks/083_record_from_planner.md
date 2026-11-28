@@ -1,6 +1,6 @@
 # 指示書 083：センサーの記録を、計画のノードが受けた LiDAR から取る形に直す（記録を取ると点群が古くなる問題）
 
-> **状態：実行中（クラウドの Codex、チャット：研究実装2）**。Gazebo・研究 PC は使わない（研究 PC での確かめは、取り込んでから別に頼む）。
+> **状態：完了（結果とレビューは `results/record_from_planner/`。研究 PC での確かめは 085）**。Gazebo・研究 PC は使わない（研究 PC での確かめは、取り込んでから別に頼む）。
 > 最初に `AGENTS.md`、`CLAUDE.md`、`conference/tasks/075_landmark_world.md`・`078_landmark_localization_eval.md`・`082_localization_frame_check.md`、
 > `conference/results/eval_078/diag/REPORT_ja.md`・`REVIEW_ja.md`（**この指示書の根拠**）、`conference/results/landmark_world/REPORT_ja.md`・`REVIEW_ja.md`、
 > `conference/ros2_jazzy/gz_checks/sensor_recorder.py`・`lidar_planner.py`（`on_cloud`）・`lidar_checks.py`、`conference/tapp/sensor_recording.py`、`conference/experiments/recording_bridge.py` を読むこと。
